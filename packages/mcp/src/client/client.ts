@@ -477,8 +477,14 @@ export class InternalMastraMCPClient extends MastraBase {
     }
 
     try {
-      await $RefParser.dereference(inputSchema)
-      return convertJsonSchemaToZod(inputSchema as JSONSchema);
+      // Ensure the schema has a type field - default to 'object' if missing
+      const schemaWithType = {
+        type: 'object',
+        ...inputSchema,
+      } as JSONSchema;
+      
+      await $RefParser.dereference(schemaWithType)
+      return convertJsonSchemaToZod(schemaWithType);
     } catch (error: unknown) {
       let errorDetails: string | undefined;
       if (error instanceof Error) {
@@ -514,8 +520,14 @@ export class InternalMastraMCPClient extends MastraBase {
     }
 
     try {
-      await $RefParser.dereference(outputSchema)
-      return convertJsonSchemaToZod(outputSchema as JSONSchema);
+      // Ensure the schema has a type field - default to 'object' if missing
+      const schemaWithType = {
+        type: 'object',
+        ...outputSchema,
+      } as JSONSchema;
+      
+      await $RefParser.dereference(schemaWithType)
+      return convertJsonSchemaToZod(schemaWithType);
     } catch (error: unknown) {
       let errorDetails: string | undefined;
       if (error instanceof Error) {

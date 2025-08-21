@@ -1,4 +1,4 @@
-import { createStep, createWorkflow } from '@mastra/core/workflows';
+import { createStep, createWorkflow } from '@datawarp/mastra-core/workflows';
 import { researchWorkflow } from './researchWorkflow';
 import { z } from 'zod';
 

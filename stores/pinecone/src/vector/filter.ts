@@ -1,4 +1,4 @@
-import { BaseFilterTranslator } from '@mastra/core/vector/filter';
+import { BaseFilterTranslator } from '@datawarp/mastra-core/vector/filter';
 import type {
   VectorFilter,
   OperatorSupport,
@@ -8,7 +8,7 @@ import type {
   QueryOperator,
   FilterValue,
   OperatorCondition,
-} from '@mastra/core/vector/filter';
+} from '@datawarp/mastra-core/vector/filter';
 
 type InitialOperatorValueMap = Omit<OperatorValueMap, '$regex' | '$options' | '$elemMatch' | '$all'> & {
   $contains: string;

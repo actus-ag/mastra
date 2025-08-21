@@ -1,6 +1,6 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@mastra/core/agent';
-import { Metric } from '@mastra/core/eval';
+import { Agent } from '@datawarp/mastra-core/agent';
+import { Metric } from '@datawarp/mastra-core/eval';
 import { describe, expect, it } from 'vitest';
 
 import { evaluate } from './evaluation';

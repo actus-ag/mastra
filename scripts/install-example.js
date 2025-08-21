@@ -115,8 +115,8 @@ for (const dep of linkedDeps) {
   }
 }
 
-if (depsToInstall.has('@mastra/core')) {
-  depsToInstall.add('@mastra/schema-compat');
+if (depsToInstall.has('@datawarp/mastra-core')) {
+  depsToInstall.add('@datawarp/mastra-schema-compat');
 }
 
 if (depsToInstall.size > 0) {

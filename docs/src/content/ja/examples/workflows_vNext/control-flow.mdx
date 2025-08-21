@@ -8,7 +8,7 @@ description: 提供された条件に基づいてループを持つワークフ�
 ## セットアップ
 
 ```sh copy
-npm install @ai-sdk/openai @mastra/core
+npm install @ai-sdk/openai @datawarp/mastra-core
 ```
 
 ## ループ実行ワークフローの定義
@@ -16,7 +16,7 @@ npm install @ai-sdk/openai @mastra/core
 提供された条件が満たされるまでネストされたワークフローを実行するワークフローを定義します。
 
 ```ts showLineNumbers copy filename="looping-workflow.ts"
-import { createWorkflow, createStep } from "@mastra/core/workflows/vNext";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows/vNext";
 import { z } from "zod";
 
 // Step that increments the input value by 1
@@ -105,8 +105,8 @@ export { workflow as incrementWorkflow };
 ワークフローをmastraインスタンスに登録します。
 
 ```ts showLineNumbers copy filename="index.ts"
-import { Mastra } from "@mastra/core/mastra";
-import { PinoLogger } from "@mastra/loggers";
+import { Mastra } from "@datawarp/mastra-core/mastra";
+import { PinoLogger } from "@datawarp/mastra-loggers";
 import { incrementWorkflow } from "./workflows";
 
 // Initialize Mastra with the increment workflow

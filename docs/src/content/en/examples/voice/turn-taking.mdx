@@ -15,8 +15,8 @@ First, we need to create two agents with distinct personalities and voice capabi
 
 ```typescript filename="src/mastra/agents/index.ts"
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@mastra/core/agent";
-import { OpenAIVoice } from "@mastra/voice-openai";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { OpenAIVoice } from "@datawarp/mastra-voice-openai";
 
 export const optimistAgent = new Agent({
   name: "Optimist",
@@ -44,8 +44,8 @@ export const skepticAgent = new Agent({
 Next, register both agents with your Mastra instance:
 
 ```typescript filename="src/mastra/index.ts"
-import { PinoLogger } from "@mastra/loggers";
-import { Mastra } from "@mastra/core/mastra";
+import { PinoLogger } from "@datawarp/mastra-loggers";
+import { Mastra } from "@datawarp/mastra-core/mastra";
 import { optimistAgent, skepticAgent } from "./agents";
 
 export const mastra = new Mastra({
@@ -66,7 +66,7 @@ This example demonstrates how to manage the turn-taking flow between agents, ens
 
 ```typescript filename="src/debate/turn-taking.ts"
 import { mastra } from "../../mastra";
-import { playAudio, Recorder } from "@mastra/node-audio";
+import { playAudio, Recorder } from "@datawarp/mastra-node-audio";
 import * as p from "@clack/prompts";
 
 // Helper function to format text with line wrapping
@@ -269,7 +269,7 @@ For web applications, you can create a simple Next.js component that allows user
 "use client";
 
 import { useState, useRef } from "react";
-import { MastraClient } from "@mastra/client-js";
+import { MastraClient } from "@datawarp/mastra-client-js";
 
 const mastraClient = new MastraClient({
   baseUrl: process.env.NEXT_PUBLIC_MASTRA_URL || "http://localhost:4111",

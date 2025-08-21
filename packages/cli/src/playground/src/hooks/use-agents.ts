@@ -1,5 +1,5 @@
 import { client } from '@/lib/client';
-import { UpdateModelParams } from '@mastra/client-js';
+import { UpdateModelParams } from '@datawarp/mastra-client-js';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 export const useAgents = () => {

@@ -13,11 +13,11 @@ Let's break down how to create an agent with structured working memory. We'll bu
 
 ### 1. Setting up Structured Memory
 
-We'll configure the memory system with a short context window and provide a Zod schema for the todo list. For persistence, you can configure a storage provider like `@mastra/libsql`:
+We'll configure the memory system with a short context window and provide a Zod schema for the todo list. For persistence, you can configure a storage provider like `@datawarp/mastra-libsql`:
 
 ```typescript
-import { Memory } from "@mastra/memory";
-import { LibSQLStore } from "@mastra/libsql";
+import { Memory } from "@datawarp/mastra-memory";
+import { LibSQLStore } from "@datawarp/mastra-libsql";
 import { z } from "zod";
 
 // Define the schema for the todo list
@@ -52,7 +52,7 @@ We'll create an agent that uses this structured memory. The instructions should 
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 
 const todoAgent = new Agent({
   name: "TODO Agent",
@@ -75,7 +75,7 @@ For simple cases, you can use `maskStreamTags` to hide the working memory update
 
 ```typescript
 import { randomUUID } from "crypto";
-import { maskStreamTags } from "@mastra/core/utils";
+import { maskStreamTags } from "@datawarp/mastra-core/utils";
 
 // Start a conversation
 const threadId = randomUUID();

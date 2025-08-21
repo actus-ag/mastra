@@ -1,5 +1,5 @@
 {
-  "name": "@mastra/pg",
+  "name": "@datawarp/mastra-pg",
   "version": "0.14.1",
   "description": "Postgres provider for Mastra - includes both vector and db storage capabilities",
   "type": "module",
@@ -42,7 +42,7 @@
   "devDependencies": {
     "@internal/lint": "workspace:*",
     "@internal/storage-test-utils": "workspace:*",
-    "@mastra/core": "workspace:*",
+    "@datawarp/mastra-core": "workspace:*",
     "@microsoft/api-extractor": "^7.52.8",
     "@types/node": "^20.19.0",
     "@types/pg": "^8.15.5",
@@ -53,6 +53,6 @@
     "@internal/types-builder": "workspace:*"
   },
   "peerDependencies": {
-    "@mastra/core": ">=0.13.0-0 <0.15.0-0"
+    "@datawarp/mastra-core": ">=0.13.0-0 <0.15.0-0"
   }
 }

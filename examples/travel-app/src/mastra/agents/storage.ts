@@ -1,4 +1,4 @@
-import { PostgresStore } from "@mastra/pg";
+import { PostgresStore } from "@datawarp/mastra-pg";
 
 const url = "postgresql://postgres:postgres@localhost:5433/mastra";
 

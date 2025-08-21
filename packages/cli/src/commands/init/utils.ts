@@ -90,9 +90,9 @@ export async function writeAgentSample(llmProvider: LLMProvider, destPath: strin
 `;
   const content = `
 ${providerImport}
-import { Agent } from '@mastra/core/agent';
-import { Memory } from '@mastra/memory';
-import { LibSQLStore } from '@mastra/libsql';
+import { Agent } from '@datawarp/mastra-core/agent';
+import { Memory } from '@datawarp/mastra-memory';
+import { LibSQLStore } from '@datawarp/mastra-libsql';
 ${addExampleTool ? `import { weatherTool } from '../tools/weather-tool';` : ''}
 
 export const weatherAgent = new Agent({
@@ -117,7 +117,7 @@ export const weatherAgent = new Agent({
 }
 
 export async function writeWorkflowSample(destPath: string) {
-  const content = `import { createStep, createWorkflow } from '@mastra/core/workflows';
+  const content = `import { createStep, createWorkflow } from '@datawarp/mastra-core/workflows';
 import { z } from 'zod';
 
 const forecastSchema = z.object({
@@ -364,7 +364,7 @@ export const writeIndexFile = async ({
       await fs.writeFile(
         destPath,
         `
-import { Mastra } from '@mastra/core';
+import { Mastra } from '@datawarp/mastra-core';
 
 export const mastra = new Mastra()
         `,
@@ -375,9 +375,9 @@ export const mastra = new Mastra()
     await fs.writeFile(
       destPath,
       `
-import { Mastra } from '@mastra/core/mastra';
-import { PinoLogger } from '@mastra/loggers';
-import { LibSQLStore } from '@mastra/libsql';
+import { Mastra } from '@datawarp/mastra-core/mastra';
+import { PinoLogger } from '@datawarp/mastra-loggers';
+import { LibSQLStore } from '@datawarp/mastra-libsql';
 ${addWorkflow ? `import { weatherWorkflow } from './workflows/weather-workflow';` : ''}
 ${addAgent ? `import { weatherAgent } from './agents/weather-agent';` : ''}
 
@@ -410,17 +410,17 @@ export const checkInitialization = async (dirPath: string) => {
 
 export const checkAndInstallCoreDeps = async (addExample: boolean) => {
   const depsService = new DepsService();
-  let depCheck = await depsService.checkDependencies(['@mastra/core']);
+  let depCheck = await depsService.checkDependencies(['@datawarp/mastra-core']);
 
   if (depCheck !== 'ok') {
-    await installCoreDeps('@mastra/core');
+    await installCoreDeps('@datawarp/mastra-core');
   }
 
   if (addExample) {
-    depCheck = await depsService.checkDependencies(['@mastra/libsql']);
+    depCheck = await depsService.checkDependencies(['@datawarp/mastra-libsql']);
 
     if (depCheck !== 'ok') {
-      await installCoreDeps('@mastra/libsql');
+      await installCoreDeps('@datawarp/mastra-libsql');
     }
   }
 };
@@ -448,7 +448,7 @@ export async function installCoreDeps(pkg: string) {
     const depsService = new DepsService();
 
     await depsService.installPackages([`${pkg}@latest`]);
-    spinner.success('@mastra/core installed successfully');
+    spinner.success('@datawarp/mastra-core installed successfully');
   } catch (err) {
     console.error(err);
   }

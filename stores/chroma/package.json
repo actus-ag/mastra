@@ -1,5 +1,5 @@
 {
-  "name": "@mastra/chroma",
+  "name": "@datawarp/mastra-chroma",
   "version": "0.11.4",
   "description": "Chroma vector store provider for Mastra",
   "type": "module",
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@internal/lint": "workspace:*",
-    "@mastra/core": "workspace:*",
+    "@datawarp/mastra-core": "workspace:*",
     "@microsoft/api-extractor": "^7.52.8",
     "@types/node": "^20.19.0",
     "eslint": "^9.30.1",
@@ -41,6 +41,6 @@
     "@internal/storage-test-utils": "workspace:*"
   },
   "peerDependencies": {
-    "@mastra/core": ">=0.10.7-0 <0.15.0-0"
+    "@datawarp/mastra-core": ">=0.10.7-0 <0.15.0-0"
   }
 }

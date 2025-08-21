@@ -1,10 +1,10 @@
 import { randomUUID } from 'node:crypto';
 import type * as http from 'node:http';
-import type { InternalCoreTool } from '@mastra/core';
-import { createTool, makeCoreTool } from '@mastra/core';
-import type { ToolsInput, Agent } from '@mastra/core/agent';
-import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
-import { MCPServerBase } from '@mastra/core/mcp';
+import type { InternalCoreTool } from '@datawarp/mastra-core';
+import { createTool, makeCoreTool } from '@datawarp/mastra-core';
+import type { ToolsInput, Agent } from '@datawarp/mastra-core/agent';
+import { ErrorCategory, ErrorDomain, MastraError } from '@datawarp/mastra-core/error';
+import { MCPServerBase } from '@datawarp/mastra-core/mcp';
 import type {
   MCPServerConfig,
   ServerInfo,
@@ -13,9 +13,9 @@ import type {
   MCPServerHonoSSEOptions,
   MCPServerSSEOptions,
   MCPToolType,
-} from '@mastra/core/mcp';
-import { RuntimeContext } from '@mastra/core/runtime-context';
-import type { Workflow } from '@mastra/core/workflows';
+} from '@datawarp/mastra-core/mcp';
+import { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
+import type { Workflow } from '@datawarp/mastra-core/workflows';
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { SSEServerTransport } from '@modelcontextprotocol/sdk/server/sse.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';

@@ -47,7 +47,7 @@ getModel({ runtimeContext = new RuntimeContext() }: { runtimeContext?: RuntimeCo
 ### 基本的な使い方
 
 ```typescript
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
 
 // Create an agent with a static model
@@ -65,8 +65,8 @@ console.log(model.id); // "gpt-4o"
 ### RuntimeContextとの併用
 
 ```typescript
-import { Agent } from "@mastra/core/agent";
-import { RuntimeContext } from "@mastra/core/runtime-context";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { RuntimeContext } from "@datawarp/mastra-core/runtime-context";
 import { openai } from "@ai-sdk/openai";
 import { anthropic } from "@ai-sdk/anthropic";
 

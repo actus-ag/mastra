@@ -5,10 +5,10 @@ Now, let's update our agent to include memory. Open your `agents/index.ts` file 
 1. Import the Memory and LibSQLStore classes:
 
 ```typescript
-import { Agent } from "@mastra/core";
+import { Agent } from "@datawarp/mastra-core";
 import { openai } from "@ai-sdk/openai";
-import { Memory } from "@mastra/memory";
-import { LibSQLStore } from "@mastra/libsql";
+import { Memory } from "@datawarp/mastra-memory";
+import { LibSQLStore } from "@datawarp/mastra-libsql";
 import { getTransactionsTool } from "../tools";
 ```
 
@@ -30,4 +30,4 @@ export const financialAgent = new Agent({
 });
 ```
 
-By adding the `memory` property to your agent configuration, you're enabling it to remember previous conversations. The `Memory` class from the `@mastra/memory` package provides a simple way to add memory capabilities to your agent. The `LibSQLStore` class from `@mastra/libsql` persists the memory data to a `SQLite` database.
+By adding the `memory` property to your agent configuration, you're enabling it to remember previous conversations. The `Memory` class from the `@datawarp/mastra-memory` package provides a simple way to add memory capabilities to your agent. The `LibSQLStore` class from `@datawarp/mastra-libsql` persists the memory data to a `SQLite` database.

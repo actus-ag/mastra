@@ -1,6 +1,6 @@
-import type { RuntimeContext } from '@mastra/core/runtime-context';
-import type { MastraScorerEntry, ScoreRowData } from '@mastra/core/scores';
-import type { StoragePagination } from '@mastra/core/storage';
+import type { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
+import type { MastraScorerEntry, ScoreRowData } from '@datawarp/mastra-core/scores';
+import type { StoragePagination } from '@datawarp/mastra-core/storage';
 import type { Context } from '../types';
 import { handleError } from './error';
 

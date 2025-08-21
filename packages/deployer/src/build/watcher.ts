@@ -5,7 +5,7 @@ import { aliasHono } from './plugins/hono-alias';
 import { nodeModulesExtensionResolver } from './plugins/node-modules-extension-resolver';
 import { tsConfigPaths } from './plugins/tsconfig-paths';
 import { bundleExternals } from './analyze';
-import { noopLogger } from '@mastra/core/logger';
+import { noopLogger } from '@datawarp/mastra-core/logger';
 
 export async function getInputOptions(
   entryFile: string,

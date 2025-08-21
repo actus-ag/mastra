@@ -1,6 +1,6 @@
 import { openai } from '@ai-sdk/openai';
-import { Mastra } from '@mastra/core';
-import { Agent } from '@mastra/core/agent';
+import { Mastra } from '@datawarp/mastra-core';
+import { Agent } from '@datawarp/mastra-core/agent';
 import { PgVector } from '@mastra/pg';
 import { createVectorQueryTool, MDocument } from '@mastra/rag';
 import { embedMany } from 'ai';

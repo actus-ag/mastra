@@ -1,9 +1,9 @@
 import { v4 as uuid } from '@lukeed/uuid';
 import { useNavigate } from 'react-router';
-import { ChatThreads } from '@mastra/playground-ui';
+import { ChatThreads } from '@datawarp/mastra-playground-ui';
 
 import { useDeleteThread } from '@/hooks/use-memory';
-import { StorageThreadType } from '@mastra/core/memory';
+import { StorageThreadType } from '@datawarp/mastra-core/memory';
 
 export function AgentSidebar({
   agentId,

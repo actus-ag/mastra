@@ -1,7 +1,7 @@
-import type { MastraMessageContentV2, MastraMessageV2 } from '@mastra/core/agent';
-import type { StorageThreadType, MastraMessageV1 } from '@mastra/core/memory';
-import type { ScoreRowData, ScoringSource } from '@mastra/core/scores';
-import { MastraStorage } from '@mastra/core/storage';
+import type { MastraMessageContentV2, MastraMessageV2 } from '@datawarp/mastra-core/agent';
+import type { StorageThreadType, MastraMessageV1 } from '@datawarp/mastra-core/memory';
+import type { ScoreRowData, ScoringSource } from '@datawarp/mastra-core/scores';
+import { MastraStorage } from '@datawarp/mastra-core/storage';
 import type {
   TABLE_NAMES,
   StorageColumn,
@@ -15,9 +15,9 @@ import type {
   StorageGetTracesArg,
   StoragePagination,
   StorageDomains,
-} from '@mastra/core/storage';
+} from '@datawarp/mastra-core/storage';
 
-import type { WorkflowRunState } from '@mastra/core/workflows';
+import type { WorkflowRunState } from '@datawarp/mastra-core/workflows';
 import { Redis } from '@upstash/redis';
 import { StoreLegacyEvalsUpstash } from './domains/legacy-evals';
 import { StoreMemoryUpstash } from './domains/memory';

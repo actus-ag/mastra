@@ -12,12 +12,12 @@ Mastraのエージェントは、会話履歴を保存し、関連情報を思�
 メモリを有効にするには、単に`Memory`クラスをインスタンス化し、エージェントの設定に渡すだけです。また、メモリパッケージをインストールする必要があります：
 
 ```bash npm2yarn copy
-npm install @mastra/memory@latest
+npm install @datawarp/mastra-memory@latest
 ```
 
 ```typescript
-import { Agent } from "@mastra/core/agent";
-import { Memory } from "@mastra/memory";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { Memory } from "@datawarp/mastra-memory";
 import { openai } from "@ai-sdk/openai";
 
 // 基本的なメモリのセットアップ

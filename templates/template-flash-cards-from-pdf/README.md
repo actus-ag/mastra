@@ -356,7 +356,7 @@ To modify or extend this template:
 
 ## Dependencies
 
-- `@mastra/core`: Core Mastra framework
+- `@datawarp/mastra-core`: Core Mastra framework
 - `@ai-sdk/openai`: OpenAI integration for content analysis and generation
 - `@aws-sdk/client-s3`: S3 cloud storage for educational images
 - `ai`: AI SDK for DALL-E 3 image generation

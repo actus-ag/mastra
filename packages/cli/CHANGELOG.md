@@ -44,10 +44,10 @@
 - Updated dependencies [3b5fec7]
 - Updated dependencies [a8f129d]
 - Updated dependencies [6dfc4a6]
-  - @mastra/mcp@0.10.12
-  - @mastra/core@0.14.0
-  - @mastra/deployer@0.14.0
-  - @mastra/loggers@0.10.7
+  - @datawarp/mastra-mcp@0.10.12
+  - @datawarp/mastra-core@0.14.0
+  - @datawarp/mastra-deployer@0.14.0
+  - @datawarp/mastra-loggers@0.10.7
 
 ## 0.10.22-alpha.6
 
@@ -56,10 +56,10 @@
 - 03997ae: Update peerdeps
 - Updated dependencies [03997ae]
 - Updated dependencies [03997ae]
-  - @mastra/loggers@0.10.7-alpha.0
-  - @mastra/mcp@0.10.12-alpha.2
-  - @mastra/deployer@0.14.0-alpha.7
-  - @mastra/core@0.14.0-alpha.7
+  - @datawarp/mastra-loggers@0.10.7-alpha.0
+  - @datawarp/mastra-mcp@0.10.12-alpha.2
+  - @datawarp/mastra-deployer@0.14.0-alpha.7
+  - @datawarp/mastra-core@0.14.0-alpha.7
 
 ## 0.10.22-alpha.5
 
@@ -70,8 +70,8 @@
 - Updated dependencies [481751d]
 - Updated dependencies [194e395]
 - Updated dependencies [a9916bd]
-  - @mastra/core@0.14.0-alpha.6
-  - @mastra/deployer@0.14.0-alpha.6
+  - @datawarp/mastra-core@0.14.0-alpha.6
+  - @datawarp/mastra-deployer@0.14.0-alpha.6
 
 ## 0.10.22-alpha.4
 
@@ -104,9 +104,9 @@
 - Updated dependencies [195eabb]
 - Updated dependencies [33eb340]
 - Updated dependencies [b78b95b]
-  - @mastra/core@0.14.0-alpha.4
-  - @mastra/deployer@0.14.0-alpha.4
-  - @mastra/mcp@0.10.12-alpha.1
+  - @datawarp/mastra-core@0.14.0-alpha.4
+  - @datawarp/mastra-deployer@0.14.0-alpha.4
+  - @datawarp/mastra-mcp@0.10.12-alpha.1
 
 ## 0.10.22-alpha.2
 
@@ -117,8 +117,8 @@
 - Updated dependencies [fd3a3eb]
 - Updated dependencies [04dcd66]
 - Updated dependencies [a8f129d]
-  - @mastra/core@0.14.0-alpha.3
-  - @mastra/deployer@0.14.0-alpha.3
+  - @datawarp/mastra-core@0.14.0-alpha.3
+  - @datawarp/mastra-deployer@0.14.0-alpha.3
 
 ## 0.10.22-alpha.1
 
@@ -136,9 +136,9 @@
 - Updated dependencies [a722c0b]
 - Updated dependencies [3b5fec7]
 - Updated dependencies [6dfc4a6]
-  - @mastra/mcp@0.10.12-alpha.0
-  - @mastra/deployer@0.14.0-alpha.1
-  - @mastra/core@0.14.0-alpha.1
+  - @datawarp/mastra-mcp@0.10.12-alpha.0
+  - @datawarp/mastra-deployer@0.14.0-alpha.1
+  - @datawarp/mastra-core@0.14.0-alpha.1
 
 ## 0.10.22-alpha.0
 
@@ -147,8 +147,8 @@
 - 97c1d5e: Add new `scorers` subcommand for managing scorers.
   Refactor cli to be more modular.
 - Updated dependencies [c30bca8]
-  - @mastra/core@0.13.3-alpha.0
-  - @mastra/deployer@0.13.3-alpha.0
+  - @datawarp/mastra-core@0.13.3-alpha.0
+  - @datawarp/mastra-deployer@0.13.3-alpha.0
 
 ## 0.10.21
 
@@ -178,9 +178,9 @@
 - Updated dependencies [121a3f8]
 - Updated dependencies [ce04175]
 - Updated dependencies [ec510e7]
-  - @mastra/core@0.13.2
-  - @mastra/deployer@0.13.2
-  - @mastra/mcp@0.10.11
+  - @datawarp/mastra-core@0.13.2
+  - @datawarp/mastra-deployer@0.13.2
+  - @datawarp/mastra-mcp@0.10.11
 
 ## 0.10.21-alpha.2
 
@@ -201,9 +201,9 @@
 - Updated dependencies [121a3f8]
 - Updated dependencies [ce04175]
 - Updated dependencies [ec510e7]
-  - @mastra/core@0.13.2-alpha.2
-  - @mastra/deployer@0.13.2-alpha.2
-  - @mastra/mcp@0.10.11-alpha.0
+  - @datawarp/mastra-core@0.13.2-alpha.2
+  - @datawarp/mastra-deployer@0.13.2-alpha.2
+  - @datawarp/mastra-mcp@0.10.11-alpha.0
 
 ## 0.10.21-alpha.1
 
@@ -212,8 +212,8 @@
 - 63449d0: Change the globbing of tools to exclude test files. Files inside `__tests__` directory and files with `.test.` or `.spec.` in their file name are now excluded from bundling.
 - Updated dependencies [2e74797]
 - Updated dependencies [63449d0]
-  - @mastra/core@0.13.2-alpha.1
-  - @mastra/deployer@0.13.2-alpha.1
+  - @datawarp/mastra-core@0.13.2-alpha.1
+  - @datawarp/mastra-deployer@0.13.2-alpha.1
 
 ## 0.10.21-alpha.0
 
@@ -224,24 +224,24 @@
 - Updated dependencies [dd94a26]
 - Updated dependencies [3ba6772]
 - Updated dependencies [2fff911]
-  - @mastra/core@0.13.2-alpha.0
-  - @mastra/deployer@0.13.2-alpha.0
+  - @datawarp/mastra-core@0.13.2-alpha.0
+  - @datawarp/mastra-deployer@0.13.2-alpha.0
 
 ## 0.10.20
 
 ### Patch Changes
 
 - Updated dependencies [cd0042e]
-  - @mastra/core@0.13.1
-  - @mastra/deployer@0.13.1
+  - @datawarp/mastra-core@0.13.1
+  - @datawarp/mastra-deployer@0.13.1
 
 ## 0.10.20-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [cd0042e]
-  - @mastra/core@0.13.1-alpha.0
-  - @mastra/deployer@0.13.1-alpha.0
+  - @datawarp/mastra-core@0.13.1-alpha.0
+  - @datawarp/mastra-deployer@0.13.1-alpha.0
 
 ## 0.10.19
 
@@ -268,10 +268,10 @@
 - Updated dependencies [5d377e5]
 - Updated dependencies [1fb812e]
 - Updated dependencies [35c5798]
-  - @mastra/core@0.13.0
-  - @mastra/deployer@0.13.0
-  - @mastra/mcp@0.10.10
-  - @mastra/loggers@0.10.6
+  - @datawarp/mastra-core@0.13.0
+  - @datawarp/mastra-deployer@0.13.0
+  - @datawarp/mastra-mcp@0.10.10
+  - @datawarp/mastra-loggers@0.10.6
 
 ## 0.10.19-alpha.2
 
@@ -285,10 +285,10 @@
 - Updated dependencies [2871020]
 - Updated dependencies [4a406ec]
 - Updated dependencies [5d377e5]
-  - @mastra/core@0.13.0-alpha.2
-  - @mastra/deployer@0.13.0-alpha.2
-  - @mastra/loggers@0.10.6-alpha.0
-  - @mastra/mcp@0.10.10-alpha.0
+  - @datawarp/mastra-core@0.13.0-alpha.2
+  - @datawarp/mastra-deployer@0.13.0-alpha.2
+  - @datawarp/mastra-loggers@0.10.6-alpha.0
+  - @datawarp/mastra-mcp@0.10.10-alpha.0
 
 ## 0.10.19-alpha.1
 
@@ -301,8 +301,8 @@
 - Updated dependencies [b0e43c1]
 - Updated dependencies [1fb812e]
 - Updated dependencies [35c5798]
-  - @mastra/deployer@0.13.0-alpha.1
-  - @mastra/core@0.13.0-alpha.1
+  - @datawarp/mastra-deployer@0.13.0-alpha.1
+  - @datawarp/mastra-core@0.13.0-alpha.1
 
 ## 0.10.19-alpha.0
 
@@ -311,8 +311,8 @@
 - Updated dependencies [94f4812]
 - Updated dependencies [e202b82]
 - Updated dependencies [e00f6a0]
-  - @mastra/core@0.12.2-alpha.0
-  - @mastra/deployer@0.12.2-alpha.0
+  - @datawarp/mastra-core@0.12.2-alpha.0
+  - @datawarp/mastra-deployer@0.12.2-alpha.0
 
 ## 0.10.18
 
@@ -345,9 +345,9 @@
 - Updated dependencies [bff87f7]
 - Updated dependencies [07fe7a2]
 - Updated dependencies [b4a8df0]
-  - @mastra/core@0.12.1
-  - @mastra/mcp@0.10.9
-  - @mastra/deployer@0.12.1
+  - @datawarp/mastra-core@0.12.1
+  - @datawarp/mastra-mcp@0.10.9
+  - @datawarp/mastra-deployer@0.12.1
 
 ## 0.10.17-alpha.1
 
@@ -355,8 +355,8 @@
 
 - 9862477: Install specific ai v4 deps when scaffolding a project
 - Updated dependencies [d0d9500]
-  - @mastra/core@0.12.1-alpha.1
-  - @mastra/deployer@0.12.1-alpha.1
+  - @datawarp/mastra-core@0.12.1-alpha.1
+  - @datawarp/mastra-deployer@0.12.1-alpha.1
 
 ## 0.10.17-alpha.0
 
@@ -375,9 +375,9 @@
 - Updated dependencies [bff87f7]
 - Updated dependencies [07fe7a2]
 - Updated dependencies [b4a8df0]
-  - @mastra/core@0.12.1-alpha.0
-  - @mastra/mcp@0.10.9-alpha.0
-  - @mastra/deployer@0.12.1-alpha.0
+  - @datawarp/mastra-core@0.12.1-alpha.0
+  - @datawarp/mastra-mcp@0.10.9-alpha.0
+  - @datawarp/mastra-deployer@0.12.1-alpha.0
 
 ## 0.10.16
 
@@ -422,10 +422,10 @@
 - Updated dependencies [b8efbb9]
 - Updated dependencies [71466e7]
 - Updated dependencies [0c99fbe]
-  - @mastra/core@0.12.0
-  - @mastra/deployer@0.12.0
-  - @mastra/loggers@0.10.5
-  - @mastra/mcp@0.10.8
+  - @datawarp/mastra-core@0.12.0
+  - @datawarp/mastra-deployer@0.12.0
+  - @datawarp/mastra-loggers@0.10.5
+  - @datawarp/mastra-mcp@0.10.8
 
 ## 0.10.16-alpha.3
 
@@ -433,10 +433,10 @@
 
 - f42c4c2: update peer deps for packages to latest core range
 - Updated dependencies [f42c4c2]
-  - @mastra/deployer@0.12.0-alpha.5
-  - @mastra/loggers@0.10.5-alpha.0
-  - @mastra/mcp@0.10.8-alpha.0
-  - @mastra/core@0.12.0-alpha.5
+  - @datawarp/mastra-deployer@0.12.0-alpha.5
+  - @datawarp/mastra-loggers@0.10.5-alpha.0
+  - @datawarp/mastra-mcp@0.10.8-alpha.0
+  - @datawarp/mastra-core@0.12.0-alpha.5
 
 ## 0.10.16-alpha.2
 
@@ -455,8 +455,8 @@
 - Updated dependencies [b8efbb9]
 - Updated dependencies [71466e7]
 - Updated dependencies [0c99fbe]
-  - @mastra/core@0.12.0-alpha.2
-  - @mastra/deployer@0.12.0-alpha.2
+  - @datawarp/mastra-core@0.12.0-alpha.2
+  - @datawarp/mastra-deployer@0.12.0-alpha.2
 
 ## 0.10.16-alpha.1
 
@@ -466,8 +466,8 @@
 - Updated dependencies [e0f73c6]
 - Updated dependencies [cda801d]
 - Updated dependencies [a77c823]
-  - @mastra/core@0.12.0-alpha.1
-  - @mastra/deployer@0.12.0-alpha.1
+  - @datawarp/mastra-core@0.12.0-alpha.1
+  - @datawarp/mastra-deployer@0.12.0-alpha.1
 
 ## 0.10.16-alpha.0
 
@@ -491,8 +491,8 @@
 - Updated dependencies [fc92d80]
 - Updated dependencies [23a6a7c]
 - Updated dependencies [09bca64]
-  - @mastra/core@0.12.0-alpha.0
-  - @mastra/deployer@0.12.0-alpha.0
+  - @datawarp/mastra-core@0.12.0-alpha.0
+  - @datawarp/mastra-deployer@0.12.0-alpha.0
 
 ## 0.10.15
 
@@ -554,8 +554,8 @@
 - Updated dependencies [cbddd18]
 - Updated dependencies [7ba91fa]
 - Updated dependencies [15ce274]
-  - @mastra/core@0.11.0
-  - @mastra/deployer@0.11.0
+  - @datawarp/mastra-core@0.11.0
+  - @datawarp/mastra-deployer@0.11.0
 
 ## 0.10.14-alpha.3
 
@@ -602,8 +602,8 @@
 - Updated dependencies [dcd4802]
 - Updated dependencies [7ba91fa]
 - Updated dependencies [15ce274]
-  - @mastra/core@0.11.0-alpha.2
-  - @mastra/deployer@0.11.0-alpha.2
+  - @datawarp/mastra-core@0.11.0-alpha.2
+  - @datawarp/mastra-deployer@0.11.0-alpha.2
 
 ## 0.10.14-alpha.1
 
@@ -614,8 +614,8 @@
 - cf8d497: factorize tabs component between cloud and core
 - 80692d5: refactor: sharing only the UI and not data fetching for traces
 - Updated dependencies [7983e53]
-  - @mastra/deployer@0.11.0-alpha.1
-  - @mastra/core@0.11.0-alpha.1
+  - @datawarp/mastra-deployer@0.11.0-alpha.1
+  - @datawarp/mastra-core@0.11.0-alpha.1
 
 ## 0.10.14-alpha.0
 
@@ -630,8 +630,8 @@
 - Updated dependencies [7827943]
 - Updated dependencies [bf1e7e7]
 - Updated dependencies [cbddd18]
-  - @mastra/deployer@0.11.0-alpha.0
-  - @mastra/core@0.11.0-alpha.0
+  - @datawarp/mastra-deployer@0.11.0-alpha.0
+  - @datawarp/mastra-core@0.11.0-alpha.0
 
 ## 0.10.13
 
@@ -672,8 +672,8 @@
 - Updated dependencies [c22a91f]
 - Updated dependencies [f7403ab]
 - Updated dependencies [6c89d7f]
-  - @mastra/deployer@0.10.15
-  - @mastra/core@0.10.15
+  - @datawarp/mastra-deployer@0.10.15
+  - @datawarp/mastra-core@0.10.15
 
 ## 0.10.13-alpha.2
 
@@ -697,8 +697,8 @@
 - Updated dependencies [cf3a184]
 - Updated dependencies [fe4bbd4]
 - Updated dependencies [d6bfd60]
-  - @mastra/core@0.10.15-alpha.1
-  - @mastra/deployer@0.10.15-alpha.1
+  - @datawarp/mastra-core@0.10.15-alpha.1
+  - @datawarp/mastra-deployer@0.10.15-alpha.1
 
 ## 0.10.13-alpha.0
 
@@ -726,8 +726,8 @@
 - Updated dependencies [c22a91f]
 - Updated dependencies [f7403ab]
 - Updated dependencies [6c89d7f]
-  - @mastra/deployer@0.10.15-alpha.0
-  - @mastra/core@0.10.15-alpha.0
+  - @datawarp/mastra-deployer@0.10.15-alpha.0
+  - @datawarp/mastra-core@0.10.15-alpha.0
 
 ## 0.10.12
 
@@ -739,8 +739,8 @@
 - Updated dependencies [b4a9811]
 - Updated dependencies [4d5583d]
 - Updated dependencies [53e3f58]
-  - @mastra/core@0.10.12
-  - @mastra/deployer@0.10.12
+  - @datawarp/mastra-core@0.10.12
+  - @datawarp/mastra-deployer@0.10.12
 
 ## 0.10.12-alpha.0
 
@@ -751,8 +751,8 @@
 - 53e3f58: Add support for custom instrumentation files
 - Updated dependencies [b4a9811]
 - Updated dependencies [53e3f58]
-  - @mastra/core@0.10.12-alpha.0
-  - @mastra/deployer@0.10.12-alpha.0
+  - @datawarp/mastra-core@0.10.12-alpha.0
+  - @datawarp/mastra-deployer@0.10.12-alpha.0
 
 ## 0.10.11
 
@@ -793,9 +793,9 @@
 - Updated dependencies [40cd025]
 - Updated dependencies [f36e4f1]
 - Updated dependencies [7f6e403]
-  - @mastra/core@0.10.11
-  - @mastra/deployer@0.10.11
-  - @mastra/mcp@0.10.6
+  - @datawarp/mastra-core@0.10.11
+  - @datawarp/mastra-deployer@0.10.11
+  - @datawarp/mastra-mcp@0.10.6
 
 ## 0.10.11-alpha.3
 
@@ -809,9 +809,9 @@
 - Updated dependencies [0c85311]
 - Updated dependencies [c0ba5e2]
 - Updated dependencies [cb16baf]
-  - @mastra/core@0.10.11-alpha.3
-  - @mastra/mcp@0.10.6-alpha.1
-  - @mastra/deployer@0.10.11-alpha.3
+  - @datawarp/mastra-core@0.10.11-alpha.3
+  - @datawarp/mastra-mcp@0.10.6-alpha.1
+  - @datawarp/mastra-deployer@0.10.11-alpha.3
 
 ## 0.10.11-alpha.2
 
@@ -831,9 +831,9 @@
 - Updated dependencies [ab3bbff]
 - Updated dependencies [565cc0c]
 - Updated dependencies [18ca936]
-  - @mastra/core@0.10.11-alpha.2
-  - @mastra/deployer@0.10.11-alpha.2
-  - @mastra/mcp@0.10.6-alpha.0
+  - @datawarp/mastra-core@0.10.11-alpha.2
+  - @datawarp/mastra-deployer@0.10.11-alpha.2
+  - @datawarp/mastra-mcp@0.10.6-alpha.0
 
 ## 0.10.11-alpha.1
 
@@ -841,8 +841,8 @@
 
 - a7a836a: Highlight send event button
 - Updated dependencies [7f6e403]
-  - @mastra/core@0.10.11-alpha.1
-  - @mastra/deployer@0.10.11-alpha.1
+  - @datawarp/mastra-core@0.10.11-alpha.1
+  - @datawarp/mastra-deployer@0.10.11-alpha.1
 
 ## 0.10.11-alpha.0
 
@@ -858,8 +858,8 @@
 - Updated dependencies [b790fd1]
 - Updated dependencies [d7ed04d]
 - Updated dependencies [f36e4f1]
-  - @mastra/deployer@0.10.11-alpha.0
-  - @mastra/core@0.10.11-alpha.0
+  - @datawarp/mastra-deployer@0.10.11-alpha.0
+  - @datawarp/mastra-core@0.10.11-alpha.0
 
 ## 0.10.10
 
@@ -871,16 +871,16 @@
 - Updated dependencies [25bf999]
 - Updated dependencies [6997af1]
 - Updated dependencies [4d3fbdf]
-  - @mastra/deployer@0.10.10
-  - @mastra/loggers@0.10.3
-  - @mastra/core@0.10.10
+  - @datawarp/mastra-deployer@0.10.10
+  - @datawarp/mastra-loggers@0.10.3
+  - @datawarp/mastra-core@0.10.10
 
 ## 0.10.10-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [25bf999]
-  - @mastra/loggers@0.10.3-alpha.0
+  - @datawarp/mastra-loggers@0.10.3-alpha.0
 
 ## 0.10.10-alpha.1
 
@@ -888,8 +888,8 @@
 
 - 6997af1: add send event to server, deployer, client-js and playground-ui
 - Updated dependencies [6997af1]
-  - @mastra/deployer@0.10.10-alpha.1
-  - @mastra/core@0.10.10-alpha.1
+  - @datawarp/mastra-deployer@0.10.10-alpha.1
+  - @datawarp/mastra-core@0.10.10-alpha.1
 
 ## 0.10.10-alpha.0
 
@@ -898,8 +898,8 @@
 - 4d3fbdf: Return tool error message rather than throw when a tool error happens for agent and tool playground page.
 - Updated dependencies [6e13b80]
 - Updated dependencies [4d3fbdf]
-  - @mastra/deployer@0.10.10-alpha.0
-  - @mastra/core@0.10.10-alpha.0
+  - @datawarp/mastra-deployer@0.10.10-alpha.0
+  - @datawarp/mastra-core@0.10.10-alpha.0
 
 ## 0.10.9
 
@@ -937,8 +937,8 @@
 - Updated dependencies [7e801dd]
 - Updated dependencies [b7852ed]
 - Updated dependencies [6320a61]
-  - @mastra/core@0.10.9
-  - @mastra/deployer@0.10.9
+  - @datawarp/mastra-core@0.10.9
+  - @datawarp/mastra-deployer@0.10.9
 
 ## 0.10.9-alpha.0
 
@@ -976,8 +976,8 @@
 - Updated dependencies [7e801dd]
 - Updated dependencies [b7852ed]
 - Updated dependencies [6320a61]
-  - @mastra/core@0.10.9-alpha.0
-  - @mastra/deployer@0.10.9-alpha.0
+  - @datawarp/mastra-core@0.10.9-alpha.0
+  - @datawarp/mastra-deployer@0.10.9-alpha.0
 
 ## 0.10.8
 
@@ -988,8 +988,8 @@
 - Updated dependencies [3e04487]
 - Updated dependencies [a344ac7]
 - Updated dependencies [dc4ca0a]
-  - @mastra/core@0.10.8
-  - @mastra/deployer@0.10.8
+  - @datawarp/mastra-core@0.10.8
+  - @datawarp/mastra-deployer@0.10.8
 
 ## 0.10.8-alpha.1
 
@@ -998,8 +998,8 @@
 - Updated dependencies [b8f16b2]
 - Updated dependencies [3e04487]
 - Updated dependencies [dc4ca0a]
-  - @mastra/core@0.10.8-alpha.1
-  - @mastra/deployer@0.10.8-alpha.1
+  - @datawarp/mastra-core@0.10.8-alpha.1
+  - @datawarp/mastra-deployer@0.10.8-alpha.1
 
 ## 0.10.8-alpha.0
 
@@ -1007,8 +1007,8 @@
 
 - a344ac7: Fix tool streaming in agent network
 - Updated dependencies [a344ac7]
-  - @mastra/deployer@0.10.8-alpha.0
-  - @mastra/core@0.10.8-alpha.0
+  - @datawarp/mastra-deployer@0.10.8-alpha.0
+  - @datawarp/mastra-core@0.10.8-alpha.0
 
 ## 0.10.7
 
@@ -1050,17 +1050,17 @@
 - Updated dependencies [4efcfa0]
 - Updated dependencies [0e17048]
 - Updated dependencies [dc93062]
-  - @mastra/deployer@0.10.7
-  - @mastra/mcp@0.10.5
-  - @mastra/core@0.10.7
+  - @datawarp/mastra-deployer@0.10.7
+  - @datawarp/mastra-mcp@0.10.5
+  - @datawarp/mastra-core@0.10.7
 
 ## 0.10.7-alpha.5
 
 ### Patch Changes
 
 - f9b4350: fix icons not showing on all agents
-  - @mastra/core@0.10.7-alpha.5
-  - @mastra/deployer@0.10.7-alpha.5
+  - @datawarp/mastra-core@0.10.7-alpha.5
+  - @datawarp/mastra-deployer@0.10.7-alpha.5
 
 ## 0.10.7-alpha.4
 
@@ -1068,9 +1068,9 @@
 
 - Updated dependencies [a8b194f]
 - Updated dependencies [dc93062]
-  - @mastra/core@0.10.7-alpha.4
-  - @mastra/mcp@0.10.5-alpha.2
-  - @mastra/deployer@0.10.7-alpha.4
+  - @datawarp/mastra-core@0.10.7-alpha.4
+  - @datawarp/mastra-mcp@0.10.5-alpha.2
+  - @datawarp/mastra-deployer@0.10.7-alpha.4
 
 ## 0.10.7-alpha.3
 
@@ -1080,8 +1080,8 @@
 - Updated dependencies [502fe05]
 - Updated dependencies [10a4f10]
 - Updated dependencies [4efcfa0]
-  - @mastra/core@0.10.7-alpha.3
-  - @mastra/deployer@0.10.7-alpha.3
+  - @datawarp/mastra-core@0.10.7-alpha.3
+  - @datawarp/mastra-deployer@0.10.7-alpha.3
 
 ## 0.10.7-alpha.2
 
@@ -1105,9 +1105,9 @@
 - Updated dependencies [5d74aab]
 - Updated dependencies [17903a3]
 - Updated dependencies [144eb0b]
-  - @mastra/deployer@0.10.7-alpha.2
-  - @mastra/mcp@0.10.5-alpha.1
-  - @mastra/core@0.10.7-alpha.2
+  - @datawarp/mastra-deployer@0.10.7-alpha.2
+  - @datawarp/mastra-mcp@0.10.5-alpha.1
+  - @datawarp/mastra-core@0.10.7-alpha.2
 
 ## 0.10.7-alpha.1
 
@@ -1120,9 +1120,9 @@
 - Updated dependencies [4fb0cc2]
 - Updated dependencies [d2a7a31]
 - Updated dependencies [0e17048]
-  - @mastra/core@0.10.7-alpha.1
-  - @mastra/mcp@0.10.5-alpha.0
-  - @mastra/deployer@0.10.7-alpha.1
+  - @datawarp/mastra-core@0.10.7-alpha.1
+  - @datawarp/mastra-mcp@0.10.5-alpha.0
+  - @datawarp/mastra-deployer@0.10.7-alpha.1
 
 ## 0.10.7-alpha.0
 
@@ -1132,8 +1132,8 @@
 - Updated dependencies [d8f2d19]
 - Updated dependencies [9d52b17]
 - Updated dependencies [8ba1b51]
-  - @mastra/core@0.10.7-alpha.0
-  - @mastra/deployer@0.10.7-alpha.0
+  - @datawarp/mastra-core@0.10.7-alpha.0
+  - @datawarp/mastra-deployer@0.10.7-alpha.0
 
 ## 0.10.6
 
@@ -1194,9 +1194,9 @@
 - Updated dependencies [751c894]
 - Updated dependencies [577ce3a]
 - Updated dependencies [9260b3a]
-  - @mastra/core@0.10.6
-  - @mastra/deployer@0.10.6
-  - @mastra/mcp@0.10.4
+  - @datawarp/mastra-core@0.10.6
+  - @datawarp/mastra-deployer@0.10.6
+  - @datawarp/mastra-mcp@0.10.4
 
 ## 0.10.6-alpha.7
 
@@ -1205,8 +1205,8 @@
 - b29c802: Remove open browser
 - Updated dependencies [bd1674f]
 - Updated dependencies [69f76f7]
-  - @mastra/mcp@0.10.4-alpha.1
-  - @mastra/deployer@0.10.6-alpha.5
+  - @datawarp/mastra-mcp@0.10.4-alpha.1
+  - @datawarp/mastra-deployer@0.10.6-alpha.5
 
 ## 0.10.6-alpha.6
 
@@ -1216,8 +1216,8 @@
 - Updated dependencies [12a95fc]
 - Updated dependencies [51264a5]
 - Updated dependencies [8e6f677]
-  - @mastra/core@0.10.6-alpha.5
-  - @mastra/deployer@0.10.6-alpha.5
+  - @datawarp/mastra-core@0.10.6-alpha.5
+  - @datawarp/mastra-deployer@0.10.6-alpha.5
 
 ## 0.10.6-alpha.5
 
@@ -1227,8 +1227,8 @@
 - Updated dependencies [79b9909]
 - Updated dependencies [084f6aa]
 - Updated dependencies [9589624]
-  - @mastra/deployer@0.10.6-alpha.4
-  - @mastra/core@0.10.6-alpha.4
+  - @datawarp/mastra-deployer@0.10.6-alpha.4
+  - @datawarp/mastra-core@0.10.6-alpha.4
 
 ## 0.10.6-alpha.4
 
@@ -1249,8 +1249,8 @@
 - Updated dependencies [c28ed65]
 - Updated dependencies [d70c420]
 - Updated dependencies [2a16996]
-  - @mastra/deployer@0.10.6-alpha.3
-  - @mastra/core@0.10.6-alpha.3
+  - @datawarp/mastra-deployer@0.10.6-alpha.3
+  - @datawarp/mastra-core@0.10.6-alpha.3
 
 ## 0.10.6-alpha.3
 
@@ -1258,8 +1258,8 @@
 
 - Updated dependencies [4b0f8a6]
 - Updated dependencies [ec7f824]
-  - @mastra/core@0.10.6-alpha.2
-  - @mastra/deployer@0.10.6-alpha.2
+  - @datawarp/mastra-core@0.10.6-alpha.2
+  - @datawarp/mastra-deployer@0.10.6-alpha.2
 
 ## 0.10.6-alpha.2
 
@@ -1274,8 +1274,8 @@
 - Updated dependencies [751c894]
 - Updated dependencies [577ce3a]
 - Updated dependencies [9260b3a]
-  - @mastra/deployer@0.10.6-alpha.1
-  - @mastra/core@0.10.6-alpha.1
+  - @datawarp/mastra-deployer@0.10.6-alpha.1
+  - @datawarp/mastra-core@0.10.6-alpha.1
 
 ## 0.10.6-alpha.1
 
@@ -1304,9 +1304,9 @@
 - Updated dependencies [36f1c36]
 - Updated dependencies [10d352e]
 - Updated dependencies [53d3c37]
-  - @mastra/core@0.10.6-alpha.0
-  - @mastra/deployer@0.10.6-alpha.0
-  - @mastra/mcp@0.10.4-alpha.0
+  - @datawarp/mastra-core@0.10.6-alpha.0
+  - @datawarp/mastra-deployer@0.10.6-alpha.0
+  - @datawarp/mastra-mcp@0.10.4-alpha.0
 
 ## 0.10.5
 
@@ -1318,8 +1318,8 @@
 - Updated dependencies [8725d02]
 - Updated dependencies [13c97f9]
 - Updated dependencies [105f872]
-  - @mastra/deployer@0.10.5
-  - @mastra/core@0.10.5
+  - @datawarp/mastra-deployer@0.10.5
+  - @datawarp/mastra-core@0.10.5
 
 ## 0.10.4
 
@@ -1333,7 +1333,7 @@
 
 - b4ee346: Reintroduce --env flag for mastra dev, build
 - f1f1f1b: Add basic filtering capabilities to logs
-- 125b1c6: Updated @mastra/mcp-docs-server configuration in create-mastra for Windows - the cmd /c workaround for Cursor/Windsurf is no longer required
+- 125b1c6: Updated @datawarp/mastra-mcp-docs-server configuration in create-mastra for Windows - the cmd /c workaround for Cursor/Windsurf is no longer required
 - 82090c1: Add pagination to logs
 - d1ed912: dependencies updates:
   - Updated dependency [`dotenv@^16.5.0` ↗︎](https://www.npmjs.com/package/dotenv/v/16.5.0) (from `^16.4.7`, in `dependencies`)
@@ -1341,7 +1341,7 @@
   - Updated dependency [`zod@^3.25.56` ↗︎](https://www.npmjs.com/package/zod/v/3.25.56) (from `^3.24.3`, in `dependencies`)
 - 1ccccff: dependencies updates:
   - Updated dependency [`zod@^3.25.56` ↗︎](https://www.npmjs.com/package/zod/v/3.25.56) (from `^3.24.3`, in `dependencies`)
-- 26f0031: Removed @latest from @mastra/mcp-docs-server scaffolded configuration for Windsurf/Cursor/VSCode. There is an npx caching issue that causes @latest to break the MCP server for many users, and for now removing @latest makes it work. We will debug this more but for now having a working docs server is more important than it updating every time users start their IDE.
+- 26f0031: Removed @latest from @datawarp/mastra-mcp-docs-server scaffolded configuration for Windsurf/Cursor/VSCode. There is an npx caching issue that causes @latest to break the MCP server for many users, and for now removing @latest makes it work. We will debug this more but for now having a working docs server is more important than it updating every time users start their IDE.
 - d7d41f0: Fix mastra dev cmd
 - 8f60de4: fix workflow output when the schema is a primitive
 - 4c4ee43: [fix] recreate resizable sidebar on workflow
@@ -1371,10 +1371,10 @@
 - Updated dependencies [f7f8293]
 - Updated dependencies [48eddb9]
 - Updated dependencies [66f4424]
-  - @mastra/core@0.10.4
-  - @mastra/deployer@0.10.4
-  - @mastra/loggers@0.10.2
-  - @mastra/mcp@0.10.3
+  - @datawarp/mastra-core@0.10.4
+  - @datawarp/mastra-deployer@0.10.4
+  - @datawarp/mastra-loggers@0.10.2
+  - @datawarp/mastra-mcp@0.10.3
 
 ## 0.10.4-alpha.5
 
@@ -1382,23 +1382,23 @@
 
 - 4c4ee43: [fix] recreate resizable sidebar on workflow
 - Updated dependencies [66f4424]
-  - @mastra/loggers@0.10.2-alpha.1
+  - @datawarp/mastra-loggers@0.10.2-alpha.1
 
 ## 0.10.4-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [925ab94]
-  - @mastra/core@0.10.4-alpha.3
-  - @mastra/deployer@0.10.4-alpha.3
+  - @datawarp/mastra-core@0.10.4-alpha.3
+  - @datawarp/mastra-deployer@0.10.4-alpha.3
 
 ## 0.10.4-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [48eddb9]
-  - @mastra/core@0.10.4-alpha.2
-  - @mastra/deployer@0.10.4-alpha.2
+  - @datawarp/mastra-core@0.10.4-alpha.2
+  - @datawarp/mastra-deployer@0.10.4-alpha.2
 
 ## 0.10.4-alpha.2
 
@@ -1412,12 +1412,12 @@
 ### Patch Changes
 
 - 8e1994a: Fix bug where port auto increments on restart
-- 125b1c6: Updated @mastra/mcp-docs-server configuration in create-mastra for Windows - the cmd /c workaround for Cursor/Windsurf is no longer required
+- 125b1c6: Updated @datawarp/mastra-mcp-docs-server configuration in create-mastra for Windows - the cmd /c workaround for Cursor/Windsurf is no longer required
 - 1ccccff: dependencies updates:
   - Updated dependency [`zod@^3.25.56` ↗︎](https://www.npmjs.com/package/zod/v/3.25.56) (from `^3.24.3`, in `dependencies`)
 - 1ccccff: dependencies updates:
   - Updated dependency [`zod@^3.25.56` ↗︎](https://www.npmjs.com/package/zod/v/3.25.56) (from `^3.24.3`, in `dependencies`)
-- 26f0031: Removed @latest from @mastra/mcp-docs-server scaffolded configuration for Windsurf/Cursor/VSCode. There is an npx caching issue that causes @latest to break the MCP server for many users, and for now removing @latest makes it work. We will debug this more but for now having a working docs server is more important than it updating every time users start their IDE.
+- 26f0031: Removed @latest from @datawarp/mastra-mcp-docs-server scaffolded configuration for Windsurf/Cursor/VSCode. There is an npx caching issue that causes @latest to break the MCP server for many users, and for now removing @latest makes it work. We will debug this more but for now having a working docs server is more important than it updating every time users start their IDE.
 - Updated dependencies [d90c49f]
 - Updated dependencies [1ccccff]
 - Updated dependencies [1ccccff]
@@ -1429,9 +1429,9 @@
 - Updated dependencies [f1309d3]
 - Updated dependencies [bebd27c]
 - Updated dependencies [f7f8293]
-  - @mastra/deployer@0.10.4-alpha.1
-  - @mastra/core@0.10.4-alpha.1
-  - @mastra/mcp@0.10.3-alpha.0
+  - @datawarp/mastra-deployer@0.10.4-alpha.1
+  - @datawarp/mastra-core@0.10.4-alpha.1
+  - @datawarp/mastra-mcp@0.10.3-alpha.0
 
 ## 0.10.4-alpha.0
 
@@ -1459,25 +1459,25 @@
 - Updated dependencies [1b443fd]
 - Updated dependencies [ce97900]
 - Updated dependencies [14a2566]
-  - @mastra/core@0.10.4-alpha.0
-  - @mastra/deployer@0.10.4-alpha.0
-  - @mastra/loggers@0.10.2-alpha.0
+  - @datawarp/mastra-core@0.10.4-alpha.0
+  - @datawarp/mastra-deployer@0.10.4-alpha.0
+  - @datawarp/mastra-loggers@0.10.2-alpha.0
 
 ## 0.10.3
 
 ### Patch Changes
 
 - Updated dependencies [2b0fc7e]
-  - @mastra/core@0.10.3
-  - @mastra/deployer@0.10.3
+  - @datawarp/mastra-core@0.10.3
+  - @datawarp/mastra-deployer@0.10.3
 
 ## 0.10.3-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [2b0fc7e]
-  - @mastra/core@0.10.3-alpha.0
-  - @mastra/deployer@0.10.3-alpha.0
+  - @datawarp/mastra-core@0.10.3-alpha.0
+  - @datawarp/mastra-deployer@0.10.3-alpha.0
 
 ## 0.10.2
 
@@ -1523,10 +1523,10 @@
 - Updated dependencies [12b7002]
 - Updated dependencies [f0d559f]
 - Updated dependencies [2901125]
-  - @mastra/core@0.10.2
-  - @mastra/mcp@0.10.2
-  - @mastra/deployer@0.10.2
-  - @mastra/loggers@0.10.1
+  - @datawarp/mastra-core@0.10.2
+  - @datawarp/mastra-mcp@0.10.2
+  - @datawarp/mastra-deployer@0.10.2
+  - @datawarp/mastra-loggers@0.10.1
 
 ## 0.10.2-alpha.9
 
@@ -1535,16 +1535,16 @@
 - 90e96de: Fix: prevent default flag from triggering interactive prompt
 - Updated dependencies [37643b8]
 - Updated dependencies [79d5145]
-  - @mastra/core@0.10.2-alpha.8
-  - @mastra/deployer@0.10.2-alpha.8
+  - @datawarp/mastra-core@0.10.2-alpha.8
+  - @datawarp/mastra-deployer@0.10.2-alpha.8
 
 ## 0.10.2-alpha.8
 
 ### Patch Changes
 
 - a399086: Bumping because we forgot to
-  - @mastra/deployer@0.10.2-alpha.7
-  - @mastra/core@0.10.2-alpha.7
+  - @datawarp/mastra-deployer@0.10.2-alpha.7
+  - @datawarp/mastra-core@0.10.2-alpha.7
 
 ## 0.10.2-alpha.7
 
@@ -1556,8 +1556,8 @@
 - Updated dependencies [99fd6cf]
 - Updated dependencies [1fcc048]
 - Updated dependencies [8dc94d8]
-  - @mastra/core@0.10.2-alpha.6
-  - @mastra/deployer@0.10.2-alpha.6
+  - @datawarp/mastra-core@0.10.2-alpha.6
+  - @datawarp/mastra-deployer@0.10.2-alpha.6
 
 ## 0.10.2-alpha.6
 
@@ -1569,8 +1569,8 @@
 - Updated dependencies [1b5fc55]
 - Updated dependencies [add596e]
 - Updated dependencies [ecebbeb]
-  - @mastra/core@0.10.2-alpha.5
-  - @mastra/deployer@0.10.2-alpha.5
+  - @datawarp/mastra-core@0.10.2-alpha.5
+  - @datawarp/mastra-deployer@0.10.2-alpha.5
 
 ## 0.10.2-alpha.5
 
@@ -1584,8 +1584,8 @@
 
 - Updated dependencies [c5bf1ce]
 - Updated dependencies [12b7002]
-  - @mastra/core@0.10.2-alpha.4
-  - @mastra/deployer@0.10.2-alpha.4
+  - @datawarp/mastra-core@0.10.2-alpha.4
+  - @datawarp/mastra-deployer@0.10.2-alpha.4
 
 ## 0.10.2-alpha.3
 
@@ -1597,8 +1597,8 @@
 - Updated dependencies [195c428]
 - Updated dependencies [f73e11b]
 - Updated dependencies [f946acf]
-  - @mastra/core@0.10.2-alpha.3
-  - @mastra/deployer@0.10.2-alpha.3
+  - @datawarp/mastra-core@0.10.2-alpha.3
+  - @datawarp/mastra-deployer@0.10.2-alpha.3
 
 ## 0.10.2-alpha.2
 
@@ -1611,10 +1611,10 @@
 - Updated dependencies [1e8bb40]
 - Updated dependencies [4187ed4]
 - Updated dependencies [f0d559f]
-  - @mastra/deployer@0.10.2-alpha.2
-  - @mastra/core@0.10.2-alpha.2
-  - @mastra/loggers@0.10.1-alpha.0
-  - @mastra/mcp@0.10.2-alpha.1
+  - @datawarp/mastra-deployer@0.10.2-alpha.2
+  - @datawarp/mastra-core@0.10.2-alpha.2
+  - @datawarp/mastra-loggers@0.10.1-alpha.0
+  - @datawarp/mastra-mcp@0.10.2-alpha.1
 
 ## 0.10.2-alpha.1
 
@@ -1622,8 +1622,8 @@
 
 - Updated dependencies [ee77e78]
 - Updated dependencies [2901125]
-  - @mastra/core@0.10.2-alpha.1
-  - @mastra/deployer@0.10.2-alpha.1
+  - @datawarp/mastra-core@0.10.2-alpha.1
+  - @datawarp/mastra-deployer@0.10.2-alpha.1
 
 ## 0.10.2-alpha.0
 
@@ -1635,9 +1635,9 @@
 - 9a31c09: Highlight steps in nested workflows on workflow graph
 - Updated dependencies [592a2db]
 - Updated dependencies [e5dc18d]
-  - @mastra/core@0.10.2-alpha.0
-  - @mastra/mcp@0.10.2-alpha.0
-  - @mastra/deployer@0.10.2-alpha.0
+  - @datawarp/mastra-core@0.10.2-alpha.0
+  - @datawarp/mastra-mcp@0.10.2-alpha.0
+  - @datawarp/mastra-deployer@0.10.2-alpha.0
 
 ## 0.10.1
 
@@ -1671,9 +1671,9 @@
 - Updated dependencies [d6a759b]
 - Updated dependencies [fe68410]
 - Updated dependencies [6015bdf]
-  - @mastra/core@0.10.1
-  - @mastra/deployer@0.10.1
-  - @mastra/mcp@0.10.1
+  - @datawarp/mastra-core@0.10.1
+  - @datawarp/mastra-deployer@0.10.1
+  - @datawarp/mastra-mcp@0.10.1
 
 ## 0.10.1-alpha.6
 
@@ -1698,8 +1698,8 @@
 - 3c2dba5: add workflow run list
 - 33f1c64: revamp the experience for workflows
 - Updated dependencies [d70b807]
-  - @mastra/core@0.10.1-alpha.3
-  - @mastra/deployer@0.10.1-alpha.3
+  - @datawarp/mastra-core@0.10.1-alpha.3
+  - @datawarp/mastra-deployer@0.10.1-alpha.3
 
 ## 0.10.1-alpha.3
 
@@ -1708,8 +1708,8 @@
 - 6015bdf: Leverage defaultAgentStreamOption, defaultAgentGenerateOption in playground
 - Updated dependencies [fe68410]
 - Updated dependencies [6015bdf]
-  - @mastra/deployer@0.10.1-alpha.2
-  - @mastra/core@0.10.1-alpha.2
+  - @datawarp/mastra-deployer@0.10.1-alpha.2
+  - @datawarp/mastra-core@0.10.1-alpha.2
 
 ## 0.10.1-alpha.2
 
@@ -1727,9 +1727,9 @@
 - Updated dependencies [38aee50]
 - Updated dependencies [5c41100]
 - Updated dependencies [d6a759b]
-  - @mastra/mcp@0.10.1-alpha.0
-  - @mastra/core@0.10.1-alpha.1
-  - @mastra/deployer@0.10.1-alpha.1
+  - @datawarp/mastra-mcp@0.10.1-alpha.0
+  - @datawarp/mastra-core@0.10.1-alpha.1
+  - @datawarp/mastra-deployer@0.10.1-alpha.1
 
 ## 0.10.1-alpha.1
 
@@ -1744,15 +1744,15 @@
 - 35bb6a3: Allow undefined temprature, topP model setting from playground
 - Updated dependencies [6d16390]
 - Updated dependencies [1e4a421]
-  - @mastra/deployer@0.10.1-alpha.0
-  - @mastra/core@0.10.1-alpha.0
+  - @datawarp/mastra-deployer@0.10.1-alpha.0
+  - @datawarp/mastra-core@0.10.1-alpha.0
 
 ## 0.10.0
 
 ### Minor Changes
 
-- 83da932: Move @mastra/core to peerdeps
-- 5eb5a99: Remove pino from @mastra/core into @mastra/loggers
+- 83da932: Move @datawarp/mastra-core to peerdeps
+- 5eb5a99: Remove pino from @datawarp/mastra-core into @datawarp/mastra-loggers
 - 0dcb9f0: Memory breaking changes: storage, vector, and embedder are now required. Working memory text streaming has been removed, only tool calling is supported for working memory updates now. Default settings have changed (lastMessages: 40->10, semanticRecall: true->false, threads.generateTitle: true->false)
 
 ### Patch Changes
@@ -1799,10 +1799,10 @@
 - Updated dependencies [a7292b0]
 - Updated dependencies [0dcb9f0]
 - Updated dependencies [2672a05]
-  - @mastra/deployer@0.10.0
-  - @mastra/core@0.10.0
-  - @mastra/mcp@0.10.0
-  - @mastra/loggers@0.10.0
+  - @datawarp/mastra-deployer@0.10.0
+  - @datawarp/mastra-core@0.10.0
+  - @datawarp/mastra-mcp@0.10.0
+  - @datawarp/mastra-loggers@0.10.0
 
 ## 0.7.0-alpha.2
 
@@ -1810,14 +1810,14 @@
 
 - 47776b4: update the mcp pages
 - Updated dependencies [129b5f5]
-  - @mastra/loggers@0.2.0-alpha.2
+  - @datawarp/mastra-loggers@0.2.0-alpha.2
 
 ## 0.7.0-alpha.1
 
 ### Minor Changes
 
-- 83da932: Move @mastra/core to peerdeps
-- 5eb5a99: Remove pino from @mastra/core into @mastra/loggers
+- 83da932: Move @datawarp/mastra-core to peerdeps
+- 5eb5a99: Remove pino from @datawarp/mastra-core into @datawarp/mastra-loggers
 - 0dcb9f0: Memory breaking changes: storage, vector, and embedder are now required. Working memory text streaming has been removed, only tool calling is supported for working memory updates now. Default settings have changed (lastMessages: 40->10, semanticRecall: true->false, threads.generateTitle: true->false)
 
 ### Patch Changes
@@ -1846,10 +1846,10 @@
 - Updated dependencies [b2ae5aa]
 - Updated dependencies [a7292b0]
 - Updated dependencies [0dcb9f0]
-  - @mastra/deployer@0.4.0-alpha.1
-  - @mastra/core@0.10.0-alpha.1
-  - @mastra/mcp@0.6.0-alpha.1
-  - @mastra/loggers@0.2.0-alpha.1
+  - @datawarp/mastra-deployer@0.4.0-alpha.1
+  - @datawarp/mastra-core@0.10.0-alpha.1
+  - @datawarp/mastra-mcp@0.6.0-alpha.1
+  - @datawarp/mastra-loggers@0.2.0-alpha.1
 
 ## 0.6.4-alpha.0
 
@@ -1871,9 +1871,9 @@
 - Updated dependencies [48e5910]
 - Updated dependencies [23f258c]
 - Updated dependencies [2672a05]
-  - @mastra/core@0.9.5-alpha.0
-  - @mastra/deployer@0.3.5-alpha.0
-  - @mastra/mcp@0.5.1-alpha.0
+  - @datawarp/mastra-core@0.9.5-alpha.0
+  - @datawarp/mastra-deployer@0.3.5-alpha.0
+  - @datawarp/mastra-mcp@0.5.1-alpha.0
 
 ## 0.6.3
 
@@ -1900,8 +1900,8 @@
 - Updated dependencies [6fa1ad1]
 - Updated dependencies [c28d7a0]
 - Updated dependencies [edf1e88]
-  - @mastra/core@0.9.4
-  - @mastra/deployer@0.3.4
+  - @datawarp/mastra-core@0.9.4
+  - @datawarp/mastra-deployer@0.3.4
 
 ## 0.6.3-alpha.6
 
@@ -1909,8 +1909,8 @@
 
 - Updated dependencies [5c70b8a]
 - Updated dependencies [3e9c131]
-  - @mastra/deployer@0.3.4-alpha.4
-  - @mastra/core@0.9.4-alpha.4
+  - @datawarp/mastra-deployer@0.3.4-alpha.4
+  - @datawarp/mastra-core@0.9.4-alpha.4
 
 ## 0.6.3-alpha.5
 
@@ -1926,15 +1926,15 @@
 - Updated dependencies [c3bd795]
 - Updated dependencies [da082f8]
 - Updated dependencies [a5810ce]
-  - @mastra/core@0.9.4-alpha.3
-  - @mastra/deployer@0.3.4-alpha.3
+  - @datawarp/mastra-core@0.9.4-alpha.3
+  - @datawarp/mastra-deployer@0.3.4-alpha.3
 
 ## 0.6.3-alpha.3
 
 ### Patch Changes
 
 - cebc50a: "mastra lint now supports comments in tsconfig.json"
-  - @mastra/deployer@0.3.4-alpha.2
+  - @datawarp/mastra-deployer@0.3.4-alpha.2
 
 ## 0.6.3-alpha.2
 
@@ -1944,8 +1944,8 @@
 - Updated dependencies [03c40d1]
 - Updated dependencies [973e5ac]
 - Updated dependencies [9e1eff5]
-  - @mastra/core@0.9.4-alpha.2
-  - @mastra/deployer@0.3.4-alpha.2
+  - @datawarp/mastra-core@0.9.4-alpha.2
+  - @datawarp/mastra-deployer@0.3.4-alpha.2
 
 ## 0.6.3-alpha.1
 
@@ -1955,8 +1955,8 @@
 - Updated dependencies [6fa1ad1]
 - Updated dependencies [c28d7a0]
 - Updated dependencies [edf1e88]
-  - @mastra/core@0.9.4-alpha.1
-  - @mastra/deployer@0.3.4-alpha.1
+  - @datawarp/mastra-core@0.9.4-alpha.1
+  - @datawarp/mastra-deployer@0.3.4-alpha.1
 
 ## 0.6.3-alpha.0
 
@@ -1967,8 +1967,8 @@
 - Updated dependencies [cb1f698]
 - Updated dependencies [daf942f]
 - Updated dependencies [0b8b868]
-  - @mastra/deployer@0.3.4-alpha.0
-  - @mastra/core@0.9.4-alpha.0
+  - @datawarp/mastra-deployer@0.3.4-alpha.0
+  - @datawarp/mastra-core@0.9.4-alpha.0
 
 ## 0.6.2
 
@@ -1989,8 +1989,8 @@
 - Updated dependencies [b5d2de0]
 - Updated dependencies [644f8ad]
 - Updated dependencies [70dbf51]
-  - @mastra/core@0.9.3
-  - @mastra/deployer@0.3.3
+  - @datawarp/mastra-core@0.9.3
+  - @datawarp/mastra-deployer@0.3.3
 
 ## 0.6.2-alpha.1
 
@@ -2002,8 +2002,8 @@
 - Updated dependencies [ca0dc88]
 - Updated dependencies [9cd1a46]
 - Updated dependencies [70dbf51]
-  - @mastra/core@0.9.3-alpha.1
-  - @mastra/deployer@0.3.3-alpha.1
+  - @datawarp/mastra-core@0.9.3-alpha.1
+  - @datawarp/mastra-deployer@0.3.3-alpha.1
 
 ## 0.6.2-alpha.0
 
@@ -2014,8 +2014,8 @@
 - Updated dependencies [526c570]
 - Updated dependencies [b5d2de0]
 - Updated dependencies [644f8ad]
-  - @mastra/core@0.9.3-alpha.0
-  - @mastra/deployer@0.3.3-alpha.0
+  - @datawarp/mastra-core@0.9.3-alpha.0
+  - @datawarp/mastra-deployer@0.3.3-alpha.0
 
 ## 0.6.1
 
@@ -2058,8 +2058,8 @@
 - Updated dependencies [3a5f1e1]
 - Updated dependencies [51e6923]
 - Updated dependencies [8398d89]
-  - @mastra/deployer@0.3.2
-  - @mastra/core@0.9.2
+  - @datawarp/mastra-deployer@0.3.2
+  - @datawarp/mastra-core@0.9.2
 
 ## 0.6.1-alpha.6
 
@@ -2071,8 +2071,8 @@
 - Updated dependencies [7d8b7c7]
 - Updated dependencies [3a5f1e1]
 - Updated dependencies [8398d89]
-  - @mastra/core@0.9.2-alpha.6
-  - @mastra/deployer@0.3.2-alpha.6
+  - @datawarp/mastra-core@0.9.2-alpha.6
+  - @datawarp/mastra-deployer@0.3.2-alpha.6
 
 ## 0.6.1-alpha.5
 
@@ -2086,8 +2086,8 @@
 - Updated dependencies [8607972]
 - Updated dependencies [7eeb2bc]
 - Updated dependencies [fba031f]
-  - @mastra/core@0.9.2-alpha.5
-  - @mastra/deployer@0.3.2-alpha.5
+  - @datawarp/mastra-core@0.9.2-alpha.5
+  - @datawarp/mastra-deployer@0.3.2-alpha.5
 
 ## 0.6.1-alpha.4
 
@@ -2097,8 +2097,8 @@
 - 8ea9d17: Pinned Posthog-node which is broken in the most recent version of that package https://github.com/PostHog/posthog-js-lite/issues/491
 - Updated dependencies [ccef9f9]
 - Updated dependencies [51e6923]
-  - @mastra/core@0.9.2-alpha.4
-  - @mastra/deployer@0.3.2-alpha.4
+  - @datawarp/mastra-core@0.9.2-alpha.4
+  - @datawarp/mastra-deployer@0.3.2-alpha.4
 
 ## 0.6.1-alpha.3
 
@@ -2111,16 +2111,16 @@
 - Updated dependencies [967b41c]
 - Updated dependencies [4155f47]
 - Updated dependencies [17826a9]
-  - @mastra/core@0.9.2-alpha.3
-  - @mastra/deployer@0.3.2-alpha.3
+  - @datawarp/mastra-core@0.9.2-alpha.3
+  - @datawarp/mastra-deployer@0.3.2-alpha.3
 
 ## 0.6.1-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [26738f4]
-  - @mastra/core@0.9.2-alpha.2
-  - @mastra/deployer@0.3.2-alpha.2
+  - @datawarp/mastra-core@0.9.2-alpha.2
+  - @datawarp/mastra-deployer@0.3.2-alpha.2
 
 ## 0.6.1-alpha.1
 
@@ -2129,8 +2129,8 @@
 - 2429c74: Add get workflow runs api to client-js
 - Updated dependencies [254f5c3]
 - Updated dependencies [b804723]
-  - @mastra/deployer@0.3.2-alpha.1
-  - @mastra/core@0.9.2-alpha.1
+  - @datawarp/mastra-deployer@0.3.2-alpha.1
+  - @datawarp/mastra-core@0.9.2-alpha.1
 
 ## 0.6.1-alpha.0
 
@@ -2140,8 +2140,8 @@
   Return serializedStepGraph from vNext workflow
   Use serializedStepGraph in vNext workflow graph
 - Updated dependencies [0097d50]
-  - @mastra/core@0.9.2-alpha.0
-  - @mastra/deployer@0.3.2-alpha.0
+  - @datawarp/mastra-core@0.9.2-alpha.0
+  - @datawarp/mastra-deployer@0.3.2-alpha.0
 
 ## 0.6.0
 
@@ -2195,8 +2195,8 @@
 - Updated dependencies [2d4001d]
 - Updated dependencies [c71013a]
 - Updated dependencies [1d3b1cd]
-  - @mastra/deployer@0.3.1
-  - @mastra/core@0.9.1
+  - @datawarp/mastra-deployer@0.3.1
+  - @datawarp/mastra-core@0.9.1
 
 ## 0.6.0-alpha.11
 
@@ -2209,32 +2209,32 @@
 ### Patch Changes
 
 - Updated dependencies [2d17c73]
-  - @mastra/core@0.9.1-alpha.8
-  - @mastra/deployer@0.3.1-alpha.8
+  - @datawarp/mastra-core@0.9.1-alpha.8
+  - @datawarp/mastra-deployer@0.3.1-alpha.8
 
 ## 0.6.0-alpha.9
 
 ### Patch Changes
 
 - Updated dependencies [1d3b1cd]
-  - @mastra/core@0.9.1-alpha.7
-  - @mastra/deployer@0.3.1-alpha.7
+  - @datawarp/mastra-core@0.9.1-alpha.7
+  - @datawarp/mastra-deployer@0.3.1-alpha.7
 
 ## 0.6.0-alpha.8
 
 ### Patch Changes
 
 - Updated dependencies [c23a81c]
-  - @mastra/core@0.9.1-alpha.6
-  - @mastra/deployer@0.3.1-alpha.6
+  - @datawarp/mastra-core@0.9.1-alpha.6
+  - @datawarp/mastra-deployer@0.3.1-alpha.6
 
 ## 0.6.0-alpha.7
 
 ### Patch Changes
 
 - Updated dependencies [3e7b69d]
-  - @mastra/core@0.9.1-alpha.5
-  - @mastra/deployer@0.3.1-alpha.5
+  - @datawarp/mastra-core@0.9.1-alpha.5
+  - @datawarp/mastra-deployer@0.3.1-alpha.5
 
 ## 0.6.0-alpha.6
 
@@ -2250,8 +2250,8 @@
 - 5a66ced: add click on trace row
 - Updated dependencies [e4943b8]
 - Updated dependencies [479f490]
-  - @mastra/core@0.9.1-alpha.4
-  - @mastra/deployer@0.3.1-alpha.4
+  - @datawarp/mastra-core@0.9.1-alpha.4
+  - @datawarp/mastra-deployer@0.3.1-alpha.4
 
 ## 0.6.0-alpha.4
 
@@ -2267,8 +2267,8 @@
 - 0c3c4f4: Playground routing model settings for AgentNetworks
 - 1700eca: fixing overflow on agent traces
 - Updated dependencies [6262bd5]
-  - @mastra/deployer@0.3.1-alpha.3
-  - @mastra/core@0.9.1-alpha.3
+  - @datawarp/mastra-deployer@0.3.1-alpha.3
+  - @datawarp/mastra-core@0.9.1-alpha.3
 
 ## 0.6.0-alpha.2
 
@@ -2281,8 +2281,8 @@
 - Updated dependencies [405b63d]
 - Updated dependencies [61e92f5]
 - Updated dependencies [c71013a]
-  - @mastra/core@0.9.1-alpha.2
-  - @mastra/deployer@0.3.1-alpha.2
+  - @datawarp/mastra-core@0.9.1-alpha.2
+  - @datawarp/mastra-deployer@0.3.1-alpha.2
 
 ## 0.6.0-alpha.1
 
@@ -2313,16 +2313,16 @@
 - Updated dependencies [530ced1]
 - Updated dependencies [611aa4a]
 - Updated dependencies [2d4001d]
-  - @mastra/deployer@0.3.1-alpha.1
-  - @mastra/core@0.9.1-alpha.1
+  - @datawarp/mastra-deployer@0.3.1-alpha.1
+  - @datawarp/mastra-core@0.9.1-alpha.1
 
 ## 0.5.1-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [81fb7f6]
-  - @mastra/core@0.9.1-alpha.0
-  - @mastra/deployer@0.3.1-alpha.0
+  - @datawarp/mastra-core@0.9.1-alpha.0
+  - @datawarp/mastra-deployer@0.3.1-alpha.0
 
 ## 0.5.0
 
@@ -2362,8 +2362,8 @@
 - Updated dependencies [735ead7]
 - Updated dependencies [16a8648]
 - Updated dependencies [6f92295]
-  - @mastra/deployer@0.3.0
-  - @mastra/core@0.9.0
+  - @datawarp/mastra-deployer@0.3.0
+  - @datawarp/mastra-core@0.9.0
 
 ## 0.5.0-alpha.9
 
@@ -2383,16 +2383,16 @@
 - Updated dependencies [9c26508]
 - Updated dependencies [0f4eae3]
 - Updated dependencies [16a8648]
-  - @mastra/deployer@0.3.0-alpha.9
-  - @mastra/core@0.9.0-alpha.8
+  - @datawarp/mastra-deployer@0.3.0-alpha.9
+  - @datawarp/mastra-core@0.9.0-alpha.8
 
 ## 0.5.0-alpha.8
 
 ### Patch Changes
 
 - Updated dependencies [71d9444]
-  - @mastra/core@0.9.0-alpha.7
-  - @mastra/deployer@0.3.0-alpha.8
+  - @datawarp/mastra-core@0.9.0-alpha.7
+  - @datawarp/mastra-deployer@0.3.0-alpha.8
 
 ## 0.5.0-alpha.7
 
@@ -2402,8 +2402,8 @@
 - Updated dependencies [157c741]
 - Updated dependencies [63fe16a]
 - Updated dependencies [735ead7]
-  - @mastra/core@0.9.0-alpha.6
-  - @mastra/deployer@0.3.0-alpha.7
+  - @datawarp/mastra-core@0.9.0-alpha.6
+  - @datawarp/mastra-deployer@0.3.0-alpha.7
 
 ## 0.5.0-alpha.6
 
@@ -2411,8 +2411,8 @@
 
 - Updated dependencies [08bb78e]
 - Updated dependencies [3f9d151]
-  - @mastra/core@0.9.0-alpha.5
-  - @mastra/deployer@0.3.0-alpha.6
+  - @datawarp/mastra-core@0.9.0-alpha.5
+  - @datawarp/mastra-deployer@0.3.0-alpha.6
 
 ## 0.5.0-alpha.5
 
@@ -2420,8 +2420,8 @@
 
 - 7e92011: Include tools with deployment builds
 - Updated dependencies [7e92011]
-  - @mastra/deployer@0.3.0-alpha.5
-  - @mastra/core@0.9.0-alpha.4
+  - @datawarp/mastra-deployer@0.3.0-alpha.5
+  - @datawarp/mastra-core@0.9.0-alpha.4
 
 ## 0.5.0-alpha.4
 
@@ -2432,16 +2432,16 @@
 ### Patch Changes
 
 - Updated dependencies [fe3ae4d]
-  - @mastra/deployer@0.3.0-alpha.4
-  - @mastra/core@0.9.0-alpha.3
+  - @datawarp/mastra-deployer@0.3.0-alpha.4
+  - @datawarp/mastra-core@0.9.0-alpha.3
 
 ## 0.4.10-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [9ee4293]
-  - @mastra/core@0.8.4-alpha.2
-  - @mastra/deployer@0.2.10-alpha.3
+  - @datawarp/mastra-core@0.8.4-alpha.2
+  - @datawarp/mastra-deployer@0.2.10-alpha.3
 
 ## 0.4.10-alpha.2
 
@@ -2449,7 +2449,7 @@
 
 - 7184dc5: Add support to pass project path directly to create-mastra and improve tag handling
 - Updated dependencies [3527610]
-  - @mastra/deployer@0.2.10-alpha.2
+  - @datawarp/mastra-deployer@0.2.10-alpha.2
 
 ## 0.4.10-alpha.1
 
@@ -2457,16 +2457,16 @@
 
 - Updated dependencies [8a8a73b]
 - Updated dependencies [6f92295]
-  - @mastra/core@0.8.4-alpha.1
-  - @mastra/deployer@0.2.10-alpha.1
+  - @datawarp/mastra-core@0.8.4-alpha.1
+  - @datawarp/mastra-deployer@0.2.10-alpha.1
 
 ## 0.4.10-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [03f3cd0]
-  - @mastra/core@0.8.4-alpha.0
-  - @mastra/deployer@0.2.10-alpha.0
+  - @datawarp/mastra-core@0.8.4-alpha.0
+  - @datawarp/mastra-deployer@0.2.10-alpha.0
 
 ## 0.4.9
 
@@ -2488,8 +2488,8 @@
 - Updated dependencies [1ebbfbf]
 - Updated dependencies [67aff42]
 - Updated dependencies [7f1b291]
-  - @mastra/core@0.8.3
-  - @mastra/deployer@0.2.9
+  - @datawarp/mastra-core@0.8.3
+  - @datawarp/mastra-deployer@0.2.9
 
 ## 0.4.9-alpha.7
 
@@ -2497,22 +2497,22 @@
 
 - d72318f: Refactored the evals table to use the DS tables
 - Updated dependencies [d72318f]
-  - @mastra/core@0.8.3-alpha.5
-  - @mastra/deployer@0.2.9-alpha.7
+  - @datawarp/mastra-core@0.8.3-alpha.5
+  - @datawarp/mastra-deployer@0.2.9-alpha.7
 
 ## 0.4.9-alpha.6
 
 ### Patch Changes
 
 - Updated dependencies [67aff42]
-  - @mastra/deployer@0.2.9-alpha.6
+  - @datawarp/mastra-deployer@0.2.9-alpha.6
 
 ## 0.4.9-alpha.5
 
 ### Patch Changes
 
 - Updated dependencies [9f6f6dd]
-  - @mastra/deployer@0.2.9-alpha.5
+  - @datawarp/mastra-deployer@0.2.9-alpha.5
 
 ## 0.4.9-alpha.4
 
@@ -2522,24 +2522,24 @@
 - ea0725e: make sure to put the geoip argument in the right spot (client init) and not at the properties level
 - Updated dependencies [1ebbfbf]
 - Updated dependencies [7f1b291]
-  - @mastra/deployer@0.2.9-alpha.4
-  - @mastra/core@0.8.3-alpha.4
+  - @datawarp/mastra-deployer@0.2.9-alpha.4
+  - @datawarp/mastra-core@0.8.3-alpha.4
 
 ## 0.4.9-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [10a8caf]
-  - @mastra/core@0.8.3-alpha.3
-  - @mastra/deployer@0.2.9-alpha.3
+  - @datawarp/mastra-core@0.8.3-alpha.3
+  - @datawarp/mastra-deployer@0.2.9-alpha.3
 
 ## 0.4.9-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [0bcc862]
-  - @mastra/core@0.8.3-alpha.2
-  - @mastra/deployer@0.2.9-alpha.2
+  - @datawarp/mastra-core@0.8.3-alpha.2
+  - @datawarp/mastra-deployer@0.2.9-alpha.2
 
 ## 0.4.9-alpha.1
 
@@ -2550,16 +2550,16 @@
 - c8fe5f0: change the header of all pages with the one from the DS
 - Updated dependencies [32e7b71]
 - Updated dependencies [37bb612]
-  - @mastra/deployer@0.2.9-alpha.1
-  - @mastra/core@0.8.3-alpha.1
+  - @datawarp/mastra-deployer@0.2.9-alpha.1
+  - @datawarp/mastra-core@0.8.3-alpha.1
 
 ## 0.4.9-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [359b089]
-  - @mastra/core@0.8.3-alpha.0
-  - @mastra/deployer@0.2.9-alpha.0
+  - @datawarp/mastra-core@0.8.3-alpha.0
+  - @datawarp/mastra-deployer@0.2.9-alpha.0
 
 ## 0.4.8
 
@@ -2571,8 +2571,8 @@
 - Updated dependencies [a06aadc]
 - Updated dependencies [ae6c5ce]
 - Updated dependencies [94cd5c1]
-  - @mastra/core@0.8.2
-  - @mastra/deployer@0.2.8
+  - @datawarp/mastra-core@0.8.2
+  - @datawarp/mastra-deployer@0.2.8
 
 ## 0.4.8-alpha.1
 
@@ -2580,7 +2580,7 @@
 
 - df5989d: Correct playground model setting maxSteps reset value
 - Updated dependencies [94cd5c1]
-  - @mastra/deployer@0.2.8-alpha.1
+  - @datawarp/mastra-deployer@0.2.8-alpha.1
 
 ## 0.4.8-alpha.0
 
@@ -2590,8 +2590,8 @@
   Show number of steps on workflows table
 - Updated dependencies [a06aadc]
 - Updated dependencies [ae6c5ce]
-  - @mastra/core@0.8.2-alpha.0
-  - @mastra/deployer@0.2.8-alpha.0
+  - @datawarp/mastra-core@0.8.2-alpha.0
+  - @datawarp/mastra-deployer@0.2.8-alpha.0
 
 ## 0.4.7
 
@@ -2601,8 +2601,8 @@
 - 8fdb414: Custom mastra server cors config
 - Updated dependencies [99e2998]
 - Updated dependencies [8fdb414]
-  - @mastra/core@0.8.1
-  - @mastra/deployer@0.2.7
+  - @datawarp/mastra-core@0.8.1
+  - @datawarp/mastra-deployer@0.2.7
 
 ## 0.4.7-alpha.0
 
@@ -2612,8 +2612,8 @@
 - 8fdb414: Custom mastra server cors config
 - Updated dependencies [99e2998]
 - Updated dependencies [8fdb414]
-  - @mastra/core@0.8.1-alpha.0
-  - @mastra/deployer@0.2.7-alpha.0
+  - @datawarp/mastra-core@0.8.1-alpha.0
+  - @datawarp/mastra-deployer@0.2.7-alpha.0
 
 ## 0.4.6
 
@@ -2692,8 +2692,8 @@
 - Updated dependencies [8076ecf]
 - Updated dependencies [8df4a77]
 - Updated dependencies [304397c]
-  - @mastra/core@0.8.0
-  - @mastra/deployer@0.2.6
+  - @datawarp/mastra-core@0.8.0
+  - @datawarp/mastra-deployer@0.2.6
 
 ## 0.4.5-alpha.11
 
@@ -2714,8 +2714,8 @@
 - 055c4ea: Fix traces page showing e.reduce error
 - Updated dependencies [2135c81]
 - Updated dependencies [8df4a77]
-  - @mastra/deployer@0.2.6-alpha.10
-  - @mastra/core@0.8.0-alpha.8
+  - @datawarp/mastra-deployer@0.2.6-alpha.10
+  - @datawarp/mastra-core@0.8.0-alpha.8
 
 ## 0.4.5-alpha.9
 
@@ -2724,8 +2724,8 @@
 - 40720d3: Add support for webcontainers like stackblitz
 - Updated dependencies [3c6ae54]
 - Updated dependencies [febc8a6]
-  - @mastra/deployer@0.2.6-alpha.9
-  - @mastra/core@0.8.0-alpha.7
+  - @datawarp/mastra-deployer@0.2.6-alpha.9
+  - @datawarp/mastra-core@0.8.0-alpha.7
 
 ## 0.4.5-alpha.8
 
@@ -2738,8 +2738,8 @@
 - d16ed18: Make playground-ui dynamic forms better
 - Updated dependencies [4c65a57]
 - Updated dependencies [a3f0e90]
-  - @mastra/deployer@0.2.6-alpha.8
-  - @mastra/core@0.8.0-alpha.6
+  - @datawarp/mastra-deployer@0.2.6-alpha.8
+  - @datawarp/mastra-core@0.8.0-alpha.6
 
 ## 0.4.5-alpha.7
 
@@ -2747,23 +2747,23 @@
 
 - 9f529a4: enable geoip in system properties for analytics
 - Updated dependencies [93875ed]
-  - @mastra/core@0.8.0-alpha.5
-  - @mastra/deployer@0.2.6-alpha.7
+  - @datawarp/mastra-core@0.8.0-alpha.5
+  - @datawarp/mastra-deployer@0.2.6-alpha.7
 
 ## 0.4.5-alpha.6
 
 ### Patch Changes
 
 - Updated dependencies [d7e08e8]
-  - @mastra/core@0.8.0-alpha.4
-  - @mastra/deployer@0.2.6-alpha.6
+  - @datawarp/mastra-core@0.8.0-alpha.4
+  - @datawarp/mastra-deployer@0.2.6-alpha.6
 
 ## 0.4.5-alpha.5
 
 ### Patch Changes
 
 - Updated dependencies [32ba03c]
-  - @mastra/deployer@0.2.6-alpha.5
+  - @datawarp/mastra-deployer@0.2.6-alpha.5
 
 ## 0.4.5-alpha.4
 
@@ -2784,15 +2784,15 @@
 - Updated dependencies [6330967]
 - Updated dependencies [8393832]
 - Updated dependencies [6330967]
-  - @mastra/core@0.8.0-alpha.3
-  - @mastra/deployer@0.2.6-alpha.4
+  - @datawarp/mastra-core@0.8.0-alpha.3
+  - @datawarp/mastra-deployer@0.2.6-alpha.4
 
 ## 0.4.5-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [0deb356]
-  - @mastra/deployer@0.2.6-alpha.3
+  - @datawarp/mastra-deployer@0.2.6-alpha.3
 
 ## 0.4.5-alpha.2
 
@@ -2805,8 +2805,8 @@
 - Updated dependencies [84fe241]
 - Updated dependencies [84fe241]
 - Updated dependencies [99d43b9]
-  - @mastra/core@0.8.0-alpha.2
-  - @mastra/deployer@0.2.6-alpha.2
+  - @datawarp/mastra-core@0.8.0-alpha.2
+  - @datawarp/mastra-deployer@0.2.6-alpha.2
 
 ## 0.4.5-alpha.1
 
@@ -2818,8 +2818,8 @@
 - Updated dependencies [fca3b21]
 - Updated dependencies [0118361]
 - Updated dependencies [619c39d]
-  - @mastra/core@0.8.0-alpha.1
-  - @mastra/deployer@0.2.6-alpha.1
+  - @datawarp/mastra-core@0.8.0-alpha.1
+  - @datawarp/mastra-deployer@0.2.6-alpha.1
 
 ## 0.4.5-alpha.0
 
@@ -2833,8 +2833,8 @@
 - Updated dependencies [cafae83]
 - Updated dependencies [8076ecf]
 - Updated dependencies [304397c]
-  - @mastra/deployer@0.2.6-alpha.0
-  - @mastra/core@0.7.1-alpha.0
+  - @datawarp/mastra-deployer@0.2.6-alpha.0
+  - @datawarp/mastra-core@0.7.1-alpha.0
 
 ## 0.4.4
 
@@ -2860,8 +2860,8 @@
 - Updated dependencies [6530ad1]
 - Updated dependencies [0b496ff]
 - Updated dependencies [27439ad]
-  - @mastra/deployer@0.2.5
-  - @mastra/core@0.7.0
+  - @datawarp/mastra-deployer@0.2.5
+  - @datawarp/mastra-core@0.7.0
 
 ## 0.4.4-alpha.4
 
@@ -2876,8 +2876,8 @@
 - 2134786: Fix traces navigation not working in playground
 - Updated dependencies [b3b34f5]
 - Updated dependencies [a4686e8]
-  - @mastra/core@0.7.0-alpha.3
-  - @mastra/deployer@0.2.5-alpha.3
+  - @datawarp/mastra-core@0.7.0-alpha.3
+  - @datawarp/mastra-deployer@0.2.5-alpha.3
 
 ## 0.4.4-alpha.2
 
@@ -2887,8 +2887,8 @@
 - Updated dependencies [a8bd4cf]
 - Updated dependencies [7a3eeb0]
 - Updated dependencies [6530ad1]
-  - @mastra/core@0.7.0-alpha.2
-  - @mastra/deployer@0.2.5-alpha.2
+  - @datawarp/mastra-core@0.7.0-alpha.2
+  - @datawarp/mastra-deployer@0.2.5-alpha.2
 
 ## 0.4.4-alpha.1
 
@@ -2903,8 +2903,8 @@
 - Updated dependencies [1af25d5]
 - Updated dependencies [0b496ff]
 - Updated dependencies [27439ad]
-  - @mastra/deployer@0.2.5-alpha.1
-  - @mastra/core@0.7.0-alpha.1
+  - @datawarp/mastra-deployer@0.2.5-alpha.1
+  - @datawarp/mastra-core@0.7.0-alpha.1
 
 ## 0.4.4-alpha.0
 
@@ -2913,8 +2913,8 @@
 - e05e7cc: Add origin to cli tracking
 - 3811029: Add identifying header
 - Updated dependencies [b4fbc59]
-  - @mastra/core@0.6.5-alpha.0
-  - @mastra/deployer@0.2.5-alpha.0
+  - @datawarp/mastra-core@0.6.5-alpha.0
+  - @datawarp/mastra-deployer@0.2.5-alpha.0
 
 ## 0.4.3
 
@@ -2937,8 +2937,8 @@
 - Updated dependencies [b56a681]
 - Updated dependencies [85a2461]
 - Updated dependencies [248cb07]
-  - @mastra/deployer@0.2.4
-  - @mastra/core@0.6.4
+  - @datawarp/mastra-deployer@0.2.4
+  - @datawarp/mastra-core@0.6.4
 
 ## 0.4.3-alpha.2
 
@@ -2949,8 +2949,8 @@
 - Updated dependencies [6794797]
 - Updated dependencies [709aa2c]
 - Updated dependencies [85a2461]
-  - @mastra/core@0.6.4-alpha.1
-  - @mastra/deployer@0.2.4-alpha.1
+  - @datawarp/mastra-core@0.6.4-alpha.1
+  - @datawarp/mastra-deployer@0.2.4-alpha.1
 
 ## 0.4.3-alpha.1
 
@@ -2973,8 +2973,8 @@
 - Updated dependencies [95c5745]
 - Updated dependencies [b56a681]
 - Updated dependencies [248cb07]
-  - @mastra/deployer@0.2.4-alpha.0
-  - @mastra/core@0.6.4-alpha.0
+  - @datawarp/mastra-deployer@0.2.4-alpha.0
+  - @datawarp/mastra-core@0.6.4-alpha.0
 
 ## 0.4.2
 
@@ -2983,16 +2983,16 @@
 - 404640e: AgentNetwork changeset
 - Updated dependencies [404640e]
 - Updated dependencies [3bce733]
-  - @mastra/deployer@0.2.3
-  - @mastra/core@0.6.3
+  - @datawarp/mastra-deployer@0.2.3
+  - @datawarp/mastra-core@0.6.3
 
 ## 0.4.2-alpha.1
 
 ### Patch Changes
 
 - Updated dependencies [3bce733]
-  - @mastra/core@0.6.3-alpha.1
-  - @mastra/deployer@0.2.3-alpha.1
+  - @datawarp/mastra-core@0.6.3-alpha.1
+  - @datawarp/mastra-deployer@0.2.3-alpha.1
 
 ## 0.4.2-alpha.0
 
@@ -3000,8 +3000,8 @@
 
 - 404640e: AgentNetwork changeset
 - Updated dependencies [404640e]
-  - @mastra/deployer@0.2.3-alpha.0
-  - @mastra/core@0.6.3-alpha.0
+  - @datawarp/mastra-deployer@0.2.3-alpha.0
+  - @datawarp/mastra-core@0.6.3-alpha.0
 
 ## 0.4.1
 
@@ -3013,8 +3013,8 @@
 - Updated dependencies [4e6732b]
 - Updated dependencies [beaf1c2]
 - Updated dependencies [3084e13]
-  - @mastra/deployer@0.2.2
-  - @mastra/core@0.6.2
+  - @datawarp/mastra-deployer@0.2.2
+  - @datawarp/mastra-core@0.6.2
 
 ## 0.4.1-alpha.2
 
@@ -3029,8 +3029,8 @@
 - 2f6a8b6: Update port handling in dev command to ensure CLI port takes precedence over environment variables and add warning when overriding PORT environment variable.
 - Updated dependencies [beaf1c2]
 - Updated dependencies [3084e13]
-  - @mastra/core@0.6.2-alpha.0
-  - @mastra/deployer@0.2.2-alpha.1
+  - @datawarp/mastra-core@0.6.2-alpha.0
+  - @datawarp/mastra-deployer@0.2.2-alpha.1
 
 ## 0.4.1-alpha.0
 
@@ -3038,7 +3038,7 @@
 
 - aede1ea: Add non english support to weather example
 - Updated dependencies [4e6732b]
-  - @mastra/deployer@0.2.2-alpha.0
+  - @datawarp/mastra-deployer@0.2.2-alpha.0
 
 ## 0.4.0
 
@@ -3070,8 +3070,8 @@
 - Updated dependencies [6e559a0]
 - Updated dependencies [5f43505]
 - Updated dependencies [61ad5a4]
-  - @mastra/deployer@0.2.1
-  - @mastra/core@0.6.1
+  - @datawarp/mastra-deployer@0.2.1
+  - @datawarp/mastra-core@0.6.1
 
 ## 0.4.0-alpha.2
 
@@ -3088,8 +3088,8 @@
 - Updated dependencies [0850b4c]
 - Updated dependencies [da8d9bb]
 - Updated dependencies [9116d70]
-  - @mastra/deployer@0.2.1-alpha.2
-  - @mastra/core@0.6.1-alpha.2
+  - @datawarp/mastra-deployer@0.2.1-alpha.2
+  - @datawarp/mastra-core@0.6.1-alpha.2
 
 ## 0.4.0-alpha.1
 
@@ -3108,8 +3108,8 @@
 - Updated dependencies [6e559a0]
 - Updated dependencies [5f43505]
 - Updated dependencies [61ad5a4]
-  - @mastra/core@0.6.1-alpha.1
-  - @mastra/deployer@0.2.1-alpha.1
+  - @datawarp/mastra-core@0.6.1-alpha.1
+  - @datawarp/mastra-deployer@0.2.1-alpha.1
 
 ## 0.3.2-alpha.0
 
@@ -3117,8 +3117,8 @@
 
 - 1405e46: update the Groq model the create-mastra@latest sets
 - Updated dependencies [7bcfaee]
-  - @mastra/core@0.6.1-alpha.0
-  - @mastra/deployer@0.2.1-alpha.0
+  - @datawarp/mastra-core@0.6.1-alpha.0
+  - @datawarp/mastra-deployer@0.2.1-alpha.0
 
 ## 0.3.1
 
@@ -3132,8 +3132,8 @@
 - Updated dependencies [95b4144]
 - Updated dependencies [3729dbd]
 - Updated dependencies [c2144f4]
-  - @mastra/core@0.6.0
-  - @mastra/deployer@0.2.0
+  - @datawarp/mastra-core@0.6.0
+  - @datawarp/mastra-deployer@0.2.0
 
 ## 0.3.1-alpha.1
 
@@ -3145,8 +3145,8 @@
 - Updated dependencies [1c8cda4]
 - Updated dependencies [95b4144]
 - Updated dependencies [c2144f4]
-  - @mastra/core@0.6.0-alpha.1
-  - @mastra/deployer@0.2.0-alpha.1
+  - @datawarp/mastra-core@0.6.0-alpha.1
+  - @datawarp/mastra-deployer@0.2.0-alpha.1
 
 ## 0.3.1-alpha.0
 
@@ -3154,8 +3154,8 @@
 
 - d3d6fae: Deprecate mastra dev --env flag
 - Updated dependencies [3729dbd]
-  - @mastra/core@0.5.1-alpha.0
-  - @mastra/deployer@0.1.9-alpha.0
+  - @datawarp/mastra-core@0.5.1-alpha.0
+  - @datawarp/mastra-deployer@0.1.9-alpha.0
 
 ## 0.3.0
 
@@ -3224,8 +3224,8 @@
 - Updated dependencies [fd4a1d7]
 - Updated dependencies [960690d]
 - Updated dependencies [c139344]
-  - @mastra/core@0.5.0
-  - @mastra/deployer@0.1.8
+  - @datawarp/mastra-core@0.5.0
+  - @datawarp/mastra-deployer@0.1.8
 
 ## 0.3.0-alpha.12
 
@@ -3233,8 +3233,8 @@
 
 - 07a7470: Move WorkflowTrigger to playground-ui package and use in dev playground
 - Updated dependencies [a85ab24]
-  - @mastra/core@0.5.0-alpha.12
-  - @mastra/deployer@0.1.8-alpha.12
+  - @datawarp/mastra-core@0.5.0-alpha.12
+  - @datawarp/mastra-deployer@0.1.8-alpha.12
 
 ## 0.3.0-alpha.11
 
@@ -3251,8 +3251,8 @@
 - Updated dependencies [5d41958]
 - Updated dependencies [a171b37]
 - Updated dependencies [fd4a1d7]
-  - @mastra/deployer@0.1.8-alpha.11
-  - @mastra/core@0.5.0-alpha.11
+  - @datawarp/mastra-deployer@0.1.8-alpha.11
+  - @datawarp/mastra-core@0.5.0-alpha.11
 
 ## 0.3.0-alpha.10
 
@@ -3263,8 +3263,8 @@
 ### Patch Changes
 
 - Updated dependencies [a910463]
-  - @mastra/core@0.5.0-alpha.10
-  - @mastra/deployer@0.1.8-alpha.10
+  - @datawarp/mastra-core@0.5.0-alpha.10
+  - @datawarp/mastra-deployer@0.1.8-alpha.10
 
 ## 0.2.9-alpha.9
 
@@ -3274,32 +3274,32 @@
 - Updated dependencies [1e8bcbc]
 - Updated dependencies [aeb5e36]
 - Updated dependencies [f2301de]
-  - @mastra/deployer@0.1.8-alpha.9
-  - @mastra/core@0.5.0-alpha.9
+  - @datawarp/mastra-deployer@0.1.8-alpha.9
+  - @datawarp/mastra-core@0.5.0-alpha.9
 
 ## 0.2.9-alpha.8
 
 ### Patch Changes
 
 - Updated dependencies [506f1d5]
-  - @mastra/core@0.5.0-alpha.8
-  - @mastra/deployer@0.1.8-alpha.8
+  - @datawarp/mastra-core@0.5.0-alpha.8
+  - @datawarp/mastra-deployer@0.1.8-alpha.8
 
 ## 0.2.9-alpha.7
 
 ### Patch Changes
 
 - Updated dependencies [ee667a2]
-  - @mastra/core@0.5.0-alpha.7
-  - @mastra/deployer@0.1.8-alpha.7
+  - @datawarp/mastra-core@0.5.0-alpha.7
+  - @datawarp/mastra-deployer@0.1.8-alpha.7
 
 ## 0.2.9-alpha.6
 
 ### Patch Changes
 
 - Updated dependencies [f6678e4]
-  - @mastra/core@0.5.0-alpha.6
-  - @mastra/deployer@0.1.8-alpha.6
+  - @datawarp/mastra-core@0.5.0-alpha.6
+  - @datawarp/mastra-deployer@0.1.8-alpha.6
 
 ## 0.2.9-alpha.5
 
@@ -3325,8 +3325,8 @@
 - Updated dependencies [0461849]
 - Updated dependencies [2259379]
 - Updated dependencies [358f069]
-  - @mastra/core@0.5.0-alpha.5
-  - @mastra/deployer@0.1.8-alpha.5
+  - @datawarp/mastra-core@0.5.0-alpha.5
+  - @datawarp/mastra-deployer@0.1.8-alpha.5
 
 ## 0.2.9-alpha.4
 
@@ -3336,24 +3336,24 @@
   Fix get workflows breaking
 - Updated dependencies [d79aedf]
 - Updated dependencies [144b3d5]
-  - @mastra/core@0.5.0-alpha.4
-  - @mastra/deployer@0.1.8-alpha.4
+  - @datawarp/mastra-core@0.5.0-alpha.4
+  - @datawarp/mastra-deployer@0.1.8-alpha.4
 
 ## 0.2.9-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [3d0e290]
-  - @mastra/core@0.5.0-alpha.3
-  - @mastra/deployer@0.1.8-alpha.3
+  - @datawarp/mastra-core@0.5.0-alpha.3
+  - @datawarp/mastra-deployer@0.1.8-alpha.3
 
 ## 0.2.9-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [02ffb7b]
-  - @mastra/core@0.5.0-alpha.2
-  - @mastra/deployer@0.1.8-alpha.2
+  - @datawarp/mastra-core@0.5.0-alpha.2
+  - @datawarp/mastra-deployer@0.1.8-alpha.2
 
 ## 0.2.9-alpha.1
 
@@ -3361,8 +3361,8 @@
 
 - e5149bb: Fix playground-ui agent-evals tab-content
 - Updated dependencies [dab255b]
-  - @mastra/core@0.5.0-alpha.1
-  - @mastra/deployer@0.1.8-alpha.1
+  - @datawarp/mastra-core@0.5.0-alpha.1
+  - @datawarp/mastra-deployer@0.1.8-alpha.1
 
 ## 0.2.9-alpha.0
 
@@ -3378,8 +3378,8 @@
 - Updated dependencies [731dd8a]
 - Updated dependencies [960690d]
 - Updated dependencies [c139344]
-  - @mastra/core@0.5.0-alpha.0
-  - @mastra/deployer@0.1.8-alpha.0
+  - @datawarp/mastra-core@0.5.0-alpha.0
+  - @datawarp/mastra-deployer@0.1.8-alpha.0
 
 ## 0.2.8
 
@@ -3388,8 +3388,8 @@
 - Updated dependencies [1da20e7]
 - Updated dependencies [30a4c29]
 - Updated dependencies [e1e2705]
-  - @mastra/core@0.4.4
-  - @mastra/deployer@0.1.7
+  - @datawarp/mastra-core@0.4.4
+  - @datawarp/mastra-deployer@0.1.7
 
 ## 0.2.8-alpha.0
 
@@ -3398,8 +3398,8 @@
 - Updated dependencies [1da20e7]
 - Updated dependencies [30a4c29]
 - Updated dependencies [e1e2705]
-  - @mastra/core@0.4.4-alpha.0
-  - @mastra/deployer@0.1.7-alpha.0
+  - @datawarp/mastra-core@0.4.4-alpha.0
+  - @datawarp/mastra-deployer@0.1.7-alpha.0
 
 ## 0.2.7
 
@@ -3428,16 +3428,16 @@
 - Updated dependencies [108793c]
 - Updated dependencies [5f28f44]
 - Updated dependencies [dabecf4]
-  - @mastra/core@0.4.3
-  - @mastra/deployer@0.1.6
+  - @datawarp/mastra-core@0.4.3
+  - @datawarp/mastra-deployer@0.1.6
 
 ## 0.2.7-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [dabecf4]
-  - @mastra/core@0.4.3-alpha.4
-  - @mastra/deployer@0.1.6-alpha.4
+  - @datawarp/mastra-core@0.4.3-alpha.4
+  - @datawarp/mastra-deployer@0.1.6-alpha.4
 
 ## 0.2.7-alpha.3
 
@@ -3452,8 +3452,8 @@
 - Updated dependencies [3f369a2]
 - Updated dependencies [4d4e1e1]
 - Updated dependencies [bb4f447]
-  - @mastra/deployer@0.1.6-alpha.3
-  - @mastra/core@0.4.3-alpha.3
+  - @datawarp/mastra-deployer@0.1.6-alpha.3
+  - @datawarp/mastra-core@0.4.3-alpha.3
 
 ## 0.2.7-alpha.2
 
@@ -3461,8 +3461,8 @@
 
 - Updated dependencies [2512a93]
 - Updated dependencies [e62de74]
-  - @mastra/core@0.4.3-alpha.2
-  - @mastra/deployer@0.1.6-alpha.2
+  - @datawarp/mastra-core@0.4.3-alpha.2
+  - @datawarp/mastra-deployer@0.1.6-alpha.2
 
 ## 0.2.7-alpha.1
 
@@ -3476,8 +3476,8 @@
 - Updated dependencies [3ee4831]
 - Updated dependencies [108793c]
 - Updated dependencies [5f28f44]
-  - @mastra/core@0.4.3-alpha.1
-  - @mastra/deployer@0.1.6-alpha.1
+  - @datawarp/mastra-core@0.4.3-alpha.1
+  - @datawarp/mastra-deployer@0.1.6-alpha.1
 
 ## 0.2.7-alpha.0
 
@@ -3486,8 +3486,8 @@
 - b24970d: Added Mastra svg favicon to playground
 - 7a0866e: Use non-crypto uuid function in playground, to allow for local urls like local.lan:4111 during development
 - Updated dependencies [06aa827]
-  - @mastra/core@0.4.3-alpha.0
-  - @mastra/deployer@0.1.6-alpha.0
+  - @datawarp/mastra-core@0.4.3-alpha.0
+  - @datawarp/mastra-deployer@0.1.6-alpha.0
 
 ## 0.2.6
 
@@ -3506,8 +3506,8 @@
 - Updated dependencies [f626fbb]
 - Updated dependencies [e752340]
 - Updated dependencies [eb91535]
-  - @mastra/core@0.4.2
-  - @mastra/deployer@0.1.5
+  - @datawarp/mastra-core@0.4.2
+  - @datawarp/mastra-deployer@0.1.5
 
 ## 0.2.6-alpha.3
 
@@ -3519,16 +3519,16 @@
 - Updated dependencies [99dcdb5]
 - Updated dependencies [e752340]
 - Updated dependencies [eb91535]
-  - @mastra/core@0.4.2-alpha.2
-  - @mastra/deployer@0.1.5-alpha.3
+  - @datawarp/mastra-core@0.4.2-alpha.2
+  - @datawarp/mastra-deployer@0.1.5-alpha.3
 
 ## 0.2.6-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [6cb63e0]
-  - @mastra/core@0.4.2-alpha.1
-  - @mastra/deployer@0.1.5-alpha.2
+  - @datawarp/mastra-core@0.4.2-alpha.1
+  - @datawarp/mastra-deployer@0.1.5-alpha.2
 
 ## 0.2.6-alpha.1
 
@@ -3536,7 +3536,7 @@
 
 - 2d68431: Fix mastra server error processing
 - Updated dependencies [2d68431]
-  - @mastra/deployer@0.1.5-alpha.1
+  - @datawarp/mastra-deployer@0.1.5-alpha.1
 
 ## 0.2.6-alpha.0
 
@@ -3546,8 +3546,8 @@
 - Updated dependencies [7fceae1]
 - Updated dependencies [e4ee56c]
 - Updated dependencies [f626fbb]
-  - @mastra/core@0.4.2-alpha.0
-  - @mastra/deployer@0.1.5-alpha.0
+  - @datawarp/mastra-core@0.4.2-alpha.0
+  - @datawarp/mastra-deployer@0.1.5-alpha.0
 
 ## 0.2.5
 
@@ -3557,8 +3557,8 @@
 - Updated dependencies [ce44b9b]
 - Updated dependencies [967da43]
 - Updated dependencies [b405f08]
-  - @mastra/core@0.4.1
-  - @mastra/deployer@0.1.4
+  - @datawarp/mastra-core@0.4.1
+  - @datawarp/mastra-deployer@0.1.4
 
 ## 0.2.4
 
@@ -3573,8 +3573,8 @@
 - Updated dependencies [5297264]
 - Updated dependencies [2fc618f]
 - Updated dependencies [fe0fd01]
-  - @mastra/deployer@0.1.3
-  - @mastra/core@0.4.0
+  - @datawarp/mastra-deployer@0.1.3
+  - @datawarp/mastra-core@0.4.0
 
 ## 0.2.4-alpha.2
 
@@ -3587,8 +3587,8 @@
 ### Patch Changes
 
 - Updated dependencies [fe0fd01]
-  - @mastra/core@0.4.0-alpha.1
-  - @mastra/deployer@0.1.3-alpha.1
+  - @datawarp/mastra-core@0.4.0-alpha.1
+  - @datawarp/mastra-deployer@0.1.3-alpha.1
 
 ## 0.2.4-alpha.0
 
@@ -3601,8 +3601,8 @@
 - a931e9a: Fix resizer not showing when user has scrolled down the span details column
 - Updated dependencies [5297264]
 - Updated dependencies [2fc618f]
-  - @mastra/deployer@0.1.3-alpha.0
-  - @mastra/core@0.4.0-alpha.0
+  - @datawarp/mastra-deployer@0.1.3-alpha.0
+  - @datawarp/mastra-core@0.4.0-alpha.0
 
 ## 0.2.3
 
@@ -3611,8 +3611,8 @@
 - 23b2a7a: Fixed a bug when detecting package manager during mastra init where npm would run after pnpm already installed, resulting in errors
 - dfe2df9: Fix mastra create workflow starter
 - Updated dependencies [f205ede]
-  - @mastra/core@0.3.0
-  - @mastra/deployer@0.1.2
+  - @datawarp/mastra-core@0.3.0
+  - @datawarp/mastra-deployer@0.1.2
 
 ## 0.2.3-alpha.0
 
@@ -3653,8 +3653,8 @@
 - Updated dependencies [bf2e88f]
 - Updated dependencies [2f0d707]
 - Updated dependencies [aac1667]
-  - @mastra/core@0.2.1
-  - @mastra/deployer@0.1.1
+  - @datawarp/mastra-core@0.2.1
+  - @datawarp/mastra-deployer@0.1.1
 
 ## 0.2.1-alpha.0
 
@@ -3672,8 +3672,8 @@
 - Updated dependencies [bf2e88f]
 - Updated dependencies [2f0d707]
 - Updated dependencies [aac1667]
-  - @mastra/core@0.2.1-alpha.0
-  - @mastra/deployer@0.1.1-alpha.0
+  - @datawarp/mastra-core@0.2.1-alpha.0
+  - @datawarp/mastra-deployer@0.1.1-alpha.0
 
 ## 0.2.0
 
@@ -4022,8 +4022,8 @@
 - Updated dependencies [ee4de15]
 - Updated dependencies [202d404]
 - Updated dependencies [a221426]
-  - @mastra/deployer@0.1.0
-  - @mastra/core@0.2.0
+  - @datawarp/mastra-deployer@0.1.0
+  - @datawarp/mastra-core@0.2.0
 
 ## 0.2.0-alpha.171
 
@@ -4031,7 +4031,7 @@
 
 - 391d5ea: Add @opentelemetry/instrumentation to pkg json of build artifcat
 - Updated dependencies [391d5ea]
-  - @mastra/deployer@0.1.0-alpha.63
+  - @datawarp/mastra-deployer@0.1.0-alpha.63
 
 ## 0.2.0-alpha.170
 
@@ -4048,8 +4048,8 @@
 - Updated dependencies [fd75f3c]
 - Updated dependencies [ccf115c]
 - Updated dependencies [a221426]
-  - @mastra/core@0.2.0-alpha.110
-  - @mastra/deployer@0.1.0-alpha.62
+  - @datawarp/mastra-core@0.2.0-alpha.110
+  - @datawarp/mastra-deployer@0.1.0-alpha.62
 
 ## 0.2.0-alpha.169
 
@@ -4058,15 +4058,15 @@
 - 5b5de5e: Instructions playground
 - b9c7047: Move to non deprecated table name for eval insertion
 - Updated dependencies [b9c7047]
-  - @mastra/deployer@0.1.0-alpha.61
+  - @datawarp/mastra-deployer@0.1.0-alpha.61
 
 ## 0.2.0-alpha.168
 
 ### Patch Changes
 
 - Updated dependencies [d5fccfb]
-  - @mastra/core@0.2.0-alpha.109
-  - @mastra/deployer@0.1.0-alpha.60
+  - @datawarp/mastra-core@0.2.0-alpha.109
+  - @datawarp/mastra-deployer@0.1.0-alpha.60
 
 ## 0.2.0-alpha.167
 
@@ -4074,8 +4074,8 @@
 
 - Updated dependencies [5ee67d3]
 - Updated dependencies [95a4697]
-  - @mastra/core@0.2.0-alpha.108
-  - @mastra/deployer@0.1.0-alpha.59
+  - @datawarp/mastra-core@0.2.0-alpha.108
+  - @datawarp/mastra-deployer@0.1.0-alpha.59
 
 ## 0.2.0-alpha.166
 
@@ -4083,8 +4083,8 @@
 
 - Updated dependencies [8fa48b9]
 - Updated dependencies [66a5392]
-  - @mastra/deployer@0.1.0-alpha.58
-  - @mastra/core@0.2.0-alpha.107
+  - @datawarp/mastra-deployer@0.1.0-alpha.58
+  - @datawarp/mastra-core@0.2.0-alpha.107
 
 ## 0.2.0-alpha.165
 
@@ -4094,15 +4094,15 @@
 - Updated dependencies [6f2c0f5]
 - Updated dependencies [a8a459a]
 - Updated dependencies [4a328af]
-  - @mastra/core@0.2.0-alpha.106
-  - @mastra/deployer@0.1.0-alpha.57
+  - @datawarp/mastra-core@0.2.0-alpha.106
+  - @datawarp/mastra-deployer@0.1.0-alpha.57
 
 ## 0.2.0-alpha.164
 
 ### Patch Changes
 
 - Updated dependencies [246f06c]
-  - @mastra/deployer@0.1.0-alpha.56
+  - @datawarp/mastra-deployer@0.1.0-alpha.56
 
 ## 0.2.0-alpha.163
 
@@ -4111,8 +4111,8 @@
 - fa3c7cb: Fix trace name on table being too long
 - Updated dependencies [1420ae2]
 - Updated dependencies [99f1847]
-  - @mastra/core@0.2.0-alpha.105
-  - @mastra/deployer@0.1.0-alpha.55
+  - @datawarp/mastra-core@0.2.0-alpha.105
+  - @datawarp/mastra-deployer@0.1.0-alpha.55
 
 ## 0.2.0-alpha.162
 
@@ -4126,24 +4126,24 @@
 - Updated dependencies [72d1990]
 - Updated dependencies [cf6d825]
 - Updated dependencies [10870bc]
-  - @mastra/core@0.2.0-alpha.104
-  - @mastra/deployer@0.1.0-alpha.54
+  - @datawarp/mastra-core@0.2.0-alpha.104
+  - @datawarp/mastra-deployer@0.1.0-alpha.54
 
 ## 0.2.0-alpha.161
 
 ### Patch Changes
 
 - Updated dependencies [4534e77]
-  - @mastra/core@0.2.0-alpha.103
-  - @mastra/deployer@0.1.0-alpha.53
+  - @datawarp/mastra-core@0.2.0-alpha.103
+  - @datawarp/mastra-deployer@0.1.0-alpha.53
 
 ## 0.2.0-alpha.160
 
 ### Patch Changes
 
 - Updated dependencies [a9345f9]
-  - @mastra/core@0.2.0-alpha.102
-  - @mastra/deployer@0.1.0-alpha.52
+  - @datawarp/mastra-core@0.2.0-alpha.102
+  - @datawarp/mastra-deployer@0.1.0-alpha.52
 
 ## 0.2.0-alpha.159
 
@@ -4152,8 +4152,8 @@
 - 4f1d1a1: Enforce types ann cleanup package.json
 - Updated dependencies [66a03ec]
 - Updated dependencies [4f1d1a1]
-  - @mastra/core@0.2.0-alpha.101
-  - @mastra/deployer@0.1.0-alpha.51
+  - @datawarp/mastra-core@0.2.0-alpha.101
+  - @datawarp/mastra-deployer@0.1.0-alpha.51
 
 ## 0.2.0-alpha.158
 
@@ -4161,8 +4161,8 @@
 
 - 9d1796d: Fix storage and eval serialization on api
 - Updated dependencies [9d1796d]
-  - @mastra/deployer@0.1.0-alpha.50
-  - @mastra/core@0.2.0-alpha.100
+  - @datawarp/mastra-deployer@0.1.0-alpha.50
+  - @datawarp/mastra-core@0.2.0-alpha.100
 
 ## 0.2.0-alpha.157
 
@@ -4170,15 +4170,15 @@
 
 - 7d83b92: Create default storage and move evals towards it
 - Updated dependencies [7d83b92]
-  - @mastra/deployer@0.1.0-alpha.49
-  - @mastra/core@0.2.0-alpha.99
+  - @datawarp/mastra-deployer@0.1.0-alpha.49
+  - @datawarp/mastra-core@0.2.0-alpha.99
 
 ## 0.2.0-alpha.156
 
 ### Patch Changes
 
 - Updated dependencies [8aec8b7]
-  - @mastra/deployer@0.1.0-alpha.48
+  - @datawarp/mastra-deployer@0.1.0-alpha.48
 
 ## 0.2.0-alpha.155
 
@@ -4188,8 +4188,8 @@
 - 202d404: Added instructions when generating evals
 - Updated dependencies [70dabd9]
 - Updated dependencies [202d404]
-  - @mastra/core@0.2.0-alpha.98
-  - @mastra/deployer@0.1.0-alpha.47
+  - @datawarp/mastra-core@0.2.0-alpha.98
+  - @datawarp/mastra-deployer@0.1.0-alpha.47
 
 ## 0.2.0-alpha.154
 
@@ -4208,8 +4208,8 @@
 - Updated dependencies [df843d3]
 - Updated dependencies [a870123]
 - Updated dependencies [f1e3105]
-  - @mastra/core@0.2.0-alpha.97
-  - @mastra/deployer@0.1.0-alpha.46
+  - @datawarp/mastra-core@0.2.0-alpha.97
+  - @datawarp/mastra-deployer@0.1.0-alpha.46
 
 ## 0.2.0-alpha.153
 
@@ -4223,8 +4223,8 @@
 - 7db55f6: Install aisdk model provider for in create-mastra init
 - c18a0c0: Fix creation of new threads in dev playground
 - Updated dependencies [74b3078]
-  - @mastra/core@0.2.0-alpha.96
-  - @mastra/deployer@0.1.0-alpha.45
+  - @datawarp/mastra-core@0.2.0-alpha.96
+  - @datawarp/mastra-deployer@0.1.0-alpha.45
 
 ## 0.2.0-alpha.152
 
@@ -4232,8 +4232,8 @@
 
 - 9fb59d6: changeset
 - Updated dependencies [9fb59d6]
-  - @mastra/deployer@0.1.0-alpha.44
-  - @mastra/core@0.2.0-alpha.95
+  - @datawarp/mastra-deployer@0.1.0-alpha.44
+  - @datawarp/mastra-core@0.2.0-alpha.95
 
 ## 0.2.0-alpha.151
 
@@ -4246,8 +4246,8 @@
 - 9c10484: update all packages
 - Updated dependencies [9c10484]
 - Updated dependencies [8b416d9]
-  - @mastra/core@0.2.0-alpha.94
-  - @mastra/deployer@0.1.0-alpha.43
+  - @datawarp/mastra-core@0.2.0-alpha.94
+  - @datawarp/mastra-deployer@0.1.0-alpha.43
 
 ## 0.2.0-alpha.150
 
@@ -4257,29 +4257,29 @@
 - 42a2e69: Fix playground error parsing
 - Updated dependencies [5285356]
 - Updated dependencies [42a2e69]
-  - @mastra/core@0.2.0-alpha.93
-  - @mastra/deployer@0.1.0-alpha.42
+  - @datawarp/mastra-core@0.2.0-alpha.93
+  - @datawarp/mastra-deployer@0.1.0-alpha.42
 
 ## 0.2.0-alpha.149
 
 ### Patch Changes
 
 - Updated dependencies [0b96376]
-  - @mastra/deployer@0.1.0-alpha.41
+  - @datawarp/mastra-deployer@0.1.0-alpha.41
 
 ## 0.2.0-alpha.148
 
 ### Patch Changes
 
 - Updated dependencies [8329f1a]
-  - @mastra/deployer@0.1.0-alpha.40
+  - @datawarp/mastra-deployer@0.1.0-alpha.40
 
 ## 0.2.0-alpha.147
 
 ### Patch Changes
 
 - Updated dependencies [8ea426a]
-  - @mastra/deployer@0.1.0-alpha.39
+  - @datawarp/mastra-deployer@0.1.0-alpha.39
 
 ## 0.2.0-alpha.146
 
@@ -4287,7 +4287,7 @@
 
 - b80ea8d: Fix bundling of server
 - Updated dependencies [b80ea8d]
-  - @mastra/deployer@0.1.0-alpha.34
+  - @datawarp/mastra-deployer@0.1.0-alpha.34
 
 ## 0.2.0-alpha.145
 
@@ -4299,8 +4299,8 @@
 
 - 2f2f65e: Fix multipart location tool error with init example
 - Updated dependencies [4d4f6b6]
-  - @mastra/deployer@0.1.0-alpha.38
-  - @mastra/core@0.2.0-alpha.92
+  - @datawarp/mastra-deployer@0.1.0-alpha.38
+  - @datawarp/mastra-core@0.2.0-alpha.92
 
 ## 0.2.0-alpha.144
 
@@ -4311,8 +4311,8 @@
 - Updated dependencies [2017553]
 - Updated dependencies [a10b7a3]
 - Updated dependencies [16e5b04]
-  - @mastra/core@0.2.0-alpha.91
-  - @mastra/deployer@0.1.0-alpha.37
+  - @datawarp/mastra-core@0.2.0-alpha.91
+  - @datawarp/mastra-deployer@0.1.0-alpha.37
 
 ## 0.2.0-alpha.143
 
@@ -4323,16 +4323,16 @@
 - Updated dependencies [e897f1c]
 - Updated dependencies [82a6d53]
 - Updated dependencies [3700be1]
-  - @mastra/core@0.2.0-alpha.90
-  - @mastra/deployer@0.1.0-alpha.36
+  - @datawarp/mastra-core@0.2.0-alpha.90
+  - @datawarp/mastra-deployer@0.1.0-alpha.36
 
 ## 0.2.0-alpha.142
 
 ### Patch Changes
 
 - Updated dependencies [27275c9]
-  - @mastra/core@0.2.0-alpha.89
-  - @mastra/deployer@0.1.0-alpha.35
+  - @datawarp/mastra-core@0.2.0-alpha.89
+  - @datawarp/mastra-deployer@0.1.0-alpha.35
 
 ## 0.2.0-alpha.141
 
@@ -4341,8 +4341,8 @@
 - 323e09e: Use 4o-mini in starter example
 - Updated dependencies [ab01c53]
 - Updated dependencies [ccbc581]
-  - @mastra/deployer@0.1.0-alpha.34
-  - @mastra/core@0.2.0-alpha.88
+  - @datawarp/mastra-deployer@0.1.0-alpha.34
+  - @datawarp/mastra-core@0.2.0-alpha.88
 
 ## 0.2.0-alpha.140
 
@@ -4355,8 +4355,8 @@
 ### Patch Changes
 
 - Updated dependencies [7365b6c]
-  - @mastra/core@0.2.0-alpha.87
-  - @mastra/deployer@0.1.0-alpha.33
+  - @datawarp/mastra-core@0.2.0-alpha.87
+  - @datawarp/mastra-deployer@0.1.0-alpha.33
 
 ## 0.2.0-alpha.138
 
@@ -4372,8 +4372,8 @@
 - Updated dependencies [7f24c29]
 - Updated dependencies [67637ba]
 - Updated dependencies [04f3171]
-  - @mastra/core@0.2.0-alpha.86
-  - @mastra/deployer@0.1.0-alpha.32
+  - @datawarp/mastra-core@0.2.0-alpha.86
+  - @datawarp/mastra-deployer@0.1.0-alpha.32
 
 ## 0.1.57-alpha.137
 
@@ -4381,8 +4381,8 @@
 
 - Updated dependencies [e9d1b47]
 - Updated dependencies [c5f2d50]
-  - @mastra/core@0.2.0-alpha.85
-  - @mastra/deployer@0.0.1-alpha.31
+  - @datawarp/mastra-core@0.2.0-alpha.85
+  - @datawarp/mastra-deployer@0.0.1-alpha.31
 
 ## 0.1.57-alpha.136
 
@@ -4396,7 +4396,7 @@
 
 - e27fe69: Add dir to deployer
 - Updated dependencies [e27fe69]
-  - @mastra/deployer@0.0.1-alpha.30
+  - @datawarp/mastra-deployer@0.0.1-alpha.30
 
 ## 0.1.57-alpha.134
 
@@ -4408,8 +4408,8 @@
 - Updated dependencies [cb290ee]
 - Updated dependencies [b4d7416]
 - Updated dependencies [38b7f66]
-  - @mastra/core@0.2.0-alpha.84
-  - @mastra/deployer@0.0.1-alpha.29
+  - @datawarp/mastra-core@0.2.0-alpha.84
+  - @datawarp/mastra-deployer@0.0.1-alpha.29
 
 ## 0.1.57-alpha.133
 
@@ -4422,8 +4422,8 @@
 - Updated dependencies [78eec7c]
 - Updated dependencies [9625602]
 - Updated dependencies [8769a62]
-  - @mastra/deployer@0.0.1-alpha.28
-  - @mastra/core@0.2.0-alpha.83
+  - @datawarp/mastra-deployer@0.0.1-alpha.28
+  - @datawarp/mastra-core@0.2.0-alpha.83
 
 ## 0.1.57-alpha.132
 
@@ -4431,16 +4431,16 @@
 
 - Updated dependencies [73d112c]
 - Updated dependencies [ac8c61a]
-  - @mastra/deployer@0.0.1-alpha.27
-  - @mastra/core@0.1.27-alpha.82
+  - @datawarp/mastra-deployer@0.0.1-alpha.27
+  - @datawarp/mastra-core@0.1.27-alpha.82
 
 ## 0.1.57-alpha.131
 
 ### Patch Changes
 
 - Updated dependencies [9fb3039]
-  - @mastra/core@0.1.27-alpha.81
-  - @mastra/deployer@0.0.1-alpha.26
+  - @datawarp/mastra-core@0.1.27-alpha.81
+  - @datawarp/mastra-deployer@0.0.1-alpha.26
 
 ## 0.1.57-alpha.130
 
@@ -4460,8 +4460,8 @@
 
 - 327ece7: Updates for ts versions
 - Updated dependencies [327ece7]
-  - @mastra/core@0.1.27-alpha.80
-  - @mastra/deployer@0.0.1-alpha.25
+  - @datawarp/mastra-core@0.1.27-alpha.80
+  - @datawarp/mastra-deployer@0.0.1-alpha.25
 
 ## 0.1.57-alpha.127
 
@@ -4469,15 +4469,15 @@
 
 - 21fe536: add keyword tags for packages and update readmes
 - Updated dependencies [21fe536]
-  - @mastra/core@0.1.27-alpha.79
-  - @mastra/deployer@0.0.1-alpha.24
+  - @datawarp/mastra-core@0.1.27-alpha.79
+  - @datawarp/mastra-deployer@0.0.1-alpha.24
 
 ## 0.1.57-alpha.126
 
 ### Patch Changes
 
 - Updated dependencies [88f18d7]
-  - @mastra/deployer@0.0.1-alpha.23
+  - @datawarp/mastra-deployer@0.0.1-alpha.23
 
 ## 0.1.57-alpha.125
 
@@ -4491,8 +4491,8 @@
 
 - Updated dependencies [685108a]
 - Updated dependencies [685108a]
-  - @mastra/deployer@0.0.1-alpha.22
-  - @mastra/core@0.1.27-alpha.78
+  - @datawarp/mastra-deployer@0.0.1-alpha.22
+  - @datawarp/mastra-core@0.1.27-alpha.78
 
 ## 0.1.57-alpha.123
 
@@ -4501,8 +4501,8 @@
 - c8a8eab: fix some workflow conditions not showing on graph and dev watcher not working
 - Updated dependencies [8105fae]
 - Updated dependencies [cfb966f]
-  - @mastra/core@0.1.27-alpha.77
-  - @mastra/deployer@0.0.1-alpha.21
+  - @datawarp/mastra-core@0.1.27-alpha.77
+  - @datawarp/mastra-deployer@0.0.1-alpha.21
 
 ## 0.1.57-alpha.122
 
@@ -4510,8 +4510,8 @@
 
 - Updated dependencies [ae7bf94]
 - Updated dependencies [ae7bf94]
-  - @mastra/deployer@0.0.1-alpha.20
-  - @mastra/core@0.1.27-alpha.76
+  - @datawarp/mastra-deployer@0.0.1-alpha.20
+  - @datawarp/mastra-core@0.1.27-alpha.76
 
 ## 0.1.57-alpha.121
 
@@ -4519,24 +4519,24 @@
 
 - Updated dependencies [23dcb23]
 - Updated dependencies [7064554]
-  - @mastra/core@0.1.27-alpha.75
-  - @mastra/deployer@0.0.1-alpha.19
+  - @datawarp/mastra-core@0.1.27-alpha.75
+  - @datawarp/mastra-deployer@0.0.1-alpha.19
 
 ## 0.1.57-alpha.120
 
 ### Patch Changes
 
 - Updated dependencies [7b87567]
-  - @mastra/core@0.1.27-alpha.74
-  - @mastra/deployer@0.0.1-alpha.18
+  - @datawarp/mastra-core@0.1.27-alpha.74
+  - @datawarp/mastra-deployer@0.0.1-alpha.18
 
 ## 0.1.57-alpha.119
 
 ### Patch Changes
 
 - Updated dependencies [3427b95]
-  - @mastra/core@0.1.27-alpha.73
-  - @mastra/deployer@0.0.1-alpha.17
+  - @datawarp/mastra-core@0.1.27-alpha.73
+  - @datawarp/mastra-deployer@0.0.1-alpha.17
 
 ## 0.1.57-alpha.118
 
@@ -4545,8 +4545,8 @@
 - 255fc56: create mastra bundle correctly
 - Updated dependencies [e4d4ede]
 - Updated dependencies [06b2c0a]
-  - @mastra/core@0.1.27-alpha.72
-  - @mastra/deployer@0.0.1-alpha.16
+  - @datawarp/mastra-core@0.1.27-alpha.72
+  - @datawarp/mastra-deployer@0.0.1-alpha.16
 
 ## 0.1.57-alpha.117
 
@@ -4559,8 +4559,8 @@
 ### Patch Changes
 
 - Updated dependencies [d9c8dd0]
-  - @mastra/deployer@0.0.1-alpha.15
-  - @mastra/core@0.1.27-alpha.71
+  - @datawarp/mastra-deployer@0.0.1-alpha.15
+  - @datawarp/mastra-core@0.1.27-alpha.71
 
 ## 0.1.57-alpha.115
 
@@ -4574,14 +4574,14 @@
 
 - ad2cd74: Deploy fix
 - Updated dependencies [ad2cd74]
-  - @mastra/deployer@0.0.1-alpha.14
+  - @datawarp/mastra-deployer@0.0.1-alpha.14
 
 ## 0.1.57-alpha.113
 
 ### Patch Changes
 
 - Updated dependencies [a1774e7]
-  - @mastra/deployer@0.0.1-alpha.13
+  - @datawarp/mastra-deployer@0.0.1-alpha.13
 
 ## 0.1.57-alpha.112
 
@@ -4590,14 +4590,14 @@
 - e604ddb: Change bundling architecture
 - 28dceab: Catch apiKey error in dev
 - Updated dependencies [28dceab]
-  - @mastra/deployer@0.0.1-alpha.12
+  - @datawarp/mastra-deployer@0.0.1-alpha.12
 
 ## 0.1.57-alpha.111
 
 ### Patch Changes
 
 - Updated dependencies [bdaf834]
-  - @mastra/deployer@0.0.1-alpha.11
+  - @datawarp/mastra-deployer@0.0.1-alpha.11
 
 ## 0.1.57-alpha.110
 
@@ -4606,8 +4606,8 @@
 - 04434b6: Create separate logger file
 - Updated dependencies [dd6d87f]
 - Updated dependencies [04434b6]
-  - @mastra/core@0.1.27-alpha.70
-  - @mastra/deployer@0.0.1-alpha.10
+  - @datawarp/mastra-core@0.1.27-alpha.70
+  - @datawarp/mastra-deployer@0.0.1-alpha.10
 
 ## 0.1.57-alpha.109
 
@@ -4615,7 +4615,7 @@
 
 - 9066f95: CF deployer fixes
 - Updated dependencies [9066f95]
-  - @mastra/deployer@0.0.1-alpha.9
+  - @datawarp/mastra-deployer@0.0.1-alpha.9
 
 ## 0.1.57-alpha.108
 
@@ -4623,7 +4623,7 @@
 
 - b425845: Logger and execa logs
 - Updated dependencies [b425845]
-  - @mastra/deployer@0.0.1-alpha.8
+  - @datawarp/mastra-deployer@0.0.1-alpha.8
 
 ## 0.1.57-alpha.107
 
@@ -4634,8 +4634,8 @@
 - 9ade36e: Changed measure for evals, added endpoints, attached metrics to agent, added ui for evals in playground, and updated docs
 - Updated dependencies [1944807]
 - Updated dependencies [9ade36e]
-  - @mastra/deployer@0.0.1-alpha.7
-  - @mastra/core@0.1.27-alpha.69
+  - @datawarp/mastra-deployer@0.0.1-alpha.7
+  - @datawarp/mastra-core@0.1.27-alpha.69
 
 ## 0.1.57-alpha.106
 
@@ -4643,7 +4643,7 @@
 
 - Updated dependencies [291fe57]
 - Updated dependencies [1a41fbf]
-  - @mastra/deployer@0.0.1-alpha.6
+  - @datawarp/mastra-deployer@0.0.1-alpha.6
 
 ## 0.1.57-alpha.105
 
@@ -4651,8 +4651,8 @@
 
 - Updated dependencies [0be7181]
 - Updated dependencies [0be7181]
-  - @mastra/core@0.1.27-alpha.68
-  - @mastra/deployer@0.0.1-alpha.5
+  - @datawarp/mastra-core@0.1.27-alpha.68
+  - @datawarp/mastra-deployer@0.0.1-alpha.5
 
 ## 0.1.57-alpha.104
 
@@ -4660,7 +4660,7 @@
 
 - 7babd5c: CLI build and other
 - Updated dependencies [7babd5c]
-  - @mastra/deployer@0.0.1-alpha.4
+  - @datawarp/mastra-deployer@0.0.1-alpha.4
 
 ## 0.1.57-alpha.103
 
@@ -4668,8 +4668,8 @@
 
 - Updated dependencies [c8ff2f5]
 - Updated dependencies [a291824]
-  - @mastra/core@0.1.27-alpha.67
-  - @mastra/deployer@0.0.1-alpha.3
+  - @datawarp/mastra-core@0.1.27-alpha.67
+  - @datawarp/mastra-deployer@0.0.1-alpha.3
 
 ## 0.1.57-alpha.102
 
@@ -4677,7 +4677,7 @@
 
 - Updated dependencies [a9b5ddf]
 - Updated dependencies [72c280b]
-  - @mastra/deployer@0.0.1-alpha.2
+  - @datawarp/mastra-deployer@0.0.1-alpha.2
 
 ## 0.1.57-alpha.101
 
@@ -4691,14 +4691,14 @@
 
 - Updated dependencies [4139b43]
 - Updated dependencies [a5604c4]
-  - @mastra/deployer@0.0.1-alpha.0
+  - @datawarp/mastra-deployer@0.0.1-alpha.0
 
 ## 0.1.57-alpha.99
 
 ### Patch Changes
 
 - Updated dependencies [14064f2]
-  - @mastra/core@0.1.27-alpha.66
+  - @datawarp/mastra-core@0.1.27-alpha.66
 
 ## 0.1.57-alpha.98
 
@@ -4706,7 +4706,7 @@
 
 - 989833c: Handle rendering workflows without triggerschema on dev playground
 - Updated dependencies [e66643a]
-  - @mastra/core@0.1.27-alpha.65
+  - @datawarp/mastra-core@0.1.27-alpha.65
 
 ## 0.1.57-alpha.97
 
@@ -4730,7 +4730,7 @@
 - ffa0b63: Fix scrolling issue in mastra dev tools playground UI
 - Updated dependencies [f368477]
 - Updated dependencies [d5ec619]
-  - @mastra/core@0.1.27-alpha.64
+  - @datawarp/mastra-core@0.1.27-alpha.64
 
 ## 0.1.57-alpha.94
 
@@ -4750,14 +4750,14 @@
 ### Patch Changes
 
 - Updated dependencies [e097800]
-  - @mastra/core@0.1.27-alpha.63
+  - @datawarp/mastra-core@0.1.27-alpha.63
 
 ## 0.1.57-alpha.91
 
 ### Patch Changes
 
 - Updated dependencies [93a3719]
-  - @mastra/core@0.1.27-alpha.62
+  - @datawarp/mastra-core@0.1.27-alpha.62
 
 ## 0.1.57-alpha.90
 
@@ -4780,14 +4780,14 @@
 
 - dc90663: Fix issues in packages
 - Updated dependencies [dc90663]
-  - @mastra/core@0.1.27-alpha.61
+  - @datawarp/mastra-core@0.1.27-alpha.61
 
 ## 0.1.57-alpha.87
 
 ### Patch Changes
 
 - Updated dependencies [3967e69]
-  - @mastra/core@0.1.27-alpha.60
+  - @datawarp/mastra-core@0.1.27-alpha.60
 
 ## 0.1.57-alpha.86
 
@@ -4795,7 +4795,7 @@
 
 - 606bbbe: Adds -f option to engine commands to specify custom docker config. Updates Engine docs.
 - Updated dependencies [b524c22]
-  - @mastra/core@0.1.27-alpha.59
+  - @datawarp/mastra-core@0.1.27-alpha.59
 
 ## 0.1.57-alpha.85
 
@@ -4803,21 +4803,21 @@
 
 - Updated dependencies [1874f40]
 - Updated dependencies [4b1ce2c]
-  - @mastra/core@0.1.27-alpha.58
+  - @datawarp/mastra-core@0.1.27-alpha.58
 
 ## 0.1.57-alpha.84
 
 ### Patch Changes
 
 - Updated dependencies [fd494a3]
-  - @mastra/core@0.1.27-alpha.57
+  - @datawarp/mastra-core@0.1.27-alpha.57
 
 ## 0.1.57-alpha.83
 
 ### Patch Changes
 
 - Updated dependencies [9f3ab05]
-  - @mastra/core@0.1.27-alpha.56
+  - @datawarp/mastra-core@0.1.27-alpha.56
 
 ## 0.1.57-alpha.82
 
@@ -4834,21 +4834,21 @@
 - Updated dependencies [592e3cf]
 - Updated dependencies [837a288]
 - Updated dependencies [0b74006]
-  - @mastra/core@0.1.27-alpha.55
+  - @datawarp/mastra-core@0.1.27-alpha.55
 
 ## 0.1.57-alpha.80
 
 ### Patch Changes
 
 - Updated dependencies [d2cd535]
-  - @mastra/core@0.1.27-alpha.54
+  - @datawarp/mastra-core@0.1.27-alpha.54
 
 ## 0.1.57-alpha.79
 
 ### Patch Changes
 
 - Updated dependencies [8e7814f]
-  - @mastra/core@0.1.27-alpha.53
+  - @datawarp/mastra-core@0.1.27-alpha.53
 
 ## 0.1.57-alpha.78
 
@@ -4856,7 +4856,7 @@
 
 - f79a9ff: Fix example tool execution not workin in dev, add example tool to example agent, add example workflow to main Mastra export
 - Updated dependencies [eedb829]
-  - @mastra/core@0.1.27-alpha.52
+  - @datawarp/mastra-core@0.1.27-alpha.52
 
 ## 0.1.57-alpha.77
 
@@ -4866,7 +4866,7 @@
 - Updated dependencies [a7b016d]
 - Updated dependencies [da2e8d3]
 - Updated dependencies [538a136]
-  - @mastra/core@0.1.27-alpha.51
+  - @datawarp/mastra-core@0.1.27-alpha.51
 
 ## 0.1.57-alpha.76
 
@@ -4875,7 +4875,7 @@
 - b6f9860: watch for changes in user mastra directory and restart server in cli dev
 - cefd906: cli interactive api key configuration
 - Updated dependencies [401a4d9]
-  - @mastra/core@0.1.27-alpha.50
+  - @datawarp/mastra-core@0.1.27-alpha.50
 
 ## 0.1.57-alpha.75
 
@@ -4883,7 +4883,7 @@
 
 - Updated dependencies [79acad0]
 - Updated dependencies [f5dfa20]
-  - @mastra/core@0.1.27-alpha.49
+  - @datawarp/mastra-core@0.1.27-alpha.49
 
 ## 0.1.57-alpha.74
 
@@ -4932,7 +4932,7 @@
 ### Patch Changes
 
 - Updated dependencies [b726bf5]
-  - @mastra/core@0.1.27-alpha.48
+  - @datawarp/mastra-core@0.1.27-alpha.48
 
 ## 0.1.57-alpha.66
 
@@ -4946,7 +4946,7 @@
 
 - f6ba259: simplify generate api
 - Updated dependencies [f6ba259]
-  - @mastra/core@0.1.27-alpha.47
+  - @datawarp/mastra-core@0.1.27-alpha.47
 
 ## 0.1.57-alpha.64
 
@@ -4958,7 +4958,7 @@
 - Updated dependencies [8ae2bbc]
 - Updated dependencies [0bd142c]
 - Updated dependencies [ee4de15]
-  - @mastra/core@0.1.27-alpha.46
+  - @datawarp/mastra-core@0.1.27-alpha.46
 
 ## 0.1.57-alpha.63
 
@@ -4987,7 +4987,7 @@
 - 002d6d8: add memory to playground agent
 - Updated dependencies [e608d8c]
 - Updated dependencies [002d6d8]
-  - @mastra/core@0.1.27-alpha.45
+  - @datawarp/mastra-core@0.1.27-alpha.45
 
 ## 0.1.57-alpha.59
 
@@ -5008,7 +5008,7 @@
 - 79a464e: Update cli, dane, stabilityai builds.
 - 2fa7f53: add more logs to workflow, only log failed workflow if all steps fail, animate workflow diagram edges
 - Updated dependencies [2fa7f53]
-  - @mastra/core@0.1.27-alpha.44
+  - @datawarp/mastra-core@0.1.27-alpha.44
 
 ## 0.1.57-alpha.56
 
@@ -5019,7 +5019,7 @@
 - 505d385: playground breadcrumb navigation
 - Updated dependencies [2e099d2]
 - Updated dependencies [d6d8159]
-  - @mastra/core@0.1.27-alpha.43
+  - @datawarp/mastra-core@0.1.27-alpha.43
 
 ## 0.1.57-alpha.55
 
@@ -5032,7 +5032,7 @@
 ### Patch Changes
 
 - Updated dependencies [4a54c82]
-  - @mastra/core@0.1.27-alpha.42
+  - @datawarp/mastra-core@0.1.27-alpha.42
 
 ## 0.1.57-alpha.53
 
@@ -5052,7 +5052,7 @@
 
 - 5cdfb88: add getWorkflows method to core, add runId to workflow logs, update workflow starter file, add workflows page with table and workflow page with info, endpoints and logs
 - Updated dependencies [5cdfb88]
-  - @mastra/core@0.1.27-alpha.41
+  - @datawarp/mastra-core@0.1.27-alpha.41
 
 ## 0.1.57-alpha.50
 
@@ -5066,7 +5066,7 @@
 ### Patch Changes
 
 - Updated dependencies [9029796]
-  - @mastra/core@0.1.27-alpha.40
+  - @datawarp/mastra-core@0.1.27-alpha.40
 
 ## 0.1.57-alpha.48
 
@@ -5074,7 +5074,7 @@
 
 - 2b01511: Update CONSOLE logger to store logs and return logs, add logs to dev agent page
 - Updated dependencies [2b01511]
-  - @mastra/core@0.1.27-alpha.39
+  - @datawarp/mastra-core@0.1.27-alpha.39
 
 ## 0.1.57-alpha.47
 
@@ -5087,7 +5087,7 @@
 ### Patch Changes
 
 - Updated dependencies [f031a1f]
-  - @mastra/core@0.1.27-alpha.38
+  - @datawarp/mastra-core@0.1.27-alpha.38
 
 ## 0.1.57-alpha.45
 
@@ -5099,7 +5099,7 @@
 - Updated dependencies [c872875]
 - Updated dependencies [f6da688]
 - Updated dependencies [b5393f1]
-  - @mastra/core@0.1.27-alpha.37
+  - @datawarp/mastra-core@0.1.27-alpha.37
 
 ## 0.1.57-alpha.44
 
@@ -5114,7 +5114,7 @@
 - Updated dependencies [75bf3f0]
 - Updated dependencies [3c4488b]
 - Updated dependencies [d38f7a6]
-  - @mastra/core@0.1.27-alpha.36
+  - @datawarp/mastra-core@0.1.27-alpha.36
 
 ## 0.1.57-alpha.43
 
@@ -5122,7 +5122,7 @@
 
 - 033eda6: More fixes for refactor
 - Updated dependencies [033eda6]
-  - @mastra/core@0.1.27-alpha.35
+  - @datawarp/mastra-core@0.1.27-alpha.35
 
 ## 0.1.57-alpha.42
 
@@ -5131,14 +5131,14 @@
 - 837a288: MAJOR Revamp of tools, workflows, syncs.
 - Updated dependencies [837a288]
 - Updated dependencies [5811de6]
-  - @mastra/core@0.1.27-alpha.34
+  - @datawarp/mastra-core@0.1.27-alpha.34
 
 ## 0.1.57-alpha.41
 
 ### Patch Changes
 
 - Updated dependencies [e1dd94a]
-  - @mastra/core@0.1.27-alpha.33
+  - @datawarp/mastra-core@0.1.27-alpha.33
 
 ## 0.1.57-alpha.40
 
@@ -5166,7 +5166,7 @@
 - 2712098: add getAgents method to core and route to cli dev, add homepage interface to cli
 - 5d2f4b0: cli shared ui
 - Updated dependencies [2712098]
-  - @mastra/core@0.1.27-alpha.32
+  - @datawarp/mastra-core@0.1.27-alpha.32
 
 ## 0.1.57-alpha.36
 
@@ -5180,7 +5180,7 @@
 
 - a828155: Add prepare script to include node_modules in published package
 - Updated dependencies [c2dd6b5]
-  - @mastra/core@0.1.27-alpha.31
+  - @datawarp/mastra-core@0.1.27-alpha.31
 
 ## 0.1.57-alpha.34
 
@@ -5231,21 +5231,21 @@
 ### Patch Changes
 
 - Updated dependencies [963c15a]
-  - @mastra/core@0.1.27-alpha.30
+  - @datawarp/mastra-core@0.1.27-alpha.30
 
 ## 0.1.57-alpha.26
 
 ### Patch Changes
 
 - Updated dependencies [7d87a15]
-  - @mastra/core@0.1.27-alpha.29
+  - @datawarp/mastra-core@0.1.27-alpha.29
 
 ## 0.1.57-alpha.25
 
 ### Patch Changes
 
 - Updated dependencies [1ebd071]
-  - @mastra/core@0.1.27-alpha.28
+  - @datawarp/mastra-core@0.1.27-alpha.28
 
 ## 0.1.57-alpha.24
 
@@ -5253,7 +5253,7 @@
 
 - b9f7d2f: Expose memory APIs in mastra serve
 - Updated dependencies [cd02c56]
-  - @mastra/core@0.1.27-alpha.27
+  - @datawarp/mastra-core@0.1.27-alpha.27
 
 ## 0.1.57-alpha.23
 
@@ -5268,7 +5268,7 @@
 - 31ca9fe: fix bugs with init
 - 3c2d317: add textObject and streamObject to serve api
 - Updated dependencies [d5e12de]
-  - @mastra/core@0.1.27-alpha.26
+  - @datawarp/mastra-core@0.1.27-alpha.26
 
 ## 0.1.57-alpha.21
 
@@ -5282,7 +5282,7 @@
 
 - 56f2163: add proper titles and handle empty list
 - Updated dependencies [01502b0]
-  - @mastra/core@0.1.27-alpha.25
+  - @datawarp/mastra-core@0.1.27-alpha.25
 
 ## 0.1.57-alpha.19
 
@@ -5295,21 +5295,21 @@
 ### Patch Changes
 
 - Updated dependencies [836f4e3]
-  - @mastra/core@0.1.27-alpha.24
+  - @datawarp/mastra-core@0.1.27-alpha.24
 
 ## 0.1.57-alpha.17
 
 ### Patch Changes
 
 - Updated dependencies [0b826f6]
-  - @mastra/core@0.1.27-alpha.23
+  - @datawarp/mastra-core@0.1.27-alpha.23
 
 ## 0.1.57-alpha.16
 
 ### Patch Changes
 
 - Updated dependencies [7a19083]
-  - @mastra/core@0.1.27-alpha.22
+  - @datawarp/mastra-core@0.1.27-alpha.22
 
 ## 0.1.57-alpha.15
 
@@ -5322,7 +5322,7 @@
 ### Patch Changes
 
 - Updated dependencies [5ee2e78]
-  - @mastra/core@0.1.27-alpha.21
+  - @datawarp/mastra-core@0.1.27-alpha.21
 
 ## 0.1.57-alpha.13
 

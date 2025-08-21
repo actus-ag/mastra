@@ -15,9 +15,9 @@ import { GithubLink } from "@/components/github-link";
 
 ```typescript filename="src/mastra/agents/index.ts"
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@mastra/core/agent";
-import { OpenAIVoice } from "@mastra/voice-openai";
-import { Memory } from "@mastra/memory";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { OpenAIVoice } from "@datawarp/mastra-voice-openai";
+import { Memory } from "@datawarp/mastra-memory";
 
 const instructions = `
     You are an Interactive Storyteller Agent. Your job is to create engaging
@@ -37,8 +37,8 @@ export const storyTellerAgent = new Agent({
 このスニペットは、エージェントをあなたの Mastra インスタンスに登録する方法を示しています。
 
 ```typescript filename="src/mastra/index.ts"
-import { PinoLogger } from "@mastra/loggers";
-import { Mastra } from "@mastra/core/mastra";
+import { PinoLogger } from "@datawarp/mastra-loggers";
+import { Mastra } from "@datawarp/mastra-core/mastra";
 import { storyTellerAgent } from "./agents";
 
 export const mastra = new Mastra({
@@ -55,7 +55,7 @@ export const mastra = new Mastra({
 ここでは、Mastra Client SDKを使用してMastraサーバーとやり取りします。Mastra Client SDKの詳細については、[ドキュメント](/docs/deployment/client)をご覧ください。
 
 ```typescript filename="src/app/page.tsx"
-import { MastraClient } from "@mastra/client-js";
+import { MastraClient } from "@datawarp/mastra-client-js";
 
 export const mastraClient = new MastraClient({
   baseUrl: "http://localhost:4111", // Replace with your Mastra backend URL

@@ -7,7 +7,7 @@ The `createVectorQueryTool` function now supports database-specific configuratio
 ### Pinecone Configuration
 
 ```typescript
-import { createVectorQueryTool } from '@mastra/rag/tools';
+import { createVectorQueryTool } from '@datawarp/mastra-rag/tools';
 
 const pineconeVectorTool = createVectorQueryTool({
   id: 'pinecone-search',
@@ -73,7 +73,7 @@ const chromaTool = createVectorQueryTool({
 You can also override database configurations at runtime using the runtime context:
 
 ```typescript
-import { RuntimeContext } from '@mastra/core/runtime-context';
+import { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
 
 const runtimeContext = new RuntimeContext();
 

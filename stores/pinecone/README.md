@@ -1,17 +1,17 @@
-# @mastra/pinecone
+# @datawarp/mastra-pinecone
 
 Vector store implementation for Pinecone, using the official @pinecone-database/pinecone SDK with added telemetry support.
 
 ## Installation
 
 ```bash
-pnpm add @mastra/pinecone
+pnpm add @datawarp/mastra-pinecone
 ```
 
 ## Usage
 
 ```typescript
-import { PineconeVector } from '@mastra/pinecone';
+import { PineconeVector } from '@datawarp/mastra-pinecone';
 
 const vectorStore = new PineconeVector(
   'your-api-key',

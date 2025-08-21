@@ -1,7 +1,7 @@
 import { join } from 'path';
 import process from 'process';
-import { Deployer } from '@mastra/deployer';
-import { DepsService } from '@mastra/deployer/services';
+import { Deployer } from '@datawarp/mastra-deployer';
+import { DepsService } from '@datawarp/mastra-deployer/services';
 import { move, writeJson } from 'fs-extra/esm';
 
 export class NetlifyDeployer extends Deployer {
@@ -65,10 +65,10 @@ export class NetlifyDeployer extends Deployer {
     import { mastra } from '#mastra';
     import { createHonoServer, getToolExports } from '#server';
     import { tools } from '#tools';
-    import { evaluate } from '@mastra/core/eval';
-    import { AvailableHooks, registerHook } from '@mastra/core/hooks';
-    import { TABLE_EVALS } from '@mastra/core/storage';
-    import { checkEvalStorageFields } from '@mastra/core/utils';
+    import { evaluate } from '@datawarp/mastra-core/eval';
+    import { AvailableHooks, registerHook } from '@datawarp/mastra-core/hooks';
+    import { TABLE_EVALS } from '@datawarp/mastra-core/storage';
+    import { checkEvalStorageFields } from '@datawarp/mastra-core/utils';
 
     registerHook(AvailableHooks.ON_GENERATION, ({ input, output, metric, runId, agentName, instructions }) => {
       evaluate({

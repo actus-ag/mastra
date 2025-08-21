@@ -36,12 +36,12 @@ Then, import the necessary dependencies:
 
 ```typescript copy showLineNumbers filename="src/index.ts"
 import { openai } from "@ai-sdk/openai";
-import { PgVector } from "@mastra/pg";
+import { PgVector } from "@datawarp/mastra-pg";
 import { 
   MDocument, 
   rerankWithScorer as rerank, 
   MastraAgentRelevanceScorer 
-} from "@mastra/rag";
+} from "@datawarp/mastra-rag";
 import { embedMany, embed } from "ai";
 ```
 

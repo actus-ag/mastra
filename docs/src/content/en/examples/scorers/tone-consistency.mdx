@@ -12,7 +12,7 @@ Use `createToneConsistencyScorer` to evaluate emotional tone patterns and sentim
 ## Installation
 
 ```bash copy
-npm install @mastra/evals
+npm install @datawarp/mastra-evals
 ```
 
 > For complete API documentation and configuration options, see [`createToneScorer`](/reference/scorers/tone-consistency).
@@ -22,7 +22,7 @@ npm install @mastra/evals
 In this example, the texts exhibit a similar positive sentiment. The scorer measures the consistency between the tones, resulting in a high score.
 
 ```typescript filename="src/example-positive-tone.ts" showLineNumbers copy
-import { createToneScorer } from "@mastra/evals/scorers/code";
+import { createToneScorer } from "@datawarp/mastra-evals/scorers/code";
 
 const scorer = createToneScorer();
 
@@ -58,7 +58,7 @@ The scorer returns a high score reflecting strong sentiment alignment. The `anal
 In this example, the text’s internal tone consistency is analyzed by passing an empty response. This signals the scorer to evaluate sentiment stability within the single input text, resulting in a score reflecting how uniform the tone is throughout.
 
 ```typescript filename="src/example-stable-tone.ts" showLineNumbers copy
-import { createToneScorer } from "@mastra/evals/scorers/code";
+import { createToneScorer } from "@datawarp/mastra-evals/scorers/code";
 
 const scorer = createToneScorer();
 
@@ -93,7 +93,7 @@ The scorer returns a high score indicating consistent sentiment throughout the i
 In this example, the input and response have different emotional tones. The scorer picks up on these variations and gives a lower consistency score.
 
 ```typescript filename="src/example-mixed-tone.ts" showLineNumbers copy
-import { createToneScorer } from "@mastra/evals/scorers/code";
+import { createToneScorer } from "@datawarp/mastra-evals/scorers/code";
 
 const scorer = createToneScorer();
 

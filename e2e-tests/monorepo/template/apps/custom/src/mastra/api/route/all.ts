@@ -1,4 +1,4 @@
-import { registerApiRoute } from '@mastra/core/server';
+import { registerApiRoute } from '@datawarp/mastra-core/server';
 
 export const allRoute = registerApiRoute('/all', {
   method: 'ALL',

@@ -31,7 +31,7 @@ Mastraでエージェントを作成する際、AI SDKがサポートするど�
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 
 const agent = new Agent({
   name: "WeatherAgent",
@@ -220,7 +220,7 @@ MastraはAI SDKとうまく統合して、これを可能にします
 
 ```typescript copy
 import { createDataStream } from "ai";
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 
 export const weatherAgent = new Agent({
   name: "Weather Agent",

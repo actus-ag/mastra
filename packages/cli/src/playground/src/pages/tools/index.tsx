@@ -1,5 +1,5 @@
 import { useAgents } from '@/hooks/use-agents';
-import { MainContentLayout, Header, HeaderTitle, MainContentContent, ToolList } from '@mastra/playground-ui';
+import { MainContentLayout, Header, HeaderTitle, MainContentContent, ToolList } from '@datawarp/mastra-playground-ui';
 
 import { useTools } from '@/hooks/use-all-tools';
 

@@ -1,4 +1,4 @@
-import type { Task } from '@mastra/core/a2a';
+import type { Task } from '@datawarp/mastra-core/a2a';
 
 export class InMemoryTaskStore {
   private store: Map<string, Task> = new Map();

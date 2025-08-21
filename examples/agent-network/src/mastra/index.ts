@@ -1,12 +1,12 @@
-import { Mastra } from '@mastra/core';
-import { PinoLogger } from '@mastra/loggers';
+import { Mastra } from '@datawarp/mastra-core';
+import { PinoLogger } from '@datawarp/mastra-loggers';
 // import { researchNetwork } from './network';
 import { webSearchAgent, synthesizeAgent } from './agents';
 import { planningAgent } from './agents/planning';
 import { travelAgent, summaryAgent } from './agents/travelAgent';
 // import { agentWorkflow } from './workflows';
 import { v_nextNetwork } from './network/v-next';
-import { LibSQLStore } from '@mastra/libsql';
+import { LibSQLStore } from '@datawarp/mastra-libsql';
 import { workflow1 } from './network/v-next';
 import { travelAgentWorkflow } from './workflows/step4';
 import { incrementWorkflow } from './workflows/step5';

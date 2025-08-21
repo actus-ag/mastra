@@ -1,4 +1,4 @@
-import { registerApiRoute } from '@mastra/core/server';
+import { registerApiRoute } from '@datawarp/mastra-core/server';
 import { IgetYouAnything } from '@custom-lodash/index';
 
 export const testRoute = registerApiRoute('/test', {

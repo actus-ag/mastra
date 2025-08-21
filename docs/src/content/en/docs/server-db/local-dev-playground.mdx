@@ -127,7 +127,7 @@ The local development server includes an OpenAPI specification available at: [ht
 To include OpenAPI documentation in your production server, enable it in the Mastra instance:
 
 ```typescript {7} filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@mastra/core/mastra";
+import { Mastra } from "@datawarp/mastra-core/mastra";
 
 export const mastra = new Mastra({
   // ...
@@ -146,7 +146,7 @@ The local development server includes an interactive Swagger UI - API explorer a
 To include Swagger UI in your production server, enable it in the Mastra instance:
 
 ```typescript {7} filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@mastra/core/mastra";
+import { Mastra } from "@datawarp/mastra-core/mastra";
 
 export const mastra = new Mastra({
   // ...
@@ -173,7 +173,7 @@ This setup lets you start developing immediately with production-like behavior, 
 By default, the server runs on port `4111`. You can customize the host and port through the Mastra server configuration.
 
 ```typescript {6,7} filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@mastra/core/mastra";
+import { Mastra } from "@datawarp/mastra-core/mastra";
 
 export const mastra = new Mastra({
   // ...

@@ -1,5 +1,5 @@
-import type { BaseLogMessage, LogLevel } from '@mastra/core/logger';
-import type { Mastra } from '@mastra/core/mastra';
+import type { BaseLogMessage, LogLevel } from '@datawarp/mastra-core/logger';
+import type { Mastra } from '@datawarp/mastra-core/mastra';
 import { handleError } from './error';
 import { validateBody } from './utils';
 

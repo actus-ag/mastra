@@ -1,12 +1,12 @@
 import { randomUUID } from 'crypto';
-import type { Mastra } from '@mastra/core';
-import type { MessageSendParams, TaskQueryParams, TaskIdParams } from '@mastra/core/a2a';
-import type { RuntimeContext } from '@mastra/core/runtime-context';
-import type { InMemoryTaskStore } from '@mastra/server/a2a/store';
+import type { Mastra } from '@datawarp/mastra-core';
+import type { MessageSendParams, TaskQueryParams, TaskIdParams } from '@datawarp/mastra-core/a2a';
+import type { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
+import type { InMemoryTaskStore } from '@datawarp/mastra-server/a2a/store';
 import {
   getAgentCardByIdHandler as getOriginalAgentCardByIdHandler,
   getAgentExecutionHandler as getOriginalAgentExecutionHandler,
-} from '@mastra/server/handlers/a2a';
+} from '@datawarp/mastra-server/handlers/a2a';
 
 import type { Context } from 'hono';
 import { stream } from 'hono/streaming';

@@ -1,4 +1,4 @@
-import { BaseFilterTranslator } from '@mastra/core/vector/filter';
+import { BaseFilterTranslator } from '@datawarp/mastra-core/vector/filter';
 import type {
   VectorFilter,
   OperatorSupport,
@@ -6,7 +6,7 @@ import type {
   OperatorValueMap,
   LogicalOperatorValueMap,
   BlacklistedRootOperators,
-} from '@mastra/core/vector/filter';
+} from '@datawarp/mastra-core/vector/filter';
 
 type AstraOperatorValueMap = Omit<OperatorValueMap, '$elemMatch' | '$regex' | '$options'> & {
   $size: number; // Astra-specific

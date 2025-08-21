@@ -283,7 +283,7 @@ The enhanced dataset supports queries about:
 
 Key dependencies:
 
-- `@mastra/core`: Workflow orchestration
+- `@datawarp/mastra-core`: Workflow orchestration
 - `@ai-sdk/openai`: AI integration
 - `ai`: AI SDK for structured generation
 - `pg`: PostgreSQL client

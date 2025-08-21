@@ -1,5 +1,5 @@
-import { BaseFilterTranslator } from '@mastra/core/vector/filter';
-import type { VectorFilter, OperatorSupport, OperatorValueMap, VectorFieldValue } from '@mastra/core/vector/filter';
+import { BaseFilterTranslator } from '@datawarp/mastra-core/vector/filter';
+import type { VectorFilter, OperatorSupport, OperatorValueMap, VectorFieldValue } from '@datawarp/mastra-core/vector/filter';
 
 type LibSQLOperatorValueMap = Omit<
   OperatorValueMap,

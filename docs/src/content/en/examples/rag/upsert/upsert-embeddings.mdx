@@ -23,8 +23,8 @@ The providers include PgVector, Pinecone, Qdrant, Chroma, Astra DB, LibSQL, Upst
   The `PgVector` class provides methods to create indexes and insert embeddings into PostgreSQL with the pgvector extension.
     ```tsx copy
     import { openai } from "@ai-sdk/openai";
-    import { PgVector } from "@mastra/pg";
-    import { MDocument } from "@mastra/rag";
+    import { PgVector } from "@datawarp/mastra-pg";
+    import { MDocument } from "@datawarp/mastra-rag";
     import { embedMany } from "ai";
 
     const doc = MDocument.fromText("Your text content...");
@@ -64,8 +64,8 @@ The providers include PgVector, Pinecone, Qdrant, Chroma, Astra DB, LibSQL, Upst
   The `PineconeVector` class provides methods to create indexes and insert embeddings into Pinecone, a managed vector database service.
     ```tsx copy
     import { openai } from '@ai-sdk/openai';
-    import { PineconeVector } from '@mastra/pinecone';
-    import { MDocument } from '@mastra/rag';
+    import { PineconeVector } from '@datawarp/mastra-pinecone';
+    import { MDocument } from '@datawarp/mastra-rag';
     import { embedMany } from 'ai';
 
     const doc = MDocument.fromText('Your text content...');
@@ -105,8 +105,8 @@ The providers include PgVector, Pinecone, Qdrant, Chroma, Astra DB, LibSQL, Upst
   The `QdrantVector` class provides methods to create collections and insert embeddings into Qdrant, a high-performance vector database.
     ```tsx copy
     import { openai } from '@ai-sdk/openai';
-    import { QdrantVector } from '@mastra/qdrant';
-    import { MDocument } from '@mastra/rag';
+    import { QdrantVector } from '@datawarp/mastra-qdrant';
+    import { MDocument } from '@datawarp/mastra-rag';
     import { embedMany } from 'ai';
 
     const doc = MDocument.fromText('Your text content...');
@@ -142,8 +142,8 @@ The providers include PgVector, Pinecone, Qdrant, Chroma, Astra DB, LibSQL, Upst
   The `ChromaVector` class provides methods to create collections and insert embeddings into Chroma, an open-source embedding database.
     ```tsx copy
     import { openai } from '@ai-sdk/openai';
-    import { ChromaVector } from '@mastra/chroma';
-    import { MDocument } from '@mastra/rag';
+    import { ChromaVector } from '@datawarp/mastra-chroma';
+    import { MDocument } from '@datawarp/mastra-rag';
     import { embedMany } from 'ai';
 
     const doc = MDocument.fromText('Your text content...');
@@ -190,8 +190,8 @@ The providers include PgVector, Pinecone, Qdrant, Chroma, Astra DB, LibSQL, Upst
   he `AstraVector` class provides methods to create collections and insert embeddings into DataStax Astra DB, a cloud-native vector database.
     ```tsx copy
     import { openai } from '@ai-sdk/openai';
-    import { AstraVector } from '@mastra/astra';
-    import { MDocument } from '@mastra/rag';
+    import { AstraVector } from '@datawarp/mastra-astra';
+    import { MDocument } from '@datawarp/mastra-rag';
     import { embedMany } from 'ai';
 
     const doc = MDocument.fromText('Your text content...');
@@ -227,8 +227,8 @@ The providers include PgVector, Pinecone, Qdrant, Chroma, Astra DB, LibSQL, Upst
   The `LibSQLVector` class provides methods to create collections and insert embeddings into LibSQL, a fork of SQLite with vector extensions.
     ```tsx copy
     import { openai } from "@ai-sdk/openai";
-    import { LibSQLVector } from "@mastra/core/vector/libsql";
-    import { MDocument } from "@mastra/rag";
+    import { LibSQLVector } from "@datawarp/mastra-core/vector/libsql";
+    import { MDocument } from "@datawarp/mastra-rag";
     import { embedMany } from "ai";
 
     const doc = MDocument.fromText("Your text content...");
@@ -270,8 +270,8 @@ The providers include PgVector, Pinecone, Qdrant, Chroma, Astra DB, LibSQL, Upst
   The `UpstashVector` class provides methods to create collections and insert embeddings into Upstash Vector, a serverless vector database.
     ```tsx copy
     import { openai } from '@ai-sdk/openai';
-    import { UpstashVector } from '@mastra/upstash';
-    import { MDocument } from '@mastra/rag';
+    import { UpstashVector } from '@datawarp/mastra-upstash';
+    import { MDocument } from '@datawarp/mastra-rag';
     import { embedMany } from 'ai';
 
     const doc = MDocument.fromText('Your text content...');
@@ -303,8 +303,8 @@ The providers include PgVector, Pinecone, Qdrant, Chroma, Astra DB, LibSQL, Upst
   The `CloudflareVector` class provides methods to create collections and insert embeddings into Cloudflare Vectorize, a serverless vector database service.
     ```tsx copy
     import { openai } from '@ai-sdk/openai';
-    import { CloudflareVector } from '@mastra/vectorize';
-    import { MDocument } from '@mastra/rag';
+    import { CloudflareVector } from '@datawarp/mastra-vectorize';
+    import { MDocument } from '@datawarp/mastra-rag';
     import { embedMany } from 'ai';
 
     const doc = MDocument.fromText('Your text content...');
@@ -338,8 +338,8 @@ The providers include PgVector, Pinecone, Qdrant, Chroma, Astra DB, LibSQL, Upst
   The `MongoDBVector` class provides methods to create indexes and insert embeddings into MongoDB with Atlas Search.
     ```tsx copy
     import { openai } from "@ai-sdk/openai";
-    import { MongoDBVector } from "@mastra/mongodb";
-    import { MDocument } from "@mastra/rag";
+    import { MongoDBVector } from "@datawarp/mastra-mongodb";
+    import { MDocument } from "@datawarp/mastra-rag";
     import { embedMany } from "ai";
 
     const doc = MDocument.fromText("Your text content...");
@@ -374,8 +374,8 @@ The providers include PgVector, Pinecone, Qdrant, Chroma, Astra DB, LibSQL, Upst
   The `OpenSearchVector` class provides methods to create indexes and insert embeddings into OpenSearch, a distributed search engine with vector search capabilities.
     ```tsx copy
     import { openai } from '@ai-sdk/openai';
-    import { OpenSearchVector } from '@mastra/opensearch';
-    import { MDocument } from '@mastra/rag';
+    import { OpenSearchVector } from '@datawarp/mastra-opensearch';
+    import { MDocument } from '@datawarp/mastra-rag';
     import { embedMany } from 'ai';
 
     const doc = MDocument.fromText('Your text content...');
@@ -408,8 +408,8 @@ The providers include PgVector, Pinecone, Qdrant, Chroma, Astra DB, LibSQL, Upst
   The `CouchbaseVector` class provides methods to create indexes and insert embeddings into Couchbase, a distributed NoSQL database with vector search capabilities.
     ```tsx copy
     import { openai } from '@ai-sdk/openai';
-    import { CouchbaseVector } from '@mastra/couchbase';
-    import { MDocument } from '@mastra/rag';
+    import { CouchbaseVector } from '@datawarp/mastra-couchbase';
+    import { MDocument } from '@datawarp/mastra-rag';
     import { embedMany } from 'ai';
 
     const doc = MDocument.fromText('Your text content...');
@@ -447,8 +447,8 @@ The providers include PgVector, Pinecone, Qdrant, Chroma, Astra DB, LibSQL, Upst
   The `LanceVectorStore` class provides methods to create tables, indexes and insert embeddings into LanceDB, an embedded vector database built on the Lance columnar format.
     ```tsx copy
     import { openai } from '@ai-sdk/openai';
-    import { LanceVectorStore } from '@mastra/lance';
-    import { MDocument } from '@mastra/rag';
+    import { LanceVectorStore } from '@datawarp/mastra-lance';
+    import { MDocument } from '@datawarp/mastra-rag';
     import { embedMany } from 'ai';
 
     const doc = MDocument.fromText('Your text content...');

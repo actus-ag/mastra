@@ -10,9 +10,9 @@ import { GithubLink } from "@/components/github-link";
 AIエージェントを構築する際には、しばしば外部データソースや機能を統合して、その能力を強化する必要があります。この例では、特定の場所の正確な天気情報を提供するために専用の天気ツールを使用するAIエージェントを作成する方法を示します。
 
 ```ts showLineNumbers copy
-import { Mastra } from "@mastra/core";
-import { Agent } from "@mastra/core/agent";
-import { createTool } from "@mastra/core/tools";
+import { Mastra } from "@datawarp/mastra-core";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { createTool } from "@datawarp/mastra-core/tools";
 import { openai } from "@ai-sdk/openai";
 import { z } from "zod";
 

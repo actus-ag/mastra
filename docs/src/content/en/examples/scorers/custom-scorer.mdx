@@ -12,7 +12,7 @@ This example shows how to create a custom scorer using `createScorer` with promp
 ## Installation
 
 ```bash copy
-npm install @mastra/core
+npm install @datawarp/mastra-core
 ```
 
 > For complete API documentation and configuration options, see [`createScorer`](/reference/scorers/create-scorer).
@@ -32,7 +32,7 @@ Together, these components allow you to define custom evaluation logic using LLM
 
 ```typescript filename="src/mastra/scorers/gluten-checker.ts" showLineNumbers copy
 import { openai } from '@ai-sdk/openai';
-import { createScorer } from '@mastra/core/scores';
+import { createScorer } from '@datawarp/mastra-core/scores';
 import { z } from 'zod';
 
 export const GLUTEN_INSTRUCTIONS = `You are a Chef that identifies if recipes contain gluten.`;

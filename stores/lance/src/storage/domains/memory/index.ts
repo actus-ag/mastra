@@ -1,16 +1,16 @@
 import type { Connection } from '@lancedb/lancedb';
-import { MessageList } from '@mastra/core/agent';
-import type { MastraMessageContentV2 } from '@mastra/core/agent';
-import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
-import type { MastraMessageV1, MastraMessageV2, StorageThreadType } from '@mastra/core/memory';
+import { MessageList } from '@datawarp/mastra-core/agent';
+import type { MastraMessageContentV2 } from '@datawarp/mastra-core/agent';
+import { ErrorCategory, ErrorDomain, MastraError } from '@datawarp/mastra-core/error';
+import type { MastraMessageV1, MastraMessageV2, StorageThreadType } from '@datawarp/mastra-core/memory';
 import {
   MemoryStorage,
   resolveMessageLimit,
   TABLE_MESSAGES,
   TABLE_RESOURCES,
   TABLE_THREADS,
-} from '@mastra/core/storage';
-import type { PaginationInfo, StorageGetMessagesArg, StorageResourceType } from '@mastra/core/storage';
+} from '@datawarp/mastra-core/storage';
+import type { PaginationInfo, StorageGetMessagesArg, StorageResourceType } from '@datawarp/mastra-core/storage';
 import type { StoreOperationsLance } from '../operations';
 import { getTableSchema, processResultWithTypeConversion } from '../utils';
 

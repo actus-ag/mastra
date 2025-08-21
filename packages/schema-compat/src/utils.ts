@@ -21,7 +21,7 @@ import type { SchemaCompatLayer } from './schema-compatibility';
  * @example
  * ```typescript
  * import { z } from 'zod';
- * import { convertZodSchemaToAISDKSchema } from '@mastra/schema-compat';
+ * import { convertZodSchemaToAISDKSchema } from '@datawarp/mastra-schema-compat';
  *
  * const userSchema = z.object({
  *   name: z.string(),
@@ -80,7 +80,7 @@ function isZodType(value: unknown): value is z.ZodType {
  * @example
  * ```typescript
  * import { jsonSchema } from 'ai';
- * import { convertSchemaToZod } from '@mastra/schema-compat';
+ * import { convertSchemaToZod } from '@datawarp/mastra-schema-compat';
  *
  * const aiSchema = jsonSchema({
  *   type: 'object',
@@ -153,7 +153,7 @@ export function applyCompatLayer(options: {
  * @example
  * ```typescript
  * import { z } from 'zod';
- * import { applyCompatLayer, OpenAISchemaCompatLayer, AnthropicSchemaCompatLayer } from '@mastra/schema-compat';
+ * import { applyCompatLayer, OpenAISchemaCompatLayer, AnthropicSchemaCompatLayer } from '@datawarp/mastra-schema-compat';
  *
  * const schema = z.object({
  *   query: z.string().email(),

@@ -28,7 +28,7 @@ export default nextConfig;
 Configure your Mastra instance:
 
 ```typescript filename="mastra.config.ts" copy
-import { Mastra } from "@mastra/core";
+import { Mastra } from "@datawarp/mastra-core";
 
 export const mastra = new Mastra({
   // ... other config
@@ -60,7 +60,7 @@ import {
   NodeSDK,
   ATTR_SERVICE_NAME,
   resourceFromAttributes,
-} from "@mastra/core/telemetry/otel-vendor";
+} from "@datawarp/mastra-core/telemetry/otel-vendor";
 import { LangfuseExporter } from "langfuse-vercel";
 
 export function register() {

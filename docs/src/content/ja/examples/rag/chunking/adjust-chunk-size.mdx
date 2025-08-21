@@ -10,7 +10,7 @@ import { GithubLink } from "@/components/github-link";
 大きなドキュメントを処理する際には、各チャンクに含まれるテキストの量を調整する必要があるかもしれません。デフォルトでは、チャンクは1024文字の長さですが、このサイズをカスタマイズして、コンテンツやメモリの要件により適合させることができます。この例では、ドキュメントを分割する際にカスタムチャンクサイズを設定する方法を示します。
 
 ```tsx copy
-import { MDocument } from "@mastra/rag";
+import { MDocument } from "@datawarp/mastra-rag";
 
 const doc = MDocument.fromText("Your plain text content...");
 

@@ -1,4 +1,4 @@
-import { MastraA2AError } from '@mastra/core/a2a';
+import { MastraA2AError } from '@datawarp/mastra-core/a2a';
 import type {
   MessageSendParams,
   TaskQueryParams,
@@ -6,10 +6,10 @@ import type {
   AgentCard,
   TaskStatus,
   TaskState,
-} from '@mastra/core/a2a';
-import type { Agent } from '@mastra/core/agent';
-import type { IMastraLogger } from '@mastra/core/logger';
-import type { RuntimeContext } from '@mastra/core/runtime-context';
+} from '@datawarp/mastra-core/a2a';
+import type { Agent } from '@datawarp/mastra-core/agent';
+import type { IMastraLogger } from '@datawarp/mastra-core/logger';
+import type { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
 import { z } from 'zod';
 import { convertToCoreMessage, normalizeError, createSuccessResponse, createErrorResponse } from '../a2a/protocol';
 import type { InMemoryTaskStore } from '../a2a/store';

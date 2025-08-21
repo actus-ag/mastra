@@ -7,12 +7,12 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "latest",
-    "@mastra/core": "latest",
+    "@datawarp/mastra-core": "latest",
     "zod": "^3.25.67"
   },
   "pnpm": {
     "overrides": {
-      "@mastra/core": "link:../../../../packages/core"
+      "@datawarp/mastra-core": "link:../../../../packages/core"
     }
   },
   "version": "0.0.1",

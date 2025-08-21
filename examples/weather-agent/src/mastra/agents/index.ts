@@ -1,9 +1,9 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@mastra/core/agent';
-// import { Memory } from '@mastra/memory';
-import { LibSQLStore } from '@mastra/libsql';
+import { Agent } from '@datawarp/mastra-core/agent';
+// import { Memory } from '@datawarp/mastra-memory';
+import { LibSQLStore } from '@datawarp/mastra-libsql';
 
-// import { OpenAIVoice } from '@mastra/voice-openai';
+// import { OpenAIVoice } from '@datawarp/mastra-voice-openai';
 
 import { weatherTool } from '../tools';
 

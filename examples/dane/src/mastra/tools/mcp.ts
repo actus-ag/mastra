@@ -1,4 +1,4 @@
-import { MCPClient } from '@mastra/mcp';
+import { MCPClient } from '@datawarp/mastra-mcp';
 
 export const slack = new MCPClient({
   servers: {

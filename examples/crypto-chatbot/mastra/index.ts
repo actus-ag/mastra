@@ -1,5 +1,5 @@
-import { Mastra } from '@mastra/core';
-import { PinoLogger } from '@mastra/loggers';
+import { Mastra } from '@datawarp/mastra-core';
+import { PinoLogger } from '@datawarp/mastra-loggers';
 import { createCryptoAgent } from './agents';
 
 export const createMastra = ({

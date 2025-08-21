@@ -204,7 +204,7 @@ When using suspend/resume with `RuntimeContext`, you can create the instance you
 `RuntimeContext` is not automatically shared on a workflow run.
 
 ```typescript {1,4,9,16} filename="src/mastra/workflows/test-workflow.tss" showLineNumbers copy
-import { RuntimeContext } from "@mastra/core/di";
+import { RuntimeContext } from "@datawarp/mastra-core/di";
 import { mastra } from "./mastra";
 
 const runtimeContext = new RuntimeContext();

@@ -11,7 +11,7 @@ description: 人間の介入ポイントを含むワークフローを作成す�
 ## セットアップ
 
 ```sh copy
-npm install @ai-sdk/openai @mastra/core @inquirer/prompts
+npm install @ai-sdk/openai @datawarp/mastra-core @inquirer/prompts
 ```
 
 ## エージェントの定義
@@ -19,7 +19,7 @@ npm install @ai-sdk/openai @mastra/core @inquirer/prompts
 旅行エージェントを定義します。
 
 ```ts showLineNumbers copy filename="agents/travel-agents.ts"
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
 
 const llm = openai("gpt-4o");
@@ -54,7 +54,7 @@ export const travelAgent = new Agent({
 一時停止ステップ（`humanInputStep`）を含むワークフローを定義します。
 
 ```ts showLineNumbers copy filename="workflows/human-in-the-loop-workflow.ts"
-import { createWorkflow, createStep } from "@mastra/core/workflows/vNext";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows/vNext";
 import { z } from "zod";
 
 // Step that generates multiple holiday options based on user's vacation description
@@ -175,8 +175,8 @@ export { travelAgentWorkflow, humanInputStep };
 これはワークフロー内でエージェントにアクセスできるようにするために重要です。
 
 ```ts showLineNumbers copy filename="index.ts"
-import { Mastra } from "@mastra/core/mastra";
-import { PinoLogger } from "@mastra/loggers";
+import { Mastra } from "@datawarp/mastra-core/mastra";
+import { PinoLogger } from "@datawarp/mastra-loggers";
 import { travelAgentWorkflow } from "./workflows/human-in-the-loop-workflow";
 import { summaryTravelAgent, travelAgent } from "./agents/travel-agent";
 

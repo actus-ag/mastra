@@ -1,4 +1,4 @@
-import { OpenAPIToolset, type ToolAction } from '@mastra/core';
+import { OpenAPIToolset, type ToolAction } from '@datawarp/mastra-core';
 
 // @ts-ignore
 import RagieLogo from './assets/ragie.png';

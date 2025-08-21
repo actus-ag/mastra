@@ -1,5 +1,5 @@
-import { Mastra } from '@mastra/core';
-import { PinoLogger } from '@mastra/loggers';
+import { Mastra } from '@datawarp/mastra-core';
+import { PinoLogger } from '@datawarp/mastra-loggers';
 import { catOne } from './agents/agent';
 import { logCatWorkflow as legacy_catWorkflow } from './legacy-workflows';
 import { logCatWorkflow } from './workflows';

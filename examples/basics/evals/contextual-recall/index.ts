@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { ContextualRecallMetric } from '@mastra/evals/llm';
+import { ContextualRecallMetric } from '@datawarp/mastra-evals/llm';
 
 // Example 1: High recall (response includes all context)
 const context1 = ['Product features include cloud sync.', 'Offline mode is available.', 'Supports multiple devices.'];

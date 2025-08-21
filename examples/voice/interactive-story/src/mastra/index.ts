@@ -1,5 +1,5 @@
-import { PinoLogger } from '@mastra/loggers';
-import { Mastra } from '@mastra/core/mastra';
+import { PinoLogger } from '@datawarp/mastra-loggers';
+import { Mastra } from '@datawarp/mastra-core/mastra';
 
 import { storyTellerAgent } from './agents';
 

@@ -1,7 +1,7 @@
 import { randomUUID } from 'crypto';
-import type { ToolsInput } from '@mastra/core/agent';
-import { MastraVoice } from '@mastra/core/voice';
-import type { VoiceEventType, VoiceConfig } from '@mastra/core/voice';
+import type { ToolsInput } from '@datawarp/mastra-core/agent';
+import { MastraVoice } from '@datawarp/mastra-core/voice';
+import type { VoiceEventType, VoiceConfig } from '@datawarp/mastra-core/voice';
 import type { WebSocket as WSType } from 'ws';
 import { WebSocket } from 'ws';
 import { AudioStreamManager, ConnectionManager, ContextManager, AuthManager, EventManager } from './managers';

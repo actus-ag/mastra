@@ -1,7 +1,7 @@
 import { WorkflowInformation } from '@/domains/workflows/workflow-information';
-import { MainContentContent } from '@mastra/playground-ui';
+import { MainContentContent } from '@datawarp/mastra-playground-ui';
 import { useParams } from 'react-router';
-import { MastraResizablePanel } from '@mastra/playground-ui';
+import { MastraResizablePanel } from '@datawarp/mastra-playground-ui';
 
 export interface WorkflowGraphLayoutProps {
   children: React.ReactNode;

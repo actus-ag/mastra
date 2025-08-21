@@ -18,7 +18,7 @@ import {
   Txt,
   MainContentLayout,
   MainContentContent,
-} from '@mastra/playground-ui';
+} from '@datawarp/mastra-playground-ui';
 
 const AgentTool = () => {
   const { toolId, agentId } = useParams();

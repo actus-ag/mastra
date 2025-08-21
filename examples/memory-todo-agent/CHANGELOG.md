@@ -7,8 +7,8 @@
 ### Patch Changes
 
 - Updated dependencies [06aa827]
-  - @mastra/core@0.4.3-alpha.0
-  - @mastra/memory@0.1.6-alpha.0
+  - @datawarp/mastra-core@0.4.3-alpha.0
+  - @datawarp/mastra-memory@0.1.6-alpha.0
 
 ## 0.1.5
 
@@ -21,8 +21,8 @@
 - Updated dependencies [f626fbb]
 - Updated dependencies [e752340]
 - Updated dependencies [eb91535]
-  - @mastra/core@0.4.2
-  - @mastra/memory@0.1.5
+  - @datawarp/mastra-core@0.4.2
+  - @datawarp/mastra-memory@0.1.5
 
 ## 0.1.5-alpha.2
 
@@ -32,16 +32,16 @@
 - Updated dependencies [99dcdb5]
 - Updated dependencies [e752340]
 - Updated dependencies [eb91535]
-  - @mastra/core@0.4.2-alpha.2
-  - @mastra/memory@0.1.5-alpha.2
+  - @datawarp/mastra-core@0.4.2-alpha.2
+  - @datawarp/mastra-memory@0.1.5-alpha.2
 
 ## 0.1.5-alpha.1
 
 ### Patch Changes
 
 - Updated dependencies [6cb63e0]
-  - @mastra/core@0.4.2-alpha.1
-  - @mastra/memory@0.1.5-alpha.1
+  - @datawarp/mastra-core@0.4.2-alpha.1
+  - @datawarp/mastra-memory@0.1.5-alpha.1
 
 ## 0.1.5-alpha.0
 
@@ -49,8 +49,8 @@
 
 - Updated dependencies [7fceae1]
 - Updated dependencies [f626fbb]
-  - @mastra/core@0.4.2-alpha.0
-  - @mastra/memory@0.1.5-alpha.0
+  - @datawarp/mastra-core@0.4.2-alpha.0
+  - @datawarp/mastra-memory@0.1.5-alpha.0
 
 ## 0.1.4
 
@@ -59,8 +59,8 @@
 - Updated dependencies [ce44b9b]
 - Updated dependencies [967da43]
 - Updated dependencies [b405f08]
-  - @mastra/memory@0.1.4
-  - @mastra/core@0.4.1
+  - @datawarp/mastra-memory@0.1.4
+  - @datawarp/mastra-core@0.4.1
 
 ## 0.1.3
 
@@ -68,32 +68,32 @@
 
 - Updated dependencies [2fc618f]
 - Updated dependencies [fe0fd01]
-  - @mastra/core@0.4.0
-  - @mastra/memory@0.1.3
+  - @datawarp/mastra-core@0.4.0
+  - @datawarp/mastra-memory@0.1.3
 
 ## 0.1.3-alpha.1
 
 ### Patch Changes
 
 - Updated dependencies [fe0fd01]
-  - @mastra/core@0.4.0-alpha.1
-  - @mastra/memory@0.1.3-alpha.1
+  - @datawarp/mastra-core@0.4.0-alpha.1
+  - @datawarp/mastra-memory@0.1.3-alpha.1
 
 ## 0.1.3-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [2fc618f]
-  - @mastra/core@0.4.0-alpha.0
-  - @mastra/memory@0.1.3-alpha.0
+  - @datawarp/mastra-core@0.4.0-alpha.0
+  - @datawarp/mastra-memory@0.1.3-alpha.0
 
 ## 0.1.2
 
 ### Patch Changes
 
 - Updated dependencies [f205ede]
-  - @mastra/core@0.3.0
-  - @mastra/memory@0.1.2
+  - @datawarp/mastra-core@0.3.0
+  - @datawarp/mastra-memory@0.1.2
 
 ## 0.1.1
 
@@ -105,8 +105,8 @@
 - Updated dependencies [bf2e88f]
 - Updated dependencies [2f0d707]
 - Updated dependencies [aac1667]
-  - @mastra/core@0.2.1
-  - @mastra/memory@0.1.1
+  - @datawarp/mastra-core@0.2.1
+  - @datawarp/mastra-memory@0.1.1
 
 ## 0.1.1-alpha.0
 
@@ -118,8 +118,8 @@
 - Updated dependencies [bf2e88f]
 - Updated dependencies [2f0d707]
 - Updated dependencies [aac1667]
-  - @mastra/core@0.2.1-alpha.0
-  - @mastra/memory@0.1.1-alpha.0
+  - @datawarp/mastra-core@0.2.1-alpha.0
+  - @datawarp/mastra-memory@0.1.1-alpha.0
 
 ## 0.1.0
 
@@ -289,8 +289,8 @@
 - Updated dependencies [ee4de15]
 - Updated dependencies [202d404]
 - Updated dependencies [a221426]
-  - @mastra/core@0.2.0
-  - @mastra/memory@0.1.0
+  - @datawarp/mastra-core@0.2.0
+  - @datawarp/mastra-memory@0.1.0
 
 ## 0.1.0-alpha.22
 
@@ -305,16 +305,16 @@
 - Updated dependencies [fd75f3c]
 - Updated dependencies [ccf115c]
 - Updated dependencies [a221426]
-  - @mastra/core@0.2.0-alpha.110
-  - @mastra/memory@0.1.0-alpha.92
+  - @datawarp/mastra-core@0.2.0-alpha.110
+  - @datawarp/mastra-memory@0.1.0-alpha.92
 
 ## 0.1.0-alpha.21
 
 ### Patch Changes
 
 - Updated dependencies [d5fccfb]
-  - @mastra/core@0.2.0-alpha.109
-  - @mastra/memory@0.1.0-alpha.91
+  - @datawarp/mastra-core@0.2.0-alpha.109
+  - @datawarp/mastra-memory@0.1.0-alpha.91
 
 ## 0.1.0-alpha.20
 
@@ -322,16 +322,16 @@
 
 - Updated dependencies [5ee67d3]
 - Updated dependencies [95a4697]
-  - @mastra/core@0.2.0-alpha.108
-  - @mastra/memory@0.1.0-alpha.90
+  - @datawarp/mastra-core@0.2.0-alpha.108
+  - @datawarp/mastra-memory@0.1.0-alpha.90
 
 ## 0.1.0-alpha.19
 
 ### Patch Changes
 
 - Updated dependencies [66a5392]
-  - @mastra/core@0.2.0-alpha.107
-  - @mastra/memory@0.1.0-alpha.89
+  - @datawarp/mastra-core@0.2.0-alpha.107
+  - @datawarp/mastra-memory@0.1.0-alpha.89
 
 ## 0.1.0-alpha.18
 
@@ -339,8 +339,8 @@
 
 - Updated dependencies [6f2c0f5]
 - Updated dependencies [a8a459a]
-  - @mastra/core@0.2.0-alpha.106
-  - @mastra/memory@0.1.0-alpha.88
+  - @datawarp/mastra-core@0.2.0-alpha.106
+  - @datawarp/mastra-memory@0.1.0-alpha.88
 
 ## 0.1.0-alpha.17
 
@@ -348,8 +348,8 @@
 
 - Updated dependencies [1420ae2]
 - Updated dependencies [99f1847]
-  - @mastra/core@0.2.0-alpha.105
-  - @mastra/memory@0.1.0-alpha.87
+  - @datawarp/mastra-core@0.2.0-alpha.105
+  - @datawarp/mastra-memory@0.1.0-alpha.87
 
 ## 0.1.0-alpha.16
 
@@ -360,24 +360,24 @@
 - Updated dependencies [72d1990]
 - Updated dependencies [cf6d825]
 - Updated dependencies [10870bc]
-  - @mastra/core@0.2.0-alpha.104
-  - @mastra/memory@0.1.0-alpha.86
+  - @datawarp/mastra-core@0.2.0-alpha.104
+  - @datawarp/mastra-memory@0.1.0-alpha.86
 
 ## 0.1.0-alpha.15
 
 ### Patch Changes
 
 - Updated dependencies [4534e77]
-  - @mastra/core@0.2.0-alpha.103
-  - @mastra/memory@0.1.0-alpha.85
+  - @datawarp/mastra-core@0.2.0-alpha.103
+  - @datawarp/mastra-memory@0.1.0-alpha.85
 
 ## 0.1.0-alpha.14
 
 ### Patch Changes
 
 - Updated dependencies [a9345f9]
-  - @mastra/core@0.2.0-alpha.102
-  - @mastra/memory@0.1.0-alpha.84
+  - @datawarp/mastra-core@0.2.0-alpha.102
+  - @datawarp/mastra-memory@0.1.0-alpha.84
 
 ## 0.1.0-alpha.13
 
@@ -385,24 +385,24 @@
 
 - Updated dependencies [66a03ec]
 - Updated dependencies [4f1d1a1]
-  - @mastra/core@0.2.0-alpha.101
-  - @mastra/memory@0.1.0-alpha.83
+  - @datawarp/mastra-core@0.2.0-alpha.101
+  - @datawarp/mastra-memory@0.1.0-alpha.83
 
 ## 0.1.0-alpha.12
 
 ### Patch Changes
 
 - Updated dependencies [9d1796d]
-  - @mastra/core@0.2.0-alpha.100
-  - @mastra/memory@0.1.0-alpha.82
+  - @datawarp/mastra-core@0.2.0-alpha.100
+  - @datawarp/mastra-memory@0.1.0-alpha.82
 
 ## 0.1.0-alpha.11
 
 ### Patch Changes
 
 - Updated dependencies [7d83b92]
-  - @mastra/core@0.2.0-alpha.99
-  - @mastra/memory@0.1.0-alpha.81
+  - @datawarp/mastra-core@0.2.0-alpha.99
+  - @datawarp/mastra-memory@0.1.0-alpha.81
 
 ## 0.1.0-alpha.10
 
@@ -410,8 +410,8 @@
 
 - Updated dependencies [70dabd9]
 - Updated dependencies [202d404]
-  - @mastra/core@0.2.0-alpha.98
-  - @mastra/memory@0.1.0-alpha.80
+  - @datawarp/mastra-core@0.2.0-alpha.98
+  - @datawarp/mastra-memory@0.1.0-alpha.80
 
 ## 0.1.0-alpha.9
 
@@ -423,24 +423,24 @@
 - Updated dependencies [5950de5]
 - Updated dependencies [df843d3]
 - Updated dependencies [a870123]
-  - @mastra/core@0.2.0-alpha.97
-  - @mastra/memory@0.1.0-alpha.79
+  - @datawarp/mastra-core@0.2.0-alpha.97
+  - @datawarp/mastra-memory@0.1.0-alpha.79
 
 ## 0.1.0-alpha.8
 
 ### Patch Changes
 
 - Updated dependencies [74b3078]
-  - @mastra/core@0.2.0-alpha.96
-  - @mastra/memory@0.1.0-alpha.78
+  - @datawarp/mastra-core@0.2.0-alpha.96
+  - @datawarp/mastra-memory@0.1.0-alpha.78
 
 ## 0.1.0-alpha.7
 
 ### Patch Changes
 
 - Updated dependencies [9fb59d6]
-  - @mastra/core@0.2.0-alpha.95
-  - @mastra/memory@0.1.0-alpha.77
+  - @datawarp/mastra-core@0.2.0-alpha.95
+  - @datawarp/mastra-memory@0.1.0-alpha.77
 
 ## 0.1.0-alpha.6
 
@@ -453,24 +453,24 @@
 - 9c10484: update all packages
 - Updated dependencies [9c10484]
 - Updated dependencies [8b416d9]
-  - @mastra/core@0.2.0-alpha.94
-  - @mastra/memory@0.1.0-alpha.76
+  - @datawarp/mastra-core@0.2.0-alpha.94
+  - @datawarp/mastra-memory@0.1.0-alpha.76
 
 ## 0.0.1-alpha.5
 
 ### Patch Changes
 
 - Updated dependencies [5285356]
-  - @mastra/core@0.2.0-alpha.93
-  - @mastra/memory@0.1.0-alpha.75
+  - @datawarp/mastra-core@0.2.0-alpha.93
+  - @datawarp/mastra-memory@0.1.0-alpha.75
 
 ## 0.0.1-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [4d4f6b6]
-  - @mastra/core@0.2.0-alpha.92
-  - @mastra/memory@0.1.0-alpha.74
+  - @datawarp/mastra-core@0.2.0-alpha.92
+  - @datawarp/mastra-memory@0.1.0-alpha.74
 
 ## 0.0.1-alpha.3
 
@@ -481,5 +481,5 @@
 - Updated dependencies [2017553]
 - Updated dependencies [a10b7a3]
 - Updated dependencies [16e5b04]
-  - @mastra/core@0.2.0-alpha.91
-  - @mastra/memory@0.1.0-alpha.73
+  - @datawarp/mastra-core@0.2.0-alpha.91
+  - @datawarp/mastra-memory@0.1.0-alpha.73

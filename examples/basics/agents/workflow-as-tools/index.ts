@@ -1,7 +1,7 @@
-import { Mastra } from '@mastra/core';
-import { Agent } from '@mastra/core/agent';
-import { createStep, createWorkflow } from '@mastra/core/workflows';
-import { createTool } from '@mastra/core/tools';
+import { Mastra } from '@datawarp/mastra-core';
+import { Agent } from '@datawarp/mastra-core/agent';
+import { createStep, createWorkflow } from '@datawarp/mastra-core/workflows';
+import { createTool } from '@datawarp/mastra-core/tools';
 import { z } from 'zod';
 import { openai } from '@ai-sdk/openai';
 

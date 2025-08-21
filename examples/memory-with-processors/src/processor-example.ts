@@ -1,11 +1,11 @@
 import 'dotenv/config';
 import { openai } from '@ai-sdk/openai';
-import { Mastra } from '@mastra/core';
-import { PinoLogger } from '@mastra/loggers';
-import { createTool } from '@mastra/core/tools';
-import { Agent } from '@mastra/core/agent';
-import { Memory } from '@mastra/memory';
-import { TokenLimiter } from '@mastra/memory/processors';
+import { Mastra } from '@datawarp/mastra-core';
+import { PinoLogger } from '@datawarp/mastra-loggers';
+import { createTool } from '@datawarp/mastra-core/tools';
+import { Agent } from '@datawarp/mastra-core/agent';
+import { Memory } from '@datawarp/mastra-memory';
+import { TokenLimiter } from '@datawarp/mastra-memory/processors';
 import { readFileSync, existsSync } from 'fs';
 import { resolve } from 'path';
 import chalk from 'chalk';

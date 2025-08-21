@@ -1,4 +1,4 @@
-import { createWorkflow, createStep } from '@mastra/core/workflows';
+import { createWorkflow, createStep } from '@datawarp/mastra-core/workflows';
 import { z } from 'zod';
 
 // Step 1: Get user query

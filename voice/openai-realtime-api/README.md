@@ -1,11 +1,11 @@
-# @mastra/voice-openai-realtime
+# @datawarp/mastra-voice-openai-realtime
 
 OpenAI Realtime Voice integration for Mastra, providing real-time voice interaction capabilities using OpenAI's WebSocket-based API. This integration enables seamless voice conversations with real-time speech to speech capabilities.
 
 ## Installation
 
 ```bash
-npm install @mastra/voice-openai-realtime
+npm install @datawarp/mastra-voice-openai-realtime
 ```
 
 ## Configuration
@@ -19,8 +19,8 @@ OPENAI_API_KEY=your_api_key
 ## Usage
 
 ```typescript
-import { OpenAIRealtimeVoice } from '@mastra/voice-openai-realtime';
-import { getMicrophoneStream } from '@mastra/node-audio';
+import { OpenAIRealtimeVoice } from '@datawarp/mastra-voice-openai-realtime';
+import { getMicrophoneStream } from '@datawarp/mastra-node-audio';
 
 // Create a voice instance with default configuration
 const voice = new OpenAIRealtimeVoice();

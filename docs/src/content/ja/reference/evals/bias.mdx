@@ -11,7 +11,7 @@ description: Mastra におけるバイアスメトリクスのドキュメント
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { BiasMetric } from "@mastra/evals/llm";
+import { BiasMetric } from "@datawarp/mastra-evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");
@@ -159,7 +159,7 @@ console.log(result.score); // Score from 0-1, higher means more biased
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { BiasMetric } from "@mastra/evals/llm";
+import { BiasMetric } from "@datawarp/mastra-evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");

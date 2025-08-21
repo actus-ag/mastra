@@ -1,7 +1,7 @@
-import type { AgentStreamOptions } from '@mastra/core/agent';
-import type { GenerateReturn } from '@mastra/core/llm';
-import type { AgentNetwork } from '@mastra/core/network';
-import type { RuntimeContext } from '@mastra/core/runtime-context';
+import type { AgentStreamOptions } from '@datawarp/mastra-core/agent';
+import type { GenerateReturn } from '@datawarp/mastra-core/llm';
+import type { AgentNetwork } from '@datawarp/mastra-core/network';
+import type { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
 import { HTTPException } from '../http-exception';
 import type { Context } from '../types';
 import { handleError } from './error';

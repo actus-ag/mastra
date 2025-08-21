@@ -1,9 +1,9 @@
 import type { Connection } from '@lancedb/lancedb';
-import { MastraError, ErrorDomain, ErrorCategory } from '@mastra/core/error';
-import type { TraceType } from '@mastra/core/memory';
-import { TABLE_TRACES, TracesStorage } from '@mastra/core/storage';
-import type { PaginationInfo, StorageGetTracesPaginatedArg } from '@mastra/core/storage';
-import type { Trace } from '@mastra/core/telemetry';
+import { MastraError, ErrorDomain, ErrorCategory } from '@datawarp/mastra-core/error';
+import type { TraceType } from '@datawarp/mastra-core/memory';
+import { TABLE_TRACES, TracesStorage } from '@datawarp/mastra-core/storage';
+import type { PaginationInfo, StorageGetTracesPaginatedArg } from '@datawarp/mastra-core/storage';
+import type { Trace } from '@datawarp/mastra-core/telemetry';
 import type { StoreOperationsLance } from '../operations';
 
 export class StoreTracesLance extends TracesStorage {

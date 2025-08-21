@@ -1,5 +1,5 @@
-import { ConsoleLogger } from "@mastra/core/logger";
-import { Mastra } from "@mastra/core/mastra";
+import { ConsoleLogger } from "@datawarp/mastra-core/logger";
+import { Mastra } from "@datawarp/mastra-core/mastra";
 
 import { weatherAgent } from "./agents";
 

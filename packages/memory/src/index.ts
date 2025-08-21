@@ -1,10 +1,10 @@
-import { generateEmptyFromSchema } from '@mastra/core';
-import type { MastraMessageV1, ToolAction } from '@mastra/core';
-import { MessageList } from '@mastra/core/agent';
-import type { MastraMessageV2, UIMessageWithMetadata } from '@mastra/core/agent';
-import { MastraMemory } from '@mastra/core/memory';
-import type { MemoryConfig, SharedMemoryConfig, StorageThreadType, WorkingMemoryTemplate } from '@mastra/core/memory';
-import type { StorageGetMessagesArg, ThreadSortOptions, PaginationInfo } from '@mastra/core/storage';
+import { generateEmptyFromSchema } from '@datawarp/mastra-core';
+import type { MastraMessageV1, ToolAction } from '@datawarp/mastra-core';
+import { MessageList } from '@datawarp/mastra-core/agent';
+import type { MastraMessageV2, UIMessageWithMetadata } from '@datawarp/mastra-core/agent';
+import { MastraMemory } from '@datawarp/mastra-core/memory';
+import type { MemoryConfig, SharedMemoryConfig, StorageThreadType, WorkingMemoryTemplate } from '@datawarp/mastra-core/memory';
+import type { StorageGetMessagesArg, ThreadSortOptions, PaginationInfo } from '@datawarp/mastra-core/storage';
 import { embedMany } from 'ai';
 import type { CoreMessage, TextPart } from 'ai';
 import { embedMany as embedManyV5 } from 'ai-v5';
@@ -38,9 +38,9 @@ export class Memory extends MastraMemory {
 
     const mergedConfig = this.getMergedThreadConfig({
       workingMemory: config.options?.workingMemory || {
-        // these defaults are now set inside @mastra/core/memory in getMergedThreadConfig.
+        // these defaults are now set inside @datawarp/mastra-core/memory in getMergedThreadConfig.
         // In a future release we can remove it from this block - for now if we remove it
-        // and someone bumps @mastra/memory without bumping @mastra/core the defaults wouldn't exist yet
+        // and someone bumps @datawarp/mastra-memory without bumping @datawarp/mastra-core the defaults wouldn't exist yet
         enabled: false,
         template: this.defaultWorkingMemoryTemplate,
       },

@@ -1,11 +1,11 @@
-# @mastra/chroma
+# @datawarp/mastra-chroma
 
 Vector store implementation for Chroma using the official `chromadb` client with added dimension validation, collection management, and document storage capabilities.
 
 ## Installation
 
 ```bash
-npm install @mastra/chroma
+npm install @datawarp/mastra-chroma
 ```
 
 ## Instantiation
@@ -21,7 +21,7 @@ chroma run
 You will now have a Chroma server running on `localhost:8000`.
 
 ```typescript
-import { ChromaVector } from '@mastra/chroma';
+import { ChromaVector } from '@datawarp/mastra-chroma';
 
 const vectorStore = new ChromaVector();
 ```
@@ -29,7 +29,7 @@ const vectorStore = new ChromaVector();
 If you run a Chroma server locally with a different configuration, or [deploy](https://docs.trychroma.com/guides/deploy/client-server-mode) a Chroma server yourself, you can configure your `ChromaVector` instantiation with specific connection details:
 
 ```typescript
-import { ChromaVector } from '@mastra/chroma';
+import { ChromaVector } from '@datawarp/mastra-chroma';
 
 const vectorStore = new ChromaVector({
   host: 'your-host-address',
@@ -46,7 +46,7 @@ Provide your Chroma Cloud API key, tenant, and database.
 You can use the [Chroma CLI](https://docs.trychroma.com/docs/cli/db) to set these as environment variables: `chroma db connect [DB-NAME] --env-file`.
 
 ```typescript
-import { ChromaVector } from '@mastra/chroma';
+import { ChromaVector } from '@datawarp/mastra-chroma';
 
 const vectorStore = new ChromaVector({
   apiKey: process.env.CHROMA_API_KEY,

@@ -1,9 +1,9 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@mastra/core/agent';
+import { Agent } from '@datawarp/mastra-core/agent';
 import { pdfFetcherTool } from '../tools/download-pdf-tool';
 import { generateQuestionsFromTextTool } from '../tools/generate-questions-from-text-tool';
-import { LibSQLStore } from '@mastra/libsql';
-import { Memory } from '@mastra/memory';
+import { LibSQLStore } from '@datawarp/mastra-libsql';
+import { Memory } from '@datawarp/mastra-memory';
 
 // Initialize memory with LibSQLStore for persistence
 const memory = new Memory({

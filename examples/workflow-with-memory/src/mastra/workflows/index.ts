@@ -1,4 +1,4 @@
-import { Workflow, Step } from '@mastra/core/workflows';
+import { Workflow, Step } from '@datawarp/mastra-core/workflows';
 import { z } from 'zod';
 
 const stepOne = new Step({

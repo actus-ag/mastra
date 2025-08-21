@@ -1,10 +1,10 @@
 import { Txt } from '@/ds/components/Txt';
-import { ScoringEntityType } from '@mastra/core/scores';
+import { ScoringEntityType } from '@datawarp/mastra-core/scores';
 import { useScorers } from '../hooks/use-scorers';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useRef } from 'react';
 import { Entity, EntityContent, EntityDescription, EntityIcon, EntityName } from '@/ds/components/Entity';
-import { GetScorerResponse } from '@mastra/client-js';
+import { GetScorerResponse } from '@datawarp/mastra-client-js';
 import { GaugeIcon } from 'lucide-react';
 import { useLinkComponent } from '@/lib/framework';
 import { Badge } from '@/ds/components/Badge';

@@ -1,9 +1,9 @@
-import { Agent } from '@mastra/core/agent';
-import type { CoreMessage } from '@mastra/core/llm';
-import { Mastra } from '@mastra/core/mastra';
-import type { MastraMessageV1, MastraMessageV2 } from '@mastra/core/memory';
-import { MastraMemory } from '@mastra/core/memory';
-import { MockStore } from '@mastra/core/storage';
+import { Agent } from '@datawarp/mastra-core/agent';
+import type { CoreMessage } from '@datawarp/mastra-core/llm';
+import { Mastra } from '@datawarp/mastra-core/mastra';
+import type { MastraMessageV1, MastraMessageV2 } from '@datawarp/mastra-core/memory';
+import { MastraMemory } from '@datawarp/mastra-core/memory';
+import { MockStore } from '@datawarp/mastra-core/storage';
 import type { Mock } from 'vitest';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { HTTPException } from '../http-exception';
@@ -19,7 +19,7 @@ import {
   deleteMessagesHandler,
 } from './memory';
 
-vi.mock('@mastra/core/memory');
+vi.mock('@datawarp/mastra-core/memory');
 
 type MockedAbstractFn = {
   getThreadsByResourceId: Mock<MastraMemory['getThreadsByResourceId']>;

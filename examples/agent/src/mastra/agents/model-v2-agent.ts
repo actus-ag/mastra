@@ -1,10 +1,10 @@
-import { Agent } from '@mastra/core/agent';
+import { Agent } from '@datawarp/mastra-core/agent';
 import { openai as openai_v5 } from '@ai-sdk/openai-v5';
-import { createTool } from '@mastra/core/tools';
+import { createTool } from '@datawarp/mastra-core/tools';
 import { z } from 'zod';
 import { cookingTool } from '../tools';
 import { myWorkflow } from '../workflows';
-import { Memory } from '@mastra/memory';
+import { Memory } from '@datawarp/mastra-memory';
 
 export const weatherInfo = createTool({
   id: 'weather-info',

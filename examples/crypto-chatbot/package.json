@@ -13,10 +13,10 @@
   "dependencies": {
     "@ai-sdk/openai": "latest",
     "@ai-sdk/react": "^1.2.12",
-    "@mastra/core": "latest",
-    "@mastra/loggers": "latest",
-    "@mastra/memory": "latest",
-    "@mastra/pg": "latest",
+    "@datawarp/mastra-core": "latest",
+    "@datawarp/mastra-loggers": "latest",
+    "@datawarp/mastra-memory": "latest",
+    "@datawarp/mastra-pg": "latest",
     "@next/env": "^15.2.2",
     "@radix-ui/react-alert-dialog": "^1.1.14",
     "@radix-ui/react-dialog": "^1.1.14",
@@ -72,10 +72,10 @@
   },
   "pnpm": {
     "overrides": {
-      "@mastra/core": "link:../../packages/core",
-      "@mastra/memory": "link:../../packages/memory",
-      "@mastra/pg": "link:../../stores/pg",
-      "@mastra/loggers": "link:../../packages/loggers"
+      "@datawarp/mastra-core": "link:../../packages/core",
+      "@datawarp/mastra-memory": "link:../../packages/memory",
+      "@datawarp/mastra-pg": "link:../../stores/pg",
+      "@datawarp/mastra-loggers": "link:../../packages/loggers"
     }
   },
   "devDependencies": {

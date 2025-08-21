@@ -141,7 +141,7 @@ workflow.step(incrementStep).while(
 この例では、ワークフローのトリガーからステップにデータをマッピングする方法を示しています：
 
 ```typescript showLineNumbers filename="src/mastra/workflows/trigger-mapping.ts" copy
-import { Step, Workflow, Mastra } from "@mastra/core";
+import { Step, Workflow, Mastra } from "@datawarp/mastra-core";
 import { z } from "zod";
 
 // Define a step that needs user input
@@ -185,7 +185,7 @@ export const mastra = new Mastra({
 この例では、あるステップから別のステップへのデータマッピングを示しています：
 
 ```typescript showLineNumbers filename="src/mastra/workflows/step-mapping.ts" copy
-import { Step, Workflow, Mastra } from "@mastra/core";
+import { Step, Workflow, Mastra } from "@datawarp/mastra-core";
 import { z } from "zod";
 
 // Step 1: Generate data
@@ -248,7 +248,7 @@ export const mastra = new Mastra({
 Mastraは、TypeScriptを使用する際に変数マッピングの型安全性を提供します：
 
 ```typescript showLineNumbers filename="src/mastra/workflows/type-safe.ts" copy
-import { Step, Workflow, Mastra } from "@mastra/core";
+import { Step, Workflow, Mastra } from "@datawarp/mastra-core";
 import { z } from "zod";
 
 // Define schemas for better type safety

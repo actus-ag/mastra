@@ -1,8 +1,8 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@mastra/core';
-import { Memory } from '@mastra/memory';
-import { PgVector } from '@mastra/pg';
-import { UpstashStore } from '@mastra/upstash';
+import { Agent } from '@datawarp/mastra-core';
+import { Memory } from '@datawarp/mastra-memory';
+import { PgVector } from '@datawarp/mastra-pg';
+import { UpstashStore } from '@datawarp/mastra-upstash';
 
 const memory = new Memory({
   storage: new UpstashStore({

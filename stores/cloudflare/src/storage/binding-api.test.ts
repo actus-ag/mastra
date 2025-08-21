@@ -8,7 +8,7 @@ import {
   TABLE_THREADS,
   TABLE_TRACES,
   TABLE_WORKFLOW_SNAPSHOT,
-} from '@mastra/core/storage';
+} from '@datawarp/mastra-core/storage';
 import dotenv from 'dotenv';
 import { Miniflare } from 'miniflare';
 import { vi } from 'vitest';

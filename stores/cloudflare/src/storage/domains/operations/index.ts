@@ -1,5 +1,5 @@
 import type { KVNamespace } from '@cloudflare/workers-types';
-import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import { ErrorCategory, ErrorDomain, MastraError } from '@datawarp/mastra-core/error';
 import {
   ensureDate,
   serializeDate,
@@ -10,8 +10,8 @@ import {
   TABLE_THREADS,
   TABLE_TRACES,
   TABLE_WORKFLOW_SNAPSHOT,
-} from '@mastra/core/storage';
-import type { StorageColumn, TABLE_NAMES } from '@mastra/core/storage';
+} from '@datawarp/mastra-core/storage';
+import type { StorageColumn, TABLE_NAMES } from '@datawarp/mastra-core/storage';
 import type Cloudflare from 'cloudflare';
 import type { ListOptions, RecordTypes } from '../../types';
 

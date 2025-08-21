@@ -15,7 +15,7 @@ The `AnswerRelevancyMetric` class evaluates how well an LLM's output answers or 
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { AnswerRelevancyMetric } from "@mastra/evals/llm";
+import { AnswerRelevancyMetric } from "@datawarp/mastra-evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");
@@ -155,7 +155,7 @@ Final score: `((direct + uncertainty * partial) / total_statements) * scale`
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { AnswerRelevancyMetric } from "@mastra/evals/llm";
+import { AnswerRelevancyMetric } from "@datawarp/mastra-evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");

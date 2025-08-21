@@ -1,6 +1,6 @@
-import { Mastra } from '@mastra/core/mastra';
-import { PinoLogger } from '@mastra/loggers';
-import { LibSQLStore } from '@mastra/libsql';
+import { Mastra } from '@datawarp/mastra-core/mastra';
+import { PinoLogger } from '@datawarp/mastra-loggers';
+import { LibSQLStore } from '@datawarp/mastra-libsql';
 import { pdfToQuestionsWorkflow } from './workflows/generate-questions-from-pdf-workflow';
 import { textQuestionAgent } from './agents/text-question-agent';
 import { pdfQuestionAgent } from './agents/pdf-question-agent';

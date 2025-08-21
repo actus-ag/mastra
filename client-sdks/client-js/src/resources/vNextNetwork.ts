@@ -1,4 +1,4 @@
-import type { WatchEvent } from '@mastra/core/workflows';
+import type { WatchEvent } from '@datawarp/mastra-core/workflows';
 
 import type {
   ClientOptions,
@@ -11,7 +11,7 @@ import type {
 
 import { BaseResource } from './base';
 import { parseClientRuntimeContext } from '../utils';
-import type { RuntimeContext } from '@mastra/core/runtime-context';
+import type { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
 
 const RECORD_SEPARATOR = '\x1E';
 

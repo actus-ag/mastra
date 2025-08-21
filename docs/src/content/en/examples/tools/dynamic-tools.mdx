@@ -12,7 +12,7 @@ Dynamic tools adapt their behavior and capabilities at runtime based on contextu
 Create a tool that fetches exchange rate data using a dynamic value provided via `runtimeContext`.
 
 ```typescript filename="src/mastra/tools/example-exchange-rates-tool.ts" showLineNumbers copy
-import { createTool } from "@mastra/core/tools";
+import { createTool } from "@datawarp/mastra-core/tools";
 import { z } from "zod";
 
 export const getExchangeRatesTool = createTool({
@@ -43,7 +43,7 @@ export const getExchangeRatesTool = createTool({
 Set `RuntimeContext` using `set()`, then call `execute()` passing in the `runtimeContext`.
 
 ```typescript filename="src/test-exchange-rate.ts" showLineNumbers copy
-import { RuntimeContext } from "@mastra/core/runtime-context";
+import { RuntimeContext } from "@datawarp/mastra-core/runtime-context";
 import { getExchangeRatesTool } from "../src/mastra/tools/example-exchange-rates-tool";
 
 const runtimeContext = new RuntimeContext();

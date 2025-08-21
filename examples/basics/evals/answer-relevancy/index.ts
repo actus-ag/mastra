@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { AnswerRelevancyMetric } from '@mastra/evals/llm';
+import { AnswerRelevancyMetric } from '@datawarp/mastra-evals/llm';
 
 // Configure the metric
 const metric = new AnswerRelevancyMetric(openai('gpt-4o-mini'), {

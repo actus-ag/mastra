@@ -1,6 +1,6 @@
 #!/usr/bin/env tsx
 
-import { MCPServer } from '@mastra/mcp';
+import { MCPServer } from '@datawarp/mastra-mcp';
 import { docsTool } from './tools/docs-tool';
 import { config } from 'dotenv';
 

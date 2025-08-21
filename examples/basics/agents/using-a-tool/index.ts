@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { createTool, Agent, Mastra } from '@mastra/core';
+import { createTool, Agent, Mastra } from '@datawarp/mastra-core';
 import { z } from 'zod';
 
 interface WeatherResponse {

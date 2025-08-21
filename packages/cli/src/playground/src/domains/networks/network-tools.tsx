@@ -1,5 +1,5 @@
-import { GetVNextNetworkResponse } from '@mastra/client-js';
-import { ToolsIcon } from '@mastra/playground-ui';
+import { GetVNextNetworkResponse } from '@datawarp/mastra-client-js';
+import { ToolsIcon } from '@datawarp/mastra-playground-ui';
 
 export function NetworkTools({ network }: { network: GetVNextNetworkResponse }) {
   if (!network.tools || network.tools.length === 0) {

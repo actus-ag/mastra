@@ -10,8 +10,8 @@ import { GithubLink } from "@/components/github-link";
 この例では、カスタムツールをワークフローステップとして作成し統合する方法を示しています。入力／出力スキーマの定義方法や、ツールの実行ロジックの実装方法について説明します。
 
 ```ts showLineNumbers copy
-import { createTool } from "@mastra/core/tools";
-import { Workflow } from "@mastra/core/workflows";
+import { createTool } from "@datawarp/mastra-core/tools";
+import { Workflow } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 
 const crawlWebpage = createTool({

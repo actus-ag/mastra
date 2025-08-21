@@ -44,8 +44,8 @@ myWorkflow
 入力マッピングのユースケースの1つは、出力の名前を入力に合わせて変更することです：
 
 ```typescript
-import { Mastra } from "@mastra/core";
-import { createWorkflow, createStep } from "@mastra/core/workflows/vNext";
+import { Mastra } from "@datawarp/mastra-core";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows/vNext";
 import { z } from "zod";
 
 const step1 = createStep({
@@ -112,8 +112,8 @@ if (res.status === "success") {
 ## ワークフローの入力を後のステップの入力として使用する
 
 ```typescript
-import { Mastra } from "@mastra/core";
-import { createWorkflow, createStep } from "@mastra/core/workflows/vNext";
+import { Mastra } from "@datawarp/mastra-core";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows/vNext";
 import { z } from "zod";
 
 const step1 = createStep({
@@ -196,8 +196,8 @@ if (res.status === "success") {
 ## 前のステップの複数の出力を使用する
 
 ```typescript
-import { Mastra } from "@mastra/core";
-import { createWorkflow, createStep } from "@mastra/core/workflows/vNext";
+import { Mastra } from "@datawarp/mastra-core";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows/vNext";
 import { z } from "zod";
 
 const step1 = createStep({

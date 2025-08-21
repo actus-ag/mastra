@@ -1,9 +1,9 @@
 import { parentPort, workerData } from 'worker_threads';
-import type { MastraMessageV2, SharedMemoryConfig } from '@mastra/core';
-import type { LibSQLConfig, LibSQLVectorConfig } from '@mastra/libsql';
-import { Memory } from '@mastra/memory';
-import type { PostgresConfig } from '@mastra/pg';
-import type { UpstashConfig } from '@mastra/upstash';
+import type { MastraMessageV2, SharedMemoryConfig } from '@datawarp/mastra-core';
+import type { LibSQLConfig, LibSQLVectorConfig } from '@datawarp/mastra-libsql';
+import { Memory } from '@datawarp/mastra-memory';
+import type { PostgresConfig } from '@datawarp/mastra-pg';
+import type { UpstashConfig } from '@datawarp/mastra-upstash';
 import { mockEmbedder } from './mock-embedder.js';
 
 if (!parentPort) {
@@ -43,18 +43,18 @@ async function initializeAndRun() {
   try {
     switch (storageType) {
       case 'libsql':
-        const { LibSQLStore, LibSQLVector } = await import('@mastra/libsql');
+        const { LibSQLStore, LibSQLVector } = await import('@datawarp/mastra-libsql');
         store = new LibSQLStore(storageConfig as LibSQLConfig);
         vector = new LibSQLVector(vectorConfig as LibSQLVectorConfig);
         break;
       case 'upstash':
-        const { UpstashStore } = await import('@mastra/upstash');
-        const { LibSQLVector: UpstashLibSQLVector } = await import('@mastra/libsql');
+        const { UpstashStore } = await import('@datawarp/mastra-upstash');
+        const { LibSQLVector: UpstashLibSQLVector } = await import('@datawarp/mastra-libsql');
         store = new UpstashStore(storageConfig as UpstashConfig);
         vector = new UpstashLibSQLVector({ connectionUrl: 'file:upstash-test-vector.db' });
         break;
       case 'pg':
-        const { PostgresStore, PgVector } = await import('@mastra/pg');
+        const { PostgresStore, PgVector } = await import('@datawarp/mastra-pg');
         store = new PostgresStore(storageConfig as PostgresConfig);
         vector = new PgVector({ connectionString: (storageConfig as { connectionString: string }).connectionString });
         break;

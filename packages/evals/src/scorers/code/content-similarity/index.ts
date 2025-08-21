@@ -1,5 +1,5 @@
-import { createScorer } from '@mastra/core/scores';
-import type { ScorerRunInputForAgent, ScorerRunOutputForAgent } from '@mastra/core/scores';
+import { createScorer } from '@datawarp/mastra-core/scores';
+import type { ScorerRunInputForAgent, ScorerRunOutputForAgent } from '@datawarp/mastra-core/scores';
 import stringSimilarity from 'string-similarity';
 
 interface ContentSimilarityOptions {

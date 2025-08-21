@@ -1,4 +1,4 @@
-import { RuntimeContext } from '@mastra/core/runtime-context';
+import { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { rerank } from '../rerank';
 import { vectorQuerySearch } from '../utils';

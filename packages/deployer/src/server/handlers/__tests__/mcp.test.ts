@@ -1,8 +1,8 @@
 // packages/deployer/src/server/handlers/__tests__/mcp.test.ts
 
-import type { Mastra } from '@mastra/core';
-// Consolidate imports from @mastra/core/mcp
-import type { MCPServerBase as MastraMCPServerImplementation, ServerInfo, ServerDetailInfo } from '@mastra/core/mcp';
+import type { Mastra } from '@datawarp/mastra-core';
+// Consolidate imports from @datawarp/mastra-core/mcp
+import type { MCPServerBase as MastraMCPServerImplementation, ServerInfo, ServerDetailInfo } from '@datawarp/mastra-core/mcp';
 import { toReqRes, toFetchResponse } from 'fetch-to-node';
 import type { Context } from 'hono';
 import { beforeEach, describe, expect, it, vi } from 'vitest';

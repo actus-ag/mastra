@@ -1,5 +1,5 @@
-import type { ScoreRowData } from '@mastra/core/scores';
-import type { StoragePagination } from '@mastra/core/storage';
+import type { ScoreRowData } from '@datawarp/mastra-core/scores';
+import type { StoragePagination } from '@datawarp/mastra-core/storage';
 import {
   getScorersHandler as getOriginalScorersHandler,
   getScoresByRunIdHandler as getOriginalScoresByRunIdHandler,
@@ -7,7 +7,7 @@ import {
   getScoresByEntityIdHandler as getOriginalScoresByEntityIdHandler,
   saveScoreHandler as getOriginalSaveScoreHandler,
   getScorerHandler as getOriginalScorerHandler,
-} from '@mastra/server/handlers/scores';
+} from '@datawarp/mastra-server/handlers/scores';
 import type { Context } from 'hono';
 import { handleError } from '../../error';
 

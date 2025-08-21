@@ -1,6 +1,6 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@mastra/core/agent';
-import { MCPClient } from '@mastra/mcp';
+import { Agent } from '@datawarp/mastra-core/agent';
+import { MCPClient } from '@datawarp/mastra-mcp';
 
 const mcp = new MCPClient({
   servers: {

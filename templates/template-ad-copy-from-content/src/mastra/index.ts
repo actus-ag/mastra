@@ -1,6 +1,6 @@
-import { Mastra } from '@mastra/core/mastra';
-import { PinoLogger } from '@mastra/loggers';
-import { LibSQLStore } from '@mastra/libsql';
+import { Mastra } from '@datawarp/mastra-core/mastra';
+import { PinoLogger } from '@datawarp/mastra-loggers';
+import { LibSQLStore } from '@datawarp/mastra-libsql';
 
 // Import agents
 import { adCopyAgent } from './agents/ad-copy-agent';

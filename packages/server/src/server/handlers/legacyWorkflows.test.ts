@@ -1,7 +1,7 @@
-import { Mastra } from '@mastra/core';
-import { RuntimeContext } from '@mastra/core/runtime-context';
-import { MockStore } from '@mastra/core/storage';
-import { LegacyStep as Step, LegacyWorkflow as Workflow } from '@mastra/core/workflows/legacy';
+import { Mastra } from '@datawarp/mastra-core';
+import { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
+import { MockStore } from '@datawarp/mastra-core/storage';
+import { LegacyStep as Step, LegacyWorkflow as Workflow } from '@datawarp/mastra-core/workflows/legacy';
 import { stringify } from 'superjson';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import type { Mock } from 'vitest';

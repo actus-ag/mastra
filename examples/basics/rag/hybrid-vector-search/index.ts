@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { PgVector } from '@mastra/pg';
+import { PgVector } from '@datawarp/mastra-pg';
 import { embed } from 'ai';
 
 const pgVector = new PgVector({ connectionString: process.env.POSTGRES_CONNECTION_STRING! });

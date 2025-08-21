@@ -3,7 +3,7 @@ import { ToolsIcon } from '@/ds/icons/ToolsIcon';
 import { MemoryIcon } from '@/ds/icons/MemoryIcon';
 import { providerMapToIcon } from '../provider-map-icon';
 import { useLinkComponent } from '@/lib/framework';
-import { GetAgentResponse, GetToolResponse, GetWorkflowResponse } from '@mastra/client-js';
+import { GetAgentResponse, GetToolResponse, GetWorkflowResponse } from '@datawarp/mastra-client-js';
 import { AgentMetadataSection } from './agent-metadata-section';
 import { AgentMetadataList, AgentMetadataListEmpty, AgentMetadataListItem } from './agent-metadata-list';
 import { AgentMetadataWrapper } from './agent-metadata-wrapper';

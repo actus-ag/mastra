@@ -1,5 +1,5 @@
-import { RuntimeContext } from '@mastra/core/runtime-context';
-import type { ScorerRunInputForAgent, ScorerRunOutputForAgent, ScoringInput } from '@mastra/core/scores';
+import { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
+import type { ScorerRunInputForAgent, ScorerRunOutputForAgent, ScoringInput } from '@datawarp/mastra-core/scores';
 import type { ToolInvocation, UIMessage } from 'ai';
 
 export const roundToTwoDecimals = (num: number) => {

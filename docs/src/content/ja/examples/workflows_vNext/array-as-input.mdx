@@ -10,7 +10,7 @@ description: Mastraを使用してワークフローで.foreach()を使用して
 ## セットアップ
 
 ```sh copy
-npm install @ai-sdk/openai @mastra/core simple-git
+npm install @ai-sdk/openai @datawarp/mastra-core simple-git
 ```
 
 ## ドキュメント生成エージェントの定義
@@ -18,7 +18,7 @@ npm install @ai-sdk/openai @mastra/core simple-git
 コードファイルまたはコードファイルの要約を与えられたときに、LLM呼び出しを活用してドキュメントを生成するドキュメント生成エージェントを定義します。
 
 ```ts showLineNumbers copy filename="agents/docs-generator-agent.ts"
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
 
 // Create a documentation generator agent for code analysis
@@ -50,7 +50,7 @@ export { docGeneratorAgent };
 特定のファイルのコードを取得するステップと、そのコードファイルのREADMEを生成する別のステップという2つのステップでファイルサマリーワークフローを定義します。
 
 ```ts showLineNumbers copy filename="workflows/file-summary-workflow.ts"
-import { createWorkflow, createStep } from "@mastra/core/workflows/vNext";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows/vNext";
 import { docGeneratorAgent } from "../agents/docs-generator-agent";
 import { z } from "zod";
 import fs from "fs";
@@ -117,7 +117,7 @@ export { generateSummaryWorkflow };
 READMEジェネレーターワークフローを4つのステップで定義します：1つはGitHubリポジトリをクローンするステップ、1つはワークフローを一時停止してREADME生成時に考慮するフォルダに関するユーザー入力を取得するステップ、1つはフォルダ内のすべてのファイルの要約を生成するステップ、そして最後に各ファイルに対して生成されたすべてのドキュメントを1つのREADMEにまとめるステップです。
 
 ```ts showLineNumbers copy filename="workflows/readme-generator-workflow.ts
-import { createWorkflow, createStep } from "@mastra/core/workflows/vNext";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows/vNext";
 import { docGeneratorAgent } from "../agents/docs-generator-agent";
 import { generateSummaryWorkflow } from "./file-summary-workflow";
 import { z } from "zod";
@@ -282,8 +282,8 @@ export { readmeGeneratorWorkflow };
 エージェントとワークフローをmastraインスタンスに登録します。これはワークフロー内でエージェントへのアクセスを可能にするために重要です。
 
 ```ts showLineNumbers copy filename="index.ts"
-import { Mastra } from "@mastra/core";
-import { PinoLogger } from "@mastra/loggers";
+import { Mastra } from "@datawarp/mastra-core";
+import { PinoLogger } from "@datawarp/mastra-loggers";
 import { docGeneratorAgent } from "./agents/docs-generator-agent";
 import { readmeGeneratorWorkflow } from "./workflows/readme-generator-workflow";
 import { generateSummaryWorkflow } from "./workflows/file-summary-workflow";

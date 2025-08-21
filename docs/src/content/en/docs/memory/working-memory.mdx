@@ -20,8 +20,8 @@ Working memory can persist at two different scopes:
 Here's a minimal example of setting up an agent with working memory:
 
 ```typescript {12-15}
-import { Agent } from "@mastra/core/agent";
-import { Memory } from "@mastra/memory";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { Memory } from "@datawarp/mastra-memory";
 import { openai } from "@ai-sdk/openai";
 
 // Create agent with working memory enabled
@@ -120,9 +120,9 @@ const response = await agent.generate("Hello!", {
 Resource-scoped working memory requires specific storage adapters that support the `mastra_resources` table:
 
 ### ✅ Supported Storage Adapters
-- **LibSQL** (`@mastra/libsql`)
-- **PostgreSQL** (`@mastra/pg`)
-- **Upstash** (`@mastra/upstash`)
+- **LibSQL** (`@datawarp/mastra-libsql`)
+- **PostgreSQL** (`@datawarp/mastra-pg`)
+- **Upstash** (`@datawarp/mastra-upstash`)
 
 ## Custom Templates
 
@@ -218,7 +218,7 @@ Working memory can also be defined using a structured schema instead of a Markdo
 
 ```typescript
 import { z } from 'zod';
-import { Memory } from '@mastra/memory';
+import { Memory } from '@datawarp/mastra-memory';
 
 const userProfileSchema = z.object({
   name: z.string().optional(),

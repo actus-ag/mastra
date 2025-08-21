@@ -1,5 +1,5 @@
-import { Metric, type MetricResult } from '@mastra/core/eval';
-import { type LanguageModel } from '@mastra/core/llm';
+import { Metric, type MetricResult } from '@datawarp/mastra-core/eval';
+import { type LanguageModel } from '@datawarp/mastra-core/llm';
 
 import { GlutenCheckerJudge } from './metricJudge';
 

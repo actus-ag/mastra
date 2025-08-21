@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { HallucinationMetric } from '@mastra/evals/llm';
+import { HallucinationMetric } from '@datawarp/mastra-evals/llm';
 
 // Example 1: No hallucination (output matches context)
 const context1 = [

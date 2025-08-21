@@ -28,7 +28,7 @@ Mastraは、セマンティック検索、フィルタリング、再ランキ�
 ```ts showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
 import { embed } from "ai";
-import { PgVector } from "@mastra/pg";
+import { PgVector } from "@datawarp/mastra-pg";
 
 // Convert query to embedding
 const { embedding } = await embed({
@@ -175,7 +175,7 @@ const vectorQueryTool = createVectorQueryTool({
   <Tabs.Tab>
     ```ts showLineNumbers copy
     import { openai } from '@ai-sdk/openai';
-    import { PGVECTOR_PROMPT } from "@mastra/pg";
+    import { PGVECTOR_PROMPT } from "@datawarp/mastra-pg";
 
     export const ragAgent = new Agent({
       name: 'RAG Agent',
@@ -193,7 +193,7 @@ const vectorQueryTool = createVectorQueryTool({
   <Tabs.Tab>
     ```ts filename="vector-store.ts" showLineNumbers copy
     import { openai } from '@ai-sdk/openai';
-    import { PINECONE_PROMPT } from "@mastra/pinecone";
+    import { PINECONE_PROMPT } from "@datawarp/mastra-pinecone";
 
     export const ragAgent = new Agent({
       name: 'RAG Agent',
@@ -211,7 +211,7 @@ const vectorQueryTool = createVectorQueryTool({
   <Tabs.Tab>
     ```ts filename="vector-store.ts" showLineNumbers copy
     import { openai } from '@ai-sdk/openai';
-    import { QDRANT_PROMPT } from "@mastra/qdrant";
+    import { QDRANT_PROMPT } from "@datawarp/mastra-qdrant";
 
     export const ragAgent = new Agent({
       name: 'RAG Agent',
@@ -229,7 +229,7 @@ const vectorQueryTool = createVectorQueryTool({
   <Tabs.Tab>
     ```ts filename="vector-store.ts" showLineNumbers copy
     import { openai } from '@ai-sdk/openai';
-    import { CHROMA_PROMPT } from "@mastra/chroma";
+    import { CHROMA_PROMPT } from "@datawarp/mastra-chroma";
 
     export const ragAgent = new Agent({
       name: 'RAG Agent',
@@ -247,7 +247,7 @@ const vectorQueryTool = createVectorQueryTool({
   <Tabs.Tab>
     ```ts filename="vector-store.ts" showLineNumbers copy
     import { openai } from '@ai-sdk/openai';
-    import { ASTRA_PROMPT } from "@mastra/astra";
+    import { ASTRA_PROMPT } from "@datawarp/mastra-astra";
 
     export const ragAgent = new Agent({
       name: 'RAG Agent',
@@ -265,7 +265,7 @@ const vectorQueryTool = createVectorQueryTool({
   <Tabs.Tab>
     ```ts filename="vector-store.ts" showLineNumbers copy
     import { openai } from '@ai-sdk/openai';
-    import { LIBSQL_PROMPT } from "@mastra/libsql";
+    import { LIBSQL_PROMPT } from "@datawarp/mastra-libsql";
 
     export const ragAgent = new Agent({
       name: 'RAG Agent',
@@ -283,7 +283,7 @@ const vectorQueryTool = createVectorQueryTool({
   <Tabs.Tab>
     ```ts filename="vector-store.ts" showLineNumbers copy
     import { openai } from '@ai-sdk/openai';
-    import { UPSTASH_PROMPT } from "@mastra/upstash";
+    import { UPSTASH_PROMPT } from "@datawarp/mastra-upstash";
 
     export const ragAgent = new Agent({
       name: 'RAG Agent',
@@ -301,7 +301,7 @@ const vectorQueryTool = createVectorQueryTool({
   <Tabs.Tab>
     ```ts filename="vector-store.ts" showLineNumbers copy
     import { openai } from '@ai-sdk/openai';
-    import { VECTORIZE_PROMPT } from "@mastra/vectorize";
+    import { VECTORIZE_PROMPT } from "@datawarp/mastra-vectorize";
 
     export const ragAgent = new Agent({
       name: 'RAG Agent',
@@ -319,7 +319,7 @@ const vectorQueryTool = createVectorQueryTool({
   <Tabs.Tab>
     ```ts filename="vector-store.ts" showLineNumbers copy
     import { openai } from '@ai-sdk/openai';
-    import { MONGODB_PROMPT } from "@mastra/mongodb";
+    import { MONGODB_PROMPT } from "@datawarp/mastra-mongodb";
 
     export const ragAgent = new Agent({
       name: 'RAG Agent',
@@ -347,7 +347,7 @@ const vectorQueryTool = createVectorQueryTool({
 
 ```ts showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { rerank } from "@mastra/rag";
+import { rerank } from "@datawarp/mastra-rag";
 
 // Get initial results from vector search
 const initialResults = await pgVector.query({

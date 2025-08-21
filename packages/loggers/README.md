@@ -1,11 +1,11 @@
-# @mastra/loggers
+# @datawarp/mastra-loggers
 
-A collection of logging transport implementations for Mastra, extending the `LoggerTransport` class from `@mastra/core`.
+A collection of logging transport implementations for Mastra, extending the `LoggerTransport` class from `@datawarp/mastra-core`.
 
 ## Installation
 
 ```bash
-npm install @mastra/loggers
+npm install @datawarp/mastra-loggers
 ```
 
 ## Available Transports
@@ -15,7 +15,7 @@ npm install @mastra/loggers
 A transport that writes logs to a local file system.
 
 ```typescript
-import { FileTransport } from '@mastra/loggers';
+import { FileTransport } from '@datawarp/mastra-loggers';
 
 const fileLogger = new FileTransport({
   path: '/path/to/logs/app.log',
@@ -39,7 +39,7 @@ const fileLogger = new FileTransport({
 A transport that sends logs to Upstash Redis with batching and auto-trimming capabilities.
 
 ```typescript
-import { UpstashTransport } from '@mastra/loggers';
+import { UpstashTransport } from '@datawarp/mastra-loggers';
 
 const upstashLogger = new UpstashTransport({
   upstashUrl: 'https://your-instance.upstash.io',
@@ -78,11 +78,11 @@ Optional:
 
 ## Usage with Mastra Core
 
-Both transports implement the `LoggerTransport` interface from `@mastra/core`:
+Both transports implement the `LoggerTransport` interface from `@datawarp/mastra-core`:
 
 ```typescript
-import { Logger } from '@mastra/core/logger';
-import { FileTransport, UpstashTransport } from '@mastra/loggers';
+import { Logger } from '@datawarp/mastra-core/logger';
+import { FileTransport, UpstashTransport } from '@datawarp/mastra-loggers';
 
 // Create transports
 const fileTransport = new FileTransport({

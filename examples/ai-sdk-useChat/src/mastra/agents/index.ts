@@ -1,5 +1,5 @@
 import { anthropic } from '@ai-sdk/anthropic';
-import { Agent } from '@mastra/core/agent';
+import { Agent } from '@datawarp/mastra-core/agent';
 
 import { weatherTool } from '../tools';
 

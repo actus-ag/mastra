@@ -1,7 +1,7 @@
-import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
-import { TABLE_TRACES, TracesStorage } from '@mastra/core/storage';
-import type { StorageGetTracesArg, StorageGetTracesPaginatedArg, PaginationInfo } from '@mastra/core/storage';
-import type { Trace } from '@mastra/core/telemetry';
+import { ErrorCategory, ErrorDomain, MastraError } from '@datawarp/mastra-core/error';
+import { TABLE_TRACES, TracesStorage } from '@datawarp/mastra-core/storage';
+import type { StorageGetTracesArg, StorageGetTracesPaginatedArg, PaginationInfo } from '@datawarp/mastra-core/storage';
+import type { Trace } from '@datawarp/mastra-core/telemetry';
 import type { StoreOperationsCloudflare } from '../operations';
 
 export class TracesStorageCloudflare extends TracesStorage {

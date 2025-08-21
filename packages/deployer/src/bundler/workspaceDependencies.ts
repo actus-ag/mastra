@@ -1,5 +1,5 @@
 import { join } from 'node:path';
-import type { IMastraLogger } from '@mastra/core/logger';
+import type { IMastraLogger } from '@datawarp/mastra-core/logger';
 import slugify from '@sindresorhus/slugify';
 import { findWorkspaces, findWorkspacesRoot } from 'find-workspaces';
 import { ensureDir } from 'fs-extra';

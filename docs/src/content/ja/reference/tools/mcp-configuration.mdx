@@ -88,8 +88,8 @@ async disconnect(): Promise<void>
 ### 基本的な使用法
 
 ```typescript
-import { MCPClient } from "@mastra/mcp";
-import { Agent } from "@mastra/core/agent";
+import { MCPClient } from "@datawarp/mastra-mcp";
+import { Agent } from "@datawarp/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
 
 const mcp = new MCPClient({
@@ -123,8 +123,8 @@ const agent = new Agent({
 ### generate()またはstream()でのツールセットの使用
 
 ```typescript
-import { Agent } from "@mastra/core/agent";
-import { MCPClient } from "@mastra/mcp";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { MCPClient } from "@datawarp/mastra-mcp";
 import { openai } from "@ai-sdk/openai";
 
 // まず、ツールなしでエージェントを作成

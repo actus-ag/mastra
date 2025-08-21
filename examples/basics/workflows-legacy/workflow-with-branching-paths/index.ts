@@ -1,4 +1,4 @@
-import { LegacyStep, LegacyWorkflow } from '@mastra/core/workflows/legacy';
+import { LegacyStep, LegacyWorkflow } from '@datawarp/mastra-core/workflows/legacy';
 import { z } from 'zod';
 
 const stepOne = new LegacyStep({

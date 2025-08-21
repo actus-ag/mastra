@@ -1,5 +1,5 @@
 export const toneConsistencyScorer = `
-import { createToneScorer } from "@mastra/evals/scorers/code";
+import { createToneScorer } from "@datawarp/mastra-evals/scorers/code";
  
 const scorer = createToneScorer();
  

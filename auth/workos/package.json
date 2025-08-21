@@ -1,5 +1,5 @@
 {
-  "name": "@mastra/auth-workos",
+  "name": "@datawarp/mastra-auth-workos",
   "version": "0.10.3",
   "description": "Mastra WorkOS Auth integration",
   "type": "module",
@@ -26,12 +26,12 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@mastra/auth": "workspace:*",
+    "@datawarp/mastra-auth": "workspace:*",
     "@workos-inc/node": "^7.57.0"
   },
   "devDependencies": {
     "@internal/lint": "workspace:*",
-    "@mastra/core": "workspace:*",
+    "@datawarp/mastra-core": "workspace:*",
     "@types/node": "^20.19.0",
     "eslint": "^9.30.1",
     "tsup": "^8.5.0",

@@ -34,10 +34,10 @@ CLIを使用して新しいMastraプロジェクトを作成します：
 ### MastraClientのインストール
 
 <Tabs items={["npm", "yarn", "pnpm", "bun"]}>
-  <Tabs.Tab>```bash copy npm install @mastra/client-js@latest ```</Tabs.Tab>
-  <Tabs.Tab>```bash copy yarn add @mastra/client-js@latest ```</Tabs.Tab>
-  <Tabs.Tab>```bash copy pnpm add @mastra/client-js@latest ```</Tabs.Tab>
-  <Tabs.Tab>```bash copy bun add @mastra/client-js@latest ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy npm install @datawarp/mastra-client-js@latest ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy yarn add @datawarp/mastra-client-js@latest ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy pnpm add @datawarp/mastra-client-js@latest ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy bun add @datawarp/mastra-client-js@latest ```</Tabs.Tab>
 </Tabs>
 
 ### MastraClientの使用
@@ -45,7 +45,7 @@ CLIを使用して新しいMastraプロジェクトを作成します：
 クライアントインスタンスを作成し、Next.jsアプリケーションで使用します：
 
 ```typescript filename="lib/mastra.ts" copy
-import { MastraClient } from "@mastra/client-js";
+import { MastraClient } from "@datawarp/mastra-client-js";
 
 // Initialize the client
 export const mastraClient = new MastraClient({

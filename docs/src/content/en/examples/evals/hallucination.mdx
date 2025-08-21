@@ -15,7 +15,7 @@ Use `HallucinationMetric` to evaluate whether the response contradicts any part 
 ## Installation
 
 ```bash copy
-npm install @mastra/evals
+npm install @datawarp/mastra-evals
 ```
 
 ## No hallucination example
@@ -24,7 +24,7 @@ In this example, the response is fully aligned with the provided context. All cl
 
 ```typescript filename="src/example-no-hallucination.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { HallucinationMetric } from "@mastra/evals/llm";
+import { HallucinationMetric } from "@datawarp/mastra-evals/llm";
 
 const metric = new HallucinationMetric(openai("gpt-4o-mini"), {
   context: [
@@ -61,7 +61,7 @@ In this example, the response includes both accurate and inaccurate claims. Some
 
 ```typescript filename="src/example-mixed-hallucination.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { HallucinationMetric } from "@mastra/evals/llm";
+import { HallucinationMetric } from "@datawarp/mastra-evals/llm";
 
 const metric = new HallucinationMetric(openai("gpt-4o-mini"), {
   context: [
@@ -99,7 +99,7 @@ In this example, the response contradicts every key fact in the context. None of
 
 ```typescript filename="src/example-complete-hallucination.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { HallucinationMetric } from "@mastra/evals/llm";
+import { HallucinationMetric } from "@datawarp/mastra-evals/llm";
 
 const metric = new HallucinationMetric(openai("gpt-4o-mini"), {
   context: [

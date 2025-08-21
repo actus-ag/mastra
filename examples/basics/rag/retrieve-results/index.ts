@@ -1,6 +1,6 @@
 import { openai } from '@ai-sdk/openai';
-import { PineconeVector } from '@mastra/pinecone';
-import { MDocument } from '@mastra/rag';
+import { PineconeVector } from '@datawarp/mastra-pinecone';
+import { MDocument } from '@datawarp/mastra-rag';
 import { embedMany } from 'ai';
 
 const doc = MDocument.fromText('Your text content...');

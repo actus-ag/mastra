@@ -1,5 +1,5 @@
-import { MastraError, ErrorDomain, ErrorCategory } from '@mastra/core/error';
-import { MastraVector } from '@mastra/core/vector';
+import { MastraError, ErrorDomain, ErrorCategory } from '@datawarp/mastra-core/error';
+import { MastraVector } from '@datawarp/mastra-core/vector';
 import type {
   QueryResult,
   IndexStats,
@@ -10,7 +10,7 @@ import type {
   DeleteIndexParams,
   DeleteVectorParams,
   UpdateVectorParams,
-} from '@mastra/core/vector';
+} from '@datawarp/mastra-core/vector';
 import { Pinecone } from '@pinecone-database/pinecone';
 import type {
   IndexStatsDescription,

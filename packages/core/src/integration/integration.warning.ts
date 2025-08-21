@@ -4,6 +4,6 @@ export class Integration<ToolsParams = void, ApiClient = void> extends BaseInteg
   constructor() {
     super();
 
-    console.warn('Please import "Integration" from "@mastra/core/integration" instead of "@mastra/core"');
+    console.warn('Please import "Integration" from "@datawarp/mastra-core/integration" instead of "@datawarp/mastra-core"');
   }
 }

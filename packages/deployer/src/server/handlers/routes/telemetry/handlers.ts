@@ -1,8 +1,8 @@
-import type { Mastra } from '@mastra/core';
+import type { Mastra } from '@datawarp/mastra-core';
 import {
   getTelemetryHandler as getOriginalTelemetryHandler,
   storeTelemetryHandler as getOriginalStoreTelemetryHandler,
-} from '@mastra/server/handlers/telemetry';
+} from '@datawarp/mastra-server/handlers/telemetry';
 import type { Context } from 'hono';
 
 import { handleError } from '../../error';

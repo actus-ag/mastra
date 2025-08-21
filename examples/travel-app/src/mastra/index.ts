@@ -1,5 +1,5 @@
-import { Mastra } from "@mastra/core";
-import { PinoLogger } from "@mastra/loggers";
+import { Mastra } from "@datawarp/mastra-core";
+import { PinoLogger } from "@datawarp/mastra-loggers";
 import { travelAgent, travelAnalyzer } from "./agents";
 import { syncCsvDataWorkflow } from "./workflows/attractions";
 import { storage } from "./agents/storage";

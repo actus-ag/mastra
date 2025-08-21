@@ -12,7 +12,7 @@ description: ツールは、エージェントやワークフローによって�
 このセクションでは、エージェントが使用できるツールを作成するプロセスを説明します。都市の現在の天気情報を取得するシンプルなツールを作成してみましょう。
 
 ```typescript filename="src/mastra/tools/weatherInfo.ts" copy
-import { createTool } from "@mastra/core/tools";
+import { createTool } from "@datawarp/mastra-core/tools";
 import { z } from "zod";
 
 const getWeatherInfo = async (city: string) => {
@@ -41,7 +41,7 @@ export const weatherInfo = createTool({
 次に、ツールをエージェントに追加します。天気に関する質問に答えることができるエージェントを作成し、`weatherInfo`ツールを使用するように設定します。
 
 ```typescript filename="src/mastra/agents/weatherAgent.ts"
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
 import * as tools from "../tools/weatherInfo";
 
@@ -61,7 +61,7 @@ export const weatherAgent = new Agent<typeof tools>({
 Mastraにエージェントを初期化する必要があります。
 
 ```typescript filename="src/index.ts"
-import { Mastra } from "@mastra/core";
+import { Mastra } from "@datawarp/mastra-core";
 import { weatherAgent } from "./agents/weatherAgent";
 
 export const mastra = new Mastra({
@@ -76,8 +76,8 @@ export const mastra = new Mastra({
 `generate`と`stream`（テキスト生成）からのアボートシグナルはツール実行に転送されます。これらは実行関数の2番目のパラメータでアクセスでき、長時間実行される計算を中止したり、ツール内のフェッチ呼び出しに転送したりすることができます。
 
 ```typescript
-import { Agent } from "@mastra/core/agent";
-import { createTool } from "@mastra/core/tools";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { createTool } from "@datawarp/mastra-core/tools";
 import { z } from "zod";
 
 const agent = new Agent({
@@ -109,8 +109,8 @@ const result = await agent.generate("What is the weather in San Francisco?", {
 以下は、温度スケールを華氏と摂氏の間で変更する例です：
 
 ```typescript filename="src/agents/weather-agent.ts"
-import { Agent } from "@mastra/core/agent";
-import { createTool } from "@mastra/core/tools";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { createTool } from "@datawarp/mastra-core/tools";
 import { z } from "zod";
 
 export const agent = new Agent({
@@ -202,7 +202,7 @@ export const weatherInfo = tool({
 Vercelツールを、Mastraツールと一緒にエージェントで使用できます：
 
 ```typescript filename="src/mastra/agents/weatherAgent.ts"
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
 import { weatherInfo } from "../tools/vercelTool";
 import * as mastraTools from "../tools/mastraTools";
@@ -283,6 +283,6 @@ inputSchema: z.object({
 
 ## Model Context Protocol (MCP) ツール
 
-Mastraは`@mastra/mcp`パッケージを通じてMCP互換サーバーからのツールもサポートしています。MCPは、AIモデルが外部ツールやリソースを発見し、相互作用するための標準化された方法を提供します。これにより、カスタム統合を作成することなく、サードパーティのツールをエージェントに簡単に統合できます。
+Mastraは`@datawarp/mastra-mcp`パッケージを通じてMCP互換サーバーからのツールもサポートしています。MCPは、AIモデルが外部ツールやリソースを発見し、相互作用するための標準化された方法を提供します。これにより、カスタム統合を作成することなく、サードパーティのツールをエージェントに簡単に統合できます。
 
 設定オプションやベストプラクティスを含むMCPツールの使用に関する詳細情報については、[MCPガイド](/docs/agents/mcp-guide)をご覧ください。

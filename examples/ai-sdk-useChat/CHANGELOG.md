@@ -7,4 +7,4 @@
 ### Patch Changes
 
 - Updated dependencies [06aa827]
-  - @mastra/core@0.4.3-alpha.0
+  - @datawarp/mastra-core@0.4.3-alpha.0

@@ -1,4 +1,4 @@
-import type { Mastra } from '@mastra/core';
+import type { Mastra } from '@datawarp/mastra-core';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { getTelemetryHandler } from './telemetry';
 

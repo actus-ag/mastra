@@ -20,7 +20,7 @@ Real-time monitoring, suspend/resume, and step-level observability are enabled v
 ## Setup
 
 ```sh
-npm install @mastra/inngest @mastra/core @mastra/deployer
+npm install @datawarp/mastra-inngest @datawarp/mastra-core @datawarp/mastra-deployer
 ```
 
 ## Building an Inngest Workflow
@@ -64,7 +64,7 @@ Define the individual steps that will compose your workflow:
 ```ts showLineNumbers copy filename="src/mastra/workflows/index.ts"
 import { z } from "zod";
 import { inngest } from "../inngest";
-import { init } from "@mastra/inngest";
+import { init } from "@datawarp/mastra-inngest";
 
 // Initialize Inngest with Mastra, pointing to your local Inngest server
 const { createWorkflow, createStep } = init(inngest);
@@ -110,11 +110,11 @@ export { workflow as incrementWorkflow };
 Register the workflow with Mastra and configure the Inngest API endpoint:
 
 ```ts showLineNumbers copy filename="src/mastra/index.ts"
-import { Mastra } from "@mastra/core/mastra";
-import { serve as inngestServe } from "@mastra/inngest";
+import { Mastra } from "@datawarp/mastra-core/mastra";
+import { serve as inngestServe } from "@datawarp/mastra-inngest";
 import { incrementWorkflow } from "./workflows";
 import { inngest } from "./inngest";
-import { PinoLogger } from "@mastra/loggers";
+import { PinoLogger } from "@datawarp/mastra-loggers";
 
 // Configure Mastra with the workflow and Inngest API endpoint
 export const mastra = new Mastra({
@@ -210,7 +210,7 @@ docker run --rm -p 8288:8288 \
 1. Add Vercel Deployer to Mastra instance
 
 ```ts showLineNumbers copy filename="src/mastra/index.ts"
-import { VercelDeployer } from "@mastra/deployer-vercel";
+import { VercelDeployer } from "@datawarp/mastra-deployer-vercel";
 
 export const mastra = new Mastra({
   // ...other config

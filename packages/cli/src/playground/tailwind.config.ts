@@ -10,14 +10,14 @@ import {
   BorderWidth,
   Spacings,
   Sizes,
-} from '@mastra/playground-ui/tokens';
+} from '@datawarp/mastra-playground-ui/tokens';
 export default {
   darkMode: ['class'],
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/**/*.{js,ts,jsx,tsx,html}',
-    './node_modules/@mastra/playground-ui/src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@datawarp/mastra-playground-ui/src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     container: {

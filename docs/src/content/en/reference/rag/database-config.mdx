@@ -156,7 +156,7 @@ whereDocument: { "$contains": "API documentation" }
     ### Basic Database Configuration
 
     ```typescript
-    import { createVectorQueryTool } from '@mastra/rag';
+    import { createVectorQueryTool } from '@datawarp/mastra-rag';
     
     const vectorTool = createVectorQueryTool({
       vectorStoreName: 'pinecone',
@@ -175,7 +175,7 @@ whereDocument: { "$contains": "API documentation" }
     ### Runtime Configuration Override
 
     ```typescript
-    import { RuntimeContext } from '@mastra/core/runtime-context';
+    import { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
     
     // Initial configuration
     const vectorTool = createVectorQueryTool({

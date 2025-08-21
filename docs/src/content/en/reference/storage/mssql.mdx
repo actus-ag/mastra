@@ -10,13 +10,13 @@ The MSSQL storage implementation provides a production-ready storage solution us
 ## Installation
 
 ```bash copy
-npm install @mastra/mssql@latest
+npm install @datawarp/mastra-mssql@latest
 ```
 
 ## Usage
 
 ```typescript copy showLineNumbers
-import { MSSQLStore } from "@mastra/mssql";
+import { MSSQLStore } from "@datawarp/mastra-mssql";
 
 const storage = new MSSQLStore({
   connectionString: process.env.DATABASE_URL,
@@ -49,7 +49,7 @@ const storage = new MSSQLStore({
 You can instantiate `MSSQLStore` in the following ways:
 
 ```ts
-import { MSSQLStore } from "@mastra/mssql";
+import { MSSQLStore } from "@datawarp/mastra-mssql";
 
 // Using a connection string only
 const store1 = new MSSQLStore({

@@ -17,7 +17,7 @@ Chain steps to execute sequentially using `.then()`:
 ![Chaining steps with .then()](/image/workflows/workflows-control-flow-then.jpg)
 
 ```typescript {8-9,4-5} filename="src/mastra/workflows/test-workflow.ts" showLineNumbers copy
-import { createWorkflow, createStep } from "@mastra/core/workflows";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 
 const step1 = createStep({...});
@@ -38,7 +38,7 @@ Execute steps simultaneously using `.parallel()`:
 ![Concurrent steps with .parallel()](/image/workflows/workflows-control-flow-parallel.jpg)
 
 ```typescript {9,4-5} filename="src/mastra/workflows/test-workflow.ts" showLineNumbers copy
-import { createWorkflow, createStep } from "@mastra/core/workflows";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 
 const step1 = createStep({...});
@@ -62,7 +62,7 @@ Execute steps conditionally using `.branch()`:
 ![Conditional branching with .branch()](/image/workflows/workflows-control-flow-branch.jpg)
 
 ```typescript {8-11,4-5} filename="src/mastra/workflows/test-workflow.ts" showLineNumbers copy
-import { createWorkflow, createStep } from "@mastra/core/workflows";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 
 const lessThanStep = createStep({...});
@@ -96,7 +96,7 @@ Executes step repeatedly while a condition is true.
 ![Repeating with .dowhile()](/image/workflows/workflows-control-flow-dowhile.jpg)
 
 ```typescript {7} filename="src/mastra/workflows/test-workflow.ts" showLineNumbers copy
-import { createWorkflow, createStep } from "@mastra/core/workflows";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 
 const counterStep = createStep({...});
@@ -113,7 +113,7 @@ Executes step repeatedly until a condition becomes true.
 ![Repeating with .dountil()](/image/workflows/workflows-control-flow-dountil.jpg)
 
 ```typescript {7} filename="src/mastra/workflows/test-workflow.ts" showLineNumbers copy
-import { createWorkflow, createStep } from "@mastra/core/workflows";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 
 const counterStep = createStep({...});
@@ -130,7 +130,7 @@ Sequentially executes the same step for each item from the `inputSchema`.
 ![Repeating with .foreach()](/image/workflows/workflows-control-flow-foreach.jpg)
 
 ```typescript {7} filename="src/mastra/workflows/test-workflow.ts" showLineNumbers copy
-import { createWorkflow, createStep } from "@mastra/core/workflows";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 
 const mapStep = createStep({...});
@@ -145,7 +145,7 @@ export const testWorkflow = createWorkflow({...})
 Use `concurrency` to execute steps in parallel with a limit on the number of concurrent executions.
 
 ```typescript {7} filename="src/mastra/workflows/test-workflow.ts" showLineNumbers copy
-import { createWorkflow, createStep } from "@mastra/core/workflows";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 
 const mapStep = createStep({...})
@@ -160,7 +160,7 @@ export const testWorkflow = createWorkflow({...})
 Use a nested workflow as a step by passing it to `.then()`. This runs each of its steps in sequence as part of the parent workflow.
 
 ```typescript {4,7} filename="src/mastra/workflows/test-workflow.ts" showLineNumbers copy
-import { createWorkflow, createStep } from "@mastra/core/workflows";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 
 export const nestedWorkflow = createWorkflow({...})
@@ -175,7 +175,7 @@ export const testWorkflow = createWorkflow({...})
 Use `cloneWorkflow` to duplicate an existing workflow. This lets you reuse its structure while overriding parameters like `id`.
 
 ```typescript {6,10} filename="src/mastra/workflows/test-workflow.ts" showLineNumbers copy
-import { createWorkflow, createStep, cloneWorkflow } from "@mastra/core/workflows";
+import { createWorkflow, createStep, cloneWorkflow } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 
 const step1 = createStep({...});
@@ -193,7 +193,7 @@ export const testWorkflow = createWorkflow({...})
 Use `bail()` in a step to exit early with a successful result. This returns the provided payload as the step output and ends workflow execution.
 
 ```typescript {7} filename="src/mastra/workflows/test-workflow.ts" showLineNumbers copy
-import { createWorkflow, createStep } from "@mastra/core/workflows";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 
 const step1 = createStep({
@@ -215,7 +215,7 @@ export const testWorkflow = createWorkflow({...})
 Use `throw new Error()` in a step to exit with an error.
 
 ```typescript {7} filename="src/mastra/workflows/test-workflow.ts" showLineNumbers copy
-import { createWorkflow, createStep } from "@mastra/core/workflows";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 
 const step1 = createStep({

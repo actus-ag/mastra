@@ -1,4 +1,4 @@
-import { MastraClient } from '@mastra/client-js';
+import { MastraClient } from '@datawarp/mastra-client-js';
 
 // Extend the window object to include our injected configuration
 declare global {

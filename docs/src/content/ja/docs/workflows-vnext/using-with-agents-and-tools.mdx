@@ -8,10 +8,10 @@ description: "Mastraワークフロー（vNext）のステップは、入力、�
 vNextワークフローでは、`createStep(agent)`を使用してMastraエージェントを直接ステップとして使用できます：
 
 ```typescript
-import { Mastra } from "@mastra/core";
+import { Mastra } from "@datawarp/mastra-core";
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@mastra/core/agent";
-import { createWorkflow, createStep } from "@mastra/core/workflows/vNext";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows/vNext";
 import { z } from "zod";
 
 const myAgent = new Agent({
@@ -92,8 +92,8 @@ if (res.status === "success") {
 vNextワークフローでは、`createStep(tool)`を使用してMastraツールを直接ステップとして使用できます：
 
 ```typescript
-import { createTool, Mastra } from "@mastra/core";
-import { createWorkflow, createStep } from "@mastra/core/workflows/vNext";
+import { createTool, Mastra } from "@datawarp/mastra-core";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows/vNext";
 import { z } from "zod";
 
 // Create a weather tool
@@ -197,10 +197,10 @@ if (result.status === "success") {
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { Mastra } from "@mastra/core";
-import { Agent } from "@mastra/core/agent";
-import { createTool } from "@mastra/core/tools";
-import { createWorkflow, createStep } from "@mastra/core/workflows/vNext";
+import { Mastra } from "@datawarp/mastra-core";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { createTool } from "@datawarp/mastra-core/tools";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows/vNext";
 import { z } from "zod";
 
 // Define the weather fetching step

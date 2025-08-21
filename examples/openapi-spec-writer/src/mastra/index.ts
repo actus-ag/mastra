@@ -1,6 +1,6 @@
-import { PinoLogger } from "@mastra/loggers";
-import { Mastra } from "@mastra/core/mastra";
-import { UpstashTransport } from "@mastra/loggers/upstash";
+import { PinoLogger } from "@datawarp/mastra-loggers";
+import { Mastra } from "@datawarp/mastra-core/mastra";
+import { UpstashTransport } from "@datawarp/mastra-loggers/upstash";
 import { agentOne } from "./agents";
 import { makePRToMastraWorkflow, openApiSpecGenWorkflow } from "./workflows";
 

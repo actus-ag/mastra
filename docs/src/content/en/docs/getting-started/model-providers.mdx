@@ -11,7 +11,7 @@ Model providers are used to interact with different language models. Mastra uses
 
 ```typescript showLineNumbers copy {1,7} filename="src/mastra/agents/weather-agent.ts"
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 
 const agent = new Agent({
   name: "WeatherAgent",
@@ -48,7 +48,7 @@ Their packages are usually prefixed with `@ai-sdk/`, e.g. `@ai-sdk/anthropic`, `
 
 ```typescript showLineNumbers copy {1,7} filename="src/mastra/agents/weather-agent.ts"
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 
 const agent = new Agent({
   name: "WeatherAgent",
@@ -62,7 +62,7 @@ Here's an example using the OpenAI provider:
 
 ```typescript showLineNumbers copy filename="src/mastra/agents/weather-agent.ts" {1,4-8,13}
 import { createOpenAI } from "@ai-sdk/openai";
-import { Agent } from "@mastra/core/agent"
+import { Agent } from "@datawarp/mastra-core/agent"
 
 const openai = createOpenAI({
     baseUrl: "<your-custom-base-url>",
@@ -85,7 +85,7 @@ Here's the general setup and provider instance creation:
 
 ```typescript showLineNumbers copy filename="src/mastra/agents/weather-agent.ts" {1,4-14,19}
 import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 
 const openaiCompatible = createOpenAICompatible({
     name: "<model-name>",
@@ -120,7 +120,7 @@ Here's an example:
 
 ```typescript showLineNumbers copy filename="src/mastra/agents/weather-agent.ts" {1,7}
 import { ollama } from "ollama-ai-provider";
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 
 const agent = new Agent({
     name: "WeatherAgent",
@@ -133,7 +133,7 @@ You can also configure the Ollama provider like so:
 
 ```typescript showLineNumbers copy filename="src/mastra/agents/weather-agent.ts" {1,4-7,12}
 import { createOllama } from "ollama-ai-provider";
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 
 const ollama = createOllama({
     baseUrl: "<your-custom-base-url>",

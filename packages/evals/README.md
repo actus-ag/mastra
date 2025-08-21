@@ -1,16 +1,16 @@
-# @mastra/evals
+# @datawarp/mastra-evals
 
 A comprehensive evaluation framework for assessing AI model outputs across multiple dimensions.
 
 ## Installation
 
 ```bash
-npm install @mastra/evals
+npm install @datawarp/mastra-evals
 ```
 
 ## Overview
 
-`@mastra/evals` provides a suite of evaluation metrics for assessing AI model outputs. The package includes both LLM-based and NLP-based metrics, enabling both automated and model-assisted evaluation of AI responses.
+`@datawarp/mastra-evals` provides a suite of evaluation metrics for assessing AI model outputs. The package includes both LLM-based and NLP-based metrics, enabling both automated and model-assisted evaluation of AI responses.
 
 ## Features
 
@@ -76,7 +76,7 @@ npm install @mastra/evals
 ### Basic Example
 
 ```typescript
-import { ContentSimilarityMetric, ToxicityMetric } from '@mastra/evals';
+import { ContentSimilarityMetric, ToxicityMetric } from '@datawarp/mastra-evals';
 
 // Initialize metrics
 const similarityMetric = new ContentSimilarityMetric({
@@ -103,7 +103,7 @@ console.log('Toxicity Score:', toxicityResult.score);
 ### Context-Aware Evaluation
 
 ```typescript
-import { FaithfulnessMetric } from '@mastra/evals';
+import { FaithfulnessMetric } from '@datawarp/mastra-evals';
 
 // Initialize with context
 const faithfulnessMetric = new FaithfulnessMetric({
@@ -144,7 +144,7 @@ The package includes built-in telemetry and logging capabilities:
 - Detailed evaluation traces for debugging
 
 ```typescript
-import { attachListeners } from '@mastra/evals';
+import { attachListeners } from '@datawarp/mastra-evals';
 
 // Enable basic evaluation tracking
 await attachListeners();
@@ -166,13 +166,13 @@ Required for LLM-based metrics:
 
 ```typescript
 // Main package exports
-import { evaluate } from '@mastra/evals';
+import { evaluate } from '@datawarp/mastra-evals';
 // NLP-specific metrics
-import { ContentSimilarityMetric } from '@mastra/evals/nlp';
+import { ContentSimilarityMetric } from '@datawarp/mastra-evals/nlp';
 ```
 
 ## Related Packages
 
-- `@mastra/core`: Core framework functionality
-- `@mastra/engine`: LLM execution engine
-- `@mastra/mcp`: Model Context Protocol integration
+- `@datawarp/mastra-core`: Core framework functionality
+- `@datawarp/mastra-engine`: LLM execution engine
+- `@datawarp/mastra-mcp`: Model Context Protocol integration

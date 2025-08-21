@@ -1,8 +1,8 @@
-import { Agent } from '@mastra/core/agent';
-import { Mastra } from '@mastra/core/mastra';
-import { RuntimeContext } from '@mastra/core/runtime-context';
-import { createTool } from '@mastra/core/tools';
-import type { ToolAction, VercelTool } from '@mastra/core/tools';
+import { Agent } from '@datawarp/mastra-core/agent';
+import { Mastra } from '@datawarp/mastra-core/mastra';
+import { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
+import { createTool } from '@datawarp/mastra-core/tools';
+import type { ToolAction, VercelTool } from '@datawarp/mastra-core/tools';
 import type { Mock } from 'vitest';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { HTTPException } from '../http-exception';

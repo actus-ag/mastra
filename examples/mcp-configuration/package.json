@@ -14,9 +14,9 @@
   "description": "",
   "dependencies": {
     "@ai-sdk/openai": "latest",
-    "@mastra/core": "latest",
-    "@mastra/mcp": "latest",
-    "@mastra/memory": "latest",
+    "@datawarp/mastra-core": "latest",
+    "@datawarp/mastra-mcp": "latest",
+    "@datawarp/mastra-memory": "latest",
     "@modelcontextprotocol/sdk": "^1.13.0",
     "chalk": "^5.4.1",
     "zod": "^3.25.67",
@@ -31,9 +31,9 @@
   },
   "pnpm": {
     "overrides": {
-      "@mastra/core": "link:../../packages/core",
-      "@mastra/mcp": "link:../../packages/mcp",
-      "@mastra/memory": "link:../../packages/memory",
+      "@datawarp/mastra-core": "link:../../packages/core",
+      "@datawarp/mastra-mcp": "link:../../packages/mcp",
+      "@datawarp/mastra-memory": "link:../../packages/memory",
       "mastra": "link:../../packages/cli"
     }
   },

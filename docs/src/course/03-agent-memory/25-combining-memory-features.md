@@ -8,10 +8,10 @@ Let's create a comprehensive agent that utilizes conversation history, semantic 
 
 ```typescript
 // src/mastra/agents/memory-agent.ts
-import { Agent } from "@mastra/core/agent";
-import { Memory } from "@mastra/memory";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { Memory } from "@datawarp/mastra-memory";
 import { openai } from "@ai-sdk/openai";
-import { LibSQLStore, LibSQLVector } from "@mastra/libsql";
+import { LibSQLStore, LibSQLVector } from "@datawarp/mastra-libsql";
 
 // Create a comprehensive memory configuration
 const memory = new Memory({

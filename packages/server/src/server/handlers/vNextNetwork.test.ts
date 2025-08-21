@@ -1,10 +1,10 @@
-import type { Workflow } from '@mastra/core';
-import { Agent } from '@mastra/core/agent';
-import { Mastra } from '@mastra/core/mastra';
-import { NewAgentNetwork } from '@mastra/core/network/vNext';
-import { RuntimeContext } from '@mastra/core/runtime-context';
-import { createMockModel } from '@mastra/core/test-utils/llm-mock';
-import { createStep, createWorkflow } from '@mastra/core/workflows';
+import type { Workflow } from '@datawarp/mastra-core';
+import { Agent } from '@datawarp/mastra-core/agent';
+import { Mastra } from '@datawarp/mastra-core/mastra';
+import { NewAgentNetwork } from '@datawarp/mastra-core/network/vNext';
+import { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
+import { createMockModel } from '@datawarp/mastra-core/test-utils/llm-mock';
+import { createStep, createWorkflow } from '@datawarp/mastra-core/workflows';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { z } from 'zod';
 import { HTTPException } from '../http-exception';

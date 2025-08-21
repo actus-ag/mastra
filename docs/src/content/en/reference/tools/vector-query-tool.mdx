@@ -14,7 +14,7 @@ The `createVectorQueryTool()` function creates a tool for semantic search over v
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { createVectorQueryTool } from "@mastra/rag";
+import { createVectorQueryTool } from "@datawarp/mastra-rag";
 
 const queryTool = createVectorQueryTool({
   vectorStoreName: "pinecone",
@@ -480,7 +480,7 @@ The `databaseConfig` parameter allows you to leverage unique features and optimi
 You can override database configurations at runtime to adapt to different scenarios:
 
 ```typescript
-import { RuntimeContext } from '@mastra/core/runtime-context';
+import { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
 
 const queryTool = createVectorQueryTool({
   vectorStoreName: "pinecone",
@@ -559,9 +559,9 @@ For more information on runtime context, please see:
 The tool can be used by itself to retrieve documents matching a query:
 ```typescript copy showLineNumbers filename="src/index.ts"
 import { openai } from "@ai-sdk/openai";
-import { RuntimeContext } from "@mastra/core/runtime-context";
-import { createVectorQueryTool } from "@mastra/rag";
-import { PgVector } from "@mastra/pg";
+import { RuntimeContext } from "@datawarp/mastra-core/runtime-context";
+import { createVectorQueryTool } from "@datawarp/mastra-rag";
+import { PgVector } from "@datawarp/mastra-pg";
 
 const pgVector = new PgVector({
   connectionString: process.env.POSTGRES_CONNECTION_STRING!,

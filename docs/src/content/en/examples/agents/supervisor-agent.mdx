@@ -29,7 +29,7 @@ This `copywriterAgent` is responsible for writing the initial blog post content 
 
 ```typescript filename="src/mastra/agents/example-copywriter-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 
 export const copywriterAgent = new Agent({
   name: "copywriter-agent",
@@ -43,7 +43,7 @@ export const copywriterAgent = new Agent({
 The `copywriterTool` provides an interface to call the `copywriterAgent` and passes in the `topic`.
 
 ```typescript filename="src/mastra/tools/example-copywriter-tool.ts"
-import { createTool } from "@mastra/core/tools";
+import { createTool } from "@datawarp/mastra-core/tools";
 import { z } from "zod";
 
 export const copywriterTool = createTool({
@@ -74,7 +74,7 @@ This `editorAgent` takes the initial copy and refines it to improve quality and 
 
 ```typescript filename="src/mastra/agents/example-editor-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 
 export const editorAgent = new Agent({
   name: "Editor",
@@ -88,7 +88,7 @@ export const editorAgent = new Agent({
 The `editorTool` provides an interface to call the `editorAgent` and passes in the `copy`.
 
 ```typescript filename="src/mastra/tools/example-editor-tool.ts" showLineNumbers copy
-import { createTool } from "@mastra/core/tools";
+import { createTool } from "@datawarp/mastra-core/tools";
 import { z } from "zod";
 
 export const editorTool = createTool({
@@ -119,7 +119,7 @@ This `publisherAgent` coordinates the entire process by calling the `copywriterT
 
 ```typescript filename="src/mastra/agents/example-publisher-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 
 import { copywriterTool } from "../tools/example-copywriter-tool";
 import { editorTool } from "../tools/example-editor-tool";
@@ -138,7 +138,7 @@ export const publisherAgent = new Agent({
 All three agents are registered in the main Mastra instance so they can be accessed by each other.
 
 ```typescript filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@mastra/core/mastra";
+import { Mastra } from "@datawarp/mastra-core/mastra";
 
 import { publisherAgent } from "./agents/example-publisher-agent";
 import { copywriterAgent } from "./agents/example-copywriter-agent";

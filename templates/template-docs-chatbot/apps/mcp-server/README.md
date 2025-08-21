@@ -58,7 +58,7 @@ This MCP server can be consumed by any MCP client. It exposes:
 To connect to this server from an MCP client:
 
 ```typescript
-import { MCPClient } from '@mastra/mcp';
+import { MCPClient } from '@datawarp/mastra-mcp';
 
 const client = new MCPClient({
   servers: {

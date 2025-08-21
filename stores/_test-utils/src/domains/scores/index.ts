@@ -1,6 +1,6 @@
 import { randomUUID } from 'crypto';
 import { describe, it, expect, beforeEach } from 'vitest';
-import { TABLE_SCORERS, type MastraStorage } from '@mastra/core/storage';
+import { TABLE_SCORERS, type MastraStorage } from '@datawarp/mastra-core/storage';
 import { createSampleScore } from './data';
 
 export function createScoresTest({ storage }: { storage: MastraStorage }) {

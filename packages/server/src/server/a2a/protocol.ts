@@ -1,8 +1,8 @@
-import { MastraA2AError } from '@mastra/core/a2a';
+import { MastraA2AError } from '@datawarp/mastra-core/a2a';
 
-import type { JSONRPCError, JSONRPCResponse, Message, Part } from '@mastra/core/a2a';
-import type { CoreMessage } from '@mastra/core/llm';
-import type { IMastraLogger } from '@mastra/core/logger';
+import type { JSONRPCError, JSONRPCResponse, Message, Part } from '@datawarp/mastra-core/a2a';
+import type { CoreMessage } from '@datawarp/mastra-core/llm';
+import type { IMastraLogger } from '@datawarp/mastra-core/logger';
 
 export function normalizeError(
   error: any,

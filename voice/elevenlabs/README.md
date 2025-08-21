@@ -1,11 +1,11 @@
-# @mastra/voice-elevenlabs
+# @datawarp/mastra-voice-elevenlabs
 
 ElevenLabs Voice integration for Mastra, providing Text-to-Speech (TTS) capabilities using ElevenLabs' advanced AI voice technology.
 
 ## Installation
 
 ```bash
-npm install @mastra/voice-elevenlabs
+npm install @datawarp/mastra-voice-elevenlabs
 ```
 
 ## Configuration
@@ -19,7 +19,7 @@ ELEVENLABS_API_KEY=your_api_key
 ## Usage
 
 ```typescript
-import { ElevenLabsVoice } from '@mastra/voice-elevenlabs';
+import { ElevenLabsVoice } from '@datawarp/mastra-voice-elevenlabs';
 
 // Initialize with configuration
 const voice = new ElevenLabsVoice({

@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { createFaithfulnessScorer } from '@mastra/evals/scorers/llm';
+import { createFaithfulnessScorer } from '@datawarp/mastra-evals/scorers/llm';
 
 // Example 1: High faithfulness (all claims supported by context)
 const context1 = [

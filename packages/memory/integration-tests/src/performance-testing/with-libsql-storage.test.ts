@@ -1,5 +1,5 @@
-import { DefaultStorage } from '@mastra/core/storage/libsql';
-import { Memory } from '@mastra/memory';
+import { DefaultStorage } from '@datawarp/mastra-core/storage/libsql';
+import { Memory } from '@datawarp/mastra-memory';
 import dotenv from 'dotenv';
 import { describe } from 'vitest';
 

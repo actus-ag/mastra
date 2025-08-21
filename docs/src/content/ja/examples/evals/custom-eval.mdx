@@ -107,8 +107,8 @@ Return your response in this format:
 レシピのグルテン含有量を評価するための専門的なジャッジを作成できます。上記で定義したプロンプトをインポートし、ジャッジで使用します。
 
 ```typescript copy showLineNumbers filename="src/mastra/evals/gluten-checker/metricJudge.ts"
-import { type LanguageModel } from "@mastra/core/llm";
-import { MastraAgentJudge } from "@mastra/evals/judge";
+import { type LanguageModel } from "@datawarp/mastra-core/llm";
+import { MastraAgentJudge } from "@datawarp/mastra-evals/judge";
 import { z } from "zod";
 import {
   GLUTEN_INSTRUCTIONS,
@@ -211,7 +211,7 @@ export class GlutenCheckerMetric extends Metric {
 
 ```typescript copy showLineNumbers filename="src/mastra/agents/chefAgent.ts"
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 
 import { GlutenCheckerMetric } from "../evals";
 

@@ -10,11 +10,11 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^1.3.22",
-    "@mastra/core": "latest",
-    "@mastra/firecrawl": "latest",
-    "@mastra/github": "latest",
-    "@mastra/loggers": "latest",
-    "@mastra/rag": "latest",
+    "@datawarp/mastra-core": "latest",
+    "@datawarp/mastra-firecrawl": "latest",
+    "@datawarp/mastra-github": "latest",
+    "@datawarp/mastra-loggers": "latest",
+    "@datawarp/mastra-rag": "latest",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-dialog": "^1.1.14",
     "@radix-ui/react-select": "^2.2.5",
@@ -52,11 +52,11 @@
   "version": "0.0.1",
   "pnpm": {
     "overrides": {
-      "@mastra/core": "link:../../packages/core",
-      "@mastra/firecrawl": "link:../../integrations/firecrawl",
-      "@mastra/github": "link:../../integrations/github",
-      "@mastra/loggers": "link:../../packages/loggers",
-      "@mastra/rag": "link:../../packages/rag"
+      "@datawarp/mastra-core": "link:../../packages/core",
+      "@datawarp/mastra-firecrawl": "link:../../integrations/firecrawl",
+      "@datawarp/mastra-github": "link:../../integrations/github",
+      "@datawarp/mastra-loggers": "link:../../packages/loggers",
+      "@datawarp/mastra-rag": "link:../../packages/rag"
     }
   },
   "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39"

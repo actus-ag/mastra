@@ -1,5 +1,5 @@
 export const keywordCoverageScorer = `
-import { createKeywordCoverageScorer } from "@mastra/evals/scorers/code";
+import { createKeywordCoverageScorer } from "@datawarp/mastra-evals/scorers/code";
  
 const scorer = createKeywordCoverageScorer();
  

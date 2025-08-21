@@ -1,4 +1,4 @@
-import { GetToolResponse } from '@mastra/client-js';
+import { GetToolResponse } from '@datawarp/mastra-client-js';
 
 export type AgentTableData = {
   branch?: string;

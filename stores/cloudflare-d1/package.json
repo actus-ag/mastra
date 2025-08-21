@@ -1,5 +1,5 @@
 {
-  "name": "@mastra/cloudflare-d1",
+  "name": "@datawarp/mastra-cloudflare-d1",
   "version": "0.12.6",
   "description": "D1 provider for Mastra - includes db storage capabilities",
   "type": "module",
@@ -34,7 +34,7 @@
     "@cloudflare/workers-types": "^4.20250816.0",
     "@internal/lint": "workspace:*",
     "@internal/storage-test-utils": "workspace:*",
-    "@mastra/core": "workspace:*",
+    "@datawarp/mastra-core": "workspace:*",
     "@microsoft/api-extractor": "^7.52.8",
     "@types/node": "^20.19.0",
     "dotenv": "^17.0.0",
@@ -46,6 +46,6 @@
     "@internal/types-builder": "workspace:*"
   },
   "peerDependencies": {
-    "@mastra/core": ">=0.13.0-0 <0.15.0-0"
+    "@datawarp/mastra-core": ">=0.13.0-0 <0.15.0-0"
   }
 }

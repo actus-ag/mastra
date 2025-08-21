@@ -7,13 +7,13 @@
     "start": "pnpx tsx --env-file .env index.ts"
   },
   "dependencies": {
-    "@mastra/core": "latest",
-    "@mastra/evals": "latest"
+    "@datawarp/mastra-core": "latest",
+    "@datawarp/mastra-evals": "latest"
   },
   "pnpm": {
     "overrides": {
-      "@mastra/core": "link:../../../../packages/core",
-      "@mastra/evals": "link:../../../../packages/evals"
+      "@datawarp/mastra-core": "link:../../../../packages/core",
+      "@datawarp/mastra-evals": "link:../../../../packages/evals"
     }
   },
   "devDependencies": {

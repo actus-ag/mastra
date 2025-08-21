@@ -1,7 +1,7 @@
 import { writeFileSync } from 'fs';
 import { join } from 'path';
 import process from 'process';
-import { Deployer } from '@mastra/deployer';
+import { Deployer } from '@datawarp/mastra-deployer';
 import { move } from 'fs-extra/esm';
 
 export class VercelDeployer extends Deployer {
@@ -22,10 +22,10 @@ import { handle } from 'hono/vercel'
 import { mastra } from '#mastra';
 import { createHonoServer, getToolExports } from '#server';
 import { tools } from '#tools';
-import { evaluate } from '@mastra/core/eval';
-import { AvailableHooks, registerHook } from '@mastra/core/hooks';
-import { TABLE_EVALS } from '@mastra/core/storage';
-import { checkEvalStorageFields } from '@mastra/core/utils';
+import { evaluate } from '@datawarp/mastra-core/eval';
+import { AvailableHooks, registerHook } from '@datawarp/mastra-core/hooks';
+import { TABLE_EVALS } from '@datawarp/mastra-core/storage';
+import { checkEvalStorageFields } from '@datawarp/mastra-core/utils';
 
 registerHook(AvailableHooks.ON_GENERATION, ({ input, output, metric, runId, agentName, instructions }) => {
   evaluate({
@@ -129,12 +129,12 @@ export const HEAD = handle(app);
   async lint(entryFile: string, outputDirectory: string, toolsPaths: (string | string[])[]): Promise<void> {
     await super.lint(entryFile, outputDirectory, toolsPaths);
 
-    const hasLibsql = (await this.deps.checkDependencies(['@mastra/libsql'])) === `ok`;
+    const hasLibsql = (await this.deps.checkDependencies(['@datawarp/mastra-libsql'])) === `ok`;
 
     if (hasLibsql) {
       this.logger.error(
-        `Vercel Deployer does not support @libsql/client(which may have been installed by @mastra/libsql) as a dependency. 
-        Use other Mastra Storage options instead e.g @mastra/pg`,
+        `Vercel Deployer does not support @libsql/client(which may have been installed by @datawarp/mastra-libsql) as a dependency. 
+        Use other Mastra Storage options instead e.g @datawarp/mastra-pg`,
       );
       process.exit(1);
     }

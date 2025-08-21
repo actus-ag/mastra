@@ -1,4 +1,4 @@
-import { MCPClient } from '@mastra/mcp';
+import { MCPClient } from '@datawarp/mastra-mcp';
 
 // Create an MCP client to connect to our local MCP server via HTTP/SSE
 export const mcpClient = new MCPClient({

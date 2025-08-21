@@ -8,11 +8,11 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "latest",
-    "@mastra/evals": "latest"
+    "@datawarp/mastra-evals": "latest"
   },
   "pnpm": {
     "overrides": {
-      "@mastra/evals": "link:../../../../packages/evals"
+      "@datawarp/mastra-evals": "link:../../../../packages/evals"
     }
   },
   "devDependencies": {

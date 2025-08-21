@@ -1,5 +1,5 @@
 {
-  "name": "@mastra/auth-firebase",
+  "name": "@datawarp/mastra-auth-firebase",
   "version": "0.10.1",
   "description": "Mastra Firebase Auth integration",
   "type": "module",
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@internal/lint": "workspace:*",
-    "@mastra/core": "workspace:*",
+    "@datawarp/mastra-core": "workspace:*",
     "@types/node": "^20.19.0",
     "eslint": "^9.30.1",
     "tsup": "^8.5.0",

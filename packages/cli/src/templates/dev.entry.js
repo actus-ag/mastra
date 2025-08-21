@@ -1,9 +1,9 @@
 // @ts-ignore
 // @ts-ignore
-import { evaluate } from '@mastra/core/eval';
-import { AvailableHooks, registerHook } from '@mastra/core/hooks';
-import { TABLE_EVALS } from '@mastra/core/storage';
-import { checkEvalStorageFields } from '@mastra/core/utils';
+import { evaluate } from '@datawarp/mastra-core/eval';
+import { AvailableHooks, registerHook } from '@datawarp/mastra-core/hooks';
+import { TABLE_EVALS } from '@datawarp/mastra-core/storage';
+import { checkEvalStorageFields } from '@datawarp/mastra-core/utils';
 import { mastra } from '#mastra';
 import { createNodeServer, getToolExports } from '#server';
 import { tools } from '#tools';

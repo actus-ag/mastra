@@ -25,7 +25,7 @@ Define the agent and provide `instructions`, which set its default behavior and 
 
 ```typescript filename="src/mastra/agents/example-harry-potter-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 
 export const harryPotterAgent = new Agent({
   name: "harry-potter-agent",
@@ -44,7 +44,7 @@ export const harryPotterAgent = new Agent({
 To use an agent, register it in your main Mastra instance.
 
 ```typescript filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@mastra/core/mastra";
+import { Mastra } from "@datawarp/mastra-core/mastra";
 
 import { harryPotterAgent } from "./agents/example-harry-potter-agent";
 

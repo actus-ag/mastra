@@ -70,19 +70,19 @@ export const init = async ({
       ]);
 
       const depService = new DepsService();
-      const needsLibsql = (await depService.checkDependencies(['@mastra/libsql'])) !== `ok`;
+      const needsLibsql = (await depService.checkDependencies(['@datawarp/mastra-libsql'])) !== `ok`;
       if (needsLibsql) {
-        await depService.installPackages(['@mastra/libsql']);
+        await depService.installPackages(['@datawarp/mastra-libsql']);
       }
       const needsMemory =
-        components.includes(`agents`) && (await depService.checkDependencies(['@mastra/memory'])) !== `ok`;
+        components.includes(`agents`) && (await depService.checkDependencies(['@datawarp/mastra-memory'])) !== `ok`;
       if (needsMemory) {
-        await depService.installPackages(['@mastra/memory']);
+        await depService.installPackages(['@datawarp/mastra-memory']);
       }
 
-      const needsLoggers = (await depService.checkDependencies(['@mastra/loggers'])) !== `ok`;
+      const needsLoggers = (await depService.checkDependencies(['@datawarp/mastra-loggers'])) !== `ok`;
       if (needsLoggers) {
-        await depService.installPackages(['@mastra/loggers']);
+        await depService.installPackages(['@datawarp/mastra-loggers']);
       }
     }
 

@@ -1,4 +1,4 @@
-# @mastra/couchbase
+# @datawarp/mastra-couchbase
 
 A Mastra vector store implementation for Couchbase, enabling powerful vector similarity search capabilities using the official Couchbase Node.js SDK (v4+). Leverages Couchbase Server's built-in Vector Search feature (available in version 7.6.4+).
 
@@ -11,7 +11,7 @@ A Mastra vector store implementation for Couchbase, enabling powerful vector sim
 - 🆔 Automatic UUID generation for documents if IDs are not provided during upsert.
 - ☁️ Compatible with both self-hosted Couchbase Server (7.6.4+) and Couchbase Capella.
 - ⚙️ Uses the official Couchbase Node.js SDK v4+.
-- 📈 Built-in telemetry support for tracing operations via `@mastra/core`.
+- 📈 Built-in telemetry support for tracing operations via `@datawarp/mastra-core`.
 
 ## Prerequisites
 
@@ -26,23 +26,23 @@ A Mastra vector store implementation for Couchbase, enabling powerful vector sim
 ## Installation
 
 ```bash
-npm install @mastra/couchbase
+npm install @datawarp/mastra-couchbase
 # or using pnpm
-pnpm add @mastra/couchbase
+pnpm add @datawarp/mastra-couchbase
 # or using yarn
-yarn add @mastra/couchbase
+yarn add @datawarp/mastra-couchbase
 ```
 
 ## Getting Started: A Quick Tutorial
 
-Let's set up `@mastra/couchbase` to store and search vectors in your Couchbase cluster.
+Let's set up `@datawarp/mastra-couchbase` to store and search vectors in your Couchbase cluster.
 
 **Step 1: Connect to Your Cluster**
 
 Instantiate `CouchbaseVector` with your cluster details.
 
 ```typescript
-import { CouchbaseVector } from '@mastra/couchbase';
+import { CouchbaseVector } from '@datawarp/mastra-couchbase';
 
 const connectionString = 'couchbases://your_cluster_host?ssl=no_verify'; // Use couchbases:// for Capella/TLS, couchbase:// for local/non-TLS
 const username = 'your_couchbase_user';

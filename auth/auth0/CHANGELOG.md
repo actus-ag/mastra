@@ -1,4 +1,4 @@
-# @mastra/auth-auth0
+# @datawarp/mastra-auth-auth0
 
 ## 0.10.2
 

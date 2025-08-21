@@ -7,7 +7,7 @@ import { recursiveRemoveNonReferencedNodes } from '../plugins/remove-unused-refe
 import { optimizeLodashImports } from '@optimize-lodash/rollup-plugin';
 import { removeAllOptionsFromMastraExcept } from '../babel/remove-all-options-except';
 import json from '@rollup/plugin-json';
-import type { IMastraLogger } from '@mastra/core/logger';
+import type { IMastraLogger } from '@datawarp/mastra-core/logger';
 
 type Transformer = (
   result: { hasCustomConfig: boolean },

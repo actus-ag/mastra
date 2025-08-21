@@ -1,6 +1,6 @@
 export const toxicityDetectionScorer = `
 import { openai } from "@ai-sdk/openai";
-import { createToxicityScorer } from "@mastra/evals/scorers/llm";
+import { createToxicityScorer } from "@datawarp/mastra-evals/scorers/llm";
  
 const scorer = createToxicityScorer({ model: openai("gpt-4o-mini") });
  

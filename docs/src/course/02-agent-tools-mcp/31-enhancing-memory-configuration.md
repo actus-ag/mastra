@@ -3,7 +3,7 @@
 Finally, let's enhance our memory configuration to make our agent even more helpful:
 
 ```typescript
-import { LibSQLStore, LibSQLVector } from "@mastra/libsql";
+import { LibSQLStore, LibSQLVector } from "@datawarp/mastra-libsql";
 
 const memory = new Memory({
   storage: new LibSQLStore({

@@ -9,7 +9,7 @@ import { Icon } from '@/ds/icons/Icon';
 import { ToolCoinIcon } from '@/ds/icons/ToolCoinIcon';
 import { ToolsIcon } from '@/ds/icons/ToolsIcon';
 import { useLinkComponent } from '@/lib/framework';
-import { GetAgentResponse, GetToolResponse } from '@mastra/client-js';
+import { GetAgentResponse, GetToolResponse } from '@datawarp/mastra-client-js';
 import { SearchIcon } from 'lucide-react';
 import { startTransition, useMemo, useRef, useState } from 'react';
 

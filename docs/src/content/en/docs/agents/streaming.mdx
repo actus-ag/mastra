@@ -51,7 +51,7 @@ The stream provides several utility functions for working with streaming respons
 Each tool gets a `writer` argument, which is a writable stream with a custom write function. This write function is used to write the tool's response to the stream.
 
 ```typescript filename="src/mastra/tools/test-tool.ts" showLineNumbers copy
-import { createTool } from "@mastra/core/tools";
+import { createTool } from "@datawarp/mastra-core/tools";
 import { z } from "zod";
 
 export const weatherInfo = createTool({
@@ -95,7 +95,7 @@ export const weatherInfo = createTool({
 To use streaming within an agent-based tool, call `streamVNext` on the agent and pipe it to the writer:
 
 ```typescript filename="src/mastra/tools/test-tool.ts" showLineNumbers copy
-import { createTool } from "@mastra/core/tools";
+import { createTool } from "@datawarp/mastra-core/tools";
 import { z } from "zod";
 
 export const weatherInfo = createTool({

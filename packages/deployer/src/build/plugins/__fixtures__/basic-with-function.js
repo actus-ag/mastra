@@ -1,6 +1,6 @@
-import { Mastra } from '@mastra/core/mastra';
-import { createLogger } from '@mastra/core/logger';
-import { createApiRoute } from '@mastra/core/server';
+import { Mastra } from '@datawarp/mastra-core/mastra';
+import { createLogger } from '@datawarp/mastra-core/logger';
+import { createApiRoute } from '@datawarp/mastra-core/server';
 import { weatherAgent } from '@/agents';
 import { testDeployer } from '@mastra/deployer/test';
 

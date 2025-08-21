@@ -1,5 +1,5 @@
 import { mastra } from "@/src/mastra";
-import { createV4CompatibleResponse } from "@mastra/core/agent";
+import { createV4CompatibleResponse } from "@datawarp/mastra-core/agent";
 
 const myAgent = mastra.getAgent("weatherAgent");
 export async function POST(req: Request) {

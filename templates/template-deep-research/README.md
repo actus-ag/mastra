@@ -60,7 +60,7 @@ EXA_API_KEY="your-exa-api-key"
 
 ## Required Dependencies
 
-- `@mastra/core`: Core Mastra functionality with vNext workflows
+- `@datawarp/mastra-core`: Core Mastra functionality with vNext workflows
 - `@ai-sdk/openai`: OpenAI models integration
 - `exa-js`: Exa API client for web search
 - `zod`: Schema definition and validation for workflows

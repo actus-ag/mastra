@@ -1,8 +1,8 @@
 import { openai } from '@ai-sdk/openai';
-import { Mastra } from '@mastra/core';
-import { Agent } from '@mastra/core/agent';
-import { PgVector, PGVECTOR_PROMPT } from '@mastra/pg';
-import { createVectorQueryTool, MDocument } from '@mastra/rag';
+import { Mastra } from '@datawarp/mastra-core';
+import { Agent } from '@datawarp/mastra-core/agent';
+import { PgVector, PGVECTOR_PROMPT } from '@datawarp/mastra-pg';
+import { createVectorQueryTool, MDocument } from '@datawarp/mastra-rag';
 import { embedMany } from 'ai';
 
 const vectorQueryTool = createVectorQueryTool({

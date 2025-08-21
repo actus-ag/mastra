@@ -1,6 +1,6 @@
-import { Mastra } from '@mastra/core';
-import { PinoLogger } from '@mastra/loggers';
-import { LibSQLStore } from '@mastra/libsql';
+import { Mastra } from '@datawarp/mastra-core';
+import { PinoLogger } from '@datawarp/mastra-loggers';
+import { LibSQLStore } from '@datawarp/mastra-libsql';
 
 import { agentThatHarassesYou, chefAgent, chefAgentResponses, dynamicAgent, evalAgent } from './agents/index';
 import { myMcpServer, myMcpServerTwo } from './mcp/server';

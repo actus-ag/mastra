@@ -1,5 +1,5 @@
-import { Metric } from '@mastra/core/eval';
-import type { LanguageModel } from '@mastra/core/llm';
+import { Metric } from '@datawarp/mastra-core/eval';
+import type { LanguageModel } from '@datawarp/mastra-core/llm';
 
 import type { MetricResultWithReason } from '../types';
 import { roundToTwoDecimals } from '../utils';

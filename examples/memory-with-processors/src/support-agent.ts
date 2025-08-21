@@ -1,11 +1,11 @@
 import 'dotenv/config';
 import { makeSend, searchTool } from './utils';
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@mastra/core/agent';
-import { Memory } from '@mastra/memory';
-import { TokenLimiter } from '@mastra/memory/processors';
-import { Mastra } from '@mastra/core';
-import { PinoLogger } from '@mastra/loggers';
+import { Agent } from '@datawarp/mastra-core/agent';
+import { Memory } from '@datawarp/mastra-memory';
+import { TokenLimiter } from '@datawarp/mastra-memory/processors';
+import { Mastra } from '@datawarp/mastra-core';
+import { PinoLogger } from '@datawarp/mastra-loggers';
 
 const memory = new Memory({
   processors: [new TokenLimiter(500)],

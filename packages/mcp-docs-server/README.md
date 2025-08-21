@@ -1,4 +1,4 @@
-# @mastra/mcp-docs-server
+# @datawarp/mastra-mcp-docs-server
 
 A Model Context Protocol (MCP) server that provides AI assistants with direct access to Mastra.ai's complete knowledge base. This includes comprehensive documentation with MDX support, a collection of production-ready code examples, technical blog posts, and detailed package changelogs. The server integrates with popular AI development environments like Cursor and Windsurf, as well as Mastra agents, making it easy to build documentation-aware AI assistants that can provide accurate, up-to-date information about Mastra.ai's ecosystem.
 
@@ -15,7 +15,7 @@ MacOS/Linux
   "mcpServers": {
     "mastra": {
       "command": "npx",
-      "args": ["-y", "@mastra/mcp-docs-server"]
+      "args": ["-y", "@datawarp/mastra-mcp-docs-server"]
     }
   }
 }
@@ -28,7 +28,7 @@ Windows
   "mcpServers": {
     "mastra": {
       "command": "cmd",
-      "args": ["/c", "npx", "-y", "@mastra/mcp-docs-server"]
+      "args": ["/c", "npx", "-y", "@datawarp/mastra-mcp-docs-server"]
     }
   }
 }
@@ -48,7 +48,7 @@ MacOS/Linux
   "mcpServers": {
     "mastra": {
       "command": "npx",
-      "args": ["-y", "@mastra/mcp-docs-server"]
+      "args": ["-y", "@datawarp/mastra-mcp-docs-server"]
     }
   }
 }
@@ -61,7 +61,7 @@ Windows
   "mcpServers": {
     "mastra": {
       "command": "cmd",
-      "args": ["/c", "npx", "-y", "@mastra/mcp-docs-server"]
+      "args": ["/c", "npx", "-y", "@datawarp/mastra-mcp-docs-server"]
     }
   }
 }
@@ -74,8 +74,8 @@ If a tool call fails you will need to go into Windsurf MCP settings and re-start
 ### In a Mastra Agent
 
 ```typescript
-import { MCPClient } from '@mastra/mcp';
-import { Agent } from '@mastra/core/agent';
+import { MCPClient } from '@datawarp/mastra-mcp';
+import { Agent } from '@datawarp/mastra-core/agent';
 import { openai } from '@ai-sdk/openai';
 
 // Configure MCP with the docs server
@@ -83,7 +83,7 @@ const mcp = new MCPClient({
   servers: {
     mastra: {
       command: 'npx',
-      args: ['-y', '@mastra/mcp-docs-server'],
+      args: ['-y', '@datawarp/mastra-mcp-docs-server'],
     },
   },
 });

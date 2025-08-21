@@ -1,5 +1,5 @@
-import { Agent } from '@mastra/core/agent';
-import { Memory } from '@mastra/memory';
+import { Agent } from '@datawarp/mastra-core/agent';
+import { Memory } from '@datawarp/mastra-memory';
 import { openai } from '@ai-sdk/openai';
 import { cachedOpenAI } from '../embeddings/cached-openai-provider';
 import chalk from 'chalk';

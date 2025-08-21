@@ -1,4 +1,4 @@
-import { Integration } from '@mastra/core/integration';
+import { Integration } from '@datawarp/mastra-core/integration';
 import type { Message, MemoryOptions, SearchOptions } from 'mem0ai';
 import { Mem0AIClient } from './client';
 import type { Mem0Config } from './types';

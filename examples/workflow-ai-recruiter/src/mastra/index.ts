@@ -1,7 +1,7 @@
 import { openai } from '@ai-sdk/openai';
-import { Mastra } from '@mastra/core';
-import { Agent } from '@mastra/core/agent';
-import { Step, Workflow } from '@mastra/core/workflows';
+import { Mastra } from '@datawarp/mastra-core';
+import { Agent } from '@datawarp/mastra-core/agent';
+import { Step, Workflow } from '@datawarp/mastra-core/workflows';
 import { z } from 'zod';
 
 const recruiter = new Agent({

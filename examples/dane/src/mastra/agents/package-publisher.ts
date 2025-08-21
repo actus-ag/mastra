@@ -1,4 +1,4 @@
-import { Agent } from '@mastra/core/agent';
+import { Agent } from '@datawarp/mastra-core/agent';
 
 import { pnpmChangesetStatus, pnpmBuild, pnpmChangesetPublish, activeDistTag } from '../tools/pnpm.js';
 
@@ -9,36 +9,36 @@ const packages_llm_text = `
   # PACKAGE LOCATION RULES - FOLLOW THESE EXACTLY:
   
   ## 1. Core packages - all must be directly under packages/:
-  @mastra/core -> packages/core
-  @mastra/deployer -> packages/deployer
+  @datawarp/mastra-core -> packages/core
+  @datawarp/mastra-deployer -> packages/deployer
   mastra -> packages/cli
-  @mastra/engine -> packages/engine
-  @mastra/evals -> packages/evals
-  @mastra/rag -> packages/rag
-  @mastra/memory -> packages/memory
-  @mastra/mcp -> packages/mcp
-  @mastra/loggers -> packages/loggers
+  @datawarp/mastra-engine -> packages/engine
+  @datawarp/mastra-evals -> packages/evals
+  @datawarp/mastra-rag -> packages/rag
+  @datawarp/mastra-memory -> packages/memory
+  @datawarp/mastra-mcp -> packages/mcp
+  @datawarp/mastra-loggers -> packages/loggers
 
   ## 2. Deployer packages - STRICT RULES:
-  @mastra/deployer-cloudflare -> deployers/cloudflare
-  @mastra/deployer-vercel -> deployers/vercel
-  @mastra/deployer-netlify -> deployers/netlify
+  @datawarp/mastra-deployer-cloudflare -> deployers/cloudflare
+  @datawarp/mastra-deployer-vercel -> deployers/vercel
+  @datawarp/mastra-deployer-netlify -> deployers/netlify
   - NEVER in any other directory (not in integrations/, examples/, packages/, etc)
 
   ## 3. Store packages - STRICT RULES:
   - ALL store packages must be directly under stores/
   - Format: @mastra/{name} -> stores/{name}
-  - Example: @mastra/pg -> stores/pg
+  - Example: @datawarp/mastra-pg -> stores/pg
 
   ## 4. Speech packages - STRICT RULES:
   - ALL speech packages must be directly under speech/
-  - Format: @mastra/speech-{name} -> speech/{name}
+  - Format: @datawarp/mastra-speech-{name} -> speech/{name}
 
   ## 5. Integrations - STRICT RULES:
   - ALL integration packages are under integrations/
-  @mastra/composio -> integrations/composio
-  @mastra/github -> integrations/github
-  @mastra/firecrawl -> integrations/firecrawl
+  @datawarp/mastra-composio -> integrations/composio
+  @datawarp/mastra-github -> integrations/github
+  @datawarp/mastra-firecrawl -> integrations/firecrawl
   
   ##VALIDATION:
   1. Never mix examples/ or integrations/ with package paths
@@ -51,11 +51,11 @@ export const PACKAGES_LIST_PROMPT = `
         CRITICAL: This step is about planning. We do not want to build anything. All packages MUST be placed in the correct order.
         
         Publish Requirements:
-        - @mastra/core first, MUST be before any other package
+        - @datawarp/mastra-core first, MUST be before any other package
         - all packages in correct dependency order before building
         - Identify packages that have changes requiring a new pnpm publish
         - Include create-mastra in the packages list if changes exist
-        - EXCLUDE @mastra/dane from consideration
+        - EXCLUDE @datawarp/mastra-dane from consideration
 
         Please list all packages that need building grouped by their directory. 
         DO NOT NOT USE the 'pnpmBuild' tool during this step.
@@ -70,8 +70,8 @@ export const BUILD_PACKAGES_PROMPT = (packages: string[]) => `
         <execution_plan>
           <phase order="1">
             <!-- Core packages must be built one at a time in this exact order -->
-            <step>Use pnpmBuild to build @mastra/core</step>
-            <step>Wait for completion, then use pnpmBuild to build @mastra/deployer</step>
+            <step>Use pnpmBuild to build @datawarp/mastra-core</step>
+            <step>Wait for completion, then use pnpmBuild to build @datawarp/mastra-deployer</step>
             <step>Wait for completion, then use pnpmBuild to build mastra</step>
           </phase>
 
@@ -87,12 +87,12 @@ export const BUILD_PACKAGES_PROMPT = (packages: string[]) => `
             
             <parallel_phase name="integrations">
               <description>Build integrations/ directory packages</description>
-              <action>Use pnpmBuild for each @mastra/integration-* package</action>
+              <action>Use pnpmBuild for each @datawarp/mastra-integration-* package</action>
             </parallel_phase>
             
             <parallel_phase name="deployers">
               <description>Build deployers/ directory packages</description>
-              <action>Use pnpmBuild for each @mastra/deployer-* package</action>
+              <action>Use pnpmBuild for each @datawarp/mastra-deployer-* package</action>
             </parallel_phase>
             
             <parallel_phase name="stores">

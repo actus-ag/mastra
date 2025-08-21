@@ -1,4 +1,4 @@
-# @mastra/voice-sarvam
+# @datawarp/mastra-voice-sarvam
 
 ## 0.10.8
 
@@ -22,14 +22,14 @@
 - Updated dependencies [c30bca8]
 - Updated dependencies [3b5fec7]
 - Updated dependencies [a8f129d]
-  - @mastra/core@0.14.0
+  - @datawarp/mastra-core@0.14.0
 
 ## 0.10.8-alpha.0
 
 ### Patch Changes
 
 - 03997ae: Update peerdeps
-  - @mastra/core@0.14.0-alpha.7
+  - @datawarp/mastra-core@0.14.0-alpha.7
 
 ## 0.10.7
 
@@ -50,7 +50,7 @@
 - Updated dependencies [5d377e5]
 - Updated dependencies [1fb812e]
 - Updated dependencies [35c5798]
-  - @mastra/core@0.13.0
+  - @datawarp/mastra-core@0.13.0
 
 ## 0.10.7-alpha.0
 
@@ -63,7 +63,7 @@
 - Updated dependencies [2871020]
 - Updated dependencies [4a406ec]
 - Updated dependencies [5d377e5]
-  - @mastra/core@0.13.0-alpha.2
+  - @datawarp/mastra-core@0.13.0-alpha.2
 
 ## 0.10.6
 
@@ -93,21 +93,21 @@
 - Updated dependencies [b8efbb9]
 - Updated dependencies [71466e7]
 - Updated dependencies [0c99fbe]
-  - @mastra/core@0.12.0
+  - @datawarp/mastra-core@0.12.0
 
 ## 0.10.6-alpha.0
 
 ### Patch Changes
 
 - f42c4c2: update peer deps for packages to latest core range
-  - @mastra/core@0.12.0-alpha.5
+  - @datawarp/mastra-core@0.12.0-alpha.5
 
 ## 0.10.5
 
 ### Patch Changes
 
 - ce088f5: Update all peerdeps to latest core
-  - @mastra/core@0.11.1
+  - @datawarp/mastra-core@0.11.1
 
 ## 0.10.4
 
@@ -132,7 +132,7 @@
 - Updated dependencies [8ba1b51]
 - Updated dependencies [4efcfa0]
 - Updated dependencies [0e17048]
-  - @mastra/core@0.10.7
+  - @datawarp/mastra-core@0.10.7
 
 ## 0.10.4-alpha.0
 
@@ -144,7 +144,7 @@
 - Updated dependencies [07d6d88]
 - Updated dependencies [5d74aab]
 - Updated dependencies [144eb0b]
-  - @mastra/core@0.10.7-alpha.2
+  - @datawarp/mastra-core@0.10.7-alpha.2
 
 ## 0.10.3
 
@@ -167,7 +167,7 @@
 - Updated dependencies [751c894]
 - Updated dependencies [577ce3a]
 - Updated dependencies [9260b3a]
-  - @mastra/core@0.10.6
+  - @datawarp/mastra-core@0.10.6
 
 ## 0.10.3-alpha.0
 
@@ -179,7 +179,7 @@
 - Updated dependencies [36f1c36]
 - Updated dependencies [10d352e]
 - Updated dependencies [53d3c37]
-  - @mastra/core@0.10.6-alpha.0
+  - @datawarp/mastra-core@0.10.6-alpha.0
 
 ## 0.10.2
 
@@ -202,7 +202,7 @@
 - Updated dependencies [14a2566]
 - Updated dependencies [f7f8293]
 - Updated dependencies [48eddb9]
-  - @mastra/core@0.10.4
+  - @datawarp/mastra-core@0.10.4
 
 ## 0.10.2-alpha.0
 
@@ -216,7 +216,7 @@
 - Updated dependencies [dffb67b]
 - Updated dependencies [f1309d3]
 - Updated dependencies [f7f8293]
-  - @mastra/core@0.10.4-alpha.1
+  - @datawarp/mastra-core@0.10.4-alpha.1
 
 ## 0.10.1
 
@@ -240,7 +240,7 @@
 - Updated dependencies [79d5145]
 - Updated dependencies [12b7002]
 - Updated dependencies [2901125]
-  - @mastra/core@0.10.2
+  - @datawarp/mastra-core@0.10.2
 
 ## 0.10.1-alpha.0
 
@@ -248,13 +248,13 @@
 
 - f0d559f: Fix peerdeps for alpha channel
 - Updated dependencies [1e8bb40]
-  - @mastra/core@0.10.2-alpha.2
+  - @datawarp/mastra-core@0.10.2-alpha.2
 
 ## 0.10.0
 
 ### Minor Changes
 
-- 83da932: Move @mastra/core to peerdeps
+- 83da932: Move @datawarp/mastra-core to peerdeps
 
 ### Patch Changes
 
@@ -275,13 +275,13 @@
 - Updated dependencies [a7292b0]
 - Updated dependencies [0dcb9f0]
 - Updated dependencies [2672a05]
-  - @mastra/core@0.10.0
+  - @datawarp/mastra-core@0.10.0
 
 ## 0.2.0-alpha.1
 
 ### Minor Changes
 
-- 83da932: Move @mastra/core to peerdeps
+- 83da932: Move @datawarp/mastra-core to peerdeps
 
 ### Patch Changes
 
@@ -295,7 +295,7 @@
 - Updated dependencies [b2ae5aa]
 - Updated dependencies [a7292b0]
 - Updated dependencies [0dcb9f0]
-  - @mastra/core@0.10.0-alpha.1
+  - @datawarp/mastra-core@0.10.0-alpha.1
 
 ## 0.1.14-alpha.0
 
@@ -308,7 +308,7 @@
 - Updated dependencies [d0ee3c6]
 - Updated dependencies [23f258c]
 - Updated dependencies [2672a05]
-  - @mastra/core@0.9.5-alpha.0
+  - @datawarp/mastra-core@0.9.5-alpha.0
 
 ## 0.1.13
 
@@ -328,14 +328,14 @@
 - Updated dependencies [6fa1ad1]
 - Updated dependencies [c28d7a0]
 - Updated dependencies [edf1e88]
-  - @mastra/core@0.9.4
+  - @datawarp/mastra-core@0.9.4
 
 ## 0.1.13-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [3e9c131]
-  - @mastra/core@0.9.4-alpha.4
+  - @datawarp/mastra-core@0.9.4-alpha.4
 
 ## 0.1.13-alpha.3
 
@@ -345,7 +345,7 @@
 - Updated dependencies [c3bd795]
 - Updated dependencies [da082f8]
 - Updated dependencies [a5810ce]
-  - @mastra/core@0.9.4-alpha.3
+  - @datawarp/mastra-core@0.9.4-alpha.3
 
 ## 0.1.13-alpha.2
 
@@ -354,7 +354,7 @@
 - Updated dependencies [3171b5b]
 - Updated dependencies [973e5ac]
 - Updated dependencies [9e1eff5]
-  - @mastra/core@0.9.4-alpha.2
+  - @datawarp/mastra-core@0.9.4-alpha.2
 
 ## 0.1.13-alpha.1
 
@@ -364,7 +364,7 @@
 - Updated dependencies [6fa1ad1]
 - Updated dependencies [c28d7a0]
 - Updated dependencies [edf1e88]
-  - @mastra/core@0.9.4-alpha.1
+  - @datawarp/mastra-core@0.9.4-alpha.1
 
 ## 0.1.13-alpha.0
 
@@ -372,7 +372,7 @@
 
 - Updated dependencies [daf942f]
 - Updated dependencies [0b8b868]
-  - @mastra/core@0.9.4-alpha.0
+  - @datawarp/mastra-core@0.9.4-alpha.0
 
 ## 0.1.12
 
@@ -387,7 +387,7 @@
 - Updated dependencies [b5d2de0]
 - Updated dependencies [644f8ad]
 - Updated dependencies [70dbf51]
-  - @mastra/core@0.9.3
+  - @datawarp/mastra-core@0.9.3
 
 ## 0.1.12-alpha.1
 
@@ -398,7 +398,7 @@
 - Updated dependencies [ca0dc88]
 - Updated dependencies [9cd1a46]
 - Updated dependencies [70dbf51]
-  - @mastra/core@0.9.3-alpha.1
+  - @datawarp/mastra-core@0.9.3-alpha.1
 
 ## 0.1.12-alpha.0
 
@@ -407,7 +407,7 @@
 - Updated dependencies [526c570]
 - Updated dependencies [b5d2de0]
 - Updated dependencies [644f8ad]
-  - @mastra/core@0.9.3-alpha.0
+  - @datawarp/mastra-core@0.9.3-alpha.0
 
 ## 0.1.11
 
@@ -430,7 +430,7 @@
 - Updated dependencies [3a5f1e1]
 - Updated dependencies [51e6923]
 - Updated dependencies [8398d89]
-  - @mastra/core@0.9.2
+  - @datawarp/mastra-core@0.9.2
 
 ## 0.1.11-alpha.6
 
@@ -440,7 +440,7 @@
 - Updated dependencies [7d8b7c7]
 - Updated dependencies [3a5f1e1]
 - Updated dependencies [8398d89]
-  - @mastra/core@0.9.2-alpha.6
+  - @datawarp/mastra-core@0.9.2-alpha.6
 
 ## 0.1.11-alpha.5
 
@@ -451,7 +451,7 @@
 - Updated dependencies [8607972]
 - Updated dependencies [7eeb2bc]
 - Updated dependencies [fba031f]
-  - @mastra/core@0.9.2-alpha.5
+  - @datawarp/mastra-core@0.9.2-alpha.5
 
 ## 0.1.11-alpha.4
 
@@ -459,7 +459,7 @@
 
 - Updated dependencies [ccef9f9]
 - Updated dependencies [51e6923]
-  - @mastra/core@0.9.2-alpha.4
+  - @datawarp/mastra-core@0.9.2-alpha.4
 
 ## 0.1.11-alpha.3
 
@@ -468,28 +468,28 @@
 - Updated dependencies [967b41c]
 - Updated dependencies [4155f47]
 - Updated dependencies [17826a9]
-  - @mastra/core@0.9.2-alpha.3
+  - @datawarp/mastra-core@0.9.2-alpha.3
 
 ## 0.1.11-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [26738f4]
-  - @mastra/core@0.9.2-alpha.2
+  - @datawarp/mastra-core@0.9.2-alpha.2
 
 ## 0.1.11-alpha.1
 
 ### Patch Changes
 
 - Updated dependencies [b804723]
-  - @mastra/core@0.9.2-alpha.1
+  - @datawarp/mastra-core@0.9.2-alpha.1
 
 ## 0.1.11-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [0097d50]
-  - @mastra/core@0.9.2-alpha.0
+  - @datawarp/mastra-core@0.9.2-alpha.0
 
 ## 0.1.10
 
@@ -515,35 +515,35 @@
 - Updated dependencies [2d4001d]
 - Updated dependencies [c71013a]
 - Updated dependencies [1d3b1cd]
-  - @mastra/core@0.9.1
+  - @datawarp/mastra-core@0.9.1
 
 ## 0.1.10-alpha.8
 
 ### Patch Changes
 
 - Updated dependencies [2d17c73]
-  - @mastra/core@0.9.1-alpha.8
+  - @datawarp/mastra-core@0.9.1-alpha.8
 
 ## 0.1.10-alpha.7
 
 ### Patch Changes
 
 - Updated dependencies [1d3b1cd]
-  - @mastra/core@0.9.1-alpha.7
+  - @datawarp/mastra-core@0.9.1-alpha.7
 
 ## 0.1.10-alpha.6
 
 ### Patch Changes
 
 - Updated dependencies [c23a81c]
-  - @mastra/core@0.9.1-alpha.6
+  - @datawarp/mastra-core@0.9.1-alpha.6
 
 ## 0.1.10-alpha.5
 
 ### Patch Changes
 
 - Updated dependencies [3e7b69d]
-  - @mastra/core@0.9.1-alpha.5
+  - @datawarp/mastra-core@0.9.1-alpha.5
 
 ## 0.1.10-alpha.4
 
@@ -553,14 +553,14 @@
   - Updated dependency [`zod@^3.24.3` ↗︎](https://www.npmjs.com/package/zod/v/3.24.3) (from `^3.24.2`, in `dependencies`)
 - Updated dependencies [e4943b8]
 - Updated dependencies [479f490]
-  - @mastra/core@0.9.1-alpha.4
+  - @datawarp/mastra-core@0.9.1-alpha.4
 
 ## 0.1.10-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [6262bd5]
-  - @mastra/core@0.9.1-alpha.3
+  - @datawarp/mastra-core@0.9.1-alpha.3
 
 ## 0.1.10-alpha.2
 
@@ -569,7 +569,7 @@
 - Updated dependencies [405b63d]
 - Updated dependencies [61e92f5]
 - Updated dependencies [c71013a]
-  - @mastra/core@0.9.1-alpha.2
+  - @datawarp/mastra-core@0.9.1-alpha.2
 
 ## 0.1.10-alpha.1
 
@@ -582,14 +582,14 @@
 - Updated dependencies [c1409ef]
 - Updated dependencies [11d4485]
 - Updated dependencies [2d4001d]
-  - @mastra/core@0.9.1-alpha.1
+  - @datawarp/mastra-core@0.9.1-alpha.1
 
 ## 0.1.10-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [81fb7f6]
-  - @mastra/core@0.9.1-alpha.0
+  - @datawarp/mastra-core@0.9.1-alpha.0
 
 ## 0.1.9
 
@@ -611,7 +611,7 @@
 - Updated dependencies [0f4eae3]
 - Updated dependencies [16a8648]
 - Updated dependencies [6f92295]
-  - @mastra/core@0.9.0
+  - @datawarp/mastra-core@0.9.0
 
 ## 0.1.9-alpha.8
 
@@ -624,49 +624,49 @@
 - Updated dependencies [9c26508]
 - Updated dependencies [0f4eae3]
 - Updated dependencies [16a8648]
-  - @mastra/core@0.9.0-alpha.8
+  - @datawarp/mastra-core@0.9.0-alpha.8
 
 ## 0.1.9-alpha.7
 
 ### Patch Changes
 
 - Updated dependencies [71d9444]
-  - @mastra/core@0.9.0-alpha.7
+  - @datawarp/mastra-core@0.9.0-alpha.7
 
 ## 0.1.9-alpha.6
 
 ### Patch Changes
 
 - Updated dependencies [157c741]
-  - @mastra/core@0.9.0-alpha.6
+  - @datawarp/mastra-core@0.9.0-alpha.6
 
 ## 0.1.9-alpha.5
 
 ### Patch Changes
 
 - Updated dependencies [08bb78e]
-  - @mastra/core@0.9.0-alpha.5
+  - @datawarp/mastra-core@0.9.0-alpha.5
 
 ## 0.1.9-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [7e92011]
-  - @mastra/core@0.9.0-alpha.4
+  - @datawarp/mastra-core@0.9.0-alpha.4
 
 ## 0.1.9-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [fe3ae4d]
-  - @mastra/core@0.9.0-alpha.3
+  - @datawarp/mastra-core@0.9.0-alpha.3
 
 ## 0.1.9-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [9ee4293]
-  - @mastra/core@0.8.4-alpha.2
+  - @datawarp/mastra-core@0.8.4-alpha.2
 
 ## 0.1.9-alpha.1
 
@@ -674,14 +674,14 @@
 
 - Updated dependencies [8a8a73b]
 - Updated dependencies [6f92295]
-  - @mastra/core@0.8.4-alpha.1
+  - @datawarp/mastra-core@0.8.4-alpha.1
 
 ## 0.1.9-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [03f3cd0]
-  - @mastra/core@0.8.4-alpha.0
+  - @datawarp/mastra-core@0.8.4-alpha.0
 
 ## 0.1.8
 
@@ -695,35 +695,35 @@
 - Updated dependencies [32e7b71]
 - Updated dependencies [37bb612]
 - Updated dependencies [7f1b291]
-  - @mastra/core@0.8.3
+  - @datawarp/mastra-core@0.8.3
 
 ## 0.1.8-alpha.5
 
 ### Patch Changes
 
 - Updated dependencies [d72318f]
-  - @mastra/core@0.8.3-alpha.5
+  - @datawarp/mastra-core@0.8.3-alpha.5
 
 ## 0.1.8-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [7f1b291]
-  - @mastra/core@0.8.3-alpha.4
+  - @datawarp/mastra-core@0.8.3-alpha.4
 
 ## 0.1.8-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [10a8caf]
-  - @mastra/core@0.8.3-alpha.3
+  - @datawarp/mastra-core@0.8.3-alpha.3
 
 ## 0.1.8-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [0bcc862]
-  - @mastra/core@0.8.3-alpha.2
+  - @datawarp/mastra-core@0.8.3-alpha.2
 
 ## 0.1.8-alpha.1
 
@@ -732,28 +732,28 @@
 - 37bb612: Add Elastic-2.0 licensing for packages
 - Updated dependencies [32e7b71]
 - Updated dependencies [37bb612]
-  - @mastra/core@0.8.3-alpha.1
+  - @datawarp/mastra-core@0.8.3-alpha.1
 
 ## 0.1.8-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [359b089]
-  - @mastra/core@0.8.3-alpha.0
+  - @datawarp/mastra-core@0.8.3-alpha.0
 
 ## 0.1.7
 
 ### Patch Changes
 
 - Updated dependencies [a06aadc]
-  - @mastra/core@0.8.2
+  - @datawarp/mastra-core@0.8.2
 
 ## 0.1.7-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [a06aadc]
-  - @mastra/core@0.8.2-alpha.0
+  - @datawarp/mastra-core@0.8.2-alpha.0
 
 ## 0.1.6
 
@@ -761,7 +761,7 @@
 
 - Updated dependencies [99e2998]
 - Updated dependencies [8fdb414]
-  - @mastra/core@0.8.1
+  - @datawarp/mastra-core@0.8.1
 
 ## 0.1.6-alpha.0
 
@@ -769,7 +769,7 @@
 
 - Updated dependencies [99e2998]
 - Updated dependencies [8fdb414]
-  - @mastra/core@0.8.1-alpha.0
+  - @datawarp/mastra-core@0.8.1-alpha.0
 
 ## 0.1.5
 
@@ -805,42 +805,42 @@
 - Updated dependencies [8076ecf]
 - Updated dependencies [8df4a77]
 - Updated dependencies [304397c]
-  - @mastra/core@0.8.0
+  - @datawarp/mastra-core@0.8.0
 
 ## 0.1.5-alpha.8
 
 ### Patch Changes
 
 - Updated dependencies [8df4a77]
-  - @mastra/core@0.8.0-alpha.8
+  - @datawarp/mastra-core@0.8.0-alpha.8
 
 ## 0.1.5-alpha.7
 
 ### Patch Changes
 
 - Updated dependencies [febc8a6]
-  - @mastra/core@0.8.0-alpha.7
+  - @datawarp/mastra-core@0.8.0-alpha.7
 
 ## 0.1.5-alpha.6
 
 ### Patch Changes
 
 - Updated dependencies [a3f0e90]
-  - @mastra/core@0.8.0-alpha.6
+  - @datawarp/mastra-core@0.8.0-alpha.6
 
 ## 0.1.5-alpha.5
 
 ### Patch Changes
 
 - Updated dependencies [93875ed]
-  - @mastra/core@0.8.0-alpha.5
+  - @datawarp/mastra-core@0.8.0-alpha.5
 
 ## 0.1.5-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [d7e08e8]
-  - @mastra/core@0.8.0-alpha.4
+  - @datawarp/mastra-core@0.8.0-alpha.4
 
 ## 0.1.5-alpha.3
 
@@ -855,7 +855,7 @@
 - Updated dependencies [6330967]
 - Updated dependencies [8393832]
 - Updated dependencies [6330967]
-  - @mastra/core@0.8.0-alpha.3
+  - @datawarp/mastra-core@0.8.0-alpha.3
 
 ## 0.1.5-alpha.2
 
@@ -865,7 +865,7 @@
 - Updated dependencies [56c31b7]
 - Updated dependencies [dbbbf80]
 - Updated dependencies [99d43b9]
-  - @mastra/core@0.8.0-alpha.2
+  - @datawarp/mastra-core@0.8.0-alpha.2
 
 ## 0.1.5-alpha.1
 
@@ -877,7 +877,7 @@
 - Updated dependencies [fca3b21]
 - Updated dependencies [0118361]
 - Updated dependencies [619c39d]
-  - @mastra/core@0.8.0-alpha.1
+  - @datawarp/mastra-core@0.8.0-alpha.1
 
 ## 0.1.5-alpha.0
 
@@ -889,7 +889,7 @@
 - Updated dependencies [cafae83]
 - Updated dependencies [8076ecf]
 - Updated dependencies [304397c]
-  - @mastra/core@0.7.1-alpha.0
+  - @datawarp/mastra-core@0.7.1-alpha.0
 
 ## 0.1.4
 
@@ -905,7 +905,7 @@
 - Updated dependencies [a4686e8]
 - Updated dependencies [6530ad1]
 - Updated dependencies [27439ad]
-  - @mastra/core@0.7.0
+  - @datawarp/mastra-core@0.7.0
 
 ## 0.1.4-alpha.3
 
@@ -913,7 +913,7 @@
 
 - Updated dependencies [b3b34f5]
 - Updated dependencies [a4686e8]
-  - @mastra/core@0.7.0-alpha.3
+  - @datawarp/mastra-core@0.7.0-alpha.3
 
 ## 0.1.4-alpha.2
 
@@ -923,7 +923,7 @@
 - Updated dependencies [a8bd4cf]
 - Updated dependencies [7a3eeb0]
 - Updated dependencies [6530ad1]
-  - @mastra/core@0.7.0-alpha.2
+  - @datawarp/mastra-core@0.7.0-alpha.2
 
 ## 0.1.4-alpha.1
 
@@ -932,26 +932,26 @@
 - Updated dependencies [0b54522]
 - Updated dependencies [1af25d5]
 - Updated dependencies [27439ad]
-  - @mastra/core@0.7.0-alpha.1
+  - @datawarp/mastra-core@0.7.0-alpha.1
 
 ## 0.1.4-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [b4fbc59]
-  - @mastra/core@0.6.5-alpha.0
+  - @datawarp/mastra-core@0.6.5-alpha.0
 
 ## 0.1.3
 
 ### Patch Changes
 
 - a0bac3a: chore: update savram voice package
-- 019247c: feat: add STT functionality in @mastra/voice-sarvam
+- 019247c: feat: add STT functionality in @datawarp/mastra-voice-sarvam
 - Updated dependencies [6794797]
 - Updated dependencies [fb68a80]
 - Updated dependencies [b56a681]
 - Updated dependencies [248cb07]
-  - @mastra/core@0.6.4
+  - @datawarp/mastra-core@0.6.4
 
 ## 0.1.3-alpha.1
 
@@ -959,17 +959,17 @@
 
 - a0bac3a: chore: update savram voice package
 - Updated dependencies [6794797]
-  - @mastra/core@0.6.4-alpha.1
+  - @datawarp/mastra-core@0.6.4-alpha.1
 
 ## 0.1.3-alpha.0
 
 ### Patch Changes
 
-- 019247c: feat: add STT functionality in @mastra/voice-sarvam
+- 019247c: feat: add STT functionality in @datawarp/mastra-voice-sarvam
 - Updated dependencies [fb68a80]
 - Updated dependencies [b56a681]
 - Updated dependencies [248cb07]
-  - @mastra/core@0.6.4-alpha.0
+  - @datawarp/mastra-core@0.6.4-alpha.0
 
 ## 0.1.2
 
@@ -978,14 +978,14 @@
 - 404640e: AgentNetwork changeset
 - Updated dependencies [404640e]
 - Updated dependencies [3bce733]
-  - @mastra/core@0.6.3
+  - @datawarp/mastra-core@0.6.3
 
 ## 0.1.2-alpha.1
 
 ### Patch Changes
 
 - Updated dependencies [3bce733]
-  - @mastra/core@0.6.3-alpha.1
+  - @datawarp/mastra-core@0.6.3-alpha.1
 
 ## 0.1.2-alpha.0
 
@@ -993,7 +993,7 @@
 
 - 404640e: AgentNetwork changeset
 - Updated dependencies [404640e]
-  - @mastra/core@0.6.3-alpha.0
+  - @datawarp/mastra-core@0.6.3-alpha.0
 
 ## 0.1.1
 
@@ -1001,7 +1001,7 @@
 
 - Updated dependencies [beaf1c2]
 - Updated dependencies [3084e13]
-  - @mastra/core@0.6.2
+  - @datawarp/mastra-core@0.6.2
 
 ## 0.1.1-alpha.0
 
@@ -1009,7 +1009,7 @@
 
 - Updated dependencies [beaf1c2]
 - Updated dependencies [3084e13]
-  - @mastra/core@0.6.2-alpha.0
+  - @datawarp/mastra-core@0.6.2-alpha.0
 
 ## 0.1.0
 
@@ -1026,7 +1026,7 @@
 - Updated dependencies [9116d70]
 - Updated dependencies [6e559a0]
 - Updated dependencies [5f43505]
-  - @mastra/core@0.6.1
+  - @datawarp/mastra-core@0.6.1
 
 ## 0.1.0-alpha.1
 
@@ -1037,4 +1037,4 @@
 - Updated dependencies [dfbb131]
 - Updated dependencies [0850b4c]
 - Updated dependencies [9116d70]
-  - @mastra/core@0.6.1-alpha.2
+  - @datawarp/mastra-core@0.6.1-alpha.2

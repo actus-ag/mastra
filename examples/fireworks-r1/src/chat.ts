@@ -1,5 +1,5 @@
 import crypto from 'node:crypto';
-import { maskStreamTags } from '@mastra/core/utils';
+import { maskStreamTags } from '@datawarp/mastra-core/utils';
 import tinycolor from 'tinycolor2';
 import ora from 'ora';
 import chalk from 'chalk';

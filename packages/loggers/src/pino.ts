@@ -1,11 +1,11 @@
-import type { LoggerTransport } from '@mastra/core/logger';
-import { LogLevel, MastraLogger } from '@mastra/core/logger';
+import type { LoggerTransport } from '@datawarp/mastra-core/logger';
+import { LogLevel, MastraLogger } from '@datawarp/mastra-core/logger';
 import pino from 'pino';
 import pretty from 'pino-pretty';
 
 type TransportMap = Record<string, LoggerTransport>;
 
-export type { LogLevel } from '@mastra/core/logger';
+export type { LogLevel } from '@datawarp/mastra-core/logger';
 
 export class PinoLogger extends MastraLogger {
   protected logger: pino.Logger;

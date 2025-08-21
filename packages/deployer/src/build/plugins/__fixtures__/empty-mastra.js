@@ -1,2 +1,2 @@
-import { Mastra } from '@mastra/core/mastra';
+import { Mastra } from '@datawarp/mastra-core/mastra';
 export const mastra = new Mastra();

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
-import { GetScorerResponse, GetScoresResponse } from '@mastra/client-js';
+import { GetScorerResponse, GetScoresResponse } from '@datawarp/mastra-client-js';
 import { useMastraClient } from '@/contexts/mastra-client-context';
 
 export const useScoresByEntityId = (entityId: string, entityType: string, page: number = 0) => {

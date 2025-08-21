@@ -1,5 +1,5 @@
 import type { ReadableStream } from 'stream/web';
-import type { ChunkType } from '@mastra/core/stream';
+import type { ChunkType } from '@datawarp/mastra-core/stream';
 
 export async function processMastraStream({
   stream,

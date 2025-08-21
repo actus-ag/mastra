@@ -1,6 +1,6 @@
 import Dagre from '@dagrejs/dagre';
-import { Workflow, SerializedStepFlowEntry } from '@mastra/core/workflows';
-import type { StepCondition } from '@mastra/core/workflows/legacy';
+import { Workflow, SerializedStepFlowEntry } from '@datawarp/mastra-core/workflows';
+import type { StepCondition } from '@datawarp/mastra-core/workflows/legacy';
 import type { Node, Edge } from '@xyflow/react';
 import { MarkerType } from '@xyflow/react';
 

@@ -15,13 +15,13 @@ import {
   WorkflowIcon,
   MainContentLayout,
   MainContentContent,
-} from '@mastra/playground-ui';
+} from '@datawarp/mastra-playground-ui';
 
 import { useMCPServers } from '@/hooks/use-mcp-servers';
 import { useMCPServerTools } from '@/hooks/use-mcp-server-tools';
 import { client } from '@/lib/client';
 
-import { ServerInfo } from '@mastra/core/mcp';
+import { ServerInfo } from '@datawarp/mastra-core/mcp';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 

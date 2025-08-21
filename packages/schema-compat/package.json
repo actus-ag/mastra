@@ -1,5 +1,5 @@
 {
-  "name": "@mastra/schema-compat",
+  "name": "@datawarp/mastra-schema-compat",
   "version": "0.10.7",
   "description": "Tool schema compatibility layer for Mastra.ai",
   "type": "module",

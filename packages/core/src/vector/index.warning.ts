@@ -6,6 +6,6 @@ export abstract class MastraVector extends BaseMastraVector {
   constructor() {
     super();
 
-    this.logger.warn('Please import "MastraVector" from "@mastra/core/vector" instead of "@mastra/core"');
+    this.logger.warn('Please import "MastraVector" from "@datawarp/mastra-core/vector" instead of "@datawarp/mastra-core"');
   }
 }

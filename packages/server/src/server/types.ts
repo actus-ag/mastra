@@ -1,5 +1,5 @@
-import type { MastraError } from '@mastra/core/error';
-import type { Mastra } from '@mastra/core/mastra';
+import type { MastraError } from '@datawarp/mastra-core/error';
+import type { Mastra } from '@datawarp/mastra-core/mastra';
 
 export interface ApiError extends MastraError {
   message: string;

@@ -1,9 +1,9 @@
 import { openai } from '@ai-sdk/openai';
-import { createTool } from '@mastra/core';
-import { Agent } from '@mastra/core/agent';
-import { LibSQLStore, LibSQLVector } from '@mastra/libsql';
-import { Memory } from '@mastra/memory';
-import { ToolCallFilter } from '@mastra/memory/processors';
+import { createTool } from '@datawarp/mastra-core';
+import { Agent } from '@datawarp/mastra-core/agent';
+import { LibSQLStore, LibSQLVector } from '@datawarp/mastra-libsql';
+import { Memory } from '@datawarp/mastra-memory';
+import { ToolCallFilter } from '@datawarp/mastra-memory/processors';
 import { z } from 'zod';
 import { weatherTool } from '../tools/weather';
 

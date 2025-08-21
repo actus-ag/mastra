@@ -1,6 +1,6 @@
 import { openai } from '@ai-sdk/openai';
-import { PgVector } from '@mastra/pg';
-import { MDocument, rerank } from '@mastra/rag';
+import { PgVector } from '@datawarp/mastra-pg';
+import { MDocument, rerank } from '@datawarp/mastra-rag';
 import { embedMany, embed } from 'ai';
 
 // Create a document and process it into chunks

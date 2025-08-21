@@ -1,6 +1,6 @@
 import { Octokit } from 'octokit';
-import { MCPClient } from '@mastra/mcp';
-import { MastraClient } from '@mastra/client-js';
+import { MCPClient } from '@datawarp/mastra-mcp';
+import { MastraClient } from '@datawarp/mastra-client-js';
 
 const GITHUB_PERSONAL_ACCESS_TOKEN = process.env.GITHUB_PERSONAL_ACCESS_TOKEN;
 const OWNER = process.env.OWNER;

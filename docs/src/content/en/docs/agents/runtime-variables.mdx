@@ -41,8 +41,8 @@ console.log(response.text);
 Here's how to dynamically set temperature units based on a user's location using the Cloudflare `CF-IPCountry` header:
 
 ```typescript filename="src/index.ts"
-import { Mastra } from "@mastra/core";
-import { RuntimeContext } from "@mastra/core/di";
+import { Mastra } from "@datawarp/mastra-core";
+import { RuntimeContext } from "@datawarp/mastra-core/di";
 import { agent as weatherAgent } from "./agents/weather";
 
 // Define RuntimeContext type with clear, descriptive types
@@ -78,7 +78,7 @@ export const mastra = new Mastra({
 Tools can access runtimeContext variables and must conform to the agent's runtimeContext type:
 
 ```typescript
-import { createTool } from "@mastra/core/tools";
+import { createTool } from "@datawarp/mastra-core/tools";
 import { z } from "zod";
 
 export const weatherTool = createTool({

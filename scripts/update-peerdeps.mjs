@@ -65,7 +65,7 @@ async function parseChangesetFile(filePath) {
     }
 
     if (inFrontmatter && !frontmatterEnd) {
-      // Parse package entries like "'@mastra/core': patch" or '"@mastra/core": patch'
+      // Parse package entries like "'@datawarp/mastra-core': patch" or '"@datawarp/mastra-core": patch'
       const match = line.match(/^['"]?(@mastra\/[^'":\s]+)['"]?\s*:\s*\w+/);
       if (match) {
         packages.push(match[1]);
@@ -77,7 +77,7 @@ async function parseChangesetFile(filePath) {
 }
 
 /**
- * Get the current version of @mastra/core
+ * Get the current version of @datawarp/mastra-core
  */
 async function getCurrentCoreVersion() {
   const corePackageJson = join(rootDir, 'packages/core/package.json');
@@ -190,18 +190,18 @@ async function findPackageJsonPath(packageName) {
 }
 
 /**
- * Update peer dependency constraint for @mastra/core in a package.json
+ * Update peer dependency constraint for @datawarp/mastra-core in a package.json
  */
 async function updatePeerDependency(packageJsonPath, newVersion) {
   const content = await fs.readFile(packageJsonPath, 'utf-8');
   const pkg = JSON.parse(content);
 
-  if (!pkg.peerDependencies || !pkg.peerDependencies['@mastra/core']) {
-    console.log(`  - No @mastra/core peer dependency found, skipping`);
+  if (!pkg.peerDependencies || !pkg.peerDependencies['@datawarp/mastra-core']) {
+    console.log(`  - No @datawarp/mastra-core peer dependency found, skipping`);
     return false;
   }
 
-  const currentConstraint = pkg.peerDependencies['@mastra/core'];
+  const currentConstraint = pkg.peerDependencies['@datawarp/mastra-core'];
 
   // Update the constraint to allow the new version
   // Strip -alpha and replace with -0 for the new version
@@ -215,16 +215,16 @@ async function updatePeerDependency(packageJsonPath, newVersion) {
     if (match) {
       const maxVersionBase = match[2].split('-')[0]; // Get base version without prerelease
       const newMaxVersion = `${maxVersionBase}-0`; // Ensure max version also has -0
-      pkg.peerDependencies['@mastra/core'] = `>=${newMinVersion} <${newMaxVersion}`;
+      pkg.peerDependencies['@datawarp/mastra-core'] = `>=${newMinVersion} <${newMaxVersion}`;
     }
   } else {
     // Convert all other patterns to >= < syntax
     const parts = newVersionBase.split('.');
     const majorMinor = `${parts[0]}.${parseInt(parts[1]) + 1}.0`;
-    pkg.peerDependencies['@mastra/core'] = `>=${newMinVersion} <${majorMinor}-0`;
+    pkg.peerDependencies['@datawarp/mastra-core'] = `>=${newMinVersion} <${majorMinor}-0`;
   }
 
-  const newConstraint = pkg.peerDependencies['@mastra/core'];
+  const newConstraint = pkg.peerDependencies['@datawarp/mastra-core'];
   console.log(`  - Updated: ${currentConstraint} -> ${newConstraint}`);
 
   // Write back to file
@@ -242,12 +242,12 @@ async function main() {
   const files = await fs.readdir(changesetDir);
   const mdFiles = files.filter(f => f.endsWith('.md') && f !== 'README.md');
 
-  // Get current and next @mastra/core version
+  // Get current and next @datawarp/mastra-core version
   const currentCoreVersion = await getCurrentCoreVersion();
   const nextCoreVersion = getNextVersion(currentCoreVersion);
 
-  console.log(`📦 Current @mastra/core version: ${currentCoreVersion}`);
-  console.log(`📦 Next @mastra/core version: ${nextCoreVersion}`);
+  console.log(`📦 Current @datawarp/mastra-core version: ${currentCoreVersion}`);
+  console.log(`📦 Next @datawarp/mastra-core version: ${nextCoreVersion}`);
   console.log('');
 
   // Collect all packages that need updates
@@ -258,11 +258,11 @@ async function main() {
     try {
       const packages = await parseChangesetFile(filePath);
 
-      // Check if this changeset has @mastra/core and at least 2 packages
-      if (packages.length >= 2 && packages.includes('@mastra/core')) {
+      // Check if this changeset has @datawarp/mastra-core and at least 2 packages
+      if (packages.length >= 2 && packages.includes('@datawarp/mastra-core')) {
         const { prNumber, commitSha } = await getChangesetGitInfo(file);
 
-        let summary = `✅ ${file}: Found ${packages.length} packages including @mastra/core`;
+        let summary = `✅ ${file}: Found ${packages.length} packages including @datawarp/mastra-core`;
         if (prNumber) {
           summary += ` (PR #${prNumber})`;
         } else if (commitSha) {
@@ -270,9 +270,9 @@ async function main() {
         }
         console.log(summary);
 
-        // Add all packages except @mastra/core to the update list
+        // Add all packages except @datawarp/mastra-core to the update list
         packages.forEach(pkg => {
-          if (pkg !== '@mastra/core') {
+          if (pkg !== '@datawarp/mastra-core') {
             packagesToUpdate.add(pkg);
           }
         });

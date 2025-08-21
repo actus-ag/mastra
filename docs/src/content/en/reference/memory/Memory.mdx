@@ -5,8 +5,8 @@ The `Memory` class provides a robust system for managing conversation history an
 ## Basic Usage
 
 ```typescript copy showLineNumbers
-import { Memory } from "@mastra/memory";
-import { Agent } from "@mastra/core/agent";
+import { Memory } from "@datawarp/mastra-memory";
+import { Agent } from "@datawarp/mastra-core/agent";
 
 const agent = new Agent({
   memory: new Memory(),
@@ -17,9 +17,9 @@ const agent = new Agent({
 ## Custom Configuration
 
 ```typescript copy showLineNumbers
-import { Memory } from "@mastra/memory";
-import { LibSQLStore, LibSQLVector } from "@mastra/libsql";
-import { Agent } from "@mastra/core/agent";
+import { Memory } from "@datawarp/mastra-memory";
+import { LibSQLStore, LibSQLVector } from "@datawarp/mastra-libsql";
+import { Agent } from "@datawarp/mastra-core/agent";
 
 const memory = new Memory({
   // Optional storage configuration - libsql will be used by default
@@ -163,20 +163,20 @@ const memory = new Memory({
 
 An embedding model is required if `semanticRecall` is enabled.
 
-One option is to use `@mastra/fastembed`, which provides an on-device/local embedding model using [FastEmbed](https://github.com/Anush008/fastembed-js). This model runs locally and does not require API keys or network requests.
+One option is to use `@datawarp/mastra-fastembed`, which provides an on-device/local embedding model using [FastEmbed](https://github.com/Anush008/fastembed-js). This model runs locally and does not require API keys or network requests.
 
 To use it, first install the package:
 
 ```bash npm2yarn copy
-npm install @mastra/fastembed
+npm install @datawarp/mastra-fastembed
 ```
 
 Then, configure it in your `Memory` instance:
 
 ```typescript {2,7}
-import { Memory } from "@mastra/memory";
-import { fastembed } from "@mastra/fastembed";
-import { Agent } from "@mastra/core/agent";
+import { Memory } from "@datawarp/mastra-memory";
+import { fastembed } from "@datawarp/mastra-fastembed";
+import { Agent } from "@datawarp/mastra-core/agent";
 
 const agent = new Agent({
   memory: new Memory({
@@ -191,9 +191,9 @@ Note that, depending on where you're deploying your project, your project may no
 Alternatively, you can use an API-based embedder like OpenAI (which doesn't have this problem):
 
 ```typescript {2,7}
-import { Memory } from "@mastra/memory";
+import { Memory } from "@datawarp/mastra-memory";
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 
 const agent = new Agent({
   memory: new Memory({

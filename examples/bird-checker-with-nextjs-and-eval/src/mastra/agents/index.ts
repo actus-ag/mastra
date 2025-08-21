@@ -1,5 +1,5 @@
 import { anthropic } from "@ai-sdk/anthropic";
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 
 export const birdAgent = new Agent({
   name: "birdAgent",

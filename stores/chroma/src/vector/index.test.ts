@@ -1,5 +1,5 @@
 import { createVectorTestSuite } from '@internal/storage-test-utils';
-import type { QueryResult, IndexStats } from '@mastra/core/vector';
+import type { QueryResult, IndexStats } from '@datawarp/mastra-core/vector';
 import { describe, expect, beforeEach, afterEach, it, beforeAll, afterAll, vi } from 'vitest';
 
 import { ChromaVector } from './';

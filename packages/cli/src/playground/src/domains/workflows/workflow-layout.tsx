@@ -1,6 +1,6 @@
 import { useParams } from 'react-router';
 
-import { WorkflowRunProvider, Header, HeaderTitle, MainContentLayout } from '@mastra/playground-ui';
+import { WorkflowRunProvider, Header, HeaderTitle, MainContentLayout } from '@datawarp/mastra-playground-ui';
 
 import { Skeleton } from '@/components/ui/skeleton';
 

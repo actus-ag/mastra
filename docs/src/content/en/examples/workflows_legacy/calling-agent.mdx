@@ -11,9 +11,9 @@ This example demonstrates how to create a legacy workflow that calls an AI agent
 
 ```ts showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Mastra } from "@mastra/core";
-import { Agent } from "@mastra/core/agent";
-import { LegacyStep, LegacyWorkflow } from "@mastra/core/workflows/legacy";
+import { Mastra } from "@datawarp/mastra-core";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { LegacyStep, LegacyWorkflow } from "@datawarp/mastra-core/workflows/legacy";
 import { z } from "zod";
 
 const penguin = new Agent({

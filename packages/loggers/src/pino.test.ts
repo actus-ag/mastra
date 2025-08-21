@@ -1,4 +1,4 @@
-import { LogLevel, LoggerTransport, MultiLogger } from '@mastra/core/logger';
+import { LogLevel, LoggerTransport, MultiLogger } from '@datawarp/mastra-core/logger';
 import { describe, it, expect, beforeEach } from 'vitest';
 
 import { PinoLogger } from './pino';

@@ -1,6 +1,6 @@
 import { fireworks } from '@ai-sdk/fireworks';
-import { Agent } from '@mastra/core/agent';
-import { Memory } from '@mastra/memory';
+import { Agent } from '@datawarp/mastra-core/agent';
+import { Memory } from '@datawarp/mastra-memory';
 
 if (!process.env.FIREWORKS_API_KEY) {
   throw new Error(`FIREWORKS_API_KEY env var is required for this example to work`);

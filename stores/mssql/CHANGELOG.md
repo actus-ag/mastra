@@ -1,4 +1,4 @@
-# @mastra/mssql
+# @datawarp/mastra-mssql
 
 ## 0.3.1
 
@@ -22,14 +22,14 @@
 - Updated dependencies [c30bca8]
 - Updated dependencies [3b5fec7]
 - Updated dependencies [a8f129d]
-  - @mastra/core@0.14.0
+  - @datawarp/mastra-core@0.14.0
 
 ## 0.3.1-alpha.0
 
 ### Patch Changes
 
 - 03997ae: Update peerdeps
-  - @mastra/core@0.14.0-alpha.7
+  - @datawarp/mastra-core@0.14.0-alpha.7
 
 ## 0.3.0
 
@@ -68,7 +68,7 @@
 - Updated dependencies [5d377e5]
 - Updated dependencies [1fb812e]
 - Updated dependencies [35c5798]
-  - @mastra/core@0.13.0
+  - @datawarp/mastra-core@0.13.0
 
 ## 0.3.0-alpha.1
 
@@ -82,7 +82,7 @@
 - Updated dependencies [2871020]
 - Updated dependencies [4a406ec]
 - Updated dependencies [5d377e5]
-  - @mastra/core@0.13.0-alpha.2
+  - @datawarp/mastra-core@0.13.0-alpha.2
 
 ## 0.3.0-alpha.0
 
@@ -109,7 +109,7 @@
 - Updated dependencies [b0e43c1]
 - Updated dependencies [1fb812e]
 - Updated dependencies [35c5798]
-  - @mastra/core@0.13.0-alpha.1
+  - @datawarp/mastra-core@0.13.0-alpha.1
 
 ## 0.2.3
 
@@ -141,14 +141,14 @@
 - Updated dependencies [b8efbb9]
 - Updated dependencies [71466e7]
 - Updated dependencies [0c99fbe]
-  - @mastra/core@0.12.0
+  - @datawarp/mastra-core@0.12.0
 
 ## 0.2.3-alpha.1
 
 ### Patch Changes
 
 - f42c4c2: update peer deps for packages to latest core range
-  - @mastra/core@0.12.0-alpha.5
+  - @datawarp/mastra-core@0.12.0-alpha.5
 
 ## 0.2.3-alpha.0
 
@@ -165,14 +165,14 @@
 - Updated dependencies [b8efbb9]
 - Updated dependencies [71466e7]
 - Updated dependencies [0c99fbe]
-  - @mastra/core@0.12.0-alpha.2
+  - @datawarp/mastra-core@0.12.0-alpha.2
 
 ## 0.2.2
 
 ### Patch Changes
 
 - ce088f5: Update all peerdeps to latest core
-  - @mastra/core@0.11.1
+  - @datawarp/mastra-core@0.11.1
 
 ## 0.2.1
 
@@ -201,7 +201,7 @@
 - Updated dependencies [dcd4802]
 - Updated dependencies [cbddd18]
 - Updated dependencies [7ba91fa]
-  - @mastra/core@0.11.0
+  - @datawarp/mastra-core@0.11.0
 
 ## 0.2.1-alpha.1
 
@@ -226,7 +226,7 @@
 - Updated dependencies [bea9dd1]
 - Updated dependencies [dcd4802]
 - Updated dependencies [7ba91fa]
-  - @mastra/core@0.11.0-alpha.2
+  - @datawarp/mastra-core@0.11.0-alpha.2
 
 ## 0.2.1-alpha.0
 
@@ -236,7 +236,7 @@
 - Updated dependencies [7827943]
 - Updated dependencies [bf1e7e7]
 - Updated dependencies [cbddd18]
-  - @mastra/core@0.11.0-alpha.0
+  - @datawarp/mastra-core@0.11.0-alpha.0
 
 ## 0.1.0
 

@@ -1,11 +1,11 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@mastra/core/agent';
+import { Agent } from '@datawarp/mastra-core/agent';
 import { pdfContentExtractorTool } from '../tools/pdf-content-extractor-tool';
 import { contentAnalyzerTool } from '../tools/content-analyzer-tool';
 import { flashCardsGeneratorTool } from '../tools/flash-cards-generator-tool';
 import { imageGeneratorTool } from '../tools/image-generator-tool';
-import { LibSQLStore } from '@mastra/libsql';
-import { Memory } from '@mastra/memory';
+import { LibSQLStore } from '@datawarp/mastra-libsql';
+import { Memory } from '@datawarp/mastra-memory';
 
 // Initialize memory with LibSQLStore for persistence
 const memory = new Memory({

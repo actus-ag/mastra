@@ -15,7 +15,7 @@ Use `FaithfulnessMetric` to evaluate whether the response makes claims that are 
 ## Installation
 
 ```bash copy
-npm install @mastra/evals
+npm install @datawarp/mastra-evals
 ```
 
 ## High faithfulness example
@@ -24,7 +24,7 @@ In this example, the response closely aligns with the context. Each statement in
 
 ```typescript filename="src/example-high-faithfulness.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { FaithfulnessMetric } from "@mastra/evals/llm";
+import { FaithfulnessMetric } from "@datawarp/mastra-evals/llm";
 
 const metric = new FaithfulnessMetric(openai("gpt-4o-mini"), {
   context: [
@@ -61,7 +61,7 @@ In this example, there are a mix of supported and unsupported claims. Some parts
 
 ```typescript filename="src/example-mixed-faithfulness.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { FaithfulnessMetric } from "@mastra/evals/llm";
+import { FaithfulnessMetric } from "@datawarp/mastra-evals/llm";
 
 const metric = new FaithfulnessMetric(openai("gpt-4o-mini"), {
   context: [
@@ -98,7 +98,7 @@ In this example, the response directly contradicts the context. None of the clai
 
 ```typescript filename="src/example-low-faithfulness.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { FaithfulnessMetric } from "@mastra/evals/llm";
+import { FaithfulnessMetric } from "@datawarp/mastra-evals/llm";
 
 const metric = new FaithfulnessMetric(openai("gpt-4o-mini"), {
   context: [

@@ -1,5 +1,5 @@
-import { createTool } from '@mastra/core/tools';
-import { MCPServer } from '@mastra/mcp';
+import { createTool } from '@datawarp/mastra-core/tools';
+import { MCPServer } from '@datawarp/mastra-mcp';
 import { z } from 'zod';
 
 export const myMcpServer = new MCPServer({

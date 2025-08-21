@@ -1,4 +1,4 @@
-import { MastraClient } from '@mastra/client-js';
+import { MastraClient } from '@datawarp/mastra-client-js';
 import { useQuery } from '@tanstack/react-query';
 
 export interface UseWorkflowRunsProps {

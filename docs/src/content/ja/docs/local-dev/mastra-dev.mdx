@@ -22,7 +22,7 @@ mastra dev
 デフォルトでは、サーバーはlocalhostのhttp://localhost:4111で実行されます。カスタムポートとホストはmastraサーバー設定で構成できます。
 
 ```typescript
-import { Mastra } from "@mastra/core";
+import { Mastra } from "@datawarp/mastra-core";
 
 export const mastra = new Mastra({
   server: {
@@ -98,7 +98,7 @@ export const mastra = new Mastra({
 Mastra インスタンスで OpenAPI ドキュメントを有効にするには、以下の設定を追加してください：
 
 ```typescript
-import { Mastra } from "@mastra/core";
+import { Mastra } from "@datawarp/mastra-core";
 
 export const mastra = new Mastra({
   server: {
@@ -116,7 +116,7 @@ Swagger UIは、APIエンドポイントをテストするためのインタラ�
 MastraインスタンスでSwagger UIを有効にするには、以下の設定を追加してください：
 
 ```typescript
-import { Mastra } from "@mastra/core";
+import { Mastra } from "@datawarp/mastra-core";
 
 export const mastra = new Mastra({
   server: {

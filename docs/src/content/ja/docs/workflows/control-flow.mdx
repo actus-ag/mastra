@@ -354,7 +354,7 @@ Mastraはステップ間でデータを受け渡すためのいくつかの方�
 より良い型安全性のために、`getStepResult`に型パラメータを提供できます：
 
 ```typescript showLineNumbers filename="src/mastra/workflows/get-step-result.ts" copy
-import { Step, Workflow } from "@mastra/core/workflows";
+import { Step, Workflow } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 
 const fetchUserStep = new Step({
@@ -393,7 +393,7 @@ const analyzeDataStep = new Step({
 最も型安全なアプローチは、`getStepResult`呼び出しでステップを直接参照することです：
 
 ```typescript showLineNumbers filename="src/mastra/workflows/step-reference.ts" copy
-import { Step, Workflow } from "@mastra/core/workflows";
+import { Step, Workflow } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 
 // Define step with output schema
@@ -440,7 +440,7 @@ workflow.step(fetchUserStep).then(processUserStep).commit();
 ステップに注入されたデータは`context.inputData`オブジェクトで利用可能であり、ステップの`inputSchema`に基づいて型付けされます。
 
 ```typescript showLineNumbers filename="src/mastra/workflows/variable-mapping.ts" copy
-import { Step, Workflow } from "@mastra/core/workflows";
+import { Step, Workflow } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 
 const fetchUserStep = new Step({
@@ -500,7 +500,7 @@ contextオブジェクトは、すべてのステップ結果とその出力に�
 ステップの結果には `context.steps` オブジェクトを通じて直接アクセスできます:
 
 ```typescript showLineNumbers filename="src/mastra/workflows/context-access.ts" copy
-import { Step, Workflow } from "@mastra/core/workflows";
+import { Step, Workflow } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 
 const processOrderStep = new Step({
@@ -535,7 +535,7 @@ workflow.step(fetchUserStep).then(processOrderStep).commit();
 これにより、条件や最終的なワークフロー出力でcontextオブジェクトやステップ結果に対して型安全性を得ることができます。
 
 ```typescript showLineNumbers filename="src/mastra/workflows/workflow-typing.ts" copy
-import { Step, Workflow } from "@mastra/core/workflows";
+import { Step, Workflow } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 
 // Create steps with typed outputs
@@ -588,7 +588,7 @@ workflow
 ステップ結果に加えて、ワークフローを開始した元のトリガーデータにもアクセスできます:
 
 ```typescript showLineNumbers filename="src/mastra/workflows/trigger-data.ts" copy
-import { Step, Workflow } from "@mastra/core/workflows";
+import { Step, Workflow } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 
 // Define trigger schema
@@ -626,7 +626,7 @@ workflow.step(processOrderStep).commit();
 ステップに注入されたデータは `context.inputData` オブジェクトで利用でき、ステップの `inputSchema` に基づいて型付けされます。
 
 ```typescript showLineNumbers filename="src/mastra/workflows/resume-data.ts" copy
-import { Step, Workflow } from "@mastra/core/workflows";
+import { Step, Workflow } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 
 const processOrderStep = new Step({
@@ -674,7 +674,7 @@ console.log({ resumedResult });
 `Workflow` 型パラメータにステップ型を注入することで、ワークフローの結果に型安全にアクセスできます。
 
 ```typescript showLineNumbers filename="src/mastra/workflows/get-results.ts" copy
-import { Workflow } from "@mastra/core/workflows";
+import { Workflow } from "@datawarp/mastra-core/workflows";
 
 const fetchUserStep = new Step({
   id: "fetchUser",

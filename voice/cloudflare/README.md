@@ -1,11 +1,11 @@
-# @mastra/voice-cloudflare
+# @datawarp/mastra-voice-cloudflare
 
 Cloudflare Voice integration for Mastra, providing Text-to-Speech (TTS) capabilities using open source speech models.
 
 ## Installation
 
 ```bash
-npm install @mastra/voice-cloudflare
+npm install @datawarp/mastra-voice-cloudflare
 ```
 
 ## Configuration
@@ -32,7 +32,7 @@ CLOUDFLARE_ACCOUNT_ID=your_account_id
 ## Usage
 
 ```typescript
-import { CloudflareVoice } from '@mastra/voice-cloudflare';
+import { CloudflareVoice } from '@datawarp/mastra-voice-cloudflare';
 
 // Native Bindings
 const voice = new CloudflareVoice({

@@ -1,5 +1,5 @@
 {
-  "name": "@mastra/auth-auth0",
+  "name": "@datawarp/mastra-auth-auth0",
   "version": "0.10.2",
   "description": "Mastra Auth0 Auth integration",
   "type": "module",
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@internal/lint": "workspace:*",
-    "@mastra/core": "workspace:*",
+    "@datawarp/mastra-core": "workspace:*",
     "@types/node": "^20.19.0",
     "eslint": "^9.30.1",
     "tsup": "^8.5.0",

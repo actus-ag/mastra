@@ -12,7 +12,7 @@ Workflows often need to run multiple operations at the same time. These examples
 In this example, the workflow runs `step1` and `step2` using `.parallel()`. Each step receives the same input and runs independently. Their outputs are namespaced by step `id` and passed together to `step3`, which combines the results and returns the final value.
 
 ```typescript filename="src/mastra/workflows/example-parallel-steps.ts" showLineNumbers copy
-import { createWorkflow, createStep } from "@mastra/core/workflows";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 
 const step1 = createStep({
@@ -87,7 +87,7 @@ export const parallelSteps = createWorkflow({
 In this example, the workflow uses `.parallel()` to run two workflows—`workflow1` and `workflow2` at the same time. Each workflow contains a single step that returns the input value. Their outputs are namespaced by workflow `id` and passed to `step3`, which combines the results and returns the final value.
 
 ```typescript filename="src/mastra/workflows/example-parallel-workflows.ts" showLineNumbers copy
-import { createWorkflow, createStep } from "@mastra/core/workflows";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 
 const step1 = createStep({

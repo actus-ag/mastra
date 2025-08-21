@@ -26,8 +26,8 @@ After getting a response from the LLM, all new messages (user, assistant, and to
 Semantic recall is enabled by default, so if you give your agent memory it will be included:
 
 ```typescript {9}
-import { Agent } from "@mastra/core/agent";
-import { Memory } from "@mastra/memory";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { Memory } from "@datawarp/mastra-memory";
 import { openai } from "@ai-sdk/openai";
 
 const agent = new Agent({
@@ -67,9 +67,9 @@ Note: currently, `scope: 'resource'` for semantic recall is supported by the fol
 Semantic recall relies on a [storage and vector db](/reference/memory/Memory#parameters) to store messages and their embeddings.
 
 ```ts {8-17}
-import { Memory } from "@mastra/memory";
-import { Agent } from "@mastra/core/agent";
-import { LibSQLStore, LibSQLVector } from "@mastra/libsql";
+import { Memory } from "@datawarp/mastra-memory";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { LibSQLStore, LibSQLVector } from "@datawarp/mastra-libsql";
 
 const agent = new Agent({
   memory: new Memory({
@@ -95,18 +95,18 @@ const agent = new Agent({
 
 Semantic recall relies on an [embedding model](/reference/memory/Memory#embedder) to convert messages into embeddings. You can specify any [embedding model](https://sdk.vercel.ai/docs/ai-sdk-core/embeddings) compatible with the AI SDK.
 
-To use FastEmbed (a local embedding model), install `@mastra/fastembed`:
+To use FastEmbed (a local embedding model), install `@datawarp/mastra-fastembed`:
 
 ```bash npm2yarn copy
-npm install @mastra/fastembed
+npm install @datawarp/mastra-fastembed
 ```
 
 Then configure it in your memory:
 
 ```ts {3,8}
-import { Memory } from "@mastra/memory";
-import { Agent } from "@mastra/core/agent";
-import { fastembed } from "@mastra/fastembed";
+import { Memory } from "@datawarp/mastra-memory";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { fastembed } from "@datawarp/mastra-fastembed";
 
 const agent = new Agent({
   memory: new Memory({
@@ -119,8 +119,8 @@ const agent = new Agent({
 Alternatively, use a different provider like OpenAI:
 
 ```ts {3,8}
-import { Memory } from "@mastra/memory";
-import { Agent } from "@mastra/core/agent";
+import { Memory } from "@datawarp/mastra-memory";
+import { Agent } from "@datawarp/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
 
 const agent = new Agent({

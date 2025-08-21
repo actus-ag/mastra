@@ -16,7 +16,7 @@ description: 会話間でTodoリストを維持するための作業メモリの
 まず、状態を維持するためにワーキングメモリを使用するので、短いコンテキストウィンドウでメモリシステムを設定します。メモリはデフォルトでLibSQLストレージを使用しますが、必要に応じて他の[ストレージプロバイダー](/docs/agents/agent-memory#storage-options)を使用することもできます：
 
 ```typescript
-import { Memory } from "@mastra/memory";
+import { Memory } from "@datawarp/mastra-memory";
 
 const memory = new Memory({
   options: {
@@ -80,7 +80,7 @@ const todoAgent = new Agent({
 
 ```typescript
 import { randomUUID } from "crypto";
-import { maskStreamTags } from "@mastra/core/utils";
+import { maskStreamTags } from "@datawarp/mastra-core/utils";
 
 // 会話を開始する
 const threadId = randomUUID();

@@ -1,4 +1,4 @@
-import type { ContextWithMastra } from '@mastra/core/server';
+import type { ContextWithMastra } from '@datawarp/mastra-core/server';
 import type { Next } from 'hono';
 import { defaultAuthConfig } from './defaults';
 import { canAccessPublicly, checkRules, isProtectedPath, isDevPlaygroundRequest } from './helpers';

@@ -14,14 +14,14 @@
   "type": "module",
   "dependencies": {
     "@ai-sdk/openai": "latest",
-    "@mastra/core": "latest",
-    "@mastra/mem0": "latest",
+    "@datawarp/mastra-core": "latest",
+    "@datawarp/mastra-mem0": "latest",
     "zod": "^3.25.67"
   },
   "pnpm": {
     "overrides": {
-      "@mastra/core": "link:../../packages/core",
-      "@mastra/mem0": "link:../../integrations/mem0"
+      "@datawarp/mastra-core": "link:../../packages/core",
+      "@datawarp/mastra-mem0": "link:../../integrations/mem0"
     }
   },
   "devDependencies": {

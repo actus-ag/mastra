@@ -6,8 +6,8 @@ import { useMCPServers } from '@/hooks/use-mcp-servers';
 import { client } from '@/lib/client';
 import { ToolIconMap } from '@/types';
 
-import { McpToolInfo } from '@mastra/client-js';
-import { ServerInfo } from '@mastra/core/mcp';
+import { McpToolInfo } from '@datawarp/mastra-client-js';
+import { ServerInfo } from '@datawarp/mastra-core/mcp';
 import {
   Header,
   Crumb,
@@ -28,7 +28,7 @@ import {
   TabList,
   Tab,
   TabContent,
-} from '@mastra/playground-ui';
+} from '@datawarp/mastra-playground-ui';
 import { useRef } from 'react';
 import { Link, useParams } from 'react-router';
 

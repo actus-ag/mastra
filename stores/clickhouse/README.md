@@ -1,11 +1,11 @@
-# @mastra/clickhouse
+# @datawarp/mastra-clickhouse
 
 Clickhouse implementation for Mastra, providing efficient storage capabilities with support for threads, messages, and workflow snapshots.
 
 ## Installation
 
 ```bash
-npm install @mastra/clickhouse
+npm install @datawarp/mastra-clickhouse
 ```
 
 ## Prerequisites
@@ -16,7 +16,7 @@ npm install @mastra/clickhouse
 ## Usage
 
 ```typescript
-import { ClickhouseStore } from '@mastra/clickhouse';
+import { ClickhouseStore } from '@datawarp/mastra-clickhouse';
 
 const store = new ClickhouseStore({
   url: 'http://localhost:8123',

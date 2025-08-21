@@ -1,7 +1,7 @@
-import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
-import { WorkflowsStorage } from '@mastra/core/storage';
-import type { WorkflowRun, WorkflowRuns } from '@mastra/core/storage';
-import type { WorkflowRunState } from '@mastra/core/workflows';
+import { ErrorCategory, ErrorDomain, MastraError } from '@datawarp/mastra-core/error';
+import { WorkflowsStorage } from '@datawarp/mastra-core/storage';
+import type { WorkflowRun, WorkflowRuns } from '@datawarp/mastra-core/storage';
+import type { WorkflowRunState } from '@datawarp/mastra-core/workflows';
 import type { Service } from 'electrodb';
 
 // Define the structure for workflow snapshot items retrieved from DynamoDB

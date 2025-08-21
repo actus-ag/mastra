@@ -1,9 +1,9 @@
 import { createClerkClient } from '@clerk/backend';
 import type { ClerkClient } from '@clerk/backend';
-import { verifyJwks } from '@mastra/auth';
-import type { JwtPayload } from '@mastra/auth';
-import type { MastraAuthProviderOptions } from '@mastra/core/server';
-import { MastraAuthProvider } from '@mastra/core/server';
+import { verifyJwks } from '@datawarp/mastra-auth';
+import type { JwtPayload } from '@datawarp/mastra-auth';
+import type { MastraAuthProviderOptions } from '@datawarp/mastra-core/server';
+import { MastraAuthProvider } from '@datawarp/mastra-core/server';
 
 type ClerkUser = JwtPayload;
 

@@ -1,22 +1,22 @@
 import type { Client, InValue } from '@libsql/client';
-import { parseSqlIdentifier } from '@mastra/core';
-import type { MastraMessageContentV2 } from '@mastra/core/agent';
-import { MessageList } from '@mastra/core/agent';
-import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
-import type { MastraMessageV1, MastraMessageV2, StorageThreadType } from '@mastra/core/memory';
+import { parseSqlIdentifier } from '@datawarp/mastra-core';
+import type { MastraMessageContentV2 } from '@datawarp/mastra-core/agent';
+import { MessageList } from '@datawarp/mastra-core/agent';
+import { ErrorCategory, ErrorDomain, MastraError } from '@datawarp/mastra-core/error';
+import type { MastraMessageV1, MastraMessageV2, StorageThreadType } from '@datawarp/mastra-core/memory';
 import type {
   PaginationInfo,
   StorageGetMessagesArg,
   StorageResourceType,
   ThreadSortOptions,
-} from '@mastra/core/storage';
+} from '@datawarp/mastra-core/storage';
 import {
   MemoryStorage,
   resolveMessageLimit,
   TABLE_MESSAGES,
   TABLE_RESOURCES,
   TABLE_THREADS,
-} from '@mastra/core/storage';
+} from '@datawarp/mastra-core/storage';
 import type { StoreOperationsLibSQL } from '../operations';
 
 export class MemoryLibSQL extends MemoryStorage {

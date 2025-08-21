@@ -1,5 +1,5 @@
-import { Mastra } from '@mastra/core';
-import { LibSQLStore } from '@mastra/libsql';
+import { Mastra } from '@datawarp/mastra-core';
+import { LibSQLStore } from '@datawarp/mastra-libsql';
 
 import { dane, daneChangeLog, daneCommitMessage, daneIssueLabeler, daneLinkChecker } from './agents/index.js';
 import { daneNewContributor } from './agents/new-contributor.js';

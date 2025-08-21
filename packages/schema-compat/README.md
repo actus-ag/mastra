@@ -1,11 +1,11 @@
-# @mastra/schema-compat
+# @datawarp/mastra-schema-compat
 
 Schema compatibility layer for Mastra.ai that provides compatibility fixes for different AI model providers when using Zod schemas with tools.
 
 ## Installation
 
 ```bash
-pnpm add @mastra/schema-compat
+pnpm add @datawarp/mastra-schema-compat
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ pnpm add @mastra/schema-compat
 The package provides a base `SchemaCompatLayer` class that you can extend to create custom compatibility layers for different AI model providers:
 
 ```typescript
-import { SchemaCompatLayer } from '@mastra/schema-compat';
+import { SchemaCompatLayer } from '@datawarp/mastra-schema-compat';
 import type { LanguageModelV1 } from 'ai';
 
 class MyCustomCompat extends SchemaCompatLayer {
@@ -45,7 +45,7 @@ The package includes pre-built compatibility layers for popular AI providers:
 Use the `applyCompatLayer` function to automatically apply the right compatibility layer:
 
 ```typescript
-import { applyCompatLayer, OpenAISchemaCompatLayer, AnthropicSchemaCompatLayer } from '@mastra/schema-compat';
+import { applyCompatLayer, OpenAISchemaCompatLayer, AnthropicSchemaCompatLayer } from '@datawarp/mastra-schema-compat';
 import { yourCustomCompatibilityLayer } from './customCompatibilityLayer';
 import { z } from 'zod';
 
@@ -73,7 +73,7 @@ const result = applyCompatLayer({
 The package also provides utility functions for schema conversion:
 
 ```typescript
-import { convertZodSchemaToAISDKSchema, convertSchemaToZod } from '@mastra/schema-compat';
+import { convertZodSchemaToAISDKSchema, convertSchemaToZod } from '@datawarp/mastra-schema-compat';
 import { z } from 'zod';
 import { jsonSchema } from 'ai';
 

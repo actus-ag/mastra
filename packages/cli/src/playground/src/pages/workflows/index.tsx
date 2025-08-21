@@ -1,5 +1,5 @@
 import { useWorkflows } from '@/hooks/use-workflows';
-import { Header, HeaderTitle, MainContentLayout, MainContentContent, WorkflowTable } from '@mastra/playground-ui';
+import { Header, HeaderTitle, MainContentLayout, MainContentContent, WorkflowTable } from '@datawarp/mastra-playground-ui';
 
 function Workflows() {
   const { data, isLoading } = useWorkflows();

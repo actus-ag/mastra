@@ -22,7 +22,7 @@ OPENAI_API_KEY=<your-api-key>
 This tool provides historical weather data for London, returning arrays of daily temperature, precipitation, wind speed, snowfall, and weather conditions from January 1st of the current year up to today. This structure makes it easy for agents to access and reason about recent weather trends.
 
 ```typescript filename="src/mastra/tools/example-london-weather-tool.ts" showLineNumbers copy
-import { createTool } from "@mastra/core/tools";
+import { createTool } from "@datawarp/mastra-core/tools";
 import { z } from "zod";
 
 export const londonWeatherTool = createTool({
@@ -64,7 +64,7 @@ This agent uses the `londonWeatherTool` to answer questions about historical wea
 
 ```typescript filename="src/mastra/agents/example-london-weather-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 
 import { londonWeatherTool } from "../tools/example-london-weather-tool";
 

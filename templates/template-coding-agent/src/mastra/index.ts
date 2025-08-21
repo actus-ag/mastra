@@ -1,6 +1,6 @@
-import { Mastra } from '@mastra/core/mastra';
-import { LibSQLStore } from '@mastra/libsql';
-import { PinoLogger } from '@mastra/loggers';
+import { Mastra } from '@datawarp/mastra-core/mastra';
+import { LibSQLStore } from '@datawarp/mastra-libsql';
+import { PinoLogger } from '@datawarp/mastra-loggers';
 import { codingAgent } from './agents/coding-agent';
 
 export const mastra = new Mastra({

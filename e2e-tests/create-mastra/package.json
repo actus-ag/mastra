@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "E2E tests for @mastra/create-mastra",
+  "description": "E2E tests for @datawarp/mastra-create-mastra",
   "scripts": {
     "test": "vitest run"
   },

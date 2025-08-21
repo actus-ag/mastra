@@ -8,7 +8,7 @@ import {
   NodeProps,
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
-import { GetWorkflowResponse } from '@mastra/client-js';
+import { GetWorkflowResponse } from '@datawarp/mastra-client-js';
 
 import { constructNodesAndEdges } from './utils';
 import { WorkflowConditionNode } from './workflow-condition-node';

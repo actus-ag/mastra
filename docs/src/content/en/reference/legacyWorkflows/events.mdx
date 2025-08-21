@@ -21,7 +21,7 @@ Event-driven workflows are useful for scenarios where:
 Before using event-driven methods, you must define the events your workflow will listen for in the workflow configuration:
 
 ```typescript
-import { LegacyWorkflow } from "@mastra/core/workflows/legacy";
+import { LegacyWorkflow } from "@datawarp/mastra-core/workflows/legacy";
 import { z } from "zod";
 
 const workflow = new LegacyWorkflow({
@@ -174,7 +174,7 @@ When resuming a workflow with multiple event suspension points, you need to prov
 This example shows a complete workflow that requires both approval and document upload:
 
 ```typescript
-import { LegacyWorkflow, LegacyStep } from "@mastra/core/workflows/legacy";
+import { LegacyWorkflow, LegacyStep } from "@datawarp/mastra-core/workflows/legacy";
 import { z } from "zod";
 
 // Define steps

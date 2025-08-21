@@ -1,4 +1,4 @@
-import { Workflow } from '@mastra/core/workflows';
+import { Workflow } from '@datawarp/mastra-core/workflows';
 import { z } from 'zod';
 import { webSearchAgent } from '../agents';
 

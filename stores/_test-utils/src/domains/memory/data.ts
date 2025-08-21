@@ -1,6 +1,6 @@
-import type { MastraMessageV1, MastraMessageV2, StorageThreadType } from '@mastra/core';
-import type { MastraMessageContentV2 } from '@mastra/core/agent';
-import type { StorageResourceType } from '@mastra/core/storage';
+import type { MastraMessageV1, MastraMessageV2, StorageThreadType } from '@datawarp/mastra-core';
+import type { MastraMessageContentV2 } from '@datawarp/mastra-core/agent';
+import type { StorageResourceType } from '@datawarp/mastra-core/storage';
 import { randomUUID } from 'crypto';
 
 let role: 'assistant' | 'user' = 'assistant';

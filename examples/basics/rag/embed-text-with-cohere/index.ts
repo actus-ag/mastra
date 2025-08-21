@@ -1,5 +1,5 @@
 import { cohere } from '@ai-sdk/cohere';
-import { MDocument } from '@mastra/rag';
+import { MDocument } from '@datawarp/mastra-rag';
 import { embedMany } from 'ai';
 
 const doc = MDocument.fromText('Your text content...');

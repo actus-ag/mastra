@@ -1,6 +1,6 @@
-import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
-import { StoreOperations } from '@mastra/core/storage';
-import type { TABLE_NAMES, StorageColumn } from '@mastra/core/storage';
+import { ErrorCategory, ErrorDomain, MastraError } from '@datawarp/mastra-core/error';
+import { StoreOperations } from '@datawarp/mastra-core/storage';
+import type { TABLE_NAMES, StorageColumn } from '@datawarp/mastra-core/storage';
 import type { Redis } from '@upstash/redis';
 import { getKey, processRecord } from '../utils';
 

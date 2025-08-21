@@ -1,7 +1,7 @@
-import { Mastra } from '@mastra/core';
-import { MockStore } from '@mastra/core/storage';
-import { createStep, createWorkflow } from '@mastra/core/workflows';
-import type { Workflow } from '@mastra/core/workflows';
+import { Mastra } from '@datawarp/mastra-core';
+import { MockStore } from '@datawarp/mastra-core/storage';
+import { createStep, createWorkflow } from '@datawarp/mastra-core/workflows';
+import type { Workflow } from '@datawarp/mastra-core/workflows';
 import { stringify } from 'superjson';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import zodToJsonSchema from 'zod-to-json-schema';

@@ -1,8 +1,8 @@
-import { createLogger } from '@mastra/core/logger';
-import { Mastra } from '@mastra/core/mastra';
-import { createApiRoute } from '@mastra/core/server';
-import { TestDeployer } from '@mastra/deployer/test';
-import { PostgresStore } from '@mastra/pg';
+import { createLogger } from '@datawarp/mastra-core/logger';
+import { Mastra } from '@datawarp/mastra-core/mastra';
+import { createApiRoute } from '@datawarp/mastra-core/server';
+import { TestDeployer } from '@datawarp/mastra-deployer/test';
+import { PostgresStore } from '@datawarp/mastra-pg';
 import { weatherAgent } from '@/agents';
 
 export const mastra = new Mastra({

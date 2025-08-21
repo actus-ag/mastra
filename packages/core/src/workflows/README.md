@@ -74,7 +74,7 @@ This guide explains how to use the new API and highlights key differences from t
 To use vNext workflows, first import the necessary functions from the vNext module:
 
 ```typescript
-import { createWorkflow, createStep } from '@mastra/core/workflows/vNext';
+import { createWorkflow, createStep } from '@datawarp/mastra-core/workflows/vNext';
 import { z } from 'zod'; // For schema validation
 ```
 
@@ -208,7 +208,7 @@ const clonedWorkflow = cloneWorkflow(myWorkflow, { id: 'cloned-workflow' });
 This way you can use the same step or nested workflow in the same workflow multiple times.
 
 ```typescript
-import { createWorkflow, createStep, cloneStep, cloneWorkflow } from '@mastra/core/workflows/vNext';
+import { createWorkflow, createStep, cloneStep, cloneWorkflow } from '@datawarp/mastra-core/workflows/vNext';
 
 const myWorkflow = createWorkflow({
   id: 'my-workflow',
@@ -783,7 +783,7 @@ The vNext workflow API introduces several improvements over the original impleme
 
    ```typescript
    // vNext
-   import { createWorkflow, createStep } from '@mastra/core/workflows/vNext';
+   import { createWorkflow, createStep } from '@datawarp/mastra-core/workflows/vNext';
 
    const myWorkflow = createWorkflow({
      id: 'my-workflow',
@@ -799,7 +799,7 @@ The vNext workflow API introduces several improvements over the original impleme
      .commit();
 
    // Original Mastra API
-   import { Workflow, Step } from '@mastra/core/workflows';
+   import { Workflow, Step } from '@datawarp/mastra-core/workflows';
 
    const workflow = new Workflow({
      name: 'test-workflow',
@@ -1063,7 +1063,7 @@ weatherWorkflow.commit();
 ### User Interaction Workflow
 
 ```typescript
-import { createWorkflow, createStep } from '@mastra/core/workflows/vNext';
+import { createWorkflow, createStep } from '@datawarp/mastra-core/workflows/vNext';
 
 import { z } from 'zod';
 

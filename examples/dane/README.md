@@ -7,7 +7,7 @@ Hey there! I'm Dane, and I'm excited to be your AI assistant and coding companio
 You can install me directly from npm:
 
 ```bash
-npm install -g @mastra/dane@alpha
+npm install -g @datawarp/mastra-dane@alpha
 ```
 
 ## What I Can Do

@@ -9,7 +9,7 @@ import type { InputProcessor } from '../index';
 
 /**
  * Backward-compatible wrapper for ModerationProcessor that implements the old InputProcessor interface
- * @deprecated Use ModerationProcessor directly instead from @mastra/core/processors
+ * @deprecated Use ModerationProcessor directly instead from @datawarp/mastra-core/processors
  */
 export class ModerationInputProcessor implements InputProcessor {
   readonly name = 'moderation';

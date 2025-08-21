@@ -1,4 +1,4 @@
-import type { IMastraLogger } from '@mastra/core/logger';
+import type { IMastraLogger } from '@datawarp/mastra-core/logger';
 import type { WorkspacesRoot } from 'find-workspaces';
 import { findWorkspacesRoot } from 'find-workspaces';
 import { describe, it, expect, beforeEach, vi } from 'vitest';

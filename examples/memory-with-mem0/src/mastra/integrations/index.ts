@@ -1,4 +1,4 @@
-import { Mem0Integration } from '@mastra/mem0';
+import { Mem0Integration } from '@datawarp/mastra-mem0';
 
 export const mem0 = new Mem0Integration({
   config: {

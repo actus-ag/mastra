@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { PromptAlignmentMetric } from '@mastra/evals/llm';
+import { PromptAlignmentMetric } from '@datawarp/mastra-evals/llm';
 
 // Example 1: Perfect alignment (all instructions followed)
 const instructions1 = [

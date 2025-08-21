@@ -1,11 +1,11 @@
-import { BaseFilterTranslator } from '@mastra/core/vector/filter';
+import { BaseFilterTranslator } from '@datawarp/mastra-core/vector/filter';
 import type {
   VectorFilter,
   OperatorSupport,
   OperatorValueMap,
   LogicalOperatorValueMap,
   BlacklistedRootOperators,
-} from '@mastra/core/vector/filter';
+} from '@datawarp/mastra-core/vector/filter';
 
 type VectorizeOperatorValueMap = Omit<OperatorValueMap, '$regex' | '$options' | '$exists' | '$elemMatch' | '$all'>;
 

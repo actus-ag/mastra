@@ -1,6 +1,6 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@mastra/core/agent';
-import { OpenAIVoice } from '@mastra/voice-openai';
+import { Agent } from '@datawarp/mastra-core/agent';
+import { OpenAIVoice } from '@datawarp/mastra-voice-openai';
 
 const instructions = `
 You are an AI note assistant tasked with providing concise, structured summaries of their content

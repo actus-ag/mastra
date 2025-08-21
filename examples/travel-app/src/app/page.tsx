@@ -30,7 +30,7 @@ export default function Page() {
           <CodeBlock
             fileName="src/mastra/agents/index.ts"
             language="typescript"
-            code={`import { Agent } from '@mastra/core';
+            code={`import { Agent } from '@datawarp/mastra-core';
 import { anthropic } from '@ai-sdk/anthropic';
 
 export const travelAgent = new Agent({

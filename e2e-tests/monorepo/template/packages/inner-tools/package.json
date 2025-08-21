@@ -11,7 +11,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@mastra/core": "monorepo-test",
+    "@datawarp/mastra-core": "monorepo-test",
     "bcrypt": "^6.0.0",
     "@inner/native-binding-package": "workspace:*"
   }

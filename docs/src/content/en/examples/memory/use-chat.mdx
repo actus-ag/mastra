@@ -72,8 +72,8 @@ export function Chat({ thread, resource }) {
 ```
 
 ```typescript filename="app/api/chat/route.ts" showLineNumbers copy
-import { MastraClient } from "@mastra/client-js";
-import { CoreMessage } from "@mastra/core";
+import { MastraClient } from "@datawarp/mastra-client-js";
+import { CoreMessage } from "@datawarp/mastra-core";
 
 // Initialize the Mastra client to connect to your server
 const mastraClient = new MastraClient({

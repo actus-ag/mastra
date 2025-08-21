@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
-import type { MastraStorage } from '@mastra/core/storage';
-import type { StorageThreadType } from '@mastra/core/memory';
+import type { MastraStorage } from '@datawarp/mastra-core/storage';
+import type { StorageThreadType } from '@datawarp/mastra-core/memory';
 import { createSampleThread, createSampleMessageV1 } from './data';
 
 export function createMessagesBulkDeleteTest({ storage }: { storage: MastraStorage }) {

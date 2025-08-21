@@ -1,4 +1,4 @@
-import { MDocument } from '@mastra/rag';
+import { MDocument } from '@datawarp/mastra-rag';
 
 const doc = MDocument.fromText(`Title: The Benefits of Regular Exercise
 

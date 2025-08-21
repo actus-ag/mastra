@@ -1,9 +1,9 @@
 import type { Client, InValue } from '@libsql/client';
-import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
-import { TABLE_TRACES, TracesStorage, safelyParseJSON } from '@mastra/core/storage';
-import type { StorageGetTracesArg, StorageGetTracesPaginatedArg, PaginationInfo } from '@mastra/core/storage';
-import type { Trace } from '@mastra/core/telemetry';
-import { parseSqlIdentifier } from '@mastra/core/utils';
+import { ErrorCategory, ErrorDomain, MastraError } from '@datawarp/mastra-core/error';
+import { TABLE_TRACES, TracesStorage, safelyParseJSON } from '@datawarp/mastra-core/storage';
+import type { StorageGetTracesArg, StorageGetTracesPaginatedArg, PaginationInfo } from '@datawarp/mastra-core/storage';
+import type { Trace } from '@datawarp/mastra-core/telemetry';
+import { parseSqlIdentifier } from '@datawarp/mastra-core/utils';
 import type { StoreOperationsLibSQL } from '../operations';
 
 export class TracesLibSQL extends TracesStorage {

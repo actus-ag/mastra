@@ -17,8 +17,8 @@ Use different configurations for different environments:
   <Tabs.Tab>
     ```typescript
     import { openai } from "@ai-sdk/openai";
-    import { createVectorQueryTool } from "@mastra/rag";
-    import { RuntimeContext } from "@mastra/core/runtime-context";
+    import { createVectorQueryTool } from "@datawarp/mastra-rag";
+    import { RuntimeContext } from "@datawarp/mastra-core/runtime-context";
 
     // Base configuration
     const createSearchTool = (environment: 'dev' | 'staging' | 'prod') => {
@@ -65,8 +65,8 @@ Use different configurations for different environments:
   <Tabs.Tab>
     ```javascript
     import { openai } from "@ai-sdk/openai";
-    import { createVectorQueryTool } from "@mastra/rag";
-    import { RuntimeContext } from "@mastra/core/runtime-context";
+    import { createVectorQueryTool } from "@datawarp/mastra-rag";
+    import { RuntimeContext } from "@datawarp/mastra-core/runtime-context";
 
     // Base configuration
     const createSearchTool = (environment) => {

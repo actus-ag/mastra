@@ -1,5 +1,5 @@
-import type { Mastra } from '@mastra/core';
-import type { RuntimeContext } from '@mastra/core/runtime-context';
+import type { Mastra } from '@datawarp/mastra-core';
+import type { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
 import {
   getLegacyWorkflowsHandler as getOriginalLegacyWorkflowsHandler,
   getLegacyWorkflowByIdHandler as getOriginalLegacyWorkflowByIdHandler,
@@ -10,7 +10,7 @@ import {
   resumeAsyncLegacyWorkflowHandler as getOriginalResumeAsyncLegacyWorkflowHandler,
   resumeLegacyWorkflowHandler as getOriginalResumeLegacyWorkflowHandler,
   getLegacyWorkflowRunsHandler as getOriginalGetLegacyWorkflowRunsHandler,
-} from '@mastra/server/handlers/legacyWorkflows';
+} from '@datawarp/mastra-server/handlers/legacyWorkflows';
 import type { Context } from 'hono';
 import { HTTPException } from 'hono/http-exception';
 import { stream } from 'hono/streaming';

@@ -1,11 +1,11 @@
-# @mastra/rag
+# @datawarp/mastra-rag
 
 The Retrieval-Augmented Generation (RAG) module contains document processing and embedding utilities.
 
 ## Installation
 
 ```bash
-npm install @mastra/rag
+npm install @datawarp/mastra-rag
 ```
 
 ## Components
@@ -15,7 +15,7 @@ npm install @mastra/rag
 The `MDocument` class represents text content with associated metadata:
 
 ```typescript
-import { MDocument } from '@mastra/rag';
+import { MDocument } from '@datawarp/mastra-rag';
 
 const doc = new MDocument({
   text: 'Document content',

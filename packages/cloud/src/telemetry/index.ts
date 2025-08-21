@@ -1,4 +1,4 @@
-import type { IMastraLogger } from '@mastra/core/logger';
+import type { IMastraLogger } from '@datawarp/mastra-core/logger';
 import { ExportResultCode } from '@opentelemetry/core';
 import type { ExportResult } from '@opentelemetry/core';
 import { JsonTraceSerializer } from '@opentelemetry/otlp-transformer';

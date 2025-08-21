@@ -1,4 +1,4 @@
-import type { MastraStorage, StorageColumn, TABLE_NAMES } from '@mastra/core/storage';
+import type { MastraStorage, StorageColumn, TABLE_NAMES } from '@datawarp/mastra-core/storage';
 import { describe, it, expect, beforeEach, afterEach, beforeAll, afterAll } from 'vitest';
 
 export function createOperationsTests({ storage }: { storage: MastraStorage }) {

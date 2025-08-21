@@ -8,9 +8,9 @@ import type {
   QueryVectorParams,
   UpdateVectorParams,
   UpsertVectorParams,
-} from '@mastra/core';
-import { MastraError, ErrorDomain, ErrorCategory } from '@mastra/core/error';
-import { MastraVector } from '@mastra/core/vector';
+} from '@datawarp/mastra-core';
+import { MastraError, ErrorDomain, ErrorCategory } from '@datawarp/mastra-core/error';
+import { MastraVector } from '@datawarp/mastra-core/vector';
 import { Client as OpenSearchClient } from '@opensearch-project/opensearch';
 import { OpenSearchFilterTranslator } from './filter';
 import type { OpenSearchVectorFilter } from './filter';

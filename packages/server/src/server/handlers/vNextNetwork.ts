@@ -1,4 +1,4 @@
-import type { RuntimeContext } from '@mastra/core/runtime-context';
+import type { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
 import { stringify } from 'superjson';
 import zodToJsonSchema from 'zod-to-json-schema';
 import { HTTPException } from '../http-exception';

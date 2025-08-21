@@ -7,7 +7,7 @@ Now you'll learn how to chain your steps together to create a complete workflow.
 Add this workflow definition to your file:
 
 ```typescript
-import { createWorkflow } from "@mastra/core/workflows";
+import { createWorkflow } from "@datawarp/mastra-core/workflows";
 
 export const contentWorkflow = createWorkflow({
   id: "content-processing-workflow",

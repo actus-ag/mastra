@@ -1,11 +1,11 @@
-# @mastra/pg
+# @datawarp/mastra-pg
 
 SQLite implementation for Mastra, providing both vector similarity search and general storage capabilities with connection pooling and transaction support.
 
 ## Installation
 
 ```bash
-npm install @mastra/libsql
+npm install @datawarp/mastra-libsql
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ npm install @mastra/libsql
 ### Vector Store
 
 ```typescript
-import { LibSQLVector } from '@mastra/libsql';
+import { LibSQLVector } from '@datawarp/mastra-libsql';
 
 const vectorStore = new LibSQLVector({
   url: 'file:./my-db.db'
@@ -47,7 +47,7 @@ const results = await vectorStore.query({
 ### Storage
 
 ```typescript
-import { LibSQLStore } from '@mastra/pg';
+import { LibSQLStore } from '@datawarp/mastra-pg';
 
 const store = new LibSQLStore({
   url: 'file:./my-db.db',

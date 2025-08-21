@@ -1,4 +1,4 @@
-# @mastra/deployer-vercel
+# @datawarp/mastra-deployer-vercel
 
 A Vercel deployer for Mastra applications.
 
@@ -13,7 +13,7 @@ A Vercel deployer for Mastra applications.
 ## Installation
 
 ```bash
-pnpm add @mastra/deployer-vercel
+pnpm add @datawarp/mastra-deployer-vercel
 ```
 
 ## Usage
@@ -21,8 +21,8 @@ pnpm add @mastra/deployer-vercel
 The Vercel deployer is used as part of the Mastra framework:
 
 ```typescript
-import { Mastra } from '@mastra/core';
-import { VercelDeployer } from '@mastra/deployer-vercel';
+import { Mastra } from '@datawarp/mastra-core';
+import { VercelDeployer } from '@datawarp/mastra-deployer-vercel';
 
 const deployer = new VercelDeployer({
   teamSlug: 'your-team-slug',

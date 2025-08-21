@@ -1,10 +1,10 @@
-import type { Mastra } from '@mastra/core';
+import type { Mastra } from '@datawarp/mastra-core';
 import {
   getToolsHandler as getOriginalToolsHandler,
   getToolByIdHandler as getOriginalToolByIdHandler,
   executeToolHandler as getOriginalExecuteToolHandler,
   executeAgentToolHandler as getOriginalExecuteAgentToolHandler,
-} from '@mastra/server/handlers/tools';
+} from '@datawarp/mastra-server/handlers/tools';
 import type { Context } from 'hono';
 
 import { handleError } from '../../error';

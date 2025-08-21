@@ -1,7 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Brain, ChevronDown, RefreshCw } from 'lucide-react';
 import { Agent } from '@/components/ui/agent-logo';
-import { GetNetworkResponse, GetVNextNetworkResponse } from '@mastra/client-js';
+import { GetNetworkResponse, GetVNextNetworkResponse } from '@datawarp/mastra-client-js';
 import { useContext } from 'react';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
-import { RadioGroup, RadioGroupItem, Entry, NetworkContext, ToolsIcon, Txt, WorkflowIcon } from '@mastra/playground-ui';
+import { RadioGroup, RadioGroupItem, Entry, NetworkContext, ToolsIcon, Txt, WorkflowIcon } from '@datawarp/mastra-playground-ui';
 
 type NetworkDetailsProps = {
   network: GetNetworkResponse | GetVNextNetworkResponse;

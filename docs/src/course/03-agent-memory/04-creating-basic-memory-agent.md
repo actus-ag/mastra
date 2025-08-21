@@ -5,9 +5,9 @@ Now, let's create a simple agent with memory capabilities. We'll start with the 
 Create or update your `src/mastra/agents/index.ts` file:
 
 ```typescript
-import { Agent } from "@mastra/core/agent";
-import { Memory } from "@mastra/memory";
-import { LibSQLStore } from "@mastra/libsql";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { Memory } from "@datawarp/mastra-memory";
+import { LibSQLStore } from "@datawarp/mastra-libsql";
 import { openai } from "@ai-sdk/openai";
 
 // Create a basic memory instance

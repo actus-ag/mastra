@@ -1,6 +1,6 @@
 import { openai } from '@ai-sdk/openai';
-import { PgVector } from '@mastra/pg';
-import { MDocument } from '@mastra/rag';
+import { PgVector } from '@datawarp/mastra-pg';
+import { MDocument } from '@datawarp/mastra-rag';
 import { embedMany } from 'ai';
 
 const doc = MDocument.fromText('Your text content...');

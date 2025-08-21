@@ -1,8 +1,8 @@
 import type { Client } from '@libsql/client';
-import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
-import { TABLE_WORKFLOW_SNAPSHOT, StoreOperations } from '@mastra/core/storage';
-import type { StorageColumn, TABLE_NAMES } from '@mastra/core/storage';
-import { parseSqlIdentifier } from '@mastra/core/utils';
+import { ErrorCategory, ErrorDomain, MastraError } from '@datawarp/mastra-core/error';
+import { TABLE_WORKFLOW_SNAPSHOT, StoreOperations } from '@datawarp/mastra-core/storage';
+import type { StorageColumn, TABLE_NAMES } from '@datawarp/mastra-core/storage';
+import { parseSqlIdentifier } from '@datawarp/mastra-core/utils';
 import { createExecuteWriteOperationWithRetry, prepareStatement } from '../utils';
 
 export class StoreOperationsLibSQL extends StoreOperations {

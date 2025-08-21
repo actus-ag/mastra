@@ -28,7 +28,7 @@ In this guide you'll learn how to install the necessary Mastra dependencies, cre
 First, install the necessary Mastra dependencies to run an Agent. This guide uses OpenAI as its model but you can use any supported [model provider](/docs/getting-started/model-providers).
 
 ```bash copy
-npm install mastra@latest @mastra/core@latest @mastra/libsql@latest zod@^3.0.0 @ai-sdk/openai@^1.0.0
+npm install mastra@latest @datawarp/mastra-core@latest @datawarp/mastra-libsql@latest zod@^3.0.0 @ai-sdk/openai@^1.0.0
 ```
 
 If not existent yet, create an `.env` file and add your OpenAI API key:
@@ -44,7 +44,7 @@ Each LLM provider uses a different env var. See [Model Capabilities](/docs/getti
 Create a Mastra configuration file at `src/mastra/index.ts`:
 
 ```ts filename="src/mastra/index.ts" copy
-import { Mastra } from '@mastra/core/mastra';
+import { Mastra } from '@datawarp/mastra-core/mastra';
 
 export const mastra = new Mastra({});
 ```
@@ -52,7 +52,7 @@ export const mastra = new Mastra({});
 Create a `weatherTool` that the `weatherAgent` will use at `src/mastra/tools/weather-tool.ts`. It returns a placeholder value inside the `execute()` function (you'd put your API calls in here).
 
 ```ts filename="src/mastra/tools/weather-tool.ts" copy
-import { createTool } from "@mastra/core/tools";
+import { createTool } from "@datawarp/mastra-core/tools";
 import { z } from "zod";
  
 export const weatherTool = createTool({
@@ -76,7 +76,7 @@ Add a `weatherAgent` at `src/mastra/agents/weather-agent.ts`:
 
 ```ts filename="src/mastra/agents/weather-agent.ts" copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 import { weatherTool } from "../tools/weather-tool";
  
 export const weatherAgent = new Agent({
@@ -101,7 +101,7 @@ export const weatherAgent = new Agent({
 Lastly, add the `weatherAgent` to `src/mastra/index.ts`:
 
 ```ts filename="src/mastra/index.ts" copy {2, 5}
-import { Mastra } from '@mastra/core/mastra';
+import { Mastra } from '@datawarp/mastra-core/mastra';
 import { weatherAgent } from './agents/weather-agent';
 
 export const mastra = new Mastra({

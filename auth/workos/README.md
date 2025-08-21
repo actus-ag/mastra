@@ -1,4 +1,4 @@
-# @mastra/auth-workos
+# @datawarp/mastra-auth-workos
 
 A WorkOS authentication provider for Mastra, enabling seamless integration of WorkOS authentication and authorization in your applications.
 
@@ -12,18 +12,18 @@ A WorkOS authentication provider for Mastra, enabling seamless integration of Wo
 ## Installation
 
 ```bash
-npm install @mastra/auth-workos
+npm install @datawarp/mastra-auth-workos
 # or
-yarn add @mastra/auth-workos
+yarn add @datawarp/mastra-auth-workos
 # or
-pnpm add @mastra/auth-workos
+pnpm add @datawarp/mastra-auth-workos
 ```
 
 ## Usage
 
 ```typescript
-import { Mastra } from '@mastra/core';
-import { MastraAuthWorkos } from '@mastra/auth-workos';
+import { Mastra } from '@datawarp/mastra-core';
+import { MastraAuthWorkos } from '@datawarp/mastra-auth-workos';
 
 // Initialize with environment variables
 const auth = new MastraAuthWorkos();

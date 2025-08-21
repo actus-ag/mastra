@@ -1,4 +1,4 @@
-import { MastraClient } from '@mastra/client-js';
+import { MastraClient } from '@datawarp/mastra-client-js';
 
 // Initialize the Mastra client
 const client = new MastraClient({

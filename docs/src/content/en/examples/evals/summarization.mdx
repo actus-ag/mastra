@@ -15,7 +15,7 @@ Use `SummarizationMetric` to evaluate how well a response captures key informati
 ## Installation
 
 ```bash copy
-npm install @mastra/evals
+npm install @datawarp/mastra-evals
 ```
 
 ## Accurate summary example
@@ -24,7 +24,7 @@ In this example, the summary accurately preserves all important facts from the s
 
 ```typescript filename="src/example-accurate-summary.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { SummarizationMetric } from "@mastra/evals/llm";
+import { SummarizationMetric } from "@datawarp/mastra-evals/llm";
 
 const metric = new SummarizationMetric(openai("gpt-4o-mini"));
 
@@ -57,7 +57,7 @@ In this example, the summary is factually accurate but leaves out several key po
 
 ```typescript filename="src/example-partial-summary.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { SummarizationMetric } from "@mastra/evals/llm";
+import { SummarizationMetric } from "@datawarp/mastra-evals/llm";
 
 const metric = new SummarizationMetric(openai("gpt-4o-mini"));
 
@@ -90,7 +90,7 @@ In this example, the summary includes factual errors and misrepresents key detai
 
 ```typescript filename="src/example-inaccurate-summary.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { SummarizationMetric } from "@mastra/evals/llm";
+import { SummarizationMetric } from "@datawarp/mastra-evals/llm";
 
 const metric = new SummarizationMetric(openai("gpt-4o-mini"));
 

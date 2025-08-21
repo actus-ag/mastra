@@ -9,7 +9,7 @@
  */
 
 import { RegistryClient } from "@mcp/registry"
-import { MCPClient } from "@mastra/mcp-configuration"
+import { MCPClient } from "@datawarp/mastra-mcp-configuration"
 
 // Create registry client
 const registry = new RegistryClient({

@@ -13,9 +13,9 @@
   "dependencies": {
     "@ai-sdk/anthropic": "^1.2.12",
     "@ai-sdk/fireworks": "^0.2.14",
-    "@mastra/core": "latest",
-    "@mastra/mcp": "latest",
-    "@mastra/memory": "latest",
+    "@datawarp/mastra-core": "latest",
+    "@datawarp/mastra-mcp": "latest",
+    "@datawarp/mastra-memory": "latest",
     "@types/tinycolor2": "^1.4.6",
     "chalk": "^5.4.1",
     "gradient-string": "^3.0.0",
@@ -32,9 +32,9 @@
   },
   "pnpm": {
     "overrides": {
-      "@mastra/core": "link:../../packages/core",
-      "@mastra/mcp": "link:../../packages/mcp",
-      "@mastra/memory": "link:../../packages/memory",
+      "@datawarp/mastra-core": "link:../../packages/core",
+      "@datawarp/mastra-mcp": "link:../../packages/mcp",
+      "@datawarp/mastra-memory": "link:../../packages/memory",
       "mastra": "link:../../packages/mastra"
     }
   },

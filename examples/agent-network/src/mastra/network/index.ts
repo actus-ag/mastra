@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { AgentNetwork } from '@mastra/core/network';
+import { AgentNetwork } from '@datawarp/mastra-core/network';
 import {
   primaryResearchAgent,
   webSearchAgent,

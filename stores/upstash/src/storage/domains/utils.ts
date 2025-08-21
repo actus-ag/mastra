@@ -4,8 +4,8 @@ import {
   TABLE_WORKFLOW_SNAPSHOT,
   TABLE_EVALS,
   TABLE_SCORERS,
-} from '@mastra/core/storage';
-import type { TABLE_NAMES } from '@mastra/core/storage';
+} from '@datawarp/mastra-core/storage';
+import type { TABLE_NAMES } from '@datawarp/mastra-core/storage';
 
 export function ensureDate(value: any): Date | null {
   if (!value) return null;

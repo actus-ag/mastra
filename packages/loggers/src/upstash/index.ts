@@ -1,5 +1,5 @@
-import { LoggerTransport } from '@mastra/core/logger';
-import type { BaseLogMessage, LogLevel } from '@mastra/core/logger';
+import { LoggerTransport } from '@datawarp/mastra-core/logger';
+import type { BaseLogMessage, LogLevel } from '@datawarp/mastra-core/logger';
 
 export class UpstashTransport extends LoggerTransport {
   upstashUrl: string;

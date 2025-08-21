@@ -15,8 +15,8 @@ import { GithubLink } from "@/components/github-link";
 
 ```typescript filename="src/mastra/agents/index.ts"
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@mastra/core/agent";
-import { OpenAIVoice } from "@mastra/voice-openai";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { OpenAIVoice } from "@datawarp/mastra-voice-openai";
 
 const instructions = `
 You are an AI note assistant tasked with providing concise, structured summaries of their content... // omitted for brevity
@@ -35,8 +35,8 @@ export const noteTakerAgent = new Agent({
 このスニペットは、STT対応エージェントをあなたの Mastra インスタンスに登録する方法を示しています。
 
 ```typescript filename="src/mastra/index.ts"
-import { PinoLogger } from "@mastra/loggers";
-import { Mastra } from "@mastra/core/mastra";
+import { PinoLogger } from "@datawarp/mastra-loggers";
+import { Mastra } from "@datawarp/mastra-core/mastra";
 
 import { noteTakerAgent } from "./agents";
 

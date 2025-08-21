@@ -1,4 +1,4 @@
-# @mastra/langfuse
+# @datawarp/mastra-langfuse
 
 ## 0.0.2
 
@@ -23,14 +23,14 @@
 - Updated dependencies [c30bca8]
 - Updated dependencies [3b5fec7]
 - Updated dependencies [a8f129d]
-  - @mastra/core@0.14.0
+  - @datawarp/mastra-core@0.14.0
 
 ## 0.0.2-alpha.1
 
 ### Patch Changes
 
 - 03997ae: Update peerdeps
-  - @mastra/core@0.14.0-alpha.7
+  - @datawarp/mastra-core@0.14.0-alpha.7
 
 ## 0.0.2-alpha.0
 
@@ -43,4 +43,4 @@
 - Updated dependencies [cf4f357]
 - Updated dependencies [a722c0b]
 - Updated dependencies [3b5fec7]
-  - @mastra/core@0.14.0-alpha.1
+  - @datawarp/mastra-core@0.14.0-alpha.1

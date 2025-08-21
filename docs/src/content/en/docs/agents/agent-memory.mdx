@@ -12,13 +12,13 @@ Agents in Mastra can leverage a powerful memory system to store conversation his
 To enable memory, simply instantiate the `Memory` class and pass it to your agent's configuration. You also need to install the memory package and a storage adapter:
 
 ```bash npm2yarn copy
-npm install @mastra/memory@latest @mastra/libsql@latest
+npm install @datawarp/mastra-memory@latest @datawarp/mastra-libsql@latest
 ```
 
 ```typescript
-import { Agent } from "@mastra/core/agent";
-import { Memory } from "@mastra/memory";
-import { LibSQLStore } from "@mastra/libsql";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { Memory } from "@datawarp/mastra-memory";
+import { LibSQLStore } from "@datawarp/mastra-libsql";
 import { openai } from "@ai-sdk/openai";
 
 const memory = new Memory({
@@ -49,10 +49,10 @@ Similar to how you can configure dynamic [instructions, models, and tools](./dyn
 ### Example: User Tier-Based Memory
 
 ```typescript
-import { Agent } from "@mastra/core/agent";
-import { Memory } from "@mastra/memory";
-import { LibSQLStore } from "@mastra/libsql";
-import { PostgresStore } from "@mastra/pg";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { Memory } from "@datawarp/mastra-memory";
+import { LibSQLStore } from "@datawarp/mastra-libsql";
+import { PostgresStore } from "@datawarp/mastra-pg";
 import { openai } from "@ai-sdk/openai";
 
 // Create different memory instances for different user tiers
@@ -146,7 +146,7 @@ const agent = new Agent({
 When using dynamic memory, pass the runtime context to your agent calls:
 
 ```typescript
-import { RuntimeContext } from "@mastra/core/runtime-context";
+import { RuntimeContext } from "@datawarp/mastra-core/runtime-context";
 
 // Create runtime context with user information
 const runtimeContext = new RuntimeContext();

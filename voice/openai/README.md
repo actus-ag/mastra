@@ -1,11 +1,11 @@
-# @mastra/voice-openai
+# @datawarp/mastra-voice-openai
 
 OpenAI Voice integration for Mastra, providing both Text-to-Speech (TTS) and Speech-to-Text (STT) capabilities using OpenAI's advanced models.
 
 ## Installation
 
 ```bash
-npm install @mastra/voice-openai
+npm install @datawarp/mastra-voice-openai
 ```
 
 ## Configuration
@@ -19,7 +19,7 @@ OPENAI_API_KEY=your_api_key
 ## Usage
 
 ```typescript
-import { OpenAIVoice } from '@mastra/voice-openai';
+import { OpenAIVoice } from '@datawarp/mastra-voice-openai';
 
 // Create voice with both speech and listening capabilities
 const voice = new OpenAIVoice({

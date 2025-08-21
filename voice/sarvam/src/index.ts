@@ -1,6 +1,6 @@
 import { PassThrough } from 'stream';
 
-import { MastraVoice } from '@mastra/core/voice';
+import { MastraVoice } from '@datawarp/mastra-core/voice';
 import { SARVAM_VOICES } from './voices';
 import type { SarvamTTSLanguage, SarvamSTTLanguage, SarvamSTTModel, SarvamTTSModel, SarvamVoiceId } from './voices';
 

@@ -1,5 +1,5 @@
-import { Metric } from '@mastra/core/eval';
-import type { MetricResult } from '@mastra/core/eval';
+import { Metric } from '@datawarp/mastra-core/eval';
+import type { MetricResult } from '@datawarp/mastra-core/eval';
 import Sentiment from 'sentiment';
 
 interface ToneConsitencyResult extends MetricResult {

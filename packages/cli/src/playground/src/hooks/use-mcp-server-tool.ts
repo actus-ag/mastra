@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import { client } from '@/lib/client';
-import type { McpToolInfo as SdkMcpToolInfo } from '@mastra/client-js';
+import type { McpToolInfo as SdkMcpToolInfo } from '@datawarp/mastra-client-js';
 
 // Structure for the hook to return
 export interface PlaygroundMCPToolInstance {

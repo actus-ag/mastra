@@ -1,5 +1,5 @@
-import { Memory } from '@mastra/memory';
-import { UpstashStore } from '@mastra/upstash';
+import { Memory } from '@datawarp/mastra-memory';
+import { UpstashStore } from '@datawarp/mastra-upstash';
 import dotenv from 'dotenv';
 import { describe } from 'vitest';
 

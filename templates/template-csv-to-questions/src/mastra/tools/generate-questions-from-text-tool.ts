@@ -1,4 +1,4 @@
-import { createTool } from '@mastra/core/tools';
+import { createTool } from '@datawarp/mastra-core/tools';
 import { z } from 'zod';
 
 const MAX_TEXT_LENGTH = 4000;

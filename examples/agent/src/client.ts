@@ -1,5 +1,5 @@
-import { MCPClient } from '@mastra/mcp';
-// import type { ElicitationHandler } from '@mastra/mcp';
+import { MCPClient } from '@datawarp/mastra-mcp';
+// import type { ElicitationHandler } from '@datawarp/mastra-mcp';
 import { createInterface } from 'readline';
 
 // Create readline interface for user input

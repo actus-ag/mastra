@@ -12,10 +12,10 @@
   "dependencies": {
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "@mastra/core": "latest",
-    "@mastra/client-js": "latest",
-    "@mastra/voice-openai": "latest",
-    "@mastra/memory": "latest",
+    "@datawarp/mastra-core": "latest",
+    "@datawarp/mastra-client-js": "latest",
+    "@datawarp/mastra-voice-openai": "latest",
+    "@datawarp/mastra-memory": "latest",
     "mastra": "latest",
     "@ai-sdk/openai": "1.3.22",
     "zod": "^3.25.67",
@@ -23,10 +23,10 @@
   },
   "pnpm": {
     "overrides": {
-      "@mastra/core": "link:../../../packages/core",
-      "@mastra/client-js": "link:../../../client-sdks/client-js",
-      "@mastra/voice-openai": "link:../../../voice/openai",
-      "@mastra/memory": "link:../../../packages/memory",
+      "@datawarp/mastra-core": "link:../../../packages/core",
+      "@datawarp/mastra-client-js": "link:../../../client-sdks/client-js",
+      "@datawarp/mastra-voice-openai": "link:../../../voice/openai",
+      "@datawarp/mastra-memory": "link:../../../packages/memory",
       "mastra": "link:../../../packages/cli"
     }
   },

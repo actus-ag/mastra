@@ -1,4 +1,4 @@
-import type { AiMessageType } from '@mastra/core/memory';
+import type { AiMessageType } from '@datawarp/mastra-core/memory';
 
 export type Message = AiMessageType;
 

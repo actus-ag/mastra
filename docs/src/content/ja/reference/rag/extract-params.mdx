@@ -10,7 +10,7 @@ ExtractParamsは、LLM解析を用いてドキュメントチャンクからメ�
 ## 例
 
 ```typescript showLineNumbers copy
-import { MDocument } from "@mastra/rag";
+import { MDocument } from "@datawarp/mastra-rag";
 
 const doc = MDocument.fromText(text);
 const chunks = await doc.chunk({
@@ -189,7 +189,7 @@ const chunks = await doc.chunk({
 ## 高度な例
 
 ```typescript showLineNumbers copy
-import { MDocument } from "@mastra/rag";
+import { MDocument } from "@datawarp/mastra-rag";
 
 const doc = MDocument.fromText(text);
 const chunks = await doc.chunk({
@@ -238,7 +238,7 @@ const chunks = await doc.chunk({
 **例：**
 
 ```ts
-import { MDocument } from "@mastra/rag";
+import { MDocument } from "@datawarp/mastra-rag";
 
 const doc = new MDocument({
   docs: [

@@ -1,5 +1,5 @@
 {
-  "name": "@mastra/mssql",
+  "name": "@datawarp/mastra-mssql",
   "version": "0.3.1",
   "description": "MSSQL provider for Mastra - db storage capabilities",
   "type": "module",
@@ -35,7 +35,7 @@
   "devDependencies": {
     "@internal/lint": "workspace:*",
     "@internal/storage-test-utils": "workspace:*",
-    "@mastra/core": "workspace:*",
+    "@datawarp/mastra-core": "workspace:*",
     "@microsoft/api-extractor": "^7.52.8",
     "@types/mssql": "^9.1.7",
     "@types/node": "^20.19.0",
@@ -46,6 +46,6 @@
     "@internal/types-builder": "workspace:*"
   },
   "peerDependencies": {
-    "@mastra/core": ">=0.13.0-0 <0.15.0-0"
+    "@datawarp/mastra-core": ">=0.13.0-0 <0.15.0-0"
   }
 }

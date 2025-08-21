@@ -1,7 +1,7 @@
-import type { Mastra } from '@mastra/core';
-import { AvailableHooks, registerHook } from '@mastra/core/hooks';
-import { TABLE_EVALS } from '@mastra/core/storage';
-import { checkEvalStorageFields } from '@mastra/core/utils';
+import type { Mastra } from '@datawarp/mastra-core';
+import { AvailableHooks, registerHook } from '@datawarp/mastra-core/hooks';
+import { TABLE_EVALS } from '@datawarp/mastra-core/storage';
+import { checkEvalStorageFields } from '@datawarp/mastra-core/utils';
 
 import { GLOBAL_RUN_ID_ENV_KEY } from './constants';
 

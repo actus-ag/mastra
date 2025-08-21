@@ -9,7 +9,7 @@ Create a new file for your agent in the `src/mastra/agents` directory. Use `cont
 ```typescript
 // src/mastra/agents/content-agent.ts
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 
 export const contentAgent = new Agent({
   name: "Content Agent",

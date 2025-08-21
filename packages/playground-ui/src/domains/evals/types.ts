@@ -1,4 +1,4 @@
-import type { TestInfo, MetricResult } from '@mastra/core/eval';
+import type { TestInfo, MetricResult } from '@datawarp/mastra-core/eval';
 
 export type Evals = {
   input: string;

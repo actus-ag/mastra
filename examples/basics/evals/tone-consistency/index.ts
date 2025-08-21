@@ -1,4 +1,4 @@
-import { ToneConsistencyMetric } from '@mastra/evals/nlp';
+import { ToneConsistencyMetric } from '@datawarp/mastra-evals/nlp';
 
 // Configure the metric
 const metric = new ToneConsistencyMetric();

@@ -1,10 +1,10 @@
-import type { Mastra } from '@mastra/core';
+import type { Mastra } from '@datawarp/mastra-core';
 import type {
   StorageGetMessagesArg,
   MastraMessageFormat,
   ThreadOrderBy,
   ThreadSortDirection,
-} from '@mastra/core/storage';
+} from '@datawarp/mastra-core/storage';
 import {
   getMemoryStatusHandler as getOriginalMemoryStatusHandler,
   getMemoryConfigHandler as getOriginalMemoryConfigHandler,
@@ -21,7 +21,7 @@ import {
   updateWorkingMemoryHandler as getOriginalUpdateWorkingMemoryHandler,
   searchMemoryHandler as getOriginalSearchMemoryHandler,
   deleteMessagesHandler as getOriginalDeleteMessagesHandler,
-} from '@mastra/server/handlers/memory';
+} from '@datawarp/mastra-server/handlers/memory';
 import type { Context } from 'hono';
 
 import { handleError } from '../../error';

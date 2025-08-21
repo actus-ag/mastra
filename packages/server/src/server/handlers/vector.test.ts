@@ -1,12 +1,12 @@
-import { Mastra } from '@mastra/core';
-import { MastraVector } from '@mastra/core/vector';
-import type { QueryResult, IndexStats } from '@mastra/core/vector';
+import { Mastra } from '@datawarp/mastra-core';
+import { MastraVector } from '@datawarp/mastra-core/vector';
+import type { QueryResult, IndexStats } from '@datawarp/mastra-core/vector';
 import type { Mock } from 'vitest';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { HTTPException } from '../http-exception';
 import { upsertVectors, createIndex, queryVectors, listIndexes, describeIndex, deleteIndex } from './vector';
 
-vi.mock('@mastra/core/vector');
+vi.mock('@datawarp/mastra-core/vector');
 
 type MockMastraVector = {
   upsert: Mock<MastraVector['upsert']>;

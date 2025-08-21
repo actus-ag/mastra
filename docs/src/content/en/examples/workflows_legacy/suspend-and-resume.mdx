@@ -12,8 +12,8 @@ Workflow steps can be suspended and resumed at any point in the workflow executi
 ## Basic Example
 
 ```ts showLineNumbers copy
-import { Mastra } from "@mastra/core";
-import { LegacyStep, LegacyWorkflow } from "@mastra/core/workflows/legacy";
+import { Mastra } from "@datawarp/mastra-core";
+import { LegacyStep, LegacyWorkflow } from "@datawarp/mastra-core/workflows/legacy";
 import { z } from "zod";
 
 const stepOne = new LegacyStep({
@@ -96,8 +96,8 @@ await start({ triggerData: { inputValue: 45 } });
 This example demonstrates a more complex workflow with multiple suspension points using the async/await pattern. It simulates a content generation workflow that requires human intervention at different stages.
 
 ```ts showLineNumbers copy
-import { Mastra } from "@mastra/core";
-import { LegacyStep, LegacyWorkflow } from "@mastra/core/workflows/legacy";
+import { Mastra } from "@datawarp/mastra-core";
+import { LegacyStep, LegacyWorkflow } from "@datawarp/mastra-core/workflows/legacy";
 import { z } from "zod";
 
 // Step 1: Get user input

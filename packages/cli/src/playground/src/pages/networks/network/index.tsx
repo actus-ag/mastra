@@ -1,7 +1,7 @@
 import { NetworkInformation } from '@/domains/networks/network-information';
 import { useMessages } from '@/hooks/use-memory';
 import { useNetwork } from '@/hooks/use-networks';
-import { Message, NetworkChat, NetworkProvider, MainContentContent } from '@mastra/playground-ui';
+import { Message, NetworkChat, NetworkProvider, MainContentContent } from '@datawarp/mastra-playground-ui';
 import { useParams } from 'react-router';
 
 export default function Network() {

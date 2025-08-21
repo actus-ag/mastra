@@ -1,5 +1,5 @@
 {
-  "name": "@mastra/mcp-registry-registry",
+  "name": "@datawarp/mastra-mcp-registry-registry",
   "version": "0.10.8",
   "description": "MCP server for registry registry services.",
   "type": "module",
@@ -22,7 +22,7 @@
   "scripts": {
     "build": "tsup --silent --config tsup.config.ts",
     "build:cli": "tsup src/stdio.ts --format esm --no-dts --treeshake=smallest --splitting && tsc -p tsconfig.build.json",
-    "pretest": "pnpm turbo build --filter @mastra/mcp-registry-registry",
+    "pretest": "pnpm turbo build --filter @datawarp/mastra-mcp-registry-registry",
     "test": "vitest run",
     "lint": "eslint ."
   },
@@ -38,8 +38,8 @@
   "devDependencies": {
     "@hono/node-server": "^1.17.1",
     "@internal/lint": "workspace:*",
-    "@mastra/core": "workspace:*",
-    "@mastra/mcp": "workspace:^",
+    "@datawarp/mastra-core": "workspace:*",
+    "@datawarp/mastra-mcp": "workspace:^",
     "@types/node": "^20.19.0",
     "@wong2/mcp-cli": "^1.10.0",
     "cross-env": "^7.0.3",
@@ -52,6 +52,6 @@
     "@internal/types-builder": "workspace:*"
   },
   "peerDependencies": {
-    "@mastra/core": ">=0.10.0-0 <0.15.0-0"
+    "@datawarp/mastra-core": ">=0.10.0-0 <0.15.0-0"
   }
 }

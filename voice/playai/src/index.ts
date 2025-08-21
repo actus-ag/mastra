@@ -1,6 +1,6 @@
 import { PassThrough } from 'stream';
 
-import { MastraVoice } from '@mastra/core/voice';
+import { MastraVoice } from '@datawarp/mastra-core/voice';
 
 interface PlayAIVoiceInfo {
   name: string;

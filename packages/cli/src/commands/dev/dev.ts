@@ -1,8 +1,8 @@
 import type { ChildProcess } from 'child_process';
 import process from 'node:process';
 import { join } from 'path';
-import { FileService } from '@mastra/deployer';
-import { getServerOptions } from '@mastra/deployer/build';
+import { FileService } from '@datawarp/mastra-deployer';
+import { getServerOptions } from '@datawarp/mastra-deployer/build';
 import { isWebContainer } from '@webcontainer/env';
 import { execa } from 'execa';
 import getPort from 'get-port';

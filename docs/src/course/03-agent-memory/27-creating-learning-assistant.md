@@ -4,10 +4,10 @@ Let's create a practical example of a memory-enhanced agent: a Personal Learning
 
 ```typescript
 // src/mastra/agents/learning-assistant.ts
-import { Agent } from "@mastra/core/agent";
-import { Memory } from "@mastra/memory";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { Memory } from "@datawarp/mastra-memory";
 import { openai } from "@ai-sdk/openai";
-import { LibSQLStore, LibSQLVector } from "@mastra/libsql";
+import { LibSQLStore, LibSQLVector } from "@datawarp/mastra-libsql";
 
 // Create a specialized memory configuration for the learning assistant
 const learningMemory = new Memory({

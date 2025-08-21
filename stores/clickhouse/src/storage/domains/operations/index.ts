@@ -1,7 +1,7 @@
 import type { ClickHouseClient } from '@clickhouse/client';
-import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
-import { StoreOperations, TABLE_WORKFLOW_SNAPSHOT, TABLE_EVALS, TABLE_SCHEMAS } from '@mastra/core/storage';
-import type { StorageColumn, TABLE_NAMES } from '@mastra/core/storage';
+import { ErrorCategory, ErrorDomain, MastraError } from '@datawarp/mastra-core/error';
+import { StoreOperations, TABLE_WORKFLOW_SNAPSHOT, TABLE_EVALS, TABLE_SCHEMAS } from '@datawarp/mastra-core/storage';
+import type { StorageColumn, TABLE_NAMES } from '@datawarp/mastra-core/storage';
 import type { ClickhouseConfig } from '../utils';
 import { COLUMN_TYPES, TABLE_ENGINES, transformRow } from '../utils';
 

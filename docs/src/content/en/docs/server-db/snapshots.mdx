@@ -113,8 +113,8 @@ This means that storage is shared across all workflows registered with the same 
 The default storage option is LibSQL, a SQLite-compatible database:
 
 ```typescript
-import { Mastra } from "@mastra/core/mastra";
-import { DefaultStorage } from "@mastra/core/storage/libsql";
+import { Mastra } from "@datawarp/mastra-core/mastra";
+import { DefaultStorage } from "@datawarp/mastra-core/storage/libsql";
 
 const mastra = new Mastra({
   storage: new DefaultStorage({
@@ -137,8 +137,8 @@ const mastra = new Mastra({
 For serverless environments:
 
 ```typescript
-import { Mastra } from "@mastra/core/mastra";
-import { UpstashStore } from "@mastra/upstash";
+import { Mastra } from "@datawarp/mastra-core/mastra";
+import { UpstashStore } from "@datawarp/mastra-upstash";
 
 const mastra = new Mastra({
   storage: new UpstashStore({

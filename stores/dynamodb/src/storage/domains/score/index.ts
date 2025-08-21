@@ -1,7 +1,7 @@
-import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
-import type { ScoreRowData, ScoringSource } from '@mastra/core/scores';
-import { ScoresStorage } from '@mastra/core/storage';
-import type { PaginationInfo, StoragePagination } from '@mastra/core/storage';
+import { ErrorCategory, ErrorDomain, MastraError } from '@datawarp/mastra-core/error';
+import type { ScoreRowData, ScoringSource } from '@datawarp/mastra-core/scores';
+import { ScoresStorage } from '@datawarp/mastra-core/storage';
+import type { PaginationInfo, StoragePagination } from '@datawarp/mastra-core/storage';
 import type { Service } from 'electrodb';
 
 export class ScoresStorageDynamoDB extends ScoresStorage {

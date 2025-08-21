@@ -1,6 +1,6 @@
 import { Link, NavLink } from 'react-router';
 
-import { Button, Header, Breadcrumb, Crumb, HeaderGroup } from '@mastra/playground-ui';
+import { Button, Header, Breadcrumb, Crumb, HeaderGroup } from '@datawarp/mastra-playground-ui';
 
 export function NetworkHeader({ networkName, networkId }: { networkName: string; networkId: string }) {
   return (

@@ -2,8 +2,8 @@ import { randomUUID } from 'node:crypto';
 import { mkdtemp } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { LibSQLStore } from '@mastra/libsql';
-import { Memory } from '@mastra/memory';
+import { LibSQLStore } from '@datawarp/mastra-libsql';
+import { Memory } from '@datawarp/mastra-memory';
 import { describe, expect, it, beforeEach, afterEach } from 'vitest';
 
 const resourceId = 'test-resource';

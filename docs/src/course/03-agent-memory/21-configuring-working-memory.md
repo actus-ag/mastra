@@ -3,10 +3,10 @@
 Let's update our agent with working memory capabilities:
 
 ```typescript
-import { Agent } from "@mastra/core/agent";
-import { Memory } from "@mastra/memory";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { Memory } from "@datawarp/mastra-memory";
 import { openai } from "@ai-sdk/openai";
-import { LibSQLStore, LibSQLVector } from "@mastra/libsql";
+import { LibSQLStore, LibSQLVector } from "@datawarp/mastra-libsql";
 
 // Create a memory instance with working memory configuration
 const memory = new Memory({

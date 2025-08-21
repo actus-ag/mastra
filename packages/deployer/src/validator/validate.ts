@@ -41,7 +41,7 @@ export function validate(file: string) {
     'node',
     [
       '--import',
-      import.meta.resolve('@mastra/deployer/loader'),
+      import.meta.resolve('@datawarp/mastra-deployer/loader'),
       '--input-type=module',
       '-e',
       `import('file://${file.replaceAll('\\', '/')}')`,

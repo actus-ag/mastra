@@ -90,7 +90,7 @@ const fetchDataStep = new Step({
 ### 基本的なリトライの例
 
 ```typescript
-import { Workflow, Step } from "@mastra/core/workflows";
+import { Workflow, Step } from "@datawarp/mastra-core/workflows";
 
 // Define a step that might fail
 const unreliableApiStep = new Step({
@@ -120,7 +120,7 @@ workflow.step(unreliableApiStep).then(processResultStep).commit();
 ### ワークフローレベルのリトライとステップでの上書き
 
 ```typescript
-import { Workflow, Step } from "@mastra/core/workflows";
+import { Workflow, Step } from "@datawarp/mastra-core/workflows";
 
 // Create a workflow with default retry configuration
 const workflow = new Workflow({

@@ -21,9 +21,9 @@
   "license": "MIT",
   "dependencies": {
     "@ai-sdk/openai": "^1.3.22",
-    "@mastra/client-js": "latest",
-    "@mastra/core": "latest",
-    "@mastra/loggers": "link:../../packages/loggers",
+    "@datawarp/mastra-client-js": "latest",
+    "@datawarp/mastra-core": "latest",
+    "@datawarp/mastra-loggers": "link:../../packages/loggers",
     "dotenv": "^16.3.1",
     "zod": "^3.25.67"
   },
@@ -34,12 +34,12 @@
   },
   "pnpm": {
     "overrides": {
-      "@mastra/core": "link:../../packages/core",
+      "@datawarp/mastra-core": "link:../../packages/core",
       "mastra": "link:../../packages/cli",
-      "@mastra/client-js": "link:../../client-sdks/client-js",
-      "@mastra/loggers": "link:../../packages/loggers",
-      "@mastra/server": "link:../../packages/server",
-      "@mastra/deployer": "link:../../packages/deployer"
+      "@datawarp/mastra-client-js": "link:../../client-sdks/client-js",
+      "@datawarp/mastra-loggers": "link:../../packages/loggers",
+      "@datawarp/mastra-server": "link:../../packages/server",
+      "@datawarp/mastra-deployer": "link:../../packages/deployer"
     }
   },
   "packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f"

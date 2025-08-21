@@ -90,11 +90,11 @@ describe.for(allPackages.map(pkg => [relative(join(__dirname.replaceAll('\\', '/
     it.skipIf(
       pkgJson.name === 'mastra' ||
         pkgJson.name === 'create-mastra' ||
-        pkgJson.name === '@mastra/client-js' ||
+        pkgJson.name === '@datawarp/mastra-client-js' ||
         !pkgJson.name.startsWith('@mastra/'),
-    )('should have @mastra/core as a peer dependency if used', async () => {
+    )('should have @datawarp/mastra-core as a peer dependency if used', async () => {
       console.log(pkgJson.name);
-      const hasMastraCoreAsDependency = pkgJson?.dependencies?.['@mastra/core'];
+      const hasMastraCoreAsDependency = pkgJson?.dependencies?.['@datawarp/mastra-core'];
       expect(hasMastraCoreAsDependency).toBe(undefined);
     });
   },

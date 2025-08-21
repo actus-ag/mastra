@@ -1,22 +1,22 @@
-# @mastra/auth-supabase
+# @datawarp/mastra-auth-supabase
 
 A Supabase authentication integration for Mastra, providing seamless authentication and authorization capabilities using Supabase's authentication system.
 
 ## Installation
 
 ```bash
-npm install @mastra/auth-supabase
+npm install @datawarp/mastra-auth-supabase
 # or
-yarn add @mastra/auth-supabase
+yarn add @datawarp/mastra-auth-supabase
 # or
-pnpm add @mastra/auth-supabase
+pnpm add @datawarp/mastra-auth-supabase
 ```
 
 ## Usage
 
 ```typescript
-import { Mastra } from '@mastra/core';
-import { MastraAuthSupabase } from '@mastra/auth-supabase';
+import { Mastra } from '@datawarp/mastra-core';
+import { MastraAuthSupabase } from '@datawarp/mastra-auth-supabase';
 
 // Initialize with environment variables
 const auth = new MastraAuthSupabase();

@@ -1,5 +1,5 @@
-import { Mastra } from '@mastra/core';
-import { LibSQLStore } from '@mastra/libsql';
+import { Mastra } from '@datawarp/mastra-core';
+import { LibSQLStore } from '@datawarp/mastra-libsql';
 
 import { weatherAgent } from './agents';
 import { weatherWorkflow as legacyWeatherWorkflow } from './workflows';

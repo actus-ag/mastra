@@ -6,7 +6,7 @@
 	"type": "module",
 	"scripts": {
 		"build": "pnpm -r build",
-		"test": "pnpm build && pnpm -F @mcp/registry -F @mastra/mcp-configuration test",
+		"test": "pnpm build && pnpm -F @mcp/registry -F @datawarp/mastra-mcp-configuration test",
 		"ex:discovery": "pnpm build && npx tsx ./examples/basic-usage/src/01-discovery.ts",
 		"ex:config": "pnpm build && npx tsx ./examples/basic-usage/src/02-configuration.ts",
 		"ex:validate": "pnpm build && npx tsx ./examples/basic-usage/src/03-validation.ts",

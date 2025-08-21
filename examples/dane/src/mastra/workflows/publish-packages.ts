@@ -1,4 +1,4 @@
-import { Step, Workflow } from '@mastra/core/workflows';
+import { Step, Workflow } from '@datawarp/mastra-core/workflows';
 import chalk from 'chalk';
 import { execa } from 'execa';
 import { existsSync } from 'fs';
@@ -52,8 +52,8 @@ export const packagePublisher = new Workflow({
 //       Input Text: ${result.text}
 
 //       1. Order Requirements:
-//          - @mastra/core MUST be first within packages
-//          - @mastra/deployer MUST be second within packages
+//          - @datawarp/mastra-core MUST be first within packages
+//          - @datawarp/mastra-deployer MUST be second within packages
 //          - Group parallel builds by directory type
 
 //       2. Output Format:
@@ -123,7 +123,7 @@ export const packagePublisher = new Workflow({
 
 //     if (payload?.deployers) {
 //       payload.deployers.forEach((pkg: string) => {
-//         let pkgName = pkg.replace('@mastra/deployer-', '');
+//         let pkgName = pkg.replace('@datawarp/mastra-deployer-', '');
 
 //         if (pkgName === 'mastra') {
 //           pkgName = 'cli';
@@ -156,7 +156,7 @@ export const packagePublisher = new Workflow({
 //     if (payload?.speech) {
 //       const speecs = payload.speech;
 //       speecs.forEach((speech: string) => {
-//         let pkgName = speech.replace('@mastra/speech-', '');
+//         let pkgName = speech.replace('@datawarp/mastra-speech-', '');
 //         const speechPath = path.join(process.cwd(), 'speech', pkgName);
 //         speechToBuild.add(speechPath);
 //       });

@@ -1,4 +1,4 @@
-import { MastraClient } from '@mastra/client-js';
+import { MastraClient } from '@datawarp/mastra-client-js';
 
 export const createMastraClient = (baseUrl?: string, mastraClientHeaders: Record<string, string> = {}) => {
   return new MastraClient({

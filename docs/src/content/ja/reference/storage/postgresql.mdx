@@ -10,13 +10,13 @@ PostgreSQLストレージ実装は、PostgreSQLデータベースを使用した
 ## インストール
 
 ```bash copy
-npm install @mastra/pg@latest
+npm install @datawarp/mastra-pg@latest
 ```
 
 ## 使い方
 
 ```typescript copy showLineNumbers
-import { PostgresStore } from "@mastra/pg";
+import { PostgresStore } from "@datawarp/mastra-pg";
 
 const storage = new PostgresStore({
   connectionString: process.env.DATABASE_URL,
@@ -49,7 +49,7 @@ const storage = new PostgresStore({
 `PostgresStore` は以下の方法でインスタンス化できます。
 
 ```ts
-import { PostgresStore } from "@mastra/pg";
+import { PostgresStore } from "@datawarp/mastra-pg";
 
 // 接続文字列のみを使用する場合
 const store1 = new PostgresStore({

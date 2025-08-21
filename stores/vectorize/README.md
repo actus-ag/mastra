@@ -1,17 +1,17 @@
-# @mastra/vectorize
+# @datawarp/mastra-vectorize
 
 Vector store implementation for Vectorize, a managed vector database service optimized for AI applications.
 
 ## Installation
 
 ```bash
-npm install @mastra/vectorize
+npm install @datawarp/mastra-vectorize
 ```
 
 ## Usage
 
 ```typescript
-import { VectorizeStore } from '@mastra/vectorize';
+import { VectorizeStore } from '@datawarp/mastra-vectorize';
 
 const vectorStore = new VectorizeStore({
   apiKey: process.env.VECTORIZE_API_KEY,

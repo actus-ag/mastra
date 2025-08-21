@@ -13,6 +13,6 @@ export class Tool<
   constructor(opts: ToolAction<TSchemaIn, TSchemaOut, TContext>) {
     super(opts);
 
-    console.warn('Please import "Tool" from "@mastra/core/tools" instead of "@mastra/core"');
+    console.warn('Please import "Tool" from "@datawarp/mastra-core/tools" instead of "@datawarp/mastra-core"');
   }
 }

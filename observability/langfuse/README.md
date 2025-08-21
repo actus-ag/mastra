@@ -1,17 +1,17 @@
-# @mastra/langfuse
+# @datawarp/mastra-langfuse
 
 Langfuse AI Observability exporter for Mastra applications.
 
 ## Installation
 
 ```bash
-npm install @mastra/langfuse
+npm install @datawarp/mastra-langfuse
 ```
 
 ## Usage
 
 ```typescript
-import { LangfuseExporter } from '@mastra/langfuse';
+import { LangfuseExporter } from '@datawarp/mastra-langfuse';
 
 // Use with Mastra
 const mastra = new Mastra({

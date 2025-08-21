@@ -1,4 +1,4 @@
-# @mastra/core
+# @datawarp/mastra-core
 
 ## 0.14.0
 
@@ -11,7 +11,7 @@
 - 227c7e6: replace console.log with logger.debug in inmemory operations
 - 12cae67: fix: add threadId and resourceId to scorers
 - fd3a3eb: Add runExperments to run scorers in a test suite or in CI
-- 6faaee5: Reworks agent Processor API to include output processors. Adds structuredOutput property in agent.streamVNext and agent.generate to replace experimental_output. Move imports for processors to @mastra/core/processors. Adds 6 new output processors, BatchParts, StructuredOutputProcessor, TokenLimiter, SystemPromptScrubber, ModerationProcessor, PiiDetectorProcessor.
+- 6faaee5: Reworks agent Processor API to include output processors. Adds structuredOutput property in agent.streamVNext and agent.generate to replace experimental_output. Move imports for processors to @datawarp/mastra-core/processors. Adds 6 new output processors, BatchParts, StructuredOutputProcessor, TokenLimiter, SystemPromptScrubber, ModerationProcessor, PiiDetectorProcessor.
 - 4232b14: Fix provider metadata preservation during V5 message conversions
 
   Provider metadata (providerMetadata and callProviderMetadata) is now properly preserved when converting messages between AI SDK V5 and internal V2 formats. This ensures provider-specific information isn't lost during message transformations.
@@ -78,7 +78,7 @@
 
 ### Patch Changes
 
-- 6faaee5: Reworks agent Processor API to include output processors. Adds structuredOutput property in agent.streamVNext and agent.generate to replace experimental_output. Move imports for processors to @mastra/core/processors. Adds 6 new output processors, BatchParts, StructuredOutputProcessor, TokenLimiter, SystemPromptScrubber, ModerationProcessor, PiiDetectorProcessor.
+- 6faaee5: Reworks agent Processor API to include output processors. Adds structuredOutput property in agent.streamVNext and agent.generate to replace experimental_output. Move imports for processors to @datawarp/mastra-core/processors. Adds 6 new output processors, BatchParts, StructuredOutputProcessor, TokenLimiter, SystemPromptScrubber, ModerationProcessor, PiiDetectorProcessor.
 - 4232b14: Fix provider metadata preservation during V5 message conversions
 
   Provider metadata (providerMetadata and callProviderMetadata) is now properly preserved when converting messages between AI SDK V5 and internal V2 formats. This ensures provider-specific information isn't lost during message transformations.
@@ -112,7 +112,7 @@
 - Updated dependencies [dd94a26]
 - Updated dependencies [2fff911]
 - Updated dependencies [ae2eb63]
-  - @mastra/schema-compat@0.10.7
+  - @datawarp/mastra-schema-compat@0.10.7
 
 ## 0.13.2-alpha.3
 
@@ -130,7 +130,7 @@
 - 121a3f8: Fixed an issue where telemetry logs were displaying promise statuses when `agent.stream` is called
 - ec510e7: Tool input validation now returns errors as tool results instead of throwing, allowing agents to understand validation failures and retry with corrected parameters.
 - Updated dependencies [ae2eb63]
-  - @mastra/schema-compat@0.10.7-alpha.1
+  - @datawarp/mastra-schema-compat@0.10.7-alpha.1
 
 ## 0.13.2-alpha.1
 
@@ -149,7 +149,7 @@
 - 2fff911: Fix vnext working memory tool schema when model is incompatible with schema
 - Updated dependencies [dd94a26]
 - Updated dependencies [2fff911]
-  - @mastra/schema-compat@0.10.7-alpha.0
+  - @datawarp/mastra-schema-compat@0.10.7-alpha.0
 
 ## 0.13.1
 
@@ -195,7 +195,7 @@
 - 1fb812e: Fixed a bug in parallel workflow execution where resuming only one of multiple suspended parallel steps incorrectly completed the entire parallel block. The fix ensures proper execution and state management when resuming from suspension in parallel workflows.
 - 35c5798: Add support for transpilePackages option
 - Updated dependencies [4a406ec]
-  - @mastra/schema-compat@0.10.6
+  - @datawarp/mastra-schema-compat@0.10.6
 
 ## 0.13.0-alpha.3
 
@@ -216,7 +216,7 @@
 - 4a406ec: fixes TypeScript declaration file imports to ensure proper ESM compatibility
 - 5d377e5: Fix tracing of runtimeContext values"
 - Updated dependencies [4a406ec]
-  - @mastra/schema-compat@0.10.6-alpha.0
+  - @datawarp/mastra-schema-compat@0.10.6-alpha.0
 
 ## 0.13.0-alpha.1
 
@@ -431,7 +431,7 @@
   extracting common logic into prepareLLMOptions(), enhancing type definitions, and fixing test annotations.
 
   This changeset entry follows the established format in your project:
-  - Targets the @mastra/core package with a patch version bump
+  - Targets the @datawarp/mastra-core package with a patch version bump
   - Provides a concise description of the refactoring and type safety improvements
   - Mentions the key changes without being too verbose
 
@@ -462,7 +462,7 @@
   extracting common logic into prepareLLMOptions(), enhancing type definitions, and fixing test annotations.
 
   This changeset entry follows the established format in your project:
-  - Targets the @mastra/core package with a patch version bump
+  - Targets the @datawarp/mastra-core package with a patch version bump
   - Provides a concise description of the refactoring and type safety improvements
   - Mentions the key changes without being too verbose
 
@@ -498,7 +498,7 @@
 - f7403ab: Only change workflow status to success after all steps are successful
 - 6c89d7f: Save runtimeContext in snapshot
 - Updated dependencies [4da943f]
-  - @mastra/schema-compat@0.10.5
+  - @datawarp/mastra-schema-compat@0.10.5
 
 ## 0.10.15-alpha.1
 
@@ -510,7 +510,7 @@
 - cf3a184: Add warning log when memory is not configured but threadId/resourceId are passed to agent
 - d6bfd60: Simplify Message-List Merge Logic and Updates
 - Updated dependencies [4da943f]
-  - @mastra/schema-compat@0.10.5-alpha.0
+  - @datawarp/mastra-schema-compat@0.10.5-alpha.0
 
 ## 0.10.15-alpha.0
 
@@ -530,7 +530,7 @@
 
 ### Patch Changes
 
-- Update @mastra/deployer
+- Update @datawarp/mastra-deployer
 
 ## 0.10.12
 
@@ -572,7 +572,7 @@
 - f36e4f1: Allow passing custom instructions to generateTitle to override default instructions.
 - 7f6e403: [MASTRA-3765] Save Message parts - Add ability for user to save messages on step finish for stream and agent
 - Updated dependencies [0c85311]
-  - @mastra/schema-compat@0.10.4
+  - @datawarp/mastra-schema-compat@0.10.4
 
 ## 0.10.11-alpha.4
 
@@ -586,7 +586,7 @@
 - 0c85311: Fix Google models ZodNull tool schema handling
 - cb16baf: Fix MCP tool output schema type and return value
 - Updated dependencies [0c85311]
-  - @mastra/schema-compat@0.10.4-alpha.0
+  - @datawarp/mastra-schema-compat@0.10.4-alpha.0
 
 ## 0.10.11-alpha.2
 
@@ -716,14 +716,14 @@
 - 0e17048: Throw mastra errors in storage packages
 - Updated dependencies [98bbe5a]
 - Updated dependencies [a853c43]
-  - @mastra/schema-compat@0.10.3
+  - @datawarp/mastra-schema-compat@0.10.3
 
 ## 0.10.7-alpha.5
 
 ### Patch Changes
 
 - Updated dependencies [a853c43]
-  - @mastra/schema-compat@0.10.3-alpha.1
+  - @datawarp/mastra-schema-compat@0.10.3-alpha.1
 
 ## 0.10.7-alpha.4
 
@@ -748,7 +748,7 @@
 - 5d74aab: Return isComplete of true in routing step when no resource is selected
 - 144eb0b: [MASTRA-3669] Metadata Filter Types
 - Updated dependencies [98bbe5a]
-  - @mastra/schema-compat@0.10.3-alpha.0
+  - @datawarp/mastra-schema-compat@0.10.3-alpha.0
 
 ## 0.10.7-alpha.1
 
@@ -872,11 +872,11 @@
 
 - d1ed912: dependencies updates:
   - Updated dependency [`dotenv@^16.5.0` ↗︎](https://www.npmjs.com/package/dotenv/v/16.5.0) (from `^16.4.7`, in `dependencies`)
-- f6fd25f: Updates @mastra/schema-compat to allow all zod schemas. Uses @mastra/schema-compat to apply schema transformations to agent output schema.
+- f6fd25f: Updates @datawarp/mastra-schema-compat to allow all zod schemas. Uses @datawarp/mastra-schema-compat to apply schema transformations to agent output schema.
 - dffb67b: updated stores to add alter table and change tests
 - f1f1f1b: Add basic filtering capabilities to logs
 - 925ab94: added paginated functions to base class and added boilerplate and updated imports
-- f9816ae: Create @mastra/schema-compat package to extract the schema compatibility layer to be used outside of mastra
+- f9816ae: Create @datawarp/mastra-schema-compat package to extract the schema compatibility layer to be used outside of mastra
 - 82090c1: Add pagination to logs
 - 1b443fd: - add trackException to loggers to allow mastra cloud to track exceptions at runtime
   - Added generic MastraBaseError<D, C> in packages/core/src/error/index.ts to improve type safety and flexibility of error handling
@@ -887,7 +887,7 @@
 - 48eddb9: update filter logic in Memory class to support semantic recall search scope
 - Updated dependencies [f6fd25f]
 - Updated dependencies [f9816ae]
-  - @mastra/schema-compat@0.10.2
+  - @datawarp/mastra-schema-compat@0.10.2
 
 ## 0.10.4-alpha.3
 
@@ -905,12 +905,12 @@
 
 ### Patch Changes
 
-- f6fd25f: Updates @mastra/schema-compat to allow all zod schemas. Uses @mastra/schema-compat to apply schema transformations to agent output schema.
+- f6fd25f: Updates @datawarp/mastra-schema-compat to allow all zod schemas. Uses @datawarp/mastra-schema-compat to apply schema transformations to agent output schema.
 - dffb67b: updated stores to add alter table and change tests
 - f1309d3: Now that UIMessages are stored, we added a check to make sure large text files or source urls are not sent to the LLM for thread title generation.
 - f7f8293: Added LanceDB implementations for MastraVector and MastraStorage
 - Updated dependencies [f6fd25f]
-  - @mastra/schema-compat@0.10.2-alpha.3
+  - @datawarp/mastra-schema-compat@0.10.2-alpha.3
 
 ## 0.10.4-alpha.0
 
@@ -919,14 +919,14 @@
 - d1ed912: dependencies updates:
   - Updated dependency [`dotenv@^16.5.0` ↗︎](https://www.npmjs.com/package/dotenv/v/16.5.0) (from `^16.4.7`, in `dependencies`)
 - f1f1f1b: Add basic filtering capabilities to logs
-- f9816ae: Create @mastra/schema-compat package to extract the schema compatibility layer to be used outside of mastra
+- f9816ae: Create @datawarp/mastra-schema-compat package to extract the schema compatibility layer to be used outside of mastra
 - 82090c1: Add pagination to logs
 - 1b443fd: - add trackException to loggers to allow mastra cloud to track exceptions at runtime
   - Added generic MastraBaseError<D, C> in packages/core/src/error/index.ts to improve type safety and flexibility of error handling
 - ce97900: Add paginated APIs to cloudflare-d1 storage class
 - 14a2566: Add pagination to libsql storage APIs
 - Updated dependencies [f9816ae]
-  - @mastra/schema-compat@0.10.2-alpha.2
+  - @datawarp/mastra-schema-compat@0.10.2-alpha.2
 
 ## 0.10.3
 
@@ -1077,8 +1077,8 @@
 
 ### Minor Changes
 
-- 5eb5a99: Remove pino from @mastra/core into @mastra/loggers
-- 7e632c5: Removed default LibSQLStore and LibSQLVector from @mastra/core. These now live in a separate package @mastra/libsql
+- 5eb5a99: Remove pino from @datawarp/mastra-core into @datawarp/mastra-loggers
+- 7e632c5: Removed default LibSQLStore and LibSQLVector from @datawarp/mastra-core. These now live in a separate package @datawarp/mastra-libsql
 - b2ae5aa: Added support for experimental authentication and authorization
 - 0dcb9f0: Memory breaking changes: storage, vector, and embedder are now required. Working memory text streaming has been removed, only tool calling is supported for working memory updates now. Default settings have changed (lastMessages: 40->10, semanticRecall: true->false, threads.generateTitle: true->false)
 
@@ -1087,23 +1087,23 @@
 - b3a3d63: BREAKING: Make vnext workflow the default worklow, and old workflow legacy_workflow
 - 344f453: Await onFinish & onStepFinish to ensure the stream doesn't close early
 - 0a3ae6d: Fixed a bug where tool input schema properties that were optional became required
-- 95911be: Fixed an issue where if @mastra/core was not released at the same time as create-mastra, create-mastra would match the alpha tag instead of latest tag when running npm create mastra@latest
+- 95911be: Fixed an issue where if @datawarp/mastra-core was not released at the same time as create-mastra, create-mastra would match the alpha tag instead of latest tag when running npm create mastra@latest
 - f53a6ac: Add VNextWorkflowRuns type
 - 1e9fbfa: Upgrade to OpenTelemetry JS SDK 2.x
 - eabdcd9: [MASTRA-3451] SQL Injection Protection
 - 90be034: Pass zod schema directly to getInitData
-- 99f050a: Bumped a workspace package zod version to attempt to prevent duplicate dep installs of @mastra/core
+- 99f050a: Bumped a workspace package zod version to attempt to prevent duplicate dep installs of @datawarp/mastra-core
 - d0ee3c6: Change all public functions and constructors in vector stores to use named args and prepare to phase out positional args
 - 23f258c: Add new list and get routes for mcp servers. Changed route make-up for more consistency with existing API routes. Lastly, added in a lot of extra detail that can be optionally passed to the mcp server per the mcp spec.
-- a7292b0: BREAKING(@mastra/core, all vector stores): Vector store breaking changes (remove deprecated functions and positional arguments)
+- a7292b0: BREAKING(@datawarp/mastra-core, all vector stores): Vector store breaking changes (remove deprecated functions and positional arguments)
 - 2672a05: Add MCP servers and tool call execution to playground
 
 ## 0.10.0-alpha.1
 
 ### Minor Changes
 
-- 5eb5a99: Remove pino from @mastra/core into @mastra/loggers
-- 7e632c5: Removed default LibSQLStore and LibSQLVector from @mastra/core. These now live in a separate package @mastra/libsql
+- 5eb5a99: Remove pino from @datawarp/mastra-core into @datawarp/mastra-loggers
+- 7e632c5: Removed default LibSQLStore and LibSQLVector from @datawarp/mastra-core. These now live in a separate package @datawarp/mastra-libsql
 - b2ae5aa: Added support for experimental authentication and authorization
 - 0dcb9f0: Memory breaking changes: storage, vector, and embedder are now required. Working memory text streaming has been removed, only tool calling is supported for working memory updates now. Default settings have changed (lastMessages: 40->10, semanticRecall: true->false, threads.generateTitle: true->false)
 
@@ -1112,9 +1112,9 @@
 - b3a3d63: BREAKING: Make vnext workflow the default worklow, and old workflow legacy_workflow
 - 344f453: Await onFinish & onStepFinish to ensure the stream doesn't close early
 - 0a3ae6d: Fixed a bug where tool input schema properties that were optional became required
-- 95911be: Fixed an issue where if @mastra/core was not released at the same time as create-mastra, create-mastra would match the alpha tag instead of latest tag when running npm create mastra@latest
+- 95911be: Fixed an issue where if @datawarp/mastra-core was not released at the same time as create-mastra, create-mastra would match the alpha tag instead of latest tag when running npm create mastra@latest
 - 1e9fbfa: Upgrade to OpenTelemetry JS SDK 2.x
-- a7292b0: BREAKING(@mastra/core, all vector stores): Vector store breaking changes (remove deprecated functions and positional arguments)
+- a7292b0: BREAKING(@datawarp/mastra-core, all vector stores): Vector store breaking changes (remove deprecated functions and positional arguments)
 
 ## 0.9.5-alpha.0
 
@@ -1123,7 +1123,7 @@
 - f53a6ac: Add VNextWorkflowRuns type
 - eabdcd9: [MASTRA-3451] SQL Injection Protection
 - 90be034: Pass zod schema directly to getInitData
-- 99f050a: Bumped a workspace package zod version to attempt to prevent duplicate dep installs of @mastra/core
+- 99f050a: Bumped a workspace package zod version to attempt to prevent duplicate dep installs of @datawarp/mastra-core
 - d0ee3c6: Change all public functions and constructors in vector stores to use named args and prepare to phase out positional args
 - 23f258c: Add new list and get routes for mcp servers. Changed route make-up for more consistency with existing API routes. Lastly, added in a lot of extra detail that can be optionally passed to the mcp server per the mcp spec.
 - 2672a05: Add MCP servers and tool call execution to playground
@@ -1241,8 +1241,8 @@
 - 17826a9: Added a breaking change warning about deprecated working memory "use: 'text-stream'" which is being fully replaced by "use: 'tool-call'"
 - 7d8b7c7: In vnext getworkflowRunById, pick run from this.#runs if it does not exist in storage
 - fba031f: Show traces for vNext workflow
-- 3a5f1e1: Created a new @mastra/fastembed package based on the default embedder in @mastra/core as the default embedder will be removed in a breaking change (May 20th)
-  Added a warning to use the new @mastra/fastembed package instead of the default embedder
+- 3a5f1e1: Created a new @datawarp/mastra-fastembed package based on the default embedder in @datawarp/mastra-core as the default embedder will be removed in a breaking change (May 20th)
+  Added a warning to use the new @datawarp/mastra-fastembed package instead of the default embedder
 - 51e6923: fix ts errors on default proxy storage
 - 8398d89: vNext: dynamic input mappings
 
@@ -1252,8 +1252,8 @@
 
 - 6052aa6: Add getWorkflowRunById to vNext workflow core and server handler
 - 7d8b7c7: In vnext getworkflowRunById, pick run from this.#runs if it does not exist in storage
-- 3a5f1e1: Created a new @mastra/fastembed package based on the default embedder in @mastra/core as the default embedder will be removed in a breaking change (May 20th)
-  Added a warning to use the new @mastra/fastembed package instead of the default embedder
+- 3a5f1e1: Created a new @datawarp/mastra-fastembed package based on the default embedder in @datawarp/mastra-core as the default embedder will be removed in a breaking change (May 20th)
+  Added a warning to use the new @datawarp/mastra-fastembed package instead of the default embedder
 - 8398d89: vNext: dynamic input mappings
 
 ## 0.9.2-alpha.5
@@ -1574,13 +1574,13 @@
 - 56c31b7: Batch insert messages for libsql adapter
 - 5ae0180: Removed prefixed doc references
 - fe56be0: exclude \_\_primitive, getMemory, hasOwnMemory from traces since they create noisy traces
-- 93875ed: Improved the performance of Memory semantic recall by 2 to 3 times when using pg by making tweaks to @mastra/memory @mastra/core and @mastra/pg
+- 93875ed: Improved the performance of Memory semantic recall by 2 to 3 times when using pg by making tweaks to @datawarp/mastra-memory @datawarp/mastra-core and @datawarp/mastra-pg
 - 107bcfe: Fixed JSON parsing in memory component to prevent crashes when encountering strings that start with '[' or '{' but are not valid JSON
 - 9bfa12b: Accept ID on step config
 - 515ebfb: Fix compound subscriber bug
 - 5b4e19f: fix hanging and excessive workflow execution
 - dbbbf80: Added clickhouse storage
-- a0967a0: Added new "Memory Processor" feature to @mastra/core and @mastra/memory, allowing devs to modify Mastra Memory before it's sent to the LLM
+- a0967a0: Added new "Memory Processor" feature to @datawarp/mastra-core and @datawarp/mastra-memory, allowing devs to modify Mastra Memory before it's sent to the LLM
 - fca3b21: fix server in mastra not to be mandatory
 - 88fa727: Added getWorkflowRuns for libsql, pg, clickhouse and upstash as well as added route getWorkflowRunsHandler
 - f37f535: Added variables to while and until loops
@@ -1622,7 +1622,7 @@
 
 ### Patch Changes
 
-- 93875ed: Improved the performance of Memory semantic recall by 2 to 3 times when using pg by making tweaks to @mastra/memory @mastra/core and @mastra/pg
+- 93875ed: Improved the performance of Memory semantic recall by 2 to 3 times when using pg by making tweaks to @datawarp/mastra-memory @datawarp/mastra-core and @datawarp/mastra-pg
 
 ## 0.8.0-alpha.4
 
@@ -1661,7 +1661,7 @@
 ### Patch Changes
 
 - fe56be0: exclude \_\_primitive, getMemory, hasOwnMemory from traces since they create noisy traces
-- a0967a0: Added new "Memory Processor" feature to @mastra/core and @mastra/memory, allowing devs to modify Mastra Memory before it's sent to the LLM
+- a0967a0: Added new "Memory Processor" feature to @datawarp/mastra-core and @datawarp/mastra-memory, allowing devs to modify Mastra Memory before it's sent to the LLM
 - fca3b21: fix server in mastra not to be mandatory
 - 0118361: Add resourceId to memory metadata
 - 619c39d: AgentStep -> Agent as a workflow step (WIP)
@@ -2038,7 +2038,7 @@
 - e62de74: Fix optional tool llm
   execute
 - 0d25b75: Add all agent stream,generate option to cliend-js sdk
-- fd14a3f: Updating filter location from @mastra/core/filter to @mastra/core/vector/filter
+- fd14a3f: Updating filter location from @datawarp/mastra-core/filter to @datawarp/mastra-core/vector/filter
 - 8d13b14: Fixes early exits in workflows with branching
 - 3f369a2: A better async/await based interface for suspend/resume tracking
 - 3ee4831: Fixed agent.generate() so it properly infers the return type based on output: schema | string and experimental_output: schema
@@ -2060,7 +2060,7 @@
 
 - 0fd78ac: Update vector store functions to use object params
 - 0d25b75: Add all agent stream,generate option to cliend-js sdk
-- fd14a3f: Updating filter location from @mastra/core/filter to @mastra/core/vector/filter
+- fd14a3f: Updating filter location from @datawarp/mastra-core/filter to @datawarp/mastra-core/vector/filter
 - 3f369a2: A better async/await based interface for suspend/resume tracking
 - 4d4e1e1: Updated vector tests and pinecone
 - bb4f447: Add support for commonjs
@@ -2192,7 +2192,7 @@
 - 5285356: Renamed MastraLibSQLStorage and MastraLibSQLVector to DefaultStorage and DefaultVectorDB. I left the old export names so that it wont break anyones projects but all docs now show the new names
 - 74b3078: Reduce verbosity in workflows API
 - 8b416d9: Breaking changes
-- 16e5b04: Moved @mastra/vector-libsql into @mastra/core/vector/libsql
+- 16e5b04: Moved @datawarp/mastra-vector-libsql into @datawarp/mastra-core/vector/libsql
 - 8769a62: Split core into seperate entry fils
 
 ### Patch Changes
@@ -2288,7 +2288,7 @@
 - dc90663: Fix issues in packages
 - c872875: update createMultiLogger to combineLogger
 - 3c4488b: Fix context not passed in agent tool execution
-- a7b016d: Added export for MockMastraEngine from @mastra/core
+- a7b016d: Added export for MockMastraEngine from @datawarp/mastra-core
 - fd75f3c: Added storage, vector, embedder setters to the base MastraMemory class
 - 7f24c29: Add Chroma Filter translator and updated vector store tests
 - 2017553: Added fallback title when calling createThread() with no title - this is needed as storage db schemas mark title as non-null
@@ -2488,7 +2488,7 @@
 ### Minor Changes
 
 - d7d465a: Breaking change for Memory: embeddings: {} has been replaced with embedder: new OpenAIEmbedder() (or whichever embedder you want - check the docs)
-- 16e5b04: Moved @mastra/vector-libsql into @mastra/core/vector/libsql
+- 16e5b04: Moved @datawarp/mastra-vector-libsql into @datawarp/mastra-core/vector/libsql
 
 ### Patch Changes
 
@@ -2759,7 +2759,7 @@
 
 ### Patch Changes
 
-- a7b016d: Added export for MockMastraEngine from @mastra/core
+- a7b016d: Added export for MockMastraEngine from @datawarp/mastra-core
 - da2e8d3: Export EmbedManyResult and EmbedResult from ai sdk and update docs
 - 538a136: Added Simple Condition for workflows, updated /api/workflows/{workflowId}/execute endpoint and docs
 

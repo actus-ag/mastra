@@ -4,7 +4,7 @@ import {
   copilotRuntimeNextJSAppRouterEndpoint,
 } from "@copilotkit/runtime";
 import { NextRequest, NextResponse } from "next/server";
-import { MastraClient } from "@mastra/client-js";
+import { MastraClient } from "@datawarp/mastra-client-js";
 
 const baseUrl = process.env.MASTRA_AGENT_URL || "http://localhost:4111";
 

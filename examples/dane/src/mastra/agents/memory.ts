@@ -1,5 +1,5 @@
-import { Memory } from '@mastra/memory';
-import { UpstashStore } from '@mastra/upstash';
+import { Memory } from '@datawarp/mastra-memory';
+import { UpstashStore } from '@datawarp/mastra-upstash';
 
 export const memory = new Memory({
   storage: new UpstashStore({

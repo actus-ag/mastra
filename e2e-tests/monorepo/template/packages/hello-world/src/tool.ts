@@ -1,4 +1,4 @@
-import { createTool } from '@mastra/core/tools';
+import { createTool } from '@datawarp/mastra-core/tools';
 import { HELLO_WORLD } from './constants';
 
 export const helloWorldTool = createTool({

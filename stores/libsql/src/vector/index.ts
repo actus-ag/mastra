@@ -1,9 +1,9 @@
 import { createClient } from '@libsql/client';
 import type { Client as TursoClient, InValue } from '@libsql/client';
 
-import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
-import { parseSqlIdentifier } from '@mastra/core/utils';
-import { MastraVector } from '@mastra/core/vector';
+import { ErrorCategory, ErrorDomain, MastraError } from '@datawarp/mastra-core/error';
+import { parseSqlIdentifier } from '@datawarp/mastra-core/utils';
+import { MastraVector } from '@datawarp/mastra-core/vector';
 import type {
   IndexStats,
   QueryResult,
@@ -14,7 +14,7 @@ import type {
   DeleteIndexParams,
   DeleteVectorParams,
   UpdateVectorParams,
-} from '@mastra/core/vector';
+} from '@datawarp/mastra-core/vector';
 import type { LibSQLVectorFilter } from './filter';
 import { LibSQLFilterTranslator } from './filter';
 import { buildFilterQuery } from './sql-builder';

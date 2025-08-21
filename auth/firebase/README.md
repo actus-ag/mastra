@@ -1,15 +1,15 @@
-# @mastra/auth-firebase
+# @datawarp/mastra-auth-firebase
 
 A Firebase authentication integration package for Mastra applications. This package provides seamless integration with Firebase Authentication and Firestore for user authentication and authorization.
 
 ## Installation
 
 ```bash
-npm install @mastra/auth-firebase
+npm install @datawarp/mastra-auth-firebase
 # or
-yarn add @mastra/auth-firebase
+yarn add @datawarp/mastra-auth-firebase
 # or
-pnpm add @mastra/auth-firebase
+pnpm add @datawarp/mastra-auth-firebase
 ```
 
 ## Features
@@ -23,8 +23,8 @@ pnpm add @mastra/auth-firebase
 ## Usage
 
 ```typescript
-import { Mastra } from '@mastra/core';
-import { MastraAuthFirebase } from '@mastra/auth-firebase';
+import { Mastra } from '@datawarp/mastra-core';
+import { MastraAuthFirebase } from '@datawarp/mastra-auth-firebase';
 
 // Initialize with default configuration
 const auth = new MastraAuthFirebase();

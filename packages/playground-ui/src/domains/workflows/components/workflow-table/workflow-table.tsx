@@ -1,4 +1,4 @@
-import { GetLegacyWorkflowResponse, GetWorkflowResponse } from '@mastra/client-js';
+import { GetLegacyWorkflowResponse, GetWorkflowResponse } from '@datawarp/mastra-client-js';
 import { Button } from '@/ds/components/Button';
 import { EmptyState } from '@/ds/components/EmptyState';
 import { Cell, Row, Table, Tbody, Th, Thead } from '@/ds/components/Table';

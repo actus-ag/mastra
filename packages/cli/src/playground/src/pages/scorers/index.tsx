@@ -1,5 +1,5 @@
-import { useScorers } from '@mastra/playground-ui';
-import { DataTable, Header, HeaderTitle, MainContentLayout } from '@mastra/playground-ui';
+import { useScorers } from '@datawarp/mastra-playground-ui';
+import { DataTable, Header, HeaderTitle, MainContentLayout } from '@datawarp/mastra-playground-ui';
 import { scorersTableColumns } from '@/domains/agents/table.columns';
 
 export default function Scorers() {

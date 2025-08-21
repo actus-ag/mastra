@@ -81,7 +81,7 @@ myWorkflow.step(stepOne).then(stepTwo).commit();
 Mastraにワークフローを登録して、ログとテレメトリを有効にします：
 
 ```ts showLineNumbers filename="src/mastra/index.ts"
-import { Mastra } from "@mastra/core";
+import { Mastra } from "@datawarp/mastra-core";
 
 export const mastra = new Mastra({
   workflows: { myWorkflow },
@@ -91,7 +91,7 @@ export const mastra = new Mastra({
 動的なワークフローを作成する必要がある場合には、mastraインスタンスをコンテキストに注入することもできます：
 
 ```ts filename="src/mastra/workflow/index.ts"
-import { Mastra } from "@mastra/core";
+import { Mastra } from "@datawarp/mastra-core";
 
 const mastra = new Mastra();
 

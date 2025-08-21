@@ -1,4 +1,4 @@
-# @mastra/auth-firebase
+# @datawarp/mastra-auth-firebase
 
 ## 0.10.1
 

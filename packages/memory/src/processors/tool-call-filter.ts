@@ -1,5 +1,5 @@
-import type { CoreMessage } from '@mastra/core';
-import { MemoryProcessor } from '@mastra/core';
+import type { CoreMessage } from '@datawarp/mastra-core';
+import { MemoryProcessor } from '@datawarp/mastra-core';
 
 /**
  * Filters out tool calls and results from messages.

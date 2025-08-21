@@ -1,4 +1,4 @@
-import { Mastra } from '@mastra/core';
+import { Mastra } from '@datawarp/mastra-core';
 
 import 'dotenv/config';
 

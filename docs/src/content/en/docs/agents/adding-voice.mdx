@@ -9,8 +9,8 @@ The simplest way to add voice to an agent is to use a single provider for both s
 ```typescript
 import { createReadStream } from "fs";
 import path from "path";
-import { Agent } from "@mastra/core/agent";
-import { OpenAIVoice } from "@mastra/voice-openai";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { OpenAIVoice } from "@datawarp/mastra-voice-openai";
 import { openai } from "@ai-sdk/openai";
 
 // Initialize the voice provider with default settings
@@ -44,10 +44,10 @@ try {
 For more flexibility, you can use different providers for speaking and listening using the CompositeVoice class:
 
 ```typescript
-import { Agent } from "@mastra/core/agent";
-import { CompositeVoice } from "@mastra/core/voice";
-import { OpenAIVoice } from "@mastra/voice-openai";
-import { PlayAIVoice } from "@mastra/voice-playai";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { CompositeVoice } from "@datawarp/mastra-core/voice";
+import { OpenAIVoice } from "@datawarp/mastra-voice-openai";
+import { PlayAIVoice } from "@datawarp/mastra-voice-playai";
 import { openai } from "@ai-sdk/openai";
 
 export const agent = new Agent({
@@ -116,9 +116,9 @@ try {
 For more dynamic and interactive voice experiences, you can use real-time voice providers that support speech-to-speech capabilities:
 
 ```typescript
-import { Agent } from "@mastra/core/agent";
-import { getMicrophoneStream } from "@mastra/node-audio";
-import { OpenAIRealtimeVoice } from "@mastra/voice-openai-realtime";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { getMicrophoneStream } from "@datawarp/mastra-node-audio";
+import { OpenAIRealtimeVoice } from "@datawarp/mastra-voice-openai-realtime";
 import { search, calculate } from "../tools";
 
 // Initialize the realtime voice provider
@@ -182,16 +182,16 @@ Mastra supports multiple voice providers for text-to-speech (TTS) and speech-to-
 
 | Provider        | Package                         | Features                  | Reference                                         |
 | --------------- | ------------------------------- | ------------------------- | ------------------------------------------------- |
-| OpenAI          | `@mastra/voice-openai`          | TTS, STT                  | [Documentation](/reference/voice/openai)          |
-| OpenAI Realtime | `@mastra/voice-openai-realtime` | Realtime speech-to-speech | [Documentation](/reference/voice/openai-realtime) |
-| ElevenLabs      | `@mastra/voice-elevenlabs`      | High-quality TTS          | [Documentation](/reference/voice/elevenlabs)      |
-| PlayAI          | `@mastra/voice-playai`          | TTS                       | [Documentation](/reference/voice/playai)          |
-| Google          | `@mastra/voice-google`          | TTS, STT                  | [Documentation](/reference/voice/google)          |
-| Deepgram        | `@mastra/voice-deepgram`        | STT                       | [Documentation](/reference/voice/deepgram)        |
-| Murf            | `@mastra/voice-murf`            | TTS                       | [Documentation](/reference/voice/murf)            |
-| Speechify       | `@mastra/voice-speechify`       | TTS                       | [Documentation](/reference/voice/speechify)       |
-| Sarvam          | `@mastra/voice-sarvam`          | TTS, STT                  | [Documentation](/reference/voice/sarvam)          |
-| Azure           | `@mastra/voice-azure`           | TTS, STT                  | [Documentation](/reference/voice/mastra-voice)    |
-| Cloudflare      | `@mastra/voice-cloudflare`      | TTS                       | [Documentation](/reference/voice/mastra-voice)    |
+| OpenAI          | `@datawarp/mastra-voice-openai`          | TTS, STT                  | [Documentation](/reference/voice/openai)          |
+| OpenAI Realtime | `@datawarp/mastra-voice-openai-realtime` | Realtime speech-to-speech | [Documentation](/reference/voice/openai-realtime) |
+| ElevenLabs      | `@datawarp/mastra-voice-elevenlabs`      | High-quality TTS          | [Documentation](/reference/voice/elevenlabs)      |
+| PlayAI          | `@datawarp/mastra-voice-playai`          | TTS                       | [Documentation](/reference/voice/playai)          |
+| Google          | `@datawarp/mastra-voice-google`          | TTS, STT                  | [Documentation](/reference/voice/google)          |
+| Deepgram        | `@datawarp/mastra-voice-deepgram`        | STT                       | [Documentation](/reference/voice/deepgram)        |
+| Murf            | `@datawarp/mastra-voice-murf`            | TTS                       | [Documentation](/reference/voice/murf)            |
+| Speechify       | `@datawarp/mastra-voice-speechify`       | TTS                       | [Documentation](/reference/voice/speechify)       |
+| Sarvam          | `@datawarp/mastra-voice-sarvam`          | TTS, STT                  | [Documentation](/reference/voice/sarvam)          |
+| Azure           | `@datawarp/mastra-voice-azure`           | TTS, STT                  | [Documentation](/reference/voice/mastra-voice)    |
+| Cloudflare      | `@datawarp/mastra-voice-cloudflare`      | TTS                       | [Documentation](/reference/voice/mastra-voice)    |
 
 For more details on voice capabilities, see the [Voice API Reference](/reference/voice/mastra-voice).

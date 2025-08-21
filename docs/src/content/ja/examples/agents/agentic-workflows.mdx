@@ -10,9 +10,9 @@ import { GithubLink } from "@/components/github-link";
 AI アプリケーションを構築する際、互いの出力に依存する複数のステップを調整する必要がよくあります。この例では、天気データを取得し、それを使用してアクティビティを提案する AI ワークフローを作成する方法を示しています。外部 API と LLM を活用した計画をどのように統合するかを実演しています。
 
 ```ts showLineNumbers copy
-import { Mastra } from "@mastra/core";
-import { Agent } from "@mastra/core/agent";
-import { Step, Workflow } from "@mastra/core/workflows";
+import { Mastra } from "@datawarp/mastra-core";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { Step, Workflow } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 import { openai } from "@ai-sdk/openai";
 

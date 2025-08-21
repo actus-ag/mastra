@@ -12,15 +12,15 @@
   "license": "MIT",
   "dependencies": {
     "@ai-sdk/openai": "^1.3.22",
-    "@mastra/core": "latest",
+    "@datawarp/mastra-core": "latest",
     "@supabase/supabase-js": "^2.49.4",
     "mastra": "latest",
-    "@mastra/auth": "latest",
-    "@mastra/auth-supabase": "latest",
-    "@mastra/auth-firebase": "latest",
-    "@mastra/auth-auth0": "latest",
-    "@mastra/auth-workos": "latest",
-    "@mastra/auth-clerk": "latest",
+    "@datawarp/mastra-auth": "latest",
+    "@datawarp/mastra-auth-supabase": "latest",
+    "@datawarp/mastra-auth-firebase": "latest",
+    "@datawarp/mastra-auth-auth0": "latest",
+    "@datawarp/mastra-auth-workos": "latest",
+    "@datawarp/mastra-auth-clerk": "latest",
     "zod": "^3.25.67"
   },
   "devDependencies": {
@@ -29,14 +29,14 @@
   "version": "0.0.1",
   "pnpm": {
     "overrides": {
-      "@mastra/core": "link:../../packages/core",
+      "@datawarp/mastra-core": "link:../../packages/core",
       "mastra": "link:../../packages/cli",
-      "@mastra/auth": "link:../../packages/auth",
-      "@mastra/auth-supabase": "link:../../auth/supabase",
-      "@mastra/auth-firebase": "link:../../auth/firebase",
-      "@mastra/auth-auth0": "link:../../auth/auth0",
-      "@mastra/auth-workos": "link:../../auth/workos",
-      "@mastra/auth-clerk": "link:../../auth/clerk"
+      "@datawarp/mastra-auth": "link:../../packages/auth",
+      "@datawarp/mastra-auth-supabase": "link:../../auth/supabase",
+      "@datawarp/mastra-auth-firebase": "link:../../auth/firebase",
+      "@datawarp/mastra-auth-auth0": "link:../../auth/auth0",
+      "@datawarp/mastra-auth-workos": "link:../../auth/workos",
+      "@datawarp/mastra-auth-clerk": "link:../../auth/clerk"
     }
   },
   "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39"

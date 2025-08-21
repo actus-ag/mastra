@@ -1,7 +1,7 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@mastra/core/agent';
-import { Memory } from '@mastra/memory';
-import { PostgresStore } from '@mastra/pg';
+import { Agent } from '@datawarp/mastra-core/agent';
+import { Memory } from '@datawarp/mastra-memory';
+import { PostgresStore } from '@datawarp/mastra-pg';
 
 const connectionString = process.env.POSTGRES_URL!;
 const memory = new Memory({

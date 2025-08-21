@@ -30,9 +30,9 @@ const voice = new OpenAIRealtimeVoice();
 ## Using STS
 
 ```typescript
-import { Agent } from "@mastra/core/agent";
-import { OpenAIRealtimeVoice } from "@mastra/voice-openai-realtime";
-import { playAudio, getMicrophoneStream } from "@mastra/node-audio";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { OpenAIRealtimeVoice } from "@datawarp/mastra-voice-openai-realtime";
+import { playAudio, getMicrophoneStream } from "@datawarp/mastra-node-audio";
 
 const agent = new Agent({
   name: "Agent",
@@ -62,9 +62,9 @@ For integrating Speech-to-Speech capabilities with agents, refer to the [Adding 
 ## Google Gemini Live (Realtime)
 
 ```typescript
-import { Agent } from "@mastra/core/agent";
-import { GeminiLiveVoice } from "@mastra/voice-google-gemini-live";
-import { playAudio, getMicrophoneStream } from "@mastra/node-audio";
+import { Agent } from "@datawarp/mastra-core/agent";
+import { GeminiLiveVoice } from "@datawarp/mastra-voice-google-gemini-live";
+import { playAudio, getMicrophoneStream } from "@datawarp/mastra-node-audio";
 
 const agent = new Agent({
   name: 'Agent',

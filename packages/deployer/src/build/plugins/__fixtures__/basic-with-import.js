@@ -1,5 +1,5 @@
-import { Mastra } from '@mastra/core/mastra';
-import { createLogger } from '@mastra/core/logger';
+import { Mastra } from '@datawarp/mastra-core/mastra';
+import { createLogger } from '@datawarp/mastra-core/logger';
 import { weatherAgent } from '@/agents';
 import { testDeployer } from '@mastra/deployer/test';
 import { telemetryConfig } from '@/telemetry';

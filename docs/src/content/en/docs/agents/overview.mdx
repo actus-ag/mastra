@@ -26,7 +26,7 @@ This approach provides type safety and runtime validation, ensuring reliable beh
 To use agents, install the required dependencies:
 
 ```bash
-npm install @mastra/core @ai-sdk/openai
+npm install @datawarp/mastra-core @ai-sdk/openai
 ```
 
 > Mastra works with all AI SDK provider. See [Model Providers](../getting-started/model-providers.mdx) for more information.
@@ -35,7 +35,7 @@ Import the necessary class from the agents module, and an LLM provider:
 
 ```typescript filename="src/mastra/agents/test-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 ```
 ### LLM providers
 
@@ -53,7 +53,7 @@ To create an agent in Mastra, use the `Agent` class. Every agent must include `i
 
 ```typescript filename="src/mastra/agents/test-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 
 export const testAgent = new Agent({
   name: "test-agent",
@@ -70,7 +70,7 @@ export const testAgent = new Agent({
 Register your agent in the Mastra instance:
 
 ```typescript showLineNumbers filename="src/mastra/index.ts" copy
-import { Mastra } from "@mastra/core/mastra";
+import { Mastra } from "@datawarp/mastra-core/mastra";
 import { testAgent } from './agents/test-agent';
 
 export const mastra = new Mastra({

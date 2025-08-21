@@ -1,17 +1,17 @@
-# @mastra/opensearch
+# @datawarp/mastra-opensearch
 
 Vector store implementation for OpenSearch using the official @opensearch-project/opensearch SDK
 
 ## Installation
 
 ```bash
-pnpm add @mastra/opensearch
+pnpm add @datawarp/mastra-opensearch
 ```
 
 ## Usage
 
 ```typescript
-import { OpenSearchVector } from '@mastra/opensearch';
+import { OpenSearchVector } from '@datawarp/mastra-opensearch';
 
 const vectorStore = new OpenSearchVector('http://localhost:9200');
 

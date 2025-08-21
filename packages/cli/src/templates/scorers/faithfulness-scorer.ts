@@ -1,6 +1,6 @@
 export const faithfulnessScorer = `
 import { openai } from "@ai-sdk/openai";
-import { createFaithfulnessScorer } from "@mastra/evals/scorers/llm";
+import { createFaithfulnessScorer } from "@datawarp/mastra-evals/scorers/llm";
  
 const scorer = createFaithfulnessScorer({ model: openai("gpt-4o-mini"), options: {
   context: [

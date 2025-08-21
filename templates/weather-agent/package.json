@@ -14,8 +14,8 @@
   "type": "module",
   "dependencies": {
     "@ai-sdk/openai": "^1.3.22",
-    "@mastra/core": "latest",
-    "@mastra/loggers": "latest",
+    "@datawarp/mastra-core": "latest",
+    "@datawarp/mastra-loggers": "latest",
     "zod": "^3.25.67"
   },
   "devDependencies": {

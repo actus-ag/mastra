@@ -1,8 +1,8 @@
 import { openai } from '@ai-sdk/openai';
-import { Mastra } from '@mastra/core';
-import { Agent } from '@mastra/core/agent';
-import { PgVector } from '@mastra/pg';
-import { createVectorQueryTool } from '@mastra/rag';
+import { Mastra } from '@datawarp/mastra-core';
+import { Agent } from '@datawarp/mastra-core/agent';
+import { PgVector } from '@datawarp/mastra-pg';
+import { createVectorQueryTool } from '@datawarp/mastra-rag';
 
 const vectorQueryTool = createVectorQueryTool({
   vectorStoreName: 'pgVector',

@@ -1,4 +1,4 @@
-import type { MastraAuthConfig } from '@mastra/core/server';
+import type { MastraAuthConfig } from '@datawarp/mastra-core/server';
 import type { HonoRequest } from 'hono';
 import { defaultAuthConfig } from './defaults';
 

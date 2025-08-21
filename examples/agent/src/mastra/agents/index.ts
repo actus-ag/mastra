@@ -1,13 +1,13 @@
 import { openai } from '@ai-sdk/openai';
 import { google } from '@ai-sdk/google';
 import { jsonSchema, tool } from 'ai';
-import { OpenAIVoice } from '@mastra/voice-openai';
-import { Memory } from '@mastra/memory';
-import { Agent, InputProcessor } from '@mastra/core/agent';
+import { OpenAIVoice } from '@datawarp/mastra-voice-openai';
+import { Memory } from '@datawarp/mastra-memory';
+import { Agent, InputProcessor } from '@datawarp/mastra-core/agent';
 import { cookingTool } from '../tools/index.js';
 import { myWorkflow } from '../workflows/index.js';
-import { PIIDetector, LanguageDetector, PromptInjectionDetector, ModerationProcessor } from '@mastra/core/processors';
-import { createAnswerRelevancyScorer } from '@mastra/evals/scorers/llm';
+import { PIIDetector, LanguageDetector, PromptInjectionDetector, ModerationProcessor } from '@datawarp/mastra-core/processors';
+import { createAnswerRelevancyScorer } from '@datawarp/mastra-evals/scorers/llm';
 
 const memory = new Memory();
 

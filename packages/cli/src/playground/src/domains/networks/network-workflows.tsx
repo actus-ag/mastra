@@ -1,5 +1,5 @@
-import { GetVNextNetworkResponse } from '@mastra/client-js';
-import { WorkflowIcon } from '@mastra/playground-ui';
+import { GetVNextNetworkResponse } from '@datawarp/mastra-client-js';
+import { WorkflowIcon } from '@datawarp/mastra-playground-ui';
 
 export function NetworkWorkflows({ network }: { network: GetVNextNetworkResponse }) {
   if (!network.workflows || network.workflows.length === 0) {

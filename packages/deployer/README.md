@@ -1,16 +1,16 @@
-# @mastra/deployer
+# @datawarp/mastra-deployer
 
 Core deployment infrastructure for Mastra applications, handling build, packaging, and deployment processes.
 
 ## Installation
 
 ```bash
-npm install @mastra/deployer
+npm install @datawarp/mastra-deployer
 ```
 
 ## Overview
 
-The `@mastra/deployer` package provides the foundational deployment infrastructure for Mastra applications. It handles:
+The `@datawarp/mastra-deployer` package provides the foundational deployment infrastructure for Mastra applications. It handles:
 
 - Project building and bundling
 - Dependency management
@@ -20,7 +20,7 @@ The `@mastra/deployer` package provides the foundational deployment infrastructu
 ## Usage
 
 ```typescript
-import { Deployer } from '@mastra/deployer';
+import { Deployer } from '@datawarp/mastra-deployer';
 
 // Create a deployer instance
 const deployer = new Deployer({
@@ -105,7 +105,7 @@ The deployer automatically manages dependencies in the `.mastra/package.json`:
   "version": "1.0.0",
   "type": "module",
   "dependencies": {
-    "@mastra/loggers": "latest",
+    "@datawarp/mastra-loggers": "latest",
     "hono": "4.6.17",
     "@hono/node-server": "^1.13.7",
     "superjson": "^2.2.2",
@@ -143,7 +143,7 @@ The deployer includes comprehensive error handling for:
 
 ## Logging
 
-Built-in logging support through @mastra/core:
+Built-in logging support through @datawarp/mastra-core:
 
 - Debug information
 - Installation progress
@@ -152,8 +152,8 @@ Built-in logging support through @mastra/core:
 
 ## Related Packages
 
-- `@mastra/core`: Core Mastra functionality
-- `@mastra/loggers`: Logging infrastructure
+- `@datawarp/mastra-core`: Core Mastra functionality
+- `@datawarp/mastra-loggers`: Logging infrastructure
 - Deployer implementations:
-  - `@mastra/deployer-cloudflare`
+  - `@datawarp/mastra-deployer-cloudflare`
   - Other platform-specific deployers

@@ -9,7 +9,7 @@ import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
 import { Document } from '@/db/schema';
-import { MessageType } from '@mastra/core';
+import { MessageType } from '@datawarp/mastra-core';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

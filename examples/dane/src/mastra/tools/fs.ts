@@ -1,4 +1,4 @@
-import { createTool } from '@mastra/core/tools';
+import { createTool } from '@datawarp/mastra-core/tools';
 import { readFileSync, writeFileSync } from 'fs';
 import { z } from 'zod';
 

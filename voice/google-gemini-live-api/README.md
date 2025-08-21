@@ -1,11 +1,11 @@
-# @mastra/voice-google-gemini-live
+# @datawarp/mastra-voice-google-gemini-live
 
 Google Gemini Live API integration for Mastra, providing real-time multimodal voice interactions with advanced capabilities including video input, tool calling, and session management.
 
 ## Installation
 
 ```bash
-npm install @mastra/voice-google-gemini-live
+npm install @datawarp/mastra-voice-google-gemini-live
 ```
 
 ## Configuration
@@ -67,7 +67,7 @@ When using Vertex AI, ensure your service account or user has these IAM roles:
 ## Usage
 
 ```typescript
-import { GeminiLiveVoice } from '@mastra/voice-google-gemini-live';
+import { GeminiLiveVoice } from '@datawarp/mastra-voice-google-gemini-live';
 
 // Initialize with Gemini API
 const voice = new GeminiLiveVoice({
@@ -325,12 +325,12 @@ Registers an event listener.
 
 ### Tools
 
-Add tools with `addTools()` using either `@mastra/core/tools` or a plain object matching `ToolsInput`.
+Add tools with `addTools()` using either `@datawarp/mastra-core/tools` or a plain object matching `ToolsInput`.
 
 Using `createTool`:
 
 ```ts
-import { createTool } from '@mastra/core/tools';
+import { createTool } from '@datawarp/mastra-core/tools';
 import { z } from 'zod';
 
 const searchTool = createTool({

@@ -57,7 +57,7 @@ Let's define the agent's behavior, connect it to your Mastra project, and create
 After running the [installation guide](/docs/getting-started/installation) you'll need to install additional dependencies:
 
 ```bash copy
-npm install @mastra/rag@latest ai@^4.0.0
+npm install @datawarp/mastra-rag@latest ai@^4.0.0
 ```
 
 <Callout type="info">
@@ -77,9 +77,9 @@ Now you'll create your RAG-enabled research assistant. The agent uses:
 Create a new file `src/mastra/agents/researchAgent.ts` and define your agent:
 
 ```ts copy filename="src/mastra/agents/researchAgent.ts"
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
-import { createVectorQueryTool } from "@mastra/rag";
+import { createVectorQueryTool } from "@datawarp/mastra-rag";
 
 // Create a tool for semantic search over the paper embeddings
 const vectorQueryTool = createVectorQueryTool({
@@ -114,8 +114,8 @@ In the root of your project, grab the absolute path with the `pwd` command. The 
 In your `src/mastra/index.ts` file, add the following to your existing file and configuration:
 
 ```ts copy filename="src/mastra/index.ts" {2, 4-6, 9}
-import { Mastra } from "@mastra/core/mastra";
-import { LibSQLVector } from "@mastra/libsql";
+import { Mastra } from "@datawarp/mastra-core/mastra";
+import { LibSQLVector } from "@datawarp/mastra-libsql";
 
 const libSqlVector = new LibSQLVector({
   connectionUrl: "file:/Users/your-name/guides/research-assistant/vector.db",
@@ -139,8 +139,8 @@ For the `connectionUrl` use the absolute path you got from the `pwd` command. Th
 In the `src/mastra/index.ts` file, add the agent to Mastra:
 
 ```ts copy filename="src/mastra/index.ts" {3, 10}
-import { Mastra } from "@mastra/core/mastra";
-import { LibSQLVector } from "@mastra/libsql";
+import { Mastra } from "@datawarp/mastra-core/mastra";
+import { LibSQLVector } from "@datawarp/mastra-libsql";
 import { researchAgent } from "./agents/researchAgent";
 
 const libSqlVector = new LibSQLVector({
@@ -168,7 +168,7 @@ In this step the research paper is retrieved by providing an URL, then converted
 Create a new file `src/store.ts` and add the following:
 
 ```ts copy filename="src/store.ts"
-import { MDocument } from "@mastra/rag";
+import { MDocument } from "@datawarp/mastra-rag";
 
 // Load the paper
 const paperUrl = "https://arxiv.org/html/1706.03762";
@@ -217,7 +217,7 @@ This allows the agent to efficiently search and retrieve relevant information.
 Open the `src/store.ts` file and add the following:
 
 ```ts copy filename="src/store.ts" {2-4, 20-99}
-import { MDocument } from "@mastra/rag";
+import { MDocument } from "@datawarp/mastra-rag";
 import { openai } from "@ai-sdk/openai";
 import { embedMany } from "ai";
 import { mastra } from "./mastra";

@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@ai-sdk/anthropic": "latest",
-    "@mastra/core": "latest",
+    "@datawarp/mastra-core": "latest",
     "braintrust": "^0.0.168",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -30,7 +30,7 @@
   },
   "pnpm": {
     "overrides": {
-      "@mastra/core": "link:../../packages/core"
+      "@datawarp/mastra-core": "link:../../packages/core"
     }
   },
   "devDependencies": {

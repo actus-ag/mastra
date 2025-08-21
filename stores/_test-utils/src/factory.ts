@@ -1,5 +1,5 @@
 import { describe, beforeAll, afterAll } from 'vitest';
-import type { MastraStorage } from '@mastra/core/storage';
+import type { MastraStorage } from '@datawarp/mastra-core/storage';
 import {
   TABLE_WORKFLOW_SNAPSHOT,
   TABLE_EVALS,
@@ -8,7 +8,7 @@ import {
   TABLE_RESOURCES,
   TABLE_SCORERS,
   TABLE_TRACES,
-} from '@mastra/core/storage';
+} from '@datawarp/mastra-core/storage';
 import { createScoresTest } from './domains/scores';
 import { createMemoryTest } from './domains/memory';
 import { createWorkflowsTests } from './domains/workflows';

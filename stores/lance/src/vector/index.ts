@@ -11,10 +11,10 @@ import type {
   QueryVectorParams,
   UpdateVectorParams,
   UpsertVectorParams,
-} from '@mastra/core';
-import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+} from '@datawarp/mastra-core';
+import { ErrorCategory, ErrorDomain, MastraError } from '@datawarp/mastra-core/error';
 
-import { MastraVector } from '@mastra/core/vector';
+import { MastraVector } from '@datawarp/mastra-core/vector';
 import type { LanceVectorFilter } from './filter';
 import { LanceFilterTranslator } from './filter';
 import type { IndexConfig } from './types';

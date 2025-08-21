@@ -1,5 +1,5 @@
 import { createSampleThread } from '@internal/storage-test-utils';
-import type { StorageColumn, TABLE_NAMES } from '@mastra/core/storage';
+import type { StorageColumn, TABLE_NAMES } from '@datawarp/mastra-core/storage';
 import pgPromise from 'pg-promise';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest';
 import { PostgresStore } from '.';

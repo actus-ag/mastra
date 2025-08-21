@@ -1,10 +1,10 @@
 import { openai } from '@ai-sdk/openai';
 import { anthropic } from '@ai-sdk/anthropic';
-import { NewAgentNetwork } from '@mastra/core/network/vNext';
-import { Agent } from '@mastra/core/agent';
-import { createStep, createWorkflow } from '@mastra/core/workflows';
-import { LibSQLStore } from '@mastra/libsql';
-import { Memory } from '@mastra/memory';
+import { NewAgentNetwork } from '@datawarp/mastra-core/network/vNext';
+import { Agent } from '@datawarp/mastra-core/agent';
+import { createStep, createWorkflow } from '@datawarp/mastra-core/workflows';
+import { LibSQLStore } from '@datawarp/mastra-libsql';
+import { Memory } from '@datawarp/mastra-memory';
 import { z } from 'zod';
 import { weatherAgent } from '../agents';
 import { weatherTool } from '../tools';

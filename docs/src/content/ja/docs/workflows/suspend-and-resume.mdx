@@ -167,8 +167,8 @@ if (improveResponseStepResult?.status === "suspended") {
 デフォルトでは、MastraはストレージエンジンとしてLibSQLを使用します：
 
 ```typescript
-import { Mastra } from "@mastra/core/mastra";
-import { LibSQLStore } from "@mastra/libsql";
+import { Mastra } from "@datawarp/mastra-core/mastra";
+import { LibSQLStore } from "@datawarp/mastra-libsql";
 
 const mastra = new Mastra({
   storage: new LibSQLStore({
@@ -193,12 +193,12 @@ LibSQLストレージは異なるモードで設定できます：
 サーバーレスアプリケーションやRedisが好ましい環境向け：
 
 ```bash copy
-npm install @mastra/upstash@latest
+npm install @datawarp/mastra-upstash@latest
 ```
 
 ```typescript
-import { Mastra } from "@mastra/core/mastra";
-import { UpstashStore } from "@mastra/upstash";
+import { Mastra } from "@datawarp/mastra-core/mastra";
+import { UpstashStore } from "@datawarp/mastra-upstash";
 
 const mastra = new Mastra({
   storage: new UpstashStore({
@@ -276,8 +276,8 @@ console.log(
 デフォルトでは、Mastra は LibSQL をストレージエンジンとして使用します:
 
 ```typescript
-import { Mastra } from "@mastra/core/mastra";
-import { DefaultStorage } from "@mastra/core/storage/libsql";
+import { Mastra } from "@datawarp/mastra-core/mastra";
+import { DefaultStorage } from "@datawarp/mastra-core/storage/libsql";
 
 const mastra = new Mastra({
   storage: new DefaultStorage({
@@ -304,12 +304,12 @@ LibSQL ストレージは異なるモードで構成できます:
 サーバーレスアプリケーションやRedisが好まれる環境向け:
 
 ```bash
-npm install @mastra/upstash
+npm install @datawarp/mastra-upstash
 ```
 
 ```typescript
-import { Mastra } from "@mastra/core/mastra";
-import { UpstashStore } from "@mastra/upstash";
+import { Mastra } from "@datawarp/mastra-core/mastra";
+import { UpstashStore } from "@datawarp/mastra-upstash";
 
 const mastra = new Mastra({
   storage: new UpstashStore({

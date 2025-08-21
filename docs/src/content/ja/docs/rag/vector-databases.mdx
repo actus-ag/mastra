@@ -14,7 +14,7 @@ import { Tabs } from "nextra/components";
 <Tabs items={['Pg Vector', 'Pinecone', 'Qdrant', 'Chroma', 'Astra', 'LibSQL', 'Upstash', 'Cloudflare', 'MongoDB', 'OpenSearch']}>
   <Tabs.Tab>
     ```ts filename="vector-store.ts" showLineNumbers copy
-      import { PgVector } from '@mastra/pg';
+      import { PgVector } from '@datawarp/mastra-pg';
 
     const store = new PgVector({ connectionString: process.env.POSTGRES_CONNECTION_STRING })
     await store.createIndex({
@@ -39,7 +39,7 @@ import { Tabs } from "nextra/components";
   <Tabs.Tab>
     ```ts filename="vector-store.ts" showLineNumbers copy
 
-      import { PineconeVector } from '@mastra/pinecone'
+      import { PineconeVector } from '@datawarp/mastra-pinecone'
 
       const store = new PineconeVector({
         apiKey: process.env.PINECONE_API_KEY,
@@ -59,7 +59,7 @@ import { Tabs } from "nextra/components";
 
   <Tabs.Tab>
     ```ts filename="vector-store.ts" showLineNumbers copy
-      import { QdrantVector } from '@mastra/qdrant'
+      import { QdrantVector } from '@datawarp/mastra-qdrant'
 
     const store = new QdrantVector({
     url: process.env.QDRANT_URL,
@@ -81,7 +81,7 @@ import { Tabs } from "nextra/components";
 
   <Tabs.Tab>
     ```ts filename="vector-store.ts" showLineNumbers copy
-    import { ChromaVector } from '@mastra/chroma'
+    import { ChromaVector } from '@datawarp/mastra-chroma'
 
     const store = new ChromaVector()
     await store.createIndex({
@@ -99,7 +99,7 @@ import { Tabs } from "nextra/components";
 
   <Tabs.Tab>
     ```ts filename="vector-store.ts" showLineNumbers copy
-      import { AstraVector } from '@mastra/astra'
+      import { AstraVector } from '@datawarp/mastra-astra'
 
     const store = new AstraVector({
     token: process.env.ASTRA_DB_TOKEN,
@@ -122,7 +122,7 @@ import { Tabs } from "nextra/components";
 
   <Tabs.Tab>
     ```ts filename="vector-store.ts" showLineNumbers copy
-    import { LibSQLVector } from "@mastra/core/vector/libsql";
+    import { LibSQLVector } from "@datawarp/mastra-core/vector/libsql";
 
     const store = new LibSQLVector({
       connectionUrl: process.env.DATABASE_URL,
@@ -143,7 +143,7 @@ import { Tabs } from "nextra/components";
 
   <Tabs.Tab>
     ```ts filename="vector-store.ts" showLineNumbers copy
-      import { UpstashVector } from '@mastra/upstash'
+      import { UpstashVector } from '@datawarp/mastra-upstash'
 
     const store = new UpstashVector({
     url: process.env.UPSTASH_URL,
@@ -165,7 +165,7 @@ import { Tabs } from "nextra/components";
 
   <Tabs.Tab>
     ```ts filename="vector-store.ts" showLineNumbers copy
-    import { CloudflareVector } from '@mastra/vectorize'
+    import { CloudflareVector } from '@datawarp/mastra-vectorize'
 
     const store = new CloudflareVector({
       accountId: process.env.CF_ACCOUNT_ID,
@@ -186,7 +186,7 @@ import { Tabs } from "nextra/components";
 
   <Tabs.Tab>
     ```ts filename="vector-store.ts" showLineNumbers copy
-      import { MongoDBVector } from '@mastra/mongodb'
+      import { MongoDBVector } from '@datawarp/mastra-mongodb'
 
     const store = new MongoDBVector({
     url: process.env.MONGODB_URL,
@@ -208,7 +208,7 @@ import { Tabs } from "nextra/components";
 
   <Tabs.Tab>
     ```ts filename="vector-store.ts" showLineNumbers copy
-    import { OpenSearchVector } from '@mastra/opensearch'
+    import { OpenSearchVector } from '@datawarp/mastra-opensearch'
 
     const store = new OpenSearchVector(process.env.OPENSEARCH_URL)
     await store.createIndex({

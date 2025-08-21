@@ -1,4 +1,4 @@
-import { createContentSimilarityScorer } from '@mastra/evals/scorers/code';
+import { createContentSimilarityScorer } from '@datawarp/mastra-evals/scorers/code';
 
 // Configure the scorer
 const scorer = createContentSimilarityScorer();

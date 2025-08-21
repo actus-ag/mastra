@@ -1,5 +1,5 @@
 import { useMastraClient } from '@/contexts/mastra-client-context';
-import { GetWorkflowRunsResponse } from '@mastra/client-js';
+import { GetWorkflowRunsResponse } from '@datawarp/mastra-client-js';
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 

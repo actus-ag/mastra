@@ -1,6 +1,6 @@
 import { anthropic } from "@ai-sdk/anthropic";
-import { Memory } from "@mastra/memory";
-import { Agent } from "@mastra/core/agent";
+import { Memory } from "@datawarp/mastra-memory";
+import { Agent } from "@datawarp/mastra-core/agent";
 
 import {
   searchAirbnb,

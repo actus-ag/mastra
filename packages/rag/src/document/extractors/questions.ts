@@ -1,5 +1,5 @@
-import { Agent } from '@mastra/core/agent';
-import type { MastraLanguageModel } from '@mastra/core/agent';
+import { Agent } from '@datawarp/mastra-core/agent';
+import type { MastraLanguageModel } from '@datawarp/mastra-core/agent';
 import { PromptTemplate, defaultQuestionExtractPrompt } from '../prompts';
 import type { QuestionExtractPrompt } from '../prompts';
 import type { BaseNode } from '../schema';

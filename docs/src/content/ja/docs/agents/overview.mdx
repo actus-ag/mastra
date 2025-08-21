@@ -14,7 +14,7 @@ Mastraのエージェントは、言語モデルがタスクを実行するた�
 Mastraでエージェントを作成するには、`Agent`クラスを使用してそのプロパティを定義します：
 
 ```ts showLineNumbers filename="src/mastra/agents/index.ts" copy
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
 
 export const myAgent = new Agent({
@@ -30,10 +30,10 @@ export const myAgent = new Agent({
 OPENAI_API_KEY=your_openai_api_key
 ```
 
-また、`@mastra/core`パッケージがインストールされていることを確認してください：
+また、`@datawarp/mastra-core`パッケージがインストールされていることを確認してください：
 
 ```bash npm2yarn copy
-npm install @mastra/core@latest
+npm install @datawarp/mastra-core@latest
 ```
 
 ### エージェントの登録
@@ -41,7 +41,7 @@ npm install @mastra/core@latest
 エージェントをMastraに登録して、ロギングや設定されたツールと統合へのアクセスを有効にします：
 
 ```ts showLineNumbers filename="src/mastra/index.ts" copy
-import { Mastra } from "@mastra/core";
+import { Mastra } from "@datawarp/mastra-core";
 import { myAgent } from "./agents";
 
 export const mastra = new Mastra({
@@ -194,7 +194,7 @@ console.log("Structured Output:", response.object);
 `maxSteps`パラメータは、エージェントが行うことができる連続したLLM呼び出しの最大数を制御します。これは特にツール呼び出しを使用する際に重要です。デフォルトでは、誤設定されたツールによる無限ループを防ぐために1に設定されています。ユースケースに応じてこの制限を増やすことができます：
 
 ```ts showLineNumbers filename="src/mastra/agents/index.ts" copy
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
 import * as mathjs from "mathjs";
 import { z } from "zod";

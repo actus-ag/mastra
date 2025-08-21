@@ -1,10 +1,10 @@
-import { createWorkflow, createStep } from '@mastra/core/workflows';
+import { createWorkflow, createStep } from '@datawarp/mastra-core/workflows';
 import { z } from 'zod';
 import { databaseIntrospectionTool } from '../tools/database-introspection-tool';
 import { sqlGenerationTool } from '../tools/sql-generation-tool';
 import { sqlExecutionTool } from '../tools/sql-execution-tool';
 import { databaseSeedingTool } from '../tools/database-seeding-tool';
-import { RuntimeContext } from '@mastra/core/di';
+import { RuntimeContext } from '@datawarp/mastra-core/di';
 
 // Step 1: Get connection string
 const getConnectionStep = createStep({

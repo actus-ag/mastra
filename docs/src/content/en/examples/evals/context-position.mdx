@@ -15,7 +15,7 @@ Use `ContextPositionMetric` to evaluate whether the response is supported by the
 ## Installation
 
 ```bash copy
-npm install @mastra/evals
+npm install @datawarp/mastra-evals
 ```
 
 ## High position example
@@ -24,7 +24,7 @@ In this example, the response directly answers the query using the first stateme
 
 ```typescript filename="src/example-high-position.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { ContextPositionMetric } from "@mastra/evals/llm";
+import { ContextPositionMetric } from "@datawarp/mastra-evals/llm";
 
 const metric = new ContextPositionMetric(openai("gpt-4o-mini"), {
   context: [
@@ -62,7 +62,7 @@ In this example, the response combines highly relevant information with addition
 
 ```typescript filename="src/example-mixed-position.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { ContextPositionMetric } from "@mastra/evals/llm";
+import { ContextPositionMetric } from "@datawarp/mastra-evals/llm";
 
 const metric = new ContextPositionMetric(openai("gpt-4o-mini"), {
   context: [
@@ -101,7 +101,7 @@ In this example, the response references relevant information located at the end
 
 ```typescript filename="src/example-low-position.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { ContextPositionMetric } from "@mastra/evals/llm";
+import { ContextPositionMetric } from "@datawarp/mastra-evals/llm";
 
 const metric = new ContextPositionMetric(openai("gpt-4o-mini"), {
   context: [

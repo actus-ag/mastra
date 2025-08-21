@@ -1,4 +1,4 @@
-import type { MastraAuthConfig } from '@mastra/core/server';
+import type { MastraAuthConfig } from '@datawarp/mastra-core/server';
 
 // Default configuration that can be extended by clients
 export const defaultAuthConfig: MastraAuthConfig = {

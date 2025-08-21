@@ -1,7 +1,7 @@
 import { removeAllOptionsExceptBundler } from './babel/remove-all-options-bundler';
-import type { Config } from '@mastra/core/mastra';
+import type { Config } from '@datawarp/mastra-core/mastra';
 import { extractMastraOption, extractMastraOptionBundler } from './shared/extract-mastra-option';
-import type { IMastraLogger } from '@mastra/core/logger';
+import type { IMastraLogger } from '@datawarp/mastra-core/logger';
 
 export function getBundlerOptionsBundler(
   entryFile: string,

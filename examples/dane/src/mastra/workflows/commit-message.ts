@@ -1,11 +1,11 @@
 import { confirm } from '@inquirer/prompts';
-import { Step, Workflow } from '@mastra/core/workflows';
+import { Step, Workflow } from '@datawarp/mastra-core/workflows';
 import chalk from 'chalk';
 import { execSync } from 'child_process';
 import { z } from 'zod';
 
 import { fsTool } from '../tools/fs.js';
-import { RuntimeContext } from '@mastra/core/di';
+import { RuntimeContext } from '@datawarp/mastra-core/di';
 
 export const commitMessageGenerator = new Workflow({
   name: 'commit-message',

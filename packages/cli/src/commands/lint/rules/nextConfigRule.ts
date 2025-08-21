@@ -43,7 +43,7 @@ export const nextConfigRule: LintRule = {
 
     const serverExternals = nextConfig.serverExternalPackages || [];
     const hasMastraExternals = serverExternals.some(
-      (pkg: string) => pkg === '@mastra/*' || pkg === '@mastra/core' || pkg.startsWith('@mastra/'),
+      (pkg: string) => pkg === '@mastra/*' || pkg === '@datawarp/mastra-core' || pkg.startsWith('@mastra/'),
     );
 
     if (!hasMastraExternals) {

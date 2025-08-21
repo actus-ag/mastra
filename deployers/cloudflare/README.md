@@ -1,4 +1,4 @@
-# @mastra/deployer-cloudflare
+# @datawarp/mastra-deployer-cloudflare
 
 A Cloudflare Workers deployer for Mastra applications.
 
@@ -12,7 +12,7 @@ A Cloudflare Workers deployer for Mastra applications.
 ## Installation
 
 ```bash
-pnpm add @mastra/deployer-cloudflare
+pnpm add @datawarp/mastra-deployer-cloudflare
 ```
 
 ## Usage
@@ -20,8 +20,8 @@ pnpm add @mastra/deployer-cloudflare
 The Cloudflare deployer is used as part of the Mastra framework:
 
 ```typescript
-import { Mastra } from '@mastra/core';
-import { CloudflareDeployer } from '@mastra/deployer-cloudflare';
+import { Mastra } from '@datawarp/mastra-core';
+import { CloudflareDeployer } from '@datawarp/mastra-deployer-cloudflare';
 
 const deployer = new CloudflareDeployer({
   scope: 'your-account-id',

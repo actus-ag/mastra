@@ -10,13 +10,13 @@ The PostgreSQL storage implementation provides a production-ready storage soluti
 ## Installation
 
 ```bash copy
-npm install @mastra/pg@latest
+npm install @datawarp/mastra-pg@latest
 ```
 
 ## Usage
 
 ```typescript copy showLineNumbers
-import { PostgresStore } from "@mastra/pg";
+import { PostgresStore } from "@datawarp/mastra-pg";
 
 const storage = new PostgresStore({
   connectionString: process.env.DATABASE_URL,
@@ -49,7 +49,7 @@ const storage = new PostgresStore({
 You can instantiate `PostgresStore` in the following ways:
 
 ```ts
-import { PostgresStore } from "@mastra/pg";
+import { PostgresStore } from "@datawarp/mastra-pg";
 
 // Using a connection string only
 const store1 = new PostgresStore({

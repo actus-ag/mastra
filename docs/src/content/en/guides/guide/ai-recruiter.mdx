@@ -28,7 +28,7 @@ Set up the Workflow, define steps to extract and classify candidate data, and th
 Create a new file `src/mastra/workflows/candidate-workflow.ts` and define your workflow:
 
 ```ts copy filename="src/mastra/workflows/candidate-workflow.ts"
-import { createWorkflow, createStep } from "@mastra/core/workflows";
+import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows";
 import { z } from "zod";
 
 export const candidateWorkflow = createWorkflow({
@@ -49,7 +49,7 @@ You want to extract candidate details from the resume text and classify the pers
 To the existing `src/mastra/workflows/candidate-workflow.ts` file add the following:
 
 ```ts copy filename="src/mastra/workflows/candidate-workflow.ts"
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@datawarp/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
 
 const recruiter = new Agent({
@@ -177,7 +177,7 @@ export const candidateWorkflow = createWorkflow({
 In your `src/mastra/index.ts` file, register the workflow:
 
 ```ts copy filename="src/mastra/index.ts" {2, 5}
-import { Mastra } from "@mastra/core";
+import { Mastra } from "@datawarp/mastra-core";
 import { candidateWorkflow } from "./workflows/candidate-workflow";
 
 export const mastra = new Mastra({

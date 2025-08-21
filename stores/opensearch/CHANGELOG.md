@@ -1,4 +1,4 @@
-# @mastra/opensearch
+# @datawarp/mastra-opensearch
 
 ## 0.11.4
 
@@ -22,14 +22,14 @@
 - Updated dependencies [c30bca8]
 - Updated dependencies [3b5fec7]
 - Updated dependencies [a8f129d]
-  - @mastra/core@0.14.0
+  - @datawarp/mastra-core@0.14.0
 
 ## 0.11.4-alpha.0
 
 ### Patch Changes
 
 - 03997ae: Update peerdeps
-  - @mastra/core@0.14.0-alpha.7
+  - @datawarp/mastra-core@0.14.0-alpha.7
 
 ## 0.11.3
 
@@ -50,7 +50,7 @@
 - Updated dependencies [5d377e5]
 - Updated dependencies [1fb812e]
 - Updated dependencies [35c5798]
-  - @mastra/core@0.13.0
+  - @datawarp/mastra-core@0.13.0
 
 ## 0.11.3-alpha.0
 
@@ -63,7 +63,7 @@
 - Updated dependencies [2871020]
 - Updated dependencies [4a406ec]
 - Updated dependencies [5d377e5]
-  - @mastra/core@0.13.0-alpha.2
+  - @datawarp/mastra-core@0.13.0-alpha.2
 
 ## 0.11.2
 
@@ -93,21 +93,21 @@
 - Updated dependencies [b8efbb9]
 - Updated dependencies [71466e7]
 - Updated dependencies [0c99fbe]
-  - @mastra/core@0.12.0
+  - @datawarp/mastra-core@0.12.0
 
 ## 0.11.2-alpha.0
 
 ### Patch Changes
 
 - f42c4c2: update peer deps for packages to latest core range
-  - @mastra/core@0.12.0-alpha.5
+  - @datawarp/mastra-core@0.12.0-alpha.5
 
 ## 0.11.1
 
 ### Patch Changes
 
 - ce088f5: Update all peerdeps to latest core
-  - @mastra/core@0.11.1
+  - @datawarp/mastra-core@0.11.1
 
 ## 0.11.0
 
@@ -136,7 +136,7 @@
 - Updated dependencies [8ba1b51]
 - Updated dependencies [4efcfa0]
 - Updated dependencies [0e17048]
-  - @mastra/core@0.10.7
+  - @datawarp/mastra-core@0.10.7
 
 ## 0.11.0-alpha.2
 
@@ -149,7 +149,7 @@
 - Updated dependencies [792c4c0]
 - Updated dependencies [502fe05]
 - Updated dependencies [4efcfa0]
-  - @mastra/core@0.10.7-alpha.3
+  - @datawarp/mastra-core@0.10.7-alpha.3
 
 ## 0.10.4-alpha.1
 
@@ -160,7 +160,7 @@
 - Updated dependencies [07d6d88]
 - Updated dependencies [5d74aab]
 - Updated dependencies [144eb0b]
-  - @mastra/core@0.10.7-alpha.2
+  - @datawarp/mastra-core@0.10.7-alpha.2
 
 ## 0.10.4-alpha.0
 
@@ -173,7 +173,7 @@
 - Updated dependencies [4fb0cc2]
 - Updated dependencies [d2a7a31]
 - Updated dependencies [0e17048]
-  - @mastra/core@0.10.7-alpha.1
+  - @datawarp/mastra-core@0.10.7-alpha.1
 
 ## 0.10.3
 
@@ -196,7 +196,7 @@
 - Updated dependencies [751c894]
 - Updated dependencies [577ce3a]
 - Updated dependencies [9260b3a]
-  - @mastra/core@0.10.6
+  - @datawarp/mastra-core@0.10.6
 
 ## 0.10.3-alpha.0
 
@@ -208,7 +208,7 @@
 - Updated dependencies [36f1c36]
 - Updated dependencies [10d352e]
 - Updated dependencies [53d3c37]
-  - @mastra/core@0.10.6-alpha.0
+  - @datawarp/mastra-core@0.10.6-alpha.0
 
 ## 0.10.2
 
@@ -228,7 +228,7 @@
 - Updated dependencies [14a2566]
 - Updated dependencies [f7f8293]
 - Updated dependencies [48eddb9]
-  - @mastra/core@0.10.4
+  - @datawarp/mastra-core@0.10.4
 
 ## 0.10.2-alpha.0
 
@@ -260,7 +260,7 @@
 - Updated dependencies [79d5145]
 - Updated dependencies [12b7002]
 - Updated dependencies [2901125]
-  - @mastra/core@0.10.2
+  - @datawarp/mastra-core@0.10.2
 
 ## 0.10.1-alpha.1
 
@@ -268,7 +268,7 @@
 
 - f0d559f: Fix peerdeps for alpha channel
 - Updated dependencies [1e8bb40]
-  - @mastra/core@0.10.2-alpha.2
+  - @datawarp/mastra-core@0.10.2-alpha.2
 
 ## 0.10.1-alpha.0
 
@@ -278,18 +278,18 @@
   Added prompt for OpenSearchVector
 - Updated dependencies [ee77e78]
 - Updated dependencies [2901125]
-  - @mastra/core@0.10.2-alpha.1
+  - @datawarp/mastra-core@0.10.2-alpha.1
 
 ## 0.10.0
 
 ### Minor Changes
 
-- 83da932: Move @mastra/core to peerdeps
+- 83da932: Move @datawarp/mastra-core to peerdeps
 
 ### Patch Changes
 
 - d0ee3c6: Change all public functions and constructors in vector stores to use named args and prepare to phase out positional args
-- a7292b0: BREAKING(@mastra/core, all vector stores): Vector store breaking changes (remove deprecated functions and positional arguments)
+- a7292b0: BREAKING(@datawarp/mastra-core, all vector stores): Vector store breaking changes (remove deprecated functions and positional arguments)
 - Updated dependencies [b3a3d63]
 - Updated dependencies [344f453]
 - Updated dependencies [0a3ae6d]
@@ -307,17 +307,17 @@
 - Updated dependencies [a7292b0]
 - Updated dependencies [0dcb9f0]
 - Updated dependencies [2672a05]
-  - @mastra/core@0.10.0
+  - @datawarp/mastra-core@0.10.0
 
 ## 0.2.0-alpha.1
 
 ### Minor Changes
 
-- 83da932: Move @mastra/core to peerdeps
+- 83da932: Move @datawarp/mastra-core to peerdeps
 
 ### Patch Changes
 
-- a7292b0: BREAKING(@mastra/core, all vector stores): Vector store breaking changes (remove deprecated functions and positional arguments)
+- a7292b0: BREAKING(@datawarp/mastra-core, all vector stores): Vector store breaking changes (remove deprecated functions and positional arguments)
 - Updated dependencies [b3a3d63]
 - Updated dependencies [344f453]
 - Updated dependencies [0a3ae6d]
@@ -328,7 +328,7 @@
 - Updated dependencies [b2ae5aa]
 - Updated dependencies [a7292b0]
 - Updated dependencies [0dcb9f0]
-  - @mastra/core@0.10.0-alpha.1
+  - @datawarp/mastra-core@0.10.0-alpha.1
 
 ## 0.1.2-alpha.0
 
@@ -342,7 +342,7 @@
 - Updated dependencies [d0ee3c6]
 - Updated dependencies [23f258c]
 - Updated dependencies [2672a05]
-  - @mastra/core@0.9.5-alpha.0
+  - @datawarp/mastra-core@0.9.5-alpha.0
 
 ## 0.1.1
 
@@ -363,14 +363,14 @@
 - Updated dependencies [6fa1ad1]
 - Updated dependencies [c28d7a0]
 - Updated dependencies [edf1e88]
-  - @mastra/core@0.9.4
+  - @datawarp/mastra-core@0.9.4
 
 ## 0.1.1-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [3e9c131]
-  - @mastra/core@0.9.4-alpha.4
+  - @datawarp/mastra-core@0.9.4-alpha.4
 
 ## 0.1.1-alpha.3
 
@@ -381,7 +381,7 @@
 - Updated dependencies [c3bd795]
 - Updated dependencies [da082f8]
 - Updated dependencies [a5810ce]
-  - @mastra/core@0.9.4-alpha.3
+  - @datawarp/mastra-core@0.9.4-alpha.3
 
 ## 0.1.1-alpha.2
 
@@ -390,7 +390,7 @@
 - Updated dependencies [3171b5b]
 - Updated dependencies [973e5ac]
 - Updated dependencies [9e1eff5]
-  - @mastra/core@0.9.4-alpha.2
+  - @datawarp/mastra-core@0.9.4-alpha.2
 
 ## 0.1.1-alpha.1
 
@@ -400,7 +400,7 @@
 - Updated dependencies [6fa1ad1]
 - Updated dependencies [c28d7a0]
 - Updated dependencies [edf1e88]
-  - @mastra/core@0.9.4-alpha.1
+  - @datawarp/mastra-core@0.9.4-alpha.1
 
 ## 0.1.1-alpha.0
 
@@ -408,7 +408,7 @@
 
 - Updated dependencies [daf942f]
 - Updated dependencies [0b8b868]
-  - @mastra/core@0.9.4-alpha.0
+  - @datawarp/mastra-core@0.9.4-alpha.0
 
 ## 0.1.0
 
@@ -424,4 +424,4 @@
 - Updated dependencies [b5d2de0]
 - Updated dependencies [644f8ad]
 - Updated dependencies [70dbf51]
-  - @mastra/core@0.9.3
+  - @datawarp/mastra-core@0.9.3

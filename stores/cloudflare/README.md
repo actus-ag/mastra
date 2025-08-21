@@ -1,11 +1,11 @@
-# @mastra/cloudflare
+# @datawarp/mastra-cloudflare
 
 Cloudflare KV store for Mastra, providing scalable and serverless storage for threads, messages, workflow snapshots, and evaluations. Supports both Cloudflare Workers KV Bindings and the REST API for flexible deployment in serverless and Node.js environments.
 
 ## Installation
 
 ```bash
-npm install @mastra/cloudflare
+npm install @datawarp/mastra-cloudflare
 ```
 
 ## Prerequisites
@@ -17,7 +17,7 @@ npm install @mastra/cloudflare
 ## Usage
 
 ```typescript
-import { CloudflareStore } from '@mastra/cloudflare';
+import { CloudflareStore } from '@datawarp/mastra-cloudflare';
 
 // Using Workers Binding API
 const store = new CloudflareStore({

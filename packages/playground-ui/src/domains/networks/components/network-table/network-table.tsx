@@ -2,7 +2,7 @@ import { Button } from '@/ds/components/Button';
 import { EmptyState } from '@/ds/components/EmptyState';
 import { AgentNetworkCoinIcon } from '@/ds/icons/AgentNetworkCoinIcon';
 import { Icon } from '@/ds/icons/Icon';
-import { GetNetworkResponse, GetVNextNetworkResponse } from '@mastra/client-js';
+import { GetNetworkResponse, GetVNextNetworkResponse } from '@datawarp/mastra-client-js';
 import { NetworkIcon } from 'lucide-react';
 import { NetworkTableColumn } from './types';
 import { useMemo } from 'react';

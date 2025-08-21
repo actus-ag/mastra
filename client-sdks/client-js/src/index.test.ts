@@ -1,8 +1,8 @@
 import { describe, expect, beforeEach, it, vi } from 'vitest';
 import { MastraClient } from './client';
 import type { McpServerListResponse } from './types';
-import type { ServerDetailInfo } from '@mastra/core/mcp';
-import { ScoringEntityType, ScoringSource } from '@mastra/core/scores';
+import type { ServerDetailInfo } from '@datawarp/mastra-core/mcp';
+import { ScoringEntityType, ScoringSource } from '@datawarp/mastra-core/scores';
 
 // Mock fetch globally
 global.fetch = vi.fn();

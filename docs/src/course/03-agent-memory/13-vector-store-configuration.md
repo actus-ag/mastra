@@ -3,8 +3,8 @@
 In addition to the memory storage adapters, Mastra also provides vector store adapters useful for storing and retrieving vector embeddings. One of these is the `LibSQLVector` adapter, which provides a simple interface for storing and retrieving vector embeddings in a LibSQL vector database.
 
 ```typescript
-import { Memory } from "@mastra/memory";
-import { LibSQLStore, LibSQLVector } from "@mastra/libsql";
+import { Memory } from "@datawarp/mastra-memory";
+import { LibSQLStore, LibSQLVector } from "@datawarp/mastra-libsql";
 
 const memory = new Memory({
   storage: new LibSQLStore({

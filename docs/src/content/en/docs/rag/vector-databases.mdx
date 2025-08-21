@@ -22,7 +22,7 @@ The providers include Pg Vector, Pinecone, Qdrant, Chroma, Astra, LibSQL, Upstas
 <Tabs items={['MongoDB', 'Pg Vector', 'Pinecone', 'Qdrant', 'Chroma', 'Astra', 'LibSQL', 'Upstash', 'Cloudflare', 'OpenSearch', 'Couchbase', 'LanceDB']}>
   <Tabs.Tab>
     ```ts filename="vector-store.ts" showLineNumbers copy
-    import { MongoDBVector } from '@mastra/mongodb'
+    import { MongoDBVector } from '@datawarp/mastra-mongodb'
 
     const store = new MongoDBVector({
       uri: process.env.MONGODB_URI,
@@ -46,7 +46,7 @@ The providers include Pg Vector, Pinecone, Qdrant, Chroma, Astra, LibSQL, Upstas
 
   <Tabs.Tab>
   ```ts filename="vector-store.ts" showLineNumbers copy
-  import { PgVector } from '@mastra/pg';
+  import { PgVector } from '@datawarp/mastra-pg';
 
   const store = new PgVector({ connectionString: process.env.POSTGRES_CONNECTION_STRING })
 
@@ -70,7 +70,7 @@ For detailed setup instructions and best practices, see the [official pgvector r
 
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
-import { PineconeVector } from '@mastra/pinecone'
+import { PineconeVector } from '@datawarp/mastra-pinecone'
 
 const store = new PineconeVector({
   apiKey: process.env.PINECONE_API_KEY,
@@ -89,7 +89,7 @@ await store.upsert({
 
 <Tabs.Tab>
   ```ts filename="vector-store.ts" showLineNumbers copy
-  import { QdrantVector } from '@mastra/qdrant'
+  import { QdrantVector } from '@datawarp/mastra-qdrant'
 
   const store = new QdrantVector({
     url: process.env.QDRANT_URL,
@@ -112,7 +112,7 @@ await store.upsert({
 
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
-import { ChromaVector } from '@mastra/chroma'
+import { ChromaVector } from '@datawarp/mastra-chroma'
 
 // Running Chroma locally
 // const store = new ChromaVector()
@@ -139,7 +139,7 @@ await store.upsert({
 
 <Tabs.Tab>
   ```ts filename="vector-store.ts" showLineNumbers copy
-  import { AstraVector } from '@mastra/astra'
+  import { AstraVector } from '@datawarp/mastra-astra'
 
   const store = new AstraVector({
     token: process.env.ASTRA_DB_TOKEN,
@@ -164,7 +164,7 @@ await store.upsert({
 
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
-import { LibSQLVector } from "@mastra/core/vector/libsql";
+import { LibSQLVector } from "@datawarp/mastra-core/vector/libsql";
 
 const store = new LibSQLVector({
   connectionUrl: process.env.DATABASE_URL,
@@ -186,7 +186,7 @@ await store.upsert({
 
 <Tabs.Tab>
   ```ts filename="vector-store.ts" showLineNumbers copy
-  import { UpstashVector } from '@mastra/upstash'
+  import { UpstashVector } from '@datawarp/mastra-upstash'
 
   // In upstash they refer to the store as an index
   const store = new UpstashVector({
@@ -206,7 +206,7 @@ await store.upsert({
 
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
-import { CloudflareVector } from '@mastra/vectorize'
+import { CloudflareVector } from '@datawarp/mastra-vectorize'
 
 const store = new CloudflareVector({
   accountId: process.env.CF_ACCOUNT_ID,
@@ -227,7 +227,7 @@ await store.upsert({
 
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
-import { OpenSearchVector } from '@mastra/opensearch'
+import { OpenSearchVector } from '@datawarp/mastra-opensearch'
 
 const store = new OpenSearchVector({ url: process.env.OPENSEARCH_URL })
 
@@ -246,7 +246,7 @@ await store.upsert({
 </Tabs.Tab>
 <Tabs.Tab>
   ```ts filename="vector-store.ts" showLineNumbers copy
-  import { CouchbaseVector } from '@mastra/couchbase'
+  import { CouchbaseVector } from '@datawarp/mastra-couchbase'
 
   const store = new CouchbaseVector({
     connectionString: process.env.COUCHBASE_CONNECTION_STRING,
@@ -269,7 +269,7 @@ await store.upsert({
 </Tabs.Tab>
 <Tabs.Tab>
   ```ts filename="vector-store.ts" showLineNumbers copy
-  import { LanceVectorStore } from '@mastra/lance'
+  import { LanceVectorStore } from '@datawarp/mastra-lance'
 
   const store = await LanceVectorStore.create('/path/to/db')
   

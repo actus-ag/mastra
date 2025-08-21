@@ -3,10 +3,10 @@
  *
  */
 
-import { Agent } from "@mastra/core/agent"
+import { Agent } from "@datawarp/mastra-core/agent"
 import { openai } from "@ai-sdk/openai"
 import { RegistryClient } from "@mcp/registry"
-import { MCPClient } from "@mastra/mcp-configuration"
+import { MCPClient } from "@datawarp/mastra-mcp-configuration"
 import chalk from "chalk"
 import * as readline from "node:readline/promises"
 import { stdin as input, stdout as output } from "node:process"

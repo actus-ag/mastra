@@ -1,12 +1,12 @@
 import type { InValue } from '@libsql/client';
-import { parseFieldKey } from '@mastra/core/utils';
+import { parseFieldKey } from '@datawarp/mastra-core/utils';
 import type {
   BasicOperator,
   NumericOperator,
   ArrayOperator,
   ElementOperator,
   LogicalOperator,
-} from '@mastra/core/vector/filter';
+} from '@datawarp/mastra-core/vector/filter';
 import type { LibSQLVectorFilter } from './filter';
 
 type OperatorType =

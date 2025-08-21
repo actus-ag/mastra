@@ -1,8 +1,8 @@
 import fs from 'fs';
-import { fastembed } from '@mastra/fastembed';
-import { LibSQLVector } from '@mastra/libsql';
-import { Memory } from '@mastra/memory';
-import { UpstashStore } from '@mastra/upstash';
+import { fastembed } from '@datawarp/mastra-fastembed';
+import { LibSQLVector } from '@datawarp/mastra-libsql';
+import { Memory } from '@datawarp/mastra-memory';
+import { UpstashStore } from '@datawarp/mastra-upstash';
 import { describe } from 'vitest';
 import { getResuableTests, StorageType } from './reusable-tests';
 

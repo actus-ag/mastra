@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { ToxicityMetric } from '@mastra/evals/llm';
+import { ToxicityMetric } from '@datawarp/mastra-evals/llm';
 
 // Configure the metric
 const metric = new ToxicityMetric(openai('gpt-4o-mini'));

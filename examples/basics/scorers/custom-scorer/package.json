@@ -9,16 +9,16 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^1.3.22",
-    "@mastra/core": "latest",
-    "@mastra/evals": "latest",
-    "@mastra/libsql": "latest",
+    "@datawarp/mastra-core": "latest",
+    "@datawarp/mastra-evals": "latest",
+    "@datawarp/mastra-libsql": "latest",
     "zod": "^3.25.67"
   },
   "pnpm": {
     "overrides": {
-      "@mastra/core": "link:../../../../packages/core",
-      "@mastra/evals": "link:../../../../packages/evals",
-      "@mastra/libsql": "link:../../../../stores/libsql",
+      "@datawarp/mastra-core": "link:../../../../packages/core",
+      "@datawarp/mastra-evals": "link:../../../../packages/evals",
+      "@datawarp/mastra-libsql": "link:../../../../stores/libsql",
       "mastra": "link:../../../../packages/cli"
     }
   },

@@ -1,7 +1,7 @@
-import { MessageList } from '@mastra/core/agent';
-import type { MastraMessageContentV2 } from '@mastra/core/agent';
-import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
-import type { MastraMessageV1, MastraMessageV2, StorageThreadType } from '@mastra/core/memory';
+import { MessageList } from '@datawarp/mastra-core/agent';
+import type { MastraMessageContentV2 } from '@datawarp/mastra-core/agent';
+import { ErrorCategory, ErrorDomain, MastraError } from '@datawarp/mastra-core/error';
+import type { MastraMessageV1, MastraMessageV2, StorageThreadType } from '@datawarp/mastra-core/memory';
 import {
   ensureDate,
   MemoryStorage,
@@ -10,8 +10,8 @@ import {
   TABLE_MESSAGES,
   TABLE_THREADS,
   TABLE_RESOURCES,
-} from '@mastra/core/storage';
-import type { PaginationInfo, StorageGetMessagesArg, StorageResourceType } from '@mastra/core/storage';
+} from '@datawarp/mastra-core/storage';
+import type { PaginationInfo, StorageGetMessagesArg, StorageResourceType } from '@datawarp/mastra-core/storage';
 import { createSqlBuilder } from '../../sql-builder';
 import type { StoreOperationsD1 } from '../operations';
 import { deserializeValue, isArrayOfRecords } from '../utils';

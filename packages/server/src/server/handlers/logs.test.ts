@@ -1,6 +1,6 @@
-import { LogLevel } from '@mastra/core/logger';
-import type { BaseLogMessage, IMastraLogger } from '@mastra/core/logger';
-import { Mastra } from '@mastra/core/mastra';
+import { LogLevel } from '@datawarp/mastra-core/logger';
+import type { BaseLogMessage, IMastraLogger } from '@datawarp/mastra-core/logger';
+import { Mastra } from '@datawarp/mastra-core/mastra';
 import type { Mock } from 'vitest';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { HTTPException } from '../http-exception';

@@ -1,4 +1,4 @@
-import { Header, HeaderTitle, MainContentLayout, NetworkTable, MainContentContent } from '@mastra/playground-ui';
+import { Header, HeaderTitle, MainContentLayout, NetworkTable, MainContentContent } from '@datawarp/mastra-playground-ui';
 import { useNetworks, useVNextNetworks } from '@/hooks/use-networks';
 
 function Networks() {

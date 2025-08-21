@@ -5,7 +5,7 @@
     { "repo": "mastra-ai/mastra" }
   ],
   "commit": false,
-  "fixed": [["@datawarp/mastra-core", "@datawarp/mastra-server", "@datawarp/mastra-deployer"], ["mastra", "create-mastra"]],
+  "fixed": [["@datawarp/mastra-core", "@datawarp/mastra-server", "@datawarp/mastra-deployer"], ["create-mastra"]],
   "linked": [],
   "access": "public",
   "baseBranch": "main",

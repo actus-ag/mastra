@@ -52,6 +52,6 @@
     "speech-recognition"
   ],
   "peerDependencies": {
-    "@datawarp/mastra-core": "^0.10.0"
+    "@datawarp/mastra-core": "^0.14.0"
   }
 }

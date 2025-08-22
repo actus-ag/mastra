@@ -25,6 +25,12 @@ export const VNextNetworkChatProvider = ({ children }: { children: ReactNode }) 
   const { chatWithLoop } = useContext(NetworkContext);
 
   const handleStep = (uuid: string, record: Record<string, any>) => {
+    console.log('handleStep called:', { uuid, record, type: record.type });
+    
+    if (record.type === 'error') {
+      console.error('Step error received:', record);
+    }
+    
     const addFinishStep =
       (chatWithLoop && record.type === 'step-finish' && record.payload?.id === 'final-step') || record.type === 'error';
     let id = record?.type === 'finish' ? 'finish' : record.type === 'start' ? 'start' : record.payload?.id;

@@ -197,7 +197,11 @@ const StepEntry = ({ stepId, step, runId }: { stepId: any; step: any; runId?: st
               </Txt>
 
               <Txt variant="ui-sm" className="text-icon6">
-                {stepError?.message || stepError?.data?.error?.message || stepResult?.error || 'N/A'}
+                {(() => {
+                  const errorText = stepError?.message || stepError?.data?.error?.message || stepResult?.error || 'N/A';
+                  console.log('Step error details:', { stepError, stepResult, errorText });
+                  return errorText;
+                })()}
               </Txt>
             </div>
           </div>

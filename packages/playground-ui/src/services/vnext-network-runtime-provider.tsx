@@ -576,6 +576,12 @@ export function VNextMastraNetworkRuntimeProvider({
       setIsRunning(false);
     } catch (error) {
       console.error('Error occurred in VNextMastraNetworkRuntimeProvider', error);
+      console.error('Error details:', {
+        message: error.message,
+        stack: error.stack,
+        name: error.name,
+        cause: error.cause
+      });
       setIsRunning(false);
     }
   };

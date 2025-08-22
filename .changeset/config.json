@@ -5,7 +5,7 @@
     { "repo": "mastra-ai/mastra" }
   ],
   "commit": false,
-  "fixed": [["@actus-ag/mastra-core", "@actus-ag/mastra-server", "@actus-ag/mastra-deployer"], ["create-mastra"]],
+  "fixed": [["@actus-ag/mastra-core", "@actus-ag/mastra-server", "@actus-ag/mastra-deployer"], ["@actus-ag/create-mastra"]],
   "linked": [],
   "access": "public",
   "baseBranch": "main",
@@ -14,7 +14,7 @@
   "ignore": [
     "*",
     "!mastra",
-    "!create-mastra",
+    "!@actus-ag/create-mastra",
     "!@mastra/*",
     "!docs",
     "@internal/*",

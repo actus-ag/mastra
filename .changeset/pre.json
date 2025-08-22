@@ -25,7 +25,7 @@
     "@actus-ag/mastra-playground": "0.0.4",
     "@actus-ag/mastra-cloud": "0.1.8",
     "@actus-ag/mastra-core": "0.14.0",
-    "create-mastra": "0.10.22",
+    "@actus-ag/create-mastra": "0.10.22",
     "@actus-ag/mastra-deployer": "0.14.0",
     "@actus-ag/mastra-evals": "0.12.1",
     "@actus-ag/mastra-fastembed": "0.10.2",

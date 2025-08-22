@@ -1,5 +1,5 @@
 {
-  "name": "create-mastra",
+  "name": "@actus-ag/create-mastra",
   "version": "0.10.22",
   "description": "Create Mastra apps with one command",
   "license": "Apache-2.0",

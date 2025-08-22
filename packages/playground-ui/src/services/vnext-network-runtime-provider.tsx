@@ -15,7 +15,7 @@ import { useVNextNetworkChat } from '@/services/vnext-network-chat-provider';
 import { useMessages } from './vnext-message-provider';
 import { formatJSON } from '@/lib/formatting';
 import { NetworkContext } from '@/domains/networks';
-import { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
+import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
 
 const convertMessage = (message: ThreadMessageLike): ThreadMessageLike => {
   return message;

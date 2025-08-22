@@ -577,10 +577,10 @@ export function VNextMastraNetworkRuntimeProvider({
     } catch (error) {
       console.error('Error occurred in VNextMastraNetworkRuntimeProvider', error);
       console.error('Error details:', {
-        message: error.message,
-        stack: error.stack,
-        name: error.name,
-        cause: error.cause
+        message: error instanceof Error ? error.message : 'Unknown error',
+        stack: error instanceof Error ? error.stack : undefined,
+        name: error instanceof Error ? error.name : 'Unknown',
+        cause: error instanceof Error ? error.cause : undefined
       });
       setIsRunning(false);
     }

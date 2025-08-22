@@ -16,7 +16,7 @@ import {
   SidebarRail,
   useSidebar,
 } from '@/components/ui/sidebar';
-import { AgentIcon, GithubIcon, Icon, McpServerIcon, ToolsIcon, WorkflowIcon } from '@datawarp/mastra-playground-ui';
+import { AgentIcon, GithubIcon, Icon, McpServerIcon, ToolsIcon, WorkflowIcon } from '@actus-ag/mastra-playground-ui';
 
 import { Tooltip, TooltipContent, TooltipTrigger } from './tooltip';
 import clsx from 'clsx';

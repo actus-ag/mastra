@@ -7,11 +7,11 @@ import { toast } from 'sonner';
 import { resolveSerializedZodOutput } from '@/components/dynamic-form/utils';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Text } from '@/components/ui/text';
-import { Header, Breadcrumb, Crumb, usePlaygroundStore } from '@datawarp/mastra-playground-ui';
+import { Header, Breadcrumb, Crumb, usePlaygroundStore } from '@actus-ag/mastra-playground-ui';
 
 import { useMCPServerTool } from '@/hooks/use-mcp-server-tool';
 import ToolExecutor from '@/pages/tools/tool-executor';
-import { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
+import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
 
 const MCPServerToolExecutor = () => {
   const { serverId, toolId } = useParams<{ serverId: string; toolId: string }>();

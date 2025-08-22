@@ -1,7 +1,7 @@
 import { Dialog, DialogContent, DialogPortal, DialogTitle } from '@/components/ui/dialog';
 import { createContext, useState } from 'react';
 import { ReactFlowProvider } from '@xyflow/react';
-import { SerializedStepFlowEntry } from '@datawarp/mastra-core/workflows';
+import { SerializedStepFlowEntry } from '@actus-ag/mastra-core/workflows';
 import { Workflow } from 'lucide-react';
 import { Text } from '@/components/ui/text';
 import { WorkflowNestedGraph } from '../workflow/workflow-nested-graph';

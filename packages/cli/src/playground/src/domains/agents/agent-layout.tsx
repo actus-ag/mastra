@@ -5,7 +5,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { useAgent } from '@/hooks/use-agents';
 
 import { AgentHeader } from './agent-header';
-import { HeaderTitle, Header, MainContentLayout } from '@datawarp/mastra-playground-ui';
+import { HeaderTitle, Header, MainContentLayout } from '@actus-ag/mastra-playground-ui';
 
 export const AgentLayout = ({ children }: { children: React.ReactNode }) => {
   const { agentId } = useParams();

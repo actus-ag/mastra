@@ -5,7 +5,7 @@ import SelectInput from "ink-select-input"
 import {
 	McpConfiguration,
 	type ConfiguredServer,
-} from "@datawarp/mastra-mcp-configuration"
+} from "@actus-ag/mastra-mcp-configuration"
 import { Form } from "ink-form"
 
 const registry = new RegistryClient({

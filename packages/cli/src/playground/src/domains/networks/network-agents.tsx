@@ -1,6 +1,6 @@
 import { Badge } from '@/components/ui/badge';
 import { Brain } from 'lucide-react';
-import { GetNetworkResponse } from '@datawarp/mastra-client-js';
+import { GetNetworkResponse } from '@actus-ag/mastra-client-js';
 
 export function NetworkAgents({ network }: { network: GetNetworkResponse }) {
   if (!network.agents || network.agents.length === 0) {

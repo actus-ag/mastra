@@ -17,7 +17,7 @@ import { usePlaygroundStore } from '@/store/playground-store';
 import { Icon } from '@/ds/icons';
 import { Txt } from '@/ds/components/Txt';
 
-import { GetWorkflowResponse, WorkflowWatchResult } from '@datawarp/mastra-client-js';
+import { GetWorkflowResponse, WorkflowWatchResult } from '@actus-ag/mastra-client-js';
 import { SyntaxHighlighter } from '@/components/ui/syntax-highlighter';
 import { Dialog, DialogPortal, DialogTitle, DialogContent } from '@/components/ui/dialog';
 import { WorkflowStatus } from './workflow-status';

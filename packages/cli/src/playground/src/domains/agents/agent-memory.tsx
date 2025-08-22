@@ -1,4 +1,4 @@
-import { MemorySearch } from '@datawarp/mastra-playground-ui';
+import { MemorySearch } from '@actus-ag/mastra-playground-ui';
 import { useMemorySearch, useMemoryConfig } from '@/hooks/use-memory';
 import { AgentWorkingMemory } from './agent-working-memory';
 import { AgentMemoryConfig } from './agent-memory-config';

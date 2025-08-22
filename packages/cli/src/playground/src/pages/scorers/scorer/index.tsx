@@ -1,13 +1,13 @@
-import { AgentIcon, Breadcrumb, Crumb, Header, MainContentLayout, WorkflowIcon } from '@datawarp/mastra-playground-ui';
+import { AgentIcon, Breadcrumb, Crumb, Header, MainContentLayout, WorkflowIcon } from '@actus-ag/mastra-playground-ui';
 import { useParams, Link } from 'react-router';
-import { useScorer, useScoresByScorerId } from '@datawarp/mastra-playground-ui';
+import { useScorer, useScoresByScorerId } from '@actus-ag/mastra-playground-ui';
 import { Skeleton } from '@/components/ui/skeleton';
 import { ArrowDownIcon, ArrowLeftIcon, ArrowRightIcon, ArrowUpIcon, XIcon } from 'lucide-react';
 import { format, isToday } from 'date-fns';
 import { Fragment, useState } from 'react';
 import { useAgents } from '@/hooks/use-agents';
 import { cn } from '@/lib/utils';
-import type { ScoreRowData } from '@datawarp/mastra-core/scores';
+import type { ScoreRowData } from '@actus-ag/mastra-core/scores';
 
 import * as Dialog from '@radix-ui/react-dialog';
 
@@ -15,7 +15,7 @@ import { Select, SelectContent, SelectItem, SelectValue, SelectTrigger } from '@
 import { Button } from '@/components/ui/button';
 
 import { useWorkflows } from '@/hooks/use-workflows';
-import { ClientScoreRowData } from '@datawarp/mastra-client-js';
+import { ClientScoreRowData } from '@actus-ag/mastra-client-js';
 import { CodeMirrorBlock } from '@/components/ui/code-mirror-block';
 
 export default function Scorer() {

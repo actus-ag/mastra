@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react';
 import { useParams } from 'react-router';
-import { MemorySearch } from '@datawarp/mastra-playground-ui';
+import { MemorySearch } from '@actus-ag/mastra-playground-ui';
 import { useMemorySearch } from '@/hooks/use-memory';
 import { useThreadRuntime } from '@assistant-ui/react';
 

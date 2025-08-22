@@ -1,6 +1,6 @@
 import { ToolIconMap } from '@/types';
-import { MCPToolType } from '@datawarp/mastra-core/mcp';
-import { Icon, Txt } from '@datawarp/mastra-playground-ui';
+import { MCPToolType } from '@actus-ag/mastra-core/mcp';
+import { Icon, Txt } from '@actus-ag/mastra-playground-ui';
 
 export interface ToolInformationProps {
   toolDescription: string;

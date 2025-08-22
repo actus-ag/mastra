@@ -1,7 +1,7 @@
-import { Header, HeaderTitle, MainContentLayout, MainContentContent } from '@datawarp/mastra-playground-ui';
+import { Header, HeaderTitle, MainContentLayout, MainContentContent } from '@actus-ag/mastra-playground-ui';
 
 import { useAgents } from '@/hooks/use-agents';
-import { AgentsTable } from '@datawarp/mastra-playground-ui';
+import { AgentsTable } from '@actus-ag/mastra-playground-ui';
 
 function Agents() {
   const { data: agents, isLoading } = useAgents();

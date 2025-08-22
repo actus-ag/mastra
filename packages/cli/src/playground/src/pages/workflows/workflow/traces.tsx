@@ -1,5 +1,5 @@
 import { useParams, useSearchParams } from 'react-router';
-import { TracesView } from '@datawarp/mastra-playground-ui';
+import { TracesView } from '@actus-ag/mastra-playground-ui';
 
 import { useWorkflow } from '@/hooks/use-workflows';
 import { useTraces } from '@/domains/traces/hooks/use-traces';

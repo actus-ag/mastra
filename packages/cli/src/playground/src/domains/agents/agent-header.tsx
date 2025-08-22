@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 
-import { Header, Breadcrumb, Crumb, HeaderGroup, Button, DividerIcon } from '@datawarp/mastra-playground-ui';
+import { Header, Breadcrumb, Crumb, HeaderGroup, Button, DividerIcon } from '@actus-ag/mastra-playground-ui';
 
 export function AgentHeader({ agentName, agentId }: { agentName: string; agentId: string }) {
   return (

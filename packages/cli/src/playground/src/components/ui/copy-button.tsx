@@ -5,7 +5,7 @@ import { CopyIcon } from 'lucide-react';
 import { useCopyToClipboard } from '../../hooks/use-copy-to-clipboard';
 
 import { Tooltip, TooltipContent, TooltipTrigger } from './tooltip';
-import { Icon, IconProps } from '@datawarp/mastra-playground-ui';
+import { Icon, IconProps } from '@actus-ag/mastra-playground-ui';
 
 type CopyButtonProps = {
   content: string;

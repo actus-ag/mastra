@@ -1,4 +1,4 @@
-import { useWorkingMemory } from '@datawarp/mastra-playground-ui';
+import { useWorkingMemory } from '@actus-ag/mastra-playground-ui';
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';

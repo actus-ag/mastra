@@ -28,7 +28,7 @@ import MCPServerToolExecutor from './pages/mcps/tool';
 
 import { McpServerPage } from './pages/mcps/[serverId]';
 import { WorkflowGraphLayout } from './pages/workflows/layouts/workflow-graph-layout';
-import { LinkComponentProvider, MastraClientProvider, PlaygroundQueryClient } from '@datawarp/mastra-playground-ui';
+import { LinkComponentProvider, MastraClientProvider, PlaygroundQueryClient } from '@actus-ag/mastra-playground-ui';
 import VNextNetwork from './pages/networks/network/v-next';
 import { NavigateTo } from './lib/react-router';
 import { Link } from './lib/framework';

@@ -1,4 +1,4 @@
-import { AgentEvals } from '@datawarp/mastra-playground-ui';
+import { AgentEvals } from '@actus-ag/mastra-playground-ui';
 import { useParams } from 'react-router';
 import { useEvalsByAgentId } from '@/domains/evals/hooks/use-evals-by-agent-id';
 

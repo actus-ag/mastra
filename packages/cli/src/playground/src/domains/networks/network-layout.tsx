@@ -5,7 +5,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { useNetwork, useVNextNetwork } from '@/hooks/use-networks';
 
 import { NetworkHeader } from './network-header';
-import { Header, HeaderTitle, MainContentLayout } from '@datawarp/mastra-playground-ui';
+import { Header, HeaderTitle, MainContentLayout } from '@actus-ag/mastra-playground-ui';
 
 export const NetworkLayout = ({ children, isVNext }: { children: React.ReactNode; isVNext?: boolean }) => {
   const { networkId } = useParams();

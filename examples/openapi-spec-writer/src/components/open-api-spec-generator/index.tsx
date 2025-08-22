@@ -15,7 +15,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { BaseLogMessage } from "@datawarp/mastra-core/logger";
+import { BaseLogMessage } from "@actus-ag/mastra-core/logger";
 import {
   Accordion,
   AccordionContent,

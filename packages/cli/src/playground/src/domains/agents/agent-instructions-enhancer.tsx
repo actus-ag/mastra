@@ -1,4 +1,4 @@
-import { AlertDialog } from '@datawarp/mastra-playground-ui';
+import { AlertDialog } from '@actus-ag/mastra-playground-ui';
 
 import { useAgent } from '@/hooks/use-agents';
 

@@ -6,7 +6,7 @@ import {
   AppendMessage,
   AssistantRuntimeProvider,
 } from '@assistant-ui/react';
-import { MastraClient } from '@datawarp/mastra-client-js';
+import { MastraClient } from '@actus-ag/mastra-client-js';
 import { useState, ReactNode } from 'react';
 
 const mastra = new MastraClient({

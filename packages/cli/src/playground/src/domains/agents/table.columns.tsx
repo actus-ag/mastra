@@ -1,4 +1,4 @@
-import { DataTableProps, AgentIcon, Badge, Cell, EntryCell } from '@datawarp/mastra-playground-ui';
+import { DataTableProps, AgentIcon, Badge, Cell, EntryCell } from '@actus-ag/mastra-playground-ui';
 import { Link } from 'react-router';
 
 export const providerMapToIcon = {

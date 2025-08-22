@@ -1,4 +1,11 @@
-import { Entity, EntityContent, EntityDescription, EntityIcon, EntityName, WorkflowIcon } from '@datawarp/mastra-playground-ui';
+import {
+  Entity,
+  EntityContent,
+  EntityDescription,
+  EntityIcon,
+  EntityName,
+  WorkflowIcon,
+} from '@actus-ag/mastra-playground-ui';
 import { useRef } from 'react';
 import { Link } from 'react-router';
 

@@ -10,7 +10,7 @@ import {
   AgentMetadata,
   AgentEntityHeader,
   useAgentSettings,
-} from '@datawarp/mastra-playground-ui';
+} from '@actus-ag/mastra-playground-ui';
 
 import { useMemory } from '@/hooks/use-memory';
 import { AgentMemory } from './agent-memory';

@@ -1,4 +1,4 @@
-import { MastraResizablePanel, LegacyWorkflowGraph } from '@datawarp/mastra-playground-ui';
+import { MastraResizablePanel, LegacyWorkflowGraph } from '@actus-ag/mastra-playground-ui';
 import { useParams } from 'react-router';
 
 import { WorkflowInformation } from '@/domains/workflows/workflow-information';

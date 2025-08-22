@@ -8,7 +8,7 @@ import {
   NodeProps,
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
-import { SerializedStepFlowEntry } from '@datawarp/mastra-core/workflows';
+import { SerializedStepFlowEntry } from '@actus-ag/mastra-core/workflows';
 
 import { constructNodesAndEdges } from './utils';
 import { WorkflowConditionNode } from './workflow-condition-node';

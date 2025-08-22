@@ -1,6 +1,6 @@
 import { client } from '@/lib/client';
 import { refineTraces } from '../utils/refine-traces';
-import { useInView, useInfiniteQuery } from '@datawarp/mastra-playground-ui';
+import { useInView, useInfiniteQuery } from '@actus-ag/mastra-playground-ui';
 import { useEffect } from 'react';
 
 const fetchFn = async ({ componentName, page, perPage }: { componentName: string; page: number; perPage: number }) => {

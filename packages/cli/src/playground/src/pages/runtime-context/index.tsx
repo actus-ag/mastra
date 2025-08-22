@@ -5,7 +5,7 @@ import {
   MainContentLayout,
   RuntimeContext,
   RuntimeContextWrapper,
-} from '@datawarp/mastra-playground-ui';
+} from '@actus-ag/mastra-playground-ui';
 
 export default function RuntimeContextPage() {
   return (

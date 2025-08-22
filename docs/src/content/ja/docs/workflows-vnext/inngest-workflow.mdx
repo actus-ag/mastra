@@ -10,7 +10,7 @@ description: "Inngest ワークフローを使用すると、Inngest で Mastra 
 ## セットアップ
 
 ```sh
-npm install @datawarp/mastra-inngest @datawarp/mastra-core @datawarp/mastra-deployer @hono/node-server
+npm install @actus-ag/mastra-inngest @actus-ag/mastra-core @actus-ag/mastra-deployer @hono/node-server
 ```
 
 ### ローカル開発環境
@@ -42,7 +42,7 @@ docker run --rm -p 8288:8288 \
 Inngest統合を初期化して、Mastra互換のワークフローヘルパーを取得します：
 
 ```ts showLineNumbers copy filename="src/mastra/workflows/inngest-workflow.ts"
-import { init } from "@datawarp/mastra-inngest";
+import { init } from "@actus-ag/mastra-inngest";
 import { Inngest } from "inngest";
 
 // Initialize Inngest with Mastra, pointing to your local Inngest server
@@ -149,9 +149,9 @@ export { workflow as incrementWorkflow };
 ワークフローをMastraに登録し、Inngest APIエンドポイントを設定します：
 
 ```ts showLineNumbers copy filename="src/mastra/index.ts"
-import { Mastra } from "@datawarp/mastra-core/mastra";
-import { serve as inngestServe } from "@datawarp/mastra-inngest";
-import { PinoLogger } from "@datawarp/mastra-loggers";
+import { Mastra } from "@actus-ag/mastra-core/mastra";
+import { serve as inngestServe } from "@actus-ag/mastra-inngest";
+import { PinoLogger } from "@actus-ag/mastra-loggers";
 import { Inngest } from "inngest";
 import { incrementWorkflow } from "./workflows/inngest-workflow";
 import { realtimeMiddleware } from "@inngest/realtime";
@@ -159,7 +159,7 @@ import { serve } from "@hono/node-server";
 import {
   createHonoServer,
   getToolExports,
-} from "@datawarp/mastra-deployer/server";
+} from "@actus-ag/mastra-deployer/server";
 import { tools } from "#tools";
 
 // Create an Inngest instance with realtime middleware for development

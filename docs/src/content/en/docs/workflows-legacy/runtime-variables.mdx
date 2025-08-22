@@ -42,8 +42,8 @@ await start({
 Here's how to dynamically set a multiplier value from an HTTP header:
 
 ```typescript filename="src/index.ts"
-import { Mastra } from "@datawarp/mastra-core";
-import { RuntimeContext } from "@datawarp/mastra-core/di";
+import { Mastra } from "@actus-ag/mastra-core";
+import { RuntimeContext } from "@actus-ag/mastra-core/di";
 import { workflow as myWorkflow } from "./workflows";
 
 // Define runtimeContext type with clear, descriptive types
@@ -81,7 +81,7 @@ export const mastra = new Mastra({
 Steps can access runtimeContext variables and must conform to the workflow's runtimeContext type:
 
 ```typescript
-import { LegacyStep } from "@datawarp/mastra-core/workflows/legacy";
+import { LegacyStep } from "@actus-ag/mastra-core/workflows/legacy";
 import { z } from "zod";
 
 // Define step input/output types

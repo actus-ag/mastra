@@ -154,7 +154,7 @@ Create a new project and change directory:
 mkdir hello-mastra && cd hello-mastra
 ```
 
-Initialize a TypeScript project including the `@datawarp/mastra-core` package:
+Initialize a TypeScript project including the `@actus-ag/mastra-core` package:
 
 {/*
 LLM CONTEXT: This Tabs component shows manual installation commands for different package managers.
@@ -171,7 +171,7 @@ This helps users manually set up a Mastra project with their preferred package m
 
     npm install typescript tsx @types/node mastra@latest --save-dev
 
-    npm install @datawarp/mastra-core@latest zod@^3 @ai-sdk/openai
+    npm install @actus-ag/mastra-core@latest zod@^3 @ai-sdk/openai
     ```
 
   </Tab>
@@ -181,7 +181,7 @@ This helps users manually set up a Mastra project with their preferred package m
 
     pnpm add typescript tsx @types/node mastra@latest --save-dev
 
-    pnpm add @datawarp/mastra-core@latest zod@^3 @ai-sdk/openai
+    pnpm add @actus-ag/mastra-core@latest zod@^3 @ai-sdk/openai
     ```
 
   </Tab>
@@ -191,7 +191,7 @@ This helps users manually set up a Mastra project with their preferred package m
 
     yarn add typescript tsx @types/node mastra@latest --dev
 
-    yarn add @datawarp/mastra-core@latest zod@^3 @ai-sdk/openai
+    yarn add @actus-ag/mastra-core@latest zod@^3 @ai-sdk/openai
     ```
 
   </Tab>
@@ -201,7 +201,7 @@ This helps users manually set up a Mastra project with their preferred package m
 
     bun add typescript tsx @types/node mastra@latest --dev
 
-    bun add @datawarp/mastra-core@latest zod@^3 @ai-sdk/openai
+    bun add @actus-ag/mastra-core@latest zod@^3 @ai-sdk/openai
     ```
 
   </Tab>
@@ -277,7 +277,7 @@ mkdir -p src/mastra/tools && touch src/mastra/tools/weather-tool.ts
 Add the following code:
 
 ```ts filename="src/mastra/tools/weather-tool.ts" showLineNumbers copy
-import { createTool } from "@datawarp/mastra-core/tools";
+import { createTool } from "@actus-ag/mastra-core/tools";
 import { z } from "zod";
 
 export const weatherTool = createTool({
@@ -311,7 +311,7 @@ Add the following code:
 
 ```ts filename="src/mastra/agents/weather-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { weatherTool } from "../tools/weather-tool";
 
 export const weatherAgent = new Agent({
@@ -344,7 +344,7 @@ touch src/mastra/index.ts
 Add the following code:
 
 ```ts filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@datawarp/mastra-core/mastra";
+import { Mastra } from "@actus-ag/mastra-core/mastra";
 import { weatherAgent } from "./agents/weather-agent";
 
 export const mastra = new Mastra({

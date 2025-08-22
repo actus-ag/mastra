@@ -16,13 +16,13 @@ MastraのMCPは、ツールサーバーに接続するための標準化され�
 pnpmを使用する場合：
 
 ```bash
-pnpm add @datawarp/mastra-mcp@latest
+pnpm add @actus-ag/mastra-mcp@latest
 ```
 
 npmを使用する場合：
 
 ```bash copy
-npm install @datawarp/mastra-mcp@latest
+npm install @actus-ag/mastra-mcp@latest
 ```
 
 ## コード内でMCPを使用する
@@ -35,8 +35,8 @@ npm install @datawarp/mastra-mcp@latest
 以下は設定例です：
 
 ```typescript
-import { MCPClient } from "@datawarp/mastra-mcp";
-import { Agent } from "@datawarp/mastra-core/agent";
+import { MCPClient } from "@actus-ag/mastra-mcp";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
 
 const mcp = new MCPClient({
@@ -216,8 +216,8 @@ MCPサーバーからのツールは、`await mcp.getTools()`または`await mcp
 MCPサーバーが3つのツール（`weather`、`stockPrice`、`news`）を公開しているが、エージェントから`news`ツールを除外したい場合を考えてみましょう。ツールオブジェクトをフィルタリングすることでこれを実現できます：
 
 ```typescript
-import { MCPClient } from "@datawarp/mastra-mcp";
-import { Agent } from "@datawarp/mastra-core/agent";
+import { MCPClient } from "@actus-ag/mastra-mcp";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
 
 const mcp = new MCPClient({

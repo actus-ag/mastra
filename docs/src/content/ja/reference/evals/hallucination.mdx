@@ -11,7 +11,7 @@ description: Mastra におけるハルシネーションメトリクスのドキ
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { HallucinationMetric } from "@datawarp/mastra-evals/llm";
+import { HallucinationMetric } from "@actus-ag/mastra-evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");
@@ -183,7 +183,7 @@ console.log(result.info.reason); // Explanation of the score
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { HallucinationMetric } from "@datawarp/mastra-evals/llm";
+import { HallucinationMetric } from "@actus-ag/mastra-evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");

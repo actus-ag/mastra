@@ -20,7 +20,7 @@ Mastraは依存性注入に基づいた`RuntimeContext`システムを提供し�
 `RuntimeContext`を使用するには、まず動的設定の型構造を定義します。次に、定義した型で`RuntimeContext`のインスタンスを作成し、希望する値を設定します。最後に、`agent.generate()`または`agent.stream()`を呼び出す際に、オプションオブジェクトに`runtimeContext`インスタンスを含めます。
 
 ```typescript
-import { RuntimeContext } from "@datawarp/mastra-core/di";
+import { RuntimeContext } from "@actus-ag/mastra-core/di";
 // Assume 'agent' is an already defined Mastra Agent instance
 
 // Define the context type
@@ -45,7 +45,7 @@ console.log(response.text);
 ツールは`execute`関数の第2引数の一部として`runtimeContext`を受け取ります。その後、`.get()`メソッドを使用して値を取得できます。
 
 ```typescript filename="src/mastra/tools/weather-tool.ts"
-import { createTool } from "@datawarp/mastra-core/tools";
+import { createTool } from "@actus-ag/mastra-core/tools";
 import { z } from "zod";
 // Assume WeatherRuntimeContext is defined as above and accessible here
 
@@ -91,8 +91,8 @@ export const weatherTool = createTool({
 以下は、Mastraの組み込みサーバーミドルウェアサポート（内部的にHonoを使用）を使用して、Cloudflareの`CF-IPCountry`ヘッダーに基づいて温度スケールを設定する例です：
 
 ```typescript filename="src/mastra/index.ts"
-import { Mastra } from "@datawarp/mastra-core";
-import { RuntimeContext } from "@datawarp/mastra-core/di";
+import { Mastra } from "@actus-ag/mastra-core";
+import { RuntimeContext } from "@actus-ag/mastra-core/di";
 import { weatherAgent } from "./agents/weather"; // Assume agent is defined elsewhere
 
 // Define RuntimeContext type

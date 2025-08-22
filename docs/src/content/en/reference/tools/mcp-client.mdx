@@ -371,7 +371,7 @@ mcpClient.elicitation.onRequest('serverName', async (request) => {
 **Complete Interactive Example:**
 
 ```typescript
-import { MCPClient } from '@datawarp/mastra-mcp';
+import { MCPClient } from '@actus-ag/mastra-mcp';
 import { createInterface } from 'readline';
 
 const readline = createInterface({
@@ -529,7 +529,7 @@ Elicitation is a feature that allows MCP servers to request structured informati
 You must set up an elicitation handler before tools that use elicitation are called:
 
 ```typescript
-import { MCPClient } from '@datawarp/mastra-mcp';
+import { MCPClient } from '@actus-ag/mastra-mcp';
 
 const mcpClient = new MCPClient({
   servers: {
@@ -624,8 +624,8 @@ await mcpClient.elicitation.onRequest('interactiveServer', async (request) => {
 For tools where you have a single connection to the MCP server for you entire app, use `getTools()` and pass the tools to your agent:
 
 ```typescript
-import { MCPClient } from "@datawarp/mastra-mcp";
-import { Agent } from "@datawarp/mastra-core/agent";
+import { MCPClient } from "@actus-ag/mastra-mcp";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
 
 const mcp = new MCPClient({
@@ -699,8 +699,8 @@ checkWeatherPrompt();
 When you need a new MCP connection for each user, use `getToolsets()` and add the tools when calling stream or generate:
 
 ```typescript
-import { Agent } from "@datawarp/mastra-core/agent";
-import { MCPClient } from "@datawarp/mastra-mcp";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { MCPClient } from "@actus-ag/mastra-mcp";
 import { openai } from "@ai-sdk/openai";
 
 // Create the agent first, without any tools

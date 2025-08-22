@@ -17,9 +17,9 @@ To create a new `MCPServer`, you need to provide some basic information about yo
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@datawarp/mastra-core/agent";
-import { createTool } from "@datawarp/mastra-core/tools";
-import { MCPServer } from "@datawarp/mastra-mcp";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { createTool } from "@actus-ag/mastra-core/tools";
+import { MCPServer } from "@actus-ag/mastra-mcp";
 import { z } from "zod";
 import { dataProcessingWorkflow } from "../workflows/dataProcessingWorkflow";
 
@@ -632,12 +632,12 @@ export type MCPServerResourceContent = { text?: string } | { blob?: string };
 Example:
 
 ```typescript
-import { MCPServer } from "@datawarp/mastra-mcp";
+import { MCPServer } from "@actus-ag/mastra-mcp";
 import type {
   MCPServerResourceContent,
   Resource,
   ResourceTemplate,
-} from "@datawarp/mastra-mcp";
+} from "@actus-ag/mastra-mcp";
 
 // Resources/resource templates will generally be dynamically fetched.
 const myResources: Resource[] = [
@@ -745,8 +745,8 @@ export type MCPServerPrompts = {
 Example:
 
 ```typescript
-import { MCPServer } from "@datawarp/mastra-mcp";
-import type { Prompt, PromptMessage, MCPServerPrompts } from "@datawarp/mastra-mcp";
+import { MCPServer } from "@actus-ag/mastra-mcp";
+import type { Prompt, PromptMessage, MCPServerPrompts } from "@actus-ag/mastra-mcp";
 
 const prompts: Prompt[] = [
   {
@@ -881,8 +881,8 @@ A common use case is during tool execution. When a tool needs user input, it can
 Here's an example of a tool that uses elicitation to collect user contact information:
 
 ```typescript
-import { MCPServer } from "@datawarp/mastra-mcp";
-import { createTool } from "@datawarp/mastra-core/tools";
+import { MCPServer } from "@actus-ag/mastra-mcp";
+import { createTool } from "@actus-ag/mastra-core/tools";
 import { z } from "zod";
 
 const server = new MCPServer({

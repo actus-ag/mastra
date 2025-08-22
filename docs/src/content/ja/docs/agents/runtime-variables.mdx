@@ -41,8 +41,8 @@ console.log(response.text);
 ユーザーの位置情報に基づいて温度単位を動的に設定する方法を、Cloudflareの`CF-IPCountry`ヘッダーを使用して示します：
 
 ```typescript filename="src/index.ts"
-import { Mastra } from "@datawarp/mastra-core";
-import { RuntimeContext } from "@datawarp/mastra-core/di";
+import { Mastra } from "@actus-ag/mastra-core";
+import { RuntimeContext } from "@actus-ag/mastra-core/di";
 import { agent as weatherAgent } from "./agents/weather";
 
 // Define RuntimeContext type with clear, descriptive types
@@ -78,7 +78,7 @@ export const mastra = new Mastra({
 ツールはruntimeContext変数にアクセスでき、エージェントのruntimeContextタイプに準拠する必要があります：
 
 ```typescript
-import { createTool } from "@datawarp/mastra-core/tools";
+import { createTool } from "@actus-ag/mastra-core/tools";
 import { z } from "zod";
 
 export const weatherTool = createTool({

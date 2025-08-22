@@ -27,7 +27,7 @@ Create a simple agent that analyzes images to identify objects, describe scenes,
 
 ```typescript filename="src/mastra/agents/example-image-analysis-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 
 export const imageAnalysisAgent = new Agent({
   name: "image-analysis",
@@ -47,7 +47,7 @@ export const imageAnalysisAgent = new Agent({
 To use an agent, register it in your main Mastra instance.
 
 ```typescript filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@datawarp/mastra-core/mastra";
+import { Mastra } from "@actus-ag/mastra-core/mastra";
 
 import { imageAnalysisAgent } from "./agents/example-image-analysis-agent";
 

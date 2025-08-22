@@ -7,11 +7,11 @@ description: "Expose additional HTTP endpoints from your Mastra server."
 
 By default Mastra automatically exposes registered agents and workflows via the server. For additional behavior you can define your own HTTP routes.
 
-Routes are provided with a helper `registerApiRoute` from `@datawarp/mastra-core/server`. Routes can live in the same file as the `Mastra` instance but separating them helps keep configuration concise.
+Routes are provided with a helper `registerApiRoute` from `@actus-ag/mastra-core/server`. Routes can live in the same file as the `Mastra` instance but separating them helps keep configuration concise.
 
 ```typescript filename="src/mastra/index.ts" copy showLineNumbers
-import { Mastra } from "@datawarp/mastra-core/mastra";
-import { registerApiRoute } from "@datawarp/mastra-core/server";
+import { Mastra } from "@actus-ag/mastra-core/mastra";
+import { registerApiRoute } from "@actus-ag/mastra-core/server";
 
 export const mastra = new Mastra({
   // ...
@@ -42,8 +42,8 @@ Each route's handler receives the Hono `Context`. Within the handler you can acc
 To add route-specific middleware pass a `middleware` array when calling `registerApiRoute`.
 
 ```typescript filename="src/mastra/index.ts" copy showLineNumbers
-import { Mastra } from "@datawarp/mastra-core/mastra";
-import { registerApiRoute } from "@datawarp/mastra-core/server";
+import { Mastra } from "@actus-ag/mastra-core/mastra";
+import { registerApiRoute } from "@actus-ag/mastra-core/server";
 
 export const mastra = new Mastra({
   // ...

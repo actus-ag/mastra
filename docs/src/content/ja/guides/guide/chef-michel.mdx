@@ -15,7 +15,7 @@ import YouTube from "@/components/youtube";
 ## 前提条件
 
 - Node.jsがインストールされていること
-- Mastraがインストールされていること: `npm install @datawarp/mastra-core@latest`
+- Mastraがインストールされていること: `npm install @actus-ag/mastra-core@latest`
 
 ---
 
@@ -28,7 +28,7 @@ import YouTube from "@/components/youtube";
 
 ```ts copy filename="src/mastra/agents/chefAgent.ts"
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 
 export const chefAgent = new Agent({
   name: "chef-agent",
@@ -56,7 +56,7 @@ OPENAI_API_KEY=your_openai_api_key
 メインファイルで、エージェントを登録します：
 
 ```ts copy filename="src/mastra/index.ts"
-import { Mastra } from "@datawarp/mastra-core";
+import { Mastra } from "@actus-ag/mastra-core";
 
 import { chefAgent } from "./agents/chefAgent";
 

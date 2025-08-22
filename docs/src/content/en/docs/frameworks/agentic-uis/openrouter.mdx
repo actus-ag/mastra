@@ -50,7 +50,7 @@ npm install @openrouter/ai-sdk-provider
 We will now configure our agent to use OpenRouter.
 
 ```typescript filename="src/mastra/agents/assistant.ts" copy showLineNumbers {4-6,11}
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { createOpenRouter } from "@openrouter/ai-sdk-provider";
 
 const openrouter = createOpenRouter({
@@ -95,7 +95,7 @@ For more control over your OpenRouter requests, you can pass additional configur
 You can pass provider-wide options to the OpenRouter provider:
 
 ```typescript filename="src/mastra/agents/assistant.ts" {6-10} copy showLineNumbers
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { createOpenRouter } from "@openrouter/ai-sdk-provider";
 
 const openrouter = createOpenRouter({
@@ -119,7 +119,7 @@ export const assistant = new Agent({
 You can pass model-specific options to the OpenRouter provider:
 
 ```typescript filename="src/mastra/agents/assistant.ts" {11-17} copy showLineNumbers
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { createOpenRouter } from "@openrouter/ai-sdk-provider";
 
 const openrouter = createOpenRouter({

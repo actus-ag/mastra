@@ -37,8 +37,8 @@ getMemory(): MastraMemory | undefined
 ### 基本的な使い方
 
 ```typescript
-import { Agent } from "@datawarp/mastra-core/agent";
-import { Memory } from "@datawarp/mastra-memory";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { Memory } from "@actus-ag/mastra-memory";
 import { openai } from "@ai-sdk/openai";
 
 // Create a memory system
@@ -70,7 +70,7 @@ if (agentMemory) {
 ### 使用前にメモリを確認する
 
 ```typescript
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
 
 // Create an agent without memory
@@ -92,8 +92,8 @@ if (agent.hasOwnMemory()) {
 ### 会話でメモリを使う
 
 ```typescript
-import { Agent } from "@datawarp/mastra-core/agent";
-import { Memory } from "@datawarp/mastra-memory";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { Memory } from "@actus-ag/mastra-memory";
 import { openai } from "@ai-sdk/openai";
 
 // Create a memory system

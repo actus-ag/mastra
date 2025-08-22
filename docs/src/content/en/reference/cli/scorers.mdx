@@ -97,7 +97,7 @@ When running `mastra scorers add` without specifying a scorer name, you can sele
 
 ## What It Does
 
-1. **Dependency Management**: Automatically installs `@datawarp/mastra-evals` package if needed
+1. **Dependency Management**: Automatically installs `@actus-ag/mastra-evals` package if needed
 2. **Template Selection**: Provides interactive selection when no scorer specified  
 3. **File Generation**: Creates scorer files from built-in templates
 4. **Directory Structure**: Places scorers in `src/mastra/scorers/` or custom directory
@@ -110,7 +110,7 @@ After adding scorers, integrate them with your agents or workflows:
 ### With Agents
 
 ```typescript filename="src/mastra/agents/evaluated-agent.ts"
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
 import { createAnswerRelevancyScorer } from "../scorers/answer-relevancy-scorer";
 
@@ -128,7 +128,7 @@ export const evaluatedAgent = new Agent({
 ### With Workflow Steps
 
 ```typescript filename="src/mastra/workflows/content-generation.ts"
-import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows";
+import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows";
 import { customStepScorer } from "../scorers/custom-step-scorer";
 
 const contentStep = createStep({

@@ -10,7 +10,7 @@ description: Mastraを使用したinngestワークフローの構築例
 ## セットアップ
 
 ```sh copy
-npm install @datawarp/mastra-inngest @datawarp/mastra-core @datawarp/mastra-deployer @hono/node-server @ai-sdk/openai
+npm install @actus-ag/mastra-inngest @actus-ag/mastra-core @actus-ag/mastra-deployer @hono/node-server @ai-sdk/openai
 
 docker run --rm -p 8288:8288 \
   inngest/inngest \
@@ -24,7 +24,7 @@ docker run --rm -p 8288:8288 \
 場所と対応する天候条件に基づいてアクティビティを計画するためにLLMコールを活用するプランニングエージェントを定義します。
 
 ```ts showLineNumbers copy filename="agents/planning-agent.ts"
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
 
 // Create a new planning agent that uses the OpenAI model
@@ -316,9 +316,9 @@ export { activityPlanningWorkflow };
 エージェントとワークフローをmastraインスタンスに登録します。これにより、ワークフロー内でエージェントにアクセスできるようになります。
 
 ```ts showLineNumbers copy filename="index.ts"
-import { Mastra } from "@datawarp/mastra-core/mastra";
-import { serve as inngestServe } from "@datawarp/mastra-inngest";
-import { PinoLogger } from "@datawarp/mastra-loggers";
+import { Mastra } from "@actus-ag/mastra-core/mastra";
+import { serve as inngestServe } from "@actus-ag/mastra-inngest";
+import { PinoLogger } from "@actus-ag/mastra-loggers";
 import { Inngest } from "inngest";
 import { activityPlanningWorkflow } from "./workflows/inngest-workflow";
 import { planningAgent } from "./agents/planning-agent";
@@ -367,7 +367,7 @@ import { serve } from "@hono/node-server";
 import {
   createHonoServer,
   getToolExports,
-} from "@datawarp/mastra-deployer/server";
+} from "@actus-ag/mastra-deployer/server";
 import { tools } from "#tools";
 
 const app = await createHonoServer(mastra, {

@@ -22,7 +22,7 @@ The providers include Pg Vector, Pinecone, Qdrant, Chroma, Astra, LibSQL, Upstas
 <Tabs items={['MongoDB', 'Pg Vector', 'Pinecone', 'Qdrant', 'Chroma', 'Astra', 'LibSQL', 'Upstash', 'Cloudflare', 'OpenSearch', 'Couchbase', 'LanceDB']}>
   <Tabs.Tab>
     ```ts filename="vector-store.ts" showLineNumbers copy
-    import { MongoDBVector } from '@datawarp/mastra-mongodb'
+    import { MongoDBVector } from '@actus-ag/mastra-mongodb'
 
     const store = new MongoDBVector({
       uri: process.env.MONGODB_URI,
@@ -46,7 +46,7 @@ The providers include Pg Vector, Pinecone, Qdrant, Chroma, Astra, LibSQL, Upstas
 
   <Tabs.Tab>
   ```ts filename="vector-store.ts" showLineNumbers copy
-  import { PgVector } from '@datawarp/mastra-pg';
+  import { PgVector } from '@actus-ag/mastra-pg';
 
   const store = new PgVector({ connectionString: process.env.POSTGRES_CONNECTION_STRING })
 
@@ -70,7 +70,7 @@ For detailed setup instructions and best practices, see the [official pgvector r
 
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
-import { PineconeVector } from '@datawarp/mastra-pinecone'
+import { PineconeVector } from '@actus-ag/mastra-pinecone'
 
 const store = new PineconeVector({
   apiKey: process.env.PINECONE_API_KEY,
@@ -89,7 +89,7 @@ await store.upsert({
 
 <Tabs.Tab>
   ```ts filename="vector-store.ts" showLineNumbers copy
-  import { QdrantVector } from '@datawarp/mastra-qdrant'
+  import { QdrantVector } from '@actus-ag/mastra-qdrant'
 
   const store = new QdrantVector({
     url: process.env.QDRANT_URL,
@@ -112,7 +112,7 @@ await store.upsert({
 
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
-import { ChromaVector } from '@datawarp/mastra-chroma'
+import { ChromaVector } from '@actus-ag/mastra-chroma'
 
 // Running Chroma locally
 // const store = new ChromaVector()
@@ -139,7 +139,7 @@ await store.upsert({
 
 <Tabs.Tab>
   ```ts filename="vector-store.ts" showLineNumbers copy
-  import { AstraVector } from '@datawarp/mastra-astra'
+  import { AstraVector } from '@actus-ag/mastra-astra'
 
   const store = new AstraVector({
     token: process.env.ASTRA_DB_TOKEN,
@@ -164,7 +164,7 @@ await store.upsert({
 
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
-import { LibSQLVector } from "@datawarp/mastra-core/vector/libsql";
+import { LibSQLVector } from "@actus-ag/mastra-core/vector/libsql";
 
 const store = new LibSQLVector({
   connectionUrl: process.env.DATABASE_URL,
@@ -186,7 +186,7 @@ await store.upsert({
 
 <Tabs.Tab>
   ```ts filename="vector-store.ts" showLineNumbers copy
-  import { UpstashVector } from '@datawarp/mastra-upstash'
+  import { UpstashVector } from '@actus-ag/mastra-upstash'
 
   // In upstash they refer to the store as an index
   const store = new UpstashVector({
@@ -206,7 +206,7 @@ await store.upsert({
 
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
-import { CloudflareVector } from '@datawarp/mastra-vectorize'
+import { CloudflareVector } from '@actus-ag/mastra-vectorize'
 
 const store = new CloudflareVector({
   accountId: process.env.CF_ACCOUNT_ID,
@@ -227,7 +227,7 @@ await store.upsert({
 
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
-import { OpenSearchVector } from '@datawarp/mastra-opensearch'
+import { OpenSearchVector } from '@actus-ag/mastra-opensearch'
 
 const store = new OpenSearchVector({ url: process.env.OPENSEARCH_URL })
 
@@ -246,7 +246,7 @@ await store.upsert({
 </Tabs.Tab>
 <Tabs.Tab>
   ```ts filename="vector-store.ts" showLineNumbers copy
-  import { CouchbaseVector } from '@datawarp/mastra-couchbase'
+  import { CouchbaseVector } from '@actus-ag/mastra-couchbase'
 
   const store = new CouchbaseVector({
     connectionString: process.env.COUCHBASE_CONNECTION_STRING,
@@ -269,7 +269,7 @@ await store.upsert({
 </Tabs.Tab>
 <Tabs.Tab>
   ```ts filename="vector-store.ts" showLineNumbers copy
-  import { LanceVectorStore } from '@datawarp/mastra-lance'
+  import { LanceVectorStore } from '@actus-ag/mastra-lance'
 
   const store = await LanceVectorStore.create('/path/to/db')
   

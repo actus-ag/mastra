@@ -32,7 +32,7 @@ Create a new file `src/mastra/agents/chefAgent.ts` and define your agent:
 
 ```ts copy filename="src/mastra/agents/chefAgent.ts"
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 
 export const chefAgent = new Agent({
   name: "chef-agent",
@@ -48,7 +48,7 @@ export const chefAgent = new Agent({
 In your `src/mastra/index.ts` file, register the agent:
 
 ```ts copy filename="src/mastra/index.ts" {2, 5}
-import { Mastra } from "@datawarp/mastra-core";
+import { Mastra } from "@actus-ag/mastra-core";
 import { chefAgent } from "./agents/chefAgent";
 
 export const mastra = new Mastra({

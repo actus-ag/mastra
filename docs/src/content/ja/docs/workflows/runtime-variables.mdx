@@ -42,8 +42,8 @@ await start({
 HTTPヘッダーから乗数値を動的に設定する方法は次のとおりです：
 
 ```typescript filename="src/index.ts"
-import { Mastra } from "@datawarp/mastra-core";
-import { RuntimeContext } from "@datawarp/mastra-core/di";
+import { Mastra } from "@actus-ag/mastra-core";
+import { RuntimeContext } from "@actus-ag/mastra-core/di";
 import { workflow as myWorkflow } from "./workflows";
 
 // Define runtimeContext type with clear, descriptive types
@@ -81,7 +81,7 @@ export const mastra = new Mastra({
 ステップはruntimeContext変数にアクセスでき、ワークフローのruntimeContextタイプに準拠する必要があります：
 
 ```typescript
-import { Step } from "@datawarp/mastra-core/workflow";
+import { Step } from "@actus-ag/mastra-core/workflow";
 import { z } from "zod";
 
 // Define step input/output types

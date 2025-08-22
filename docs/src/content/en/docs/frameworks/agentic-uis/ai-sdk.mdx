@@ -24,7 +24,7 @@ When creating agents in Mastra, you can specify any AI SDK-supported model.
 
 ```typescript {7} filename="agents/weather-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 
 export const weatherAgent = new Agent({
   name: "Weather Agent",
@@ -233,7 +233,7 @@ Requests sent using `sendExtraMessageFields` are handled by a standard server ro
 
 ```typescript {8,12} filename="app/api/chat-extra/route.ts" showLineNumbers copy
 import { mastra } from "../../../mastra";
-import { RuntimeContext } from "@datawarp/mastra-core/runtime-context";
+import { RuntimeContext } from "@actus-ag/mastra-core/runtime-context";
 
 export async function POST(req: Request) {
   const { messages, data } = await req.json();
@@ -258,7 +258,7 @@ export async function POST(req: Request) {
 You can also populate the `RuntimeContext` by reading custom data in a server middleware:
 
 ```typescript {6} filename="mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@datawarp/mastra-core/mastra";
+import { Mastra } from "@actus-ag/mastra-core/mastra";
 
 export const mastra = new Mastra({
   agents: { weatherAgent },
@@ -324,7 +324,7 @@ The `createDataStream` function allows you to stream additional data to the clie
 
 ```typescript {1, 6} filename="mastra/agents/weather-agent.ts" showLineNumbers copy
 import { createDataStream } from "ai";
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 
 export const weatherAgent = new Agent({...});
 
@@ -411,22 +411,22 @@ Install the `@ai-v5` prerelease version of all Mastra packages:
 <Tabs items={["npm", "yarn", "pnpm", "bun"]}>
   <Tabs.Tab>
     ```bash copy
-    npm install mastra@ai-v5 @datawarp/mastra-core@ai-v5 @datawarp/mastra-memory@ai-v5
+    npm install mastra@ai-v5 @actus-ag/mastra-core@ai-v5 @actus-ag/mastra-memory@ai-v5
     ```
   </Tabs.Tab>
   <Tabs.Tab>
     ```bash copy
-    yarn add mastra@ai-v5 @datawarp/mastra-core@ai-v5 @datawarp/mastra-memory@ai-v5
+    yarn add mastra@ai-v5 @actus-ag/mastra-core@ai-v5 @actus-ag/mastra-memory@ai-v5
     ```
   </Tabs.Tab>
   <Tabs.Tab>
     ```bash copy
-    pnpm add mastra@ai-v5 @datawarp/mastra-core@ai-v5 @datawarp/mastra-memory@ai-v5
+    pnpm add mastra@ai-v5 @actus-ag/mastra-core@ai-v5 @actus-ag/mastra-memory@ai-v5
     ```
   </Tabs.Tab>
   <Tabs.Tab>
     ```bash copy
-    bun add mastra@ai-v5 @datawarp/mastra-core@ai-v5 @datawarp/mastra-memory@ai-v5
+    bun add mastra@ai-v5 @actus-ag/mastra-core@ai-v5 @actus-ag/mastra-memory@ai-v5
     ```
   </Tabs.Tab>
 </Tabs>
@@ -434,7 +434,7 @@ Install the `@ai-v5` prerelease version of all Mastra packages:
 Configure your Mastra instance with `v4` compatibility so your frontend, and the Mastra Playground will continue to work:
 
 ```typescript {7} filename="mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@datawarp/mastra-core/mastra";
+import { Mastra } from "@actus-ag/mastra-core/mastra";
 
 import { weatherAgent } from "./agents/weather-agent";
 
@@ -451,7 +451,7 @@ If your frontend calls a Mastra agent using a custom API route, wrap the `toUIMe
 
 ```typescript filename="app/api/chat/route.ts" showLineNumbers copy
 import { mastra } from "../../../mastra";
-import { createV4CompatibleResponse } from "@datawarp/mastra-core/agent";
+import { createV4CompatibleResponse } from "@actus-ag/mastra-core/agent";
 
 export async function POST(req: Request) {
   const { messages } = await req.json();

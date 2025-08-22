@@ -8,7 +8,7 @@ description: "Mastraのワークフロー（vNext）は、分岐、並列実行�
 vNextワークフローを使用するには、まずvNextモジュールから必要な関数をインポートします：
 
 ```typescript
-import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows/vNext";
+import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows/vNext";
 import { z } from "zod"; // For schema validation
 ```
 
@@ -167,7 +167,7 @@ import {
   createStep,
   cloneStep,
   cloneWorkflow,
-} from "@datawarp/mastra-core/workflows/vNext";
+} from "@actus-ag/mastra-core/workflows/vNext";
 
 const myWorkflow = createWorkflow({
   id: "my-workflow",

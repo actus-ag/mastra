@@ -12,7 +12,7 @@ Use `createFaithfulnessScorer` to evaluate whether the response makes claims tha
 ## Installation
 
 ```bash copy
-npm install @datawarp/mastra-evals
+npm install @actus-ag/mastra-evals
 ```
 
 > For complete API documentation and configuration options, see [`createFaithfulnessScorer`](/reference/scorers/faithfulness).
@@ -23,7 +23,7 @@ In this example, the response closely aligns with the context. Each statement in
 
 ```typescript filename="src/example-high-faithfulness.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { createFaithfulnessScorer } from "@datawarp/mastra-evals/scorers/llm";
+import { createFaithfulnessScorer } from "@actus-ag/mastra-evals/scorers/llm";
 
 const scorer = createFaithfulnessScorer({ model: openai("gpt-4o-mini"), options: {
   context: [
@@ -61,7 +61,7 @@ In this example, there are a mix of supported and unsupported claims. Some parts
 
 ```typescript filename="src/example-mixed-faithfulness.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { createFaithfulnessScorer } from "@datawarp/mastra-evals/scorers/llm";
+import { createFaithfulnessScorer } from "@actus-ag/mastra-evals/scorers/llm";
 
 const scorer = createFaithfulnessScorer({ model: openai("gpt-4o-mini"), options: {
   context: [
@@ -99,7 +99,7 @@ In this example, the response directly contradicts the context. None of the clai
 
 ```typescript filename="src/example-low-faithfulness.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { createFaithfulnessScorer } from "@datawarp/mastra-evals/scorers/llm";
+import { createFaithfulnessScorer } from "@actus-ag/mastra-evals/scorers/llm";
 
 const scorer = createFaithfulnessScorer({ model: openai("gpt-4o-mini"), options: {
   context: [

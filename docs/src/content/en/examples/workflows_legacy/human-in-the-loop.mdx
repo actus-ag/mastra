@@ -23,8 +23,8 @@ This pattern allows for safe, type-checked human intervention in automated workf
 This example demonstrates how to use the [Inquirer](https://www.npmjs.com/package/@inquirer/prompts) library to collect user input directly from the terminal when a workflow is suspended, creating a truly interactive human-in-the-loop experience.
 
 ```ts showLineNumbers copy
-import { Mastra } from "@datawarp/mastra-core";
-import { LegacyStep, LegacyWorkflow } from "@datawarp/mastra-core/workflows/legacy";
+import { Mastra } from "@actus-ag/mastra-core";
+import { LegacyStep, LegacyWorkflow } from "@actus-ag/mastra-core/workflows/legacy";
 import { z } from "zod";
 import { confirm, input, select } from "@inquirer/prompts";
 
@@ -316,8 +316,8 @@ runRecommendationWorkflow().catch(console.error);
 This example demonstrates a more complex workflow that requires multiple human intervention points, such as in a content moderation system.
 
 ```ts showLineNumbers copy
-import { Mastra } from "@datawarp/mastra-core";
-import { LegacyStep, LegacyWorkflow } from "@datawarp/mastra-core/workflows/legacy";
+import { Mastra } from "@actus-ag/mastra-core";
+import { LegacyStep, LegacyWorkflow } from "@actus-ag/mastra-core/workflows/legacy";
 import { z } from "zod";
 import { select, input } from "@inquirer/prompts";
 

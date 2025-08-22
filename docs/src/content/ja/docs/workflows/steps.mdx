@@ -14,7 +14,7 @@ description: "Mastraワークフローのステップは、入力、出力、実
 `.step()` と `.then()` を使って、ワークフロー内で直接ステップを作成できます。以下のコードは、2つのステップを順番に定義し、リンクし、実行する方法を示しています。
 
 ```typescript showLineNumbers filename="src/mastra/workflows/index.ts" copy
-import { Step, Workflow, Mastra } from "@datawarp/mastra-core";
+import { Step, Workflow, Mastra } from "@actus-ag/mastra-core";
 import { z } from "zod";
 
 export const myWorkflow = new Workflow({
@@ -66,7 +66,7 @@ export const mastra = new Mastra({
 ステップのロジックを別々のエンティティで管理したい場合は、ステップを外部で定義し、その後ワークフローに追加することができます。以下のコードは、ステップを独立して定義し、後からリンクする方法を示しています。
 
 ```typescript showLineNumbers filename="src/mastra/workflows/index.ts" copy
-import { Step, Workflow, Mastra } from "@datawarp/mastra-core";
+import { Step, Workflow, Mastra } from "@actus-ag/mastra-core";
 import { z } from "zod";
 
 // Define steps separately

@@ -11,7 +11,7 @@ AI アプリケーションを構築する際、効率を向上させるため�
 ## セットアップ
 
 ```sh copy
-npm install @ai-sdk/openai @datawarp/mastra-core
+npm install @ai-sdk/openai @actus-ag/mastra-core
 ```
 
 ## プランニングエージェントの定義
@@ -19,7 +19,7 @@ npm install @ai-sdk/openai @datawarp/mastra-core
 場所と対応する天気状況を考慮して活動を計画するために、LLM呼び出しを活用するプランニングエージェントを定義します。
 
 ```ts showLineNumbers copy filename="agents/planning-agent.ts"
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
 
 const llm = openai("gpt-4o");
@@ -80,7 +80,7 @@ export { planningAgent };
 計画された屋内および屋外活動を受け取り、一日の完全なレポートを提供する統合エージェントを定義します。
 
 ```ts showLineNumbers copy filename="agents/synthesize-agent.ts"
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
 
 const llm = openai("gpt-4o");
@@ -105,7 +105,7 @@ export { synthesizeAgent };
 
 ```ts showLineNumbers copy filename="workflows/parallel-workflow.ts"
 import { z } from "zod";
-import { createStep, createWorkflow } from "@datawarp/mastra-core/workflows/vNext";
+import { createStep, createWorkflow } from "@actus-ag/mastra-core/workflows/vNext";
 
 const forecastSchema = z.object({
   date: z.string(),
@@ -358,8 +358,8 @@ export { activityPlanningWorkflow };
 これはワークフロー内でエージェントへのアクセスを可能にするために重要です。
 
 ```ts showLineNumbers copy filename="index.ts"
-import { Mastra } from "@datawarp/mastra-core/mastra";
-import { PinoLogger } from "@datawarp/mastra-loggers";
+import { Mastra } from "@actus-ag/mastra-core/mastra";
+import { PinoLogger } from "@actus-ag/mastra-loggers";
 import { activityPlanningWorkflow } from "./workflows/parallel-workflow";
 import { planningAgent } from "./agents/planning-agent";
 import { synthesizeAgent } from "./agents/synthesize-agent";

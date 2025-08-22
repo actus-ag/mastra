@@ -21,7 +21,7 @@ Create an agent that returns technical support for mastra cloud using dynamic va
 
 ```typescript filename="src/mastra/agents/example-support-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 
 export const supportAgent = new Agent({
   name: "support-agent",
@@ -51,7 +51,7 @@ export const supportAgent = new Agent({
 To use an agent, register it in your main Mastra instance.
 
 ```typescript filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@datawarp/mastra-core/mastra";
+import { Mastra } from "@actus-ag/mastra-core/mastra";
 
 import { supportAgent } from "./agents/example-support-agent";
 
@@ -69,7 +69,7 @@ Set `RuntimeContext` using `set()`, then use `getAgent()` to retrieve a referenc
 import "dotenv/config";
 
 import { mastra } from "./mastra";
-import { RuntimeContext } from "@datawarp/mastra-core/runtime-context";
+import { RuntimeContext } from "@actus-ag/mastra-core/runtime-context";
 
 type SupportRuntimeContext = {
   "user-tier": "free" | "pro" | "enterprise";

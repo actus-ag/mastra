@@ -24,8 +24,8 @@ LLMからの応答を受け取った後、すべての新しいメッセージ�
 セマンティックリコールはデフォルトで有効になっているため、エージェントにメモリを与えると、それが含まれます：
 
 ```typescript {9}
-import { Agent } from "@datawarp/mastra-core/agent";
-import { Memory } from "@datawarp/mastra-memory";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { Memory } from "@actus-ag/mastra-memory";
 import { openai } from "@ai-sdk/openai";
 
 const agent = new Agent({
@@ -61,9 +61,9 @@ const agent = new Agent({
 セマンティックリコールは、メッセージとそれらの埋め込みを保存するために[ストレージとベクトルDB](/reference/memory/Memory#parameters)に依存しています。
 
 ```ts {8-17}
-import { Memory } from "@datawarp/mastra-memory";
-import { Agent } from "@datawarp/mastra-core/agent";
-import { LibSQLStore, LibSQLVector } from "@datawarp/mastra-libsql";
+import { Memory } from "@actus-ag/mastra-memory";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { LibSQLStore, LibSQLVector } from "@actus-ag/mastra-libsql";
 
 const agent = new Agent({
   memory: new Memory({
@@ -89,18 +89,18 @@ const agent = new Agent({
 
 セマンティックリコールは、メッセージを埋め込みに変換するために[埋め込みモデル](/reference/memory/Memory#embedder)に依存しています。AI SDKと互換性のある任意の[埋め込みモデル](https://sdk.vercel.ai/docs/ai-sdk-core/embeddings)を指定できます。
 
-FastEmbed（ローカル埋め込みモデル）を使用するには、`@datawarp/mastra-fastembed`をインストールします：
+FastEmbed（ローカル埋め込みモデル）を使用するには、`@actus-ag/mastra-fastembed`をインストールします：
 
 ```bash npm2yarn copy
-npm install @datawarp/mastra-fastembed
+npm install @actus-ag/mastra-fastembed
 ```
 
 そして、メモリで次のように設定します：
 
 ```ts {3,8}
-import { Memory } from "@datawarp/mastra-memory";
-import { Agent } from "@datawarp/mastra-core/agent";
-import { fastembed } from "@datawarp/mastra-fastembed";
+import { Memory } from "@actus-ag/mastra-memory";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { fastembed } from "@actus-ag/mastra-fastembed";
 
 const agent = new Agent({
   memory: new Memory({
@@ -113,8 +113,8 @@ const agent = new Agent({
 あるいは、OpenAIのような別のプロバイダーを使用することもできます：
 
 ```ts {3,8}
-import { Memory } from "@datawarp/mastra-memory";
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Memory } from "@actus-ag/mastra-memory";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
 
 const agent = new Agent({

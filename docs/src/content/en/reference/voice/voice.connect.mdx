@@ -10,8 +10,8 @@ The `connect()` method establishes a WebSocket or WebRTC connection for real-tim
 ## Usage Example
 
 ```typescript
-import { OpenAIRealtimeVoice } from "@datawarp/mastra-voice-openai-realtime";
-import Speaker from "@datawarp/mastra-node-speaker";
+import { OpenAIRealtimeVoice } from "@actus-ag/mastra-voice-openai-realtime";
+import Speaker from "@actus-ag/mastra-node-speaker";
 
 const speaker = new Speaker({
   sampleRate: 24100, // Audio sample rate in Hz - standard for high-quality audio on MacBook Pro
@@ -96,8 +96,8 @@ Each real-time voice provider may support different options for the `connect()` 
 When using `CompositeVoice`, the `connect()` method delegates to the configured real-time provider:
 
 ```typescript
-import { CompositeVoice } from "@datawarp/mastra-core/voice";
-import { OpenAIRealtimeVoice } from "@datawarp/mastra-voice-openai-realtime";
+import { CompositeVoice } from "@actus-ag/mastra-core/voice";
+import { OpenAIRealtimeVoice } from "@actus-ag/mastra-voice-openai-realtime";
 const realtimeVoice = new OpenAIRealtimeVoice();
 const voice = new CompositeVoice({
   realtimeProvider: realtimeVoice,

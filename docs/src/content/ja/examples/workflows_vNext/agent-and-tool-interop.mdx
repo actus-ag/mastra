@@ -11,7 +11,7 @@ Mastraは、ステップまたはエージェントを受け入れ、Stepイン�
 ## セットアップ
 
 ```sh copy
-npm install @ai-sdk/openai @datawarp/mastra-core
+npm install @ai-sdk/openai @actus-ag/mastra-core
 ```
 
 ## 天気レポーターエージェントの定義
@@ -20,7 +20,7 @@ LLMを活用して天気レポーターのように天気予報を説明する�
 
 ```ts showLineNumbers copy filename="agents/weather-reporter-agent.ts"
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 
 // Create an agent that explains weather reports in a conversational style
 export const weatherReporterAgent = new Agent({
@@ -38,7 +38,7 @@ export const weatherReporterAgent = new Agent({
 場所の名前を入力として受け取り、詳細な天気情報を出力する天気ツールを定義します。
 
 ```ts showLineNumbers copy filename="tools/weather-tool.ts"
-import { createTool } from "@datawarp/mastra-core/tools";
+import { createTool } from "@actus-ag/mastra-core/tools";
 import { z } from "zod";
 
 interface GeocodingResponse {
@@ -150,7 +150,7 @@ function getWeatherCondition(code: number): string {
 ステップとしてエージェントとツールを使用するワークフローを定義します。
 
 ```ts showLineNumbers copy filename="workflows/interop-workflow.ts"
-import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows/vNext";
+import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows/vNext";
 import { weatherTool } from "../tools/weather-tool";
 import { weatherReporterAgent } from "../agents/weather-reporter-agent";
 import { z } from "zod";
@@ -204,8 +204,8 @@ export { weatherWorkflow };
 ワークフローをmastraインスタンスに登録します。
 
 ```ts showLineNumbers copy filename="index.ts"
-import { Mastra } from "@datawarp/mastra-core/mastra";
-import { PinoLogger } from "@datawarp/mastra-loggers";
+import { Mastra } from "@actus-ag/mastra-core/mastra";
+import { PinoLogger } from "@actus-ag/mastra-loggers";
 import { weatherWorkflow } from "./workflows/interop-workflow";
 import { weatherReporterAgent } from "./agents/weather-reporter-agent";
 

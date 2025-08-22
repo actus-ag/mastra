@@ -42,7 +42,7 @@ cd stock-price-agent
 
 ```bash copy
 npm init -y
-npm install @datawarp/mastra-core@latest zod @ai-sdk/openai
+npm install @actus-ag/mastra-core@latest zod @ai-sdk/openai
 ```
 
 環境変数の設定
@@ -67,7 +67,7 @@ touch src/agents/stockAgent.ts src/tools/stockPrices.ts src/index.ts
 次に、指定されたシンボルの前日終値を取得するツールを作成します。
 
 ```ts filename="src/tools/stockPrices.ts"
-import { createTool } from "@datawarp/mastra-core/tools";
+import { createTool } from "@actus-ag/mastra-core/tools";
 import { z } from "zod";
 
 const getStockPrice = async (symbol: string) => {
@@ -100,7 +100,7 @@ export const stockPrices = createTool({
 エージェントを作成し、`stockPrices`ツールを追加します。
 
 ```ts filename="src/agents/stockAgent.ts"
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
 
 import * as tools from "../tools/stockPrices";
@@ -123,7 +123,7 @@ export const stockAgent = new Agent<typeof tools>({
 エージェントとツールを使用してMastraインスタンスを初期化する必要があります。
 
 ```ts filename="src/index.ts"
-import { Mastra } from "@datawarp/mastra-core";
+import { Mastra } from "@actus-ag/mastra-core";
 
 import { stockAgent } from "./agents/stockAgent";
 

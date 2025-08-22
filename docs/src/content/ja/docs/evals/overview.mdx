@@ -25,13 +25,13 @@ description: "Mastra evalsを使用してAIエージェントの品質を評価�
 Evalsはエージェントに追加する必要があります。以下は要約、コンテンツの類似性、およびトーンの一貫性のメトリクスを使用した例です：
 
 ```typescript copy showLineNumbers filename="src/mastra/agents/index.ts"
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
-import { SummarizationMetric } from "@datawarp/mastra-evals/llm";
+import { SummarizationMetric } from "@actus-ag/mastra-evals/llm";
 import {
   ContentSimilarityMetric,
   ToneConsistencyMetric,
-} from "@datawarp/mastra-evals/nlp";
+} from "@actus-ag/mastra-evals/nlp";
 
 const model = openai("gpt-4o");
 

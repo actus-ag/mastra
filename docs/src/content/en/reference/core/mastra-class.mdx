@@ -16,7 +16,7 @@ Think of `Mastra` as a top-level registry:
 ## Importing
 
 ```typescript
-import { Mastra } from "@datawarp/mastra-core";
+import { Mastra } from "@actus-ag/mastra-core";
 ```
 
 ## Constructor
@@ -32,8 +32,8 @@ constructor(config?: Config);
 The Mastra class is typically initialized in your `src/mastra/index.ts` file:
 
 ```typescript filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@datawarp/mastra-core";
-import { LibSQLStore } from "@datawarp/mastra-libsql";
+import { Mastra } from "@actus-ag/mastra-core";
+import { LibSQLStore } from "@actus-ag/mastra-libsql";
 import { weatherAgent } from "./agents/weather-agent";
 
 export const mastra = new Mastra({

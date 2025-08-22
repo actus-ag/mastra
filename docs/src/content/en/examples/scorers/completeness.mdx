@@ -12,7 +12,7 @@ Use `createCompletenessScorer` to evaluate whether the response thoroughly addre
 ## Installation
 
 ```bash copy
-npm install @datawarp/mastra-evals
+npm install @actus-ag/mastra-evals
 ```
 
 > For complete API documentation and configuration options, see [`createCompletenessScorer`](/reference/scorers/completeness).
@@ -23,7 +23,7 @@ In this example, the response comprehensively addresses all aspects of the query
 
 ```typescript filename="src/example-high-completeness.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { createCompletenessScorer } from "@datawarp/mastra-evals/scorers/llm";
+import { createCompletenessScorer } from "@actus-ag/mastra-evals/scorers/llm";
 
 const scorer = createCompletenessScorer({ model: openai("gpt-4o-mini") });
 
@@ -56,7 +56,7 @@ In this example, the response addresses some key points but misses important asp
 
 ```typescript filename="src/example-partial-completeness.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { createCompletenessScorer } from "@datawarp/mastra-evals/scorers/llm";
+import { createCompletenessScorer } from "@actus-ag/mastra-evals/scorers/llm";
 
 const scorer = createCompletenessScorer({ model: openai("gpt-4o-mini") });
 
@@ -89,7 +89,7 @@ In this example, the response only partially addresses the query and misses seve
 
 ```typescript filename="src/example-low-completeness.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { createCompletenessScorer } from "@datawarp/mastra-evals/scorers/llm";
+import { createCompletenessScorer } from "@actus-ag/mastra-evals/scorers/llm";
 
 const scorer = createCompletenessScorer({ model: openai("gpt-4o-mini") });
 

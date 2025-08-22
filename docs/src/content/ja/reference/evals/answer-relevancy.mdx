@@ -11,7 +11,7 @@ description: Mastra における回答の関連性メトリクスのドキュメ
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { AnswerRelevancyMetric } from "@datawarp/mastra-evals/llm";
+import { AnswerRelevancyMetric } from "@actus-ag/mastra-evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");
@@ -151,7 +151,7 @@ console.log(result.info.reason); // Explanation of the score
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { AnswerRelevancyMetric } from "@datawarp/mastra-evals/llm";
+import { AnswerRelevancyMetric } from "@actus-ag/mastra-evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");

@@ -9,10 +9,10 @@ This example demonstrates how to create an agent that maintains a working memory
 
 ## Setup
 
-First, set up the memory system with working memory enabled. Note that `new Memory()` without a configured storage provider will not persist data across application restarts. For persistence, you can configure a storage provider like `@datawarp/mastra-libsql`:
+First, set up the memory system with working memory enabled. Note that `new Memory()` without a configured storage provider will not persist data across application restarts. For persistence, you can configure a storage provider like `@actus-ag/mastra-libsql`:
 
 ```typescript
-import { Memory } from "@datawarp/mastra-memory";
+import { Memory } from "@actus-ag/mastra-memory";
 
 const memory = new Memory({
   options: {

@@ -18,7 +18,7 @@ Mastra provides several built-in output processors for common use cases:
 This processor provides content moderation using an LLM to detect inappropriate content across multiple categories.
 
 ```typescript copy showLineNumbers {5-13}
-import { ModerationProcessor } from "@datawarp/mastra-core/processors";
+import { ModerationProcessor } from "@actus-ag/mastra-core/processors";
 
 const agent = new Agent({
   outputProcessors: [
@@ -49,7 +49,7 @@ Strategies available:
 This processor detects and optionally redacts personally identifiable information (PII) from AI responses.
 
 ```typescript copy showLineNumbers {5-14}
-import { PIIDetector } from "@datawarp/mastra-core/processors";
+import { PIIDetector } from "@actus-ag/mastra-core/processors";
 
 const agent = new Agent({
   outputProcessors: [
@@ -87,7 +87,7 @@ Strategies available:
 This processor converts unstructured LLM text responses into structured data using an internal agent. It preserves the original text while adding structured data to the response metadata as well as to result.object.
 
 ```typescript copy showLineNumbers {5-15}
-import { StructuredOutputProcessor } from "@datawarp/mastra-core/processors";
+import { StructuredOutputProcessor } from "@actus-ag/mastra-core/processors";
 import { z } from "zod";
 
 const agent = new Agent({
@@ -124,7 +124,7 @@ The structured data is stored in `result.object` and the original text is preser
 This processor batches multiple stream parts together to reduce the frequency of emissions, useful for reducing network overhead or improving user experience.
 
 ```typescript copy showLineNumbers {5-12}
-import { BatchPartsProcessor } from "@datawarp/mastra-core/processors";
+import { BatchPartsProcessor } from "@actus-ag/mastra-core/processors";
 
 const agent = new Agent({
   outputProcessors: [
@@ -147,7 +147,7 @@ Available options:
 This processor limits the number of tokens in AI responses, either by truncating or aborting when limits are exceeded.
 
 ```typescript copy showLineNumbers {5-12}
-import { TokenLimiterProcessor } from "@datawarp/mastra-core/processors";
+import { TokenLimiterProcessor } from "@actus-ag/mastra-core/processors";
 
 const agent = new Agent({
   outputProcessors: [
@@ -170,7 +170,7 @@ Available options:
 This processor detects and redacts system prompts or other revealing information that could introduce security vulnerabilities.
 
 ```typescript copy showLineNumbers {5-12}
-import { SystemPromptScrubber } from "@datawarp/mastra-core/processors";
+import { SystemPromptScrubber } from "@actus-ag/mastra-core/processors";
 
 const agent = new Agent({
   outputProcessors: [
@@ -197,13 +197,13 @@ You can chain multiple output processors. They execute sequentially in the order
 **Order matters!** Generally, it's best practice to place text normalization first, security checks next, and content modification last.
 
 ```typescript copy showLineNumbers {9-18}
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { 
   UnicodeNormalizer, 
   ModerationProcessor, 
   PromptInjectionDetector,
   PIIDetector 
-} from "@datawarp/mastra-core/processors";
+} from "@actus-ag/mastra-core/processors";
 
 const secureAgent = new Agent({
   outputProcessors: [
@@ -226,7 +226,7 @@ You can create custom output processors by implementing the `Processor` interfac
 ### Streaming Output Processor
 
 ```typescript copy showLineNumbers {4-25}
-import type { Processor, MastraMessageV2, TripWire } from "@datawarp/mastra-core/processors";
+import type { Processor, MastraMessageV2, TripWire } from "@actus-ag/mastra-core/processors";
 import type { TextStreamPart, ObjectStreamPart } from 'ai';
 
 class ResponseLengthLimiter implements Processor {
@@ -267,7 +267,7 @@ class ResponseLengthLimiter implements Processor {
 ### Final Result Processor
 
 ```typescript copy showLineNumbers {4-19}
-import type { Processor, MastraMessageV2, TripWire } from "@datawarp/mastra-core/processors";
+import type { Processor, MastraMessageV2, TripWire } from "@actus-ag/mastra-core/processors";
 
 class ResponseValidator implements Processor {
   readonly name = 'response-validator';

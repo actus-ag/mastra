@@ -15,7 +15,7 @@ The `ContextualRecallMetric` class evaluates how effectively an LLM's response i
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { ContextualRecallMetric } from "@datawarp/mastra-evals/llm";
+import { ContextualRecallMetric } from "@actus-ag/mastra-evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");
@@ -159,7 +159,7 @@ Final score: `(correctly_recalled_items / total_relevant_items) * scale`
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { ContextualRecallMetric } from "@datawarp/mastra-evals/llm";
+import { ContextualRecallMetric } from "@actus-ag/mastra-evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");

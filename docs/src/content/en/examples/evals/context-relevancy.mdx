@@ -15,7 +15,7 @@ Use `ContextRelevancyMetric` to evaluate how well the retrieved context aligns w
 ## Installation
 
 ```bash copy
-npm install @datawarp/mastra-evals
+npm install @actus-ag/mastra-evals
 ```
 
 ## High relevancy example
@@ -24,7 +24,7 @@ In this example, the response uses only context that is directly relevant to the
 
 ```typescript filename="src/example-high-context-relevancy.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { ContextRelevancyMetric } from "@datawarp/mastra-evals/llm";
+import { ContextRelevancyMetric } from "@actus-ag/mastra-evals/llm";
 
 const metric = new ContextRelevancyMetric(openai("gpt-4o-mini"), {
   context: [
@@ -61,7 +61,7 @@ In this example, the response uses one or more relevant context items but also i
 
 ```typescript filename="src/example-mixed-context-relevancy.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { ContextRelevancyMetric } from "@datawarp/mastra-evals/llm";
+import { ContextRelevancyMetric } from "@actus-ag/mastra-evals/llm";
 
 const metric = new ContextRelevancyMetric(openai("gpt-4o-mini"), {
   context: [
@@ -100,7 +100,7 @@ In this example, most of the context is unrelated to the query. Only one item is
 
 ```typescript filename="src/example-low-context-relevancy.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { ContextRelevancyMetric } from "@datawarp/mastra-evals/llm";
+import { ContextRelevancyMetric } from "@actus-ag/mastra-evals/llm";
 
 const metric = new ContextRelevancyMetric(openai("gpt-4o-mini"), {
   context: [

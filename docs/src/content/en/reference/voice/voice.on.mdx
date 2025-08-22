@@ -10,8 +10,8 @@ The `on()` method registers event listeners for various voice events. This is pa
 ## Usage Example
 
 ```typescript
-import { OpenAIRealtimeVoice } from "@datawarp/mastra-voice-openai-realtime";
-import Speaker from "@datawarp/mastra-node-speaker";
+import { OpenAIRealtimeVoice } from "@actus-ag/mastra-voice-openai-realtime";
+import Speaker from "@actus-ag/mastra-node-speaker";
 import chalk from "chalk";
 
 // Initialize a real-time voice provider
@@ -97,9 +97,9 @@ Different voice providers may support different sets of events with varying payl
 When using `CompositeVoice`, the `on()` method delegates to the configured real-time provider:
 
 ```typescript
-import { CompositeVoice } from "@datawarp/mastra-core/voice";
-import { OpenAIRealtimeVoice } from "@datawarp/mastra-voice-openai-realtime";
-import Speaker from "@datawarp/mastra-node-speaker";
+import { CompositeVoice } from "@actus-ag/mastra-core/voice";
+import { OpenAIRealtimeVoice } from "@actus-ag/mastra-voice-openai-realtime";
+import Speaker from "@actus-ag/mastra-node-speaker";
 
 const speaker = new Speaker({
   sampleRate: 24100, // Audio sample rate in Hz - standard for high-quality audio on MacBook Pro

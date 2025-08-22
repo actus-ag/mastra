@@ -9,8 +9,8 @@ Mastraエージェントは音声機能で強化することができ、応答�
 ```typescript
 import { createReadStream } from "fs";
 import path from "path";
-import { Agent } from "@datawarp/mastra-core/agent";
-import { OpenAIVoice } from "@datawarp/mastra-voice-openai";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
 import { openai } from "@ai-sdk/openai";
 
 // Initialize the voice provider with default settings
@@ -44,10 +44,10 @@ try {
 より柔軟性を高めるために、CompositeVoiceクラスを使用して発話と聴取に異なるプロバイダーを使用することができます：
 
 ```typescript
-import { Agent } from "@datawarp/mastra-core/agent";
-import { CompositeVoice } from "@datawarp/mastra-core/voice";
-import { OpenAIVoice } from "@datawarp/mastra-voice-openai";
-import { PlayAIVoice } from "@datawarp/mastra-voice-playai";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { CompositeVoice } from "@actus-ag/mastra-core/voice";
+import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
+import { PlayAIVoice } from "@actus-ag/mastra-voice-playai";
 import { openai } from "@ai-sdk/openai";
 
 export const agent = new Agent({
@@ -116,9 +116,9 @@ try {
 より動的でインタラクティブな音声体験のために、音声対音声機能をサポートするリアルタイム音声プロバイダーを使用できます：
 
 ```typescript
-import { Agent } from "@datawarp/mastra-core/agent";
-import { getMicrophoneStream } from "@datawarp/mastra-node-audio";
-import { OpenAIRealtimeVoice } from "@datawarp/mastra-voice-openai-realtime";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { getMicrophoneStream } from "@actus-ag/mastra-node-audio";
+import { OpenAIRealtimeVoice } from "@actus-ag/mastra-voice-openai-realtime";
 import { search, calculate } from "../tools";
 
 // Initialize the realtime voice provider
@@ -182,16 +182,16 @@ Mastraは、テキスト読み上げ（TTS）と音声認識（STT）機能の�
 
 | プロバイダー    | パッケージ                      | 機能                   | リファレンス                                     |
 | --------------- | ------------------------------- | ---------------------- | ------------------------------------------------ |
-| OpenAI          | `@datawarp/mastra-voice-openai`          | TTS, STT               | [ドキュメント](/reference/voice/openai)          |
-| OpenAI Realtime | `@datawarp/mastra-voice-openai-realtime` | リアルタイム音声対音声 | [ドキュメント](/reference/voice/openai-realtime) |
-| ElevenLabs      | `@datawarp/mastra-voice-elevenlabs`      | 高品質TTS              | [ドキュメント](/reference/voice/elevenlabs)      |
-| PlayAI          | `@datawarp/mastra-voice-playai`          | TTS                    | [ドキュメント](/reference/voice/playai)          |
-| Google          | `@datawarp/mastra-voice-google`          | TTS, STT               | [ドキュメント](/reference/voice/google)          |
-| Deepgram        | `@datawarp/mastra-voice-deepgram`        | STT                    | [ドキュメント](/reference/voice/deepgram)        |
-| Murf            | `@datawarp/mastra-voice-murf`            | TTS                    | [ドキュメント](/reference/voice/murf)            |
-| Speechify       | `@datawarp/mastra-voice-speechify`       | TTS                    | [ドキュメント](/reference/voice/speechify)       |
-| Sarvam          | `@datawarp/mastra-voice-sarvam`          | TTS, STT               | [ドキュメント](/reference/voice/sarvam)          |
-| Azure           | `@datawarp/mastra-voice-azure`           | TTS, STT               | [ドキュメント](/reference/voice/mastra-voice)    |
-| Cloudflare      | `@datawarp/mastra-voice-cloudflare`      | TTS                    | [ドキュメント](/reference/voice/mastra-voice)    |
+| OpenAI          | `@actus-ag/mastra-voice-openai`          | TTS, STT               | [ドキュメント](/reference/voice/openai)          |
+| OpenAI Realtime | `@actus-ag/mastra-voice-openai-realtime` | リアルタイム音声対音声 | [ドキュメント](/reference/voice/openai-realtime) |
+| ElevenLabs      | `@actus-ag/mastra-voice-elevenlabs`      | 高品質TTS              | [ドキュメント](/reference/voice/elevenlabs)      |
+| PlayAI          | `@actus-ag/mastra-voice-playai`          | TTS                    | [ドキュメント](/reference/voice/playai)          |
+| Google          | `@actus-ag/mastra-voice-google`          | TTS, STT               | [ドキュメント](/reference/voice/google)          |
+| Deepgram        | `@actus-ag/mastra-voice-deepgram`        | STT                    | [ドキュメント](/reference/voice/deepgram)        |
+| Murf            | `@actus-ag/mastra-voice-murf`            | TTS                    | [ドキュメント](/reference/voice/murf)            |
+| Speechify       | `@actus-ag/mastra-voice-speechify`       | TTS                    | [ドキュメント](/reference/voice/speechify)       |
+| Sarvam          | `@actus-ag/mastra-voice-sarvam`          | TTS, STT               | [ドキュメント](/reference/voice/sarvam)          |
+| Azure           | `@actus-ag/mastra-voice-azure`           | TTS, STT               | [ドキュメント](/reference/voice/mastra-voice)    |
+| Cloudflare      | `@actus-ag/mastra-voice-cloudflare`      | TTS                    | [ドキュメント](/reference/voice/mastra-voice)    |
 
 音声機能の詳細については、[音声APIリファレンス](/reference/voice/mastra-voice)をご覧ください。

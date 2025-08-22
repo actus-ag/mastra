@@ -15,9 +15,9 @@ The following example shows how to set up a story generator agent with TTS capab
 
 ```typescript filename="src/mastra/agents/index.ts"
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@datawarp/mastra-core/agent";
-import { OpenAIVoice } from "@datawarp/mastra-voice-openai";
-import { Memory } from "@datawarp/mastra-memory";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
+import { Memory } from "@actus-ag/mastra-memory";
 
 const instructions = `
     You are an Interactive Storyteller Agent. Your job is to create engaging
@@ -37,8 +37,8 @@ export const storyTellerAgent = new Agent({
 This snippet demonstrates how to register the agent with your Mastra instance:
 
 ```typescript filename="src/mastra/index.ts"
-import { PinoLogger } from "@datawarp/mastra-loggers";
-import { Mastra } from "@datawarp/mastra-core/mastra";
+import { PinoLogger } from "@actus-ag/mastra-loggers";
+import { Mastra } from "@actus-ag/mastra-core/mastra";
 import { storyTellerAgent } from "./agents";
 
 export const mastra = new Mastra({
@@ -55,7 +55,7 @@ export const mastra = new Mastra({
 Here we use the Mastra Client SDK to interact with our Mastra server. For more information about the Mastra Client SDK, check out the [documentation](/docs/deployment/client).
 
 ```typescript filename="src/app/page.tsx"
-import { MastraClient } from "@datawarp/mastra-client-js";
+import { MastraClient } from "@actus-ag/mastra-client-js";
 
 export const mastraClient = new MastraClient({
   baseUrl: "http://localhost:4111", // Replace with your Mastra backend URL

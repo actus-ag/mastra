@@ -15,7 +15,7 @@ This example shows how to create a custom evaluation metric using JavaScript log
 ## Installation
 
 ```bash
-npm install @datawarp/mastra-evals
+npm install @actus-ag/mastra-evals
 ```
 
 ## Create a custom eval
@@ -23,7 +23,7 @@ npm install @datawarp/mastra-evals
 A custom eval in Mastra can use native JavaScript methods to evaluate conditions.
 
 ```typescript filename="src/mastra/evals/example-word-inclusion.ts" showLineNumbers copy
-import { Metric, type MetricResult } from "@datawarp/mastra-core";
+import { Metric, type MetricResult } from "@actus-ag/mastra-core";
 
 export class WordInclusionMetric extends Metric {
   constructor() {

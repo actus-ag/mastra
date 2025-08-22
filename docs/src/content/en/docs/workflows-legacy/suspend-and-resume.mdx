@@ -27,7 +27,7 @@ Common scenarios for suspending workflows include:
 Here's a simple workflow that suspends when a value is too low and resumes when given a higher value:
 
 ```typescript
-import { LegacyStep, LegacyWorkflow } from "@datawarp/mastra-core/workflows/legacy";
+import { LegacyStep, LegacyWorkflow } from "@actus-ag/mastra-core/workflows/legacy";
 
 const stepTwo = new LegacyStep({
   id: "stepTwo",
@@ -282,8 +282,8 @@ When a workflow is suspended using `await suspend()`, Mastra automatically persi
 By default, Mastra uses LibSQL as its storage engine:
 
 ```typescript
-import { Mastra } from "@datawarp/mastra-core/mastra";
-import { LibSQLStore } from "@datawarp/mastra-libsql";
+import { Mastra } from "@actus-ag/mastra-core/mastra";
+import { LibSQLStore } from "@actus-ag/mastra-libsql";
 
 const mastra = new Mastra({
   storage: new LibSQLStore({
@@ -308,12 +308,12 @@ The LibSQL storage can be configured in different modes:
 For serverless applications or environments where Redis is preferred:
 
 ```bash copy
-npm install @datawarp/mastra-upstash@latest
+npm install @actus-ag/mastra-upstash@latest
 ```
 
 ```typescript
-import { Mastra } from "@datawarp/mastra-core/mastra";
-import { UpstashStore } from "@datawarp/mastra-upstash";
+import { Mastra } from "@actus-ag/mastra-core/mastra";
+import { UpstashStore } from "@actus-ag/mastra-upstash";
 
 const mastra = new Mastra({
   storage: new UpstashStore({

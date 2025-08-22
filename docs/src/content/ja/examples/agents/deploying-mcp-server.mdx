@@ -14,7 +14,7 @@ import { GithubLink } from "@/components/github-link";
 必要なパッケージをインストールします：
 
 ```bash
-pnpm add @datawarp/mastra-mcp @datawarp/mastra-core tsup
+pnpm add @actus-ag/mastra-mcp @actus-ag/mastra-core tsup
 ```
 
 ## MCP Server のセットアップ
@@ -25,7 +25,7 @@ pnpm add @datawarp/mastra-mcp @datawarp/mastra-core tsup
 
     ```typescript filename="src/mastra/stdio.ts" copy
     #!/usr/bin/env node
-    import { MCPServer } from "@datawarp/mastra-mcp";
+    import { MCPServer } from "@actus-ag/mastra-mcp";
     import { weatherTool } from "./tools";
 
     const server = new MCPServer({
@@ -78,7 +78,7 @@ pnpm add @datawarp/mastra-mcp @datawarp/mastra-core tsup
 公開が完了すると、`MCPClient` でコマンドを指定してあなたのパッケージを実行することで、MCPサーバーを利用できます。また、Claude desktop、Cursor、Windsurfなど、他のMCPクライアントも使用可能です。
 
 ```typescript
-import { MCPClient } from "@datawarp/mastra-mcp";
+import { MCPClient } from "@actus-ag/mastra-mcp";
 
 const mcp = new MCPClient({
   servers: {

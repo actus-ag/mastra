@@ -28,7 +28,7 @@ export default nextConfig;
 Mastra インスタンスを設定します。
 
 ```typescript filename="mastra.config.ts" copy
-import { Mastra } from "@datawarp/mastra-core";
+import { Mastra } from "@actus-ag/mastra-core";
 
 export const mastra = new Mastra({
   // ... other config
@@ -60,7 +60,7 @@ import {
   NodeSDK,
   ATTR_SERVICE_NAME,
   resourceFromAttributes,
-} from "@datawarp/mastra-core/telemetry/otel-vendor";
+} from "@actus-ag/mastra-core/telemetry/otel-vendor";
 import { LangfuseExporter } from "langfuse-vercel";
 
 export function register() {

@@ -149,14 +149,14 @@ mkdir hello-mastra
 cd hello-mastra
 ```
 
-次に、`@datawarp/mastra-core`パッケージを含むTypeScriptプロジェクトを初期化します：
+次に、`@actus-ag/mastra-core`パッケージを含むTypeScriptプロジェクトを初期化します：
 
   <Tabs items={["npm", "pnpm", "yarn", "bun"]}>
     <Tabs.Tab>
       ```bash copy
       npm init -y
       npm install typescript tsx @types/node mastra@latest --save-dev
-      npm install @datawarp/mastra-core@latest zod @ai-sdk/openai
+      npm install @actus-ag/mastra-core@latest zod @ai-sdk/openai
       npx tsc --init
       ```
     </Tabs.Tab>
@@ -165,7 +165,7 @@ cd hello-mastra
       ```bash copy
       pnpm init
       pnpm add typescript tsx @types/node mastra@latest --save-dev
-      pnpm add @datawarp/mastra-core@latest zod @ai-sdk/openai
+      pnpm add @actus-ag/mastra-core@latest zod @ai-sdk/openai
       pnpm dlx tsc --init
       ```
     </Tabs.Tab>
@@ -174,7 +174,7 @@ cd hello-mastra
       ```bash copy
       yarn init -y
       yarn add typescript tsx @types/node mastra@latest --dev
-      yarn add @datawarp/mastra-core@latest zod @ai-sdk/openai
+      yarn add @actus-ag/mastra-core@latest zod @ai-sdk/openai
       yarn dlx tsc --init
       ```
     </Tabs.Tab>
@@ -183,7 +183,7 @@ cd hello-mastra
       ```bash copy
       bun init -y
       bun add typescript tsx @types/node mastra@latest --dev
-      bun add @datawarp/mastra-core@latest zod @ai-sdk/openai
+      bun add @actus-ag/mastra-core@latest zod @ai-sdk/openai
       bunx tsc --init
       ```
     </Tabs.Tab>
@@ -234,7 +234,7 @@ mkdir -p src/mastra/tools && touch src/mastra/tools/weather-tool.ts
 次に、`src/mastra/tools/weather-tool.ts`に以下のコードを追加します：
 
 ```ts filename="src/mastra/tools/weather-tool.ts" showLineNumbers copy
-import { createTool } from "@datawarp/mastra-core/tools";
+import { createTool } from "@actus-ag/mastra-core/tools";
 import { z } from "zod";
 
 interface WeatherResponse {
@@ -343,7 +343,7 @@ mkdir -p src/mastra/agents && touch src/mastra/agents/weather.ts
 
 ```ts filename="src/mastra/agents/weather.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { weatherTool } from "../tools/weather-tool";
 
 export const weatherAgent = new Agent({
@@ -367,7 +367,7 @@ Use the weatherTool to fetch current weather data.`,
 最後に、`src/mastra/index.ts`にMastraのエントリーポイントを作成し、エージェントを登録します：
 
 ```ts filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@datawarp/mastra-core";
+import { Mastra } from "@actus-ag/mastra-core";
 
 import { weatherAgent } from "./agents/weather";
 

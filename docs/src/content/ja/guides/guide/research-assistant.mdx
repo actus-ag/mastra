@@ -68,7 +68,7 @@ cd research-assistant
 
 ```bash copy
 npm init -y
-npm install @datawarp/mastra-core@latest @datawarp/mastra-rag@latest @datawarp/mastra-pg@latest @ai-sdk/openai@latest ai@latest zod@latest
+npm install @actus-ag/mastra-core@latest @actus-ag/mastra-rag@latest @actus-ag/mastra-pg@latest @ai-sdk/openai@latest ai@latest zod@latest
 ```
 
 APIアクセスやデータベース接続のための環境変数を設定します。
@@ -95,9 +95,9 @@ touch src/mastra/index.ts src/store.ts src/index.ts
 - 論文の分析方法、取得したコンテンツの効果的な活用方法、制限事項の認識についてエージェントを導くカスタムインストラクション
 
 ```ts copy showLineNumbers filename="src/mastra/agents/researchAgent.ts"
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
-import { createVectorQueryTool } from "@datawarp/mastra-rag";
+import { createVectorQueryTool } from "@actus-ag/mastra-rag";
 
 // Create a tool for semantic search over our paper embeddings
 const vectorQueryTool = createVectorQueryTool({
@@ -123,8 +123,8 @@ export const researchAgent = new Agent({
 ### Mastra インスタンスとベクトルストアのセットアップ
 
 ```ts copy showLineNumbers filename="src/mastra/index.ts"
-import { Mastra } from "@datawarp/mastra-core";
-import { PgVector } from "@datawarp/mastra-pg";
+import { Mastra } from "@actus-ag/mastra-core";
+import { PgVector } from "@actus-ag/mastra-pg";
 
 import { researchAgent } from "./agents/researchAgent";
 
@@ -146,7 +146,7 @@ export const mastra = new Mastra({
 
 ```ts copy showLineNumbers filename="src/store.ts"
 import { openai } from "@ai-sdk/openai";
-import { MDocument } from "@datawarp/mastra-rag";
+import { MDocument } from "@actus-ag/mastra-rag";
 import { embedMany } from "ai";
 import { mastra } from "./mastra";
 

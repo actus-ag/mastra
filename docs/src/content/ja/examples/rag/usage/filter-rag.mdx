@@ -44,16 +44,16 @@ POSTGRES_CONNECTION_STRING=your_connection_string_here
 
 ```typescript copy showLineNumbers filename="index.ts"
 import { openai } from "@ai-sdk/openai";
-import { Mastra } from "@datawarp/mastra-core";
-import { Agent } from "@datawarp/mastra-core/agent";
-import { PgVector, PGVECTOR_PROMPT } from "@datawarp/mastra-pg";
-import { createVectorQueryTool, MDocument } from "@datawarp/mastra-rag";
+import { Mastra } from "@actus-ag/mastra-core";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { PgVector, PGVECTOR_PROMPT } from "@actus-ag/mastra-pg";
+import { createVectorQueryTool, MDocument } from "@actus-ag/mastra-rag";
 import { embedMany } from "ai";
 ```
 
 ## ベクタークエリツールの作成
 
-@datawarp/mastra-rag からインポートした createVectorQueryTool を使用すると、メタデータフィルタリングを可能にするツールを作成できます。各ベクターストアには、サポートされているフィルター演算子と構文を定義する独自のプロンプトがあります。
+@actus-ag/mastra-rag からインポートした createVectorQueryTool を使用すると、メタデータフィルタリングを可能にするツールを作成できます。各ベクターストアには、サポートされているフィルター演算子と構文を定義する独自のプロンプトがあります。
 
 ```typescript copy showLineNumbers{9} filename="index.ts"
 const vectorQueryTool = createVectorQueryTool({

@@ -44,16 +44,16 @@ Then, import the necessary dependencies:
 
 ```typescript copy showLineNumbers filename="index.ts"
 import { openai } from "@ai-sdk/openai";
-import { Mastra } from "@datawarp/mastra-core";
-import { Agent } from "@datawarp/mastra-core/agent";
-import { PgVector, PGVECTOR_PROMPT } from "@datawarp/mastra-pg";
-import { createVectorQueryTool, MDocument } from "@datawarp/mastra-rag";
+import { Mastra } from "@actus-ag/mastra-core";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { PgVector, PGVECTOR_PROMPT } from "@actus-ag/mastra-pg";
+import { createVectorQueryTool, MDocument } from "@actus-ag/mastra-rag";
 import { embedMany } from "ai";
 ```
 
 ## Vector Query Tool Creation
 
-Using createVectorQueryTool imported from @datawarp/mastra-rag, you can create a tool that enables metadata filtering. Each vector store has its own prompt that defines the supported filter operators and syntax:
+Using createVectorQueryTool imported from @actus-ag/mastra-rag, you can create a tool that enables metadata filtering. Each vector store has its own prompt that defines the supported filter operators and syntax:
 
 ```typescript copy showLineNumbers{9} filename="index.ts"
 const vectorQueryTool = createVectorQueryTool({

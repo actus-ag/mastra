@@ -25,10 +25,10 @@ There are different kinds of evals, each serving a specific purpose. Here are so
 
 ## Installation
 
-To access Mastra's evals feature install the `@datawarp/mastra-evals` package.
+To access Mastra's evals feature install the `@actus-ag/mastra-evals` package.
 
 ```bash copy
-npm install @datawarp/mastra-evals@latest
+npm install @actus-ag/mastra-evals@latest
 ```
 
 ## Getting Started
@@ -36,13 +36,13 @@ npm install @datawarp/mastra-evals@latest
 Evals need to be added to an agent. Here's an example using the summarization, content similarity, and tone consistency metrics:
 
 ```typescript copy showLineNumbers filename="src/mastra/agents/index.ts"
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
-import { SummarizationMetric } from "@datawarp/mastra-evals/llm";
+import { SummarizationMetric } from "@actus-ag/mastra-evals/llm";
 import {
   ContentSimilarityMetric,
   ToneConsistencyMetric,
-} from "@datawarp/mastra-evals/nlp";
+} from "@actus-ag/mastra-evals/nlp";
 
 const model = openai("gpt-4o");
 

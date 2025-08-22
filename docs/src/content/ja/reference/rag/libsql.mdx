@@ -6,20 +6,20 @@ description: Mastraにおける、ベクター拡張機能を持つLibSQLを使�
 # LibSQLVector ストア
 
 LibSQLストレージ実装は、SQLite互換のベクトル検索[LibSQL](https://github.com/tursodatabase/libsql)（ベクトル拡張機能を持つSQLiteのフォーク）と、ベクトル拡張機能を持つ[Turso](https://turso.tech/)を提供し、軽量で効率的なベクトルデータベースソリューションを提供します。
-これは`@datawarp/mastra-core`パッケージの一部であり、メタデータフィルタリングによる効率的なベクトル類似性検索を提供します。
+これは`@actus-ag/mastra-core`パッケージの一部であり、メタデータフィルタリングによる効率的なベクトル類似性検索を提供します。
 
 ## インストール
 
 デフォルトのベクトルストアはコアパッケージに含まれています：
 
 ```bash copy
-npm install @datawarp/mastra-core@latest
+npm install @actus-ag/mastra-core@latest
 ```
 
 ## 使用方法
 
 ```typescript copy showLineNumbers
-import { LibSQLVector } from "@datawarp/mastra-core/vector/libsql";
+import { LibSQLVector } from "@actus-ag/mastra-core/vector/libsql";
 
 // Create a new vector store instance
 const store = new LibSQLVector({

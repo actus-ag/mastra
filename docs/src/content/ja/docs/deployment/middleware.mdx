@@ -10,7 +10,7 @@ Mastraサーバーは、APIルートハンドラーが呼び出される前後�
 ミドルウェアは[Hono](https://hono.dev)の`Context`（`c`）と`next`関数を受け取ります。`Response`を返すとリクエストは短絡されます。`next()`を呼び出すと、次のミドルウェアまたはルートハンドラーの処理が続行されます。
 
 ```typescript copy showLineNumbers
-import { Mastra } from "@datawarp/mastra-core";
+import { Mastra } from "@actus-ag/mastra-core";
 
 export const mastra = new Mastra({
   server: {

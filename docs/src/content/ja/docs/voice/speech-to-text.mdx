@@ -45,7 +45,7 @@ Mastra は複数の Speech-to-Text プロバイダーをサポートしており
 各プロバイダーは、必要に応じてインストールできる個別のパッケージとして実装されています。
 
 ```bash
-pnpm add @datawarp/mastra-voice-openai  # Example for OpenAI
+pnpm add @actus-ag/mastra-voice-openai  # Example for OpenAI
 ```
 
 ## Listen メソッドの使用方法
@@ -53,10 +53,10 @@ pnpm add @datawarp/mastra-voice-openai  # Example for OpenAI
 STT の主なメソッドは `listen()` メソッドであり、話された音声をテキストに変換します。使い方は以下の通りです。
 
 ```typescript
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
-import { OpenAIVoice } from "@datawarp/mastra-voice-openai";
-import { getMicrophoneStream } from "@datawarp/mastra-node-audio";
+import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
+import { getMicrophoneStream } from "@actus-ag/mastra-node-audio";
 
 const voice = new OpenAIVoice();
 

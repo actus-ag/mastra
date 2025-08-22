@@ -98,7 +98,7 @@ In your Mastra server, install additional packages for CopilotKit integration:
 Configure your Mastra instance to include CopilotKit's runtime endpoint:
 
 ```typescript filename="src/mastra/index.ts" showLineNumbers copy {5-8,12-28}
-import { Mastra } from "@datawarp/mastra-core/mastra";
+import { Mastra } from "@actus-ag/mastra-core/mastra";
 import { registerCopilotKit } from "@ag-ui/mastra";
 import { weatherAgent } from "./agents/weather-agent";
 
@@ -252,17 +252,17 @@ Install the Mastra Client SDK.
 <Tabs items={["npm", "yarn", "pnpm"]}>
   <Tabs.Tab>
     ```bash copy
-    npm install @datawarp/mastra-client-js
+    npm install @actus-ag/mastra-client-js
     ```
   </Tabs.Tab>
   <Tabs.Tab>
     ```bash copy
-    yarn add @datawarp/mastra-client-js
+    yarn add @actus-ag/mastra-client-js
     ```
   </Tabs.Tab>
   <Tabs.Tab>
     ```bash copy
-     pnpm add @datawarp/mastra-client-js
+     pnpm add @actus-ag/mastra-client-js
     ```
   </Tabs.Tab>
 </Tabs>
@@ -270,7 +270,7 @@ Install the Mastra Client SDK.
 Create an API route that connects to remote Mastra agents:
 
 ```typescript filename="app/api/copilotkit/route.ts" showLineNumbers copy {1-7,12-26}
-import { MastraClient } from "@datawarp/mastra-client-js";
+import { MastraClient } from "@actus-ag/mastra-client-js";
 import {
   CopilotRuntime,
   ExperimentalEmptyAdapter,

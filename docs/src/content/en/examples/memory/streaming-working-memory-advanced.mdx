@@ -13,11 +13,11 @@ Let's break down how to create an agent with working memory capabilities. We'll 
 
 ### 1. Setting up Memory
 
-First, we'll configure the memory system with a short context window since we'll be using working memory to maintain state. Note that `new Memory()` without a configured storage provider will not persist data across application restarts. For persistence, you can configure a storage provider like `@datawarp/mastra-libsql`:
+First, we'll configure the memory system with a short context window since we'll be using working memory to maintain state. Note that `new Memory()` without a configured storage provider will not persist data across application restarts. For persistence, you can configure a storage provider like `@actus-ag/mastra-libsql`:
 
 ```typescript
-import { Memory } from "@datawarp/mastra-memory";
-import { LibSQLStore } from "@datawarp/mastra-libsql";
+import { Memory } from "@actus-ag/mastra-memory";
+import { LibSQLStore } from "@actus-ag/mastra-libsql";
 
 const memory = new Memory({
   options: {
@@ -87,7 +87,7 @@ For simple cases, you can use `maskStreamTags` to hide the working memory update
 
 ```typescript
 import { randomUUID } from "crypto";
-import { maskStreamTags } from "@datawarp/mastra-core/utils";
+import { maskStreamTags } from "@actus-ag/mastra-core/utils";
 
 // Start a conversation
 const threadId = randomUUID();

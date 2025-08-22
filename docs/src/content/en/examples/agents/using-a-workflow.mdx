@@ -20,7 +20,7 @@ OPENAI_API_KEY=<your-api-key>
 This workflow retrieves English Premier League fixtures for a given date. Clear input and output schemas keep the data predictable and easy for the agent to use.
 
 ```typescript filename="src/mastra/workflows/example-soccer-workflow.ts" showLineNumbers copy
-import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows";
+import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows";
 import { z } from "zod";
 
 const getFixtures = createStep({
@@ -64,7 +64,7 @@ This agent uses `soccerWorkflow` to answer fixture questions. The instructions t
 
 ```typescript filename="src/mastra/agents/example-soccer-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 
 import { soccerWorkflow } from "../workflows/example-soccer-workflow";
 

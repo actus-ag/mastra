@@ -47,8 +47,8 @@ getVoice({ runtimeContext }: { runtimeContext?: RuntimeContext } = {}): Composit
 ### 基本的な使い方
 
 ```typescript
-import { Agent } from "@datawarp/mastra-core/agent";
-import { ElevenLabsVoice } from "@datawarp/mastra-voice-elevenlabs";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { ElevenLabsVoice } from "@actus-ag/mastra-voice-elevenlabs";
 import { openai } from "@ai-sdk/openai";
 
 // Create an agent with a voice provider
@@ -78,9 +78,9 @@ console.log(speakers);
 ### RuntimeContextとの併用
 
 ```typescript
-import { Agent } from "@datawarp/mastra-core/agent";
-import { ElevenLabsVoice } from "@datawarp/mastra-voice-elevenlabs";
-import { RuntimeContext } from "@datawarp/mastra-core/runtime-context";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { ElevenLabsVoice } from "@actus-ag/mastra-voice-elevenlabs";
+import { RuntimeContext } from "@actus-ag/mastra-core/runtime-context";
 import { openai } from "@ai-sdk/openai";
 
 // Create an agent with a dynamic voice provider

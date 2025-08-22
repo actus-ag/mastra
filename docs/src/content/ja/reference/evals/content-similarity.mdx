@@ -10,7 +10,7 @@ description: Mastra のコンテンツ類似度メトリクスに関するドキ
 ## 基本的な使い方
 
 ```typescript
-import { ContentSimilarityMetric } from "@datawarp/mastra-evals/nlp";
+import { ContentSimilarityMetric } from "@actus-ag/mastra-evals/nlp";
 
 const metric = new ContentSimilarityMetric({
   ignoreCase: true,
@@ -138,7 +138,7 @@ console.log(result.info); // 詳細な類似度メトリクス
 ## 異なるオプションを使った例
 
 ```typescript
-import { ContentSimilarityMetric } from "@datawarp/mastra-evals/nlp";
+import { ContentSimilarityMetric } from "@actus-ag/mastra-evals/nlp";
 
 // 大文字・小文字を区別する比較
 const caseSensitiveMetric = new ContentSimilarityMetric({

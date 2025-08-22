@@ -22,8 +22,8 @@ This example demonstrates how to integrate Mastra agents with [AI SDK v5](https:
 First, set up your Mastra agent with memory and tools:
 
 ```typescript showLineNumbers copy filename="src/mastra/index.ts"
-import { ConsoleLogger } from "@datawarp/mastra-core/logger";
-import { Mastra } from "@datawarp/mastra-core/mastra";
+import { ConsoleLogger } from "@actus-ag/mastra-core/logger";
+import { Mastra } from "@actus-ag/mastra-core/mastra";
 import { weatherAgent } from "./agents";
 
 export const mastra = new Mastra({
@@ -34,10 +34,10 @@ export const mastra = new Mastra({
 ```
 
 ```typescript showLineNumbers copy filename="src/mastra/agents/index.ts"
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
-import { Memory } from "@datawarp/mastra-memory";
-import { LibSQLStore } from "@datawarp/mastra-libsql";
+import { Memory } from "@actus-ag/mastra-memory";
+import { LibSQLStore } from "@actus-ag/mastra-libsql";
 import { weatherTool } from "../tools";
 
 export const memory = new Memory({
@@ -78,7 +78,7 @@ export const weatherAgent = new Agent({
 Create a tool that fetches real-time weather data:
 
 ```typescript showLineNumbers copy filename="src/mastra/tools/index.ts"
-import { createTool } from '@datawarp/mastra-core/tools';
+import { createTool } from '@actus-ag/mastra-core/tools';
 import { z } from 'zod';
 
 export const weatherTool = createTool({
@@ -138,7 +138,7 @@ Create an API route that streams responses from your Mastra agent:
 
 ```typescript showLineNumbers copy filename="app/api/chat/route.ts"
 import { mastra } from "@/src/mastra";
-import { createV4CompatibleResponse } from "@datawarp/mastra-core/agent";
+import { createV4CompatibleResponse } from "@actus-ag/mastra-core/agent";
 
 const myAgent = mastra.getAgent("weatherAgent");
 
@@ -242,9 +242,9 @@ NOTE: ai-sdk v5 is still in beta, while it is in beta you'll have to install the
   "dependencies": {
     "@ai-sdk/openai": "2.0.0-beta.1",
     "@ai-sdk/react": "2.0.0-beta.1",
-    "@datawarp/mastra-core": "0.0.0-ai-v5-20250625173645",
-    "@datawarp/mastra-libsql": "0.0.0-ai-v5-20250625173645",
-    "@datawarp/mastra-memory": "0.0.0-ai-v5-20250625173645",
+    "@actus-ag/mastra-core": "0.0.0-ai-v5-20250625173645",
+    "@actus-ag/mastra-libsql": "0.0.0-ai-v5-20250625173645",
+    "@actus-ag/mastra-memory": "0.0.0-ai-v5-20250625173645",
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

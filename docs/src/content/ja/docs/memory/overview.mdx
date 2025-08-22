@@ -19,16 +19,16 @@ Mastraでは、コンテキストは3つの部分に分かれています：シ�
 **1. メモリパッケージをインストールします：**
 
 ```bash npm2yarn copy
-npm install @datawarp/mastra-memory@latest
+npm install @actus-ag/mastra-memory@latest
 ```
 
 **2. エージェントを作成し、`Memory`インスタンスを接続します：**
 
 ```typescript filename="src/mastra/agents/index.ts" {6-18}
-import { Agent } from "@datawarp/mastra-core/agent";
-import { Memory } from "@datawarp/mastra-memory";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { Memory } from "@actus-ag/mastra-memory";
 import { openai } from "@ai-sdk/openai";
-import { LibSQLStore } from "@datawarp/mastra-libsql";
+import { LibSQLStore } from "@actus-ag/mastra-libsql";
 
 // Initialize memory with LibSQLStore for persistence
 const memory = new Memory({
@@ -102,9 +102,9 @@ const memory = new Memory({
 `Mastra`インスタンスに`storage`が指定されている場合、それはエージェントに接続されているすべての`Memory`によって自動的に使用されます。その場合、エージェントごとのオーバーライドが必要でない限り、`new Memory()`に`storage`を渡す必要はありません。
 
 ```ts {7-9}
-import { Memory } from "@datawarp/mastra-memory";
-import { Agent } from "@datawarp/mastra-core/agent";
-import { LibSQLStore } from "@datawarp/mastra-libsql";
+import { Memory } from "@actus-ag/mastra-memory";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { LibSQLStore } from "@actus-ag/mastra-libsql";
 
 const agent = new Agent({
   memory: new Memory({

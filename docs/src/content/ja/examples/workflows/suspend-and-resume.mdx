@@ -12,8 +12,8 @@ import { GithubLink } from "@/components/github-link";
 ## 基本例
 
 ```ts showLineNumbers copy
-import { Mastra } from "@datawarp/mastra-core";
-import { Step, Workflow } from "@datawarp/mastra-core/workflows";
+import { Mastra } from "@actus-ag/mastra-core";
+import { Step, Workflow } from "@actus-ag/mastra-core/workflows";
 import { z } from "zod";
 
 const stepOne = new Step({
@@ -96,8 +96,8 @@ await start({ triggerData: { inputValue: 45 } });
 この例では、async/awaitパターンを使用し、複数のサスペンションポイントを持つより複雑なワークフローを示します。これは、異なる段階で人間の介入が必要となるコンテンツ生成ワークフローをシミュレートしています。
 
 ```ts showLineNumbers copy
-import { Mastra } from "@datawarp/mastra-core";
-import { Step, Workflow } from "@datawarp/mastra-core/workflows";
+import { Mastra } from "@actus-ag/mastra-core";
+import { Step, Workflow } from "@actus-ag/mastra-core/workflows";
 import { z } from "zod";
 
 // Step 1: Get user input

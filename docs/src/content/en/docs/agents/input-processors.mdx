@@ -18,8 +18,8 @@ Mastra provides several built-in processors for common use cases:
 This processor normalizes Unicode text to ensure consistent formatting and remove potentially problematic characters.
 
 ```typescript copy showLineNumbers {9-11}
-import { Agent } from "@datawarp/mastra-core/agent";
-import { UnicodeNormalizer } from "@datawarp/mastra-core/processors";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { UnicodeNormalizer } from "@actus-ag/mastra-core/processors";
 import { openai } from "@ai-sdk/openai";
 
 const agent = new Agent({
@@ -46,7 +46,7 @@ Available options:
 This processor provides content moderation using an LLM to detect inappropriate content across multiple categories.
 
 ```typescript copy showLineNumbers {5-13}
-import { ModerationProcessor } from "@datawarp/mastra-core/processors";
+import { ModerationProcessor } from "@actus-ag/mastra-core/processors";
 
 const agent = new Agent({
   inputProcessors: [
@@ -77,7 +77,7 @@ Strategies available:
 This processor detects and prevents prompt injection attacks, jailbreaks, and system manipulation attempts.
 
 ```typescript copy showLineNumbers {5-12}
-import { PromptInjectionDetector } from "@datawarp/mastra-core/processors";
+import { PromptInjectionDetector } from "@actus-ag/mastra-core/processors";
 
 const agent = new Agent({
   inputProcessors: [
@@ -110,7 +110,7 @@ Strategies available:
 This processor detects and optionally redacts personally identifiable information (PII) from messages.
 
 ```typescript copy showLineNumbers {5-14}
-import { PIIDetector } from "@datawarp/mastra-core/processors";
+import { PIIDetector } from "@actus-ag/mastra-core/processors";
 
 const agent = new Agent({
   inputProcessors: [
@@ -148,7 +148,7 @@ Strategies available:
 This processor detects the language of incoming messages and can automatically translate them to a target language.
 
 ```typescript copy showLineNumbers {5-12}
-import { LanguageDetector } from "@datawarp/mastra-core/processors";
+import { LanguageDetector } from "@actus-ag/mastra-core/processors";
 
 const agent = new Agent({
   inputProcessors: [
@@ -183,13 +183,13 @@ You can chain multiple processors. They execute sequentially in the order they a
 **Order matters!** Generally, it's best practice to place text normalization first, security checks next, and content modification last.
 
 ```typescript copy showLineNumbers {9-18}
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { 
   UnicodeNormalizer, 
   ModerationProcessor, 
   PromptInjectionDetector,
   PIIDetector 
-} from "@datawarp/mastra-core/processors";
+} from "@actus-ag/mastra-core/processors";
 
 const secureAgent = new Agent({
   inputProcessors: [
@@ -210,7 +210,7 @@ const secureAgent = new Agent({
 You can create custom processors by implementing the `Processor` interface. A Processor can be used for input processing when it implements the `processInput` method.
 
 ```typescript copy showLineNumbers {4-19,23-26}
-import type { Processor, MastraMessageV2, TripWire } from "@datawarp/mastra-core/processors";
+import type { Processor, MastraMessageV2, TripWire } from "@actus-ag/mastra-core/processors";
 
 class MessageLengthLimiter implements Processor {
   readonly name = 'message-length-limiter';

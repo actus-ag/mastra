@@ -31,13 +31,13 @@ description: "プラットフォーム固有のデプロイヤーまたは標準
 
 ```bash copy
 # For Cloudflare
-npm install @datawarp/mastra-deployer-cloudflare@latest
+npm install @actus-ag/mastra-deployer-cloudflare@latest
 
 # For Vercel
-npm install @datawarp/mastra-deployer-vercel@latest
+npm install @actus-ag/mastra-deployer-vercel@latest
 
 # For Netlify
-npm install @datawarp/mastra-deployer-netlify@latest
+npm install @actus-ag/mastra-deployer-netlify@latest
 ```
 
 ### デプロイヤーの設定
@@ -45,9 +45,9 @@ npm install @datawarp/mastra-deployer-netlify@latest
 エントリーファイルでデプロイヤーを設定します：
 
 ```typescript copy showLineNumbers
-import { Mastra } from "@datawarp/mastra-core";
-imoprt { ConsoleLogger } from "@datawarp/mastra-core/logger";
-import { CloudflareDeployer } from "@datawarp/mastra-deployer-cloudflare";
+import { Mastra } from "@actus-ag/mastra-core";
+imoprt { ConsoleLogger } from "@actus-ag/mastra-core/logger";
+import { CloudflareDeployer } from "@actus-ag/mastra-deployer-cloudflare";
 
 export const mastra = new Mastra({
   agents: {

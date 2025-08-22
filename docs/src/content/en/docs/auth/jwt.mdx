@@ -11,17 +11,17 @@ The `MastraJwtAuth` class provides a lightweight authentication mechanism for Ma
 
 ## Installation
 
-Before you can use the `MastraJwtAuth` class you have to install the `@datawarp/mastra-auth` package.
+Before you can use the `MastraJwtAuth` class you have to install the `@actus-ag/mastra-auth` package.
 
 ```bash copy
-npm install @datawarp/mastra-auth@latest
+npm install @actus-ag/mastra-auth@latest
 ```
 
 ## Usage example
 
 ```typescript {2,7-9} filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@datawarp/mastra-core/mastra";
-import { MastraJwtAuth } from '@datawarp/mastra-auth';
+import { Mastra } from "@actus-ag/mastra-core/mastra";
+import { MastraJwtAuth } from '@actus-ag/mastra-auth';
 
 export const mastra = new Mastra({
   // ..
@@ -40,7 +40,7 @@ export const mastra = new Mastra({
 When `experimental_auth` is enabled, all requests made with `MastraClient` must include a valid JWT in the `Authorization` header:
 
 ```typescript {6} filename="lib/mastra/mastra-client.ts" showLineNumbers copy
-import { MastraClient } from "@datawarp/mastra-client-js";
+import { MastraClient } from "@actus-ag/mastra-client-js";
 
 export const mastraClient = new MastraClient({
   baseUrl: "https://<mastra-api-url>",

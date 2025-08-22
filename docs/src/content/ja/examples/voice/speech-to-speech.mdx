@@ -49,9 +49,9 @@ npm install
 
 ```ts filename="speech-to-speech/call-analysis/src/mastra/agents/index.ts" copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@datawarp/mastra-core/agent";
-import { createTool } from "@datawarp/mastra-core/tools";
-import { OpenAIRealtimeVoice } from "@datawarp/mastra-voice-openai-realtime";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { createTool } from "@actus-ag/mastra-core/tools";
+import { OpenAIRealtimeVoice } from "@actus-ag/mastra-voice-openai-realtime";
 import { z } from "zod";
 
 // Have the agent do something
@@ -79,7 +79,7 @@ export const speechToSpeechServer = new Agent({
 エージェントをMastraに登録します。
 
 ```ts filename="speech-to-speech/call-analysis/src/mastra/index.ts" copy
-import { Mastra } from "@datawarp/mastra-core";
+import { Mastra } from "@actus-ag/mastra-core";
 import { speechToSpeechServer } from "./agents";
 
 export const mastra = new Mastra({

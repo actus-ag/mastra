@@ -15,7 +15,7 @@ Use `ContextualRecallMetric` to evaluate how well the response incorporates rele
 ## Installation
 
 ```bash copy
-npm install @datawarp/mastra-evals
+npm install @actus-ag/mastra-evals
 ```
 
 ## High recall example
@@ -24,7 +24,7 @@ In this example, the response includes all the information from the context. Eve
 
 ```typescript filename="src/example-high-recall.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { ContextualRecallMetric } from "@datawarp/mastra-evals/llm";
+import { ContextualRecallMetric } from "@actus-ag/mastra-evals/llm";
 
 const metric = new ContextualRecallMetric(openai("gpt-4o-mini"), {
   context: [
@@ -61,7 +61,7 @@ In this example, the response includes some context elements but also introduces
 
 ```typescript filename="src/example-mixed-recall.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { ContextualRecallMetric } from "@datawarp/mastra-evals/llm";
+import { ContextualRecallMetric } from "@actus-ag/mastra-evals/llm";
 
 const metric = new ContextualRecallMetric(openai("gpt-4o-mini"), {
   context: [
@@ -99,7 +99,7 @@ In this example, the response includes very little or none of the relevant conte
 
 ```typescript filename="src/example-low-recall.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { ContextualRecallMetric } from "@datawarp/mastra-evals/llm";
+import { ContextualRecallMetric } from "@actus-ag/mastra-evals/llm";
 
 const metric = new ContextualRecallMetric(openai("gpt-4o-mini"), {
   context: [

@@ -15,7 +15,7 @@ Use `AnswerRelevancyMetric` to evaluate how relevant the response is to the orig
 ## Installation
 
 ```bash copy
-npm install @datawarp/mastra-evals
+npm install @actus-ag/mastra-evals
 ```
 
 ## High relevancy example
@@ -24,7 +24,7 @@ In this example, the response accurately addresses the input query with specific
 
 ```typescript filename="src/example-high-answer-relevancy.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { AnswerRelevancyMetric } from "@datawarp/mastra-evals/llm";
+import { AnswerRelevancyMetric } from "@actus-ag/mastra-evals/llm";
 
 const metric = new AnswerRelevancyMetric(openai("gpt-4o-mini"));
 
@@ -55,7 +55,7 @@ In this example, the response addresses the query in part but includes additiona
 
 ```typescript filename="src/example-partial-answer-relevancy.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { AnswerRelevancyMetric } from "@datawarp/mastra-evals/llm";
+import { AnswerRelevancyMetric } from "@actus-ag/mastra-evals/llm";
 
 const metric = new AnswerRelevancyMetric(openai("gpt-4o-mini"));
 
@@ -87,7 +87,7 @@ In this example, the response does not address the query and contains informatio
 
 ```typescript filename="src/example-low-answer-relevancy.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { AnswerRelevancyMetric } from "@datawarp/mastra-evals/llm";
+import { AnswerRelevancyMetric } from "@actus-ag/mastra-evals/llm";
 
 const metric = new AnswerRelevancyMetric(openai("gpt-4o-mini"));
 

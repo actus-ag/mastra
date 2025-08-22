@@ -44,14 +44,14 @@ POSTGRES_CONNECTION_STRING=your_connection_string_here
 
 ```typescript copy showLineNumbers filename="index.ts"
 import { openai } from "@ai-sdk/openai";
-import { Mastra } from "@datawarp/mastra-core";
-import { Agent } from "@datawarp/mastra-core/agent";
-import { PgVector } from "@datawarp/mastra-pg";
+import { Mastra } from "@actus-ag/mastra-core";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { PgVector } from "@actus-ag/mastra-pg";
 import {
   MDocument,
   createVectorQueryTool,
   createDocumentChunkerTool,
-} from "@datawarp/mastra-rag";
+} from "@actus-ag/mastra-rag";
 import { embedMany } from "ai";
 ```
 
@@ -59,7 +59,7 @@ import { embedMany } from "ai";
 
 ### ベクタークエリツール
 
-@datawarp/mastra-rag からインポートした createVectorQueryTool を使用すると、ベクターデータベースにクエリを実行するツールを作成できます。
+@actus-ag/mastra-rag からインポートした createVectorQueryTool を使用すると、ベクターデータベースにクエリを実行するツールを作成できます。
 
 ```typescript copy showLineNumbers{8} filename="index.ts"
 const vectorQueryTool = createVectorQueryTool({
@@ -71,7 +71,7 @@ const vectorQueryTool = createVectorQueryTool({
 
 ### ドキュメントチャンク化ツール
 
-@datawarp/mastra-rag からインポートした createDocumentChunkerTool を使用すると、ドキュメントをチャンク化し、そのチャンクをエージェントに送信するツールを作成できます。
+@actus-ag/mastra-rag からインポートした createDocumentChunkerTool を使用すると、ドキュメントをチャンク化し、そのチャンクをエージェントに送信するツールを作成できます。
 
 ```typescript copy showLineNumbers{14} filename="index.ts"
 const doc = MDocument.fromText(yourText);

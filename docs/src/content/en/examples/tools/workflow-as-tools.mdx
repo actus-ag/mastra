@@ -19,7 +19,7 @@ This example defines a two-step workflow:
 The workflow takes a `city` as input and outputs the `temperature`.
 
 ```typescript filename="src/mastra/workflows/example-temperature-workflow.ts" showLineNumbers copy
-import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows";
+import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows";
 import { z } from "zod";
 
 const getCityCoordinates = createStep({
@@ -89,7 +89,7 @@ export const temperatureWorkflow = createWorkflow({
 This tool wraps the workflow and exposes it through a standard tool interface. It takes a `city` as input, runs the underlying workflow, and returns the resulting `temperature`.
 
 ```typescript filename="src/mastra/tools/temperature-tool.ts" showLineNumbers copy
-import { createTool } from "@datawarp/mastra-core/tools";
+import { createTool } from "@actus-ag/mastra-core/tools";
 import { z } from "zod";
 
 export const getTemperatureTool = createTool({

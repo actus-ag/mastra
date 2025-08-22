@@ -31,8 +31,8 @@ Mastra provides different storage providers, but you can treat them as interchan
 Mastra can be configured with a default storage option:
 
 ```typescript copy
-import { Mastra } from "@datawarp/mastra-core/mastra";
-import { LibSQLStore } from "@datawarp/mastra-libsql";
+import { Mastra } from "@actus-ag/mastra-core/mastra";
+import { LibSQLStore } from "@actus-ag/mastra-libsql";
 
 const mastra = new Mastra({
   storage: new LibSQLStore({
@@ -420,7 +420,7 @@ Captures OpenTelemetry traces for monitoring and debugging.
     {
       name: "scope",
       type: "text",
-      description: "Library/package/service that created the span (e.g. `@datawarp/mastra-core`, `express`, `pg`)",
+      description: "Library/package/service that created the span (e.g. `@actus-ag/mastra-core`, `express`, `pg`)",
       constraints: [{ type: "nullable", value: false }]
     },
     {

@@ -20,7 +20,7 @@ Mastra provides the `MCPClient` class to manage connections to one or more MCP s
 If you haven't already, install the Mastra MCP package:
 
 ```bash npm2yarn copy
-npm install @datawarp/mastra-mcp@latest
+npm install @actus-ag/mastra-mcp@latest
 ```
 
 ### Registering the MCPServer
@@ -28,7 +28,7 @@ npm install @datawarp/mastra-mcp@latest
 Register your MCP server with Mastra to enable logging and access to configured tools and integrations:
 
 ```ts showLineNumbers filename="src/mastra/index.ts" copy
-import { Mastra } from "@datawarp/mastra-core";
+import { Mastra } from "@actus-ag/mastra-core";
 import { myMcpServer } from "./mcpServers";
 
 export const mastra = new Mastra({
@@ -41,7 +41,7 @@ export const mastra = new Mastra({
 You configure `MCPClient` with a map of servers you want to connect to. It supports connections via subprocess (Stdio) or HTTP (Streamable HTTP with SSE fallback).
 
 ```typescript
-import { MCPClient } from "@datawarp/mastra-mcp";
+import { MCPClient } from "@actus-ag/mastra-mcp";
 
 const mcp = new MCPClient({
   servers: {
@@ -80,7 +80,7 @@ For detailed configuration options, see the [`MCPClient` reference documentation
   [Reference: `getTools()`](/reference/tools/mcp-client#gettools)
 
   ```typescript
-  import { Agent } from "@datawarp/mastra-core/agent";
+  import { Agent } from "@actus-ag/mastra-core/agent";
   // ... mcp client setup
 
   const agent = new Agent({
@@ -93,7 +93,7 @@ For detailed configuration options, see the [`MCPClient` reference documentation
   [Reference: `getToolsets()`](/reference/tools/mcp-client#gettoolsets)
 
   ```typescript
-  import { Agent } from "@datawarp/mastra-core/agent";
+  import { Agent } from "@actus-ag/mastra-core/agent";
   // ... agent setup without tools initially
 
   async function handleRequest(userPrompt: string, userApiKey: string) {
@@ -127,7 +127,7 @@ Each tab shows the specific URL patterns and configuration needed for that regis
     [Klavis AI](https://klavis.ai) provides hosted, enterprise-authenticated, high-quality MCP servers.
 
     ```typescript
-    import { MCPClient } from "@datawarp/mastra-mcp";
+    import { MCPClient } from "@actus-ag/mastra-mcp";
 
     const mcp = new MCPClient({
       servers: {
@@ -150,7 +150,7 @@ Each tab shows the specific URL patterns and configuration needed for that regis
     [mcp.run](https://www.mcp.run/) provides pre-authenticated, managed MCP servers. Tools are grouped into Profiles, each with a unique, signed URL.
 
     ```typescript
-    import { MCPClient } from "@datawarp/mastra-mcp";
+    import { MCPClient } from "@actus-ag/mastra-mcp";
 
     const mcp = new MCPClient({
       servers: {
@@ -171,7 +171,7 @@ Each tab shows the specific URL patterns and configuration needed for that regis
     [Composio.dev](https://composio.dev) offers a registry of [SSE-based MCP servers](https://mcp.composio.dev). You can use the SSE URL generated for tools like Cursor directly.
 
     ```typescript
-    import { MCPClient } from "@datawarp/mastra-mcp";
+    import { MCPClient } from "@actus-ag/mastra-mcp";
 
     const mcp = new MCPClient({
       servers: {
@@ -195,7 +195,7 @@ Each tab shows the specific URL patterns and configuration needed for that regis
 
     ```typescript
     // Unix/Mac
-    import { MCPClient } from "@datawarp/mastra-mcp";
+    import { MCPClient } from "@actus-ag/mastra-mcp";
 
     const mcp = new MCPClient({
       servers: {
@@ -216,7 +216,7 @@ Each tab shows the specific URL patterns and configuration needed for that regis
 
     ```typescript
     // Windows
-    import { MCPClient } from "@datawarp/mastra-mcp";
+    import { MCPClient } from "@actus-ag/mastra-mcp";
 
     const mcp = new MCPClient({
       servers: {
@@ -262,7 +262,7 @@ Each tab shows the specific URL patterns and configuration needed for that regis
     ```typescript
     // If you prefer to run the MCP server locally:
     
-    import { MCPClient } from "@datawarp/mastra-mcp";
+    import { MCPClient } from "@actus-ag/mastra-mcp";
 
     // MCPClient with Ampersand MCP Server using stdio transport
     export const mcp = new MCPClient({
@@ -307,8 +307,8 @@ This allows others to use your tools, agents, and workflows without needing dire
 You initialize `MCPServer` with a name, version, and the Mastra tools, agents, and/or workflows you want to share.
 
 ```typescript
-import { MCPServer } from "@datawarp/mastra-mcp";
-import { Agent } from "@datawarp/mastra-core/agent";
+import { MCPServer } from "@actus-ag/mastra-mcp";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
 import { weatherTool } from "./tools"; // Your Mastra tool
 import { weatherAgent } from "./agents"; // Your Mastra Agent
@@ -341,7 +341,7 @@ When a tool includes an `outputSchema`, its `execute` function **must** return a
 Here's an example of a tool with an `outputSchema`:
 
 ```typescript filename="src/tools/structured-tool.ts"
-import { createTool } from '@datawarp/mastra-core';
+import { createTool } from '@actus-ag/mastra-core';
 import { z } from 'zod';
 
 export const structuredTool = createTool({

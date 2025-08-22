@@ -16,10 +16,10 @@ description: Mastraにおけるツールの概念、エージェントへの追�
 
 ## ツールの作成
 
-Mastraでは、`@datawarp/mastra-core/tools`パッケージの[`createTool`](/reference/tools/create-tool)関数を使用してツールを作成します。
+Mastraでは、`@actus-ag/mastra-core/tools`パッケージの[`createTool`](/reference/tools/create-tool)関数を使用してツールを作成します。
 
 ```typescript filename="src/mastra/tools/weatherInfo.ts" copy
-import { createTool } from "@datawarp/mastra-core/tools";
+import { createTool } from "@actus-ag/mastra-core/tools";
 import { z } from "zod";
 
 const getWeatherInfo = async (city: string) => {

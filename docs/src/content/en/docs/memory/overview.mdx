@@ -25,16 +25,16 @@ If you haven't already, create a new Mastra project following the main [Getting 
 ### Install the memory package
 
 ```bash npm2yarn copy
-npm install @datawarp/mastra-memory@latest
+npm install @actus-ag/mastra-memory@latest
 ```
 
 ### Create an agent and attach a `Memory` instance
 
 ```typescript filename="src/mastra/agents/index.ts" {6-18}
-import { Agent } from "@datawarp/mastra-core/agent";
-import { Memory } from "@datawarp/mastra-memory";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { Memory } from "@actus-ag/mastra-memory";
 import { openai } from "@ai-sdk/openai";
-import { LibSQLStore } from "@datawarp/mastra-libsql";
+import { LibSQLStore } from "@actus-ag/mastra-libsql";
 
 // Initialize memory with LibSQLStore for persistence
 const memory = new Memory({
@@ -145,9 +145,9 @@ If neither the `Memory` instance nor the `Mastra` object specify a storage provi
 When `storage` **is** given on the `Mastra` instance it will automatically be used by every `Memory` attached to agents. In that case you do not need to pass `storage` to `new Memory()` unless you want a per-agent override.
 
 ```ts {7-9}
-import { Memory } from "@datawarp/mastra-memory";
-import { Agent } from "@datawarp/mastra-core/agent";
-import { LibSQLStore } from "@datawarp/mastra-libsql";
+import { Memory } from "@actus-ag/mastra-memory";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { LibSQLStore } from "@actus-ag/mastra-libsql";
 
 const agent = new Agent({
   memory: new Memory({

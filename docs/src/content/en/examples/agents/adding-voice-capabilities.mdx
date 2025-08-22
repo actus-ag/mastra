@@ -25,7 +25,7 @@ OPENAI_API_KEY=<your-api-key>
 ## Installation
 
 ```bash
-npm install @datawarp/mastra-voice-openai
+npm install @actus-ag/mastra-voice-openai
 ```
 
 ## Hybrid voice agent
@@ -33,9 +33,9 @@ npm install @datawarp/mastra-voice-openai
 This agent uses a composite voice setup that separates speech-to-text and text-to-speech functionality. The `CompositeVoice` allows you to configure different providers for listening (input) and speaking (output). However, in this example, both are handled by the same provider: `OpenAIVoice`.
 
 ```typescript filename="src/mastra/agents/example-hybrid-voice-agent.ts" showLineNumbers copy
-import { Agent } from "@datawarp/mastra-core/agent";
-import { CompositeVoice } from "@datawarp/mastra-core/voice";
-import { OpenAIVoice } from "@datawarp/mastra-voice-openai";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { CompositeVoice } from "@actus-ag/mastra-core/voice";
+import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
 import { openai } from "@ai-sdk/openai";
 
 export const hybridVoiceAgent = new Agent({
@@ -57,8 +57,8 @@ This agent uses a single voice provider for both speech-to-text and text-to-spee
 
 ```typescript filename="src/mastra/agents/example-unified-voice-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@datawarp/mastra-core/agent";
-import { OpenAIVoice } from "@datawarp/mastra-voice-openai";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
 
 export const unifiedVoiceAgent = new Agent({
   name: "unified-voice-agent",
@@ -75,7 +75,7 @@ export const unifiedVoiceAgent = new Agent({
 To use these agents, register them in your main Mastra instance.
 
 ```typescript filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@datawarp/mastra-core/mastra";
+import { Mastra } from "@actus-ag/mastra-core/mastra";
 
 import { hybridVoiceAgent } from "./agents/example-hybrid-voice-agent";
 import { unifiedVoiceAgent } from "./agents/example-unified-voice-agent";

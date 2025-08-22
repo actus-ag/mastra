@@ -31,8 +31,8 @@ Mastraは異なるストレージプロバイダーを提供していますが�
 Mastraはデフォルトのストレージオプションで設定できます：
 
 ```typescript copy
-import { Mastra } from "@datawarp/mastra-core/mastra";
-import { LibSQLStore } from "@datawarp/mastra-libsql";
+import { Mastra } from "@actus-ag/mastra-core/mastra";
+import { LibSQLStore } from "@actus-ag/mastra-libsql";
 
 const mastra = new Mastra({
   storage: new LibSQLStore({
@@ -322,7 +322,7 @@ constraints: [{ type: "nullable", value: false }]
 {
 name: "scope",
 type: "text",
-description: "スパンを作成したライブラリ/パッケージ/サービス（例：`@datawarp/mastra-core`、`express`、`pg`）",
+description: "スパンを作成したライブラリ/パッケージ/サービス（例：`@actus-ag/mastra-core`、`express`、`pg`）",
 constraints: [{ type: "nullable", value: false }]
 },
 {

@@ -21,7 +21,7 @@ Mastraは`afterEvent`および`resumeWithEvent`メソッドを通じてイベン
 イベント駆動型の手法を使用する前に、ワークフロー構成でワークフローがリッスンするイベントを定義する必要があります。
 
 ```typescript
-import { Workflow } from "@datawarp/mastra-core/workflows";
+import { Workflow } from "@actus-ag/mastra-core/workflows";
 import { z } from "zod";
 
 const workflow = new Workflow({
@@ -174,7 +174,7 @@ workflow
 この例では、承認とドキュメントのアップロードの両方が必要な完全なワークフローを示します。
 
 ```typescript
-import { Workflow, Step } from "@datawarp/mastra-core/workflows";
+import { Workflow, Step } from "@actus-ag/mastra-core/workflows";
 import { z } from "zod";
 
 // Define steps

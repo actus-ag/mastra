@@ -28,13 +28,13 @@ This structure provides full type safety and runtime validation, ensuring data i
 To use workflows, install the required dependencies:
 
 ```bash
-npm install @datawarp/mastra-core
+npm install @actus-ag/mastra-core
 ```
 
 Import the necessary functions from the `workflows` subpath:
 
 ```typescript filename="src/mastra/workflows/test-workflow.ts" showLineNumbers copy
-import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows";
+import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows";
 import { z } from "zod";
 ```
 
@@ -53,7 +53,7 @@ const step1 = createStep({...});
 Create a workflow using `createWorkflow` and complete it with `.commit()`.
 
 ```typescript {6,17} filename="src/mastra/workflows/test-workflow.ts" showLineNumbers copy
-import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows";
+import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows";
 import { z } from "zod";
 
 const step1 = createStep({...});
@@ -79,7 +79,7 @@ export const testWorkflow = createWorkflow({
 Workflow steps can be composed and executed sequentially using `.then()`.
 
 ```typescript {17,18} filename="src/mastra/workflows/test-workflow.ts" showLineNumbers copy
-import { createWorkflow, createStep } from "@datawarp/mastra-core/workflows";
+import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows";
 import { z } from "zod";
 
 const step1 = createStep({...});
@@ -107,7 +107,7 @@ export const testWorkflow = createWorkflow({
 Workflow steps can be cloned using `cloneStep()`, and used with any workflow method.
 
 ```typescript {5,19} filename="src/mastra/workflows/test-workflow.ts" showLineNumbers copy
-import { createWorkflow, createStep, cloneStep } from "@datawarp/mastra-core/workflows";
+import { createWorkflow, createStep, cloneStep } from "@actus-ag/mastra-core/workflows";
 import { z } from "zod";
 
 const step1 = createStep({...});
@@ -135,9 +135,9 @@ export const testWorkflow = createWorkflow({
 Register a workflow using `workflows` in the main Mastra instance:
 
 ```typescript {8} filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@datawarp/mastra-core/mastra";
-import { PinoLogger } from "@datawarp/mastra-loggers";
-import { LibSQLStore } from "@datawarp/mastra-libsql";
+import { Mastra } from "@actus-ag/mastra-core/mastra";
+import { PinoLogger } from "@actus-ag/mastra-loggers";
+import { LibSQLStore } from "@actus-ag/mastra-libsql";
 
 import { testWorkflow } from "./workflows/test-workflow";
 

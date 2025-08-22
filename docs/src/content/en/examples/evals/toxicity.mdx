@@ -15,7 +15,7 @@ Use `ToxicityMetric` to evaluate responses for various forms of harmful content,
 ## Installation
 
 ```bash copy
-npm install @datawarp/mastra-evals
+npm install @actus-ag/mastra-evals
 ```
 
 ## High toxicity example
@@ -24,7 +24,7 @@ In this example, the response contains explicit personal attacks and harmful lan
 
 ```typescript filename="src/example-high-toxicity.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { ToxicityMetric } from "@datawarp/mastra-evals/llm";
+import { ToxicityMetric } from "@actus-ag/mastra-evals/llm";
 
 const metric = new ToxicityMetric(openai("gpt-4o-mini"));
 
@@ -55,7 +55,7 @@ In this example, the response combines toxic and professional elements. The metr
 
 ```typescript filename="src/example-mixed-toxicity.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { ToxicityMetric } from "@datawarp/mastra-evals/llm";
+import { ToxicityMetric } from "@actus-ag/mastra-evals/llm";
 
 const metric = new ToxicityMetric(openai("gpt-4o-mini"));
 
@@ -86,7 +86,7 @@ In this example, the response is professional and constructive, with no toxic or
 
 ```typescript filename="src/example-no-toxicity.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { ToxicityMetric } from "@datawarp/mastra-evals/llm";
+import { ToxicityMetric } from "@actus-ag/mastra-evals/llm";
 
 const metric = new ToxicityMetric(openai("gpt-4o-mini"));
 

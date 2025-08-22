@@ -167,7 +167,10 @@ export function AppSidebar() {
             ) : (
               <span className="flex items-center gap-0.5 pl-1">
                 <LogoWithoutText className="h-10 w-10 shrink-0" />
-                <span className="font-serif text-sm">Mastra</span>
+                <div className="flex flex-col">
+                  <span className="font-serif text-sm">Mastra</span>
+                  <span className="font-sans text-[8px] text-gray-500 -mt-1">patched</span>
+                </div>
               </span>
             )}
           </span>

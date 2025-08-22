@@ -1,5 +1,5 @@
 {
-  "name": "@datawarp/mastra-fastembed",
+  "name": "@actus-ag/mastra-fastembed",
   "version": "0.10.2",
   "license": "Apache-2.0",
   "type": "module",

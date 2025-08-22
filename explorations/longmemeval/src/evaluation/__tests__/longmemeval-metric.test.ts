@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { LongMemEvalMetric, createLongMemEvalMetric } from '../longmemeval-metric';
-import { Agent } from '@datawarp/mastra-core/agent';
+import { Agent } from '@actus-ag/mastra-core/agent';
 
 // Mock Agent
 const mockAgent = {

@@ -1,6 +1,6 @@
 import { openai } from '@ai-sdk/openai';
-import { LibSQLVector } from '@datawarp/mastra-core/vector/libsql';
-import { MDocument } from '@datawarp/mastra-rag';
+import { LibSQLVector } from '@actus-ag/mastra-core/vector/libsql';
+import { MDocument } from '@actus-ag/mastra-rag';
 import { embedMany } from 'ai';
 
 const doc = MDocument.fromText('Your text content...');

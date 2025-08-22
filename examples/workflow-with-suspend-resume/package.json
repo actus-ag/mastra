@@ -20,13 +20,13 @@
     "zod": "^3.25.67"
   },
   "dependencies": {
-    "@datawarp/mastra-core": "latest",
-    "@datawarp/mastra-libsql": "latest"
+    "@actus-ag/mastra-core": "latest",
+    "@actus-ag/mastra-libsql": "latest"
   },
   "pnpm": {
     "overrides": {
-      "@datawarp/mastra-core": "link:../../packages/core",
-      "@datawarp/mastra-libsql": "link:../../stores/libsql",
+      "@actus-ag/mastra-core": "link:../../packages/core",
+      "@actus-ag/mastra-libsql": "link:../../stores/libsql",
       "mastra": "link:../../packages/cli"
     }
   },

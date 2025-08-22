@@ -1,4 +1,4 @@
-# @datawarp/mastra-memory-integration-tests-v5
+# @actus-ag/mastra-memory-integration-tests-v5
 
 ## 0.1.1
 
@@ -26,9 +26,9 @@
 - Updated dependencies [d6e39da]
 - Updated dependencies [3b5fec7]
 - Updated dependencies [a8f129d]
-  - @datawarp/mastra-memory@0.13.0
-  - @datawarp/mastra-core@0.14.0
-  - @datawarp/mastra-libsql@0.13.3
+  - @actus-ag/mastra-memory@0.13.0
+  - @actus-ag/mastra-core@0.14.0
+  - @actus-ag/mastra-libsql@0.13.3
 
 ## 0.1.1-alpha.1
 
@@ -37,9 +37,9 @@
 - 03997ae: Update peerdeps
 - Updated dependencies [03997ae]
 - Updated dependencies [03997ae]
-  - @datawarp/mastra-libsql@0.13.3-alpha.1
-  - @datawarp/mastra-memory@0.13.0-alpha.1
-  - @datawarp/mastra-core@0.14.0-alpha.7
+  - @actus-ag/mastra-libsql@0.13.3-alpha.1
+  - @actus-ag/mastra-memory@0.13.0-alpha.1
+  - @actus-ag/mastra-core@0.14.0-alpha.7
 
 ## 0.1.1-alpha.0
 
@@ -62,5 +62,5 @@
 - Updated dependencies [7cb3fc0]
 - Updated dependencies [195eabb]
 - Updated dependencies [b78b95b]
-  - @datawarp/mastra-memory@0.12.3-alpha.0
-  - @datawarp/mastra-core@0.14.0-alpha.4
+  - @actus-ag/mastra-memory@0.12.3-alpha.0
+  - @actus-ag/mastra-core@0.14.0-alpha.4

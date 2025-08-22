@@ -48,7 +48,7 @@ The storage system manages four primary tables:
 When using Memory, DefaultStorage is used automatically if no storage is provided:
 
 ```typescript
-import { Memory } from '@datawarp/mastra-memory';
+import { Memory } from '@actus-ag/mastra-memory';
 
 const memory = new Memory({
   options: {
@@ -61,7 +61,7 @@ const memory = new Memory({
 For direct storage usage or custom configurations:
 
 ```typescript
-import { DefaultStorage } from '@datawarp/mastra-core/storage';
+import { DefaultStorage } from '@actus-ag/mastra-core/storage';
 
 const storage = new DefaultStorage({
   name: 'my-storage',

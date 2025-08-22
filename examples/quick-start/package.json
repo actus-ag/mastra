@@ -20,16 +20,16 @@
     "@ai-sdk/anthropic": "^1.2.12",
     "@ai-sdk/groq": "latest",
     "@ai-sdk/openai": "latest",
-    "@datawarp/mastra-core": "latest",
-    "@datawarp/mastra-loggers": "latest",
-    "@datawarp/mastra-memory": "latest",
+    "@actus-ag/mastra-core": "latest",
+    "@actus-ag/mastra-loggers": "latest",
+    "@actus-ag/mastra-memory": "latest",
     "ai": "latest"
   },
   "pnpm": {
     "overrides": {
-      "@datawarp/mastra-core": "link:../../packages/core",
-      "@datawarp/mastra-loggers": "link:../../packages/loggers",
-      "@datawarp/mastra-memory": "link:../../packages/memory"
+      "@actus-ag/mastra-core": "link:../../packages/core",
+      "@actus-ag/mastra-loggers": "link:../../packages/loggers",
+      "@actus-ag/mastra-memory": "link:../../packages/memory"
     }
   },
   "version": "0.0.1",

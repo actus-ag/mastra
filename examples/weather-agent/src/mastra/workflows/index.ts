@@ -1,6 +1,6 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@datawarp/mastra-core/agent';
-import { LegacyStep, LegacyWorkflow } from '@datawarp/mastra-core/workflows/legacy';
+import { Agent } from '@actus-ag/mastra-core/agent';
+import { LegacyStep, LegacyWorkflow } from '@actus-ag/mastra-core/workflows/legacy';
 import { z } from 'zod';
 
 const agent = new Agent({

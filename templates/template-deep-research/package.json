@@ -18,10 +18,10 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^1.3.22",
-    "@datawarp/mastra-core": "latest",
-    "@datawarp/mastra-libsql": "latest",
-    "@datawarp/mastra-loggers": "latest",
-    "@datawarp/mastra-memory": "latest",
+    "@actus-ag/mastra-core": "latest",
+    "@actus-ag/mastra-libsql": "latest",
+    "@actus-ag/mastra-loggers": "latest",
+    "@actus-ag/mastra-memory": "latest",
     "ai": "^4.3.16",
     "exa-js": "^1.8.27",
     "zod": "^3.25.67"

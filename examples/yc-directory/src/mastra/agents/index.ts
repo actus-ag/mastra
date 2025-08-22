@@ -1,4 +1,4 @@
-import { Agent } from '@datawarp/mastra-core/agent';
+import { Agent } from '@actus-ag/mastra-core/agent';
 import { anthropic } from '@ai-sdk/anthropic';
 
 import { ycDirectoryTool } from '../tools';

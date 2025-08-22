@@ -1,13 +1,13 @@
-# @datawarp/mastra-voice-google
+# @actus-ag/mastra-voice-google
 
 Google Cloud Voice integration for Mastra, providing both Text-to-Speech (TTS) and Speech-to-Text capabilities.
 
-> Note: This package replaces the deprecated @datawarp/mastra-speech-google package, combining both speech synthesis and recognition capabilities.
+> Note: This package replaces the deprecated @actus-ag/mastra-speech-google package, combining both speech synthesis and recognition capabilities.
 
 ## Installation
 
 ```bash
-npm install @datawarp/mastra-voice-google
+npm install @actus-ag/mastra-voice-google
 ```
 
 ## Configuration
@@ -21,7 +21,7 @@ GOOGLE_API_KEY=your_api_key
 ## Usage
 
 ```typescript
-import { GoogleVoice } from '@datawarp/mastra-voice-google';
+import { GoogleVoice } from '@actus-ag/mastra-voice-google';
 
 // Initialize with configuration
 const voice = new GoogleVoice({

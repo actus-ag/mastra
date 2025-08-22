@@ -1,5 +1,5 @@
-import { MastraAuthProvider } from '@datawarp/mastra-core/server';
-import type { MastraAuthProviderOptions } from '@datawarp/mastra-core/server';
+import { MastraAuthProvider } from '@actus-ag/mastra-core/server';
+import type { MastraAuthProviderOptions } from '@actus-ag/mastra-core/server';
 
 import { createRemoteJWKSet, jwtVerify } from 'jose';
 import type { JWTPayload } from 'jose';

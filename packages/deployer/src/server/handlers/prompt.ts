@@ -1,5 +1,5 @@
-import type { Mastra } from '@datawarp/mastra-core';
-import { Agent } from '@datawarp/mastra-core/agent';
+import type { Mastra } from '@actus-ag/mastra-core';
+import { Agent } from '@actus-ag/mastra-core/agent';
 import type { Context } from 'hono';
 import { z } from 'zod';
 

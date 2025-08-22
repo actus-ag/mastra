@@ -1,4 +1,4 @@
-import type { WorkflowRunState } from '@datawarp/mastra-core';
+import type { WorkflowRunState } from '@actus-ag/mastra-core';
 import { randomUUID } from 'crypto';
 import { expect } from 'vitest';
 

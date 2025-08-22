@@ -1,5 +1,5 @@
-import { Metric, type MetricResult } from '@datawarp/mastra-core/eval';
-import { Agent } from '@datawarp/mastra-core/agent';
+import { Metric, type MetricResult } from '@actus-ag/mastra-core/eval';
+import { Agent } from '@actus-ag/mastra-core/agent';
 import type { QuestionType } from '../data/types';
 
 export interface LongMemEvalMetricConfig {

@@ -5,7 +5,7 @@ import {
   beforeAll,
   afterAll, //expect
 } from '@jest/globals';
-import { Mastra } from '@datawarp/mastra-core';
+import { Mastra } from '@actus-ag/mastra-core';
 
 import { RagieIntegration } from '.';
 

@@ -1,4 +1,4 @@
-import { LibSQLStore } from "@datawarp/mastra-libsql";
+import { LibSQLStore } from "@actus-ag/mastra-libsql";
 
 let instance: LibSQLStore | null = null;
 

@@ -1,9 +1,9 @@
-# @datawarp/mastra-auth
+# @actus-ag/mastra-auth
 
 Core Auth methods for Mastra applications.
 
 ## Installation
 
 ```bash
-npm install @datawarp/mastra-auth
+npm install @actus-ag/mastra-auth
 ```

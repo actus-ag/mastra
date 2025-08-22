@@ -73,15 +73,15 @@ export function resolveMessageLimit({
   return defaultLimit;
 }
 export abstract class MastraStorage extends MastraBase {
-  /** @deprecated import from { TABLE_WORKFLOW_SNAPSHOT } '@datawarp/mastra-core/storage' instead */
+  /** @deprecated import from { TABLE_WORKFLOW_SNAPSHOT } '@actus-ag/mastra-core/storage' instead */
   static readonly TABLE_WORKFLOW_SNAPSHOT = TABLE_WORKFLOW_SNAPSHOT;
-  /** @deprecated import from { TABLE_EVALS } '@datawarp/mastra-core/storage' instead */
+  /** @deprecated import from { TABLE_EVALS } '@actus-ag/mastra-core/storage' instead */
   static readonly TABLE_EVALS = TABLE_EVALS;
-  /** @deprecated import from { TABLE_MESSAGES } '@datawarp/mastra-core/storage' instead */
+  /** @deprecated import from { TABLE_MESSAGES } '@actus-ag/mastra-core/storage' instead */
   static readonly TABLE_MESSAGES = TABLE_MESSAGES;
-  /** @deprecated import from { TABLE_THREADS } '@datawarp/mastra-core/storage' instead */
+  /** @deprecated import from { TABLE_THREADS } '@actus-ag/mastra-core/storage' instead */
   static readonly TABLE_THREADS = TABLE_THREADS;
-  /** @deprecated import { TABLE_TRACES } from '@datawarp/mastra-core/storage' instead */
+  /** @deprecated import { TABLE_TRACES } from '@actus-ag/mastra-core/storage' instead */
   static readonly TABLE_TRACES = TABLE_TRACES;
 
   protected hasInitialized: null | Promise<boolean> = null;
@@ -232,7 +232,7 @@ export abstract class MastraStorage extends MastraBase {
   async getResourceById(_: { resourceId: string }): Promise<StorageResourceType | null> {
     throw new Error(
       `Resource working memory is not supported by this storage adapter (${this.constructor.name}). ` +
-        `Supported storage adapters: LibSQL (@datawarp/mastra-libsql), PostgreSQL (@datawarp/mastra-pg), Upstash (@datawarp/mastra-upstash). ` +
+        `Supported storage adapters: LibSQL (@actus-ag/mastra-libsql), PostgreSQL (@actus-ag/mastra-pg), Upstash (@actus-ag/mastra-upstash). ` +
         `To use per-resource working memory, switch to one of these supported storage adapters.`,
     );
   }
@@ -240,7 +240,7 @@ export abstract class MastraStorage extends MastraBase {
   async saveResource(_: { resource: StorageResourceType }): Promise<StorageResourceType> {
     throw new Error(
       `Resource working memory is not supported by this storage adapter (${this.constructor.name}). ` +
-        `Supported storage adapters: LibSQL (@datawarp/mastra-libsql), PostgreSQL (@datawarp/mastra-pg), Upstash (@datawarp/mastra-upstash). ` +
+        `Supported storage adapters: LibSQL (@actus-ag/mastra-libsql), PostgreSQL (@actus-ag/mastra-pg), Upstash (@actus-ag/mastra-upstash). ` +
         `To use per-resource working memory, switch to one of these supported storage adapters.`,
     );
   }
@@ -252,7 +252,7 @@ export abstract class MastraStorage extends MastraBase {
   }): Promise<StorageResourceType> {
     throw new Error(
       `Resource working memory is not supported by this storage adapter (${this.constructor.name}). ` +
-        `Supported storage adapters: LibSQL (@datawarp/mastra-libsql), PostgreSQL (@datawarp/mastra-pg), Upstash (@datawarp/mastra-upstash). ` +
+        `Supported storage adapters: LibSQL (@actus-ag/mastra-libsql), PostgreSQL (@actus-ag/mastra-pg), Upstash (@actus-ag/mastra-upstash). ` +
         `To use per-resource working memory, switch to one of these supported storage adapters.`,
     );
   }

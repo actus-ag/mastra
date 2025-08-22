@@ -11,7 +11,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@datawarp/mastra-core": "monorepo-test",
+    "@actus-ag/mastra-core": "monorepo-test",
     "lodash": "^4.17.21"
   }
 }

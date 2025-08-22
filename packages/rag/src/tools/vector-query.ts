@@ -1,5 +1,5 @@
-import { createTool } from '@datawarp/mastra-core/tools';
-import type { MastraVector } from '@datawarp/mastra-core/vector';
+import { createTool } from '@actus-ag/mastra-core/tools';
+import type { MastraVector } from '@actus-ag/mastra-core/vector';
 import type { EmbeddingModel } from 'ai';
 import { z } from 'zod';
 

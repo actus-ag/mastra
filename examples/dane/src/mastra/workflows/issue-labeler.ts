@@ -1,4 +1,4 @@
-import { Step, Workflow } from '@datawarp/mastra-core/workflows';
+import { Step, Workflow } from '@actus-ag/mastra-core/workflows';
 import { z } from 'zod';
 
 import { github } from '../integrations/index.js';

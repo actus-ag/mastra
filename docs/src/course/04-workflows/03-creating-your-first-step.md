@@ -11,7 +11,7 @@ First, create a new file for your workflow in the `src/mastra/workflows` directo
 Add this code to your workflow file:
 
 ```typescript
-import { createStep } from "@datawarp/mastra-core/workflows";
+import { createStep } from "@actus-ag/mastra-core/workflows";
 import { z } from "zod";
 
 const validateContentStep = createStep({

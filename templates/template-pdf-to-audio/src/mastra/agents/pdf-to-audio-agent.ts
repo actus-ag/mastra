@@ -1,10 +1,10 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@datawarp/mastra-core/agent';
-import { OpenAIVoice } from '@datawarp/mastra-voice-openai';
+import { Agent } from '@actus-ag/mastra-core/agent';
+import { OpenAIVoice } from '@actus-ag/mastra-voice-openai';
 import { pdfFetcherTool } from '../tools/download-pdf-tool';
 import { generateAudioFromTextTool } from '../tools/generate-audio-from-text-tool';
-import { LibSQLStore } from '@datawarp/mastra-libsql';
-import { Memory } from '@datawarp/mastra-memory';
+import { LibSQLStore } from '@actus-ag/mastra-libsql';
+import { Memory } from '@actus-ag/mastra-memory';
 
 // Initialize memory with LibSQLStore for persistence
 const memory = new Memory({

@@ -1,4 +1,4 @@
-import { parseFieldKey } from '@datawarp/mastra-core/utils';
+import { parseFieldKey } from '@actus-ag/mastra-core/utils';
 import type {
   BasicOperator,
   NumericOperator,
@@ -7,7 +7,7 @@ import type {
   LogicalOperator,
   RegexOperator,
   VectorFilter,
-} from '@datawarp/mastra-core/vector/filter';
+} from '@actus-ag/mastra-core/vector/filter';
 import type { PGVectorFilter } from './filter';
 
 type OperatorType =

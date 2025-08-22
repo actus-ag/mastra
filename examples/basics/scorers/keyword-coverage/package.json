@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "pnpm": {
     "overrides": {
-      "@datawarp/mastra-evals": "link:../../../../packages/evals"
+      "@actus-ag/mastra-evals": "link:../../../../packages/evals"
     }
   },
   "type": "module",
@@ -12,7 +12,7 @@
     "start": "pnpx tsx index.ts"
   },
   "dependencies": {
-    "@datawarp/mastra-evals": "latest"
+    "@actus-ag/mastra-evals": "latest"
   },
   "devDependencies": {
     "dotenv": "^17.0.0"

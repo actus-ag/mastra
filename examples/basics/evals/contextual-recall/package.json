@@ -5,7 +5,7 @@
   "type": "module",
   "pnpm": {
     "overrides": {
-      "@datawarp/mastra-evals": "link:../../../../packages/evals"
+      "@actus-ag/mastra-evals": "link:../../../../packages/evals"
     }
   },
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "latest",
-    "@datawarp/mastra-evals": "latest"
+    "@actus-ag/mastra-evals": "latest"
   },
   "devDependencies": {
     "dotenv": "^17.0.0"

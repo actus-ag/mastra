@@ -1,5 +1,5 @@
-import { GithubIntegration } from "@datawarp/mastra-github";
-import { FirecrawlIntegration } from "@datawarp/mastra-firecrawl";
+import { GithubIntegration } from "@actus-ag/mastra-github";
+import { FirecrawlIntegration } from "@actus-ag/mastra-firecrawl";
 
 export const github = new GithubIntegration({
   config: {

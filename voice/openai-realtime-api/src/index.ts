@@ -1,8 +1,8 @@
 import { EventEmitter } from 'events';
 import { PassThrough } from 'stream';
-import type { ToolsInput } from '@datawarp/mastra-core/agent';
-import type { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
-import { MastraVoice } from '@datawarp/mastra-core/voice';
+import type { ToolsInput } from '@actus-ag/mastra-core/agent';
+import type { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
+import { MastraVoice } from '@actus-ag/mastra-core/voice';
 import type { Realtime, RealtimeServerEvents } from 'openai-realtime-api';
 import { WebSocket } from 'ws';
 import { isReadableStream, transformTools } from './utils';

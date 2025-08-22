@@ -18,11 +18,11 @@
     "zod": "^3.25.67"
   },
   "dependencies": {
-    "@datawarp/mastra-core": "latest"
+    "@actus-ag/mastra-core": "latest"
   },
   "pnpm": {
     "overrides": {
-      "@datawarp/mastra-core": "link:../../packages/core",
+      "@actus-ag/mastra-core": "link:../../packages/core",
       "mastra": "link:../../packages/cli"
     }
   },

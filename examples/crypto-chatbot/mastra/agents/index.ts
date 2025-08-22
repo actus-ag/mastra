@@ -1,6 +1,6 @@
-import { Agent } from '@datawarp/mastra-core/agent';
-import { Memory } from '@datawarp/mastra-memory';
-import { PostgresStore } from '@datawarp/mastra-pg';
+import { Agent } from '@actus-ag/mastra-core/agent';
+import { Memory } from '@actus-ag/mastra-memory';
+import { PostgresStore } from '@actus-ag/mastra-pg';
 import { openai } from '@ai-sdk/openai';
 import { systemPrompt } from '@/ai/prompts';
 import {

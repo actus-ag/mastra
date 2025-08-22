@@ -1,5 +1,5 @@
-import { MastraError, ErrorDomain, ErrorCategory } from '@datawarp/mastra-core/error';
-import { MastraVector } from '@datawarp/mastra-core/vector';
+import { MastraError, ErrorDomain, ErrorCategory } from '@actus-ag/mastra-core/error';
+import { MastraVector } from '@actus-ag/mastra-core/vector';
 import type {
   QueryResult,
   IndexStats,
@@ -10,7 +10,7 @@ import type {
   DeleteIndexParams,
   DeleteVectorParams,
   UpdateVectorParams,
-} from '@datawarp/mastra-core/vector';
+} from '@actus-ag/mastra-core/vector';
 import { QdrantClient } from '@qdrant/js-client-rest';
 import type { Schemas } from '@qdrant/js-client-rest';
 

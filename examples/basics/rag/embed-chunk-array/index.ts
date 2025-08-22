@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { MDocument } from '@datawarp/mastra-rag';
+import { MDocument } from '@actus-ag/mastra-rag';
 import { embedMany } from 'ai';
 
 const doc = MDocument.fromText('Your text content...');

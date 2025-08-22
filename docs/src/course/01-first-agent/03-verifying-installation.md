@@ -2,7 +2,7 @@
 
 Before we begin building our agent, let's make sure you have the right development environment set up. Let's check if you have Node.js 18.x or later installed.
 
-Then, let's check if @datawarp/mastra-core is in the package.json and there is a src/mastra directory. If so, you can skip this step.
+Then, let's check if @actus-ag/mastra-core is in the package.json and there is a src/mastra directory. If so, you can skip this step.
 
 If you haven't installed Mastra yet, you can do so by running:
 

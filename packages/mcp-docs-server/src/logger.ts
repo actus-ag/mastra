@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as os from 'os';
 import * as path from 'path';
-import type { MCPServer } from '@datawarp/mastra-mcp';
+import type { MCPServer } from '@actus-ag/mastra-mcp';
 
 // Logger interface for type safety
 export interface Logger {

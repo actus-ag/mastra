@@ -1,11 +1,11 @@
-import type { Mastra } from '@datawarp/mastra-core';
-import type { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
+import type { Mastra } from '@actus-ag/mastra-core';
+import type { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
 import {
   getNetworksHandler as getOriginalNetworksHandler,
   getNetworkByIdHandler as getOriginalNetworkByIdHandler,
   generateHandler as getOriginalGenerateHandler,
   streamGenerateHandler as getOriginalStreamGenerateHandler,
-} from '@datawarp/mastra-server/handlers/network';
+} from '@actus-ag/mastra-server/handlers/network';
 import type { Context } from 'hono';
 
 import { handleError } from '../../error';

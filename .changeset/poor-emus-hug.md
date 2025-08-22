@@ -1,5 +1,5 @@
 ---
-'@datawarp/mastra-core': patch
+'@actus-ag/mastra-core': patch
 ---
 
-changed scope to @datawarp
+changed scope to @actus-ag

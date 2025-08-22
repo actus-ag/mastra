@@ -1,5 +1,5 @@
 import { describe, beforeAll, afterAll } from 'vitest';
-import type { MastraVector } from '@datawarp/mastra-core/vector';
+import type { MastraVector } from '@actus-ag/mastra-core/vector';
 import { createMetadataFilteringTest } from './domains/vector/metadata-filtering';
 
 export interface VectorTestConfig {

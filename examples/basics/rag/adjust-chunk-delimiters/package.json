@@ -6,11 +6,11 @@
     "start": "pnpx tsx index.ts"
   },
   "dependencies": {
-    "@datawarp/mastra-rag": "latest"
+    "@actus-ag/mastra-rag": "latest"
   },
   "pnpm": {
     "overrides": {
-      "@datawarp/mastra-rag": "link:../../../../packages/rag"
+      "@actus-ag/mastra-rag": "link:../../../../packages/rag"
     }
   },
   "version": "0.0.1",

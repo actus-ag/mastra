@@ -1,5 +1,5 @@
-import { Integration } from '@datawarp/mastra-core/integration';
-import { createStep, createWorkflow } from '@datawarp/mastra-core/workflows';
+import { Integration } from '@actus-ag/mastra-core/integration';
+import { createStep, createWorkflow } from '@actus-ag/mastra-core/workflows';
 import { z } from 'zod';
 
 import type * as integrationClient from './client/sdk.gen';

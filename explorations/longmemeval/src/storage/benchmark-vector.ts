@@ -1,4 +1,4 @@
-import { MastraVector } from '@datawarp/mastra-core/vector';
+import { MastraVector } from '@actus-ag/mastra-core/vector';
 import type {
   QueryVectorParams,
   QueryResult,
@@ -9,7 +9,7 @@ import type {
   DeleteVectorParams,
   DescribeIndexParams,
   DeleteIndexParams,
-} from '@datawarp/mastra-core/vector';
+} from '@actus-ag/mastra-core/vector';
 import { VectorDB, type Document } from 'imvectordb';
 import { writeFile, readFile } from 'fs/promises';
 import { existsSync } from 'fs';

@@ -84,7 +84,7 @@ describe('CLI', () => {
     vi.spyOn(utils, 'writeIndexFile').mockImplementation(async ({ dirPath, addExample }) => {
       const content = addExample
         ? `
-        import { Mastra } from '@datawarp/mastra-core';
+        import { Mastra } from '@actus-ag/mastra-core';
         export const mastra = new Mastra({});
       `
         : ``;
@@ -153,7 +153,7 @@ describe('CLI', () => {
   // });
 
   // test('stops initialization if mastra core is not installed', async () => {
-  //   DepsService.prototype.checkDependencies = jest.fn(() => Promise.resolve('Install @datawarp/mastra-core before running this command (npm install @datawarp/mastra-core)'));
+  //   DepsService.prototype.checkDependencies = jest.fn(() => Promise.resolve('Install @actus-ag/mastra-core before running this command (npm install @actus-ag/mastra-core)'));
 
   //   jest.spyOn(utils, 'createMastraDir').mockImplementation(async () => {
   //     return { ok: false }; // Simulate failure to create directory
@@ -167,7 +167,7 @@ describe('CLI', () => {
   //     showSpinner: false,
   //   });
 
-  //   expect(logger.error).toHaveBeenCalledWith('Install @datawarp/mastra-core before running this command (npm install @datawarp/mastra-core)');
+  //   expect(logger.error).toHaveBeenCalledWith('Install @actus-ag/mastra-core before running this command (npm install @actus-ag/mastra-core)');
   //   expect(utils.createMastraDir).not.toHaveBeenCalled();
   //   expect(utils.writeIndexFile).not.toHaveBeenCalled();
 

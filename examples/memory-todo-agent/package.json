@@ -12,16 +12,16 @@
   "license": "MIT",
   "dependencies": {
     "@ai-sdk/openai": "latest",
-    "@datawarp/mastra-core": "latest",
-    "@datawarp/mastra-memory": "latest",
+    "@actus-ag/mastra-core": "latest",
+    "@actus-ag/mastra-memory": "latest",
     "ai": "latest",
     "chalk": "^5.4.1",
     "ora": "^8.2.0"
   },
   "pnpm": {
     "overrides": {
-      "@datawarp/mastra-core": "link:../../packages/core",
-      "@datawarp/mastra-memory": "link:../../packages/memory"
+      "@actus-ag/mastra-core": "link:../../packages/core",
+      "@actus-ag/mastra-memory": "link:../../packages/memory"
     }
   },
   "version": "0.1.6",

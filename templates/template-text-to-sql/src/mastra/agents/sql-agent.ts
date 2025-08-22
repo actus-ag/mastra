@@ -1,7 +1,7 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@datawarp/mastra-core/agent';
-import { LibSQLStore } from '@datawarp/mastra-libsql';
-import { Memory } from '@datawarp/mastra-memory';
+import { Agent } from '@actus-ag/mastra-core/agent';
+import { LibSQLStore } from '@actus-ag/mastra-libsql';
+import { Memory } from '@actus-ag/mastra-memory';
 import { databaseIntrospectionTool } from '../tools/database-introspection-tool';
 import { databaseSeedingTool } from '../tools/database-seeding-tool';
 import { sqlExecutionTool } from '../tools/sql-execution-tool';

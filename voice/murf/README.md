@@ -1,11 +1,11 @@
-# @datawarp/mastra-voice-murf
+# @actus-ag/mastra-voice-murf
 
 Murf Voice integration for Mastra, providing Text-to-Speech (TTS) capabilities using Murf's AI voice technology.
 
 ## Installation
 
 ```bash
-npm install @datawarp/mastra-voice-murf
+npm install @actus-ag/mastra-voice-murf
 ```
 
 ## Configuration
@@ -19,7 +19,7 @@ MURF_API_KEY=your_api_key
 ## Usage
 
 ```typescript
-import { MurfVoice } from '@datawarp/mastra-voice-murf';
+import { MurfVoice } from '@actus-ag/mastra-voice-murf';
 // Or generate speech from a text stream
 import { Readable } from 'stream';
 

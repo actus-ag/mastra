@@ -1,9 +1,9 @@
 import { parentPort, workerData } from 'worker_threads';
-import type { MastraMessageV2, SharedMemoryConfig } from '@datawarp/mastra-core';
-import type { LibSQLConfig, LibSQLVectorConfig } from '@datawarp/mastra-libsql';
-import { Memory } from '@datawarp/mastra-memory';
-import type { PostgresConfig } from '@datawarp/mastra-pg';
-import type { UpstashConfig } from '@datawarp/mastra-upstash';
+import type { MastraMessageV2, SharedMemoryConfig } from '@actus-ag/mastra-core';
+import type { LibSQLConfig, LibSQLVectorConfig } from '@actus-ag/mastra-libsql';
+import { Memory } from '@actus-ag/mastra-memory';
+import type { PostgresConfig } from '@actus-ag/mastra-pg';
+import type { UpstashConfig } from '@actus-ag/mastra-upstash';
 import { mockEmbedder } from './mock-embedder.js';
 
 if (!parentPort) {
@@ -43,18 +43,18 @@ async function initializeAndRun() {
   try {
     switch (storageType) {
       case 'libsql':
-        const { LibSQLStore, LibSQLVector } = await import('@datawarp/mastra-libsql');
+        const { LibSQLStore, LibSQLVector } = await import('@actus-ag/mastra-libsql');
         store = new LibSQLStore(storageConfig as LibSQLConfig);
         vector = new LibSQLVector(vectorConfig as LibSQLVectorConfig);
         break;
       case 'upstash':
-        const { UpstashStore } = await import('@datawarp/mastra-upstash');
-        const { LibSQLVector: UpstashLibSQLVector } = await import('@datawarp/mastra-libsql');
+        const { UpstashStore } = await import('@actus-ag/mastra-upstash');
+        const { LibSQLVector: UpstashLibSQLVector } = await import('@actus-ag/mastra-libsql');
         store = new UpstashStore(storageConfig as UpstashConfig);
         vector = new UpstashLibSQLVector({ connectionUrl: 'file:upstash-test-vector.db' });
         break;
       case 'pg':
-        const { PostgresStore, PgVector } = await import('@datawarp/mastra-pg');
+        const { PostgresStore, PgVector } = await import('@actus-ag/mastra-pg');
         store = new PostgresStore(storageConfig as PostgresConfig);
         vector = new PgVector({ connectionString: (storageConfig as { connectionString: string }).connectionString });
         break;

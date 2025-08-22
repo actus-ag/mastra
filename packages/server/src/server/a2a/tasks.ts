@@ -6,8 +6,8 @@ import type {
   TaskContext,
   TaskArtifactUpdateEvent,
   Artifact,
-} from '@datawarp/mastra-core/a2a';
-import type { IMastraLogger } from '@datawarp/mastra-core/logger';
+} from '@actus-ag/mastra-core/a2a';
+import type { IMastraLogger } from '@actus-ag/mastra-core/logger';
 import type { InMemoryTaskStore } from './store';
 
 function isTaskStatusUpdate(update: TaskStatus | TaskArtifactUpdateEvent): update is Omit<TaskStatus, 'timestamp'> {

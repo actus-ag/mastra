@@ -1,11 +1,11 @@
-# @datawarp/mastra-voice-sarvam
+# @actus-ag/mastra-voice-sarvam
 
 Sarvam Voice integration for Mastra, providing Text-to-Speech (TTS) and Speech-to-text (STT) capabilities using Sarvam's voice technology.
 
 ## Installation
 
 ```bash
-npm install @datawarp/mastra-voice-sarvam
+npm install @actus-ag/mastra-voice-sarvam
 ```
 
 ## Configuration
@@ -19,7 +19,7 @@ SARVAM_API_KEY=your_api_key
 ## Usage
 
 ```typescript
-import { SarvamVoice } from '@datawarp/mastra-voice-sarvam';
+import { SarvamVoice } from '@actus-ag/mastra-voice-sarvam';
 
 const voice = new SarvamVoice({
   speechModel: {

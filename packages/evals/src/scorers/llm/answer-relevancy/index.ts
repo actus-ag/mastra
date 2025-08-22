@@ -1,6 +1,6 @@
-import type { MastraLanguageModel } from '@datawarp/mastra-core/agent';
-import { createScorer } from '@datawarp/mastra-core/scores';
-import type { ScorerRunInputForAgent, ScorerRunOutputForAgent } from '@datawarp/mastra-core/scores';
+import type { MastraLanguageModel } from '@actus-ag/mastra-core/agent';
+import { createScorer } from '@actus-ag/mastra-core/scores';
+import type { ScorerRunInputForAgent, ScorerRunOutputForAgent } from '@actus-ag/mastra-core/scores';
 import { z } from 'zod';
 import { roundToTwoDecimals } from '../../../metrics/llm/utils';
 import { getAssistantMessageFromRunOutput, getUserMessageFromRunInput } from '../../utils';

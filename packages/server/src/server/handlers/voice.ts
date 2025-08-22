@@ -1,5 +1,5 @@
 import { Readable } from 'stream';
-import type { Agent } from '@datawarp/mastra-core/agent';
+import type { Agent } from '@actus-ag/mastra-core/agent';
 import { HTTPException } from '../http-exception';
 import type { Context } from '../types';
 

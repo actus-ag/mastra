@@ -1,7 +1,7 @@
-import { TABLE_THREADS, type MastraStorage } from '@datawarp/mastra-core/storage';
+import { TABLE_THREADS, type MastraStorage } from '@actus-ag/mastra-core/storage';
 import { createSampleMessageV1, createSampleMessageV2, createSampleThread, createSampleThreadWithParams } from './data';
 import { beforeEach, describe, expect, it } from 'vitest';
-import type { MastraMessageV2, StorageThreadType } from '@datawarp/mastra-core/memory';
+import type { MastraMessageV2, StorageThreadType } from '@actus-ag/mastra-core/memory';
 import { randomUUID } from 'crypto';
 
 export function createThreadsTest({ storage }: { storage: MastraStorage }) {

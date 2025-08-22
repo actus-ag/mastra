@@ -1,15 +1,15 @@
-# @datawarp/mastra-cloud
+# @actus-ag/mastra-cloud
 
 The official integration package for Mastra Cloud services - seamlessly connect your Mastra applications with cloud-based capabilities and telemetry.
 
 ## Installation
 
 ```bash
-npm install @datawarp/mastra-cloud
+npm install @actus-ag/mastra-cloud
 # or
-yarn add @datawarp/mastra-cloud
+yarn add @actus-ag/mastra-cloud
 # or
-pnpm add @datawarp/mastra-cloud
+pnpm add @actus-ag/mastra-cloud
 ```
 
 ## Features
@@ -19,8 +19,8 @@ pnpm add @datawarp/mastra-cloud
 The package currently provides OpenTelemetry integration with Mastra Cloud for instrumenting and collecting telemetry data from your applications.
 
 ```typescript
-import { PinoLogger } from '@datawarp/mastra-loggers';
-import { MastraCloudExporter } from '@datawarp/mastra-cloud';
+import { PinoLogger } from '@actus-ag/mastra-loggers';
+import { MastraCloudExporter } from '@actus-ag/mastra-cloud';
 
 // Initialize the exporter with your access token
 const exporter = new MastraCloudExporter({

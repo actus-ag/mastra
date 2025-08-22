@@ -1,8 +1,8 @@
-import { createLogger } from '@datawarp/mastra-core/logger';
-import { Mastra } from '@datawarp/mastra-core/mastra';
-import { createApiRoute } from '@datawarp/mastra-core/server';
-import { TestDeployer } from '@datawarp/mastra-deployer/test';
-import { PostgresStore } from '@datawarp/mastra-pg';
+import { createLogger } from '@actus-ag/mastra-core/logger';
+import { Mastra } from '@actus-ag/mastra-core/mastra';
+import { createApiRoute } from '@actus-ag/mastra-core/server';
+import { TestDeployer } from '@actus-ag/mastra-deployer/test';
+import { PostgresStore } from '@actus-ag/mastra-pg';
 import { weatherAgent } from '@/agents';
 
 export const storage = new PostgresStore({

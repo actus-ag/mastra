@@ -1,5 +1,5 @@
 export const textualDifferenceScorer = `
-import { createTextualDifferenceScorer } from "@datawarp/mastra-evals/scorers/code";
+import { createTextualDifferenceScorer } from "@actus-ag/mastra-evals/scorers/code";
  
 const scorer = createTextualDifferenceScorer();
  

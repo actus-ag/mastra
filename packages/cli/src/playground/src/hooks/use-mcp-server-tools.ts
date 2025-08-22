@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
-import { ServerInfo } from '@datawarp/mastra-core/mcp';
+import { ServerInfo } from '@actus-ag/mastra-core/mcp';
 import { client } from '@/lib/client';
 // Import types directly from the SDK if @/lib/client doesn't re-export them
-import type { McpServerToolListResponse, McpToolInfo as SdkMcpToolInfo } from '@datawarp/mastra-client-js';
+import type { McpServerToolListResponse, McpToolInfo as SdkMcpToolInfo } from '@actus-ag/mastra-client-js';
 
 export const useMCPServerTools = (selectedServer: ServerInfo | null) => {
   // The key for this Record will be the tool's display name, value is PlaygroundToolListItem

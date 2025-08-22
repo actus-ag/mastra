@@ -1,6 +1,6 @@
 import type { KVNamespace } from '@cloudflare/workers-types';
-import type { StorageThreadType, MastraMessageV2 } from '@datawarp/mastra-core/memory';
-import type { ScoreRowData } from '@datawarp/mastra-core/scores';
+import type { StorageThreadType, MastraMessageV2 } from '@actus-ag/mastra-core/memory';
+import type { ScoreRowData } from '@actus-ag/mastra-core/scores';
 import type {
   TABLE_MESSAGES,
   TABLE_THREADS,
@@ -12,8 +12,8 @@ import type {
   EvalRow,
   StorageResourceType,
   TABLE_SCORERS,
-} from '@datawarp/mastra-core/storage';
-import type { WorkflowRunState } from '@datawarp/mastra-core/workflows';
+} from '@actus-ag/mastra-core/storage';
+import type { WorkflowRunState } from '@actus-ag/mastra-core/workflows';
 
 /**
  * Configuration for Cloudflare KV using REST API

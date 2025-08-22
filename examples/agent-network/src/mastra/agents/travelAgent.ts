@@ -1,4 +1,4 @@
-import { Agent } from '@datawarp/mastra-core/agent';
+import { Agent } from '@actus-ag/mastra-core/agent';
 import { anthropic } from '@ai-sdk/anthropic';
 
 const llm = anthropic('claude-3-5-sonnet-20240620');

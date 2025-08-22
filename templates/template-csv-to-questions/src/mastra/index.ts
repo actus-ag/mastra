@@ -1,6 +1,6 @@
-import { Mastra } from '@datawarp/mastra-core/mastra';
-import { PinoLogger } from '@datawarp/mastra-loggers';
-import { LibSQLStore } from '@datawarp/mastra-libsql';
+import { Mastra } from '@actus-ag/mastra-core/mastra';
+import { PinoLogger } from '@actus-ag/mastra-loggers';
+import { LibSQLStore } from '@actus-ag/mastra-libsql';
 import { csvToQuestionsWorkflow } from './workflows/csv-to-questions-workflow';
 import { textQuestionAgent } from './agents/text-question-agent';
 import { csvQuestionAgent } from './agents/csv-question-agent';

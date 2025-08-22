@@ -1,4 +1,4 @@
-import { Metric, type MetricResult } from '@datawarp/mastra-core/eval';
+import { Metric, type MetricResult } from '@actus-ag/mastra-core/eval';
 
 interface WordInclusionResult extends MetricResult {
   score: number;

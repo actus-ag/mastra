@@ -15,21 +15,21 @@
   "dependencies": {
     "@ai-sdk/anthropic": "^1.2.12",
     "@ai-sdk/openai": "^1.3.22",
-    "@datawarp/mastra-client-js": "latest",
-    "@datawarp/mastra-core": "latest",
-    "@datawarp/mastra-libsql": "latest",
-    "@datawarp/mastra-loggers": "latest",
-    "@datawarp/mastra-memory": "latest",
+    "@actus-ag/mastra-client-js": "latest",
+    "@actus-ag/mastra-core": "latest",
+    "@actus-ag/mastra-libsql": "latest",
+    "@actus-ag/mastra-loggers": "latest",
+    "@actus-ag/mastra-memory": "latest",
     "mastra": "latest",
     "zod": "^3.25.67"
   },
   "pnpm": {
     "overrides": {
-      "@datawarp/mastra-client-js": "link:../../client-sdks/client-js",
-      "@datawarp/mastra-core": "link:../../packages/core",
-      "@datawarp/mastra-libsql": "link:../../stores/libsql",
-      "@datawarp/mastra-loggers": "link:../../packages/loggers",
-      "@datawarp/mastra-memory": "link:../../packages/memory",
+      "@actus-ag/mastra-client-js": "link:../../client-sdks/client-js",
+      "@actus-ag/mastra-core": "link:../../packages/core",
+      "@actus-ag/mastra-libsql": "link:../../stores/libsql",
+      "@actus-ag/mastra-loggers": "link:../../packages/loggers",
+      "@actus-ag/mastra-memory": "link:../../packages/memory",
       "mastra": "link:../../packages/cli"
     }
   },

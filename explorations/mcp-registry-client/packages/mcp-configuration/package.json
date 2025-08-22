@@ -1,5 +1,5 @@
 {
-	"name": "@datawarp/mastra-mcp-configuration",
+	"name": "@actus-ag/mastra-mcp-configuration",
 	"version": "1.0.0",
 	"description": "MCP Configuration Manager",
 	"type": "module",
@@ -14,7 +14,7 @@
 	},
 	"dependencies": {
 		"@mcp/registry": "workspace:*",
-		"@datawarp/mastra-mcp": "^0.3.5",
+		"@actus-ag/mastra-mcp": "^0.3.5",
 		"zod": "^3.22.4"
 	},
 	"devDependencies": {

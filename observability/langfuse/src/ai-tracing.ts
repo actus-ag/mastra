@@ -6,8 +6,8 @@
  * LLM_GENERATION spans become Langfuse generations, all others become spans.
  */
 
-import type { AITracingExporter, AITracingEvent, AnyAISpan, LLMGenerationAttributes } from '@datawarp/mastra-core/ai-tracing';
-import { AISpanType, sanitizeMetadata, omitKeys } from '@datawarp/mastra-core/ai-tracing';
+import type { AITracingExporter, AITracingEvent, AnyAISpan, LLMGenerationAttributes } from '@actus-ag/mastra-core/ai-tracing';
+import { AISpanType, sanitizeMetadata, omitKeys } from '@actus-ag/mastra-core/ai-tracing';
 import { Langfuse } from 'langfuse';
 import type { LangfuseTraceClient, LangfuseSpanClient, LangfuseGenerationClient } from 'langfuse';
 

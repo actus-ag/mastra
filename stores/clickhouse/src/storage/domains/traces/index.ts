@@ -1,8 +1,8 @@
 import type { ClickHouseClient } from '@clickhouse/client';
-import { ErrorCategory, ErrorDomain, MastraError } from '@datawarp/mastra-core/error';
-import { safelyParseJSON, TABLE_SCHEMAS, TABLE_TRACES, TracesStorage } from '@datawarp/mastra-core/storage';
-import type { PaginationInfo, StorageGetTracesPaginatedArg, StorageGetTracesArg } from '@datawarp/mastra-core/storage';
-import type { Trace } from '@datawarp/mastra-core/telemetry';
+import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
+import { safelyParseJSON, TABLE_SCHEMAS, TABLE_TRACES, TracesStorage } from '@actus-ag/mastra-core/storage';
+import type { PaginationInfo, StorageGetTracesPaginatedArg, StorageGetTracesArg } from '@actus-ag/mastra-core/storage';
+import type { Trace } from '@actus-ag/mastra-core/telemetry';
 import type { StoreOperationsClickhouse } from '../operations';
 
 export class TracesStorageClickhouse extends TracesStorage {

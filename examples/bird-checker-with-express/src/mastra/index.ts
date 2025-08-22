@@ -1,5 +1,5 @@
-import { PinoLogger } from '@datawarp/mastra-loggers';
-import { Mastra } from '@datawarp/mastra-core';
+import { PinoLogger } from '@actus-ag/mastra-loggers';
+import { Mastra } from '@actus-ag/mastra-core';
 
 import { birdCheckerAgent } from './agents/agent';
 

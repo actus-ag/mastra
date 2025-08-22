@@ -1,5 +1,5 @@
 export const contentSimilarityScorer = `
-import { createContentSimilarityScorer } from "@datawarp/mastra-evals/scorers/llm";
+import { createContentSimilarityScorer } from "@actus-ag/mastra-evals/scorers/llm";
  
 const scorer = createContentSimilarityScorer();
  

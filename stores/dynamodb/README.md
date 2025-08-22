@@ -1,4 +1,4 @@
-# @datawarp/mastra-dynamodb
+# @actus-ag/mastra-dynamodb
 
 A DynamoDB storage implementation for Mastra using a single-table design pattern with ElectroDB.
 
@@ -14,11 +14,11 @@ A DynamoDB storage implementation for Mastra using a single-table design pattern
 ## Installation
 
 ```bash
-npm install @datawarp/mastra-dynamodb
+npm install @actus-ag/mastra-dynamodb
 # or
-pnpm add @datawarp/mastra-dynamodb
+pnpm add @actus-ag/mastra-dynamodb
 # or
-yarn add @datawarp/mastra-dynamodb
+yarn add @actus-ag/mastra-dynamodb
 ```
 
 ## Prerequisites
@@ -30,9 +30,9 @@ Before using this package, you need to create a DynamoDB table with the required
 ### Basic Usage
 
 ```typescript
-import { Memory } from '@datawarp/mastra-memory';
-import { DynamoDBStore } from '@datawarp/mastra-dynamodb';
-import { PineconeVector } from '@datawarp/mastra-pinecone';
+import { Memory } from '@actus-ag/mastra-memory';
+import { DynamoDBStore } from '@actus-ag/mastra-dynamodb';
+import { PineconeVector } from '@actus-ag/mastra-pinecone';
 
 // Initialize the DynamoDB storage
 const storage = new DynamoDBStore({
@@ -121,7 +121,7 @@ The `DynamoDBStore` constructor accepts the following configuration options:
 
 ## Architectural Approach
 
-This storage adapter utilizes a **single-table design pattern** leveraging [ElectroDB](https://electrodb.dev/), which is a common and recommended approach for DynamoDB. This differs architecturally from relational database adapters (like `@datawarp/mastra-pg` or `@datawarp/mastra-libsql`) that typically use multiple tables, each dedicated to a specific entity (threads, messages, etc.).
+This storage adapter utilizes a **single-table design pattern** leveraging [ElectroDB](https://electrodb.dev/), which is a common and recommended approach for DynamoDB. This differs architecturally from relational database adapters (like `@actus-ag/mastra-pg` or `@actus-ag/mastra-libsql`) that typically use multiple tables, each dedicated to a specific entity (threads, messages, etc.).
 
 Key aspects of this approach:
 

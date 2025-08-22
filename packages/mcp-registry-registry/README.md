@@ -1,4 +1,4 @@
-# @datawarp/mastra-mcp-registry-registry
+# @actus-ag/mastra-mcp-registry-registry
 
 An MCP server that provides a registry of MCP registries, allowing discovery and access to MCP servers across multiple registries.
 
@@ -15,13 +15,13 @@ The MCP Registry Registry serves as a meta-registry, aggregating information abo
 
 ```bash
 # Using npm
-npm install @datawarp/mastra-mcp-registry-registry
+npm install @actus-ag/mastra-mcp-registry-registry
 
 # Using pnpm
-pnpm add @datawarp/mastra-mcp-registry-registry
+pnpm add @actus-ag/mastra-mcp-registry-registry
 
 # Using yarn
-yarn add @datawarp/mastra-mcp-registry-registry
+yarn add @actus-ag/mastra-mcp-registry-registry
 ```
 
 ## Available Tools

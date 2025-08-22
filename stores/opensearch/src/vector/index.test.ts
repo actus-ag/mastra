@@ -1,5 +1,5 @@
 // To setup a Opensearch server, run the docker compose file in the opensearch directory
-import type { QueryResult } from '@datawarp/mastra-core';
+import type { QueryResult } from '@actus-ag/mastra-core';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { OpenSearchVector } from './index';

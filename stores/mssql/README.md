@@ -1,11 +1,11 @@
-# @datawarp/mastra-mssql
+# @actus-ag/mastra-mssql
 
 Microsoft SQL Server implementation for Mastra, providing general storage capabilities with connection pooling and transaction support.
 
 ## Installation
 
 ```bash
-npm install @datawarp/mastra-mssql
+npm install @actus-ag/mastra-mssql
 ```
 
 ## Prerequisites
@@ -18,7 +18,7 @@ npm install @datawarp/mastra-mssql
 ### Storage
 
 ```typescript
-import { MSSQLStore } from '@datawarp/mastra-mssql';
+import { MSSQLStore } from '@actus-ag/mastra-mssql';
 
 const store = new MSSQLStore({
   server: 'localhost',

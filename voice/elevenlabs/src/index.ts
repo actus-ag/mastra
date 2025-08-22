@@ -1,5 +1,5 @@
 import { File } from 'node:buffer';
-import { MastraVoice } from '@datawarp/mastra-core/voice';
+import { MastraVoice } from '@actus-ag/mastra-core/voice';
 import { ElevenLabsClient } from 'elevenlabs';
 
 type ElevenLabsModel =

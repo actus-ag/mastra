@@ -1,11 +1,11 @@
-# @datawarp/mastra-voice-gladia
+# @actus-ag/mastra-voice-gladia
 
 Gladia AI Voice integration for Mastra, providing Speech-to-text (STT) capabilities using Gladia's voice technology.
 
 ## Installation
 
 ```bash
-npm install @datawarp/mastra-voice-gladia
+npm install @actus-ag/mastra-voice-gladia
 ```
 
 ## Configuration
@@ -19,7 +19,7 @@ GLADIA_API_KEY=your_api_key
 ## Usage
 
 ```typescript
-import { GladiaVoice } from '@datawarp/mastra-voice-gladia';
+import { GladiaVoice } from '@actus-ag/mastra-voice-gladia';
 import { createReadStream } from 'fs';
 import path from 'path';
 

@@ -1,4 +1,4 @@
-import type { MastraVector, QueryResult, IndexStats } from '@datawarp/mastra-core/vector';
+import type { MastraVector, QueryResult, IndexStats } from '@actus-ag/mastra-core/vector';
 import { HTTPException } from '../http-exception';
 import type { Context } from '../types';
 

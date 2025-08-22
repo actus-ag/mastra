@@ -1,4 +1,4 @@
-# @datawarp/mastra-auth-auth0
+# @actus-ag/mastra-auth-auth0
 
 ## 0.10.2
 

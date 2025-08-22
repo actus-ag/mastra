@@ -1,22 +1,22 @@
-# @datawarp/mastra-auth-auth0
+# @actus-ag/mastra-auth-auth0
 
 A Mastra authentication provider for Auth0 integration. This package provides seamless authentication and authorization using Auth0's JWT tokens.
 
 ## Installation
 
 ```bash
-npm install @datawarp/mastra-auth-auth0
+npm install @actus-ag/mastra-auth-auth0
 # or
-yarn add @datawarp/mastra-auth-auth0
+yarn add @actus-ag/mastra-auth-auth0
 # or
-pnpm add @datawarp/mastra-auth-auth0
+pnpm add @actus-ag/mastra-auth-auth0
 ```
 
 ## Usage
 
 ```typescript
-import { Mastra } from '@datawarp/mastra-core';
-import { MastraAuthAuth0 } from '@datawarp/mastra-auth-auth0';
+import { Mastra } from '@actus-ag/mastra-core';
+import { MastraAuthAuth0 } from '@actus-ag/mastra-auth-auth0';
 
 // Initialize with options
 const auth0Provider = new MastraAuthAuth0({
@@ -64,7 +64,7 @@ interface MastraAuthAuth0Options {
 ## Example
 
 ```typescript
-import { MastraAuthAuth0 } from '@datawarp/mastra-auth-auth0';
+import { MastraAuthAuth0 } from '@actus-ag/mastra-auth-auth0';
 
 const auth0Provider = new MastraAuthAuth0({
   domain: 'your-tenant.auth0.com',

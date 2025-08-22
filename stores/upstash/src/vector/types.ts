@@ -1,4 +1,4 @@
-import type { UpsertVectorParams, QueryVectorParams, UpdateVectorParams } from '@datawarp/mastra-core/vector';
+import type { UpsertVectorParams, QueryVectorParams, UpdateVectorParams } from '@actus-ag/mastra-core/vector';
 import type { FusionAlgorithm, QueryMode } from '@upstash/vector';
 import type { UpstashVectorFilter } from './filter';
 

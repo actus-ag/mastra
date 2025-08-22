@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import { client } from '@/lib/client';
-import { McpServerListResponse } from '@datawarp/mastra-client-js';
+import { McpServerListResponse } from '@actus-ag/mastra-client-js';
 
 export const useMCPServers = () => {
   const [servers, setServers] = useState<McpServerListResponse['servers']>();

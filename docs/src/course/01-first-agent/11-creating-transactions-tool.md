@@ -7,7 +7,7 @@ First, create the new tool file at src/mastra/tools/get-transactions-tool.ts
 Now add the necessary imports:
 
 ```typescript
-import { createTool } from "@datawarp/mastra-core/tools";
+import { createTool } from "@actus-ag/mastra-core/tools";
 import { z } from "zod";
 ```
 

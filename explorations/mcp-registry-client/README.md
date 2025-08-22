@@ -70,7 +70,7 @@ For example an `MCPClient` class which takes a registry and can use it to valida
 
 ```ts
 import { RegistryClient } from "@mcp/registry"
-import { MCPClient } from "@datawarp/mastra-mcp"
+import { MCPClient } from "@actus-ag/mastra-mcp"
 
 const registry = new RegistryClient({
 	url: "https://example-tools.com/.well-known/mcp.json",

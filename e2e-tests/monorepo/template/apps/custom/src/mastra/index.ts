@@ -1,4 +1,4 @@
-import { Mastra } from '@datawarp/mastra-core/mastra';
+import { Mastra } from '@actus-ag/mastra-core/mastra';
 import { innerAgent } from '@/agents';
 import { testRoute } from '@/api/route/test';
 import { allRoute } from '@/api/route/all';

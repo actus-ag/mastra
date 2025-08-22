@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { getDeployer } from '@datawarp/mastra-deployer';
+import { getDeployer } from '@actus-ag/mastra-deployer';
 import { FileService } from '../../services/service.file.js';
 import { logger } from '../../utils/logger.js';
 import { BuildBundler } from '../build/BuildBundler.js';

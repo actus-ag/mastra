@@ -21,14 +21,14 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "latest",
-    "@datawarp/mastra-core": "latest",
+    "@actus-ag/mastra-core": "latest",
     "ai": "latest",
     "mastra": "latest"
   },
   "version": "0.0.1",
   "pnpm": {
     "overrides": {
-      "@datawarp/mastra-core": "link:../../packages/core",
+      "@actus-ag/mastra-core": "link:../../packages/core",
       "mastra": "link:../../packages/cli"
     }
   },

@@ -1,5 +1,5 @@
-import { MastraError, ErrorDomain, ErrorCategory } from '@datawarp/mastra-core/error';
-import { MastraVector } from '@datawarp/mastra-core/vector';
+import { MastraError, ErrorDomain, ErrorCategory } from '@actus-ag/mastra-core/error';
+import { MastraVector } from '@actus-ag/mastra-core/vector';
 import type {
   QueryResult,
   IndexStats,
@@ -10,7 +10,7 @@ import type {
   DeleteIndexParams,
   DeleteVectorParams,
   UpdateVectorParams,
-} from '@datawarp/mastra-core/vector';
+} from '@actus-ag/mastra-core/vector';
 import { ChromaClient, CloudClient } from 'chromadb';
 import type { ChromaClientArgs, RecordSet, Where, WhereDocument, Collection, Metadata } from 'chromadb';
 import type { ChromaVectorFilter } from './filter';

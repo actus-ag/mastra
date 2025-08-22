@@ -1,4 +1,4 @@
-import type { IMastraLogger } from '@datawarp/mastra-core/logger';
+import type { IMastraLogger } from '@actus-ag/mastra-core/logger';
 import * as babel from '@babel/core';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';

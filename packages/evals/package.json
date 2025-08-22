@@ -1,5 +1,5 @@
 {
-  "name": "@datawarp/mastra-evals",
+  "name": "@actus-ag/mastra-evals",
   "version": "0.12.1",
   "description": "",
   "type": "module",
@@ -91,13 +91,13 @@
     "zod": "^3.25.67"
   },
   "peerDependencies": {
-    "@datawarp/mastra-core": ">=0.13.0-0 <0.15.0-0",
+    "@actus-ag/mastra-core": ">=0.13.0-0 <0.15.0-0",
     "ai": "^4.0.0"
   },
   "devDependencies": {
     "@ai-sdk/openai": "^1.3.22",
     "@internal/lint": "workspace:*",
-    "@datawarp/mastra-core": "workspace:*",
+    "@actus-ag/mastra-core": "workspace:*",
     "@microsoft/api-extractor": "^7.52.8",
     "@types/difflib": "^0.2.7",
     "@types/fs-extra": "^11.0.4",

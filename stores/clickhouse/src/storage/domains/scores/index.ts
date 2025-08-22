@@ -1,8 +1,8 @@
 import type { ClickHouseClient } from '@clickhouse/client';
-import { ErrorCategory, ErrorDomain, MastraError } from '@datawarp/mastra-core/error';
-import type { ScoreRowData, ScoringSource } from '@datawarp/mastra-core/scores';
-import { ScoresStorage, TABLE_SCORERS, safelyParseJSON } from '@datawarp/mastra-core/storage';
-import type { PaginationInfo, StoragePagination } from '@datawarp/mastra-core/storage';
+import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
+import type { ScoreRowData, ScoringSource } from '@actus-ag/mastra-core/scores';
+import { ScoresStorage, TABLE_SCORERS, safelyParseJSON } from '@actus-ag/mastra-core/storage';
+import type { PaginationInfo, StoragePagination } from '@actus-ag/mastra-core/storage';
 import type { StoreOperationsClickhouse } from '../operations';
 
 export class ScoresStorageClickhouse extends ScoresStorage {

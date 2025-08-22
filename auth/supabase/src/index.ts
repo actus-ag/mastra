@@ -1,5 +1,5 @@
-import type { MastraAuthProviderOptions } from '@datawarp/mastra-core/server';
-import { MastraAuthProvider } from '@datawarp/mastra-core/server';
+import type { MastraAuthProviderOptions } from '@actus-ag/mastra-core/server';
+import { MastraAuthProvider } from '@actus-ag/mastra-core/server';
 
 import { createClient } from '@supabase/supabase-js';
 import type { SupabaseClient, User } from '@supabase/supabase-js';

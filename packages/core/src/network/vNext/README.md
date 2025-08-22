@@ -35,14 +35,14 @@ The AgentNetwork is able to route the task to the most appropriate primitive bas
 To ask the AgentNetwork to act on unstructured (text) input, we can use the `generate` method.
 
 ```typescript
-import { NewAgentNetwork } from '@datawarp/mastra-core/network/vNext';
-import { Agent } from '@datawarp/mastra-core/agent';
-import { createStep, createWorkflow } from '@datawarp/mastra-core/workflows';
-import { Memory } from '@datawarp/mastra-memory';
+import { NewAgentNetwork } from '@actus-ag/mastra-core/network/vNext';
+import { Agent } from '@actus-ag/mastra-core/agent';
+import { createStep, createWorkflow } from '@actus-ag/mastra-core/workflows';
+import { Memory } from '@actus-ag/mastra-memory';
 import { openai } from '@ai-sdk/openai';
-import { LibSQLStore } from '@datawarp/mastra-libsql';
+import { LibSQLStore } from '@actus-ag/mastra-libsql';
 import { z } from 'zod';
-import { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
+import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
 
 const memory = new Memory({
   storage: new LibSQLStore({
@@ -166,14 +166,14 @@ As an example, we have an AgentNetwork with 3 primitives at its disposal:
 We use the `loop` method to create a task that requires multiple primitives. The AgentNetwork will, using memory, figure out which primitives to call and in which order, as well as when the task is complete.
 
 ```typescript
-import { NewAgentNetwork } from '@datawarp/mastra-core/network/vNext';
-import { Agent } from '@datawarp/mastra-core/agent';
-import { createStep, createWorkflow } from '@datawarp/mastra-core/workflows';
-import { Memory } from '@datawarp/mastra-memory';
+import { NewAgentNetwork } from '@actus-ag/mastra-core/network/vNext';
+import { Agent } from '@actus-ag/mastra-core/agent';
+import { createStep, createWorkflow } from '@actus-ag/mastra-core/workflows';
+import { Memory } from '@actus-ag/mastra-memory';
 import { openai } from '@ai-sdk/openai';
-import { LibSQLStore } from '@datawarp/mastra-libsql';
+import { LibSQLStore } from '@actus-ag/mastra-libsql';
 import { z } from 'zod';
-import { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
+import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
 
 const memory = new Memory({
   storage: new LibSQLStore({
@@ -312,12 +312,12 @@ if (!network) {
 console.log(await network.generate('What are the biggest cities in France?', { runtimeContext }));
 ```
 
-## Using @datawarp/mastra-client-js
+## Using @actus-ag/mastra-client-js
 
-You can use the `@datawarp/mastra-client-js` package to run the network from the client side.
+You can use the `@actus-ag/mastra-client-js` package to run the network from the client side.
 
 ```typescript
-import { MastraClient } from '@datawarp/mastra-client-js';
+import { MastraClient } from '@actus-ag/mastra-client-js';
 
 const client = new MastraClient();
 

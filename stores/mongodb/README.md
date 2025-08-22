@@ -1,11 +1,11 @@
-# @datawarp/mastra-mongodb
+# @actus-ag/mastra-mongodb
 
 MongoDB Atlas Search implementation for Mastra, providing vector similarity search and index management using MongoDB Atlas Local or Atlas Cloud.
 
 ## Installation
 
 ```bash
-npm install @datawarp/mastra-mongodb
+npm install @actus-ag/mastra-mongodb
 ```
 
 ## Prerequisites
@@ -18,7 +18,7 @@ npm install @datawarp/mastra-mongodb
 ### Vector Store
 
 ```typescript
-import { MongoDBVector } from '@datawarp/mastra-mongodb';
+import { MongoDBVector } from '@actus-ag/mastra-mongodb';
 
 const vectorDB = new MongoDBVector({
   uri: 'mongodb://mongodb:mongodb@localhost:27018/?authSource=admin&directConnection=true',
@@ -59,7 +59,7 @@ await vectorDB.disconnect();
 ### Storage
 
 ```typescript
-import { MongoDBStore } from '@datawarp/mastra-mongodb';
+import { MongoDBStore } from '@actus-ag/mastra-mongodb';
 
 const store = new MongoDBStore({
   uri: 'mongodb://mongodb:mongodb@localhost:27018/?authSource=admin&directConnection=true',

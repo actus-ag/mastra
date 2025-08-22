@@ -1,5 +1,5 @@
-import { BaseFilterTranslator } from '@datawarp/mastra-core/vector/filter';
-import type { OperatorSupport, VectorFilter, OperatorValueMap } from '@datawarp/mastra-core/vector/filter';
+import { BaseFilterTranslator } from '@actus-ag/mastra-core/vector/filter';
+import type { OperatorSupport, VectorFilter, OperatorValueMap } from '@actus-ag/mastra-core/vector/filter';
 
 type UpstashOperatorValueMap = Omit<OperatorValueMap, '$options' | '$elemMatch'> & {
   $contains: string;

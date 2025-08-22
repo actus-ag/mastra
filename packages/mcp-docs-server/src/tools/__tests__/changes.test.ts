@@ -17,39 +17,39 @@ describe('changesTool', () => {
       const result = await callTool(tools.mastra_mastraChanges, {});
 
       // Check for some known packages that should be in the list
-      expect(result).toContain('@datawarp/mastra-core');
-      expect(result).toContain('@datawarp/mastra-deployer');
+      expect(result).toContain('@actus-ag/mastra-core');
+      expect(result).toContain('@actus-ag/mastra-deployer');
       expect(result).toContain('mastra');
     });
 
     it('should return changelog content for a specific package', async () => {
-      const result = await callTool(tools.mastra_mastraChanges, { package: '@datawarp/mastra-core' });
+      const result = await callTool(tools.mastra_mastraChanges, { package: '@actus-ag/mastra-core' });
 
       // The changelog should be a markdown file with package name as header
-      expect(result).toContain('# @datawarp/mastra-core');
+      expect(result).toContain('# @actus-ag/mastra-core');
       expect(result).toMatch(/##\s+v?\d+\.\d+\.\d+/); // Should contain version headers
     });
 
     it('should handle packages with slashes in names correctly', async () => {
-      const result = await callTool(tools.mastra_mastraChanges, { package: '@datawarp/mastra-deployer-vercel' });
-      expect(result).toContain('# @datawarp/mastra-deployer-vercel');
+      const result = await callTool(tools.mastra_mastraChanges, { package: '@actus-ag/mastra-deployer-vercel' });
+      expect(result).toContain('# @actus-ag/mastra-deployer-vercel');
     });
 
     it('should handle non-existent package gracefully', async () => {
       const result = await callTool(tools.mastra_mastraChanges, { package: 'non-existent-package' });
       expect(result).toContain('Changelog for "non-existent-package" not found');
       expect(result).toContain('Available packages:');
-      expect(result).toContain('@datawarp/mastra-core'); // Should list available packages
+      expect(result).toContain('@actus-ag/mastra-core'); // Should list available packages
     });
 
     it('should properly handle special characters in package names', async () => {
       // Test with a package name containing special characters that need URL encoding
-      const result = await callTool(tools.mastra_mastraChanges, { package: '@datawarp/mastra-client-js' });
-      expect(result).toContain('# @datawarp/mastra-client-js');
+      const result = await callTool(tools.mastra_mastraChanges, { package: '@actus-ag/mastra-client-js' });
+      expect(result).toContain('# @actus-ag/mastra-client-js');
     });
 
     it('should have versions in descending order', async () => {
-      const result = await callTool(tools.mastra_mastraChanges, { package: '@datawarp/mastra-core' });
+      const result = await callTool(tools.mastra_mastraChanges, { package: '@actus-ag/mastra-core' });
       const versionMatches = result.match(/##\s+v?\d+\.\d+\.\d+/g) || [];
       expect(versionMatches.length).toBeGreaterThan(1); // Should have multiple versions
 
@@ -66,7 +66,7 @@ describe('changesTool', () => {
     });
 
     it('should include multiple versions with their changes', async () => {
-      const result = await callTool(tools.mastra_mastraChanges, { package: '@datawarp/mastra-core' });
+      const result = await callTool(tools.mastra_mastraChanges, { package: '@actus-ag/mastra-core' });
       const versions = result.match(/##\s+v?\d+\.\d+\.\d+/g) || [];
       expect(versions.length).toBeGreaterThan(1);
 
@@ -78,7 +78,7 @@ describe('changesTool', () => {
     });
 
     it('should handle non-standard sections in changelog', async () => {
-      const result = await callTool(tools.mastra_mastraChanges, { package: '@datawarp/mastra-core' });
+      const result = await callTool(tools.mastra_mastraChanges, { package: '@actus-ag/mastra-core' });
 
       // Look for common changelog sections
       const hasNonStandardSection =
@@ -88,7 +88,7 @@ describe('changesTool', () => {
     });
 
     it('should properly format changelog content with markdown elements', async () => {
-      const result = await callTool(tools.mastra_mastraChanges, { package: '@datawarp/mastra-core' });
+      const result = await callTool(tools.mastra_mastraChanges, { package: '@actus-ag/mastra-core' });
 
       // Check for common markdown elements that exist in the changelog
       expect(result).toMatch(/^#\s+@mastra\/core/m); // Package header
@@ -98,7 +98,7 @@ describe('changesTool', () => {
     });
 
     it('should handle alpha and beta versions correctly', async () => {
-      const result = await callTool(tools.mastra_mastraChanges, { package: '@datawarp/mastra-core' });
+      const result = await callTool(tools.mastra_mastraChanges, { package: '@actus-ag/mastra-core' });
 
       // Check for alpha/beta version formats
       const hasPreReleaseVersion = /##\s+v?\d+\.\d+\.\d+-(alpha|beta)\.\d+/.test(result);
@@ -106,7 +106,7 @@ describe('changesTool', () => {
     });
 
     it('should handle well-structured changelog entries', async () => {
-      const result = await callTool(tools.mastra_mastraChanges, { package: '@datawarp/mastra-core' });
+      const result = await callTool(tools.mastra_mastraChanges, { package: '@actus-ag/mastra-core' });
 
       // Split into version sections
       const sections = result.split(/##\s+v?\d+\.\d+\.\d+\n/);
@@ -132,8 +132,8 @@ describe('changesTool', () => {
       tools.mastra_mastraChanges.getChangelog = async () => '';
 
       try {
-        const result = await callTool(tools.mastra_mastraChanges, { package: '@datawarp/mastra-test-empty' });
-        expect(result).toContain('Changelog for "@datawarp/mastra-test-empty" not found');
+        const result = await callTool(tools.mastra_mastraChanges, { package: '@actus-ag/mastra-test-empty' });
+        expect(result).toContain('Changelog for "@actus-ag/mastra-test-empty" not found');
       } finally {
         // Restore original function
         tools.mastra_mastraChanges.getChangelog = originalGetChangelog;
@@ -143,11 +143,11 @@ describe('changesTool', () => {
     it('should handle changelog files with only header', async () => {
       // Mock the filesystem response for a changelog with only header
       const originalGetChangelog = tools.mastra_mastraChanges.getChangelog;
-      tools.mastra_mastraChanges.getChangelog = async () => '# @datawarp/mastra-test-header-only\n';
+      tools.mastra_mastraChanges.getChangelog = async () => '# @actus-ag/mastra-test-header-only\n';
 
       try {
-        const result = await callTool(tools.mastra_mastraChanges, { package: '@datawarp/mastra-test-header-only' });
-        expect(result).toContain('Changelog for "@datawarp/mastra-test-header-only" not found');
+        const result = await callTool(tools.mastra_mastraChanges, { package: '@actus-ag/mastra-test-header-only' });
+        expect(result).toContain('Changelog for "@actus-ag/mastra-test-header-only" not found');
       } finally {
         // Restore original function
         tools.mastra_mastraChanges.getChangelog = originalGetChangelog;

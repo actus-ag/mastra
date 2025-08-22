@@ -17,13 +17,13 @@ interface CohereRerankingResponse {
   };
 }
 
-/** @deprecated Import from `@datawarp/mastra-rag` instead */
+/** @deprecated Import from `@actus-ag/mastra-rag` instead */
 export class CohereRelevanceScorer implements RelevanceScoreProvider {
   private model: string;
   private apiKey?: string;
   constructor(model: string, apiKey?: string) {
     console.warn(
-      'CohereRelevanceScorer exported from @datawarp/mastra-core is deprecated. Please import from "@datawarp/mastra-rag" instead.',
+      'CohereRelevanceScorer exported from @actus-ag/mastra-core is deprecated. Please import from "@actus-ag/mastra-rag" instead.',
     );
     this.apiKey = apiKey;
     this.model = model;

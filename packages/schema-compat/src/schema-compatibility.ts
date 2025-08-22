@@ -159,7 +159,7 @@ export type ModelInformation = {
  *
  * @example
  * ```typescript
- * import { SchemaCompatLayer } from '@datawarp/mastra-schema-compat';
+ * import { SchemaCompatLayer } from '@actus-ag/mastra-schema-compat';
  * import type { LanguageModelV1 } from 'ai';
  *
  * class CustomProviderCompat extends SchemaCompatLayer {

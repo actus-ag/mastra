@@ -1,4 +1,4 @@
-import type { RelevanceScoreProvider } from '@datawarp/mastra-core/relevance';
+import type { RelevanceScoreProvider } from '@actus-ag/mastra-core/relevance';
 
 interface CohereRerankingResponse {
   results: Array<{

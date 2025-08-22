@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { ContextRelevancyMetric } from '@datawarp/mastra-evals/llm';
+import { ContextRelevancyMetric } from '@actus-ag/mastra-evals/llm';
 
 // Example 1: High relevancy (all context relevant)
 const context1 = [

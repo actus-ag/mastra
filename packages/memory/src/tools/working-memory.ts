@@ -1,6 +1,6 @@
-import type { MemoryConfig } from '@datawarp/mastra-core';
-import { createTool } from '@datawarp/mastra-core';
-import { convertSchemaToZod } from '@datawarp/mastra-schema-compat';
+import type { MemoryConfig } from '@actus-ag/mastra-core';
+import { createTool } from '@actus-ag/mastra-core';
+import { convertSchemaToZod } from '@actus-ag/mastra-schema-compat';
 import type { Schema } from 'ai';
 import { z, ZodObject } from 'zod';
 import type { ZodTypeAny } from 'zod';

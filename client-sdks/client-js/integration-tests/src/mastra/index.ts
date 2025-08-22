@@ -1,5 +1,5 @@
-import { Mastra } from '@datawarp/mastra-core';
-import { Agent } from '@datawarp/mastra-core/agent';
+import { Mastra } from '@actus-ag/mastra-core';
+import { Agent } from '@actus-ag/mastra-core/agent';
 import { MockLanguageModelV1 } from 'ai/test';
 import { simulateReadableStream } from 'ai';
 

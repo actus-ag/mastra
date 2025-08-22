@@ -1,7 +1,7 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@datawarp/mastra-core/agent';
-import { OpenAIVoice } from '@datawarp/mastra-voice-openai';
-import { Memory } from '@datawarp/mastra-memory';
+import { Agent } from '@actus-ag/mastra-core/agent';
+import { OpenAIVoice } from '@actus-ag/mastra-voice-openai';
+import { Memory } from '@actus-ag/mastra-memory';
 
 const instructions = `
 ## Overview

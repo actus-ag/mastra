@@ -1,17 +1,17 @@
-# @datawarp/mastra-qdrant
+# @actus-ag/mastra-qdrant
 
 Vector store implementation for Qdrant using the official @qdrant/js-client-rest SDK with added telemetry support.
 
 ## Installation
 
 ```bash
-pnpm add @datawarp/mastra-qdrant
+pnpm add @actus-ag/mastra-qdrant
 ```
 
 ## Usage
 
 ```typescript
-import { QdrantVector } from '@datawarp/mastra-qdrant';
+import { QdrantVector } from '@actus-ag/mastra-qdrant';
 
 const vectorStore = new QdrantVector(
   'http://localhost:6333', // url

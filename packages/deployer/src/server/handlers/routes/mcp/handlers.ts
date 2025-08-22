@@ -1,5 +1,5 @@
-import type { Mastra } from '@datawarp/mastra-core';
-import type { MCPServerBase, ServerInfo, ServerDetailInfo } from '@datawarp/mastra-core/mcp';
+import type { Mastra } from '@actus-ag/mastra-core';
+import type { MCPServerBase, ServerInfo, ServerDetailInfo } from '@actus-ag/mastra-core/mcp';
 import { toReqRes, toFetchResponse } from 'fetch-to-node';
 import type { Context } from 'hono';
 import { handleError } from '../../error';

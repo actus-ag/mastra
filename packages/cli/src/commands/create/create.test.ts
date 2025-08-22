@@ -296,7 +296,7 @@ describe('create command with --template flag', () => {
               JSON.stringify({
                 name: 'test-project',
                 dependencies: {
-                  '@datawarp/mastra-core': '^1.0.0',
+                  '@actus-ag/mastra-core': '^1.0.0',
                 },
               }),
           } as Response;
@@ -345,7 +345,7 @@ describe('create command with --template flag', () => {
       };
       vi.mocked(spinner).mockReturnValue(mockSpinner);
 
-      // Mock fetch to return project without @datawarp/mastra-core
+      // Mock fetch to return project without @actus-ag/mastra-core
       vi.mocked(global.fetch).mockImplementation(async url => {
         const urlStr = typeof url === 'string' ? url : url.toString();
         if (urlStr.includes('/package.json')) {
@@ -375,7 +375,7 @@ describe('create command with --template flag', () => {
       expect(mockSpinner.start).toHaveBeenCalledWith('Validating GitHub repository...');
       expect(mockSpinner.stop).toHaveBeenCalledWith('Validation failed');
       expect(log.error).toHaveBeenCalledWith('This does not appear to be a valid Mastra project:');
-      expect(log.error).toHaveBeenCalledWith('  - Missing @datawarp/mastra-core dependency in package.json');
+      expect(log.error).toHaveBeenCalledWith('  - Missing @actus-ag/mastra-core dependency in package.json');
       expect(log.error).toHaveBeenCalledWith('  - Missing src/mastra/index.ts file');
     });
 

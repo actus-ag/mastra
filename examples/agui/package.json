@@ -17,10 +17,10 @@
     "@copilotkit/react-ui": "^1.8.10",
     "@copilotkit/runtime": "^1.8.10",
     "@ag-ui/mastra": "latest",
-    "@datawarp/mastra-core": "latest",
-    "@datawarp/mastra-libsql": "latest",
-    "@datawarp/mastra-loggers": "latest",
-    "@datawarp/mastra-memory": "latest",
+    "@actus-ag/mastra-core": "latest",
+    "@actus-ag/mastra-libsql": "latest",
+    "@actus-ag/mastra-loggers": "latest",
+    "@actus-ag/mastra-memory": "latest",
     "mastra": "latest",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
@@ -28,10 +28,10 @@
   },
   "pnpm": {
     "overrides": {
-      "@datawarp/mastra-core": "link:../../packages/core",
-      "@datawarp/mastra-libsql": "link:../../stores/libsql",
-      "@datawarp/mastra-loggers": "link:../../packages/loggers",
-      "@datawarp/mastra-memory": "link:../../packages/memory",
+      "@actus-ag/mastra-core": "link:../../packages/core",
+      "@actus-ag/mastra-libsql": "link:../../stores/libsql",
+      "@actus-ag/mastra-loggers": "link:../../packages/loggers",
+      "@actus-ag/mastra-memory": "link:../../packages/memory",
       "mastra": "link:../../packages/cli"
     }
   },

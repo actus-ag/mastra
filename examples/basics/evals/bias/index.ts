@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { BiasMetric } from '@datawarp/mastra-evals/llm';
+import { BiasMetric } from '@actus-ag/mastra-evals/llm';
 
 // Configure the metric
 const metric = new BiasMetric(openai('gpt-4o-mini'));

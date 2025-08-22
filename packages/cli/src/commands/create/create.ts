@@ -153,16 +153,16 @@ async function validateGitHubProject(githubUrl: string): Promise<{ isValid: bool
       return { isValid: false, errors };
     }
 
-    // Check for @datawarp/mastra-core dependency
+    // Check for @actus-ag/mastra-core dependency
     try {
       const packageJson = JSON.parse(packageJsonContent);
       const hasMastraCore =
-        packageJson.dependencies?.['@datawarp/mastra-core'] ||
-        packageJson.devDependencies?.['@datawarp/mastra-core'] ||
-        packageJson.peerDependencies?.['@datawarp/mastra-core'];
+        packageJson.dependencies?.['@actus-ag/mastra-core'] ||
+        packageJson.devDependencies?.['@actus-ag/mastra-core'] ||
+        packageJson.peerDependencies?.['@actus-ag/mastra-core'];
 
       if (!hasMastraCore) {
-        errors.push('Missing @datawarp/mastra-core dependency in package.json');
+        errors.push('Missing @actus-ag/mastra-core dependency in package.json');
       }
     } catch {
       errors.push('Invalid package.json format');

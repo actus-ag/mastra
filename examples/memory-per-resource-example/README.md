@@ -84,9 +84,9 @@ const memory = new Memory({
 
 The following storage adapters support per-resource working memory:
 
-- ✅ **LibSQL** (`@datawarp/mastra-libsql`)
-- ✅ **PostgreSQL** (`@datawarp/mastra-pg`)
-- ✅ **Upstash** (`@datawarp/mastra-upstash`)
+- ✅ **LibSQL** (`@actus-ag/mastra-libsql`)
+- ✅ **PostgreSQL** (`@actus-ag/mastra-pg`)
+- ✅ **Upstash** (`@actus-ag/mastra-upstash`)
 - ❌ **MockStore** (in-memory only, for testing)
 
 ## 💡 Use Cases

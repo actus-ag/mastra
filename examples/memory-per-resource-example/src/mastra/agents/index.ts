@@ -1,7 +1,7 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@datawarp/mastra-core/agent';
-import { Memory } from '@datawarp/mastra-memory';
-import { LibSQLStore } from '@datawarp/mastra-libsql';
+import { Agent } from '@actus-ag/mastra-core/agent';
+import { Memory } from '@actus-ag/mastra-memory';
+import { LibSQLStore } from '@actus-ag/mastra-libsql';
 
 // Create LibSQL storage for persistent per-resource working memory
 const storage = new LibSQLStore({

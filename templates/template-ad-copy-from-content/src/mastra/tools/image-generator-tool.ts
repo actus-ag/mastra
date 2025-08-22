@@ -1,4 +1,4 @@
-import { createTool } from '@datawarp/mastra-core/tools';
+import { createTool } from '@actus-ag/mastra-core/tools';
 import { z } from 'zod';
 import { experimental_generateImage as generateImage } from 'ai';
 import { openai } from '@ai-sdk/openai';

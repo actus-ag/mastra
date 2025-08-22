@@ -1,8 +1,8 @@
-import { Agent } from '@datawarp/mastra-core/agent';
-import { Mastra } from '@datawarp/mastra-core/mastra';
-import { AgentNetwork } from '@datawarp/mastra-core/network';
-import { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
-import { createMockModel } from '@datawarp/mastra-core/test-utils/llm-mock';
+import { Agent } from '@actus-ag/mastra-core/agent';
+import { Mastra } from '@actus-ag/mastra-core/mastra';
+import { AgentNetwork } from '@actus-ag/mastra-core/network';
+import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
+import { createMockModel } from '@actus-ag/mastra-core/test-utils/llm-mock';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { HTTPException } from '../http-exception';
 import { getNetworksHandler, getNetworkByIdHandler, generateHandler, streamGenerateHandler } from './network';

@@ -1,7 +1,7 @@
 import type { WriteStream } from 'fs';
 import { createWriteStream, existsSync, readFileSync } from 'fs';
-import { LoggerTransport } from '@datawarp/mastra-core/logger';
-import type { BaseLogMessage, LogLevel } from '@datawarp/mastra-core/logger';
+import { LoggerTransport } from '@actus-ag/mastra-core/logger';
+import type { BaseLogMessage, LogLevel } from '@actus-ag/mastra-core/logger';
 
 export class FileTransport extends LoggerTransport {
   path: string;

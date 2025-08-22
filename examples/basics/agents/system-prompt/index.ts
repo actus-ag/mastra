@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent, createTool } from '@datawarp/mastra-core';
+import { Agent, createTool } from '@actus-ag/mastra-core';
 import { z } from 'zod';
 
 const instructions = `You are a helpful cat expert assistant. When discussing cats, you should always include an interesting cat fact.

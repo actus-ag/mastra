@@ -1,11 +1,11 @@
-# @datawarp/mastra-voice-speechify
+# @actus-ag/mastra-voice-speechify
 
 Mastra Voice integration with Speechify's API.
 
 ## Installation
 
 ```bash
-npm install @datawarp/mastra-voice-speechify
+npm install @actus-ag/mastra-voice-speechify
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ export SPEECHIFY_API_KEY=your_api_key_here
 Then use it in your code:
 
 ```typescript
-import { SpeechifyVoice } from '@datawarp/mastra-voice-speechify';
+import { SpeechifyVoice } from '@actus-ag/mastra-voice-speechify';
 
 const voice = new SpeechifyVoice({
   speechModel: {

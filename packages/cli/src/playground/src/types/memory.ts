@@ -1,4 +1,4 @@
-import type { MemoryConfig } from '@datawarp/mastra-core';
+import type { MemoryConfig } from '@actus-ag/mastra-core';
 
 export interface MemoryConfigResponse {
   config: MemoryConfig;

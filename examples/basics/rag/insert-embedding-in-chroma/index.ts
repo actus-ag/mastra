@@ -1,6 +1,6 @@
 import { openai } from '@ai-sdk/openai';
-import { ChromaVector } from '@datawarp/mastra-chroma';
-import { MDocument } from '@datawarp/mastra-rag';
+import { ChromaVector } from '@actus-ag/mastra-chroma';
+import { MDocument } from '@actus-ag/mastra-rag';
 import { embedMany } from 'ai';
 
 const doc = MDocument.fromText('Your text content...');

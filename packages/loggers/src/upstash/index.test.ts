@@ -1,4 +1,4 @@
-import { LogLevel } from '@datawarp/mastra-core/logger';
+import { LogLevel } from '@actus-ag/mastra-core/logger';
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { PinoLogger } from '../pino';
 import { UpstashTransport } from './index.js';

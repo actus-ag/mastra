@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
-import { MastraError, ErrorDomain, ErrorCategory } from '@datawarp/mastra-core/error';
-import { MastraVector } from '@datawarp/mastra-core/vector';
+import { MastraError, ErrorDomain, ErrorCategory } from '@actus-ag/mastra-core/error';
+import { MastraVector } from '@actus-ag/mastra-core/vector';
 import type {
   CreateIndexParams,
   DeleteIndexParams,
@@ -8,7 +8,7 @@ import type {
   DescribeIndexParams,
   IndexStats,
   QueryResult,
-} from '@datawarp/mastra-core/vector';
+} from '@actus-ag/mastra-core/vector';
 import { Index } from '@upstash/vector';
 
 import { UpstashFilterTranslator } from './filter';

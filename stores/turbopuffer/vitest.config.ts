@@ -11,7 +11,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@datawarp/mastra-core': resolve(__dirname, '../../packages/core/src'),
+      '@actus-ag/mastra-core': resolve(__dirname, '../../packages/core/src'),
     },
   },
 });

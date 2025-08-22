@@ -1,5 +1,5 @@
 {
-  "name": "@datawarp/mastra-core",
+  "name": "@actus-ag/mastra-core",
   "version": "0.14.0",
   "license": "Apache-2.0",
   "type": "module",
@@ -159,7 +159,7 @@
     "@ai-sdk/provider-utils-v5": "npm:@ai-sdk/provider-utils@3.0.0",
     "@ai-sdk/provider-v5": "npm:@ai-sdk/provider@2.0.0",
     "@ai-sdk/ui-utils": "^1.2.11",
-    "@datawarp/mastra-schema-compat": "workspace:*",
+    "@actus-ag/mastra-schema-compat": "workspace:*",
     "@opentelemetry/api": "^1.9.0",
     "@opentelemetry/auto-instrumentations-node": "^0.62.0",
     "@opentelemetry/core": "^2.0.1",

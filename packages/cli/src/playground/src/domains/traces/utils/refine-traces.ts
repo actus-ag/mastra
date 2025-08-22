@@ -1,4 +1,4 @@
-import { Span, RefinedTrace } from '@datawarp/mastra-playground-ui';
+import { Span, RefinedTrace } from '@actus-ag/mastra-playground-ui';
 
 export const refineTraces = (traces: Span[], isWorkflow: boolean = false): RefinedTrace[] => {
   const listOfSpanIds = new Set<string>();

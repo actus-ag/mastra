@@ -1,7 +1,7 @@
-import { ErrorCategory, ErrorDomain, MastraError } from '@datawarp/mastra-core/error';
-import type { PaginationInfo, StorageGetTracesArg, StorageGetTracesPaginatedArg } from '@datawarp/mastra-core/storage';
-import { TABLE_TRACES, TracesStorage, safelyParseJSON } from '@datawarp/mastra-core/storage';
-import type { Trace } from '@datawarp/mastra-core/telemetry';
+import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
+import type { PaginationInfo, StorageGetTracesArg, StorageGetTracesPaginatedArg } from '@actus-ag/mastra-core/storage';
+import { TABLE_TRACES, TracesStorage, safelyParseJSON } from '@actus-ag/mastra-core/storage';
+import type { Trace } from '@actus-ag/mastra-core/telemetry';
 import type { StoreOperationsMongoDB } from '../operations';
 
 export class TracesStorageMongoDB extends TracesStorage {

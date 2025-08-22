@@ -3,11 +3,11 @@ import type { LintContext, LintRule } from './types.js';
 
 export const mastraCoreRule: LintRule = {
   name: 'mastra-core',
-  description: 'Checks if @datawarp/mastra-core is installed',
+  description: 'Checks if @actus-ag/mastra-core is installed',
   async run(context: LintContext): Promise<boolean> {
-    const hasCore = context.mastraPackages.some(pkg => pkg.name === '@datawarp/mastra-core');
+    const hasCore = context.mastraPackages.some(pkg => pkg.name === '@actus-ag/mastra-core');
     if (!hasCore) {
-      logger.error('@datawarp/mastra-core is not installed. This package is required for Mastra to work properly.');
+      logger.error('@actus-ag/mastra-core is not installed. This package is required for Mastra to work properly.');
       return false;
     }
     return true;

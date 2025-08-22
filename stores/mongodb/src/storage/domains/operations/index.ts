@@ -1,6 +1,6 @@
-import { ErrorCategory, ErrorDomain, MastraError } from '@datawarp/mastra-core/error';
-import { safelyParseJSON, StoreOperations, TABLE_SCHEMAS } from '@datawarp/mastra-core/storage';
-import type { StorageColumn, TABLE_NAMES } from '@datawarp/mastra-core/storage';
+import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
+import { safelyParseJSON, StoreOperations, TABLE_SCHEMAS } from '@actus-ag/mastra-core/storage';
+import type { StorageColumn, TABLE_NAMES } from '@actus-ag/mastra-core/storage';
 import type { ConnectorHandler } from '../../connectors/base';
 
 export interface MongoDBOperationsConfig {

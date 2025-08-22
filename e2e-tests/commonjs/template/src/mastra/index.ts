@@ -1,5 +1,5 @@
-import { Mastra } from '@datawarp/mastra-core/mastra';
-import { PinoLogger } from '@datawarp/mastra-loggers';
+import { Mastra } from '@actus-ag/mastra-core/mastra';
+import { PinoLogger } from '@actus-ag/mastra-loggers';
 
 import { weatherAgent } from './agents';
 

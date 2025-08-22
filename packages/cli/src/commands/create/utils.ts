@@ -172,9 +172,9 @@ export const createMastraProject = async ({
 
     s.start('Installing dependencies');
     try {
-      await installMastraDependency(pm, '@datawarp/mastra-core', versionTag, false, timeout);
-      await installMastraDependency(pm, '@datawarp/mastra-libsql', versionTag, false, timeout);
-      await installMastraDependency(pm, '@datawarp/mastra-memory', versionTag, false, timeout);
+      await installMastraDependency(pm, '@actus-ag/mastra-core', versionTag, false, timeout);
+      await installMastraDependency(pm, '@actus-ag/mastra-libsql', versionTag, false, timeout);
+      await installMastraDependency(pm, '@actus-ag/mastra-memory', versionTag, false, timeout);
     } catch (error) {
       throw new Error(
         `Failed to install Mastra dependencies: ${error instanceof Error ? error.message : 'Unknown error'}`,

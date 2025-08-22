@@ -83,7 +83,7 @@ export abstract class MemoryStorage extends MastraBase {
   async getResourceById(_: { resourceId: string }): Promise<StorageResourceType | null> {
     throw new Error(
       `Resource working memory is not supported by this storage adapter (${this.constructor.name}). ` +
-        `Supported storage adapters: LibSQL (@datawarp/mastra-libsql), PostgreSQL (@datawarp/mastra-pg), Upstash (@datawarp/mastra-upstash). ` +
+        `Supported storage adapters: LibSQL (@actus-ag/mastra-libsql), PostgreSQL (@actus-ag/mastra-pg), Upstash (@actus-ag/mastra-upstash). ` +
         `To use per-resource working memory, switch to one of these supported storage adapters.`,
     );
   }
@@ -91,7 +91,7 @@ export abstract class MemoryStorage extends MastraBase {
   async saveResource(_: { resource: StorageResourceType }): Promise<StorageResourceType> {
     throw new Error(
       `Resource working memory is not supported by this storage adapter (${this.constructor.name}). ` +
-        `Supported storage adapters: LibSQL (@datawarp/mastra-libsql), PostgreSQL (@datawarp/mastra-pg), Upstash (@datawarp/mastra-upstash). ` +
+        `Supported storage adapters: LibSQL (@actus-ag/mastra-libsql), PostgreSQL (@actus-ag/mastra-pg), Upstash (@actus-ag/mastra-upstash). ` +
         `To use per-resource working memory, switch to one of these supported storage adapters.`,
     );
   }
@@ -103,7 +103,7 @@ export abstract class MemoryStorage extends MastraBase {
   }): Promise<StorageResourceType> {
     throw new Error(
       `Resource working memory is not supported by this storage adapter (${this.constructor.name}). ` +
-        `Supported storage adapters: LibSQL (@datawarp/mastra-libsql), PostgreSQL (@datawarp/mastra-pg), Upstash (@datawarp/mastra-upstash). ` +
+        `Supported storage adapters: LibSQL (@actus-ag/mastra-libsql), PostgreSQL (@actus-ag/mastra-pg), Upstash (@actus-ag/mastra-upstash). ` +
         `To use per-resource working memory, switch to one of these supported storage adapters.`,
     );
   }

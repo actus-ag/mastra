@@ -11,16 +11,16 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^1.3.22",
-    "@datawarp/mastra-client-js": "latest",
-    "@datawarp/mastra-core": "latest",
+    "@actus-ag/mastra-client-js": "latest",
+    "@actus-ag/mastra-core": "latest",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "zod": "^3.25.67"
   },
   "pnpm": {
     "overrides": {
-      "@datawarp/mastra-client-js": "link:../../client-sdks/client-js",
-      "@datawarp/mastra-core": "link:../../packages/core"
+      "@actus-ag/mastra-client-js": "link:../../client-sdks/client-js",
+      "@actus-ag/mastra-core": "link:../../packages/core"
     }
   },
   "devDependencies": {

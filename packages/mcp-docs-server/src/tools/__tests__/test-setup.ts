@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { serve } from '@hono/node-server';
-import { MCPClient } from '@datawarp/mastra-mcp';
+import { MCPClient } from '@actus-ag/mastra-mcp';
 import { Hono } from 'hono';
 import type { Context } from 'hono';
 

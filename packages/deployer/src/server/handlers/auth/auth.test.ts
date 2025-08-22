@@ -1,4 +1,4 @@
-import type { MastraAuthConfig } from '@datawarp/mastra-core/server';
+import type { MastraAuthConfig } from '@actus-ag/mastra-core/server';
 import { describe, it, expect } from 'vitest';
 // import { authenticationMiddleware, authorizationMiddleware, exchangeTokenHandler } from '.';
 import { canAccessPublicly, pathMatchesPattern, pathMatchesRule, matchesOrIncludes, checkRules } from './helpers';

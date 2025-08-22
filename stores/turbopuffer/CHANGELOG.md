@@ -1,4 +1,4 @@
-# @datawarp/mastra-turbopuffer
+# @actus-ag/mastra-turbopuffer
 
 ## 0.11.4
 
@@ -22,14 +22,14 @@
 - Updated dependencies [c30bca8]
 - Updated dependencies [3b5fec7]
 - Updated dependencies [a8f129d]
-  - @datawarp/mastra-core@0.14.0
+  - @actus-ag/mastra-core@0.14.0
 
 ## 0.11.4-alpha.0
 
 ### Patch Changes
 
 - 03997ae: Update peerdeps
-  - @datawarp/mastra-core@0.14.0-alpha.7
+  - @actus-ag/mastra-core@0.14.0-alpha.7
 
 ## 0.11.3
 
@@ -50,7 +50,7 @@
 - Updated dependencies [5d377e5]
 - Updated dependencies [1fb812e]
 - Updated dependencies [35c5798]
-  - @datawarp/mastra-core@0.13.0
+  - @actus-ag/mastra-core@0.13.0
 
 ## 0.11.3-alpha.0
 
@@ -63,7 +63,7 @@
 - Updated dependencies [2871020]
 - Updated dependencies [4a406ec]
 - Updated dependencies [5d377e5]
-  - @datawarp/mastra-core@0.13.0-alpha.2
+  - @actus-ag/mastra-core@0.13.0-alpha.2
 
 ## 0.11.2
 
@@ -93,21 +93,21 @@
 - Updated dependencies [b8efbb9]
 - Updated dependencies [71466e7]
 - Updated dependencies [0c99fbe]
-  - @datawarp/mastra-core@0.12.0
+  - @actus-ag/mastra-core@0.12.0
 
 ## 0.11.2-alpha.0
 
 ### Patch Changes
 
 - f42c4c2: update peer deps for packages to latest core range
-  - @datawarp/mastra-core@0.12.0-alpha.5
+  - @actus-ag/mastra-core@0.12.0-alpha.5
 
 ## 0.11.1
 
 ### Patch Changes
 
 - ce088f5: Update all peerdeps to latest core
-  - @datawarp/mastra-core@0.11.1
+  - @actus-ag/mastra-core@0.11.1
 
 ## 0.11.0
 
@@ -135,7 +135,7 @@
 - Updated dependencies [8ba1b51]
 - Updated dependencies [4efcfa0]
 - Updated dependencies [0e17048]
-  - @datawarp/mastra-core@0.10.7
+  - @actus-ag/mastra-core@0.10.7
 
 ## 0.11.0-alpha.1
 
@@ -148,7 +148,7 @@
 - Updated dependencies [792c4c0]
 - Updated dependencies [502fe05]
 - Updated dependencies [4efcfa0]
-  - @datawarp/mastra-core@0.10.7-alpha.3
+  - @actus-ag/mastra-core@0.10.7-alpha.3
 
 ## 0.10.4-alpha.0
 
@@ -161,7 +161,7 @@
 - Updated dependencies [4fb0cc2]
 - Updated dependencies [d2a7a31]
 - Updated dependencies [0e17048]
-  - @datawarp/mastra-core@0.10.7-alpha.1
+  - @actus-ag/mastra-core@0.10.7-alpha.1
 
 ## 0.10.3
 
@@ -184,7 +184,7 @@
 - Updated dependencies [751c894]
 - Updated dependencies [577ce3a]
 - Updated dependencies [9260b3a]
-  - @datawarp/mastra-core@0.10.6
+  - @actus-ag/mastra-core@0.10.6
 
 ## 0.10.3-alpha.0
 
@@ -196,7 +196,7 @@
 - Updated dependencies [36f1c36]
 - Updated dependencies [10d352e]
 - Updated dependencies [53d3c37]
-  - @datawarp/mastra-core@0.10.6-alpha.0
+  - @actus-ag/mastra-core@0.10.6-alpha.0
 
 ## 0.10.2
 
@@ -216,7 +216,7 @@
 - Updated dependencies [14a2566]
 - Updated dependencies [f7f8293]
 - Updated dependencies [48eddb9]
-  - @datawarp/mastra-core@0.10.4
+  - @actus-ag/mastra-core@0.10.4
 
 ## 0.10.2-alpha.0
 
@@ -246,7 +246,7 @@
 - Updated dependencies [79d5145]
 - Updated dependencies [12b7002]
 - Updated dependencies [2901125]
-  - @datawarp/mastra-core@0.10.2
+  - @actus-ag/mastra-core@0.10.2
 
 ## 0.10.1-alpha.0
 
@@ -254,18 +254,18 @@
 
 - f0d559f: Fix peerdeps for alpha channel
 - Updated dependencies [1e8bb40]
-  - @datawarp/mastra-core@0.10.2-alpha.2
+  - @actus-ag/mastra-core@0.10.2-alpha.2
 
 ## 0.10.0
 
 ### Minor Changes
 
-- 83da932: Move @datawarp/mastra-core to peerdeps
+- 83da932: Move @actus-ag/mastra-core to peerdeps
 
 ### Patch Changes
 
 - d0ee3c6: Change all public functions and constructors in vector stores to use named args and prepare to phase out positional args
-- a7292b0: BREAKING(@datawarp/mastra-core, all vector stores): Vector store breaking changes (remove deprecated functions and positional arguments)
+- a7292b0: BREAKING(@actus-ag/mastra-core, all vector stores): Vector store breaking changes (remove deprecated functions and positional arguments)
 - Updated dependencies [b3a3d63]
 - Updated dependencies [344f453]
 - Updated dependencies [0a3ae6d]
@@ -283,17 +283,17 @@
 - Updated dependencies [a7292b0]
 - Updated dependencies [0dcb9f0]
 - Updated dependencies [2672a05]
-  - @datawarp/mastra-core@0.10.0
+  - @actus-ag/mastra-core@0.10.0
 
 ## 0.1.0-alpha.1
 
 ### Minor Changes
 
-- 83da932: Move @datawarp/mastra-core to peerdeps
+- 83da932: Move @actus-ag/mastra-core to peerdeps
 
 ### Patch Changes
 
-- a7292b0: BREAKING(@datawarp/mastra-core, all vector stores): Vector store breaking changes (remove deprecated functions and positional arguments)
+- a7292b0: BREAKING(@actus-ag/mastra-core, all vector stores): Vector store breaking changes (remove deprecated functions and positional arguments)
 - Updated dependencies [b3a3d63]
 - Updated dependencies [344f453]
 - Updated dependencies [0a3ae6d]
@@ -304,7 +304,7 @@
 - Updated dependencies [b2ae5aa]
 - Updated dependencies [a7292b0]
 - Updated dependencies [0dcb9f0]
-  - @datawarp/mastra-core@0.10.0-alpha.1
+  - @actus-ag/mastra-core@0.10.0-alpha.1
 
 ## 0.0.16-alpha.0
 
@@ -318,7 +318,7 @@
 - Updated dependencies [d0ee3c6]
 - Updated dependencies [23f258c]
 - Updated dependencies [2672a05]
-  - @datawarp/mastra-core@0.9.5-alpha.0
+  - @actus-ag/mastra-core@0.9.5-alpha.0
 
 ## 0.0.15
 
@@ -339,14 +339,14 @@
 - Updated dependencies [6fa1ad1]
 - Updated dependencies [c28d7a0]
 - Updated dependencies [edf1e88]
-  - @datawarp/mastra-core@0.9.4
+  - @actus-ag/mastra-core@0.9.4
 
 ## 0.0.15-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [3e9c131]
-  - @datawarp/mastra-core@0.9.4-alpha.4
+  - @actus-ag/mastra-core@0.9.4-alpha.4
 
 ## 0.0.15-alpha.3
 
@@ -357,7 +357,7 @@
 - Updated dependencies [c3bd795]
 - Updated dependencies [da082f8]
 - Updated dependencies [a5810ce]
-  - @datawarp/mastra-core@0.9.4-alpha.3
+  - @actus-ag/mastra-core@0.9.4-alpha.3
 
 ## 0.0.15-alpha.2
 
@@ -366,7 +366,7 @@
 - Updated dependencies [3171b5b]
 - Updated dependencies [973e5ac]
 - Updated dependencies [9e1eff5]
-  - @datawarp/mastra-core@0.9.4-alpha.2
+  - @actus-ag/mastra-core@0.9.4-alpha.2
 
 ## 0.0.15-alpha.1
 
@@ -376,7 +376,7 @@
 - Updated dependencies [6fa1ad1]
 - Updated dependencies [c28d7a0]
 - Updated dependencies [edf1e88]
-  - @datawarp/mastra-core@0.9.4-alpha.1
+  - @actus-ag/mastra-core@0.9.4-alpha.1
 
 ## 0.0.15-alpha.0
 
@@ -384,7 +384,7 @@
 
 - Updated dependencies [daf942f]
 - Updated dependencies [0b8b868]
-  - @datawarp/mastra-core@0.9.4-alpha.0
+  - @actus-ag/mastra-core@0.9.4-alpha.0
 
 ## 0.0.14
 
@@ -399,7 +399,7 @@
 - Updated dependencies [b5d2de0]
 - Updated dependencies [644f8ad]
 - Updated dependencies [70dbf51]
-  - @datawarp/mastra-core@0.9.3
+  - @actus-ag/mastra-core@0.9.3
 
 ## 0.0.14-alpha.1
 
@@ -410,7 +410,7 @@
 - Updated dependencies [ca0dc88]
 - Updated dependencies [9cd1a46]
 - Updated dependencies [70dbf51]
-  - @datawarp/mastra-core@0.9.3-alpha.1
+  - @actus-ag/mastra-core@0.9.3-alpha.1
 
 ## 0.0.14-alpha.0
 
@@ -419,7 +419,7 @@
 - Updated dependencies [526c570]
 - Updated dependencies [b5d2de0]
 - Updated dependencies [644f8ad]
-  - @datawarp/mastra-core@0.9.3-alpha.0
+  - @actus-ag/mastra-core@0.9.3-alpha.0
 
 ## 0.0.13
 
@@ -442,7 +442,7 @@
 - Updated dependencies [3a5f1e1]
 - Updated dependencies [51e6923]
 - Updated dependencies [8398d89]
-  - @datawarp/mastra-core@0.9.2
+  - @actus-ag/mastra-core@0.9.2
 
 ## 0.0.13-alpha.6
 
@@ -452,7 +452,7 @@
 - Updated dependencies [7d8b7c7]
 - Updated dependencies [3a5f1e1]
 - Updated dependencies [8398d89]
-  - @datawarp/mastra-core@0.9.2-alpha.6
+  - @actus-ag/mastra-core@0.9.2-alpha.6
 
 ## 0.0.13-alpha.5
 
@@ -463,7 +463,7 @@
 - Updated dependencies [8607972]
 - Updated dependencies [7eeb2bc]
 - Updated dependencies [fba031f]
-  - @datawarp/mastra-core@0.9.2-alpha.5
+  - @actus-ag/mastra-core@0.9.2-alpha.5
 
 ## 0.0.13-alpha.4
 
@@ -471,7 +471,7 @@
 
 - Updated dependencies [ccef9f9]
 - Updated dependencies [51e6923]
-  - @datawarp/mastra-core@0.9.2-alpha.4
+  - @actus-ag/mastra-core@0.9.2-alpha.4
 
 ## 0.0.13-alpha.3
 
@@ -480,28 +480,28 @@
 - Updated dependencies [967b41c]
 - Updated dependencies [4155f47]
 - Updated dependencies [17826a9]
-  - @datawarp/mastra-core@0.9.2-alpha.3
+  - @actus-ag/mastra-core@0.9.2-alpha.3
 
 ## 0.0.13-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [26738f4]
-  - @datawarp/mastra-core@0.9.2-alpha.2
+  - @actus-ag/mastra-core@0.9.2-alpha.2
 
 ## 0.0.13-alpha.1
 
 ### Patch Changes
 
 - Updated dependencies [b804723]
-  - @datawarp/mastra-core@0.9.2-alpha.1
+  - @actus-ag/mastra-core@0.9.2-alpha.1
 
 ## 0.0.13-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [0097d50]
-  - @datawarp/mastra-core@0.9.2-alpha.0
+  - @actus-ag/mastra-core@0.9.2-alpha.0
 
 ## 0.0.12
 
@@ -525,35 +525,35 @@
 - Updated dependencies [2d4001d]
 - Updated dependencies [c71013a]
 - Updated dependencies [1d3b1cd]
-  - @datawarp/mastra-core@0.9.1
+  - @actus-ag/mastra-core@0.9.1
 
 ## 0.0.12-alpha.8
 
 ### Patch Changes
 
 - Updated dependencies [2d17c73]
-  - @datawarp/mastra-core@0.9.1-alpha.8
+  - @actus-ag/mastra-core@0.9.1-alpha.8
 
 ## 0.0.12-alpha.7
 
 ### Patch Changes
 
 - Updated dependencies [1d3b1cd]
-  - @datawarp/mastra-core@0.9.1-alpha.7
+  - @actus-ag/mastra-core@0.9.1-alpha.7
 
 ## 0.0.12-alpha.6
 
 ### Patch Changes
 
 - Updated dependencies [c23a81c]
-  - @datawarp/mastra-core@0.9.1-alpha.6
+  - @actus-ag/mastra-core@0.9.1-alpha.6
 
 ## 0.0.12-alpha.5
 
 ### Patch Changes
 
 - Updated dependencies [3e7b69d]
-  - @datawarp/mastra-core@0.9.1-alpha.5
+  - @actus-ag/mastra-core@0.9.1-alpha.5
 
 ## 0.0.12-alpha.4
 
@@ -561,14 +561,14 @@
 
 - Updated dependencies [e4943b8]
 - Updated dependencies [479f490]
-  - @datawarp/mastra-core@0.9.1-alpha.4
+  - @actus-ag/mastra-core@0.9.1-alpha.4
 
 ## 0.0.12-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [6262bd5]
-  - @datawarp/mastra-core@0.9.1-alpha.3
+  - @actus-ag/mastra-core@0.9.1-alpha.3
 
 ## 0.0.12-alpha.2
 
@@ -577,7 +577,7 @@
 - Updated dependencies [405b63d]
 - Updated dependencies [61e92f5]
 - Updated dependencies [c71013a]
-  - @datawarp/mastra-core@0.9.1-alpha.2
+  - @actus-ag/mastra-core@0.9.1-alpha.2
 
 ## 0.0.12-alpha.1
 
@@ -590,14 +590,14 @@
 - Updated dependencies [c1409ef]
 - Updated dependencies [11d4485]
 - Updated dependencies [2d4001d]
-  - @datawarp/mastra-core@0.9.1-alpha.1
+  - @actus-ag/mastra-core@0.9.1-alpha.1
 
 ## 0.0.12-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [81fb7f6]
-  - @datawarp/mastra-core@0.9.1-alpha.0
+  - @actus-ag/mastra-core@0.9.1-alpha.0
 
 ## 0.0.11
 
@@ -619,7 +619,7 @@
 - Updated dependencies [0f4eae3]
 - Updated dependencies [16a8648]
 - Updated dependencies [6f92295]
-  - @datawarp/mastra-core@0.9.0
+  - @actus-ag/mastra-core@0.9.0
 
 ## 0.0.11-alpha.8
 
@@ -632,49 +632,49 @@
 - Updated dependencies [9c26508]
 - Updated dependencies [0f4eae3]
 - Updated dependencies [16a8648]
-  - @datawarp/mastra-core@0.9.0-alpha.8
+  - @actus-ag/mastra-core@0.9.0-alpha.8
 
 ## 0.0.11-alpha.7
 
 ### Patch Changes
 
 - Updated dependencies [71d9444]
-  - @datawarp/mastra-core@0.9.0-alpha.7
+  - @actus-ag/mastra-core@0.9.0-alpha.7
 
 ## 0.0.11-alpha.6
 
 ### Patch Changes
 
 - Updated dependencies [157c741]
-  - @datawarp/mastra-core@0.9.0-alpha.6
+  - @actus-ag/mastra-core@0.9.0-alpha.6
 
 ## 0.0.11-alpha.5
 
 ### Patch Changes
 
 - Updated dependencies [08bb78e]
-  - @datawarp/mastra-core@0.9.0-alpha.5
+  - @actus-ag/mastra-core@0.9.0-alpha.5
 
 ## 0.0.11-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [7e92011]
-  - @datawarp/mastra-core@0.9.0-alpha.4
+  - @actus-ag/mastra-core@0.9.0-alpha.4
 
 ## 0.0.11-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [fe3ae4d]
-  - @datawarp/mastra-core@0.9.0-alpha.3
+  - @actus-ag/mastra-core@0.9.0-alpha.3
 
 ## 0.0.11-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [9ee4293]
-  - @datawarp/mastra-core@0.8.4-alpha.2
+  - @actus-ag/mastra-core@0.8.4-alpha.2
 
 ## 0.0.11-alpha.1
 
@@ -682,14 +682,14 @@
 
 - Updated dependencies [8a8a73b]
 - Updated dependencies [6f92295]
-  - @datawarp/mastra-core@0.8.4-alpha.1
+  - @actus-ag/mastra-core@0.8.4-alpha.1
 
 ## 0.0.11-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [03f3cd0]
-  - @datawarp/mastra-core@0.8.4-alpha.0
+  - @actus-ag/mastra-core@0.8.4-alpha.0
 
 ## 0.0.10
 
@@ -704,7 +704,7 @@
 - Updated dependencies [32e7b71]
 - Updated dependencies [37bb612]
 - Updated dependencies [7f1b291]
-  - @datawarp/mastra-core@0.8.3
+  - @actus-ag/mastra-core@0.8.3
 
 ## 0.0.10-alpha.5
 
@@ -712,28 +712,28 @@
 
 - ec3cbf9: add MIT license for stores/vector packages
 - Updated dependencies [d72318f]
-  - @datawarp/mastra-core@0.8.3-alpha.5
+  - @actus-ag/mastra-core@0.8.3-alpha.5
 
 ## 0.0.10-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [7f1b291]
-  - @datawarp/mastra-core@0.8.3-alpha.4
+  - @actus-ag/mastra-core@0.8.3-alpha.4
 
 ## 0.0.10-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [10a8caf]
-  - @datawarp/mastra-core@0.8.3-alpha.3
+  - @actus-ag/mastra-core@0.8.3-alpha.3
 
 ## 0.0.10-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [0bcc862]
-  - @datawarp/mastra-core@0.8.3-alpha.2
+  - @actus-ag/mastra-core@0.8.3-alpha.2
 
 ## 0.0.10-alpha.1
 
@@ -742,28 +742,28 @@
 - 37bb612: Add Elastic-2.0 licensing for packages
 - Updated dependencies [32e7b71]
 - Updated dependencies [37bb612]
-  - @datawarp/mastra-core@0.8.3-alpha.1
+  - @actus-ag/mastra-core@0.8.3-alpha.1
 
 ## 0.0.10-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [359b089]
-  - @datawarp/mastra-core@0.8.3-alpha.0
+  - @actus-ag/mastra-core@0.8.3-alpha.0
 
 ## 0.0.9
 
 ### Patch Changes
 
 - Updated dependencies [a06aadc]
-  - @datawarp/mastra-core@0.8.2
+  - @actus-ag/mastra-core@0.8.2
 
 ## 0.0.9-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [a06aadc]
-  - @datawarp/mastra-core@0.8.2-alpha.0
+  - @actus-ag/mastra-core@0.8.2-alpha.0
 
 ## 0.0.8
 
@@ -771,7 +771,7 @@
 
 - Updated dependencies [99e2998]
 - Updated dependencies [8fdb414]
-  - @datawarp/mastra-core@0.8.1
+  - @actus-ag/mastra-core@0.8.1
 
 ## 0.0.8-alpha.0
 
@@ -779,7 +779,7 @@
 
 - Updated dependencies [99e2998]
 - Updated dependencies [8fdb414]
-  - @datawarp/mastra-core@0.8.1-alpha.0
+  - @actus-ag/mastra-core@0.8.1-alpha.0
 
 ## 0.0.7
 
@@ -814,42 +814,42 @@
 - Updated dependencies [8076ecf]
 - Updated dependencies [8df4a77]
 - Updated dependencies [304397c]
-  - @datawarp/mastra-core@0.8.0
+  - @actus-ag/mastra-core@0.8.0
 
 ## 0.0.7-alpha.8
 
 ### Patch Changes
 
 - Updated dependencies [8df4a77]
-  - @datawarp/mastra-core@0.8.0-alpha.8
+  - @actus-ag/mastra-core@0.8.0-alpha.8
 
 ## 0.0.7-alpha.7
 
 ### Patch Changes
 
 - Updated dependencies [febc8a6]
-  - @datawarp/mastra-core@0.8.0-alpha.7
+  - @actus-ag/mastra-core@0.8.0-alpha.7
 
 ## 0.0.7-alpha.6
 
 ### Patch Changes
 
 - Updated dependencies [a3f0e90]
-  - @datawarp/mastra-core@0.8.0-alpha.6
+  - @actus-ag/mastra-core@0.8.0-alpha.6
 
 ## 0.0.7-alpha.5
 
 ### Patch Changes
 
 - Updated dependencies [93875ed]
-  - @datawarp/mastra-core@0.8.0-alpha.5
+  - @actus-ag/mastra-core@0.8.0-alpha.5
 
 ## 0.0.7-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [d7e08e8]
-  - @datawarp/mastra-core@0.8.0-alpha.4
+  - @actus-ag/mastra-core@0.8.0-alpha.4
 
 ## 0.0.7-alpha.3
 
@@ -864,7 +864,7 @@
 - Updated dependencies [6330967]
 - Updated dependencies [8393832]
 - Updated dependencies [6330967]
-  - @datawarp/mastra-core@0.8.0-alpha.3
+  - @actus-ag/mastra-core@0.8.0-alpha.3
 
 ## 0.0.7-alpha.2
 
@@ -873,7 +873,7 @@
 - Updated dependencies [56c31b7]
 - Updated dependencies [dbbbf80]
 - Updated dependencies [99d43b9]
-  - @datawarp/mastra-core@0.8.0-alpha.2
+  - @actus-ag/mastra-core@0.8.0-alpha.2
 
 ## 0.0.7-alpha.1
 
@@ -885,7 +885,7 @@
 - Updated dependencies [fca3b21]
 - Updated dependencies [0118361]
 - Updated dependencies [619c39d]
-  - @datawarp/mastra-core@0.8.0-alpha.1
+  - @actus-ag/mastra-core@0.8.0-alpha.1
 
 ## 0.0.7-alpha.0
 
@@ -897,7 +897,7 @@
 - Updated dependencies [cafae83]
 - Updated dependencies [8076ecf]
 - Updated dependencies [304397c]
-  - @datawarp/mastra-core@0.7.1-alpha.0
+  - @actus-ag/mastra-core@0.7.1-alpha.0
 
 ## 0.0.6
 
@@ -913,7 +913,7 @@
 - Updated dependencies [a4686e8]
 - Updated dependencies [6530ad1]
 - Updated dependencies [27439ad]
-  - @datawarp/mastra-core@0.7.0
+  - @actus-ag/mastra-core@0.7.0
 
 ## 0.0.6-alpha.3
 
@@ -921,7 +921,7 @@
 
 - Updated dependencies [b3b34f5]
 - Updated dependencies [a4686e8]
-  - @datawarp/mastra-core@0.7.0-alpha.3
+  - @actus-ag/mastra-core@0.7.0-alpha.3
 
 ## 0.0.6-alpha.2
 
@@ -931,7 +931,7 @@
 - Updated dependencies [a8bd4cf]
 - Updated dependencies [7a3eeb0]
 - Updated dependencies [6530ad1]
-  - @datawarp/mastra-core@0.7.0-alpha.2
+  - @actus-ag/mastra-core@0.7.0-alpha.2
 
 ## 0.0.6-alpha.1
 
@@ -940,14 +940,14 @@
 - Updated dependencies [0b54522]
 - Updated dependencies [1af25d5]
 - Updated dependencies [27439ad]
-  - @datawarp/mastra-core@0.7.0-alpha.1
+  - @actus-ag/mastra-core@0.7.0-alpha.1
 
 ## 0.0.6-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [b4fbc59]
-  - @datawarp/mastra-core@0.6.5-alpha.0
+  - @actus-ag/mastra-core@0.6.5-alpha.0
 
 ## 0.0.5
 
@@ -957,14 +957,14 @@
 - Updated dependencies [fb68a80]
 - Updated dependencies [b56a681]
 - Updated dependencies [248cb07]
-  - @datawarp/mastra-core@0.6.4
+  - @actus-ag/mastra-core@0.6.4
 
 ## 0.0.5-alpha.1
 
 ### Patch Changes
 
 - Updated dependencies [6794797]
-  - @datawarp/mastra-core@0.6.4-alpha.1
+  - @actus-ag/mastra-core@0.6.4-alpha.1
 
 ## 0.0.5-alpha.0
 
@@ -973,7 +973,7 @@
 - Updated dependencies [fb68a80]
 - Updated dependencies [b56a681]
 - Updated dependencies [248cb07]
-  - @datawarp/mastra-core@0.6.4-alpha.0
+  - @actus-ag/mastra-core@0.6.4-alpha.0
 
 ## 0.0.4
 
@@ -982,14 +982,14 @@
 - 404640e: AgentNetwork changeset
 - Updated dependencies [404640e]
 - Updated dependencies [3bce733]
-  - @datawarp/mastra-core@0.6.3
+  - @actus-ag/mastra-core@0.6.3
 
 ## 0.0.4-alpha.1
 
 ### Patch Changes
 
 - Updated dependencies [3bce733]
-  - @datawarp/mastra-core@0.6.3-alpha.1
+  - @actus-ag/mastra-core@0.6.3-alpha.1
 
 ## 0.0.4-alpha.0
 
@@ -997,7 +997,7 @@
 
 - 404640e: AgentNetwork changeset
 - Updated dependencies [404640e]
-  - @datawarp/mastra-core@0.6.3-alpha.0
+  - @actus-ag/mastra-core@0.6.3-alpha.0
 
 ## 0.0.3
 
@@ -1005,7 +1005,7 @@
 
 - Updated dependencies [beaf1c2]
 - Updated dependencies [3084e13]
-  - @datawarp/mastra-core@0.6.2
+  - @actus-ag/mastra-core@0.6.2
 
 ## 0.0.3-alpha.0
 
@@ -1013,7 +1013,7 @@
 
 - Updated dependencies [beaf1c2]
 - Updated dependencies [3084e13]
-  - @datawarp/mastra-core@0.6.2-alpha.0
+  - @actus-ag/mastra-core@0.6.2-alpha.0
 
 ## 0.0.2
 
@@ -1029,7 +1029,7 @@
 - Updated dependencies [9116d70]
 - Updated dependencies [6e559a0]
 - Updated dependencies [5f43505]
-  - @datawarp/mastra-core@0.6.1
+  - @actus-ag/mastra-core@0.6.1
 
 ## 0.0.2-alpha.2
 
@@ -1039,7 +1039,7 @@
 - Updated dependencies [dfbb131]
 - Updated dependencies [0850b4c]
 - Updated dependencies [9116d70]
-  - @datawarp/mastra-core@0.6.1-alpha.2
+  - @actus-ag/mastra-core@0.6.1-alpha.2
 
 ## 0.0.2-alpha.1
 
@@ -1050,14 +1050,14 @@
 - Updated dependencies [44631b1]
 - Updated dependencies [6e559a0]
 - Updated dependencies [5f43505]
-  - @datawarp/mastra-core@0.6.1-alpha.1
+  - @actus-ag/mastra-core@0.6.1-alpha.1
 
 ## 0.0.2-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [7bcfaee]
-  - @datawarp/mastra-core@0.6.1-alpha.0
+  - @actus-ag/mastra-core@0.6.1-alpha.0
 
 ## 0.0.1
 
@@ -1069,7 +1069,7 @@
 - Updated dependencies [95b4144]
 - Updated dependencies [3729dbd]
 - Updated dependencies [c2144f4]
-  - @datawarp/mastra-core@0.6.0
+  - @actus-ag/mastra-core@0.6.0
 
 ## 0.0.1-alpha.2
 
@@ -1079,7 +1079,7 @@
 - Updated dependencies [1c8cda4]
 - Updated dependencies [95b4144]
 - Updated dependencies [c2144f4]
-  - @datawarp/mastra-core@0.6.0-alpha.1
+  - @actus-ag/mastra-core@0.6.0-alpha.1
 
 ## 0.0.1-alpha.1
 
@@ -1087,4 +1087,4 @@
 
 - 491522a: Added turbopuffer vector store support
 - Updated dependencies [3729dbd]
-  - @datawarp/mastra-core@0.5.1-alpha.0
+  - @actus-ag/mastra-core@0.5.1-alpha.0

@@ -1,5 +1,5 @@
 {
-  "name": "@datawarp/mastra-libsql",
+  "name": "@actus-ag/mastra-libsql",
   "version": "0.13.3",
   "description": "Libsql provider for Mastra - includes both vector and db storage capabilities",
   "type": "module",
@@ -31,7 +31,7 @@
   "devDependencies": {
     "@internal/lint": "workspace:*",
     "@internal/storage-test-utils": "workspace:*",
-    "@datawarp/mastra-core": "workspace:*",
+    "@actus-ag/mastra-core": "workspace:*",
     "@microsoft/api-extractor": "^7.52.8",
     "@types/node": "^20.19.0",
     "eslint": "^9.30.1",
@@ -41,6 +41,6 @@
     "@internal/types-builder": "workspace:*"
   },
   "peerDependencies": {
-    "@datawarp/mastra-core": ">=0.13.0-0 <0.15.0-0"
+    "@actus-ag/mastra-core": ">=0.13.0-0 <0.15.0-0"
   }
 }

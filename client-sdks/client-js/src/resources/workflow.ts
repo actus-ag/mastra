@@ -1,4 +1,4 @@
-import type { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
+import type { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
 import type {
   ClientOptions,
   GetWorkflowResponse,

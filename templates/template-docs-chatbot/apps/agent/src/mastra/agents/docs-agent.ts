@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@datawarp/mastra-core/agent';
+import { Agent } from '@actus-ag/mastra-core/agent';
 import { mcpClient } from '../mcp/mcp-client.js';
 
 // Create an agent that uses tools from the MCP server

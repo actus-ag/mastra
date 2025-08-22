@@ -1,5 +1,5 @@
-import { LoggerTransport } from '@datawarp/mastra-core/logger';
-import type { BaseLogMessage, LogLevel } from '@datawarp/mastra-core/logger';
+import { LoggerTransport } from '@actus-ag/mastra-core/logger';
+import type { BaseLogMessage, LogLevel } from '@actus-ag/mastra-core/logger';
 
 interface RetryOptions {
   maxRetries?: number;

@@ -18,7 +18,7 @@ export default {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/**/*.{js,ts,jsx,tsx,html}',
-    './node_modules/@datawarp/mastra-playground-ui/src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@actus-ag/mastra-playground-ui/src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     container: {

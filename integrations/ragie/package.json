@@ -1,5 +1,5 @@
 {
-  "name": "@datawarp/mastra-ragie",
+  "name": "@actus-ag/mastra-ragie",
   "version": "1.2.8",
   "description": "",
   "main": "dist/index.js",
@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
-    "@datawarp/mastra-core": "workspace:*",
+    "@actus-ag/mastra-core": "workspace:*",
     "@microsoft/api-extractor": "^7.52.8",
     "@rollup/plugin-image": "^3.0.3",
     "@types/jest": "^29.5.14",
@@ -54,6 +54,6 @@
     "zod": "^3.25.67"
   },
   "peerDependencies": {
-    "@datawarp/mastra-core": ">=0.10.7-0 <0.15.0-0"
+    "@actus-ag/mastra-core": ">=0.10.7-0 <0.15.0-0"
   }
 }

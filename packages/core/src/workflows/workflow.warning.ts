@@ -17,6 +17,6 @@ export class Workflow<
   constructor(args: WorkflowConfig<TWorkflowId, TInput, TOutput, TSteps>) {
     super(args);
 
-    this.logger.warn('Please import "Workflow" from "@datawarp/mastra-core/workflows" instead of "@datawarp/mastra-core"');
+    this.logger.warn('Please import "Workflow" from "@actus-ag/mastra-core/workflows" instead of "@actus-ag/mastra-core"');
   }
 }

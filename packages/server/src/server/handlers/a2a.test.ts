@@ -1,11 +1,11 @@
 import { openai } from '@ai-sdk/openai';
-import type { Task, MessageSendParams } from '@datawarp/mastra-core/a2a';
-import { MastraA2AError } from '@datawarp/mastra-core/a2a';
-import type { AgentConfig } from '@datawarp/mastra-core/agent';
-import { Agent } from '@datawarp/mastra-core/agent';
-import { Mastra } from '@datawarp/mastra-core/mastra';
-import { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
-import type { MastraStorage } from '@datawarp/mastra-core/storage';
+import type { Task, MessageSendParams } from '@actus-ag/mastra-core/a2a';
+import { MastraA2AError } from '@actus-ag/mastra-core/a2a';
+import type { AgentConfig } from '@actus-ag/mastra-core/agent';
+import { Agent } from '@actus-ag/mastra-core/agent';
+import { Mastra } from '@actus-ag/mastra-core/mastra';
+import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
+import type { MastraStorage } from '@actus-ag/mastra-core/storage';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { InMemoryTaskStore } from '../a2a/store';
 import {

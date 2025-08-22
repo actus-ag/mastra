@@ -1,5 +1,5 @@
 {
-  "name": "@datawarp/mastra-memory-integration-tests-v5",
+  "name": "@actus-ag/mastra-memory-integration-tests-v5",
   "private": true,
   "version": "0.1.1",
   "scripts": {
@@ -12,9 +12,9 @@
     "dev": "mastra dev"
   },
   "dependencies": {
-    "@datawarp/mastra-fastembed": "workspace:*",
-    "@datawarp/mastra-libsql": "workspace:*",
-    "@datawarp/mastra-memory": "workspace:*",
+    "@actus-ag/mastra-fastembed": "workspace:*",
+    "@actus-ag/mastra-libsql": "workspace:*",
+    "@actus-ag/mastra-memory": "workspace:*",
     "dotenv": "^16.4.7",
     "json-schema": "^0.4.0",
     "zod": "^3.24.3"
@@ -24,13 +24,13 @@
     "@ai-sdk/openai": "^2.0.15",
     "@ai-sdk/react": "^2.0.15",
     "@faker-js/faker": "^9.6.0",
-    "@datawarp/mastra-core": "workspace:*",
+    "@actus-ag/mastra-core": "workspace:*",
     "@testing-library/react": "^16.2.0",
     "@types/json-schema": "^7.0.15",
     "@types/node": "^20.17.27",
     "ai": "^5.0.0",
     "jsdom": "^26.0.0",
-    "@datawarp/mastra-cli": "workspace:*",
+    "@actus-ag/mastra-cli": "workspace:*",
     "next": "^15.2.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -38,6 +38,6 @@
     "vitest": "^3.2.4"
   },
   "peerDependencies": {
-    "@datawarp/mastra-core": ">=0.10.7-0 <0.15.0-0"
+    "@actus-ag/mastra-core": ">=0.10.7-0 <0.15.0-0"
   }
 }

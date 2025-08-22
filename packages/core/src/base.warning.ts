@@ -5,6 +5,6 @@ export class MastraBase extends MastraBaseBase {
   constructor(args: { component?: RegisteredLogger; name?: string }) {
     super(args);
 
-    this.logger.warn('Please import "MastraBase" from "@datawarp/mastra-core/base" instead of "@datawarp/mastra-core"');
+    this.logger.warn('Please import "MastraBase" from "@actus-ag/mastra-core/base" instead of "@actus-ag/mastra-core"');
   }
 }

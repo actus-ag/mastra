@@ -1,9 +1,9 @@
-import { Agent } from "@datawarp/mastra-core/agent";
+import { Agent } from "@actus-ag/mastra-core/agent";
 import { openai } from "@ai-sdk/openai";
 
 import { weatherTool } from "../tools";
-import { Memory } from "@datawarp/mastra-memory";
-import { LibSQLStore } from "@datawarp/mastra-libsql";
+import { Memory } from "@actus-ag/mastra-memory";
+import { LibSQLStore } from "@actus-ag/mastra-libsql";
 
 export const memory = new Memory({
   storage: new LibSQLStore({

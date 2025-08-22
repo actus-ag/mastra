@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@datawarp/mastra-core/agent';
+import { Agent } from '@actus-ag/mastra-core/agent';
 import { toolUsingNativeBindings, toolWithNativeBindingPackageDep } from '@inner/inner-tools';
 import { lodashTool } from '@/tools/lodash';
 import { calculatorTool } from '@/tools/calculator-tool';

@@ -1,4 +1,4 @@
-# @datawarp/mastra-cloudflare-d1
+# @actus-ag/mastra-cloudflare-d1
 
 A Mastra store for Cloudflare D1 SQL databases, supporting threads, messages, workflows, evaluations, and traces with robust SQL features.
 
@@ -25,7 +25,7 @@ A Mastra store for Cloudflare D1 SQL databases, supporting threads, messages, wo
 ## Installation
 
 ```bash
-pnpm add @datawarp/mastra-cloudflare-d1
+pnpm add @actus-ag/mastra-cloudflare-d1
 ```
 
 ## Usage
@@ -33,7 +33,7 @@ pnpm add @datawarp/mastra-cloudflare-d1
 ### With Workers D1 Binding
 
 ```typescript
-import { D1Store } from '@datawarp/mastra-cloudflare-d1';
+import { D1Store } from '@actus-ag/mastra-cloudflare-d1';
 
 const store = new D1Store({
   binding: env.DB, // D1Database binding from Worker environment
@@ -44,7 +44,7 @@ const store = new D1Store({
 ### With REST API
 
 ```typescript
-import { D1Store } from '@datawarp/mastra-cloudflare-d1';
+import { D1Store } from '@actus-ag/mastra-cloudflare-d1';
 
 const store = new D1Store({
   accountId: '<your-account-id>',
@@ -57,7 +57,7 @@ const store = new D1Store({
 ### Or you can pass any client implementation you want
 
 ```typescript
-import { D1Store } from '@datawarp/mastra-cloudflare-d1';
+import { D1Store } from '@actus-ag/mastra-cloudflare-d1';
 
 const store = new D1Store({
   client: {

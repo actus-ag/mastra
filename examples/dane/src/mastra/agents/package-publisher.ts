@@ -1,4 +1,4 @@
-import { Agent } from '@datawarp/mastra-core/agent';
+import { Agent } from '@actus-ag/mastra-core/agent';
 
 import { pnpmChangesetStatus, pnpmBuild, pnpmChangesetPublish, activeDistTag } from '../tools/pnpm.js';
 
@@ -9,36 +9,36 @@ const packages_llm_text = `
   # PACKAGE LOCATION RULES - FOLLOW THESE EXACTLY:
   
   ## 1. Core packages - all must be directly under packages/:
-  @datawarp/mastra-core -> packages/core
-  @datawarp/mastra-deployer -> packages/deployer
+  @actus-ag/mastra-core -> packages/core
+  @actus-ag/mastra-deployer -> packages/deployer
   mastra -> packages/cli
-  @datawarp/mastra-engine -> packages/engine
-  @datawarp/mastra-evals -> packages/evals
-  @datawarp/mastra-rag -> packages/rag
-  @datawarp/mastra-memory -> packages/memory
-  @datawarp/mastra-mcp -> packages/mcp
-  @datawarp/mastra-loggers -> packages/loggers
+  @actus-ag/mastra-engine -> packages/engine
+  @actus-ag/mastra-evals -> packages/evals
+  @actus-ag/mastra-rag -> packages/rag
+  @actus-ag/mastra-memory -> packages/memory
+  @actus-ag/mastra-mcp -> packages/mcp
+  @actus-ag/mastra-loggers -> packages/loggers
 
   ## 2. Deployer packages - STRICT RULES:
-  @datawarp/mastra-deployer-cloudflare -> deployers/cloudflare
-  @datawarp/mastra-deployer-vercel -> deployers/vercel
-  @datawarp/mastra-deployer-netlify -> deployers/netlify
+  @actus-ag/mastra-deployer-cloudflare -> deployers/cloudflare
+  @actus-ag/mastra-deployer-vercel -> deployers/vercel
+  @actus-ag/mastra-deployer-netlify -> deployers/netlify
   - NEVER in any other directory (not in integrations/, examples/, packages/, etc)
 
   ## 3. Store packages - STRICT RULES:
   - ALL store packages must be directly under stores/
   - Format: @mastra/{name} -> stores/{name}
-  - Example: @datawarp/mastra-pg -> stores/pg
+  - Example: @actus-ag/mastra-pg -> stores/pg
 
   ## 4. Speech packages - STRICT RULES:
   - ALL speech packages must be directly under speech/
-  - Format: @datawarp/mastra-speech-{name} -> speech/{name}
+  - Format: @actus-ag/mastra-speech-{name} -> speech/{name}
 
   ## 5. Integrations - STRICT RULES:
   - ALL integration packages are under integrations/
-  @datawarp/mastra-composio -> integrations/composio
-  @datawarp/mastra-github -> integrations/github
-  @datawarp/mastra-firecrawl -> integrations/firecrawl
+  @actus-ag/mastra-composio -> integrations/composio
+  @actus-ag/mastra-github -> integrations/github
+  @actus-ag/mastra-firecrawl -> integrations/firecrawl
   
   ##VALIDATION:
   1. Never mix examples/ or integrations/ with package paths
@@ -51,11 +51,11 @@ export const PACKAGES_LIST_PROMPT = `
         CRITICAL: This step is about planning. We do not want to build anything. All packages MUST be placed in the correct order.
         
         Publish Requirements:
-        - @datawarp/mastra-core first, MUST be before any other package
+        - @actus-ag/mastra-core first, MUST be before any other package
         - all packages in correct dependency order before building
         - Identify packages that have changes requiring a new pnpm publish
         - Include create-mastra in the packages list if changes exist
-        - EXCLUDE @datawarp/mastra-dane from consideration
+        - EXCLUDE @actus-ag/mastra-dane from consideration
 
         Please list all packages that need building grouped by their directory. 
         DO NOT NOT USE the 'pnpmBuild' tool during this step.
@@ -70,8 +70,8 @@ export const BUILD_PACKAGES_PROMPT = (packages: string[]) => `
         <execution_plan>
           <phase order="1">
             <!-- Core packages must be built one at a time in this exact order -->
-            <step>Use pnpmBuild to build @datawarp/mastra-core</step>
-            <step>Wait for completion, then use pnpmBuild to build @datawarp/mastra-deployer</step>
+            <step>Use pnpmBuild to build @actus-ag/mastra-core</step>
+            <step>Wait for completion, then use pnpmBuild to build @actus-ag/mastra-deployer</step>
             <step>Wait for completion, then use pnpmBuild to build mastra</step>
           </phase>
 
@@ -87,12 +87,12 @@ export const BUILD_PACKAGES_PROMPT = (packages: string[]) => `
             
             <parallel_phase name="integrations">
               <description>Build integrations/ directory packages</description>
-              <action>Use pnpmBuild for each @datawarp/mastra-integration-* package</action>
+              <action>Use pnpmBuild for each @actus-ag/mastra-integration-* package</action>
             </parallel_phase>
             
             <parallel_phase name="deployers">
               <description>Build deployers/ directory packages</description>
-              <action>Use pnpmBuild for each @datawarp/mastra-deployer-* package</action>
+              <action>Use pnpmBuild for each @actus-ag/mastra-deployer-* package</action>
             </parallel_phase>
             
             <parallel_phase name="stores">

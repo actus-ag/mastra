@@ -1,4 +1,4 @@
-import type { InternalCoreTool } from '@datawarp/mastra-core';
+import type { InternalCoreTool } from '@actus-ag/mastra-core';
 import type { RequestHandlerExtra } from '@modelcontextprotocol/sdk/shared/protocol.js';
 import type {
   ElicitRequest,

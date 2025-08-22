@@ -1,4 +1,4 @@
-# @datawarp/mastra-auth-firebase
+# @actus-ag/mastra-auth-firebase
 
 ## 0.10.1
 

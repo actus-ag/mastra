@@ -38,10 +38,10 @@ export class BuildBundler extends Bundler {
   protected getEntry(): string {
     return `
     // @ts-ignore
-    import { evaluate } from '@datawarp/mastra-core/eval';
-    import { AvailableHooks, registerHook } from '@datawarp/mastra-core/hooks';
-    import { TABLE_EVALS } from '@datawarp/mastra-core/storage';
-    import { checkEvalStorageFields } from '@datawarp/mastra-core/utils';
+    import { evaluate } from '@actus-ag/mastra-core/eval';
+    import { AvailableHooks, registerHook } from '@actus-ag/mastra-core/hooks';
+    import { TABLE_EVALS } from '@actus-ag/mastra-core/storage';
+    import { checkEvalStorageFields } from '@actus-ag/mastra-core/utils';
     import { mastra } from '#mastra';
     import { createNodeServer, getToolExports } from '#server';
     import { tools } from '#tools';

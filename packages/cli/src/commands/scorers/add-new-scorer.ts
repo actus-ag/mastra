@@ -43,10 +43,10 @@ export async function selectScorer(): Promise<ScorerTemplate[] | null> {
 
 export async function addNewScorer(scorerId?: string, customDir?: string) {
   const depService = new DepsService();
-  const needsEvals = (await depService.checkDependencies(['@datawarp/mastra-evals'])) !== `ok`;
+  const needsEvals = (await depService.checkDependencies(['@actus-ag/mastra-evals'])) !== `ok`;
 
   if (needsEvals) {
-    await depService.installPackages(['@datawarp/mastra-evals']);
+    await depService.installPackages(['@actus-ag/mastra-evals']);
   }
 
   if (!scorerId) {

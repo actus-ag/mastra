@@ -1,4 +1,4 @@
-import { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
+import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { vectorQuerySearch } from '../utils';
 import type { DatabaseConfig } from './types';

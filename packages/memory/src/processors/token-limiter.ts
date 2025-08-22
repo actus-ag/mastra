@@ -1,5 +1,5 @@
-import type { CoreMessage, MemoryProcessorOpts } from '@datawarp/mastra-core';
-import { MemoryProcessor } from '@datawarp/mastra-core/memory';
+import type { CoreMessage, MemoryProcessorOpts } from '@actus-ag/mastra-core';
+import { MemoryProcessor } from '@actus-ag/mastra-core/memory';
 import { Tiktoken } from 'js-tiktoken/lite';
 import type { TiktokenBPE } from 'js-tiktoken/lite';
 import o200k_base from 'js-tiktoken/ranks/o200k_base';

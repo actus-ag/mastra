@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 import { toast } from 'sonner';
-import { LegacyWorkflowRunResult, WorkflowWatchResult, GetWorkflowResponse } from '@datawarp/mastra-client-js';
-import type { LegacyWorkflow } from '@datawarp/mastra-core/workflows/legacy';
+import { LegacyWorkflowRunResult, WorkflowWatchResult, GetWorkflowResponse } from '@actus-ag/mastra-client-js';
+import type { LegacyWorkflow } from '@actus-ag/mastra-core/workflows/legacy';
 import { useMastraClient } from '@/contexts/mastra-client-context';
 
 export type ExtendedLegacyWorkflowRunResult = LegacyWorkflowRunResult & {

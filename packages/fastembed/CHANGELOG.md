@@ -1,4 +1,4 @@
-# @datawarp/mastra-fastembed
+# @actus-ag/mastra-fastembed
 
 ## 0.10.2
 
@@ -44,12 +44,12 @@
 
 ### Patch Changes
 
-- 3a5f1e1: Created a new @datawarp/mastra-fastembed package based on the default embedder in @datawarp/mastra-core as the default embedder will be removed in a breaking change (May 20th)
-  Added a warning to use the new @datawarp/mastra-fastembed package instead of the default embedder
+- 3a5f1e1: Created a new @actus-ag/mastra-fastembed package based on the default embedder in @actus-ag/mastra-core as the default embedder will be removed in a breaking change (May 20th)
+  Added a warning to use the new @actus-ag/mastra-fastembed package instead of the default embedder
 
 ## 0.0.2-alpha.0
 
 ### Patch Changes
 
-- 3a5f1e1: Created a new @datawarp/mastra-fastembed package based on the default embedder in @datawarp/mastra-core as the default embedder will be removed in a breaking change (May 20th)
-  Added a warning to use the new @datawarp/mastra-fastembed package instead of the default embedder
+- 3a5f1e1: Created a new @actus-ag/mastra-fastembed package based on the default embedder in @actus-ag/mastra-core as the default embedder will be removed in a breaking change (May 20th)
+  Added a warning to use the new @actus-ag/mastra-fastembed package instead of the default embedder

@@ -4,8 +4,8 @@ import type {
   OperatorValueMap,
   LogicalOperatorValueMap,
   BlacklistedRootOperators,
-} from '@datawarp/mastra-core/vector/filter';
-import { BaseFilterTranslator } from '@datawarp/mastra-core/vector/filter';
+} from '@actus-ag/mastra-core/vector/filter';
+import { BaseFilterTranslator } from '@actus-ag/mastra-core/vector/filter';
 import type { FilterCondition, FilterConnective, FilterOperator, Filters } from '@turbopuffer/turbopuffer';
 
 type TurbopufferOperatorValueMap = Omit<OperatorValueMap, '$regex' | '$options' | '$elemMatch'>;

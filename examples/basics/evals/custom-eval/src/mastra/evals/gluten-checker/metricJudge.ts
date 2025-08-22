@@ -1,5 +1,5 @@
-import { type LanguageModel } from '@datawarp/mastra-core/llm';
-import { MastraAgentJudge } from '@datawarp/mastra-evals/judge';
+import { type LanguageModel } from '@actus-ag/mastra-core/llm';
+import { MastraAgentJudge } from '@actus-ag/mastra-evals/judge';
 import { z } from 'zod';
 
 import { GLUTEN_INSTRUCTIONS, generateGlutenPrompt, generateReasonPrompt } from './prompts';

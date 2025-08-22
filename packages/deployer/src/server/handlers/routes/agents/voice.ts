@@ -1,10 +1,10 @@
-import type { Mastra } from '@datawarp/mastra-core';
+import type { Mastra } from '@actus-ag/mastra-core';
 import {
   getSpeakersHandler as getOriginalSpeakersHandler,
   generateSpeechHandler as getOriginalSpeakHandler,
   getListenerHandler as getOriginalListenerHandler,
   transcribeSpeechHandler as getOriginalListenHandler,
-} from '@datawarp/mastra-server/handlers/voice';
+} from '@actus-ag/mastra-server/handlers/voice';
 import type { Context } from 'hono';
 import { HTTPException } from 'hono/http-exception';
 

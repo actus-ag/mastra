@@ -1,7 +1,7 @@
 import { spawn } from 'node:child_process';
-import { MCPClient } from '@datawarp/mastra-mcp';
+import { MCPClient } from '@actus-ag/mastra-mcp';
 import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
-import { ServerInfo } from '@datawarp/mastra-core/mcp';
+import { ServerInfo } from '@actus-ag/mastra-core/mcp';
 import path from 'node:path';
 
 vi.setConfig({ testTimeout: 20000, hookTimeout: 20000 });

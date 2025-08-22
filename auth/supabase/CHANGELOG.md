@@ -1,4 +1,4 @@
-# @datawarp/mastra-auth-supabase
+# @actus-ag/mastra-auth-supabase
 
 ## 0.10.3
 

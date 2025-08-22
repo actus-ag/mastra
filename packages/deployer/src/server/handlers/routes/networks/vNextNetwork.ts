@@ -1,5 +1,5 @@
-import type { Mastra } from '@datawarp/mastra-core';
-import type { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
+import type { Mastra } from '@actus-ag/mastra-core';
+import type { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
 import {
   getVNextNetworksHandler as getOriginalVNextNetworksHandler,
   getVNextNetworkByIdHandler as getOriginalVNextNetworkByIdHandler,
@@ -7,7 +7,7 @@ import {
   streamGenerateVNextNetworkHandler as getOriginalStreamGenerateVNextNetworkHandler,
   loopVNextNetworkHandler as getOriginalLoopVNextNetworkHandler,
   loopStreamVNextNetworkHandler as getOriginalLoopStreamVNextNetworkHandler,
-} from '@datawarp/mastra-server/handlers/vNextNetwork';
+} from '@actus-ag/mastra-server/handlers/vNextNetwork';
 import type { Context } from 'hono';
 import { stream } from 'hono/streaming';
 

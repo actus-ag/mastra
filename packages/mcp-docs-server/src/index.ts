@@ -1,5 +1,5 @@
 import fs from 'node:fs/promises';
-import { MCPServer } from '@datawarp/mastra-mcp';
+import { MCPServer } from '@actus-ag/mastra-mcp';
 
 import { logger, createLogger } from './logger';
 import { prepare } from './prepare-docs/prepare';

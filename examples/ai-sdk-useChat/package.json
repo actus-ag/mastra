@@ -11,7 +11,7 @@
   "dependencies": {
     "@ai-sdk/anthropic": "^1.2.12",
     "@ai-sdk/react": "^1.2.12",
-    "@datawarp/mastra-core": "latest",
+    "@actus-ag/mastra-core": "latest",
     "next": "^15.3.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
@@ -19,7 +19,7 @@
   },
   "pnpm": {
     "overrides": {
-      "@datawarp/mastra-core": "link:../../packages/core"
+      "@actus-ag/mastra-core": "link:../../packages/core"
     }
   },
   "devDependencies": {

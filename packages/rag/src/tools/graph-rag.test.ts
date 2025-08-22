@@ -1,4 +1,4 @@
-import { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
+import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { GraphRAG } from '../graph-rag';
 import { vectorQuerySearch } from '../utils';

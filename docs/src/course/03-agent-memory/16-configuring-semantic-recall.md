@@ -3,10 +3,10 @@
 Let's update our agent with custom semantic recall settings:
 
 ```typescript
-import { Agent } from "@datawarp/mastra-core/agent";
-import { Memory } from "@datawarp/mastra-memory";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { Memory } from "@actus-ag/mastra-memory";
 import { openai } from "@ai-sdk/openai";
-import { LibSQLStore, LibSQLVector } from "@datawarp/mastra-libsql";
+import { LibSQLStore, LibSQLVector } from "@actus-ag/mastra-libsql";
 
 // Create a memory instance with semantic recall configuration
 const memory = new Memory({

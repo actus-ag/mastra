@@ -1,4 +1,4 @@
-import { Mastra } from '@datawarp/mastra-core';
+import { Mastra } from '@actus-ag/mastra-core';
 import { assistantAgent } from './agents';
 
 export const mastra = new Mastra({

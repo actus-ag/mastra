@@ -1,7 +1,7 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@datawarp/mastra-core/agent';
-import { Memory } from '@datawarp/mastra-memory';
-import { PgVector, PostgresStore } from '@datawarp/mastra-pg';
+import { Agent } from '@actus-ag/mastra-core/agent';
+import { Memory } from '@actus-ag/mastra-memory';
+import { PgVector, PostgresStore } from '@actus-ag/mastra-pg';
 
 const host = `localhost`;
 const port = 5432;

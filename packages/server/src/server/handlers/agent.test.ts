@@ -1,10 +1,10 @@
 import { openai } from '@ai-sdk/openai';
-import type { AgentConfig } from '@datawarp/mastra-core/agent';
-import { Agent } from '@datawarp/mastra-core/agent';
-import { RuntimeContext } from '@datawarp/mastra-core/di';
-import { Mastra } from '@datawarp/mastra-core/mastra';
-import type { EvalRow, MastraStorage } from '@datawarp/mastra-core/storage';
-import { createWorkflow, createStep } from '@datawarp/mastra-core/workflows';
+import type { AgentConfig } from '@actus-ag/mastra-core/agent';
+import { Agent } from '@actus-ag/mastra-core/agent';
+import { RuntimeContext } from '@actus-ag/mastra-core/di';
+import { Mastra } from '@actus-ag/mastra-core/mastra';
+import type { EvalRow, MastraStorage } from '@actus-ag/mastra-core/storage';
+import { createWorkflow, createStep } from '@actus-ag/mastra-core/workflows';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { z } from 'zod';
 import { HTTPException } from '../http-exception';

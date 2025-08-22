@@ -1,7 +1,7 @@
 import { writeFile } from 'fs/promises';
 import { join } from 'path';
-import { Deployer } from '@datawarp/mastra-deployer';
-import type { analyzeBundle } from '@datawarp/mastra-deployer/analyze';
+import { Deployer } from '@actus-ag/mastra-deployer';
+import type { analyzeBundle } from '@actus-ag/mastra-deployer/analyze';
 import virtual from '@rollup/plugin-virtual';
 import { mastraInstanceWrapper } from './plugins/mastra-instance-wrapper';
 import { postgresStoreInstanceChecker } from './plugins/postgres-store-instance-checker';
@@ -99,10 +99,10 @@ export class CloudflareDeployer extends Deployer {
     import { mastra } from '#mastra';
     import { createHonoServer, getToolExports } from '#server';
     import { tools } from '#tools';
-    import { evaluate } from '@datawarp/mastra-core/eval';
-    import { AvailableHooks, registerHook } from '@datawarp/mastra-core/hooks';
-    import { TABLE_EVALS } from '@datawarp/mastra-core/storage';
-    import { checkEvalStorageFields } from '@datawarp/mastra-core/utils';
+    import { evaluate } from '@actus-ag/mastra-core/eval';
+    import { AvailableHooks, registerHook } from '@actus-ag/mastra-core/hooks';
+    import { TABLE_EVALS } from '@actus-ag/mastra-core/storage';
+    import { checkEvalStorageFields } from '@actus-ag/mastra-core/utils';
 
     export default {
       fetch: async (request, env, context) => {
@@ -197,11 +197,11 @@ process.versions.node = '${process.versions.node}';
   async lint(entryFile: string, outputDirectory: string, toolsPaths: (string | string[])[]): Promise<void> {
     await super.lint(entryFile, outputDirectory, toolsPaths);
 
-    const hasLibsql = (await this.deps.checkDependencies(['@datawarp/mastra-libsql'])) === `ok`;
+    const hasLibsql = (await this.deps.checkDependencies(['@actus-ag/mastra-libsql'])) === `ok`;
 
     if (hasLibsql) {
       this.logger.error(
-        'Cloudflare Deployer does not support @libsql/client(which may have been installed by @datawarp/mastra-libsql) as a dependency. Please use Cloudflare D1 instead @datawarp/mastra-cloudflare-d1',
+        'Cloudflare Deployer does not support @libsql/client(which may have been installed by @actus-ag/mastra-libsql) as a dependency. Please use Cloudflare D1 instead @actus-ag/mastra-cloudflare-d1',
       );
       process.exit(1);
     }

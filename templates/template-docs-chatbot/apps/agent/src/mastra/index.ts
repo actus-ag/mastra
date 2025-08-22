@@ -1,6 +1,6 @@
-import { Mastra } from '@datawarp/mastra-core/mastra';
-import { registerApiRoute } from '@datawarp/mastra-core/server';
-import { PinoLogger } from '@datawarp/mastra-loggers';
+import { Mastra } from '@actus-ag/mastra-core/mastra';
+import { registerApiRoute } from '@actus-ag/mastra-core/server';
+import { PinoLogger } from '@actus-ag/mastra-loggers';
 import { docsAgent } from './agents/docs-agent';
 
 export const mastra = new Mastra({

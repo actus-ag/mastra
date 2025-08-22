@@ -1,4 +1,4 @@
-import { AgentIcon, ToolsIcon, WorkflowIcon } from '@datawarp/mastra-playground-ui';
+import { AgentIcon, ToolsIcon, WorkflowIcon } from '@actus-ag/mastra-playground-ui';
 
 export interface Message {
   id: string;

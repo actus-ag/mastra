@@ -3,10 +3,10 @@
 By default, the `Memory` instance includes the last 10 messages from the current memory thread in each new request. You can customize this by configuring the `lastMessages` option:
 
 ```typescript
-import { Agent } from "@datawarp/mastra-core/agent";
-import { Memory } from "@datawarp/mastra-memory";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { Memory } from "@actus-ag/mastra-memory";
 import { openai } from "@ai-sdk/openai";
-import { LibSQLStore } from "@datawarp/mastra-libsql";
+import { LibSQLStore } from "@actus-ag/mastra-libsql";
 
 // Create a memory instance with custom conversation history settings
 const memory = new Memory({

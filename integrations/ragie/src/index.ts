@@ -1,4 +1,4 @@
-import { Integration } from '@datawarp/mastra-core';
+import { Integration } from '@actus-ag/mastra-core';
 
 // @ts-ignore
 import RagieLogo from './assets/ragie.png';

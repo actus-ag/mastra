@@ -1,7 +1,7 @@
-import type { MastraStorage } from '@datawarp/mastra-core/storage';
+import type { MastraStorage } from '@actus-ag/mastra-core/storage';
 import { describe, it, expect, beforeAll } from 'vitest';
 import { createSampleEval } from './data';
-import { TABLE_EVALS } from '@datawarp/mastra-core/storage';
+import { TABLE_EVALS } from '@actus-ag/mastra-core/storage';
 import { randomUUID } from 'crypto';
 
 export function createEvalsTests({ storage }: { storage: MastraStorage }) {

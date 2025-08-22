@@ -1,4 +1,4 @@
-import { CompletenessMetric } from '@datawarp/mastra-evals/nlp';
+import { CompletenessMetric } from '@actus-ag/mastra-evals/nlp';
 
 // Configure the metric
 const metric = new CompletenessMetric();

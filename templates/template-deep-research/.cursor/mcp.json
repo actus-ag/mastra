@@ -2,7 +2,7 @@
   "mcpServers": {
     "mastra": {
       "command": "npx",
-      "args": ["-y", "@datawarp/mastra-mcp-docs-server"]
+      "args": ["-y", "@actus-ag/mastra-mcp-docs-server"]
     }
   }
 }

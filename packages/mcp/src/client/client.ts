@@ -1,9 +1,9 @@
 import $RefParser from '@apidevtools/json-schema-ref-parser';
-import { MastraBase } from '@datawarp/mastra-core/base';
-import type { RuntimeContext } from '@datawarp/mastra-core/di';
-import { ErrorCategory, ErrorDomain, MastraError } from '@datawarp/mastra-core/error';
-import { createTool } from '@datawarp/mastra-core/tools';
-import { isZodType } from '@datawarp/mastra-core/utils';
+import { MastraBase } from '@actus-ag/mastra-core/base';
+import type { RuntimeContext } from '@actus-ag/mastra-core/di';
+import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
+import { createTool } from '@actus-ag/mastra-core/tools';
+import { isZodType } from '@actus-ag/mastra-core/utils';
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { SSEClientTransport } from '@modelcontextprotocol/sdk/client/sse.js';
 import type { SSEClientTransportOptions } from '@modelcontextprotocol/sdk/client/sse.js';

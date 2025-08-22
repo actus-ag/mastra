@@ -1,4 +1,4 @@
-import type { TestInfo, MetricResult } from '@datawarp/mastra-core/eval';
+import type { TestInfo, MetricResult } from '@actus-ag/mastra-core/eval';
 
 import { client } from '@/lib/client';
 import { useQuery } from '@tanstack/react-query';

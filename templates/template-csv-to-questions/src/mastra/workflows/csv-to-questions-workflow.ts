@@ -1,6 +1,6 @@
-import { createStep, createWorkflow } from '@datawarp/mastra-core/workflows';
+import { createStep, createWorkflow } from '@actus-ag/mastra-core/workflows';
 import { z } from 'zod';
-import { RuntimeContext } from '@datawarp/mastra-core/di';
+import { RuntimeContext } from '@actus-ag/mastra-core/di';
 import { csvFetcherTool } from '../tools/download-csv-tool';
 import { generateQuestionsFromTextTool } from '../tools/generate-questions-from-text-tool';
 

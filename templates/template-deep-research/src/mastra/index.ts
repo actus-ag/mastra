@@ -1,5 +1,5 @@
-import { Mastra } from '@datawarp/mastra-core';
-import { LibSQLStore } from '@datawarp/mastra-libsql';
+import { Mastra } from '@actus-ag/mastra-core';
+import { LibSQLStore } from '@actus-ag/mastra-libsql';
 import { researchWorkflow } from './workflows/researchWorkflow';
 import { learningExtractionAgent } from './agents/learningExtractionAgent';
 import { evaluationAgent } from './agents/evaluationAgent';

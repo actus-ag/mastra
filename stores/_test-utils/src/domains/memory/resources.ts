@@ -1,4 +1,4 @@
-import type { MastraStorage } from '@datawarp/mastra-core/storage';
+import type { MastraStorage } from '@actus-ag/mastra-core/storage';
 import { describe, expect, it } from 'vitest';
 import { createSampleResource } from './data';
 import { randomUUID } from 'crypto';

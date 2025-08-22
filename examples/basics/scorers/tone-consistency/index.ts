@@ -1,4 +1,4 @@
-import { createToneScorer } from '@datawarp/mastra-evals/scorers/code';
+import { createToneScorer } from '@actus-ag/mastra-evals/scorers/code';
 
 // Configure the metric
 const metric = createToneScorer();

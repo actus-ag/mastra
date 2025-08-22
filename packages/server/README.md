@@ -1,4 +1,4 @@
-# @datawarp/mastra-server
+# @actus-ag/mastra-server
 
 Typed HTTP handlers and utilities for exposing a `Mastra` instance over HTTP.
 This package powers `mastra dev` and can be added to your own server to provide
@@ -7,7 +7,7 @@ REST and streaming endpoints for agents, workflows, telemetry and more.
 ## Installation
 
 ```bash
-npm install @datawarp/mastra-server
+npm install @actus-ag/mastra-server
 ```
 
 ## Usage
@@ -18,7 +18,7 @@ web framework of choice:
 
 ```typescript
 import { Hono } from 'hono';
-import { handlers } from '@datawarp/mastra-server';
+import { handlers } from '@actus-ag/mastra-server';
 import { mastra } from './mastra-instance';
 
 const app = new Hono();
@@ -64,7 +64,7 @@ be refreshed by running:
 pnpm run pull:openapispec
 ```
 
-within the `@datawarp/mastra-server` directory.
+within the `@actus-ag/mastra-server` directory.
 
 ## License
 

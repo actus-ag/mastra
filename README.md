@@ -1,11 +1,11 @@
 # Mastra
 
-[![npm version](https://badge.fury.io/js/@mastra%2Fcore.svg)](https://www.npmjs.com/package/@datawarp/mastra-core)
+[![npm version](https://badge.fury.io/js/@mastra%2Fcore.svg)](https://www.npmjs.com/package/@actus-ag/mastra-core)
 [![CodeQl](https://github.com/mastra-ai/mastra/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/mastra-ai/mastra/actions/workflows/github-code-scanning/codeql)
 [![GitHub Repo stars](https://img.shields.io/github/stars/mastra-ai/mastra)](https://github.com/mastra-ai/mastra/stargazers)
 [![Discord](https://img.shields.io/discord/1309558646228779139?logo=discord&label=Discord&labelColor=white&color=7289DA)](https://discord.gg/BTYqqHKUrf)
 [![Twitter Follow](https://img.shields.io/twitter/follow/mastra_ai?style=social)](https://x.com/mastra_ai)
-[![NPM Downloads](https://img.shields.io/npm/dm/%40mastra%252Fcore)](https://www.npmjs.com/package/@datawarp/mastra-core)
+[![NPM Downloads](https://img.shields.io/npm/dm/%40mastra%252Fcore)](https://www.npmjs.com/package/@actus-ag/mastra-core)
 [![Static Badge](https://img.shields.io/badge/Y%20Combinator-W25-orange)](https://www.ycombinator.com/companies?batch=W25)
 
 Mastra is the Typescript framework for building AI agents and assistants. It’s used by some of the largest companies in the world to build internal AI automation tooling and customer-facing agents.
@@ -60,9 +60,9 @@ npm run dev
 
 If you're using Anthropic, set the `ANTHROPIC_API_KEY`. If you're using Gemini, set the `GOOGLE_GENERATIVE_AI_API_KEY`.
 
-# MCP Server ([@datawarp/mastra-mcp-docs-server](https://www.npmjs.com/package/@datawarp/mastra-mcp-docs-server))
+# MCP Server ([@actus-ag/mastra-mcp-docs-server](https://www.npmjs.com/package/@actus-ag/mastra-mcp-docs-server))
 
-Use our MCP server [@datawarp/mastra-mcp-docs-server](https://www.npmjs.com/package/@datawarp/mastra-mcp-docs-server) to teach your LLM how to use Mastra.
+Use our MCP server [@actus-ag/mastra-mcp-docs-server](https://www.npmjs.com/package/@actus-ag/mastra-mcp-docs-server) to teach your LLM how to use Mastra.
 
 This is a Model Context Protocol (MCP) server that provides AI assistants with direct access to Mastra.ai's complete knowledge base.
 
@@ -77,7 +77,7 @@ Create or update .cursor/mcp.json in your project root:
   "mcpServers": {
     "mastra": {
       "command": "npx",
-      "args": ["-y", "@datawarp/mastra-mcp-docs-server"]
+      "args": ["-y", "@actus-ag/mastra-mcp-docs-server"]
     }
   }
 }
@@ -90,7 +90,7 @@ Create or update .cursor/mcp.json in your project root:
   "mcpServers": {
     "mastra": {
       "command": "cmd",
-      "args": ["/c", "npx", "-y", "@datawarp/mastra-mcp-docs-server"]
+      "args": ["/c", "npx", "-y", "@actus-ag/mastra-mcp-docs-server"]
     }
   }
 }
@@ -109,13 +109,13 @@ Create or update ~/.codeium/windsurf/mcp_config.json:
   "mcpServers": {
     "mastra": {
       "command": "npx",
-      "args": ["-y", "@datawarp/mastra-mcp-docs-server"]
+      "args": ["-y", "@actus-ag/mastra-mcp-docs-server"]
     }
   }
 }
 ```
 
-For more installation options visit [https://www.npmjs.com/package/@datawarp/mastra-mcp-docs-server](https://www.npmjs.com/package/@datawarp/mastra-mcp-docs-server)
+For more installation options visit [https://www.npmjs.com/package/@actus-ag/mastra-mcp-docs-server](https://www.npmjs.com/package/@actus-ag/mastra-mcp-docs-server)
 
 ## Contributing
 

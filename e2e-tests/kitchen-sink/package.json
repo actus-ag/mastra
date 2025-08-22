@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "E2E tests for @datawarp/mastra-create-mastra",
+  "description": "E2E tests for @actus-ag/mastra-create-mastra",
   "scripts": {
     "test": "vitest run",
     "test:e2e": "playwright test",
@@ -36,8 +36,8 @@
   },
   "pnpm": {
     "overrides": {
-      "@datawarp/mastra-playground-ui": "../packages/playground-ui",
-      "@datawarp/mastra-client-js": "../sdk-clients/client-js"
+      "@actus-ag/mastra-playground-ui": "../packages/playground-ui",
+      "@actus-ag/mastra-client-js": "../sdk-clients/client-js"
     }
   }
 }

@@ -7,11 +7,11 @@
     "start": "pnpx tsx index.ts"
   },
   "dependencies": {
-    "@datawarp/mastra-evals": "latest"
+    "@actus-ag/mastra-evals": "latest"
   },
   "pnpm": {
     "overrides": {
-      "@datawarp/mastra-evals": "link:../../../../packages/evals"
+      "@actus-ag/mastra-evals": "link:../../../../packages/evals"
     }
   },
   "devDependencies": {

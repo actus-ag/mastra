@@ -1,22 +1,22 @@
-# @datawarp/mastra-auth-clerk
+# @actus-ag/mastra-auth-clerk
 
 A Mastra authentication provider for Clerk, enabling seamless integration of Clerk authentication with Mastra applications.
 
 ## Installation
 
 ```bash
-npm install @datawarp/mastra-auth-clerk
+npm install @actus-ag/mastra-auth-clerk
 # or
-yarn add @datawarp/mastra-auth-clerk
+yarn add @actus-ag/mastra-auth-clerk
 # or
-pnpm add @datawarp/mastra-auth-clerk
+pnpm add @actus-ag/mastra-auth-clerk
 ```
 
 ## Usage
 
 ```typescript
-import { Mastra } from '@datawarp/mastra-core';
-import { MastraAuthClerk } from '@datawarp/mastra-auth-clerk';
+import { Mastra } from '@actus-ag/mastra-core';
+import { MastraAuthClerk } from '@actus-ag/mastra-auth-clerk';
 
 // Initialize the Clerk auth provider
 const clerkAuth = new MastraAuthClerk({

@@ -1,6 +1,6 @@
-import { createWorkflow, createStep, mapVariable } from '@datawarp/mastra-core/workflows';
+import { createWorkflow, createStep, mapVariable } from '@actus-ag/mastra-core/workflows';
 import { z } from 'zod';
-import { RuntimeContext } from '@datawarp/mastra-core/di';
+import { RuntimeContext } from '@actus-ag/mastra-core/di';
 import { pdfContentExtractorTool } from '../tools/pdf-content-extractor-tool';
 import { contentAnalyzerTool } from '../tools/content-analyzer-tool';
 import { flashCardsGeneratorTool } from '../tools/flash-cards-generator-tool';

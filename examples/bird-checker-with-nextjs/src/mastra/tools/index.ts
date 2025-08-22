@@ -1,5 +1,5 @@
 import { getRandomImage } from "@/lib/mastra/system-tools";
-import { createTool } from "@datawarp/mastra-core/tools";
+import { createTool } from "@actus-ag/mastra-core/tools";
 import { z } from "zod";
 
 export const getRandomImageTool = createTool({

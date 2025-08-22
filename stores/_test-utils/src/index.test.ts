@@ -1,4 +1,4 @@
-import { MockStore } from '@datawarp/mastra-core/storage';
+import { MockStore } from '@actus-ag/mastra-core/storage';
 import { createTestSuite } from './factory';
 
 createTestSuite(new MockStore());

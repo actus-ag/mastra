@@ -1,17 +1,17 @@
-# @datawarp/mastra-upstash
+# @actus-ag/mastra-upstash
 
 Upstash provider for Mastra that includes both vector store and database storage capabilities.
 
 ## Installation
 
 ```bash
-npm install @datawarp/mastra-upstash
+npm install @actus-ag/mastra-upstash
 ```
 
 ## Vector Store Usage
 
 ```typescript
-import { UpstashVector } from '@datawarp/mastra-upstash';
+import { UpstashVector } from '@actus-ag/mastra-upstash';
 
 // In upstash they refer to the store as an index
 const vectorStore = new UpstashVector({
@@ -48,7 +48,7 @@ Upstash supports hybrid search that combines semantic search (dense vectors) wit
 #### Upserting Hybrid Vectors
 
 ```typescript
-import { UpstashVector } from '@datawarp/mastra-upstash';
+import { UpstashVector } from '@actus-ag/mastra-upstash';
 
 const vectorStore = new UpstashVector({
   url: process.env.UPSTASH_VECTOR_REST_URL,
@@ -146,7 +146,7 @@ The Upstash vector store requires the following configuration:
 ## Database Storage Usage
 
 ```typescript
-import { UpstashStore } from '@datawarp/mastra-upstash';
+import { UpstashStore } from '@actus-ag/mastra-upstash';
 
 const store = new UpstashStore({
   url: process.env.UPSTASH_REDIS_REST_URL,

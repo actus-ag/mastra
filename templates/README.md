@@ -33,9 +33,9 @@ Your template folder **must** include the following files:
     "dev": "mastra dev"
   },
   "dependencies": {
-    "@datawarp/mastra-core": "latest",
+    "@actus-ag/mastra-core": "latest",
     "zod": "^3.25.67",
-    "@datawarp/mastra-loggers": "latest",
+    "@actus-ag/mastra-loggers": "latest",
     "@ai-sdk/openai": "^1.3.23"
   },
   "devDependencies": {

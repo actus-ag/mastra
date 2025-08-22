@@ -1,4 +1,4 @@
-# @datawarp/mastra-core
+# @actus-ag/mastra-core
 
 Mastra is the Typescript framework for building AI agents and assistants. It’s used by some of the largest companies in the world to build internal AI automation tooling and customer-facing agents.
 
@@ -7,7 +7,7 @@ This is the `core` package, which includes the main functionality of Mastra, inc
 ## Installation
 
 ```bash
-npm install @datawarp/mastra-core
+npm install @actus-ag/mastra-core
 ```
 
 ## Core Components
@@ -17,7 +17,7 @@ npm install @datawarp/mastra-core
 Mastra agents are autonomous AI entities that can understand instructions, use tools, and complete tasks. They encapsulate LLM interactions and can maintain conversation history, use provided tools, and follow specific behavioral guidelines through instructions.
 
 ```typescript
-import { Agent } from '@datawarp/mastra-core/agent';
+import { Agent } from '@actus-ag/mastra-core/agent';
 import { openai } from '@ai-sdk/openai';
 
 const agent = new Agent({
@@ -35,7 +35,7 @@ const agent = new Agent({
 Mastra workflows are a graph-based execution engine allowing you to chain, branch, and parallelize LLM calls. You can orchestrate complex AI tasks by combining multiple actions. Workflows handle state management, error recovery, and can include conditional logic.
 
 ```typescript
-import { createWorkflow } from '@datawarp/mastra-core/workflows';
+import { createWorkflow } from '@actus-ag/mastra-core/workflows';
 import z from 'zod'
 
 const workflow = createWorkflow({
@@ -55,7 +55,7 @@ const workflow = createWorkflow({
 Tools are functions that agents can use to interact with external systems or perform specific tasks. Each tool has a clear description and schema, making it easy for AI to understand and use them effectively.
 
 ```typescript
-import { createTool } from '@datawarp/mastra-core/tools';
+import { createTool } from '@actus-ag/mastra-core/tools';
 import { z } from 'zod';
 
 const weatherInfo = createTool({
@@ -77,10 +77,10 @@ const weatherInfo = createTool({
 The evaluation system enables quantitative assessment of AI outputs. Create custom metrics to measure specific aspects of AI performance, from response quality to task completion accuracy.
 
 ```typescript
-import { Agent } from '@datawarp/mastra-core/agent';
+import { Agent } from '@actus-ag/mastra-core/agent';
 import { openai } from '@ai-sdk/openai';
-import { SummarizationMetric } from '@datawarp/mastra-evals/llm';
-import { ContentSimilarityMetric, ToneConsistencyMetric } from '@datawarp/mastra-evals/nlp';
+import { SummarizationMetric } from '@actus-ag/mastra-evals/llm';
+import { ContentSimilarityMetric, ToneConsistencyMetric } from '@actus-ag/mastra-evals/nlp';
 
 const model = openai('gpt-4o');
 
@@ -103,8 +103,8 @@ const agent = new Agent({
 The logging system provides structured, leveled logging with multiple transport options. It supports debug information, performance monitoring, and error tracking across your AI applications.
 
 ```typescript
-import { LogLevel } from '@datawarp/mastra-core';
-import { PinoLogger } from '@datawarp/mastra-loggers';
+import { LogLevel } from '@actus-ag/mastra-core';
+import { PinoLogger } from '@actus-ag/mastra-loggers';
 
 const logger = new PinoLogger({
   name: 'MyApp',
@@ -119,7 +119,7 @@ const logger = new PinoLogger({
 Telemetry provides OpenTelemetry (Otel) integration for comprehensive monitoring of your AI systems. Track latency, success rates, and system health with distributed tracing and metrics collection.
 
 ```typescript
-import { Mastra } from '@datawarp/mastra-core';
+import { Mastra } from '@actus-ag/mastra-core';
 
 const mastra = new Mastra({
   telemetry: {

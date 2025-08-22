@@ -22,8 +22,8 @@
     "node": ">=20.9.0"
   },
   "dependencies": {
-    "@datawarp/mastra-core": "latest",
-    "@datawarp/mastra-mcp": "latest",
+    "@actus-ag/mastra-core": "latest",
+    "@actus-ag/mastra-mcp": "latest",
     "zod": "^3.25.67",
     "dotenv": "^17.0.1"
   },

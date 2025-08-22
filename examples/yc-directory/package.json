@@ -13,9 +13,9 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
-    "@datawarp/mastra-core": "latest",
-    "@datawarp/mastra-loggers": "latest",
-    "@datawarp/mastra-evals": "latest",
+    "@actus-ag/mastra-core": "latest",
+    "@actus-ag/mastra-loggers": "latest",
+    "@actus-ag/mastra-evals": "latest",
     "zod": "^3.25.67"
   },
   "devDependencies": {
@@ -27,9 +27,9 @@
   },
   "pnpm": {
     "overrides": {
-      "@datawarp/mastra-core": "link:../../packages/core",
-      "@datawarp/mastra-loggers": "link:../../packages/loggers",
-      "@datawarp/mastra-evals": "link:../../packages/evals",
+      "@actus-ag/mastra-core": "link:../../packages/core",
+      "@actus-ag/mastra-loggers": "link:../../packages/loggers",
+      "@actus-ag/mastra-evals": "link:../../packages/evals",
       "mastra": "link:../../packages/cli"
     }
   },

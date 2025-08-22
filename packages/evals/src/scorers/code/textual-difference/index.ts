@@ -1,5 +1,5 @@
-import { createScorer } from '@datawarp/mastra-core/scores';
-import type { ScorerRunInputForAgent, ScorerRunOutputForAgent } from '@datawarp/mastra-core/scores';
+import { createScorer } from '@actus-ag/mastra-core/scores';
+import type { ScorerRunInputForAgent, ScorerRunOutputForAgent } from '@actus-ag/mastra-core/scores';
 import { SequenceMatcher } from 'difflib';
 
 export function createTextualDifferenceScorer() {

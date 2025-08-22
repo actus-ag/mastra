@@ -1,5 +1,5 @@
-import { Agent } from '@datawarp/mastra-core/agent';
-import type { MastraLanguageModel } from '@datawarp/mastra-core/agent';
+import { Agent } from '@actus-ag/mastra-core/agent';
+import type { MastraLanguageModel } from '@actus-ag/mastra-core/agent';
 import { defaultTitleCombinePromptTemplate, defaultTitleExtractorPromptTemplate, PromptTemplate } from '../prompts';
 import type { TitleCombinePrompt, TitleExtractorPrompt } from '../prompts';
 import { TextNode } from '../schema';

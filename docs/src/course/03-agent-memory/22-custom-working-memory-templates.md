@@ -5,8 +5,8 @@ Templates guide the agent on what information to track and update in working mem
 Let's update our agent with a custom working memory template:
 
 ```typescript
-import { Agent } from "@datawarp/mastra-core/agent";
-import { Memory } from "@datawarp/mastra-memory";
+import { Agent } from "@actus-ag/mastra-core/agent";
+import { Memory } from "@actus-ag/mastra-memory";
 import { openai } from "@ai-sdk/openai";
 
 // Create a memory instance with a custom working memory template

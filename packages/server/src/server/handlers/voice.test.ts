@@ -1,11 +1,11 @@
-import { Mastra } from '@datawarp/mastra-core';
-import { Agent } from '@datawarp/mastra-core/agent';
-import type { MastraVoice } from '@datawarp/mastra-core/voice';
-import { CompositeVoice } from '@datawarp/mastra-core/voice';
+import { Mastra } from '@actus-ag/mastra-core';
+import { Agent } from '@actus-ag/mastra-core/agent';
+import type { MastraVoice } from '@actus-ag/mastra-core/voice';
+import { CompositeVoice } from '@actus-ag/mastra-core/voice';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { getSpeakersHandler, generateSpeechHandler, transcribeSpeechHandler } from './voice';
 
-vi.mock('@datawarp/mastra-core/voice');
+vi.mock('@actus-ag/mastra-core/voice');
 
 function createAgentWithVoice({
   name,

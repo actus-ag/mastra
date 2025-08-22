@@ -3,7 +3,7 @@
 Make sure to update your `src/mastra/index.ts` file to include your new comprehensive memory agent:
 
 ```typescript
-import { Mastra } from "@datawarp/mastra-core";
+import { Mastra } from "@actus-ag/mastra-core";
 import { memoryMasterAgent } from "./agents/memory-agent";
 
 export const mastra: Mastra = new Mastra({

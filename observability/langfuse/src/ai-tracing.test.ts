@@ -8,8 +8,8 @@
  * - Langfuse-specific error handling
  */
 
-import type { AITracingEvent, AnyAISpan, LLMGenerationAttributes, ToolCallAttributes } from '@datawarp/mastra-core/ai-tracing';
-import { AISpanType, AITracingEventType } from '@datawarp/mastra-core/ai-tracing';
+import type { AITracingEvent, AnyAISpan, LLMGenerationAttributes, ToolCallAttributes } from '@actus-ag/mastra-core/ai-tracing';
+import { AISpanType, AITracingEventType } from '@actus-ag/mastra-core/ai-tracing';
 import { Langfuse } from 'langfuse';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { LangfuseExporter } from './ai-tracing';

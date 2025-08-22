@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { SummarizationMetric } from '@datawarp/mastra-evals/llm';
+import { SummarizationMetric } from '@actus-ag/mastra-evals/llm';
 
 // Configure the metric
 const metric = new SummarizationMetric(openai('gpt-4o-mini'));

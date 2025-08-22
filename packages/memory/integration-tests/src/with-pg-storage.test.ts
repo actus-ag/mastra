@@ -1,6 +1,6 @@
-import { fastembed } from '@datawarp/mastra-fastembed';
-import { Memory } from '@datawarp/mastra-memory';
-import { PostgresStore, PgVector } from '@datawarp/mastra-pg';
+import { fastembed } from '@actus-ag/mastra-fastembed';
+import { Memory } from '@actus-ag/mastra-memory';
+import { PostgresStore, PgVector } from '@actus-ag/mastra-pg';
 import dotenv from 'dotenv';
 import { describe } from 'vitest';
 

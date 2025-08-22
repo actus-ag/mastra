@@ -1,4 +1,4 @@
-import { MemoryConfig } from '@datawarp/mastra-core';
+import { MemoryConfig } from '@actus-ag/mastra-core';
 
 export type QuestionType =
   | 'single-session-user'

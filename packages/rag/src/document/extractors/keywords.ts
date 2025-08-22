@@ -1,5 +1,5 @@
-import { Agent } from '@datawarp/mastra-core/agent';
-import type { MastraLanguageModel } from '@datawarp/mastra-core/agent';
+import { Agent } from '@actus-ag/mastra-core/agent';
+import type { MastraLanguageModel } from '@actus-ag/mastra-core/agent';
 import { defaultKeywordExtractPrompt, PromptTemplate } from '../prompts';
 import type { KeywordExtractPrompt } from '../prompts';
 import type { BaseNode } from '../schema';

@@ -19,12 +19,12 @@
   "dependencies": {
     "@ai-sdk/openai": "^1.3.23",
     "@e2b/code-interpreter": "^1.5.1",
-    "@datawarp/mastra-core": "latest",
-    "@datawarp/mastra-fastembed": "latest",
-    "@datawarp/mastra-libsql": "latest",
-    "@datawarp/mastra-loggers": "latest",
-    "@datawarp/mastra-mcp": "latest",
-    "@datawarp/mastra-memory": "latest",
+    "@actus-ag/mastra-core": "latest",
+    "@actus-ag/mastra-fastembed": "latest",
+    "@actus-ag/mastra-libsql": "latest",
+    "@actus-ag/mastra-loggers": "latest",
+    "@actus-ag/mastra-mcp": "latest",
+    "@actus-ag/mastra-memory": "latest",
     "zod": "^3.25.76"
   },
   "devDependencies": {

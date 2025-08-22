@@ -1,10 +1,10 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@datawarp/mastra-core/agent';
+import { Agent } from '@actus-ag/mastra-core/agent';
 import { pdfContentExtractorTool } from '../tools/pdf-content-extractor-tool';
 import { adCopyGeneratorTool } from '../tools/ad-copy-generator-tool';
 import { imageGeneratorTool } from '../tools/image-generator-tool';
-import { LibSQLStore } from '@datawarp/mastra-libsql';
-import { Memory } from '@datawarp/mastra-memory';
+import { LibSQLStore } from '@actus-ag/mastra-libsql';
+import { Memory } from '@actus-ag/mastra-memory';
 import { pageNavigateTool } from '../tools/page-navigate-tool';
 import { pageExtractTool } from '../tools/page-extract-tool';
 

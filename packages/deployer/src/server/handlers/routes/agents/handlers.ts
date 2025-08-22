@@ -1,5 +1,5 @@
-import type { Mastra } from '@datawarp/mastra-core';
-import type { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
+import type { Mastra } from '@actus-ag/mastra-core';
+import type { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
 import {
   getAgentsHandler as getOriginalAgentsHandler,
   getAgentByIdHandler as getOriginalAgentByIdHandler,
@@ -11,7 +11,7 @@ import {
   updateAgentModelHandler as getOriginalUpdateAgentModelHandler,
   generateVNextHandler as getOriginalVNextGenerateHandler,
   streamVNextUIMessageHandler as getOriginalStreamVNextUIMessageHandler,
-} from '@datawarp/mastra-server/handlers/agents';
+} from '@actus-ag/mastra-server/handlers/agents';
 import type { Context } from 'hono';
 
 import { stream } from 'hono/streaming';

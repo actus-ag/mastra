@@ -1,4 +1,4 @@
-# @datawarp/mastra-longmemeval
+# @actus-ag/mastra-longmemeval
 
 ## 0.1.9
 
@@ -25,10 +25,10 @@
 - Updated dependencies [d6e39da]
 - Updated dependencies [3b5fec7]
 - Updated dependencies [a8f129d]
-  - @datawarp/mastra-memory@0.13.0
-  - @datawarp/mastra-core@0.14.0
-  - @datawarp/mastra-libsql@0.13.3
-  - @datawarp/mastra-rag@1.1.0
+  - @actus-ag/mastra-memory@0.13.0
+  - @actus-ag/mastra-core@0.14.0
+  - @actus-ag/mastra-libsql@0.13.3
+  - @actus-ag/mastra-rag@1.1.0
 
 ## 0.1.9-alpha.7
 
@@ -36,10 +36,10 @@
 
 - Updated dependencies [03997ae]
 - Updated dependencies [03997ae]
-  - @datawarp/mastra-libsql@0.13.3-alpha.1
-  - @datawarp/mastra-memory@0.13.0-alpha.1
-  - @datawarp/mastra-rag@1.1.0-alpha.1
-  - @datawarp/mastra-core@0.14.0-alpha.7
+  - @actus-ag/mastra-libsql@0.13.3-alpha.1
+  - @actus-ag/mastra-memory@0.13.0-alpha.1
+  - @actus-ag/mastra-rag@1.1.0-alpha.1
+  - @actus-ag/mastra-core@0.14.0-alpha.7
 
 ## 0.1.9-alpha.6
 
@@ -48,13 +48,13 @@
 - Updated dependencies [ad888a2]
 - Updated dependencies [481751d]
 - Updated dependencies [194e395]
-  - @datawarp/mastra-core@0.14.0-alpha.6
+  - @actus-ag/mastra-core@0.14.0-alpha.6
 
 ## 0.1.9-alpha.5
 
 ### Patch Changes
 
-- @datawarp/mastra-core@0.14.0-alpha.5
+- @actus-ag/mastra-core@0.14.0-alpha.5
 
 ## 0.1.9-alpha.4
 
@@ -77,9 +77,9 @@
 - Updated dependencies [7cb3fc0]
 - Updated dependencies [195eabb]
 - Updated dependencies [b78b95b]
-  - @datawarp/mastra-memory@0.12.3-alpha.0
-  - @datawarp/mastra-core@0.14.0-alpha.4
-  - @datawarp/mastra-rag@1.0.9-alpha.0
+  - @actus-ag/mastra-memory@0.12.3-alpha.0
+  - @actus-ag/mastra-core@0.14.0-alpha.4
+  - @actus-ag/mastra-rag@1.0.9-alpha.0
 
 ## 0.1.9-alpha.3
 
@@ -88,13 +88,13 @@
 - Updated dependencies [227c7e6]
 - Updated dependencies [fd3a3eb]
 - Updated dependencies [a8f129d]
-  - @datawarp/mastra-core@0.14.0-alpha.3
+  - @actus-ag/mastra-core@0.14.0-alpha.3
 
 ## 0.1.9-alpha.2
 
 ### Patch Changes
 
-- @datawarp/mastra-core@0.14.0-alpha.2
+- @actus-ag/mastra-core@0.14.0-alpha.2
 
 ## 0.1.9-alpha.1
 
@@ -107,15 +107,15 @@
 - Updated dependencies [a722c0b]
 - Updated dependencies [d6e39da]
 - Updated dependencies [3b5fec7]
-  - @datawarp/mastra-core@0.14.0-alpha.1
-  - @datawarp/mastra-libsql@0.13.3-alpha.0
+  - @actus-ag/mastra-core@0.14.0-alpha.1
+  - @actus-ag/mastra-libsql@0.13.3-alpha.0
 
 ## 0.1.9-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [c30bca8]
-  - @datawarp/mastra-core@0.13.3-alpha.0
+  - @actus-ag/mastra-core@0.13.3-alpha.0
 
 ## 0.1.8
 
@@ -135,18 +135,18 @@
 - Updated dependencies [63449d0]
 - Updated dependencies [121a3f8]
 - Updated dependencies [ec510e7]
-  - @datawarp/mastra-core@0.13.2
-  - @datawarp/mastra-memory@0.12.2
-  - @datawarp/mastra-libsql@0.13.2
-  - @datawarp/mastra-rag@1.0.8
+  - @actus-ag/mastra-core@0.13.2
+  - @actus-ag/mastra-memory@0.12.2
+  - @actus-ag/mastra-libsql@0.13.2
+  - @actus-ag/mastra-rag@1.0.8
 
 ## 0.1.8-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [b5cf2a3]
-  - @datawarp/mastra-core@0.13.2-alpha.3
-  - @datawarp/mastra-libsql@0.13.2-alpha.1
+  - @actus-ag/mastra-core@0.13.2-alpha.3
+  - @actus-ag/mastra-libsql@0.13.2-alpha.1
 
 ## 0.1.8-alpha.2
 
@@ -157,9 +157,9 @@
 - Updated dependencies [b32c50d]
 - Updated dependencies [121a3f8]
 - Updated dependencies [ec510e7]
-  - @datawarp/mastra-core@0.13.2-alpha.2
-  - @datawarp/mastra-libsql@0.13.2-alpha.0
-  - @datawarp/mastra-memory@0.12.2-alpha.2
+  - @actus-ag/mastra-core@0.13.2-alpha.2
+  - @actus-ag/mastra-libsql@0.13.2-alpha.0
+  - @actus-ag/mastra-memory@0.12.2-alpha.2
 
 ## 0.1.8-alpha.1
 
@@ -168,8 +168,8 @@
 - Updated dependencies [2e74797]
 - Updated dependencies [da62f49]
 - Updated dependencies [63449d0]
-  - @datawarp/mastra-core@0.13.2-alpha.1
-  - @datawarp/mastra-memory@0.12.2-alpha.1
+  - @actus-ag/mastra-core@0.13.2-alpha.1
+  - @actus-ag/mastra-memory@0.12.2-alpha.1
 
 ## 0.1.8-alpha.0
 
@@ -180,9 +180,9 @@
 - Updated dependencies [3ba6772]
 - Updated dependencies [2fff911]
 - Updated dependencies [1be6004]
-  - @datawarp/mastra-core@0.13.2-alpha.0
-  - @datawarp/mastra-memory@0.12.2-alpha.0
-  - @datawarp/mastra-rag@1.0.8-alpha.0
+  - @actus-ag/mastra-core@0.13.2-alpha.0
+  - @actus-ag/mastra-memory@0.12.2-alpha.0
+  - @actus-ag/mastra-rag@1.0.8-alpha.0
 
 ## 0.1.7
 
@@ -190,8 +190,8 @@
 
 - Updated dependencies [8888b57]
 - Updated dependencies [cd0042e]
-  - @datawarp/mastra-libsql@0.13.1
-  - @datawarp/mastra-core@0.13.1
+  - @actus-ag/mastra-libsql@0.13.1
+  - @actus-ag/mastra-core@0.13.1
 
 ## 0.1.7-alpha.0
 
@@ -199,8 +199,8 @@
 
 - Updated dependencies [8888b57]
 - Updated dependencies [cd0042e]
-  - @datawarp/mastra-libsql@0.13.1-alpha.0
-  - @datawarp/mastra-core@0.13.1-alpha.0
+  - @actus-ag/mastra-libsql@0.13.1-alpha.0
+  - @actus-ag/mastra-core@0.13.1-alpha.0
 
 ## 0.1.6
 
@@ -226,18 +226,18 @@
 - Updated dependencies [5d377e5]
 - Updated dependencies [1fb812e]
 - Updated dependencies [35c5798]
-  - @datawarp/mastra-core@0.13.0
-  - @datawarp/mastra-memory@0.12.1
-  - @datawarp/mastra-rag@1.0.7
-  - @datawarp/mastra-libsql@0.13.0
-  - @datawarp/mastra-fastembed@0.10.2
+  - @actus-ag/mastra-core@0.13.0
+  - @actus-ag/mastra-memory@0.12.1
+  - @actus-ag/mastra-rag@1.0.7
+  - @actus-ag/mastra-libsql@0.13.0
+  - @actus-ag/mastra-fastembed@0.10.2
 
 ## 0.1.6-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [d0496e6]
-  - @datawarp/mastra-core@0.13.0-alpha.3
+  - @actus-ag/mastra-core@0.13.0-alpha.3
 
 ## 0.1.6-alpha.2
 
@@ -251,11 +251,11 @@
 - Updated dependencies [2871020]
 - Updated dependencies [4a406ec]
 - Updated dependencies [5d377e5]
-  - @datawarp/mastra-core@0.13.0-alpha.2
-  - @datawarp/mastra-memory@0.12.1-alpha.2
-  - @datawarp/mastra-libsql@0.13.0-alpha.1
-  - @datawarp/mastra-fastembed@0.10.2-alpha.0
-  - @datawarp/mastra-rag@1.0.7-alpha.1
+  - @actus-ag/mastra-core@0.13.0-alpha.2
+  - @actus-ag/mastra-memory@0.12.1-alpha.2
+  - @actus-ag/mastra-libsql@0.13.0-alpha.1
+  - @actus-ag/mastra-fastembed@0.10.2-alpha.0
+  - @actus-ag/mastra-rag@1.0.7-alpha.1
 
 ## 0.1.6-alpha.1
 
@@ -269,10 +269,10 @@
 - Updated dependencies [b0e43c1]
 - Updated dependencies [1fb812e]
 - Updated dependencies [35c5798]
-  - @datawarp/mastra-memory@0.12.1-alpha.1
-  - @datawarp/mastra-core@0.13.0-alpha.1
-  - @datawarp/mastra-rag@1.0.7-alpha.0
-  - @datawarp/mastra-libsql@0.13.0-alpha.0
+  - @actus-ag/mastra-memory@0.12.1-alpha.1
+  - @actus-ag/mastra-core@0.13.0-alpha.1
+  - @actus-ag/mastra-rag@1.0.7-alpha.0
+  - @actus-ag/mastra-libsql@0.13.0-alpha.0
 
 ## 0.1.6-alpha.0
 
@@ -281,8 +281,8 @@
 - Updated dependencies [94f4812]
 - Updated dependencies [e202b82]
 - Updated dependencies [e00f6a0]
-  - @datawarp/mastra-core@0.12.2-alpha.0
-  - @datawarp/mastra-memory@0.12.1-alpha.0
+  - @actus-ag/mastra-core@0.12.2-alpha.0
+  - @actus-ag/mastra-memory@0.12.1-alpha.0
 
 ## 0.1.5
 
@@ -294,15 +294,15 @@
 - Updated dependencies [d30b1a0]
 - Updated dependencies [bff87f7]
 - Updated dependencies [b4a8df0]
-  - @datawarp/mastra-core@0.12.1
-  - @datawarp/mastra-rag@1.0.6
+  - @actus-ag/mastra-core@0.12.1
+  - @actus-ag/mastra-rag@1.0.6
 
 ## 0.1.5-alpha.1
 
 ### Patch Changes
 
 - Updated dependencies [d0d9500]
-  - @datawarp/mastra-core@0.12.1-alpha.1
+  - @actus-ag/mastra-core@0.12.1-alpha.1
 
 ## 0.1.5-alpha.0
 
@@ -313,8 +313,8 @@
 - Updated dependencies [d30b1a0]
 - Updated dependencies [bff87f7]
 - Updated dependencies [b4a8df0]
-  - @datawarp/mastra-core@0.12.1-alpha.0
-  - @datawarp/mastra-rag@1.0.6-alpha.0
+  - @actus-ag/mastra-core@0.12.1-alpha.0
+  - @actus-ag/mastra-rag@1.0.6-alpha.0
 
 ## 0.1.4
 
@@ -350,33 +350,33 @@
 - Updated dependencies [71466e7]
 - Updated dependencies [0c99fbe]
 - Updated dependencies [ad8a1d8]
-  - @datawarp/mastra-core@0.12.0
-  - @datawarp/mastra-libsql@0.12.0
-  - @datawarp/mastra-memory@0.12.0
-  - @datawarp/mastra-rag@1.0.5
+  - @actus-ag/mastra-core@0.12.0
+  - @actus-ag/mastra-libsql@0.12.0
+  - @actus-ag/mastra-memory@0.12.0
+  - @actus-ag/mastra-rag@1.0.5
 
 ## 0.1.4-alpha.5
 
 ### Patch Changes
 
 - Updated dependencies [f42c4c2]
-  - @datawarp/mastra-memory@0.12.0-alpha.3
-  - @datawarp/mastra-libsql@0.12.0-alpha.2
-  - @datawarp/mastra-rag@1.0.5-alpha.1
-  - @datawarp/mastra-core@0.12.0-alpha.5
+  - @actus-ag/mastra-memory@0.12.0-alpha.3
+  - @actus-ag/mastra-libsql@0.12.0-alpha.2
+  - @actus-ag/mastra-rag@1.0.5-alpha.1
+  - @actus-ag/mastra-core@0.12.0-alpha.5
 
 ## 0.1.4-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [ad0a58b]
-  - @datawarp/mastra-core@0.12.0-alpha.4
+  - @actus-ag/mastra-core@0.12.0-alpha.4
 
 ## 0.1.4-alpha.3
 
 ### Patch Changes
 
-- @datawarp/mastra-core@0.12.0-alpha.3
+- @actus-ag/mastra-core@0.12.0-alpha.3
 
 ## 0.1.4-alpha.2
 
@@ -391,9 +391,9 @@
 - Updated dependencies [b8efbb9]
 - Updated dependencies [71466e7]
 - Updated dependencies [0c99fbe]
-  - @datawarp/mastra-core@0.12.0-alpha.2
-  - @datawarp/mastra-memory@0.11.6-alpha.2
-  - @datawarp/mastra-libsql@0.11.3-alpha.1
+  - @actus-ag/mastra-core@0.12.0-alpha.2
+  - @actus-ag/mastra-memory@0.11.6-alpha.2
+  - @actus-ag/mastra-libsql@0.11.3-alpha.1
 
 ## 0.1.4-alpha.1
 
@@ -402,8 +402,8 @@
 - Updated dependencies [e0f73c6]
 - Updated dependencies [cda801d]
 - Updated dependencies [a77c823]
-  - @datawarp/mastra-core@0.12.0-alpha.1
-  - @datawarp/mastra-memory@0.11.6-alpha.1
+  - @actus-ag/mastra-core@0.12.0-alpha.1
+  - @actus-ag/mastra-memory@0.11.6-alpha.1
 
 ## 0.1.4-alpha.0
 
@@ -425,10 +425,10 @@
 - Updated dependencies [09bca64]
 - Updated dependencies [a3ca14c]
 - Updated dependencies [ad8a1d8]
-  - @datawarp/mastra-core@0.12.0-alpha.0
-  - @datawarp/mastra-libsql@0.11.3-alpha.0
-  - @datawarp/mastra-memory@0.11.6-alpha.0
-  - @datawarp/mastra-rag@1.0.5-alpha.0
+  - @actus-ag/mastra-core@0.12.0-alpha.0
+  - @actus-ag/mastra-libsql@0.11.3-alpha.0
+  - @actus-ag/mastra-memory@0.11.6-alpha.0
+  - @actus-ag/mastra-rag@1.0.5-alpha.0
 
 ## 0.1.3
 
@@ -436,10 +436,10 @@
 
 - Updated dependencies [3cc50c7]
 - Updated dependencies [ce088f5]
-  - @datawarp/mastra-libsql@0.11.2
-  - @datawarp/mastra-memory@0.11.5
-  - @datawarp/mastra-rag@1.0.4
-  - @datawarp/mastra-core@0.11.1
+  - @actus-ag/mastra-libsql@0.11.2
+  - @actus-ag/mastra-memory@0.11.5
+  - @actus-ag/mastra-rag@1.0.4
+  - @actus-ag/mastra-core@0.11.1
 
 ## 0.1.2
 
@@ -469,15 +469,15 @@
 - Updated dependencies [dcd4802]
 - Updated dependencies [cbddd18]
 - Updated dependencies [7ba91fa]
-  - @datawarp/mastra-memory@0.11.4
-  - @datawarp/mastra-core@0.11.0
-  - @datawarp/mastra-libsql@0.11.1
+  - @actus-ag/mastra-memory@0.11.4
+  - @actus-ag/mastra-core@0.11.0
+  - @actus-ag/mastra-libsql@0.11.1
 
 ## 0.1.2-alpha.3
 
 ### Patch Changes
 
-- @datawarp/mastra-core@0.11.0-alpha.3
+- @actus-ag/mastra-core@0.11.0-alpha.3
 
 ## 0.1.2-alpha.2
 
@@ -503,14 +503,14 @@
 - Updated dependencies [da168a4]
 - Updated dependencies [dcd4802]
 - Updated dependencies [7ba91fa]
-  - @datawarp/mastra-core@0.11.0-alpha.2
-  - @datawarp/mastra-libsql@0.11.1-alpha.0
+  - @actus-ag/mastra-core@0.11.0-alpha.2
+  - @actus-ag/mastra-libsql@0.11.1-alpha.0
 
 ## 0.1.2-alpha.1
 
 ### Patch Changes
 
-- @datawarp/mastra-core@0.11.0-alpha.1
+- @actus-ag/mastra-core@0.11.0-alpha.1
 
 ## 0.1.2-alpha.0
 
@@ -520,8 +520,8 @@
 - Updated dependencies [7827943]
 - Updated dependencies [bf1e7e7]
 - Updated dependencies [cbddd18]
-  - @datawarp/mastra-memory@0.11.4-alpha.0
-  - @datawarp/mastra-core@0.11.0-alpha.0
+  - @actus-ag/mastra-memory@0.11.4-alpha.0
+  - @actus-ag/mastra-core@0.11.0-alpha.0
 
 ## 0.1.1
 
@@ -543,9 +543,9 @@
 - Updated dependencies [c22a91f]
 - Updated dependencies [f7403ab]
 - Updated dependencies [6c89d7f]
-  - @datawarp/mastra-memory@0.11.3
-  - @datawarp/mastra-core@0.10.15
-  - @datawarp/mastra-rag@1.0.3
+  - @actus-ag/mastra-memory@0.11.3
+  - @actus-ag/mastra-core@0.10.15
+  - @actus-ag/mastra-rag@1.0.3
 
 ## 0.1.1-alpha.0
 
@@ -556,5 +556,5 @@
 - Updated dependencies [c3a30de]
 - Updated dependencies [cf3a184]
 - Updated dependencies [d6bfd60]
-  - @datawarp/mastra-core@0.10.15-alpha.1
-  - @datawarp/mastra-memory@0.11.3-alpha.1
+  - @actus-ag/mastra-core@0.10.15-alpha.1
+  - @actus-ag/mastra-memory@0.11.3-alpha.1

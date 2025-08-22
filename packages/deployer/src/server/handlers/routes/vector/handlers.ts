@@ -1,5 +1,5 @@
-import type { Mastra } from '@datawarp/mastra-core';
-import type { MastraVector, QueryResult } from '@datawarp/mastra-core/vector';
+import type { Mastra } from '@actus-ag/mastra-core';
+import type { MastraVector, QueryResult } from '@actus-ag/mastra-core/vector';
 import {
   upsertVectors as getOriginalUpsertVectorsHandler,
   createIndex as getOriginalCreateIndexHandler,
@@ -7,7 +7,7 @@ import {
   listIndexes as getOriginalListIndexesHandler,
   describeIndex as getOriginalDescribeIndexHandler,
   deleteIndex as getOriginalDeleteIndexHandler,
-} from '@datawarp/mastra-server/handlers/vector';
+} from '@actus-ag/mastra-server/handlers/vector';
 import type { Context } from 'hono';
 
 import { HTTPException } from 'hono/http-exception';

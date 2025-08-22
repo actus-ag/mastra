@@ -7,7 +7,7 @@
 ### Patch Changes
 
 - Updated dependencies [e9d1b47]
-  - @datawarp/mastra-core@0.2.0-alpha.85
+  - @actus-ag/mastra-core@0.2.0-alpha.85
 
 ## 0.0.1-alpha.1
 
@@ -17,7 +17,7 @@
 - Updated dependencies [cb290ee]
 - Updated dependencies [b4d7416]
 - Updated dependencies [38b7f66]
-  - @datawarp/mastra-core@0.2.0-alpha.84
+  - @actus-ag/mastra-core@0.2.0-alpha.84
 
 ## 0.0.1-alpha.0
 
@@ -27,4 +27,4 @@
 - Updated dependencies [78eec7c]
 - Updated dependencies [9625602]
 - Updated dependencies [8769a62]
-  - @datawarp/mastra-core@0.2.0-alpha.83
+  - @actus-ag/mastra-core@0.2.0-alpha.83

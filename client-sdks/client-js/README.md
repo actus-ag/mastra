@@ -5,13 +5,13 @@ JavaScript/TypeScript client library for the [Mastra AI](https://mastra.ai) fram
 ## Installation
 
 ```bash
-npm install @datawarp/mastra-client-js
+npm install @actus-ag/mastra-client-js
 ```
 
 ## Quick Start
 
 ```typescript
-import { MastraClient } from '@datawarp/mastra-client-js';
+import { MastraClient } from '@actus-ag/mastra-client-js';
 
 // Initialize the client
 const client = new MastraClient({

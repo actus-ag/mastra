@@ -1,5 +1,5 @@
-import { ErrorCategory, ErrorDomain, MastraError } from '@datawarp/mastra-core/error';
-import type { IMastraLogger } from '@datawarp/mastra-core/logger';
+import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
+import type { IMastraLogger } from '@actus-ag/mastra-core/logger';
 import type { Server } from '@modelcontextprotocol/sdk/server/index.js';
 
 interface ServerPromptActionsDependencies {

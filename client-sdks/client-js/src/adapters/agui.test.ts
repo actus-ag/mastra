@@ -1,7 +1,7 @@
 import type { Message, BaseEvent } from '@ag-ui/client';
 import { describe, it, expect, vi } from 'vitest';
 import { generateUUID, convertMessagesToMastraMessages, AGUIAdapter } from './agui';
-import { Agent } from '@datawarp/mastra-core/agent';
+import { Agent } from '@actus-ag/mastra-core/agent';
 import { MockLanguageModelV1 } from 'ai/test';
 import { simulateReadableStream } from 'ai';
 

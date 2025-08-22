@@ -1,4 +1,4 @@
-import type { MastraVector } from '@datawarp/mastra-core/vector';
+import type { MastraVector } from '@actus-ag/mastra-core/vector';
 import type { EmbeddingModel } from 'ai';
 import type { RerankConfig } from '../rerank';
 

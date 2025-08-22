@@ -1,5 +1,5 @@
 import { anthropic } from '@ai-sdk/anthropic';
-import { Agent } from '@datawarp/mastra-core';
+import { Agent } from '@actus-ag/mastra-core';
 import { z } from 'zod';
 
 export type Image = {

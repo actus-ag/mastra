@@ -1,4 +1,4 @@
-import { createTool } from '@datawarp/mastra-core/tools';
+import { createTool } from '@actus-ag/mastra-core/tools';
 import { z } from 'zod';
 
 export function calculate(a: number, b: number) {

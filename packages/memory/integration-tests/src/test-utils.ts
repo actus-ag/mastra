@@ -1,6 +1,6 @@
-import type { CoreMessage, MastraMessageV1 } from '@datawarp/mastra-core';
-import { MessageList } from '@datawarp/mastra-core/agent';
-import type { MastraMessageV2 } from '@datawarp/mastra-core/agent';
+import type { CoreMessage, MastraMessageV1 } from '@actus-ag/mastra-core';
+import { MessageList } from '@actus-ag/mastra-core/agent';
+import type { MastraMessageV2 } from '@actus-ag/mastra-core/agent';
 
 const toolArgs = {
   weather: { location: 'New York' },

@@ -9,8 +9,8 @@ import {
   type UIMessage,
   type UseChatOptions,
 } from '@ai-sdk/ui-utils';
-import { Tool, type CoreMessage } from '@datawarp/mastra-core';
-import { type GenerateReturn } from '@datawarp/mastra-core/llm';
+import { Tool, type CoreMessage } from '@actus-ag/mastra-core';
+import { type GenerateReturn } from '@actus-ag/mastra-core/llm';
 import type { JSONSchema7 } from 'json-schema';
 import { ZodSchema } from 'zod';
 import { zodToJsonSchema } from '../utils/zod-to-json-schema';
@@ -29,11 +29,11 @@ import type {
 } from '../types';
 
 import { BaseResource } from './base';
-import type { RuntimeContext } from '@datawarp/mastra-core/runtime-context';
+import type { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
 import { parseClientRuntimeContext } from '../utils';
 import { processMastraStream } from '../utils/process-mastra-stream';
-import type { MastraModelOutput } from '@datawarp/mastra-core/stream';
-import type { MessageListInput } from '@datawarp/mastra-core/agent/message-list';
+import type { MastraModelOutput } from '@actus-ag/mastra-core/stream';
+import type { MessageListInput } from '@actus-ag/mastra-core/agent/message-list';
 
 async function executeToolCallAndRespond({
   response,

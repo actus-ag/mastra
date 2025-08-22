@@ -1,9 +1,9 @@
 import { openai } from '@ai-sdk/openai';
-import { Mastra } from '@datawarp/mastra-core';
-import { Agent } from '@datawarp/mastra-core/agent';
-import { Step, Workflow } from '@datawarp/mastra-core/workflows';
-import { PgVector } from '@datawarp/mastra-pg';
-import { createVectorQueryTool, MDocument } from '@datawarp/mastra-rag';
+import { Mastra } from '@actus-ag/mastra-core';
+import { Agent } from '@actus-ag/mastra-core/agent';
+import { Step, Workflow } from '@actus-ag/mastra-core/workflows';
+import { PgVector } from '@actus-ag/mastra-pg';
+import { createVectorQueryTool, MDocument } from '@actus-ag/mastra-rag';
 import { embedMany } from 'ai';
 import { z } from 'zod';
 

@@ -1,7 +1,7 @@
 import type { InValue } from '@libsql/client';
-import type { IMastraLogger } from '@datawarp/mastra-core/logger';
-import type { TABLE_NAMES } from '@datawarp/mastra-core/storage';
-import { parseSqlIdentifier } from '@datawarp/mastra-core/utils';
+import type { IMastraLogger } from '@actus-ag/mastra-core/logger';
+import type { TABLE_NAMES } from '@actus-ag/mastra-core/storage';
+import { parseSqlIdentifier } from '@actus-ag/mastra-core/utils';
 
 export function createExecuteWriteOperationWithRetry({
   logger,

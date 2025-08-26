@@ -1,9 +1,9 @@
-import { mastra } from './mastra';
+import { @mastra } from './@mastra';
 
 async function main() {
   console.log('🚀 Starting workflow with suspend/resume example...\n');
 
-  const myWorkflow = mastra.getWorkflow('myWorkflow');
+  const myWorkflow = @mastra.getWorkflow('myWorkflow');
   const run = await myWorkflow.createRunAsync();
 
   try {

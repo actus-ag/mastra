@@ -5,7 +5,7 @@ import {
   MainContentLayout,
   MainContentContent,
   WorkflowTable,
-} from '@actus-ag/mastra-playground-ui';
+} from '@mastra/cli/cli/cli/playground-ui';
 
 function Workflows() {
   const { data, isLoading } = useWorkflows();

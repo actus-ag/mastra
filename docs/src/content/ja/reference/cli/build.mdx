@@ -1,14 +1,14 @@
 ---
-title: "mastra build"
+title: "@actus-ag/@mastra/cli/cli build"
 description: "本番環境へのデプロイのためにMastraプロジェクトをビルドする"
 ---
 
-`mastra build`コマンドは、Mastraプロジェクトを本番環境用のHonoサーバーにバンドルします。Honoは、型安全なルーティングとミドルウェアのサポートを提供する軽量のWebフレームワークで、MastraエージェントをHTTPエンドポイントとしてデプロイするのに理想的です。
+`@actus-ag/@mastra/cli/cli build`コマンドは、Mastraプロジェクトを本番環境用のHonoサーバーにバンドルします。Honoは、型安全なルーティングとミドルウェアのサポートを提供する軽量のWebフレームワークで、MastraエージェントをHTTPエンドポイントとしてデプロイするのに理想的です。
 
 ## 使用方法
 
 ```bash
-mastra build [options]
+@actus-ag/@mastra/cli/cli build [options]
 ```
 
 ## オプション
@@ -22,7 +22,7 @@ mastra build [options]
 CIや、リソースが制限された環境で実行する場合、`MASTRA_CONCURRENCY`を設定することで、同時に実行される重いタスクの数を制限できます。
 
 ```bash
-MASTRA_CONCURRENCY=2 mastra build
+MASTRA_CONCURRENCY=2 @actus-ag/@mastra/cli/cli build
 ```
 
 設定を解除すると、CLIはホストの性能に基づいて並列処理を行います。
@@ -32,17 +32,17 @@ MASTRA_CONCURRENCY=2 mastra build
 匿名のビルド分析をオプトアウトするには、以下を設定します：
 
 ```bash
-MASTRA_TELEMETRY_DISABLED=1 mastra build
+MASTRA_TELEMETRY_DISABLED=1 @actus-ag/@mastra/cli/cli build
 ```
 
 ### カスタムプロバイダーエンドポイント
 
-ビルド時には、`mastra dev`と同じ`OPENAI_BASE_URL`および`ANTHROPIC_BASE_URL`変数が尊重されます。これらはAI SDKによって、プロバイダーを呼び出すワークフローやツールに転送されます。
+ビルド時には、`@actus-ag/@mastra/cli/cli dev`と同じ`OPENAI_BASE_URL`および`ANTHROPIC_BASE_URL`変数が尊重されます。これらはAI SDKによって、プロバイダーを呼び出すワークフローやツールに転送されます。
 
 ## 機能
 
-1. Mastraのエントリーファイル（`src/mastra/index.ts`または`src/mastra/index.js`）を見つけます
-2. `.mastra`出力ディレクトリを作成します
+1. Mastraのエントリーファイル（`src/@@mastra/cli/cli/cli/index.ts`または`src/@@mastra/cli/cli/cli/index.js`）を見つけます
+2. `.@@mastra/cli/cli/cli`出力ディレクトリを作成します
 3. 以下の機能を備えたRollupを使用してコードをバンドルします：
    - 最適なバンドルサイズのためのツリーシェイキング
    - Node.js環境のターゲティング
@@ -52,15 +52,15 @@ MASTRA_TELEMETRY_DISABLED=1 mastra build
 
 ```bash
 # Build from current directory
-mastra build
+@actus-ag/@mastra/cli/cli build
 
 # Build from specific directory
-mastra build --dir ./my-mastra-project
+@actus-ag/@mastra/cli/cli build --dir ./my-@@mastra/cli/cli/cli-project
 ```
 
 ## 出力
 
-このコマンドは、`.mastra` ディレクトリに本番用バンドルを生成します。内容は以下の通りです：
+このコマンドは、`.@@mastra/cli/cli/cli` ディレクトリに本番用バンドルを生成します。内容は以下の通りです：
 
 - Mastra エージェントがエンドポイントとして公開された Hono ベースの HTTP サーバー
 - 本番環境向けに最適化されたバンドル済み JavaScript ファイル

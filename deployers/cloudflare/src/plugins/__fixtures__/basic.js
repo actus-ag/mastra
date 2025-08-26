@@ -1,11 +1,11 @@
-import { createLogger } from '@actus-ag/mastra-core/logger';
-import { Mastra } from '@actus-ag/mastra-core/mastra';
-import { createApiRoute } from '@actus-ag/mastra-core/server';
-import { TestDeployer } from '@actus-ag/mastra-deployer/test';
-import { PostgresStore } from '@actus-ag/mastra-pg';
+import { createLogger } from '@mastra/core/logger';
+import { Mastra } from '@mastra/core/@mastra';
+import { createApiRoute } from '@mastra/core/server';
+import { TestDeployer } from '@mastra/deployer/test';
+import { PostgresStore } from '@mastra/pg';
 import { weatherAgent } from '@/agents';
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   agents: { weatherAgent },
   storage: new PostgresStore({
     connectionString: process.env.DATABASE_URL,

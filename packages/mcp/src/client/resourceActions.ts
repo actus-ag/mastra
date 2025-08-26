@@ -1,4 +1,4 @@
-import type { IMastraLogger } from "@actus-ag/mastra-core/logger";
+import type { IMastraLogger } from "@mastra/core/logger";
 import { ErrorCode } from "@modelcontextprotocol/sdk/types.js";
 import type { Resource, ResourceTemplate } from "@modelcontextprotocol/sdk/types.js";
 import type { InternalMastraMCPClient } from "./client";

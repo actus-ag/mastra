@@ -1,4 +1,4 @@
-import { createTool } from '@actus-ag/mastra-core/tools';
+import { createTool } from '@mastra/core/tools';
 import { HELLO_WORLD } from './constants';
 
 export const helloWorldTool = createTool({

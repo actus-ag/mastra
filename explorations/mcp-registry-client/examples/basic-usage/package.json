@@ -5,8 +5,8 @@
 	"type": "module",
 	"dependencies": {
 		"@ai-sdk/openai": "^1.1.15",
-		"@actus-ag/mastra-core": "workspace:*",
-		"@actus-ag/mastra-mcp-configuration": "workspace:*",
+		"@mastra/core": "workspace:*",
+		"@mastra/mcp-configuration": "workspace:*",
 		"@mcp/registry": "workspace:*",
 		"chalk": "^5.4.1"
 	},

@@ -23,10 +23,10 @@ importers:
       '@ai-sdk/openai':
         specifier: ^1.1.15
         version: 1.1.15(zod@3.24.2)
-      '@mastra/core':
+      '@mastra/cli/cli/cli/core':
         specifier: ^0.4.2
         version: 0.4.2(react@19.0.0)
-      '@mastra/mcp-configuration':
+      '@mastra/cli/cli/cli/mcp-configuration':
         specifier: workspace:*
         version: link:../../packages/mcp-configuration
       '@mcp/registry':
@@ -42,7 +42,7 @@ importers:
 
   examples/tui:
     dependencies:
-      '@mastra/mcp-configuration':
+      '@mastra/cli/cli/cli/mcp-configuration':
         specifier: workspace:*
         version: link:../../packages/mcp-configuration
       '@mcp/registry':
@@ -109,7 +109,7 @@ importers:
 
   packages/mcp-configuration:
     dependencies:
-      '@mastra/mcp':
+      '@mastra/cli/cli/cli/mcp':
         specifier: ^0.2.1
         version: 0.2.1(react@19.0.0)
       '@mcp/registry':
@@ -817,15 +817,15 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@mastra/core@0.3.0':
+  '@mastra/cli/cli/cli/core@0.3.0':
     resolution: {integrity: sha512-Uej+L2cKGar0WCrChke8WH4PrUZaKoc6ON7aXXgi/p4rIM4AceBs7hWXR+IHPk7Sc229ghZa8C/Jbc4YPC0oqg==}
     engines: {node: '>=20'}
 
-  '@mastra/core@0.4.2':
+  '@mastra/cli/cli/cli/core@0.4.2':
     resolution: {integrity: sha512-zLh4Lv8EWasPRHGcrZvp8nYDa5TlQr1IyHD9Q19l9096riuQqE3Y0+S99GPupdkh49q3Uel3C8P4hCFgQCoAXw==}
     engines: {node: '>=20'}
 
-  '@mastra/mcp@0.2.1':
+  '@mastra/cli/cli/cli/mcp@0.2.1':
     resolution: {integrity: sha512-bK5/ULDOOlN7HpHGhhivfmazGvCALkD63U1MykqSdCTBo/ckxrILXOiO4wr0AG3DC4CcWeG89aBVlCY8aO2Epw==}
 
   '@modelcontextprotocol/sdk@1.5.0':
@@ -5718,7 +5718,7 @@ snapshots:
   '@libsql/win32-x64-msvc@0.4.7':
     optional: true
 
-  '@mastra/core@0.3.0(react@19.0.0)':
+  '@mastra/cli/cli/cli/core@0.3.0(react@19.0.0)':
     dependencies:
       '@libsql/client': 0.14.0
       '@opentelemetry/api': 1.9.0
@@ -5754,7 +5754,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@mastra/core@0.4.2(react@19.0.0)':
+  '@mastra/cli/cli/cli/core@0.4.2(react@19.0.0)':
     dependencies:
       '@libsql/client': 0.14.0
       '@opentelemetry/api': 1.9.0
@@ -5790,9 +5790,9 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@mastra/mcp@0.2.1(react@19.0.0)':
+  '@mastra/cli/cli/cli/mcp@0.2.1(react@19.0.0)':
     dependencies:
-      '@mastra/core': 0.3.0(react@19.0.0)
+      '@mastra/cli/cli/cli/core': 0.3.0(react@19.0.0)
       '@modelcontextprotocol/sdk': 1.5.0
       date-fns: 4.1.0
       zod: 3.24.2

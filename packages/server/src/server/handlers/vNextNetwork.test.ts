@@ -1,10 +1,10 @@
-import type { Workflow } from '@actus-ag/mastra-core';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { Mastra } from '@actus-ag/mastra-core/mastra';
-import { NewAgentNetwork } from '@actus-ag/mastra-core/network/vNext';
-import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
-import { createMockModel } from '@actus-ag/mastra-core/test-utils/llm-mock';
-import { createStep, createWorkflow } from '@actus-ag/mastra-core/workflows';
+import type { Workflow } from '@mastra/core';
+import { Agent } from '@mastra/core/agent';
+import { Mastra } from '@mastra/core/@mastra';
+import { NewAgentNetwork } from '@mastra/core/network/vNext';
+import { RuntimeContext } from '@mastra/core/runtime-context';
+import { createMockModel } from '@mastra/core/test-utils/llm-mock';
+import { createStep, createWorkflow } from '@mastra/core/workflows';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { z } from 'zod';
 import { HTTPException } from '../http-exception';
@@ -124,7 +124,7 @@ describe('VNextNetwork Handlers', () => {
 
   describe('getVNextNetworksHandler', () => {
     it('should get all networks successfully', async () => {
-      const result = await getVNextNetworksHandler({ mastra: mockMastra, runtimeContext });
+      const result = await getVNextNetworksHandler({ @mastra: mockMastra, runtimeContext });
 
       const llm = await createMockAgent1('agent1').getLLM({ runtimeContext });
 
@@ -154,20 +154,20 @@ describe('VNextNetwork Handlers', () => {
 
   describe('getVNextNetworkByIdHandler', () => {
     it('should throw error when networkId is not provided', async () => {
-      await expect(getVNextNetworkByIdHandler({ mastra: mockMastra, runtimeContext })).rejects.toThrow(
+      await expect(getVNextNetworkByIdHandler({ @mastra: mockMastra, runtimeContext })).rejects.toThrow(
         'Network not found',
       );
     });
 
     it('should throw error when network is not found', async () => {
       await expect(
-        getVNextNetworkByIdHandler({ mastra: mockMastra, runtimeContext, networkId: 'non-existent' }),
+        getVNextNetworkByIdHandler({ @mastra: mockMastra, runtimeContext, networkId: 'non-existent' }),
       ).rejects.toThrow('Network not found');
     });
 
     it('should get network by ID successfully', async () => {
       const result = await getVNextNetworkByIdHandler({
-        mastra: mockMastra,
+        @mastra: mockMastra,
         runtimeContext,
         networkId: 'test-network',
       });
@@ -200,7 +200,7 @@ describe('VNextNetwork Handlers', () => {
     it('should throw error when networkId is not provided', async () => {
       await expect(
         generateVNextNetworkHandler({
-          mastra: mockMastra,
+          @mastra: mockMastra,
           body: {
             message: 'test message',
           },
@@ -212,7 +212,7 @@ describe('VNextNetwork Handlers', () => {
     it('should throw error when network is not found', async () => {
       await expect(
         generateVNextNetworkHandler({
-          mastra: mockMastra,
+          @mastra: mockMastra,
           networkId: 'non-existent',
           body: {
             message: 'test message',
@@ -225,7 +225,7 @@ describe('VNextNetwork Handlers', () => {
     it('should throw error when messages are not provided', async () => {
       await expect(
         generateVNextNetworkHandler({
-          mastra: mockMastra,
+          @mastra: mockMastra,
           networkId: 'test-network',
           body: {
             message: '',
@@ -241,7 +241,7 @@ describe('VNextNetwork Handlers', () => {
       vi.spyOn(mockNetwork, 'generate').mockResolvedValue(mockResult);
 
       const result = await generateVNextNetworkHandler({
-        mastra: mockMastra,
+        @mastra: mockMastra,
         networkId: 'test-network',
         body: {
           message: mockMessage,
@@ -257,7 +257,7 @@ describe('VNextNetwork Handlers', () => {
     it('should throw error when networkId is not provided', async () => {
       await expect(
         streamGenerateVNextNetworkHandler({
-          mastra: mockMastra,
+          @mastra: mockMastra,
           body: {
             message: 'test message',
           },
@@ -269,7 +269,7 @@ describe('VNextNetwork Handlers', () => {
     it('should throw error when network is not found', async () => {
       await expect(
         streamGenerateVNextNetworkHandler({
-          mastra: mockMastra,
+          @mastra: mockMastra,
           networkId: 'non-existent',
           body: {
             message: 'test message',
@@ -282,7 +282,7 @@ describe('VNextNetwork Handlers', () => {
     it('should throw error when messages are not provided', async () => {
       await expect(
         streamGenerateVNextNetworkHandler({
-          mastra: mockMastra,
+          @mastra: mockMastra,
           networkId: 'test-network',
           body: {
             message: '',
@@ -303,7 +303,7 @@ describe('VNextNetwork Handlers', () => {
       vi.spyOn(mockNetwork, 'stream').mockResolvedValue(mockStreamResult as any);
 
       const result = await streamGenerateVNextNetworkHandler({
-        mastra: mockMastra,
+        @mastra: mockMastra,
         networkId: 'test-network',
         body: {
           message: mockMessage,

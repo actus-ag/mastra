@@ -11,10 +11,10 @@ CIパイプラインでevalsを実行することで、時間の経過ととも�
 
 ESMモジュールをサポートするテストフレームワークであれば、どれでも対応しています。例えば、[Vitest](https://vitest.dev/)、[Jest](https://jestjs.io/)、または[Mocha](https://mochajs.org/)を使用して、CI/CDパイプラインでevalsを実行することができます。
 
-```typescript copy showLineNumbers filename="src/mastra/agents/index.test.ts"
+```typescript copy showLineNumbers filename="src/@@mastra/cli/cli/cli/agents/index.test.ts"
 import { describe, it, expect } from "vitest";
-import { evaluate } from "@actus-ag/mastra-evals";
-import { ToneConsistencyMetric } from "@actus-ag/mastra-evals/nlp";
+import { evaluate } from "@mastra/cli/cli/cli/evals";
+import { ToneConsistencyMetric } from "@mastra/cli/cli/cli/evals/nlp";
 import { myAgent } from "./index";
 
 describe("My Agent", () => {
@@ -27,7 +27,7 @@ describe("My Agent", () => {
 });
 ```
 
-テストフレームワーク用のtestSetupとglobalSetupスクリプトを設定して、eval結果をキャプチャする必要があります。これにより、mastraダッシュボードでこれらの結果を表示することができます。
+テストフレームワーク用のtestSetupとglobalSetupスクリプトを設定して、eval結果をキャプチャする必要があります。これにより、@@mastra/cli/cli/cliダッシュボードでこれらの結果を表示することができます。
 
 ## フレームワーク設定
 
@@ -36,7 +36,7 @@ describe("My Agent", () => {
 CI/CDパイプラインでevalsを実行するために、これらのファイルをプロジェクトに追加してください：
 
 ```typescript copy showLineNumbers filename="globalSetup.ts"
-import { globalSetup } from "@actus-ag/mastra-evals";
+import { globalSetup } from "@mastra/cli/cli/cli/evals";
 
 export default function setup() {
   globalSetup();
@@ -45,7 +45,7 @@ export default function setup() {
 
 ```typescript copy showLineNumbers filename="testSetup.ts"
 import { beforeAll } from "vitest";
-import { attachListeners } from "@actus-ag/mastra-evals";
+import { attachListeners } from "@mastra/cli/cli/cli/evals";
 
 beforeAll(async () => {
   await attachListeners();
@@ -69,12 +69,12 @@ Mastra Storageに評価結果を保存し、Mastraダッシュボードで結果
 
 ```typescript copy showLineNumbers filename="testSetup.ts"
 import { beforeAll } from "vitest";
-import { attachListeners } from "@actus-ag/mastra-evals";
-import { mastra } from "./your-mastra-setup";
+import { attachListeners } from "@mastra/cli/cli/cli/evals";
+import { @@mastra/cli/cli/cli } from "./your-@@mastra/cli/cli/cli-setup";
 
 beforeAll(async () => {
   // Store evals in Mastra Storage (requires storage to be enabled)
-  await attachListeners(mastra);
+  await attachListeners(@@mastra/cli/cli/cli);
 });
 ```
 

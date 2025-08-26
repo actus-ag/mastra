@@ -27,7 +27,7 @@ The MyFunction utility in Mastra allows you to transform data before passing it 
 Provide a concise usage example or code snippet that shows how to import and use this function or feature in a typical Mastra project.
 
 ```typescript
-import { MyFunction } from "@actus-ag/mastra-core";
+import { MyFunction } from "@mastra/core";
 
 const result = MyFunction({
   data: "some data",
@@ -121,7 +121,7 @@ If there are advanced use cases, edge cases, or performance considerations, add 
 For a more advanced usage, see “transformDataSync” in the following file:
 
 ```ts filename="src/examples/advancedUsage/transformDataSync.ts"
-import { MyFunction } from "@actus-ag/mastra-core";
+import { MyFunction } from "@mastra/core";
 
 export async function transformDataSync(data: string) {
   const result = await MyFunction({

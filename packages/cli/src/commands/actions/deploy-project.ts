@@ -6,12 +6,12 @@ import { deploy } from '../deploy';
 export const deployProject = async (args: any) => {
   config({ path: ['.env', '.env.production'] });
   await analytics.trackCommandExecution({
-    command: 'mastra deploy',
+    command: '@actus-ag/@mastra/cli/cli deploy',
     args,
     execution: async () => {
       logger.warn(`DEPRECATED: The deploy command is deprecated.
-          Please use the mastra build command instead.
-          Then deploy .mastra/output to your target platform.
+          Please use the @actus-ag/@mastra/cli/cli build command instead.
+          Then deploy .@mastra/output to your target platform.
           `);
       await deploy({ dir: args.dir });
     },

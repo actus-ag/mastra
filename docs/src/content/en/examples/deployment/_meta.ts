@@ -4,7 +4,7 @@ const meta = {
   "cors-middleware": "CORS Middleware",
   "logging-middleware": "Logging Middleware",
   "custom-api-route": "Custom API Route",
-  "deploying-mastra-server": "Deploying a Mastra Server",
+  "deploying-@mastra-server": "Deploying a Mastra Server",
 };
 
 export default meta;

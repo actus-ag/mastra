@@ -1,4 +1,4 @@
-import { Agent } from '@actus-ag/mastra-core/agent';
+import { Agent } from '@mastra/core/agent';
 import { openai } from '@ai-sdk/openai';
 
 // Initialize model

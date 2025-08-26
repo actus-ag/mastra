@@ -1,9 +1,9 @@
 import { openai } from '@ai-sdk/openai';
-import { createTool } from '@actus-ag/mastra-core';
-import { Agent } from '@actus-ag/mastra-core/agent';
+import { createTool } from '@mastra/core';
+import { Agent } from '@mastra/core/agent';
 import { z } from 'zod';
 import { weatherTool } from '../tools/weather';
-import { MCPClient } from '@actus-ag/mastra-mcp';
+import { MCPClient } from '@mastra/mcp';
 
 const client = new MCPClient({
   id: 'weather-server',

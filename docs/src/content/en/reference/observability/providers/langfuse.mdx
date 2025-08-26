@@ -45,9 +45,9 @@ echo -n "pk-lf-1234567890:sk-lf-1234567890" | base64 -w 0
 Here's how to configure Mastra to use Langfuse with OpenTelemetry:
 
 ```typescript
-import { Mastra } from "@actus-ag/mastra-core";
+import { Mastra } from "@mastra/cli/cli/cli/core";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // ... other config
   telemetry: {
     enabled: true,
@@ -65,9 +65,9 @@ export const mastra = new Mastra({
 Alternatively, if you're using environment variables, you can simplify the configuration:
 
 ```typescript
-import { Mastra } from "@actus-ag/mastra-core";
+import { Mastra } from "@mastra/cli/cli/cli/core";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // ... other config
   telemetry: {
     enabled: true,

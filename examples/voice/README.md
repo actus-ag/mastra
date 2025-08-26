@@ -4,7 +4,7 @@ You can find voice-related examples in a dedicated repository.
 
 ## Repository Location
 
-All voice examples are available at: [github.com/mastra-ai/voice-examples](https://github.com/mastra-ai/voice-examples)
+All voice examples are available at: [github.com/@mastra-ai/voice-examples](https://github.com/@mastra-ai/voice-examples)
 
 ## What's Included
 
@@ -31,4 +31,4 @@ Each example in the repository contains its own README with specific setup instr
 2. An OpenAI API key
 3. Additional API keys for specific examples
 
-Visit the [repository](https://github.com/mastra-ai/voice-examples) to get started with these examples.
+Visit the [repository](https://github.com/@mastra-ai/voice-examples) to get started with these examples.

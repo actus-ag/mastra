@@ -1,4 +1,4 @@
-import type { AiMessageType } from '@actus-ag/mastra-core/memory';
+import type { AiMessageType } from '@mastra/core/memory';
 
 export type Message = AiMessageType;
 

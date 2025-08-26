@@ -14,7 +14,7 @@ A simple example showing how to use Chain of Thought Prompting with RAG using Ma
 1. Clone the repository and navigate to the project directory:
 
    ```bash
-   git clone https://github.com/mastra-ai/mastra
+   git clone https://github.com/@mastra-ai/@mastra
    cd examples/basics/rag/cot-rag
    ```
 

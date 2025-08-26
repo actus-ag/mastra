@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { createTool, Agent, Mastra } from '@actus-ag/mastra-core';
+import { createTool, Agent, Mastra } from '@mastra/core';
 import { z } from 'zod';
 
 interface WeatherResponse {
@@ -107,12 +107,12 @@ Use the weatherTool to fetch current weather data.`,
   tools: { weatherTool },
 });
 
-const mastra = new Mastra({
+const @mastra = new Mastra({
   agents: { weatherAgent },
 });
 
 async function main() {
-  const agent = mastra.getAgent('weatherAgent');
+  const agent = @mastra.getAgent('weatherAgent');
   const result = await agent.generate('What is the weather in London?');
   console.log(result.text);
 }

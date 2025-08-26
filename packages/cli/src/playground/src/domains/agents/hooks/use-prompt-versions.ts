@@ -14,7 +14,7 @@ export function usePromptVersions(agentId: string, instructions?: string) {
       const response = await fetch(`/api/agents/${agentId}/evals/live`, {
         method: 'GET',
         headers: {
-          'x-mastra-dev-playground': 'true',
+          'x-@mastra-dev-playground': 'true',
         },
       });
 
@@ -126,7 +126,7 @@ export function usePromptVersions(agentId: string, instructions?: string) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-mastra-dev-playground': 'true',
+          'x-@mastra-dev-playground': 'true',
         },
         body: JSON.stringify({
           instructions: version.content,

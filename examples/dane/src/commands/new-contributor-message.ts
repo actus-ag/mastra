@@ -1,13 +1,13 @@
 import chalk from 'chalk';
 
-import { mastra } from '../mastra/index.js';
+import { @mastra } from '../@mastra/index.js';
 
 export async function newContributorMessage() {
   console.log(chalk.green("Hi! I'm Dane!"));
   console.log(chalk.green('Let me create a welcoming message..\n'));
 
   try {
-    const workflow = mastra.getWorkflow('githubFirstContributorMessage');
+    const workflow = @mastra.getWorkflow('githubFirstContributorMessage');
     if (!workflow) {
       console.error(chalk.red('First contributor workflow not found. Make sure it is properly set up.'));
       process.exit(1);

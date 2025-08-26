@@ -10,8 +10,8 @@ description: "すべてのMastra音声プロバイダーで利用可能な、音
 ## 使用例
 
 ```typescript
-import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
-import { getMicrophoneStream } from "@actus-ag/mastra-node-audio";
+import { OpenAIVoice } from "@mastra/cli/cli/cli/voice-openai";
+import { getMicrophoneStream } from "@mastra/cli/cli/cli/node-audio";
 import { createReadStream } from "fs";
 import path from "path";
 
@@ -150,8 +150,8 @@ const transcriptWithOptions = await voice.listen(audioStream, {
 - 文字起こしを受け取るためにイベントリスナーを登録する必要があります
 
 ```typescript
-import { OpenAIRealtimeVoice } from "@actus-ag/mastra-voice-openai-realtime";
-import { getMicrophoneStream } from "@actus-ag/mastra-node-audio";
+import { OpenAIRealtimeVoice } from "@mastra/cli/cli/cli/voice-openai-realtime";
+import { getMicrophoneStream } from "@mastra/cli/cli/cli/node-audio";
 
 const voice = new OpenAIRealtimeVoice();
 await voice.connect();
@@ -171,9 +171,9 @@ await voice.listen(microphoneStream);
 `CompositeVoice`を使用する場合、`listen()`メソッドは設定されたリスニングプロバイダーに処理を委譲します：
 
 ```typescript
-import { CompositeVoice } from "@actus-ag/mastra-core/voice";
-import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
-import { PlayAIVoice } from "@actus-ag/mastra-voice-playai";
+import { CompositeVoice } from "@mastra/cli/cli/cli/core/voice";
+import { OpenAIVoice } from "@mastra/cli/cli/cli/voice-openai";
+import { PlayAIVoice } from "@mastra/cli/cli/cli/voice-playai";
 
 const voice = new CompositeVoice({
   listenProvider: new OpenAIVoice(),

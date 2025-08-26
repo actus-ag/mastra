@@ -1,6 +1,6 @@
 # The Mastra CLI
 
-![Mastra Cli](https://github.com/mastra-ai/mastra/blob/main/packages/cli/mastra-cli.png)
+![Mastra Cli](https://github.com/@mastra-ai/@mastra/blob/main/packages/cli/@mastra-cli.png)
 
 Mastra is the Typescript framework for building AI agents and assistants. It’s used by some of the largest companies in the world to build internal AI automation tooling and customer-facing agents.
 
@@ -13,22 +13,22 @@ This is the CLI package, which allows you to:
 ## Installing the Mastra CLI
 
 ```bash copy
-npm i -g mastra
+npm i -g @mastra
 ```
 
 ## Commands
 
 ### Init
 
-`mastra init` is used for initializing a new project.
+`@actus-ag/@mastra/cli/cli init` is used for initializing a new project.
 
-This creates a mastra directory under `src` containing an `index.ts` entrypoint and an `agent` directory containing two sample agents.
+This creates a @mastra directory under `src` containing an `index.ts` entrypoint and an `agent` directory containing two sample agents.
 
 ```text
 project-root/
 ├── src/
    ├── app/
-   └── mastra/
+   └── @mastra/
        ├── agents/
        │   └── agents.ts
        └── index.ts
@@ -36,7 +36,7 @@ project-root/
 
 ### Dev
 
-`mastra dev`
+`@actus-ag/@mastra/cli/cli dev`
 
 This spins up a local development server that hosts `REST` endpoints for all agents and workflows. It also has a chat interface for testing them.
 
@@ -46,7 +46,7 @@ The server is available at `http://localhost:3000`.
 
 ### Build
 
-`mastra build`
+`@actus-ag/@mastra/cli/cli build`
 
 This command builds your Mastra project for deployment to different environments. The build process:
 
@@ -57,23 +57,23 @@ This command builds your Mastra project for deployment to different environments
 Options:
 
 ```bash
---dir     Directory containing Mastra files (default: src/mastra)
+--dir     Directory containing Mastra files (default: src/@mastra)
 ```
 
 Example usage:
 
 ```bash
 # Build using default directory
-mastra build
+@actus-ag/@mastra/cli/cli build
 
 # Build from custom directory
-mastra build --dir path/to/mastra
+@actus-ag/@mastra/cli/cli build --dir path/to/@mastra
 ```
 
 The build output is determined by your Mastra instance's deployer configuration:
 
 ```typescript
-const mastra = new Mastra({
+const @mastra = new Mastra({
   deployer: {
     type: 'HONO', // Target environment (HONO, EXPRESS, NEXT)
     // Environment-specific options
@@ -83,7 +83,7 @@ const mastra = new Mastra({
 
 ### Lint
 
-`mastra lint`
+`@actus-ag/@mastra/cli/cli lint`
 
 Validates your Mastra project structure and code.
 
@@ -98,7 +98,7 @@ Example usage:
 
 ```bash
 # Lint default directory
-mastra lint
+@actus-ag/@mastra/cli/cli lint
 ```
 
 # Telemetry

@@ -1,4 +1,4 @@
-import { createTool } from '@actus-ag/mastra-core/tools';
+import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
 import { extractTextFromPDF } from '../lib/pdf-utils';
 
@@ -49,7 +49,7 @@ export const pdfContentExtractorTool = createTool({
     pagesCount: z.number().describe('Number of pages in the PDF'),
     characterCount: z.number().describe('Number of characters extracted from the PDF'),
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     const { pdfUrl, pdfData, filename, subjectArea, focusAreas = [] } = context;
 
     let pdfBuffer: Buffer;
@@ -97,7 +97,7 @@ export const pdfContentExtractorTool = createTool({
 
       // Step 3: Summarize content for analysis
       console.log('📄 Summarizing PDF content for educational analysis...');
-      const pdfSummarizationAgent = mastra?.getAgent('pdfSummarizationAgent');
+      const pdfSummarizationAgent = @mastra?.getAgent('pdfSummarizationAgent');
       if (!pdfSummarizationAgent) {
         throw new Error('PDF summarization agent not found');
       }
@@ -121,7 +121,7 @@ ${extractionResult.extractedText}`,
 
       // Step 4: Create educational analysis from summarized content
       console.log('🎓 Creating educational analysis for flash card generation...');
-      const contentAnalyzerAgent = mastra?.getAgent('contentAnalyzerAgent');
+      const contentAnalyzerAgent = @mastra?.getAgent('contentAnalyzerAgent');
       if (!contentAnalyzerAgent) {
         throw new Error('Content analyzer agent not found');
       }

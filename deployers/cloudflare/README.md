@@ -1,4 +1,4 @@
-# @actus-ag/mastra-deployer-cloudflare
+# @mastra/deployer-cloudflare
 
 A Cloudflare Workers deployer for Mastra applications.
 
@@ -12,7 +12,7 @@ A Cloudflare Workers deployer for Mastra applications.
 ## Installation
 
 ```bash
-pnpm add @actus-ag/mastra-deployer-cloudflare
+pnpm add @mastra/deployer-cloudflare
 ```
 
 ## Usage
@@ -20,8 +20,8 @@ pnpm add @actus-ag/mastra-deployer-cloudflare
 The Cloudflare deployer is used as part of the Mastra framework:
 
 ```typescript
-import { Mastra } from '@actus-ag/mastra-core';
-import { CloudflareDeployer } from '@actus-ag/mastra-deployer-cloudflare';
+import { Mastra } from '@mastra/core';
+import { CloudflareDeployer } from '@mastra/deployer-cloudflare';
 
 const deployer = new CloudflareDeployer({
   scope: 'your-account-id',
@@ -40,7 +40,7 @@ const deployer = new CloudflareDeployer({
   },
 });
 
-const mastra = new Mastra({
+const @mastra = new Mastra({
   deployer,
   // ... other Mastra configuration options
 });

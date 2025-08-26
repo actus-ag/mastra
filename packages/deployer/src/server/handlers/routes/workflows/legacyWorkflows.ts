@@ -1,5 +1,5 @@
-import type { Mastra } from '@actus-ag/mastra-core';
-import type { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
+import type { Mastra } from '@mastra/core';
+import type { RuntimeContext } from '@mastra/core/runtime-context';
 import {
   getLegacyWorkflowsHandler as getOriginalLegacyWorkflowsHandler,
   getLegacyWorkflowByIdHandler as getOriginalLegacyWorkflowByIdHandler,
@@ -10,7 +10,7 @@ import {
   resumeAsyncLegacyWorkflowHandler as getOriginalResumeAsyncLegacyWorkflowHandler,
   resumeLegacyWorkflowHandler as getOriginalResumeLegacyWorkflowHandler,
   getLegacyWorkflowRunsHandler as getOriginalGetLegacyWorkflowRunsHandler,
-} from '@actus-ag/mastra-server/handlers/legacyWorkflows';
+} from '@mastra/server/handlers/legacyWorkflows';
 import type { Context } from 'hono';
 import { HTTPException } from 'hono/http-exception';
 import { stream } from 'hono/streaming';
@@ -19,10 +19,10 @@ import { handleError } from '../../error';
 
 export async function getLegacyWorkflowsHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
 
     const workflows = await getOriginalLegacyWorkflowsHandler({
-      mastra,
+      @mastra,
     });
 
     return c.json(workflows);
@@ -33,11 +33,11 @@ export async function getLegacyWorkflowsHandler(c: Context) {
 
 export async function getLegacyWorkflowByIdHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const workflowId = c.req.param('workflowId');
 
     const workflow = await getOriginalLegacyWorkflowByIdHandler({
-      mastra,
+      @mastra,
       workflowId,
     });
 
@@ -49,14 +49,14 @@ export async function getLegacyWorkflowByIdHandler(c: Context) {
 
 export async function startAsyncLegacyWorkflowHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const runtimeContext: RuntimeContext = c.get('runtimeContext');
     const workflowId = c.req.param('workflowId');
     const triggerData = await c.req.json();
     const runId = c.req.query('runId');
 
     const result = await getOriginalStartAsyncLegacyWorkflowHandler({
-      mastra,
+      @mastra,
       runtimeContext,
       workflowId,
       runId,
@@ -71,12 +71,12 @@ export async function startAsyncLegacyWorkflowHandler(c: Context) {
 
 export async function createLegacyWorkflowRunHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const workflowId = c.req.param('workflowId');
     const prevRunId = c.req.query('runId');
 
     const result = await getOriginalCreateLegacyWorkflowRunHandler({
-      mastra,
+      @mastra,
       workflowId,
       runId: prevRunId,
     });
@@ -89,14 +89,14 @@ export async function createLegacyWorkflowRunHandler(c: Context) {
 
 export async function startLegacyWorkflowRunHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const runtimeContext: RuntimeContext = c.get('runtimeContext');
     const workflowId = c.req.param('workflowId');
     const triggerData = await c.req.json();
     const runId = c.req.query('runId');
 
     await getOriginalStartLegacyWorkflowRunHandler({
-      mastra,
+      @mastra,
       runtimeContext,
       workflowId,
       runId,
@@ -111,8 +111,8 @@ export async function startLegacyWorkflowRunHandler(c: Context) {
 
 export function watchLegacyWorkflowHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
-    const logger = mastra.getLogger();
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
+    const logger = @mastra.getLogger();
     const workflowId = c.req.param('workflowId');
     const runId = c.req.query('runId');
 
@@ -125,7 +125,7 @@ export function watchLegacyWorkflowHandler(c: Context) {
       async stream => {
         try {
           const result = await getOriginalWatchLegacyWorkflowHandler({
-            mastra,
+            @mastra,
             workflowId,
             runId,
           });
@@ -153,7 +153,7 @@ export function watchLegacyWorkflowHandler(c: Context) {
 
 export async function resumeAsyncLegacyWorkflowHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const runtimeContext: RuntimeContext = c.get('runtimeContext');
     const workflowId = c.req.param('workflowId');
     const runId = c.req.query('runId');
@@ -164,7 +164,7 @@ export async function resumeAsyncLegacyWorkflowHandler(c: Context) {
     }
 
     const result = await getOriginalResumeAsyncLegacyWorkflowHandler({
-      mastra,
+      @mastra,
       runtimeContext,
       workflowId,
       runId,
@@ -179,7 +179,7 @@ export async function resumeAsyncLegacyWorkflowHandler(c: Context) {
 
 export async function resumeLegacyWorkflowHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const runtimeContext: RuntimeContext = c.get('runtimeContext');
     const workflowId = c.req.param('workflowId');
     const runId = c.req.query('runId');
@@ -190,7 +190,7 @@ export async function resumeLegacyWorkflowHandler(c: Context) {
     }
 
     await getOriginalResumeLegacyWorkflowHandler({
-      mastra,
+      @mastra,
       runtimeContext,
       workflowId,
       runId,
@@ -205,11 +205,11 @@ export async function resumeLegacyWorkflowHandler(c: Context) {
 
 export async function getLegacyWorkflowRunsHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const workflowId = c.req.param('workflowId');
     const { fromDate, toDate, limit, offset, resourceId } = c.req.query();
     const workflowRuns = await getOriginalGetLegacyWorkflowRunsHandler({
-      mastra,
+      @mastra,
       workflowId,
       fromDate: fromDate ? new Date(fromDate) : undefined,
       toDate: toDate ? new Date(toDate) : undefined,

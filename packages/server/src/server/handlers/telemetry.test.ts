@@ -1,4 +1,4 @@
-import type { Mastra } from '@actus-ag/mastra-core';
+import type { Mastra } from '@mastra/core';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { getTelemetryHandler } from './telemetry';
 
@@ -25,7 +25,7 @@ describe('Telemetry Handler', () => {
 
     await expect(
       getTelemetryHandler({
-        mastra: mockMastra,
+        @mastra: mockMastra,
         body: {
           name: 'test',
           scope: 'test',
@@ -42,7 +42,7 @@ describe('Telemetry Handler', () => {
 
     await expect(
       getTelemetryHandler({
-        mastra: mockMastra,
+        @mastra: mockMastra,
       }),
     ).rejects.toThrow('Body is required');
   });
@@ -54,7 +54,7 @@ describe('Telemetry Handler', () => {
     mockStorage.getTraces.mockResolvedValue(mockTraces);
 
     const result = await getTelemetryHandler({
-      mastra: mockMastra,
+      @mastra: mockMastra,
       body: {
         name: 'test',
         scope: 'test',
@@ -78,7 +78,7 @@ describe('Telemetry Handler', () => {
     mockStorage.getTraces.mockResolvedValue(mockTraces);
 
     const result = await getTelemetryHandler({
-      mastra: mockMastra,
+      @mastra: mockMastra,
       body: {
         name: 'test',
         scope: 'test',
@@ -104,7 +104,7 @@ describe('Telemetry Handler', () => {
     mockStorage.getTraces.mockResolvedValue(mockTraces);
 
     const result = await getTelemetryHandler({
-      mastra: mockMastra,
+      @mastra: mockMastra,
       body: {
         name: 'test',
         scope: 'test',
@@ -131,7 +131,7 @@ describe('Telemetry Handler', () => {
     mockStorage.getTraces.mockResolvedValue(mockTraces);
 
     const result = await getTelemetryHandler({
-      mastra: mockMastra,
+      @mastra: mockMastra,
       body: {
         name: 'test',
         scope: 'test',

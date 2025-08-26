@@ -1,4 +1,4 @@
-import { createTool } from '@actus-ag/mastra-core/tools';
+import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
 import { openai } from '@ai-sdk/openai';
 import { generateObject } from 'ai';

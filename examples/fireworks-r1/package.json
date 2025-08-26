@@ -12,10 +12,10 @@
   "license": "MIT",
   "dependencies": {
     "@ai-sdk/anthropic": "^1.2.12",
-    "@ai-sdk/fireworks": "^0.2.14",
-    "@actus-ag/mastra-core": "latest",
-    "@actus-ag/mastra-mcp": "latest",
-    "@actus-ag/mastra-memory": "latest",
+    "@ai-sdk/fireworks": "^0.2.16",
+    "@mastra/core": "latest",
+    "@mastra/mcp": "latest",
+    "@mastra/memory": "latest",
     "@types/tinycolor2": "^1.4.6",
     "chalk": "^5.4.1",
     "gradient-string": "^3.0.0",
@@ -26,16 +26,16 @@
   "devDependencies": {
     "@types/node": "^20.17.57",
     "dotenv": "^17.0.0",
-    "mastra": "latest",
+    "@mastra/cli/cli": "latest",
     "tsx": "^4.19.3",
     "typescript": "^5.8.3"
   },
   "pnpm": {
     "overrides": {
-      "@actus-ag/mastra-core": "link:../../packages/core",
-      "@actus-ag/mastra-mcp": "link:../../packages/mcp",
-      "@actus-ag/mastra-memory": "link:../../packages/memory",
-      "mastra": "link:../../packages/mastra"
+      "@mastra/core": "link:../../packages/core",
+      "@mastra/mcp": "link:../../packages/mcp",
+      "@mastra/memory": "link:../../packages/memory",
+      "@mastra/cli/cli": "link:../../packages/@mastra/cli/cli"
     }
   },
   "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39"

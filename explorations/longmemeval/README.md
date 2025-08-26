@@ -170,4 +170,4 @@ To add custom memory configurations:
 
 1. Edit `src/benchmark/runner.ts` and add your configuration to `getMemoryConfig()`
 2. Update the `MemoryConfigType` in `src/data/types.ts`
-3. Implement the configuration logic in `src/memory-adapters/mastra-adapter.ts`
+3. Implement the configuration logic in `src/memory-adapters/@mastra-adapter.ts`

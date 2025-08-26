@@ -15,7 +15,7 @@ The `PromptAlignmentMetric` class evaluates how strictly an LLM's output follows
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { PromptAlignmentMetric } from "@actus-ag/mastra-evals/llm";
+import { PromptAlignmentMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");
@@ -194,7 +194,7 @@ Final score: `(followed_instructions / applicable_instructions) * scale`
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { PromptAlignmentMetric } from "@actus-ag/mastra-evals/llm";
+import { PromptAlignmentMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");

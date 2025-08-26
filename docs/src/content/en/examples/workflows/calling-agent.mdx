@@ -11,9 +11,9 @@ Workflows can call agents to generate dynamic responses from within a step. This
 
 Create a simple agent that returns facts about a city.
 
-```typescript filename="src/mastra/agents/example-city-agent.ts" showLineNumbers copy
+```typescript filename="src/@@mastra/cli/cli/cli/agents/example-city-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 export const cityAgent = new Agent({
   name: "city-agent",
@@ -27,11 +27,11 @@ export const cityAgent = new Agent({
 
 To call an agent from a workflow, the agent must be registered in the Mastra instance.
 
-```typescript filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core/mastra";
+```typescript filename="src/@@mastra/cli/cli/cli/index.ts" showLineNumbers copy
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
 import { cityAgent } from "./agents/example-city-agent";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // ...
   agents: { cityAgent },
 });
@@ -41,8 +41,8 @@ export const mastra = new Mastra({
 
 Get a reference to the registered agent using `getAgent()`, then call `.generate()` inside the step, passing in the input data.
 
-```typescript filename="src/mastra/workflows/example-call-agent.ts" showLineNumbers copy
-import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows";
+```typescript filename="src/@@mastra/cli/cli/cli/workflows/example-call-agent.ts" showLineNumbers copy
+import { createWorkflow, createStep } from "@mastra/cli/cli/cli/core/workflows";
 import { z } from "zod";
 
 const step1 = createStep({
@@ -54,10 +54,10 @@ const step1 = createStep({
   outputSchema: z.object({
     facts: z.string()
   }),
-  execute: async ({ inputData, mastra }) => {
+  execute: async ({ inputData, @@mastra/cli/cli/cli }) => {
     const { city } = inputData;
 
-    const agent = mastra.getAgent("cityAgent");
+    const agent = @@mastra/cli/cli/cli.getAgent("cityAgent");
     const response = await agent.generate(`Create an interesting fact about ${city}`);
 
     return {

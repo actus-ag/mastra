@@ -1,5 +1,5 @@
 import crypto from 'node:crypto';
-import { maskStreamTags } from '@actus-ag/mastra-core/utils';
+import { maskStreamTags } from '@mastra/core/utils';
 import tinycolor from 'tinycolor2';
 import ora from 'ora';
 import chalk from 'chalk';
@@ -8,7 +8,7 @@ import Readline from 'readline';
 import 'dotenv/config.js';
 
 import gradient from 'gradient-string';
-import { agent } from './mastra/agents';
+import { agent } from './@mastra/agents';
 
 type AsyncIterableStream<T> = AsyncIterable<T> & ReadableStream<T>;
 

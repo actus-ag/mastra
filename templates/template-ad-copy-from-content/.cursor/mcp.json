@@ -1,8 +1,8 @@
 {
   "mcpServers": {
-    "mastra": {
+    "@actus-ag/@mastra": {
       "command": "npx",
-      "args": ["-y", "@actus-ag/mastra-mcp-docs-server"]
+      "args": ["-y", "@mastra/mcp-docs-server"]
     }
   }
 }

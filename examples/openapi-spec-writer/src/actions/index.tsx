@@ -1,12 +1,12 @@
 "use server";
 
-import { BaseLogMessage } from "@actus-ag/mastra-core/logger";
-import { mastra } from "../mastra";
+import { BaseLogMessage } from "@mastra/cli/cli/cli/core/logger";
+import { @@mastra/cli/cli/cli } from "../@@mastra/cli/cli/cli";
 
-const makePRToMastraWorkflow = mastra
+const makePRToMastraWorkflow = @@mastra/cli/cli/cli
   .getWorkflow("makePRToMastraWorkflow")
   .createRun();
-const openApiSpecGenWorkflow = mastra
+const openApiSpecGenWorkflow = @@mastra/cli/cli/cli
   .getWorkflow("openApiSpecGenWorkflow")
   .createRun();
 
@@ -43,7 +43,7 @@ export async function generateOpenApiSpec({
     )?.output?.mergedSpec;
 
     const logs =
-      (await mastra.getLogsByRunId({
+      (await @@mastra/cli/cli/cli.getLogsByRunId({
         runId: res.runId,
         transportId: "upstash",
       })) || [];
@@ -52,7 +52,7 @@ export async function generateOpenApiSpec({
   } catch (error: unknown) {
     const { runId, message } = error as { runId: string; message: string };
     const logs =
-      (await mastra.getLogsByRunId({ runId, transportId: "upstash" })) || [];
+      (await @@mastra/cli/cli/cli.getLogsByRunId({ runId, transportId: "upstash" })) || [];
     return { message: "failed", data: message, logs };
   }
 }
@@ -71,8 +71,8 @@ export async function makeMastraPR({
       triggerData: {
         integration_name: integrationName,
         site_url: crawledUrl,
-        owner: "mastra",
-        repo: "mastra",
+        owner: "@actus-ag/@@mastra/cli/cli/cli",
+        repo: "@actus-ag/@@mastra/cli/cli/cli",
         yaml,
       },
     });
@@ -84,7 +84,7 @@ export async function makeMastraPR({
     const pr_url = prUrl;
 
     const logs =
-      (await mastra.getLogsByRunId({
+      (await @@mastra/cli/cli/cli.getLogsByRunId({
         runId: res.runId,
         transportId: "upstash",
       })) || [];
@@ -93,7 +93,7 @@ export async function makeMastraPR({
   } catch (error: unknown) {
     const { runId, message } = error as { runId: string; message: string };
     const logs =
-      (await mastra.getLogsByRunId({ runId, transportId: "upstash" })) || [];
+      (await @@mastra/cli/cli/cli.getLogsByRunId({ runId, transportId: "upstash" })) || [];
     return { message: "failed", data: message, logs };
   }
 }

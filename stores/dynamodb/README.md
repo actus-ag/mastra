@@ -1,4 +1,4 @@
-# @actus-ag/mastra-dynamodb
+# @mastra/dynamodb
 
 A DynamoDB storage implementation for Mastra using a single-table design pattern with ElectroDB.
 
@@ -14,11 +14,11 @@ A DynamoDB storage implementation for Mastra using a single-table design pattern
 ## Installation
 
 ```bash
-npm install @actus-ag/mastra-dynamodb
+npm install @mastra/dynamodb
 # or
-pnpm add @actus-ag/mastra-dynamodb
+pnpm add @mastra/dynamodb
 # or
-yarn add @actus-ag/mastra-dynamodb
+yarn add @mastra/dynamodb
 ```
 
 ## Prerequisites
@@ -30,16 +30,16 @@ Before using this package, you need to create a DynamoDB table with the required
 ### Basic Usage
 
 ```typescript
-import { Memory } from '@actus-ag/mastra-memory';
-import { DynamoDBStore } from '@actus-ag/mastra-dynamodb';
-import { PineconeVector } from '@actus-ag/mastra-pinecone';
+import { Memory } from '@mastra/memory';
+import { DynamoDBStore } from '@mastra/dynamodb';
+import { PineconeVector } from '@mastra/pinecone';
 
 // Initialize the DynamoDB storage
 const storage = new DynamoDBStore({
   name: 'dynamodb',
   config: {
     region: 'us-east-1',
-    tableName: 'mastra-single-table', // Name of your DynamoDB table
+    tableName: '@mastra-single-table', // Name of your DynamoDB table
   },
 });
 
@@ -71,7 +71,7 @@ const storage = new DynamoDBStore({
   name: 'dynamodb',
   config: {
     region: 'us-east-1',
-    tableName: 'mastra-single-table',
+    tableName: '@mastra-single-table',
     endpoint: 'http://localhost:8000', // Local DynamoDB endpoint
   },
 });
@@ -121,7 +121,7 @@ The `DynamoDBStore` constructor accepts the following configuration options:
 
 ## Architectural Approach
 
-This storage adapter utilizes a **single-table design pattern** leveraging [ElectroDB](https://electrodb.dev/), which is a common and recommended approach for DynamoDB. This differs architecturally from relational database adapters (like `@actus-ag/mastra-pg` or `@actus-ag/mastra-libsql`) that typically use multiple tables, each dedicated to a specific entity (threads, messages, etc.).
+This storage adapter utilizes a **single-table design pattern** leveraging [ElectroDB](https://electrodb.dev/), which is a common and recommended approach for DynamoDB. This differs architecturally from relational database adapters (like `@mastra/pg` or `@mastra/libsql`) that typically use multiple tables, each dedicated to a specific entity (threads, messages, etc.).
 
 Key aspects of this approach:
 

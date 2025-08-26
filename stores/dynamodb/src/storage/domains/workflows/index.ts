@@ -1,7 +1,7 @@
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import { WorkflowsStorage } from '@actus-ag/mastra-core/storage';
-import type { WorkflowRun, WorkflowRuns } from '@actus-ag/mastra-core/storage';
-import type { WorkflowRunState } from '@actus-ag/mastra-core/workflows';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import { WorkflowsStorage } from '@mastra/core/storage';
+import type { WorkflowRun, WorkflowRuns } from '@mastra/core/storage';
+import type { WorkflowRunState } from '@mastra/core/workflows';
 import type { Service } from 'electrodb';
 
 // Define the structure for workflow snapshot items retrieved from DynamoDB

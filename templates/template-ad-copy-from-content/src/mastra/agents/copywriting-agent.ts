@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@actus-ag/mastra-core/agent';
+import { Agent } from '@mastra/core/agent';
 
 export const copywritingAgent = new Agent({
   name: 'Copywriting Agent',

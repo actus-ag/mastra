@@ -12,7 +12,7 @@ import { createTestSuite } from '@internal/storage-test-utils';
 import { beforeAll, describe } from 'vitest';
 import { DynamoDBStore } from '..';
 
-const TEST_TABLE_NAME = 'mastra-single-table-test'; // Define the single table name
+const TEST_TABLE_NAME = '@mastra-single-table-test'; // Define the single table name
 const LOCAL_ENDPOINT = 'http://localhost:8000';
 const LOCAL_REGION = 'local-test'; // Use a distinct region for local testing
 

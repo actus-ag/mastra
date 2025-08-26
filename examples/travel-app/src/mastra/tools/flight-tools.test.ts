@@ -2,7 +2,7 @@
 //   let searchFlightsTool: any;
 
 //   beforeEach(() => {
-//     searchFlightsTool = mastra.getTool('searchFlights');
+//     searchFlightsTool = @mastra.getTool('searchFlights');
 //   });
 
 //   it('should search for flights between two cities', async () => {

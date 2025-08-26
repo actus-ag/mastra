@@ -1,16 +1,16 @@
-# @actus-ag/mastra-evals
+# @mastra/evals
 
 A comprehensive evaluation framework for assessing AI model outputs across multiple dimensions.
 
 ## Installation
 
 ```bash
-npm install @actus-ag/mastra-evals
+npm install @mastra/evals
 ```
 
 ## Overview
 
-`@actus-ag/mastra-evals` provides a suite of evaluation metrics for assessing AI model outputs. The package includes both LLM-based and NLP-based metrics, enabling both automated and model-assisted evaluation of AI responses.
+`@mastra/evals` provides a suite of evaluation metrics for assessing AI model outputs. The package includes both LLM-based and NLP-based metrics, enabling both automated and model-assisted evaluation of AI responses.
 
 ## Features
 
@@ -76,7 +76,7 @@ npm install @actus-ag/mastra-evals
 ### Basic Example
 
 ```typescript
-import { ContentSimilarityMetric, ToxicityMetric } from '@actus-ag/mastra-evals';
+import { ContentSimilarityMetric, ToxicityMetric } from '@mastra/evals';
 
 // Initialize metrics
 const similarityMetric = new ContentSimilarityMetric({
@@ -103,7 +103,7 @@ console.log('Toxicity Score:', toxicityResult.score);
 ### Context-Aware Evaluation
 
 ```typescript
-import { FaithfulnessMetric } from '@actus-ag/mastra-evals';
+import { FaithfulnessMetric } from '@mastra/evals';
 
 // Initialize with context
 const faithfulnessMetric = new FaithfulnessMetric({
@@ -144,13 +144,13 @@ The package includes built-in telemetry and logging capabilities:
 - Detailed evaluation traces for debugging
 
 ```typescript
-import { attachListeners } from '@actus-ag/mastra-evals';
+import { attachListeners } from '@mastra/evals';
 
 // Enable basic evaluation tracking
 await attachListeners();
 
 // Store evals in Mastra Storage (if storage is enabled)
-await attachListeners(mastra);
+await attachListeners(@mastra);
 // Note: When using in-memory storage, evaluations are isolated to the test process.
 // When using file storage, evaluations are persisted and can be queried later.
 ```
@@ -166,13 +166,13 @@ Required for LLM-based metrics:
 
 ```typescript
 // Main package exports
-import { evaluate } from '@actus-ag/mastra-evals';
+import { evaluate } from '@mastra/evals';
 // NLP-specific metrics
-import { ContentSimilarityMetric } from '@actus-ag/mastra-evals/nlp';
+import { ContentSimilarityMetric } from '@mastra/evals/nlp';
 ```
 
 ## Related Packages
 
-- `@actus-ag/mastra-core`: Core framework functionality
-- `@actus-ag/mastra-engine`: LLM execution engine
-- `@actus-ag/mastra-mcp`: Model Context Protocol integration
+- `@mastra/core`: Core framework functionality
+- `@mastra/engine`: LLM execution engine
+- `@mastra/mcp`: Model Context Protocol integration

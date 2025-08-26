@@ -4,11 +4,11 @@ import { join } from 'path/posix';
 import { serve } from '@hono/node-server';
 import { serveStatic } from '@hono/node-server/serve-static';
 import { swaggerUI } from '@hono/swagger-ui';
-import type { Mastra } from '@actus-ag/mastra-core';
-import { Telemetry } from '@actus-ag/mastra-core';
-import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
-import { Tool } from '@actus-ag/mastra-core/tools';
-import { InMemoryTaskStore } from '@actus-ag/mastra-server/a2a/store';
+import type { Mastra } from '@mastra/core';
+import { Telemetry } from '@mastra/core';
+import { RuntimeContext } from '@mastra/core/runtime-context';
+import { Tool } from '@mastra/core/tools';
+import { InMemoryTaskStore } from '@mastra/server/a2a/store';
 import type { Context, MiddlewareHandler } from 'hono';
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
@@ -38,7 +38,7 @@ import { html } from './welcome.js';
 type Bindings = {};
 
 type Variables = {
-  mastra: Mastra;
+  @mastra: Mastra;
   runtimeContext: RuntimeContext;
   clients: Set<{ controller: ReadableStreamDefaultController }>;
   tools: Record<string, Tool>;
@@ -69,14 +69,14 @@ ${err.stack.split('\n').slice(1).join('\n')}
 }
 
 export async function createHonoServer(
-  mastra: Mastra,
+  @mastra: Mastra,
   options: ServerBundleOptions = {
     tools: {},
   },
 ) {
   // Create typed Hono app
   const app = new Hono<{ Bindings: Bindings; Variables: Variables }>();
-  const server = mastra.getServer();
+  const server = @mastra.getServer();
   const a2aTaskStore = new InMemoryTaskStore();
 
   // Middleware
@@ -123,7 +123,7 @@ export async function createHonoServer(
     }
 
     c.set('runtimeContext', runtimeContext);
-    c.set('mastra', mastra);
+    c.set('@actus-ag/@mastra', @mastra);
     c.set('tools', options.tools);
     c.set('taskStore', a2aTaskStore);
     c.set('playground', options.playground === true);
@@ -132,7 +132,7 @@ export async function createHonoServer(
   });
 
   // Apply custom server middleware from Mastra instance
-  const serverMiddleware = mastra.getServerMiddleware?.();
+  const serverMiddleware = @mastra.getServerMiddleware?.();
 
   if (serverMiddleware && serverMiddleware.length > 0) {
     for (const m of serverMiddleware) {
@@ -150,7 +150,7 @@ export async function createHonoServer(
       credentials: false,
       maxAge: 3600,
       ...server?.cors,
-      allowHeaders: ['Content-Type', 'Authorization', 'x-mastra-client-type', ...(server?.cors?.allowHeaders ?? [])],
+      allowHeaders: ['Content-Type', 'Authorization', 'x-@mastra-client-type', ...(server?.cors?.allowHeaders ?? [])],
       exposeHeaders: ['Content-Length', 'X-Requested-With', ...(server?.cors?.exposeHeaders ?? [])],
     };
     app.use('*', timeout(server?.timeout ?? 3 * 60 * 1000), cors(corsConfig));
@@ -196,7 +196,7 @@ export async function createHonoServer(
         middlewares.push(describeRoute(route.openapi));
       }
 
-      const handler = 'handler' in route ? route.handler : await route.createHandler({ mastra });
+      const handler = 'handler' in route ? route.handler : await route.createHandler({ @mastra });
 
       if (route.method === 'GET') {
         app.get(route.path, ...middlewares, handler);
@@ -504,7 +504,7 @@ export async function createHonoServer(
       );
 
       // Inject the server port information
-      const serverOptions = mastra.getServer();
+      const serverOptions = @mastra.getServer();
       const port = serverOptions?.port ?? (Number(process.env.PORT) || 4111);
       const host = serverOptions?.host ?? 'localhost';
 
@@ -529,9 +529,9 @@ export async function createHonoServer(
   return app;
 }
 
-export async function createNodeServer(mastra: Mastra, options: ServerBundleOptions = { tools: {} }) {
-  const app = await createHonoServer(mastra, options);
-  const serverOptions = mastra.getServer();
+export async function createNodeServer(@mastra: Mastra, options: ServerBundleOptions = { tools: {} }) {
+  const app = await createHonoServer(@mastra, options);
+  const serverOptions = @mastra.getServer();
 
   const port = serverOptions?.port ?? (Number(process.env.PORT) || 4111);
 
@@ -542,7 +542,7 @@ export async function createNodeServer(mastra: Mastra, options: ServerBundleOpti
       hostname: serverOptions?.host,
     },
     () => {
-      const logger = mastra.getLogger();
+      const logger = @mastra.getLogger();
       const host = serverOptions?.host ?? 'localhost';
       logger.info(` Mastra API running on port http://${host}:${port}/api`);
       if (options?.playground) {

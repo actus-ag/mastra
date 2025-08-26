@@ -1,6 +1,6 @@
 export const answerRelevancyScorer = `
 import { openai } from "@ai-sdk/openai";
-import { createAnswerRelevancyScorer } from "@actus-ag/mastra-evals/scorers/llm";
+import { createAnswerRelevancyScorer } from "@mastra/evals/scorers/llm";
  
 const scorer = createAnswerRelevancyScorer({ model: openai("gpt-4o-mini") });
  

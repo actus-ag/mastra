@@ -28,7 +28,7 @@ In this guide you'll learn how to install the necessary Mastra dependencies, cre
 First, install the necessary Mastra dependencies to run an Agent. This guide uses OpenAI as its model but you can use any supported [model provider](/docs/getting-started/model-providers).
 
 ```bash copy
-npm install mastra@latest @actus-ag/mastra-core@latest @actus-ag/mastra-libsql@latest zod@^3.0.0 @ai-sdk/openai@^1.0.0
+npm install @actus-ag/@mastra/cli/cli@latest @mastra/cli/cli/cli/core@latest @mastra/cli/cli/cli/libsql@latest zod@^3.0.0 @ai-sdk/openai@^1.0.0
 ```
 
 If not existent yet, create an `.env` file and add your OpenAI API key:
@@ -41,18 +41,18 @@ OPENAI_API_KEY=<your-api-key>
 Each LLM provider uses a different env var. See [Model Capabilities](/docs/getting-started/model-capability) for more information.
 </Callout>
 
-Create a Mastra configuration file at `src/mastra/index.ts`:
+Create a Mastra configuration file at `src/@@mastra/cli/cli/cli/index.ts`:
 
-```ts filename="src/mastra/index.ts" copy
-import { Mastra } from '@actus-ag/mastra-core/mastra';
+```ts filename="src/@@mastra/cli/cli/cli/index.ts" copy
+import { Mastra } from '@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli';
 
-export const mastra = new Mastra({});
+export const @@mastra/cli/cli/cli = new Mastra({});
 ```
 
-Create a `weatherTool` that the `weatherAgent` will use at `src/mastra/tools/weather-tool.ts`. It returns a placeholder value inside the `execute()` function (you'd put your API calls in here).
+Create a `weatherTool` that the `weatherAgent` will use at `src/@@mastra/cli/cli/cli/tools/weather-tool.ts`. It returns a placeholder value inside the `execute()` function (you'd put your API calls in here).
 
-```ts filename="src/mastra/tools/weather-tool.ts" copy
-import { createTool } from "@actus-ag/mastra-core/tools";
+```ts filename="src/@@mastra/cli/cli/cli/tools/weather-tool.ts" copy
+import { createTool } from "@mastra/cli/cli/cli/core/tools";
 import { z } from "zod";
  
 export const weatherTool = createTool({
@@ -72,11 +72,11 @@ export const weatherTool = createTool({
 });
 ```
 
-Add a `weatherAgent` at `src/mastra/agents/weather-agent.ts`:
+Add a `weatherAgent` at `src/@@mastra/cli/cli/cli/agents/weather-agent.ts`:
 
-```ts filename="src/mastra/agents/weather-agent.ts" copy
+```ts filename="src/@@mastra/cli/cli/cli/agents/weather-agent.ts" copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { weatherTool } from "../tools/weather-tool";
  
 export const weatherAgent = new Agent({
@@ -98,13 +98,13 @@ export const weatherAgent = new Agent({
 });
 ```
 
-Lastly, add the `weatherAgent` to `src/mastra/index.ts`:
+Lastly, add the `weatherAgent` to `src/@@mastra/cli/cli/cli/index.ts`:
 
-```ts filename="src/mastra/index.ts" copy {2, 5}
-import { Mastra } from '@actus-ag/mastra-core/mastra';
+```ts filename="src/@@mastra/cli/cli/cli/index.ts" copy {2, 5}
+import { Mastra } from '@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli';
 import { weatherAgent } from './agents/weather-agent';
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   agents: { weatherAgent },
 });
 
@@ -137,7 +137,7 @@ Adding the `/api/weather` endpoint looks like this:
 
 ```ts filename="src/server.ts" copy {2, 11-27}
 import express, { Request, Response } from 'express';
-import { mastra } from "./mastra"
+import { @@mastra/cli/cli/cli } from "./@@mastra/cli/cli/cli"
 
 const app = express();
 const port = 3456;
@@ -153,7 +153,7 @@ app.get("/api/weather", async (req: Request, res: Response) => {
     return res.status(400).send("Missing 'city' query parameter");
   }
  
-  const agent = mastra.getAgent("weatherAgent");
+  const agent = @@mastra/cli/cli/cli.getAgent("weatherAgent");
  
   try {
     const result = await agent.generate(`What's the weather like in ${city}?`);
@@ -169,7 +169,7 @@ app.listen(port, () => {
 });
 ```
 
-By importing the `src/mastra/index.ts` file you can use methods like [`.getAgent()`](/reference/agents/getAgent) to get programmatic access. With [`.generate()`](/reference/agents/generate) you then can interact with the respective agent.
+By importing the `src/@@mastra/cli/cli/cli/index.ts` file you can use methods like [`.getAgent()`](/reference/agents/getAgent) to get programmatic access. With [`.generate()`](/reference/agents/generate) you then can interact with the respective agent.
 
 <Callout>
 Read the [Agent reference docs](/reference/agents/agent) to learn more.
@@ -196,7 +196,7 @@ Add a script to your `package.json`:
 ```json filename="package.json" copy
 {
   "scripts": {
-    "mastra:dev": "mastra dev"
+    "@@mastra/cli/cli/cli:dev": "@actus-ag/@mastra/cli/cli dev"
   },
 }
 ```
@@ -204,5 +204,5 @@ Add a script to your `package.json`:
 Start the Mastra playground:
 
 ```bash copy
-npm run mastra:dev
+npm run @@mastra/cli/cli/cli:dev
 ```

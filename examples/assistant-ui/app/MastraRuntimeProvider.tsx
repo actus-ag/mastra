@@ -6,10 +6,10 @@ import {
   AppendMessage,
   AssistantRuntimeProvider,
 } from '@assistant-ui/react';
-import { MastraClient } from '@actus-ag/mastra-client-js';
+import { MastraClient } from '@@mastra/cli/cli/cli-client-js';
 import { useState, ReactNode } from 'react';
 
-const mastra = new MastraClient({
+const @@mastra/cli/cli/cli = new MastraClient({
   baseUrl: process.env.NEXT_PUBLIC_MASTRA_API_URL || 'http://localhost:4111',
 });
 
@@ -33,7 +33,7 @@ export function MastraRuntimeProvider({
     setIsRunning(true);
 
     try {
-      const agent = mastra.getAgent('ycAgent');
+      const agent = @@mastra/cli/cli/cli.getAgent('ycAgent');
       const response = await agent.stream({
         messages: [
           {

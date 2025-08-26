@@ -102,9 +102,9 @@ const questions = await generateQuestions(summary); // Much better!
 ### Using the Workflow
 
 ```typescript
-import { mastra } from './src/mastra/index';
+import { @mastra } from './src/@mastra/index';
 
-const run = await mastra.getWorkflow('csvToQuestionsWorkflow').createRunAsync();
+const run = await @mastra.getWorkflow('csvToQuestionsWorkflow').createRunAsync();
 
 // Using a CSV URL
 const result = await run.start({
@@ -119,9 +119,9 @@ console.log(result.result.questions);
 ### Using the CSV Questions Agent
 
 ```typescript
-import { mastra } from './src/mastra/index';
+import { @mastra } from './src/@mastra/index';
 
-const agent = mastra.getAgent('csvQuestionAgent');
+const agent = @mastra.getAgent('csvQuestionAgent');
 
 // The agent can handle the full process with natural language
 const response = await agent.stream([
@@ -139,14 +139,14 @@ for await (const chunk of response.textStream) {
 ### Using Individual Tools
 
 ```typescript
-import { mastra } from './src/mastra/index';
-import { csvFetcherTool } from './src/mastra/tools/download-csv-tool';
-import { generateQuestionsFromTextTool } from './src/mastra/tools/generate-questions-from-text-tool';
+import { @mastra } from './src/@mastra/index';
+import { csvFetcherTool } from './src/@mastra/tools/download-csv-tool';
+import { generateQuestionsFromTextTool } from './src/@mastra/tools/generate-questions-from-text-tool';
 
 // Step 1: Download CSV and generate summary
 const csvResult = await csvFetcherTool.execute({
   context: { csvUrl: 'https://example.com/dataset.csv' },
-  mastra,
+  @mastra,
   runtimeContext: new RuntimeContext(),
 });
 
@@ -159,7 +159,7 @@ const questionsResult = await generateQuestionsFromTextTool.execute({
     extractedText: csvResult.summary,
     maxQuestions: 10,
   },
-  mastra,
+  @mastra,
   runtimeContext: new RuntimeContext(),
 });
 
@@ -272,7 +272,7 @@ export const textQuestionAgent = new Agent({
 ### Project Structure
 
 ```text
-src/mastra/
+src/@mastra/
 ├── agents/
 │   ├── csv-question-agent.ts       # CSV processing and question generation agent
 │   ├── csv-summarization-agent.ts  # CSV data summarization agent

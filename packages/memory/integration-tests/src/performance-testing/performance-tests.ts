@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { faker } from '@faker-js/faker';
-import type { Memory } from '@actus-ag/mastra-memory';
+import type { Memory } from '@mastra/memory';
 import type { TextPart, ImagePart, FilePart, ToolCallPart } from 'ai';
 import { afterAll, beforeEach, describe, expect, it } from 'vitest';
 

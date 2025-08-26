@@ -12,19 +12,19 @@ The `CloudflareDeployer` class handles deployment of standalone Mastra applicati
 ## Installation
 
 ```bash copy
-npm install @actus-ag/mastra-deployer-cloudflare@latest
+npm install @mastra/cli/cli/cli/deployer-cloudflare@latest
 ```
 
 ## Usage example
 
-```typescript filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { CloudflareDeployer } from "@actus-ag/mastra-deployer-cloudflare";
+```typescript filename="src/@@mastra/cli/cli/cli/index.ts" showLineNumbers copy
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { CloudflareDeployer } from "@mastra/cli/cli/cli/deployer-cloudflare";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // ...
   deployer: new CloudflareDeployer({
-    projectName: "hello-mastra",
+    projectName: "hello-@@mastra/cli/cli/cli",
     env: {
       NODE_ENV: "production",
     },
@@ -47,17 +47,17 @@ npx wrangler login
 Run the following to build and deploy your application to Cloudflare
 
 ```bash copy
-npm run build && wrangler deploy --config .mastra/output/wrangler.json
+npm run build && wrangler deploy --config .@@mastra/cli/cli/cli/output/wrangler.json
 ```
 
-> You can also run `wrangler dev --config .mastra/output/wrangler.json` from your project root to test your Mastra application locally.
+> You can also run `wrangler dev --config .@@mastra/cli/cli/cli/output/wrangler.json` from your project root to test your Mastra application locally.
 
 ## Build output
 
 The build output for Mastra applications using the `CloudflareDeployer` includes all agents, tools, and workflows in your project, along with Mastra specific files required to run your application on Cloudflare.
 
 <FileTree>
-  <FileTree.Folder name=".mastra" defaultOpen>
+  <FileTree.Folder name=".@@mastra/cli/cli/cli" defaultOpen>
     <FileTree.Folder name="output" defaultOpen>
       <FileTree.File name="index.mjs" />
       <FileTree.File name="wrangler.json" />
@@ -66,11 +66,11 @@ The build output for Mastra applications using the `CloudflareDeployer` includes
   <FileTree.File name="package.json" />
 </FileTree>
 
-The `CloudflareDeployer` automatically generates a `wrangler.json` configuration file in `.mastra/output` with the following settings:
+The `CloudflareDeployer` automatically generates a `wrangler.json` configuration file in `.@@mastra/cli/cli/cli/output` with the following settings:
 
 ```json
 {
-  "name": "hello-mastra",
+  "name": "hello-@@mastra/cli/cli/cli",
   "main": "./index.mjs",
   "compatibility_date": "2025-04-01",
   "compatibility_flags": ["nodejs_compat", "nodejs_compat_populate_process_env"],

@@ -1,4 +1,4 @@
-import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
+import { RuntimeContext } from '@mastra/core/runtime-context';
 
 export function parseClientRuntimeContext(runtimeContext?: RuntimeContext | Record<string, any>) {
   if (runtimeContext) {

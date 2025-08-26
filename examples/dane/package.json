@@ -1,6 +1,6 @@
 {
-  "name": "@actus-ag/mastra-dane",
-  "version": "0.0.44",
+  "name": "@mastra/dane",
+  "version": "0.0.46-alpha.0",
   "main": "dist/index.js",
   "type": "module",
   "files": [
@@ -24,19 +24,19 @@
   "devDependencies": {
     "@types/node": "^20.17.57",
     "@types/pdf-parse": "^1.1.4",
-    "@actus-ag/mastra-cli": "workspace:*",
+    "@mastra/cli/cli": "workspace:*",
     "tsx": "^4.19.3"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^1.2.12",
     "@inquirer/prompts": "^7.3.3",
-    "@actus-ag/mastra-core": "workspace:*",
-    "@actus-ag/mastra-github": "workspace:*",
-    "@actus-ag/mastra-libsql": "workspace:*",
-    "@actus-ag/mastra-mcp": "workspace:*",
-    "@actus-ag/mastra-memory": "workspace:*",
-    "@actus-ag/mastra-rag": "workspace:*",
-    "@actus-ag/mastra-upstash": "workspace:*",
+    "@mastra/core": "workspace:*",
+    "@mastra/github": "workspace:*",
+    "@mastra/libsql": "workspace:*",
+    "@mastra/mcp": "workspace:*",
+    "@mastra/memory": "workspace:*",
+    "@mastra/rag": "workspace:*",
+    "@mastra/upstash": "workspace:*",
     "boxen": "^8.0.1",
     "chalk": "^5.4.1",
     "cli-table3": "^0.6.5",

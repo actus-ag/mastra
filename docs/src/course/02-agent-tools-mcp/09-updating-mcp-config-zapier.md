@@ -1,6 +1,6 @@
 # Updating Your MCP Configuration
 
-Now, let's update your MCP configuration in `src/mastra/agents/index.ts` to include the Zapier server:
+Now, let's update your MCP configuration in `src/@mastra/agents/index.ts` to include the Zapier server:
 
 ```typescript
 const mcp = new MCPClient({

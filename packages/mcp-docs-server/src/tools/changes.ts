@@ -65,11 +65,11 @@ export const changesInputSchema = z.object({
 export type ChangesInput = z.infer<typeof changesInputSchema>;
 
 export const changesTool = {
-  name: 'mastraChanges',
+  name: '@mastraChanges',
   description: `Get changelog information for Mastra.ai packages. ${packagesListing}`,
   parameters: changesInputSchema,
   execute: async (args: ChangesInput) => {
-    void logger.debug('Executing mastraChanges tool', { package: args.package });
+    void logger.debug('Executing @mastraChanges tool', { package: args.package });
     try {
       if (!args.package) {
         const packages = await listPackageChangelogs();
@@ -80,7 +80,7 @@ export const changesTool = {
       const content = await readPackageChangelog(args.package);
       return content;
     } catch (error) {
-      void logger.error('Failed to execute mastraChanges tool', error);
+      void logger.error('Failed to execute @mastraChanges tool', error);
       throw error;
     }
   },

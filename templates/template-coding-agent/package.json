@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "mastra dev",
-    "build": "mastra build",
-    "start": "mastra start"
+    "dev": "@mastra/cli/cli dev",
+    "build": "@mastra/cli/cli build",
+    "start": "@mastra/cli/cli start"
   },
   "keywords": [],
   "author": "",
@@ -17,19 +17,19 @@
     "node": ">=20.9.0"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^1.3.23",
+    "@ai-sdk/openai": "^1.3.24",
     "@e2b/code-interpreter": "^1.5.1",
-    "@actus-ag/mastra-core": "latest",
-    "@actus-ag/mastra-fastembed": "latest",
-    "@actus-ag/mastra-libsql": "latest",
-    "@actus-ag/mastra-loggers": "latest",
-    "@actus-ag/mastra-mcp": "latest",
-    "@actus-ag/mastra-memory": "latest",
+    "@mastra/core": "latest",
+    "@mastra/fastembed": "latest",
+    "@mastra/libsql": "latest",
+    "@mastra/loggers": "latest",
+    "@mastra/mcp": "latest",
+    "@mastra/memory": "latest",
     "zod": "^3.25.76"
   },
   "devDependencies": {
     "@types/node": "^24.1.0",
-    "mastra": "latest",
+    "@mastra/cli/cli": "latest",
     "typescript": "^5.8.3"
   }
 }

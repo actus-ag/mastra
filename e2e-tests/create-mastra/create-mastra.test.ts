@@ -7,7 +7,7 @@ import { existsSync } from 'fs';
 import { execa } from 'execa';
 import { execSync } from 'child_process';
 
-describe('create mastra', () => {
+describe('create @mastra', () => {
   let fixturePath: string;
   let projectPath: string;
 
@@ -19,10 +19,10 @@ describe('create mastra', () => {
       console.log('registry', registry);
       console.log('tag', tag);
 
-      fixturePath = await mkdtemp(join(tmpdir(), 'mastra-create-test-'));
+      fixturePath = await mkdtemp(join(tmpdir(), '@mastra-create-test-'));
       projectPath = join(fixturePath, 'project');
       process.env.npm_config_registry = registry;
-      execSync(`pnpm dlx create-mastra@${tag} -c agents,tools,workflows -l openai -e project`, {
+      execSync(`pnpm dlx @actus-ag/@actus-ag/create-@actus-ag/@mastra/cli/cli@${tag} -c agents,tools,workflows -l openai -e project`, {
         cwd: fixturePath,
         stdio: ['inherit', 'inherit', 'inherit'],
       });
@@ -39,7 +39,7 @@ describe('create mastra', () => {
   });
 
   it('folder should exist', async () => {
-    expect(existsSync(join(projectPath, 'src', 'mastra', 'index.ts'))).toBe(true);
+    expect(existsSync(join(projectPath, 'src', '@actus-ag/@mastra', 'index.ts'))).toBe(true);
   });
 
   describe('dev', () => {

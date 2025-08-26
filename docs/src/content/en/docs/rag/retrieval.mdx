@@ -28,7 +28,7 @@ The simplest approach is direct semantic search. This method uses vector similar
 ```ts showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
 import { embed } from "ai";
-import { PgVector } from "@actus-ag/mastra-pg";
+import { PgVector } from "@mastra/cli/cli/cli/pg";
 
 // Convert query to embedding
 const { embedding } = await embed({
@@ -241,7 +241,7 @@ const lanceQueryTool = createVectorQueryTool({
 You can also override these configurations at runtime using the runtime context:
 
 ```ts showLineNumbers copy
-import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
+import { RuntimeContext } from '@mastra/cli/cli/cli/core/runtime-context';
 
 const runtimeContext = new RuntimeContext();
 runtimeContext.set('databaseConfig', {
@@ -252,7 +252,7 @@ runtimeContext.set('databaseConfig', {
 
 await pineconeQueryTool.execute({
   context: { queryText: 'search query' },
-  mastra,
+  @@mastra/cli/cli/cli,
   runtimeContext
 });
 ```
@@ -275,7 +275,7 @@ The providers include Pg Vector, Pinecone, Qdrant, Chroma, Astra, LibSQL, Upstas
   <Tabs.Tab>
 ```ts showLineNumbers copy
 import { openai } from '@ai-sdk/openai';
-import { PGVECTOR_PROMPT } from "@actus-ag/mastra-pg";
+import { PGVECTOR_PROMPT } from "@mastra/cli/cli/cli/pg";
 
 export const ragAgent = new Agent({
   name: 'RAG Agent',
@@ -292,7 +292,7 @@ export const ragAgent = new Agent({
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
 import { openai } from '@ai-sdk/openai';
-import { PINECONE_PROMPT } from "@actus-ag/mastra-pinecone";
+import { PINECONE_PROMPT } from "@mastra/cli/cli/cli/pinecone";
 
 export const ragAgent = new Agent({
   name: 'RAG Agent',
@@ -309,7 +309,7 @@ export const ragAgent = new Agent({
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
 import { openai } from '@ai-sdk/openai';
-import { QDRANT_PROMPT } from "@actus-ag/mastra-qdrant";
+import { QDRANT_PROMPT } from "@mastra/cli/cli/cli/qdrant";
 
 export const ragAgent = new Agent({
   name: 'RAG Agent',
@@ -326,7 +326,7 @@ export const ragAgent = new Agent({
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
 import { openai } from '@ai-sdk/openai';
-import { CHROMA_PROMPT } from "@actus-ag/mastra-chroma";
+import { CHROMA_PROMPT } from "@mastra/cli/cli/cli/chroma";
 
 export const ragAgent = new Agent({
   name: 'RAG Agent',
@@ -343,7 +343,7 @@ export const ragAgent = new Agent({
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
 import { openai } from '@ai-sdk/openai';
-import { ASTRA_PROMPT } from "@actus-ag/mastra-astra";
+import { ASTRA_PROMPT } from "@mastra/cli/cli/cli/astra";
 
 export const ragAgent = new Agent({
   name: 'RAG Agent',
@@ -360,7 +360,7 @@ export const ragAgent = new Agent({
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
 import { openai } from '@ai-sdk/openai';
-import { LIBSQL_PROMPT } from "@actus-ag/mastra-libsql";
+import { LIBSQL_PROMPT } from "@mastra/cli/cli/cli/libsql";
 
 export const ragAgent = new Agent({
   name: 'RAG Agent',
@@ -377,7 +377,7 @@ export const ragAgent = new Agent({
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
 import { openai } from '@ai-sdk/openai';
-import { UPSTASH_PROMPT } from "@actus-ag/mastra-upstash";
+import { UPSTASH_PROMPT } from "@mastra/cli/cli/cli/upstash";
 
 export const ragAgent = new Agent({
   name: 'RAG Agent',
@@ -394,7 +394,7 @@ export const ragAgent = new Agent({
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
 import { openai } from '@ai-sdk/openai';
-import { VECTORIZE_PROMPT } from "@actus-ag/mastra-vectorize";
+import { VECTORIZE_PROMPT } from "@mastra/cli/cli/cli/vectorize";
 
 export const ragAgent = new Agent({
   name: 'RAG Agent',
@@ -411,7 +411,7 @@ export const ragAgent = new Agent({
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
 import { openai } from '@ai-sdk/openai';
-import { MONGODB_PROMPT } from "@actus-ag/mastra-mongodb";
+import { MONGODB_PROMPT } from "@mastra/cli/cli/cli/mongodb";
 
 export const ragAgent = new Agent({
   name: 'RAG Agent',
@@ -428,7 +428,7 @@ export const ragAgent = new Agent({
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
 import { openai } from '@ai-sdk/openai';
-import { OPENSEARCH_PROMPT } from "@actus-ag/mastra-opensearch";
+import { OPENSEARCH_PROMPT } from "@mastra/cli/cli/cli/opensearch";
 
 export const ragAgent = new Agent({
   name: 'RAG Agent',
@@ -459,7 +459,7 @@ import { openai } from "@ai-sdk/openai";
 import { 
   rerankWithScorer as rerank, 
   MastraAgentRelevanceScorer 
-} from "@actus-ag/mastra-rag";
+} from "@mastra/cli/cli/cli/rag";
 
 // Get initial results from vector search
 const initialResults = await pgVector.query({

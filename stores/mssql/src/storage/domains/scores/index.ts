@@ -1,7 +1,7 @@
-import type { PaginationInfo, StoragePagination } from '@actus-ag/mastra-core';
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import type { ScoreRowData } from '@actus-ag/mastra-core/scores';
-import { ScoresStorage, TABLE_SCORERS } from '@actus-ag/mastra-core/storage';
+import type { PaginationInfo, StoragePagination } from '@mastra/core';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import type { ScoreRowData } from '@mastra/core/scores';
+import { ScoresStorage, TABLE_SCORERS } from '@mastra/core/storage';
 import type { ConnectionPool } from 'mssql';
 import type { StoreOperationsMSSQL } from '../operations';
 import { getSchemaName, getTableName } from '../utils';

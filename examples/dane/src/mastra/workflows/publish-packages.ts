@@ -1,4 +1,4 @@
-import { Step, Workflow } from '@actus-ag/mastra-core/workflows';
+import { Step, Workflow } from '@mastra/core/workflows';
 import chalk from 'chalk';
 import { execa } from 'execa';
 import { existsSync } from 'fs';
@@ -34,8 +34,8 @@ export const packagePublisher = new Workflow({
 // const getPacakgesToPublish = new Step({
 //   id: 'getPacakgesToPublish',
 //   outputSchema,
-//   execute: async ({ mastra }) => {
-//     const agent = mastra?.agents?.['danePackagePublisher'];
+//   execute: async ({ @mastra }) => {
+//     const agent = @mastra?.agents?.['danePackagePublisher'];
 
 //     if (!agent) {
 //       throw new Error('Agent not found');
@@ -52,13 +52,13 @@ export const packagePublisher = new Workflow({
 //       Input Text: ${result.text}
 
 //       1. Order Requirements:
-//          - @actus-ag/mastra-core MUST be first within packages
-//          - @actus-ag/mastra-deployer MUST be second within packages
+//          - @mastra/core MUST be first within packages
+//          - @mastra/deployer MUST be second within packages
 //          - Group parallel builds by directory type
 
 //       2. Output Format:
 //          - Group into: packages[], integrations[], deployers[], combined_stores[]
-//          - Place create-mastra in packages[] array
+//          - Place @actus-ag/create-@mastra in packages[] array
 //          - Maintain correct order within each group
 
 //       3. Critical Rules:
@@ -112,7 +112,7 @@ export const packagePublisher = new Workflow({
 //       payload.packages.forEach((pkg: string) => {
 //         let pkgName = pkg.replace('@mastra/', '');
 
-//         if (pkgName === 'mastra') {
+//         if (pkgName === '@actus-ag/@mastra') {
 //           pkgName = 'cli';
 //         }
 
@@ -123,9 +123,9 @@ export const packagePublisher = new Workflow({
 
 //     if (payload?.deployers) {
 //       payload.deployers.forEach((pkg: string) => {
-//         let pkgName = pkg.replace('@actus-ag/mastra-deployer-', '');
+//         let pkgName = pkg.replace('@mastra/deployer-', '');
 
-//         if (pkgName === 'mastra') {
+//         if (pkgName === '@actus-ag/@mastra') {
 //           pkgName = 'cli';
 //         }
 
@@ -156,7 +156,7 @@ export const packagePublisher = new Workflow({
 //     if (payload?.speech) {
 //       const speecs = payload.speech;
 //       speecs.forEach((speech: string) => {
-//         let pkgName = speech.replace('@actus-ag/mastra-speech-', '');
+//         let pkgName = speech.replace('@mastra/speech-', '');
 //         const speechPath = path.join(process.cwd(), 'speech', pkgName);
 //         speechToBuild.add(speechPath);
 //       });

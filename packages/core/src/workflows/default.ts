@@ -216,7 +216,7 @@ export class DefaultExecutionEngine extends ExecutionEngine {
       throw empty_graph_error;
     }
 
-    const executionSpan = this.mastra?.getTelemetry()?.tracer.startSpan(`workflow.${workflowId}.execute`, {
+    const executionSpan = this.@mastra?.getTelemetry()?.tracer.startSpan(`workflow.${workflowId}.execute`, {
       attributes: { componentName: workflowId, runId },
     });
 
@@ -443,7 +443,7 @@ export class DefaultExecutionEngine extends ExecutionEngine {
       duration = await fn({
         runId,
         workflowId,
-        mastra: this.mastra!,
+        @mastra: this.@mastra!,
         runtimeContext,
         inputData: prevOutput,
         runCount: -1,
@@ -527,7 +527,7 @@ export class DefaultExecutionEngine extends ExecutionEngine {
       date = await fn({
         runId,
         workflowId,
-        mastra: this.mastra!,
+        @mastra: this.@mastra!,
         runtimeContext,
         inputData: prevOutput,
         runCount: -1,
@@ -691,7 +691,7 @@ export class DefaultExecutionEngine extends ExecutionEngine {
           aiTracingContext,
         };
 
-        const telemetry = this.mastra?.getTelemetry();
+        const telemetry = this.@mastra?.getTelemetry();
         const span = executionContext.executionSpan;
         if (!telemetry || !span) {
           return step.execute(enhancedData);
@@ -728,7 +728,7 @@ export class DefaultExecutionEngine extends ExecutionEngine {
         const result = await runStep({
           runId,
           workflowId,
-          mastra: this.mastra!,
+          @mastra: this.@mastra!,
           runtimeContext,
           inputData: prevOutput,
           runCount: this.getOrGenerateRunCount(step.id),
@@ -1020,7 +1020,7 @@ export class DefaultExecutionEngine extends ExecutionEngine {
             const result = await cond({
               runId,
               workflowId,
-              mastra: this.mastra!,
+              @mastra: this.@mastra!,
               runtimeContext,
               inputData: prevOutput,
               runCount: -1,
@@ -1236,7 +1236,7 @@ export class DefaultExecutionEngine extends ExecutionEngine {
       isTrue = await condition({
         workflowId,
         runId,
-        mastra: this.mastra!,
+        @mastra: this.@mastra!,
         runtimeContext,
         inputData: result.output,
         runCount: -1,
@@ -1519,7 +1519,7 @@ export class DefaultExecutionEngine extends ExecutionEngine {
       runtimeContextObj[key] = value;
     });
 
-    await this.mastra?.getStorage()?.persistWorkflowSnapshot({
+    await this.@mastra?.getStorage()?.persistWorkflowSnapshot({
       workflowName: workflowId,
       runId,
       snapshot: {

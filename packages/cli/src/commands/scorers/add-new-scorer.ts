@@ -43,10 +43,10 @@ export async function selectScorer(): Promise<ScorerTemplate[] | null> {
 
 export async function addNewScorer(scorerId?: string, customDir?: string) {
   const depService = new DepsService();
-  const needsEvals = (await depService.checkDependencies(['@actus-ag/mastra-evals'])) !== `ok`;
+  const needsEvals = (await depService.checkDependencies(['@mastra/evals'])) !== `ok`;
 
   if (needsEvals) {
-    await depService.installPackages(['@actus-ag/mastra-evals']);
+    await depService.installPackages(['@mastra/evals']);
   }
 
   if (!scorerId) {
@@ -107,7 +107,7 @@ async function showInteractivePrompt(providedCustomDir?: string) {
   // Only ask for custom directory if one wasn't provided via --dir flag
   if (!providedCustomDir) {
     const useCustomDir = await p.confirm({
-      message: `Would you like to use a custom directory?${pc.gray('(Default: src/mastra/scorers)')}`,
+      message: `Would you like to use a custom directory?${pc.gray('(Default: src/@mastra/scorers)')}`,
       initialValue: false,
     });
 

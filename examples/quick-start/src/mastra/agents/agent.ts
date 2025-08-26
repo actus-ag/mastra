@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@actus-ag/mastra-core';
+import { Agent } from '@mastra/core';
 
 export const catOne = new Agent({
   name: 'cat-one',

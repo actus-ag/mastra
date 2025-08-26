@@ -1,6 +1,6 @@
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import type { EvalRow, PaginationArgs, PaginationInfo } from '@actus-ag/mastra-core/storage';
-import { LegacyEvalsStorage } from '@actus-ag/mastra-core/storage';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import type { EvalRow, PaginationArgs, PaginationInfo } from '@mastra/core/storage';
+import { LegacyEvalsStorage } from '@mastra/core/storage';
 import type { Service } from 'electrodb';
 
 export class LegacyEvalsDynamoDB extends LegacyEvalsStorage {

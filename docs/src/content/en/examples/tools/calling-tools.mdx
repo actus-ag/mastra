@@ -11,8 +11,8 @@ There are multiple ways to interact with tools created using Mastra. Below you w
 
 Import the tool and call `execute()` with the required `context` and `runtimeContext` parameters. The `runtimeContext` is available as an argument to the step's `execute` function.
 
-```typescript filename="src/mastra/workflows/test-workflow.ts" showLineNumbers copy
-import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows";
+```typescript filename="src/@@mastra/cli/cli/cli/workflows/test-workflow.ts" showLineNumbers copy
+import { createWorkflow, createStep } from "@mastra/cli/cli/cli/core/workflows";
 import { z } from "zod";
 
 import { testTool } from "../tools/test-tool";
@@ -42,8 +42,8 @@ export const testWorkflow = createWorkflow({
 
 Tools are registered with an agent during configuration. The agent can then call these tools automatically based on user requests, or you can access them directly through the agent's tools property. Tools are executed with the required context and runtime context.
 
-```typescript filename="src/mastra/agents/test-agent.ts" showLineNumbers copy
-import { Agent } from "@actus-ag/mastra-core/agent";
+```typescript filename="src/@@mastra/cli/cli/cli/agents/test-agent.ts" showLineNumbers copy
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { openai } from "@ai-sdk/openai";
 
 import { testTool } from "../tools/test-tool";
@@ -61,8 +61,8 @@ export const testAgent = new Agent({
 You can create a simple script to test your tool locally. Import the tool directly and create a runtime context. Call `execute()` with the required `context` and `runtimeContext` for testing the tools functionality.
 
 ```typescript filename="src/test-tool.ts" showLineNumbers copy
-import { RuntimeContext } from "@actus-ag/mastra-core/runtime-context";
-import { testTool } from "../src/mastra/tools/test-tool";
+import { RuntimeContext } from "@mastra/cli/cli/cli/core/runtime-context";
+import { testTool } from "../src/@@mastra/cli/cli/cli/tools/test-tool";
 
 const runtimeContext = new RuntimeContext();
 

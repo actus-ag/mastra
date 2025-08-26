@@ -5,7 +5,7 @@ export const evalEntity = new Entity({
   model: {
     entity: 'eval',
     version: '1',
-    service: 'mastra',
+    service: '@actus-ag/@mastra',
   },
   attributes: {
     entity: {

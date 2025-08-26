@@ -8,14 +8,14 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "latest",
-    "@actus-ag/mastra-core": "latest",
-    "@actus-ag/mastra-evals": "latest",
+    "@mastra/core": "latest",
+    "@mastra/evals": "latest",
     "zod": "latest"
   },
   "pnpm": {
     "overrides": {
-      "@actus-ag/mastra-core": "link:../../../../packages/core",
-      "@actus-ag/mastra-evals": "link:../../../../packages/evals"
+      "@mastra/core": "link:../../../../packages/core",
+      "@mastra/evals": "link:../../../../packages/evals"
     }
   },
   "devDependencies": {

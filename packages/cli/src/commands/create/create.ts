@@ -134,7 +134,7 @@ async function validateGitHubProject(githubUrl: string): Promise<{ isValid: bool
           packageJsonContent = await packageJsonResponse.text();
 
           // If package.json found, try to fetch index.ts from same branch
-          const indexUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/src/mastra/index.ts`;
+          const indexUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/src/@mastra/index.ts`;
           const indexResponse = await fetch(indexUrl);
 
           if (indexResponse.ok) {
@@ -153,31 +153,31 @@ async function validateGitHubProject(githubUrl: string): Promise<{ isValid: bool
       return { isValid: false, errors };
     }
 
-    // Check for @actus-ag/mastra-core dependency
+    // Check for @mastra/core dependency
     try {
       const packageJson = JSON.parse(packageJsonContent);
       const hasMastraCore =
-        packageJson.dependencies?.['@actus-ag/mastra-core'] ||
-        packageJson.devDependencies?.['@actus-ag/mastra-core'] ||
-        packageJson.peerDependencies?.['@actus-ag/mastra-core'];
+        packageJson.dependencies?.['@mastra/core'] ||
+        packageJson.devDependencies?.['@mastra/core'] ||
+        packageJson.peerDependencies?.['@mastra/core'];
 
       if (!hasMastraCore) {
-        errors.push('Missing @actus-ag/mastra-core dependency in package.json');
+        errors.push('Missing @mastra/core dependency in package.json');
       }
     } catch {
       errors.push('Invalid package.json format');
     }
 
-    // Check for src/mastra/index.ts
+    // Check for src/@mastra/index.ts
     if (!indexContent) {
-      errors.push('Missing src/mastra/index.ts file');
+      errors.push('Missing src/@mastra/index.ts file');
     } else {
       // Check if it exports a Mastra instance
       const hasMastraExport =
         indexContent.includes('export') && (indexContent.includes('new Mastra') || indexContent.includes('Mastra('));
 
       if (!hasMastraExport) {
-        errors.push('src/mastra/index.ts does not export a Mastra instance');
+        errors.push('src/@mastra/index.ts does not export a Mastra instance');
       }
     }
 

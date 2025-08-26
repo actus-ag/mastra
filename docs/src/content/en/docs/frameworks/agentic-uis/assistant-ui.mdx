@@ -11,7 +11,7 @@ import { Callout, FileTree, Steps } from 'nextra/components'
 Built on shadcn/ui and Tailwind CSS, it enables developers to create beautiful, enterprise-grade chat experiences in minutes.
 
 <Callout type="info">
-For a full-stack integration approach where Mastra runs directly in your Next.js API routes, see the [Full-Stack Integration Guide](https://www.assistant-ui.com/docs/runtimes/mastra/full-stack-integration) on Assistant UI's documentation site.
+For a full-stack integration approach where Mastra runs directly in your Next.js API routes, see the [Full-Stack Integration Guide](https://www.assistant-ui.com/docs/runtimes/@@mastra/cli/cli/cli/full-stack-integration) on Assistant UI's documentation site.
 </Callout>
 
 ## Integration Guide
@@ -25,9 +25,9 @@ Set up your directory structure. A possible directory structure could look like 
 
 <FileTree>
     <FileTree.Folder name="project-root" defaultOpen>
-        <FileTree.Folder name="mastra-server" defaultOpen>
+        <FileTree.Folder name="@@mastra/cli/cli/cli-server" defaultOpen>
             <FileTree.Folder name="src">
-                <FileTree.Folder name="mastra" />
+                <FileTree.Folder name="@actus-ag/@@mastra/cli/cli/cli" />
             </FileTree.Folder>
             <FileTree.File name="package.json" />
         </FileTree.Folder>
@@ -40,7 +40,7 @@ Set up your directory structure. A possible directory structure could look like 
 Bootstrap your Mastra server:
 
 ```bash copy
-npx create-mastra@latest
+npx @actus-ag/@actus-ag/create-@actus-ag/@mastra/cli/cli@latest
 ```
 
 This command will launch an interactive wizard to help you scaffold a new Mastra project, including prompting you for a project name and setting up basic configurations.
@@ -50,7 +50,7 @@ You now have a basic Mastra server project ready. You should have the following 
 
 <FileTree>
     <FileTree.Folder name="src" defaultOpen>
-      <FileTree.Folder name="mastra" defaultOpen>
+      <FileTree.Folder name="@actus-ag/@@mastra/cli/cli/cli" defaultOpen>
         <FileTree.File name="index.ts" />
         <FileTree.Folder name="agents" defaultOpen>
           <FileTree.File name="weather-agent.ts" />

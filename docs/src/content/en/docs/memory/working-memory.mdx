@@ -20,8 +20,8 @@ Working memory can persist at two different scopes:
 Here's a minimal example of setting up an agent with working memory:
 
 ```typescript {12-15}
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { Memory } from "@actus-ag/mastra-memory";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { Memory } from "@mastra/cli/cli/cli/memory";
 import { openai } from "@ai-sdk/openai";
 
 // Create agent with working memory enabled
@@ -117,12 +117,12 @@ const response = await agent.generate("Hello!", {
 
 ## Storage Adapter Support
 
-Resource-scoped working memory requires specific storage adapters that support the `mastra_resources` table:
+Resource-scoped working memory requires specific storage adapters that support the `@@mastra/cli/cli/cli_resources` table:
 
 ### ✅ Supported Storage Adapters
-- **LibSQL** (`@actus-ag/mastra-libsql`)
-- **PostgreSQL** (`@actus-ag/mastra-pg`)
-- **Upstash** (`@actus-ag/mastra-upstash`)
+- **LibSQL** (`@mastra/cli/cli/cli/libsql`)
+- **PostgreSQL** (`@mastra/cli/cli/cli/pg`)
+- **Upstash** (`@mastra/cli/cli/cli/upstash`)
 
 ## Custom Templates
 
@@ -218,7 +218,7 @@ Working memory can also be defined using a structured schema instead of a Markdo
 
 ```typescript
 import { z } from 'zod';
-import { Memory } from '@actus-ag/mastra-memory';
+import { Memory } from '@mastra/cli/cli/cli/memory';
 
 const userProfileSchema = z.object({
   name: z.string().optional(),
@@ -370,4 +370,4 @@ await memory.updateWorkingMemory({
 - [Streaming working memory](/examples/memory/streaming-working-memory)
 - [Using a working memory template](/examples/memory/streaming-working-memory-advanced)
 - [Using a working memory schema](/examples/memory/streaming-working-memory-structured)
-- [Per-resource working memory](https://github.com/mastra-ai/mastra/tree/main/examples/memory-per-resource-example) - Complete example showing resource-scoped memory persistence
+- [Per-resource working memory](https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/tree/main/examples/memory-per-resource-example) - Complete example showing resource-scoped memory persistence

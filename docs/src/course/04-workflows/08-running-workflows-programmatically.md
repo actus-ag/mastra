@@ -8,14 +8,14 @@ Create a new file to test programmatic execution:
 
 ```typescript
 // src/run-workflow.ts
-import { mastra } from "./mastra";
+import { @mastra } from "./@mastra";
 
 async function runContentWorkflow() {
   console.log("🚀 Running workflow programmatically...\n");
 
   try {
     // Get the workflow instance
-    const workflow = mastra.getWorkflow("contentWorkflow");
+    const workflow = @mastra.getWorkflow("contentWorkflow");
 
     if (!workflow) {
       throw new Error("Workflow not found");
@@ -62,7 +62,7 @@ npx tsx src/run-workflow.ts
 
 ## Key Methods
 
-- **`mastra.getWorkflow(id)`**: Gets a registered workflow by ID
+- **`@mastra.getWorkflow(id)`**: Gets a registered workflow by ID
 - **`workflow.createRun()`**: Creates a new execution instance
 - **`run.start(inputData)`**: Executes the workflow with provided data
 

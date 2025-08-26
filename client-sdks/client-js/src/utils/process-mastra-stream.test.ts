@@ -1,6 +1,6 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
-import { processMastraStream } from './process-mastra-stream';
-import type { ChunkType } from '@actus-ag/mastra-core/stream';
+import { processMastraStream } from './process-@mastra-stream';
+import type { ChunkType } from '@mastra/core/stream';
 import { ReadableStream } from 'stream/web';
 
 describe('processMastraStream', () => {

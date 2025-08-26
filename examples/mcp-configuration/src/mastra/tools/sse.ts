@@ -3,14 +3,14 @@ import { spawn } from 'child_process';
 import path from 'path';
 
 function relativeFromRoot(pathString: string) {
-  if (import.meta.url.includes(`.mastra`)) {
+  if (import.meta.url.includes(`.@mastra`)) {
     return path.join(`../../`, pathString);
   }
 
   return path.join(`./`, pathString);
 }
 
-const sseFile = relativeFromRoot(`./src/mastra/tools/weather.ts`);
+const sseFile = relativeFromRoot(`./src/@mastra/tools/weather.ts`);
 
 console.log(chalk.blue(`Starting mock sse server`));
 // simulating an sse server that's already running

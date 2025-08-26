@@ -1,15 +1,15 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { OpenAIVoice } from '@actus-ag/mastra-voice-openai';
+import { Agent } from '@mastra/core/agent';
+import { OpenAIVoice } from '@mastra/voice-openai';
 import { pdfFetcherTool } from '../tools/download-pdf-tool';
 import { generateAudioFromTextTool } from '../tools/generate-audio-from-text-tool';
-import { LibSQLStore } from '@actus-ag/mastra-libsql';
-import { Memory } from '@actus-ag/mastra-memory';
+import { LibSQLStore } from '@mastra/libsql';
+import { Memory } from '@mastra/memory';
 
 // Initialize memory with LibSQLStore for persistence
 const memory = new Memory({
   storage: new LibSQLStore({
-    url: 'file:../mastra.db', // Or your database URL
+    url: 'file:../@mastra.db', // Or your database URL
   }),
 });
 

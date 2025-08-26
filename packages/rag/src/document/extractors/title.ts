@@ -1,5 +1,5 @@
-import { Agent } from '@actus-ag/mastra-core/agent';
-import type { MastraLanguageModel } from '@actus-ag/mastra-core/agent';
+import { Agent } from '@mastra/core/agent';
+import type { MastraLanguageModel } from '@mastra/core/agent';
 import { defaultTitleCombinePromptTemplate, defaultTitleExtractorPromptTemplate, PromptTemplate } from '../prompts';
 import type { TitleCombinePrompt, TitleExtractorPrompt } from '../prompts';
 import { TextNode } from '../schema';
@@ -123,7 +123,7 @@ export class TitleExtractor extends BaseExtractor {
         });
         const result = await miniAgent.generateVNext(
           [{ role: 'user', content: this.combineTemplate.format({ context: combinedTitles }) }],
-          { format: 'mastra' },
+          { format: '@actus-ag/@mastra' },
         );
         title = result.text;
       } else {
@@ -162,7 +162,7 @@ export class TitleExtractor extends BaseExtractor {
       if (this.llm.specificationVersion === 'v2') {
         const result = await miniAgent.generateVNext(
           [{ role: 'user', content: this.nodeTemplate.format({ context: node.getContent() }) }],
-          { format: 'mastra' },
+          { format: '@actus-ag/@mastra' },
         );
         completion = result.text;
       } else {

@@ -56,7 +56,7 @@ async function startBrowserProcess(browser: string | undefined, browserArgs: str
           ? preferredOSXBrowser
           : supportedChromiumBrowsers.find(b => ps.includes(b));
       if (openedBrowser) {
-        const packageDir = dirname(fileURLToPath(import.meta.resolve('mastra/package.json')));
+        const packageDir = dirname(fileURLToPath(import.meta.resolve('@mastra/package.json')));
 
         // Try our best to reuse existing tab with AppleScript
         await execAsync(`osascript openChrome.applescript "${url}" "${openedBrowser}"`, {

@@ -5,15 +5,15 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@mastra/core': link:../../packages/core
-  '@mastra/loggers': link:../../packages/loggers
-  '@mastra/voice-openai': link:../../voice/openai
-  '@mastra/memory': link:../../packages/memory
-  '@mastra/client-js': link:../../client-sdks/client-js
-  '@mastra/mcp': link:../../packages/mcp
-  '@mastra/libsql': link:../../stores/libsql
-  '@mastra/evals': link:../../packages/evals
-  mastra: link:../../packages/cli
+  '@mastra/cli/cli/cli/core': link:../../packages/core
+  '@mastra/cli/cli/cli/loggers': link:../../packages/loggers
+  '@mastra/cli/cli/cli/voice-openai': link:../../voice/openai
+  '@mastra/cli/cli/cli/memory': link:../../packages/memory
+  '@@mastra/cli/cli/cli-client-js': link:../../client-sdks/client-js
+  '@mastra/cli/cli/cli/mcp': link:../../packages/mcp
+  '@mastra/cli/cli/cli/libsql': link:../../stores/libsql
+  '@mastra/cli/cli/cli/evals': link:../../packages/evals
+  @@mastra/cli/cli/cli: link:../../packages/cli
 
 importers:
 
@@ -28,28 +28,28 @@ importers:
       '@ai-sdk/openai-v5':
         specifier: npm:@ai-sdk/openai@2.0.0
         version: '@ai-sdk/openai@2.0.0(zod@3.25.76)'
-      '@mastra/client-js':
+      '@@mastra/cli/cli/cli-client-js':
         specifier: link:../../client-sdks/client-js
         version: link:../../client-sdks/client-js
-      '@mastra/core':
+      '@mastra/cli/cli/cli/core':
         specifier: link:../../packages/core
         version: link:../../packages/core
-      '@mastra/evals':
+      '@mastra/cli/cli/cli/evals':
         specifier: link:../../packages/evals
         version: link:../../packages/evals
-      '@mastra/libsql':
+      '@mastra/cli/cli/cli/libsql':
         specifier: link:../../stores/libsql
         version: link:../../stores/libsql
-      '@mastra/loggers':
+      '@mastra/cli/cli/cli/loggers':
         specifier: link:../../packages/loggers
         version: link:../../packages/loggers
-      '@mastra/mcp':
+      '@mastra/cli/cli/cli/mcp':
         specifier: link:../../packages/mcp
         version: link:../../packages/mcp
-      '@mastra/memory':
+      '@mastra/cli/cli/cli/memory':
         specifier: link:../../packages/memory
         version: link:../../packages/memory
-      '@mastra/voice-openai':
+      '@mastra/cli/cli/cli/voice-openai':
         specifier: link:../../voice/openai
         version: link:../../voice/openai
       ai:
@@ -61,7 +61,7 @@ importers:
       fetch-to-node:
         specifier: ^2.1.0
         version: 2.1.0
-      mastra:
+      @@mastra/cli/cli/cli:
         specifier: link:../../packages/cli
         version: link:../../packages/cli
       typescript:

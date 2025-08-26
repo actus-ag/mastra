@@ -198,7 +198,7 @@ describe('Input and Output Processors with VNext Methods', () => {
         inputProcessors: [abortProcessor],
       });
 
-      async function testWithFormat(format: 'aisdk' | 'mastra') {
+      async function testWithFormat(format: 'aisdk' | '@actus-ag/@mastra') {
         const result = await agentWithAbortProcessor.generateVNext('This should be aborted', {
           format,
         });
@@ -211,7 +211,7 @@ describe('Input and Output Processors with VNext Methods', () => {
       }
 
       // await testWithFormat('aisdk');
-      await testWithFormat('mastra');
+      await testWithFormat('@actus-ag/@mastra');
     });
 
     it('should handle processor abort with custom message', async () => {
@@ -230,7 +230,7 @@ describe('Input and Output Processors with VNext Methods', () => {
         inputProcessors: [customAbortProcessor],
       });
 
-      async function testWithFormat(format: 'aisdk' | 'mastra') {
+      async function testWithFormat(format: 'aisdk' | '@actus-ag/@mastra') {
         const result = await agentWithCustomAbort.generateVNext('Custom abort test', {
           format,
         });
@@ -240,7 +240,7 @@ describe('Input and Output Processors with VNext Methods', () => {
       }
 
       await testWithFormat('aisdk');
-      await testWithFormat('mastra');
+      await testWithFormat('@actus-ag/@mastra');
     });
 
     it('should not execute subsequent processors after abort', async () => {
@@ -507,7 +507,7 @@ describe('Input and Output Processors with VNext Methods', () => {
         outputProcessors: [new TestOutputProcessor()],
       });
 
-      async function testWithFormat(format: 'aisdk' | 'mastra') {
+      async function testWithFormat(format: 'aisdk' | '@actus-ag/@mastra') {
         const result = await agent.generateVNext('Hello', {
           format,
         });
@@ -520,7 +520,7 @@ describe('Input and Output Processors with VNext Methods', () => {
       }
 
       await testWithFormat('aisdk');
-      await testWithFormat('mastra');
+      await testWithFormat('@actus-ag/@mastra');
     });
 
     it('should process messages through multiple output processors in sequence', async () => {
@@ -593,7 +593,7 @@ describe('Input and Output Processors with VNext Methods', () => {
         outputProcessors: [new ReplaceProcessor(), new AddPrefixProcessor()],
       });
 
-      async function testWithFormat(format: 'aisdk' | 'mastra') {
+      async function testWithFormat(format: 'aisdk' | '@actus-ag/@mastra') {
         const result = await agent.generateVNext('Test', {
           format,
         });
@@ -606,7 +606,7 @@ describe('Input and Output Processors with VNext Methods', () => {
       }
 
       await testWithFormat('aisdk');
-      await testWithFormat('mastra');
+      await testWithFormat('@actus-ag/@mastra');
     });
 
     it('should handle abort in output processors', async () => {
@@ -657,7 +657,7 @@ describe('Input and Output Processors with VNext Methods', () => {
         outputProcessors: [new AbortingOutputProcessor()],
       });
 
-      async function testWithFormat(format: 'aisdk' | 'mastra') {
+      async function testWithFormat(format: 'aisdk' | '@actus-ag/@mastra') {
         // Should return tripwire result when processor aborts
         const result = await agent.generateVNext('Generate inappropriate content', {
           format,
@@ -669,7 +669,7 @@ describe('Input and Output Processors with VNext Methods', () => {
       }
 
       await testWithFormat('aisdk');
-      await testWithFormat('mastra');
+      await testWithFormat('@actus-ag/@mastra');
     });
 
     it('should skip processors that do not implement processOutputResult', async () => {
@@ -724,7 +724,7 @@ describe('Input and Output Processors with VNext Methods', () => {
         outputProcessors: [new IncompleteProcessor() as any, new CompleteProcessor()],
       });
 
-      async function testWithFormat(format: 'aisdk' | 'mastra') {
+      async function testWithFormat(format: 'aisdk' | '@actus-ag/@mastra') {
         const result = await agent.generateVNext('Test incomplete processors', {
           format,
         });
@@ -734,7 +734,7 @@ describe('Input and Output Processors with VNext Methods', () => {
       }
 
       await testWithFormat('aisdk');
-      await testWithFormat('mastra');
+      await testWithFormat('@actus-ag/@mastra');
     });
   });
 
@@ -771,7 +771,7 @@ describe('Input and Output Processors with VNext Methods', () => {
         outputProcessors: [new TestOutputProcessor()],
       });
 
-      async function testWithFormat(format: 'aisdk' | 'mastra') {
+      async function testWithFormat(format: 'aisdk' | '@actus-ag/@mastra') {
         const stream = await agent.streamVNext('Hello', {
           format,
         });
@@ -793,7 +793,7 @@ describe('Input and Output Processors with VNext Methods', () => {
       }
 
       await testWithFormat('aisdk');
-      await testWithFormat('mastra');
+      await testWithFormat('@actus-ag/@mastra');
     });
 
     it('should filter blocked content chunks', async () => {
@@ -816,7 +816,7 @@ describe('Input and Output Processors with VNext Methods', () => {
         outputProcessors: [new BlockingOutputProcessor()],
       });
 
-      async function testWithFormat(format: 'aisdk' | 'mastra') {
+      async function testWithFormat(format: 'aisdk' | '@actus-ag/@mastra') {
         const stream = await agent.streamVNext('Hello', {
           format,
         });
@@ -837,7 +837,7 @@ describe('Input and Output Processors with VNext Methods', () => {
       }
 
       await testWithFormat('aisdk');
-      await testWithFormat('mastra');
+      await testWithFormat('@actus-ag/@mastra');
     });
 
     it('should emit tripwire when output processor calls abort', async () => {
@@ -860,7 +860,7 @@ describe('Input and Output Processors with VNext Methods', () => {
         outputProcessors: [new AbortingOutputProcessor()],
       });
 
-      async function testWithFormat(format: 'aisdk' | 'mastra') {
+      async function testWithFormat(format: 'aisdk' | '@actus-ag/@mastra') {
         const stream = await agent.streamVNext('Hello', {
           format,
         });
@@ -897,7 +897,7 @@ describe('Input and Output Processors with VNext Methods', () => {
       }
 
       await testWithFormat('aisdk');
-      await testWithFormat('mastra');
+      await testWithFormat('@actus-ag/@mastra');
     });
 
     it('should process chunks through multiple output processors in sequence', async () => {
@@ -943,7 +943,7 @@ describe('Input and Output Processors with VNext Methods', () => {
         outputProcessors: [new ReplaceProcessor(), new AddPrefixProcessor()],
       });
 
-      async function testWithFormat(format: 'aisdk' | 'mastra') {
+      async function testWithFormat(format: 'aisdk' | '@actus-ag/@mastra') {
         const stream = await agent.streamVNext('Test', {
           format,
         });
@@ -964,7 +964,7 @@ describe('Input and Output Processors with VNext Methods', () => {
       }
 
       await testWithFormat('aisdk');
-      await testWithFormat('mastra');
+      await testWithFormat('@actus-ag/@mastra');
     });
   });
 
@@ -1058,7 +1058,7 @@ describe('Input and Output Processors with VNext Methods', () => {
         outputProcessors: [new StreamStructuredProcessor()],
       });
 
-      async function testWithFormat(format: 'aisdk' | 'mastra') {
+      async function testWithFormat(format: 'aisdk' | '@actus-ag/@mastra') {
         const response = await agent.streamVNext('Who won the 2012 US presidential election?', {
           output: z.object({
             winner: z.string(),
@@ -1098,7 +1098,7 @@ describe('Input and Output Processors with VNext Methods', () => {
       }
 
       await testWithFormat('aisdk');
-      await testWithFormat('mastra');
+      await testWithFormat('@actus-ag/@mastra');
     });
   });
 
@@ -1143,7 +1143,7 @@ describe('Input and Output Processors with VNext Methods', () => {
           outputProcessors: [abortProcessor],
         });
 
-        async function testWithFormat(format: 'aisdk' | 'mastra') {
+        async function testWithFormat(format: 'aisdk' | '@actus-ag/@mastra') {
           const result = await agent.generateVNext('Hello', {
             format,
           });
@@ -1155,7 +1155,7 @@ describe('Input and Output Processors with VNext Methods', () => {
         }
 
         // await testWithFormat('aisdk');
-        await testWithFormat('mastra');
+        await testWithFormat('@actus-ag/@mastra');
       });
     });
 
@@ -1179,7 +1179,7 @@ describe('Input and Output Processors with VNext Methods', () => {
           outputProcessors: [abortProcessor],
         });
 
-        async function testWithFormat(format: 'aisdk' | 'mastra') {
+        async function testWithFormat(format: 'aisdk' | '@actus-ag/@mastra') {
           const stream = await agent.streamVNext('Hello', {
             format,
           });
@@ -1200,7 +1200,7 @@ describe('Input and Output Processors with VNext Methods', () => {
         }
 
         await testWithFormat('aisdk');
-        await testWithFormat('mastra');
+        await testWithFormat('@actus-ag/@mastra');
       });
 
       it('should handle processor abort with custom message', async () => {
@@ -1221,7 +1221,7 @@ describe('Input and Output Processors with VNext Methods', () => {
           outputProcessors: [customAbortProcessor],
         });
 
-        async function testWithFormat(format: 'aisdk' | 'mastra') {
+        async function testWithFormat(format: 'aisdk' | '@actus-ag/@mastra') {
           const stream = await agent.streamVNext('Custom abort test', {
             format,
           });
@@ -1241,12 +1241,12 @@ describe('Input and Output Processors with VNext Methods', () => {
         }
 
         await testWithFormat('aisdk');
-        await testWithFormat('mastra');
+        await testWithFormat('@actus-ag/@mastra');
       });
     });
   });
 
-  function testStructuredOutput(format: 'aisdk' | 'mastra', model: MastraLanguageModel) {
+  function testStructuredOutput(format: 'aisdk' | '@actus-ag/@mastra', model: MastraLanguageModel) {
     describe('StructuredOutputProcessor Integration Tests', () => {
       describe('with real LLM', () => {
         it('should convert unstructured text to structured JSON for color analysis', async () => {
@@ -1607,8 +1607,8 @@ describe('Input and Output Processors with VNext Methods', () => {
   }
 
   testStructuredOutput('aisdk', openai_v5('gpt-4o'));
-  testStructuredOutput('mastra', openai('gpt-4o'));
-  testStructuredOutput('mastra', openai_v5('gpt-4o'));
+  testStructuredOutput('@actus-ag/@mastra', openai('gpt-4o'));
+  testStructuredOutput('@actus-ag/@mastra', openai_v5('gpt-4o'));
 });
 
 describe('v1 model - output processors', () => {

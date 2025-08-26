@@ -1,6 +1,6 @@
 import { PassThrough } from 'stream';
 
-import { MastraVoice } from '@actus-ag/mastra-core/voice';
+import { MastraVoice } from '@mastra/core/voice';
 import ky from 'ky';
 
 import { MURF_VOICES } from './voices';

@@ -1,4 +1,4 @@
-# @actus-ag/mastra-auth-supabase
+# @mastra/auth-supabase
 
 ## 0.10.3
 

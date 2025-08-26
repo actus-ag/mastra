@@ -1,10 +1,10 @@
 import { Wand2, Loader, CheckIcon, X, FileClock } from 'lucide-react';
 
-import { Icon } from '@actus-ag/mastra-playground-ui';
+import { Icon } from '@mastra/cli/cli/cli/playground-ui';
 import { CodeDisplay } from '@/components/ui/code-display';
 
 import { useCopyToClipboard } from '@/hooks/use-copy-to-clipboard';
-import { Txt } from '@actus-ag/mastra-playground-ui';
+import { Txt } from '@mastra/cli/cli/cli/playground-ui';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import clsx from 'clsx';
 

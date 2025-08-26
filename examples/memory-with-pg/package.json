@@ -14,15 +14,15 @@
   "license": "MIT",
   "dependencies": {
     "@ai-sdk/openai": "latest",
-    "@actus-ag/mastra-core": "latest",
-    "@actus-ag/mastra-memory": "latest",
-    "@actus-ag/mastra-pg": "latest"
+    "@mastra/core": "latest",
+    "@mastra/memory": "latest",
+    "@mastra/pg": "latest"
   },
   "pnpm": {
     "overrides": {
-      "@actus-ag/mastra-core": "link:../../packages/core",
-      "@actus-ag/mastra-memory": "link:../../packages/memory",
-      "@actus-ag/mastra-pg": "link:../../stores/pg"
+      "@mastra/core": "link:../../packages/core",
+      "@mastra/memory": "link:../../packages/memory",
+      "@mastra/pg": "link:../../stores/pg"
     }
   },
   "devDependencies": {

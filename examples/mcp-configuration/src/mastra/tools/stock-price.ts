@@ -5,7 +5,7 @@ import { z } from 'zod';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 
 const getStockPrice = async (symbol: string) => {
-  const data = await fetch(`https://mastra-stock-data.vercel.app/api/stock-data?symbol=${symbol}`).then(r => r.json());
+  const data = await fetch(`https://@mastra-stock-data.vercel.app/api/stock-data?symbol=${symbol}`).then(r => r.json());
   return data.prices['4. close'];
 };
 

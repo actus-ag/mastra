@@ -35,7 +35,7 @@ export async function startRegistry(verdaccioPath, port, location = process.cwd(
   const registry = await runRegistry(verdaccioPath, ['-c', './verdaccio.yaml', '-l', `${port}`], {
     cwd: location,
   });
-  login('mastra', 'mastra-ai', port);
+  login('@actus-ag/@mastra', '@mastra-ai', port);
 
   return new Proxy(registry, {
     get(target, prop) {

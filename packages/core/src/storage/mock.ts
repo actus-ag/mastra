@@ -45,30 +45,30 @@ export class InMemoryStore extends MastraStorage {
     const database = operationsStorage.getDatabase();
 
     const scoresStorage = new ScoresInMemory({
-      collection: database.mastra_scorers as InMemoryScores,
+      collection: database.@mastra_scorers as InMemoryScores,
     });
 
     const workflowsStorage = new WorkflowsInMemory({
-      collection: database.mastra_workflow_snapshot as InMemoryWorkflows,
+      collection: database.@mastra_workflow_snapshot as InMemoryWorkflows,
       operations: operationsStorage,
     });
 
     const tracesStorage = new TracesInMemory({
-      collection: database.mastra_traces as InMemoryTraces,
+      collection: database.@mastra_traces as InMemoryTraces,
       operations: operationsStorage,
     });
 
     const memoryStorage = new InMemoryMemory({
       collection: {
-        threads: database.mastra_threads as InMemoryThreads,
-        resources: database.mastra_resources as InMemoryResources,
-        messages: database.mastra_messages as InMemoryMessages,
+        threads: database.@mastra_threads as InMemoryThreads,
+        resources: database.@mastra_resources as InMemoryResources,
+        messages: database.@mastra_messages as InMemoryMessages,
       },
       operations: operationsStorage,
     });
 
     const legacyEvalsStorage = new InMemoryLegacyEvals({
-      collection: database.mastra_evals as InMemoryEvals,
+      collection: database.@mastra_evals as InMemoryEvals,
     });
 
     this.stores = {

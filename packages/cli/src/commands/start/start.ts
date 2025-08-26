@@ -9,7 +9,7 @@ interface StartOptions {
 }
 
 export async function start(options: StartOptions = {}) {
-  const outputDir = options.dir || '.mastra/output';
+  const outputDir = options.dir || '.@mastra/output';
   const telemetry = options.telemetry ?? true;
 
   try {

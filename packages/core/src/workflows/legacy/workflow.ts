@@ -44,7 +44,7 @@ export class LegacyWorkflow<
   resultMapping?: Record<string, { step: StepAction<string, any, any, any>; path: string }>;
   events?: Record<string, { schema: z.ZodObject<any> }>;
   #retryConfig?: RetryConfig;
-  #mastra?: Mastra;
+  #@mastra?: Mastra;
   #runs: Map<string, WorkflowInstance<TSteps, TTriggerSchema>> = new Map();
   isNested: boolean = false;
   #onStepTransition: Set<
@@ -81,7 +81,7 @@ export class LegacyWorkflow<
     triggerSchema,
     result,
     retryConfig,
-    mastra,
+    @mastra,
     events,
   }: WorkflowOptions<TStepId, TSteps, TTriggerSchema, TResultSchema>) {
     super({ component: 'WORKFLOW', name });
@@ -93,12 +93,12 @@ export class LegacyWorkflow<
     this.resultMapping = result?.mapping;
     this.events = events;
 
-    if (mastra) {
+    if (@mastra) {
       this.__registerPrimitives({
-        telemetry: mastra.getTelemetry(),
-        logger: mastra.getLogger(),
+        telemetry: @mastra.getTelemetry(),
+        logger: @mastra.getLogger(),
       });
-      this.#mastra = mastra;
+      this.#@mastra = @mastra;
     }
   }
 
@@ -189,10 +189,10 @@ export class LegacyWorkflow<
 
     const step: StepAction<string, any, any, any> = isWorkflow(next)
       ? // @ts-ignore
-        workflowToStep(next, { mastra: this.#mastra })
+        workflowToStep(next, { @mastra: this.#@mastra })
       : isAgent(next)
         ? // @ts-ignore
-          agentToStep(next, { mastra: this.#mastra })
+          agentToStep(next, { @mastra: this.#@mastra })
         : (next as StepAction<string, any, any, any>);
 
     const stepKey = this.#makeStepKey(step, config);
@@ -318,7 +318,7 @@ export class LegacyWorkflow<
 
     const step: StepAction<string, any, any, any> = isWorkflow(next)
       ? // @ts-ignore
-        workflowToStep(next, { mastra: this.#mastra })
+        workflowToStep(next, { @mastra: this.#@mastra })
       : (next as StepAction<string, any, any, any>);
 
     const stepKey = this.#makeStepKey(step, config);
@@ -413,7 +413,7 @@ export class LegacyWorkflow<
         if (isWorkflow(step)) {
           // types possibly infinite issue here
           // @ts-ignore
-          return workflowToStep(step, { mastra: this.#mastra });
+          return workflowToStep(step, { @mastra: this.#@mastra });
         }
         if (isAgent(step)) {
           // types possibly infinite issue here
@@ -451,7 +451,7 @@ export class LegacyWorkflow<
     const lastStepKey = this.#lastStepStack[this.#lastStepStack.length - 1];
 
     const step: StepAction<string, any, any, any> = isWorkflow(next)
-      ? workflowToStep(next, { mastra: this.#mastra })
+      ? workflowToStep(next, { @mastra: this.#@mastra })
       : isAgent(next)
         ? agentToStep(next)
         : (next as StepAction<string, any, any, any>);
@@ -753,7 +753,7 @@ export class LegacyWorkflow<
     this.after(lastStep.step);
 
     if (ifStep) {
-      const _ifStep = isWorkflow(ifStep) ? workflowToStep(ifStep, { mastra: this.#mastra }) : (ifStep as TStep);
+      const _ifStep = isWorkflow(ifStep) ? workflowToStep(ifStep, { @mastra: this.#@mastra }) : (ifStep as TStep);
 
       this.step(_ifStep, {
         id: _ifStep.id,
@@ -762,7 +762,7 @@ export class LegacyWorkflow<
 
       if (elseStep) {
         const _elseStep = isWorkflow(elseStep)
-          ? workflowToStep(elseStep, { mastra: this.#mastra })
+          ? workflowToStep(elseStep, { @mastra: this.#@mastra })
           : (elseStep as TStep);
         this.step(_elseStep, {
           id: _elseStep.id,
@@ -918,7 +918,7 @@ export class LegacyWorkflow<
     const run = new WorkflowInstance<TSteps, TTriggerSchema, TResultSchema>({
       logger: this.logger,
       name: this.name,
-      mastra: this.#mastra,
+      @mastra: this.#@mastra,
       retryConfig: this.#retryConfig,
       steps: this.#steps,
       runId,
@@ -953,7 +953,7 @@ export class LegacyWorkflow<
     if (inMemoryRun) {
       return inMemoryRun;
     }
-    const storage = this.#mastra?.getStorage();
+    const storage = this.#@mastra?.getStorage();
     if (!storage) {
       this.logger.debug('Cannot get workflow run. Mastra engine is not initialized');
       return null;
@@ -1010,7 +1010,7 @@ export class LegacyWorkflow<
     offset?: number;
     resourceId?: string;
   }) {
-    const storage = this.#mastra?.getStorage();
+    const storage = this.#@mastra?.getStorage();
     if (!storage) {
       this.logger.debug('Cannot get workflow runs. Mastra engine is not initialized');
       return { runs: [], total: 0 };
@@ -1176,7 +1176,7 @@ export class LegacyWorkflow<
     }
 
     // If workflow is suspended/stored, get from storage
-    const storage = this.#mastra?.getStorage();
+    const storage = this.#@mastra?.getStorage();
     const storedSnapshot = await storage?.loadWorkflowSnapshot({
       runId,
       workflowName: this.name,
@@ -1254,8 +1254,8 @@ export class LegacyWorkflow<
     return results;
   }
 
-  __registerMastra(mastra: Mastra) {
-    this.#mastra = mastra;
+  __registerMastra(@mastra: Mastra) {
+    this.#@mastra = @mastra;
   }
 
   __registerPrimitives(p: MastraPrimitives) {
@@ -1299,7 +1299,7 @@ export class LegacyWorkflow<
   }
 
   toStep(): Step<TStepId, TTriggerSchema, z.ZodType<WorkflowRunResult<TTriggerSchema, TSteps, TResultSchema>>, any> {
-    const x = workflowToStep<TSteps, TStepId, TTriggerSchema, TResultSchema>(this, { mastra: this.#mastra });
+    const x = workflowToStep<TSteps, TStepId, TTriggerSchema, TResultSchema>(this, { @mastra: this.#@mastra });
     return new Step(x);
   }
 }

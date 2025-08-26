@@ -5,12 +5,12 @@ title: Deploying a Mastra Server
 Build your application and start the generated HTTP server:
 
 ```bash showLineNumbers
-mastra build
-node .mastra/output/index.mjs
+@actus-ag/@mastra/cli/cli build
+node .@@mastra/cli/cli/cli/output/index.mjs
 ```
 
 To include telemetry for the generated server:
 
 ```bash showLineNumbers
-node --import=./.mastra/output/instrumentation.mjs .mastra/output/index.mjs
+node --import=./.@@mastra/cli/cli/cli/output/instrumentation.mjs .@@mastra/cli/cli/cli/output/index.mjs
 ```

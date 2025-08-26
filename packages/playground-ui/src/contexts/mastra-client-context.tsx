@@ -1,6 +1,6 @@
 import { createContext, useContext, ReactNode } from 'react';
-import { ClientOptions, MastraClient } from '@actus-ag/mastra-client-js';
-import { createMastraClient } from '@/lib/mastra-client';
+import { ClientOptions, MastraClient } from '@@mastra/cli/cli/cli-client-js';
+import { createMastraClient } from '@/lib/@@mastra/cli/cli/cli-client';
 
 type MastraClientContextType = {
   client: MastraClient;

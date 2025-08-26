@@ -7,21 +7,21 @@ description: "Expose additional HTTP endpoints from your Mastra server."
 
 By default Mastra automatically exposes registered agents and workflows via the server. For additional behavior you can define your own HTTP routes.
 
-Routes are provided with a helper `registerApiRoute` from `@actus-ag/mastra-core/server`. Routes can live in the same file as the `Mastra` instance but separating them helps keep configuration concise.
+Routes are provided with a helper `registerApiRoute` from `@mastra/cli/cli/cli/core/server`. Routes can live in the same file as the `Mastra` instance but separating them helps keep configuration concise.
 
-```typescript filename="src/mastra/index.ts" copy showLineNumbers
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { registerApiRoute } from "@actus-ag/mastra-core/server";
+```typescript filename="src/@@mastra/cli/cli/cli/index.ts" copy showLineNumbers
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { registerApiRoute } from "@mastra/cli/cli/cli/core/server";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // ...
   server: {
     apiRoutes: [
       registerApiRoute("/my-custom-route", {
         method: "GET",
         handler: async (c) => {
-          const mastra = c.get("mastra");
-          const agents = await mastra.getAgent("my-agent");
+          const @@mastra/cli/cli/cli = c.get("@actus-ag/@@mastra/cli/cli/cli");
+          const agents = await @@mastra/cli/cli/cli.getAgent("my-agent");
 
           return c.json({ message: "Custom route" });
         },
@@ -41,11 +41,11 @@ Each route's handler receives the Hono `Context`. Within the handler you can acc
 
 To add route-specific middleware pass a `middleware` array when calling `registerApiRoute`.
 
-```typescript filename="src/mastra/index.ts" copy showLineNumbers
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { registerApiRoute } from "@actus-ag/mastra-core/server";
+```typescript filename="src/@@mastra/cli/cli/cli/index.ts" copy showLineNumbers
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { registerApiRoute } from "@mastra/cli/cli/cli/core/server";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // ...
   server: {
     apiRoutes: [

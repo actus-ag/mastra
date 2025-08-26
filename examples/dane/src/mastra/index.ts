@@ -1,5 +1,5 @@
-import { Mastra } from '@actus-ag/mastra-core';
-import { LibSQLStore } from '@actus-ag/mastra-libsql';
+import { Mastra } from '@mastra/core';
+import { LibSQLStore } from '@mastra/libsql';
 
 import { dane, daneChangeLog, daneCommitMessage, daneIssueLabeler, daneLinkChecker } from './agents/index.js';
 import { daneNewContributor } from './agents/new-contributor.js';
@@ -12,7 +12,7 @@ import { packagePublisher } from './workflows/publish-packages.js';
 import { telephoneGameWorkflow } from './workflows/telephone-game.js';
 
 // @ts-ignore
-export const mastra: Mastra = new Mastra({
+export const @mastra: Mastra = new Mastra({
   agents: {
     dane,
     danePackagePublisher,

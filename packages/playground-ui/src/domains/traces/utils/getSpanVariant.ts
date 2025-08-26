@@ -24,7 +24,7 @@ export const getSpanVariant = (span: Span): SpanProps['variant'] => {
   if (hasAgentRelatedAttributes) return 'agent';
 
   if (lowerCaseName.includes('.insert')) {
-    const evalRelatedAttribute = attributes.find(key => String(span.attributes?.[key])?.includes('mastra_evals'));
+    const evalRelatedAttribute = attributes.find(key => String(span.attributes?.[key])?.includes('@mastra_evals'));
     if (evalRelatedAttribute) return 'eval';
   }
 

@@ -1,10 +1,10 @@
-import type { BaseLogMessage, LogLevel } from '@actus-ag/mastra-core/logger';
-import type { Mastra } from '@actus-ag/mastra-core/mastra';
+import type { BaseLogMessage, LogLevel } from '@mastra/core/logger';
+import type { Mastra } from '@mastra/core/@mastra';
 import { handleError } from './error';
 import { validateBody } from './utils';
 
 type LogsContext = {
-  mastra: Mastra;
+  @mastra: Mastra;
   transportId?: string;
   runId?: string;
   params?: {
@@ -18,10 +18,10 @@ type LogsContext = {
 };
 
 export async function getLogsHandler({
-  mastra,
+  @mastra,
   transportId,
   params,
-}: Pick<LogsContext, 'mastra' | 'transportId' | 'params'>): Promise<{
+}: Pick<LogsContext, '@actus-ag/@mastra' | 'transportId' | 'params'>): Promise<{
   logs: BaseLogMessage[];
   total: number;
   page: number;
@@ -43,7 +43,7 @@ export async function getLogsHandler({
         )
       : undefined;
 
-    const logs = await mastra.getLogs(transportId!, {
+    const logs = await @mastra.getLogs(transportId!, {
       fromDate,
       toDate,
       logLevel,
@@ -58,11 +58,11 @@ export async function getLogsHandler({
 }
 
 export async function getLogsByRunIdHandler({
-  mastra,
+  @mastra,
   runId,
   transportId,
   params,
-}: Pick<LogsContext, 'mastra' | 'runId' | 'transportId' | 'params'>) {
+}: Pick<LogsContext, '@actus-ag/@mastra' | 'runId' | 'transportId' | 'params'>) {
   try {
     validateBody({ runId, transportId });
 
@@ -78,7 +78,7 @@ export async function getLogsByRunIdHandler({
         )
       : undefined;
 
-    const logs = await mastra.getLogsByRunId({
+    const logs = await @mastra.getLogsByRunId({
       runId: runId!,
       transportId: transportId!,
       fromDate,
@@ -94,9 +94,9 @@ export async function getLogsByRunIdHandler({
   }
 }
 
-export async function getLogTransports({ mastra }: Pick<LogsContext, 'mastra'>) {
+export async function getLogTransports({ @mastra }: Pick<LogsContext, '@actus-ag/@mastra'>) {
   try {
-    const logger = mastra.getLogger();
+    const logger = @mastra.getLogger();
     const transports = logger.getTransports();
 
     return {

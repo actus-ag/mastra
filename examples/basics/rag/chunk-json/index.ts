@@ -1,4 +1,4 @@
-import { MDocument } from '@actus-ag/mastra-rag';
+import { MDocument } from '@mastra/rag';
 
 const testJson = {
   name: 'John Doe',

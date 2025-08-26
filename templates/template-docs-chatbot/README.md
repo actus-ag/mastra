@@ -130,9 +130,9 @@ pnpm build --filter=@templates/agent
 
 ### Agent
 
-- Update agent instructions in `apps/agent/src/mastra/agents/docs-agent.ts`
-- Configure MCP server connections in `apps/agent/src/mastra/mcp/mcp-client.ts`
-- Add new agents in `apps/agent/src/mastra/agents/`
+- Update agent instructions in `apps/agent/src/@mastra/agents/docs-agent.ts`
+- Configure MCP server connections in `apps/agent/src/@mastra/mcp/mcp-client.ts`
+- Add new agents in `apps/agent/src/@mastra/agents/`
 
 ### Frontend Apps
 
@@ -162,6 +162,6 @@ The Agent app should be deployed first, then the deployment URL should be added 
 
 ## Learn More
 
-- [Mastra Documentation](https://docs.mastra.ai)
-- [MCP Protocol](https://docs.mastra.ai/mcp)
+- [Mastra Documentation](https://docs.@mastra.ai)
+- [MCP Protocol](https://docs.@mastra.ai/mcp)
 - [Turborepo Documentation](https://turborepo.com/docs)

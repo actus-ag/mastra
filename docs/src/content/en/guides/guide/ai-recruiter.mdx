@@ -25,10 +25,10 @@ Set up the Workflow, define steps to extract and classify candidate data, and th
 
 ### Define the Workflow
 
-Create a new file `src/mastra/workflows/candidate-workflow.ts` and define your workflow:
+Create a new file `src/@@mastra/cli/cli/cli/workflows/candidate-workflow.ts` and define your workflow:
 
-```ts copy filename="src/mastra/workflows/candidate-workflow.ts"
-import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows";
+```ts copy filename="src/@@mastra/cli/cli/cli/workflows/candidate-workflow.ts"
+import { createWorkflow, createStep } from "@mastra/cli/cli/cli/core/workflows";
 import { z } from "zod";
 
 export const candidateWorkflow = createWorkflow({
@@ -46,10 +46,10 @@ export const candidateWorkflow = createWorkflow({
 
 You want to extract candidate details from the resume text and classify the person as "technical" or "non-technical". This step calls an LLM to parse the resume and returns structured JSON, including the name, technical status, specialty, and the original resume text. Defined through the `inputSchema` you get access to the `resumeText` inside `execute()`. Use it to prompt an LLM and return the organized fields.
 
-To the existing `src/mastra/workflows/candidate-workflow.ts` file add the following:
+To the existing `src/@@mastra/cli/cli/cli/workflows/candidate-workflow.ts` file add the following:
 
-```ts copy filename="src/mastra/workflows/candidate-workflow.ts"
-import { Agent } from "@actus-ag/mastra-core/agent";
+```ts copy filename="src/@@mastra/cli/cli/cli/workflows/candidate-workflow.ts"
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { openai } from "@ai-sdk/openai";
 
 const recruiter = new Agent({
@@ -95,9 +95,9 @@ Since you're using a Recruiter agent inside `execute()` you need to define it ab
 
 This step prompts a candidate who is identified as "technical" for more information about how they got into their specialty. It uses the entire resume text so the LLM can craft a relevant follow-up question.
 
-To the existing `src/mastra/workflows/candidate-workflow.ts` file add the following:
+To the existing `src/@@mastra/cli/cli/cli/workflows/candidate-workflow.ts` file add the following:
 
-```ts copy filename="src/mastra/workflows/candidate-workflow.ts"
+```ts copy filename="src/@@mastra/cli/cli/cli/workflows/candidate-workflow.ts"
 const askAboutSpecialty = createStep({
   id: "askAboutSpecialty",
   inputSchema: z.object({
@@ -124,9 +124,9 @@ Resume: ${candidateInfo?.resumeText}`;
 
 If the candidate is "non-technical", you want a different follow-up question. This step asks what interests them most about the role, again referencing their complete resume text. The `execute()` function solicits a role-focused query from the LLM.
 
-To the existing `src/mastra/workflows/candidate-workflow.ts` file add the following:
+To the existing `src/@@mastra/cli/cli/cli/workflows/candidate-workflow.ts` file add the following:
 
-```ts filename="src/mastra/workflows/candidate-workflow.ts" copy
+```ts filename="src/@@mastra/cli/cli/cli/workflows/candidate-workflow.ts" copy
 const askAboutRole = createStep({
   id: "askAboutRole",
   inputSchema: z.object({
@@ -152,9 +152,9 @@ Resume: ${candidateInfo?.resumeText}`;
 
 You now combine the steps to implement branching logic based on the candidate's technical status. The workflow first gathers candidate data, then either asks about their specialty or about their role, depending on `isTechnical`. This is done by chaining `gatherCandidateInfo` with `askAboutSpecialty` and `askAboutRole`.
 
-To the existing `src/mastra/workflows/candidate-workflow.ts` file change the `candidateWorkflow` like so:
+To the existing `src/@@mastra/cli/cli/cli/workflows/candidate-workflow.ts` file change the `candidateWorkflow` like so:
 
-```ts filename="src/mastra/workflows/candidate-workflow.ts" copy {10-14}
+```ts filename="src/@@mastra/cli/cli/cli/workflows/candidate-workflow.ts" copy {10-14}
 export const candidateWorkflow = createWorkflow({
   id: "candidate-workflow",
   inputSchema: z.object({
@@ -174,13 +174,13 @@ export const candidateWorkflow = createWorkflow({
 
 ### Register the Workflow with Mastra
 
-In your `src/mastra/index.ts` file, register the workflow:
+In your `src/@@mastra/cli/cli/cli/index.ts` file, register the workflow:
 
-```ts copy filename="src/mastra/index.ts" {2, 5}
-import { Mastra } from "@actus-ag/mastra-core";
+```ts copy filename="src/@@mastra/cli/cli/cli/index.ts" {2, 5}
+import { Mastra } from "@mastra/cli/cli/cli/core";
 import { candidateWorkflow } from "./workflows/candidate-workflow";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   workflows: { candidateWorkflow },
 });
 ```
@@ -192,7 +192,7 @@ export const mastra = new Mastra({
 You can test your workflow inside Mastra's [playground](../../docs/server-db/local-dev-playground.mdx) by starting the development server:
 
 ```bash copy
-mastra dev
+@actus-ag/@mastra/cli/cli dev
 ```
 
 In the sidebar, navigate to **Workflows** and select **candidate-workflow**. In the middle you'll see a graph view of your workflow and on the right sidebar the **Run** tab is selected by default. Inside this tab you can enter a resume text, for example:
@@ -206,9 +206,9 @@ After entering the resume text, press the **Run** button. You should now see two
 You can also test the workflow programmatically by calling [`.createRunAsync()`](../../reference/workflows/create-run.mdx) and [`.start()`](../../reference/workflows/run-methods/start.mdx). Create a new file `src/test-workflow.ts` and add the following:
 
 ```ts copy filename="src/test-workflow.ts"
-import { mastra } from "./mastra";
+import { @@mastra/cli/cli/cli } from "./@@mastra/cli/cli/cli";
 
-const run = await mastra.getWorkflow("candidateWorkflow").createRunAsync();
+const run = await @@mastra/cli/cli/cli.getWorkflow("candidateWorkflow").createRunAsync();
 
 const res = await run.start({
   inputData: {

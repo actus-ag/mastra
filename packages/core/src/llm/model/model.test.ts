@@ -31,7 +31,7 @@ describe('MastraLLM', () => {
       {
         name: 'test',
         logger: mockMastra.logger,
-        mastra: mockMastra as any,
+        @mastra: mockMastra as any,
         runtimeContext,
       },
     ),
@@ -71,7 +71,7 @@ describe('MastraLLM', () => {
       expect(aisdkText).toBeDefined();
     });
 
-    it('should initialize with both model and mastra', () => {
+    it('should initialize with both model and @mastra', () => {
       expect(aisdkObject).toBeDefined();
     });
   });

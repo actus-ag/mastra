@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { DEFAULT_MODEL_NAME, models } from '@/ai/models';
 import { auth } from '@/app/(auth)/auth';
 import { Chat as PreviewChat } from '@/components/custom/chat';
-import { createMastra } from '@/mastra';
+import { createMastra } from '@/@@mastra/cli/cli/cli';
 
 export default async function Page(props: { params: Promise<any> }) {
   const params = await props.params;
@@ -14,7 +14,7 @@ export default async function Page(props: { params: Promise<any> }) {
   const selectedModel = models.find((model) => model.id === modelIdFromCookie);
   const selectedModelId = selectedModel?.id || DEFAULT_MODEL_NAME;
 
-  const mastra = createMastra({
+  const @@mastra/cli/cli/cli = createMastra({
     modelName: selectedModelId!,
     modelProvider: selectedModel?.provider! || `OPEN_AI`,
   });
@@ -22,7 +22,7 @@ export default async function Page(props: { params: Promise<any> }) {
   console.log(id);
   let chat;
   try {
-    chat = await mastra.memory?.getThreadById({ threadId: id });
+    chat = await @@mastra/cli/cli/cli.memory?.getThreadById({ threadId: id });
   } catch (e) {
     console.error('Error getting chat:', e);
   }
@@ -41,7 +41,7 @@ export default async function Page(props: { params: Promise<any> }) {
     return notFound();
   }
 
-  const memoryMessages = await mastra.memory?.query({
+  const memoryMessages = await @@mastra/cli/cli/cli.memory?.query({
     threadId: id,
   });
 

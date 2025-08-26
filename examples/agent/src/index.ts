@@ -1,9 +1,9 @@
 import { z } from 'zod';
-import { mastra } from './mastra';
+import { @mastra } from './@mastra';
 
-const agent = mastra.getAgent('chefAgent');
-const responsesAgent = mastra.getAgent('chefAgentResponses');
-const agentThatHarassesYou = mastra.getAgent('agentThatHarassesYou');
+const agent = @mastra.getAgent('chefAgent');
+const responsesAgent = @mastra.getAgent('chefAgentResponses');
+const agentThatHarassesYou = @mastra.getAgent('agentThatHarassesYou');
 
 const stream = await agentThatHarassesYou.streamVNext('I want to fight you');
 

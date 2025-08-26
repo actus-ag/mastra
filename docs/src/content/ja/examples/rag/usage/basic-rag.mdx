@@ -37,10 +37,10 @@ POSTGRES_CONNECTION_STRING=your_connection_string_here
 
 ```typescript copy showLineNumbers filename="src/index.ts"
 import { openai } from "@ai-sdk/openai";
-import { Mastra } from "@actus-ag/mastra-core";
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { createVectorQueryTool } from "@actus-ag/mastra-rag";
-import { PgVector } from "@actus-ag/mastra-pg";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { createVectorQueryTool } from "@mastra/cli/cli/cli/rag";
+import { PgVector } from "@mastra/cli/cli/cli/pg";
 ```
 
 ## ベクタークエリツールの作成
@@ -78,12 +78,12 @@ export const ragAgent = new Agent({
 ```typescript copy showLineNumbers{23} filename="src/index.ts"
 const pgVector = new PgVector({ connectionString: process.env.POSTGRES_CONNECTION_STRING! });
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   agents: { ragAgent },
   vectors: { pgVector },
 });
 
-const agent = mastra.getAgent("ragAgent");
+const agent = @@mastra/cli/cli/cli.getAgent("ragAgent");
 ```
 
 ## 使用例
@@ -106,6 +106,6 @@ console.log(completion.text);
 <br />
 <GithubLink
   link={
-    "https://github.com/mastra-ai/mastra/blob/main/examples/basics/rag/basic-rag"
+    "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/rag/basic-rag"
   }
 />

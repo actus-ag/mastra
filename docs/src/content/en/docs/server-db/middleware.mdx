@@ -14,9 +14,9 @@ function. If it returns a `Response` the request is short-circuited. Calling
 `next()` continues processing the next middleware or route handler.
 
 ```typescript copy showLineNumbers
-import { Mastra } from "@actus-ag/mastra-core";
+import { Mastra } from "@mastra/cli/cli/cli/core";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   server: {
     middleware: [
       {
@@ -54,7 +54,7 @@ registerApiRoute("/my-custom-route", {
     },
   ],
   handler: async (c) => {
-    const mastra = c.get("mastra");
+    const @@mastra/cli/cli/cli = c.get("@actus-ag/@@mastra/cli/cli/cli");
     return c.json({ message: "Hello, world!" });
   },
 });
@@ -126,10 +126,10 @@ be inspected by middleware to tailor behaviour:
 ```typescript copy
 {
   handler: async (c, next) => {
-    const isFromMastraCloud = c.req.header('x-mastra-cloud') === 'true';
-    const clientType = c.req.header('x-mastra-client-type');
+    const isFromMastraCloud = c.req.header('x-@@mastra/cli/cli/cli-cloud') === 'true';
+    const clientType = c.req.header('x-@@mastra/cli/cli/cli-client-type');
     const isDevPlayground =
-      c.req.header('x-mastra-dev-playground') === 'true';
+      c.req.header('x-@@mastra/cli/cli/cli-dev-playground') === 'true';
 
     if (isFromMastraCloud) {
       // Special handling
@@ -139,6 +139,6 @@ be inspected by middleware to tailor behaviour:
 }
 ```
 
-- `x-mastra-cloud`: request originates from Mastra Cloud
-- `x-mastra-client-type`: identifies the client SDK, e.g. `js` or `python`
-- `x-mastra-dev-playground`: request triggered from a local playground
+- `x-@@mastra/cli/cli/cli-cloud`: request originates from Mastra Cloud
+- `x-@@mastra/cli/cli/cli-client-type`: identifies the client SDK, e.g. `js` or `python`
+- `x-@@mastra/cli/cli/cli-dev-playground`: request triggered from a local playground

@@ -1,8 +1,8 @@
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { Mastra } from '@actus-ag/mastra-core/mastra';
-import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
-import { createTool } from '@actus-ag/mastra-core/tools';
-import type { ToolAction, VercelTool } from '@actus-ag/mastra-core/tools';
+import { Agent } from '@mastra/core/agent';
+import { Mastra } from '@mastra/core/@mastra';
+import { RuntimeContext } from '@mastra/core/runtime-context';
+import { createTool } from '@mastra/core/tools';
+import type { ToolAction, VercelTool } from '@mastra/core/tools';
 import type { Mock } from 'vitest';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { HTTPException } from '../http-exception';
@@ -64,7 +64,7 @@ describe('Tools Handlers', () => {
     it('should throw error when toolId is not provided', async () => {
       await expect(
         executeTool({
-          mastra: new Mastra({ logger: false }),
+          @mastra: new Mastra({ logger: false }),
           data: {},
           runtimeContext: new RuntimeContext(),
         }),
@@ -74,7 +74,7 @@ describe('Tools Handlers', () => {
     it('should throw 404 when tool is not found', async () => {
       await expect(
         executeTool({
-          mastra: new Mastra({ logger: false }),
+          @mastra: new Mastra({ logger: false }),
           toolId: 'non-existent',
           data: {},
           runtimeContext: new RuntimeContext(),
@@ -89,7 +89,7 @@ describe('Tools Handlers', () => {
 
       await expect(
         executeTool({
-          mastra: new Mastra(),
+          @mastra: new Mastra(),
           toolId: nonExecutableTool.id,
           data: {},
           runtimeContext: new RuntimeContext(),
@@ -100,7 +100,7 @@ describe('Tools Handlers', () => {
     it('should throw error when data is not provided', async () => {
       await expect(
         executeTool({
-          mastra: new Mastra(),
+          @mastra: new Mastra(),
           toolId: mockTool.id,
           data: null,
           runtimeContext: new RuntimeContext(),
@@ -117,7 +117,7 @@ describe('Tools Handlers', () => {
 
       const runtimeContext = new RuntimeContext();
       const result = await executeTool({
-        mastra: mockMastra,
+        @mastra: mockMastra,
         toolId: mockTool.id,
         runId: 'test-run',
         runtimeContext: runtimeContext,
@@ -128,7 +128,7 @@ describe('Tools Handlers', () => {
       expect(mockExecute).toHaveBeenCalledWith(
         {
           context,
-          mastra: mockMastra,
+          @mastra: mockMastra,
           runId: 'test-run',
           runtimeContext: runtimeContext,
         },
@@ -142,7 +142,7 @@ describe('Tools Handlers', () => {
       (mockVercelTool.execute as Mock<() => any>).mockResolvedValue(mockResult);
 
       const result = await executeTool({
-        mastra: mockMastra,
+        @mastra: mockMastra,
         toolId: `tool`,
         runtimeContext: new RuntimeContext(),
         data: { test: 'data' },
@@ -164,7 +164,7 @@ describe('Tools Handlers', () => {
     it('should throw 404 when agent is not found', async () => {
       await expect(
         executeAgentToolHandler({
-          mastra: new Mastra({ logger: false }),
+          @mastra: new Mastra({ logger: false }),
           agentId: 'non-existent',
           toolId: mockTool.id,
           data: {},
@@ -176,7 +176,7 @@ describe('Tools Handlers', () => {
     it('should throw 404 when tool is not found in agent', async () => {
       await expect(
         executeAgentToolHandler({
-          mastra: new Mastra({
+          @mastra: new Mastra({
             logger: false,
             agents: { 'test-agent': mockAgent as any },
           }),
@@ -199,7 +199,7 @@ describe('Tools Handlers', () => {
 
       await expect(
         executeAgentToolHandler({
-          mastra: new Mastra({
+          @mastra: new Mastra({
             logger: false,
             agents: { 'test-agent': agent as any },
           }),
@@ -226,7 +226,7 @@ describe('Tools Handlers', () => {
       };
       const runtimeContext = new RuntimeContext();
       const result = await executeAgentToolHandler({
-        mastra: mockMastra,
+        @mastra: mockMastra,
         agentId: 'test-agent',
         toolId: mockTool.id,
         data: context,
@@ -237,7 +237,7 @@ describe('Tools Handlers', () => {
       expect(mockExecute).toHaveBeenCalledWith(
         {
           context,
-          mastra: mockMastra,
+          @mastra: mockMastra,
           runId: 'test-agent',
           runtimeContext: runtimeContext,
         },
@@ -256,7 +256,7 @@ describe('Tools Handlers', () => {
       });
 
       const result = await executeAgentToolHandler({
-        mastra: mockMastra,
+        @mastra: mockMastra,
         agentId: 'test-agent',
         toolId: `tool`,
         data: {},

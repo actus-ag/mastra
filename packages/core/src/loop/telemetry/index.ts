@@ -18,7 +18,7 @@ export function getTracer({
     return tracer;
   }
 
-  return trace.getTracer('mastra');
+  return trace.getTracer('@actus-ag/@mastra');
 }
 
 export function assembleOperationName({
@@ -29,7 +29,7 @@ export function assembleOperationName({
   telemetry?: TelemetrySettings;
 }) {
   return {
-    'mastra.operationId': operationId,
+    '@mastra.operationId': operationId,
     'operation.name': `${operationId}${telemetry?.functionId != null ? ` ${telemetry.functionId}` : ''}`,
     ...(telemetry?.functionId ? { 'resource.name': telemetry?.functionId } : {}),
   };

@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@mastra/rag': link:../../../../packages/rag
+  '@mastra/cli/cli/cli/rag': link:../../../../packages/rag
 
 importers:
 
@@ -14,7 +14,7 @@ importers:
       '@ai-sdk/openai':
         specifier: latest
         version: 1.3.17(zod@3.24.3)
-      '@mastra/rag':
+      '@mastra/cli/cli/cli/rag':
         specifier: link:../../../../packages/rag
         version: link:../../../../packages/rag
       ai:

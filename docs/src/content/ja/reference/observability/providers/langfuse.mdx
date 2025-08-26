@@ -26,10 +26,10 @@ LANGFUSE_BASEURL=https://cloud.langfuse.com  # オプション - デフォルト
 こちらは、MastraをLangfuseで使用するための設定方法です：
 
 ```typescript
-import { Mastra } from "@actus-ag/mastra-core";
+import { Mastra } from "@mastra/cli/cli/cli/core";
 import { LangfuseExporter } from "langfuse-vercel";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // ... other config
   telemetry: {
     serviceName: "ai", // this must be set to "ai" so that the LangfuseExporter thinks it's an AI SDK trace

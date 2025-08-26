@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import type { MastraMessageV1 } from '../../../memory/types';
 import type { MastraMessageV2 } from '../../message-list';
 import { MessageList } from '../../message-list';
-import { convertToV1Messages } from './convert-to-mastra-v1';
+import { convertToV1Messages } from './convert-to-@mastra-v1';
 
 describe('convertToV1Messages', () => {
   it('should preserve toolInvocations when text follows tool invocations (reproduces issue #6087)', () => {

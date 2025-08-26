@@ -1,17 +1,17 @@
-# @actus-ag/mastra-opensearch
+# @mastra/opensearch
 
 Vector store implementation for OpenSearch using the official @opensearch-project/opensearch SDK
 
 ## Installation
 
 ```bash
-pnpm add @actus-ag/mastra-opensearch
+pnpm add @mastra/opensearch
 ```
 
 ## Usage
 
 ```typescript
-import { OpenSearchVector } from '@actus-ag/mastra-opensearch';
+import { OpenSearchVector } from '@mastra/opensearch';
 
 const vectorStore = new OpenSearchVector('http://localhost:9200');
 

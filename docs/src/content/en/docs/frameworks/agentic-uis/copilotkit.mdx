@@ -78,17 +78,17 @@ In your Mastra server, install additional packages for CopilotKit integration:
 <Tabs items={["npm", "yarn", "pnpm"]}>
   <Tabs.Tab>
     ```bash copy
-    npm install @copilotkit/runtime @ag-ui/mastra
+    npm install @copilotkit/runtime @ag-ui/@@mastra/cli/cli/cli
     ```
   </Tabs.Tab>
   <Tabs.Tab>
     ```bash copy
-    yarn add @copilotkit/runtime @ag-ui/mastra
+    yarn add @copilotkit/runtime @ag-ui/@@mastra/cli/cli/cli
     ```
   </Tabs.Tab>
   <Tabs.Tab>
     ```bash copy
-    pnpm add @copilotkit/runtime @ag-ui/mastra
+    pnpm add @copilotkit/runtime @ag-ui/@@mastra/cli/cli/cli
     ```
   </Tabs.Tab>
 </Tabs>
@@ -97,9 +97,9 @@ In your Mastra server, install additional packages for CopilotKit integration:
 
 Configure your Mastra instance to include CopilotKit's runtime endpoint:
 
-```typescript filename="src/mastra/index.ts" showLineNumbers copy {5-8,12-28}
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { registerCopilotKit } from "@ag-ui/mastra";
+```typescript filename="src/@@mastra/cli/cli/cli/index.ts" showLineNumbers copy {5-8,12-28}
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { registerCopilotKit } from "@ag-ui/@@mastra/cli/cli/cli";
 import { weatherAgent } from "./agents/weather-agent";
 
 type WeatherRuntimeContext = {
@@ -107,7 +107,7 @@ type WeatherRuntimeContext = {
   "temperature-scale": "celsius" | "fahrenheit";
 };
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   agents: { weatherAgent },
   server: {
     cors: {
@@ -158,17 +158,17 @@ In your Next.js app, install the required packages:
 <Tabs items={["npm", "yarn", "pnpm"]}>
   <Tabs.Tab>
     ```bash copy
-    npm install @copilotkit/react-core @copilotkit/react-ui @copilotkit/runtime @ag-ui/mastra
+    npm install @copilotkit/react-core @copilotkit/react-ui @copilotkit/runtime @ag-ui/@@mastra/cli/cli/cli
     ```
   </Tabs.Tab>
   <Tabs.Tab>
     ```bash copy
-    yarn add @copilotkit/react-core @copilotkit/react-ui @copilotkit/runtime @ag-ui/mastra
+    yarn add @copilotkit/react-core @copilotkit/react-ui @copilotkit/runtime @ag-ui/@@mastra/cli/cli/cli
     ```
   </Tabs.Tab>
   <Tabs.Tab>
     ```bash copy
-    pnpm add @copilotkit/react-core @copilotkit/react-ui @copilotkit/runtime @ag-ui/mastra
+    pnpm add @copilotkit/react-core @copilotkit/react-ui @copilotkit/runtime @ag-ui/@@mastra/cli/cli/cli
     ```
   </Tabs.Tab>
 </Tabs>
@@ -213,23 +213,23 @@ There are two approaches for the API route determined by how you're integrating 
 Create an API route that connects to local Mastra agents.
 
 ```typescript filename="app/api/copilotkit/route.ts" showLineNumbers copy {1-7,11-26}
-import { mastra } from "../../mastra";
+import { @@mastra/cli/cli/cli } from "../../@@mastra/cli/cli/cli";
 import {
   CopilotRuntime,
   ExperimentalEmptyAdapter,
   copilotRuntimeNextJSAppRouterEndpoint,
 } from "@copilotkit/runtime";
-import { MastraAgent } from "@ag-ui/mastra";
+import { MastraAgent } from "@ag-ui/@@mastra/cli/cli/cli";
 import { NextRequest } from "next/server";
 
 export const POST = async (req: NextRequest) => {
-  const mastraAgents = MastraAgent.getLocalAgents({
-    mastra,
+  const @@mastra/cli/cli/cliAgents = MastraAgent.getLocalAgents({
+    @@mastra/cli/cli/cli,
     agentId: "weatherAgent",
   });
 
   const runtime = new CopilotRuntime({
-    agents: mastraAgents,
+    agents: @@mastra/cli/cli/cliAgents,
   });
 
   const { handleRequest } = copilotRuntimeNextJSAppRouterEndpoint({
@@ -252,17 +252,17 @@ Install the Mastra Client SDK.
 <Tabs items={["npm", "yarn", "pnpm"]}>
   <Tabs.Tab>
     ```bash copy
-    npm install @actus-ag/mastra-client-js
+    npm install @actus-ag/@@mastra/cli/cli/client-js
     ```
   </Tabs.Tab>
   <Tabs.Tab>
     ```bash copy
-    yarn add @actus-ag/mastra-client-js
+    yarn add @actus-ag/@@mastra/cli/cli/client-js
     ```
   </Tabs.Tab>
   <Tabs.Tab>
     ```bash copy
-     pnpm add @actus-ag/mastra-client-js
+     pnpm add @actus-ag/@@mastra/cli/cli/client-js
     ```
   </Tabs.Tab>
 </Tabs>
@@ -270,23 +270,23 @@ Install the Mastra Client SDK.
 Create an API route that connects to remote Mastra agents:
 
 ```typescript filename="app/api/copilotkit/route.ts" showLineNumbers copy {1-7,12-26}
-import { MastraClient } from "@actus-ag/mastra-client-js";
+import { MastraClient } from "@@mastra/cli/cli/cli-client-js";
 import {
   CopilotRuntime,
   ExperimentalEmptyAdapter,
   copilotRuntimeNextJSAppRouterEndpoint,
 } from "@copilotkit/runtime";
-import { MastraAgent } from "@ag-ui/mastra";
+import { MastraAgent } from "@ag-ui/@@mastra/cli/cli/cli";
 import { NextRequest } from "next/server";
 
 export const POST = async (req: NextRequest) => {
   const baseUrl = process.env.MASTRA_BASE_URL || "http://localhost:4111";
-  const mastraClient = new MastraClient({ baseUrl });
+  const @@mastra/cli/cli/cliClient = new MastraClient({ baseUrl });
 
-  const mastraAgents = await MastraAgent.getRemoteAgents({ mastraClient });
+  const @@mastra/cli/cli/cliAgents = await MastraAgent.getRemoteAgents({ @@mastra/cli/cli/cliClient });
 
   const runtime = new CopilotRuntime({
-    agents: mastraAgents,
+    agents: @@mastra/cli/cli/cliAgents,
   });
 
   const { handleRequest } = copilotRuntimeNextJSAppRouterEndpoint({

@@ -17,7 +17,7 @@ import type {
   StreamObjectOnFinishCallback,
 } from '../llm/model/base.types';
 import type { MastraLanguageModel } from '../llm/model/shared.types';
-import type { Mastra } from '../mastra';
+import type { Mastra } from '../@mastra';
 import type { MastraMemory } from '../memory/memory';
 import type { MemoryConfig, StorageThreadType } from '../memory/types';
 import type { InputProcessor, OutputProcessor } from '../processors/index';
@@ -73,7 +73,7 @@ export interface AgentConfig<
   defaultGenerateOptions?: DynamicArgument<AgentGenerateOptions>;
   defaultStreamOptions?: DynamicArgument<AgentStreamOptions>;
   defaultVNextStreamOptions?: DynamicArgument<AgentExecutionOptions>;
-  mastra?: Mastra;
+  @mastra?: Mastra;
   scorers?: DynamicArgument<MastraScorers>;
   evals?: TMetrics;
   memory?: DynamicArgument<MastraMemory>;

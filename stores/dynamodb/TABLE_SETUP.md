@@ -1,10 +1,10 @@
 # DynamoDB Table Setup for Mastra Single-Table Design
 
-This document explains how to set up the required DynamoDB table structure for use with the `@actus-ag/mastra-dynamodb` package.
+This document explains how to set up the required DynamoDB table structure for use with the `@mastra/dynamodb` package.
 
 ## Table Structure
 
-The `@actus-ag/mastra-dynamodb` package uses a single-table design pattern with ElectroDB. You need to create a single DynamoDB table with the following structure:
+The `@mastra/dynamodb` package uses a single-table design pattern with ElectroDB. You need to create a single DynamoDB table with the following structure:
 
 - **Table Name**: You can choose any name, but remember to pass it to the `DynamoDBStore` constructor
 - **Partition Key**: `pk` (String)
@@ -40,7 +40,7 @@ Resources:
   MastraSingleTable:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: mastra-single-table
+      TableName: @mastra-single-table
       BillingMode: PAY_PER_REQUEST
       AttributeDefinitions:
         - AttributeName: pk
@@ -97,7 +97,7 @@ export class MastraDynamoDbStack extends cdk.Stack {
     super(scope, id, props);
 
     // Consider parameterizing the table name for different environments
-    const tableName = 'mastra-single-table';
+    const tableName = '@mastra-single-table';
 
     // Create the single table
     const table = new dynamodb.Table(this, 'MastraSingleTable', {
@@ -133,15 +133,15 @@ export class MastraDynamoDbStack extends cdk.Stack {
 Once the table is created, you can use it with the DynamoDBStore:
 
 ```typescript
-import { Memory } from '@actus-ag/mastra-memory';
-import { DynamoDBStore } from '@actus-ag/mastra-dynamodb';
-import { PineconeVector } from '@actus-ag/mastra-pinecone';
+import { Memory } from '@mastra/memory';
+import { DynamoDBStore } from '@mastra/dynamodb';
+import { PineconeVector } from '@mastra/pinecone';
 
 const storage = new DynamoDBStore({
   name: 'dynamodb',
   config: {
     region: 'us-east-1',
-    tableName: 'mastra-single-table', // use the name you chose when creating the table
+    tableName: '@mastra-single-table', // use the name you chose when creating the table
   },
 });
 
@@ -176,7 +176,7 @@ const storage = new DynamoDBStore({
   name: 'dynamodb',
   config: {
     region: 'us-east-1',
-    tableName: 'mastra-single-table',
+    tableName: '@mastra-single-table',
     endpoint: 'http://localhost:8000', // Local DynamoDB endpoint
   },
 });

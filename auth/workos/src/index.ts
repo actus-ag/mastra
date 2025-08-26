@@ -1,7 +1,7 @@
-import { verifyJwks } from '@actus-ag/mastra-auth';
-import type { JwtPayload } from '@actus-ag/mastra-auth';
-import type { MastraAuthProviderOptions } from '@actus-ag/mastra-core/server';
-import { MastraAuthProvider } from '@actus-ag/mastra-core/server';
+import { verifyJwks } from '@mastra/auth';
+import type { JwtPayload } from '@mastra/auth';
+import type { MastraAuthProviderOptions } from '@mastra/core/server';
+import { MastraAuthProvider } from '@mastra/core/server';
 import { WorkOS } from '@workos-inc/node';
 
 type WorkosUser = JwtPayload;

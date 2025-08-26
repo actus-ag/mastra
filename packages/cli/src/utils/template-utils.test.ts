@@ -18,7 +18,7 @@ describe('template-utils', () => {
     it('should load templates from API', async () => {
       const mockTemplates = [
         {
-          githubUrl: 'https://github.com/mastra-ai/template-test',
+          githubUrl: 'https://github.com/@mastra-ai/template-test',
           title: 'Test Template',
           slug: 'template-test',
           agents: ['test-agent'],
@@ -38,7 +38,7 @@ describe('template-utils', () => {
       const templates = await loadTemplates();
 
       expect(templates).toEqual(mockTemplates);
-      expect(fetch).toHaveBeenCalledWith('https://mastra.ai/api/templates.json');
+      expect(fetch).toHaveBeenCalledWith('https://@mastra.ai/api/templates.json');
     });
 
     it('should use custom API URL from environment variable', async () => {
@@ -79,7 +79,7 @@ describe('template-utils', () => {
   describe('findTemplateByName', () => {
     const mockTemplates = [
       {
-        githubUrl: 'https://github.com/mastra-ai/template-browsing-agent',
+        githubUrl: 'https://github.com/@mastra-ai/template-browsing-agent',
         title: 'Browsing Agent',
         slug: 'template-browsing-agent',
         agents: ['web-agent'],
@@ -89,7 +89,7 @@ describe('template-utils', () => {
         workflows: [],
       },
       {
-        githubUrl: 'https://github.com/mastra-ai/template-data-analyst',
+        githubUrl: 'https://github.com/@mastra-ai/template-data-analyst',
         title: 'Data Analyst Agent',
         slug: 'template-data-analyst',
         agents: ['analyst-agent'],
@@ -128,7 +128,7 @@ describe('template-utils', () => {
   describe('getDefaultProjectName', () => {
     it('should remove template- prefix from slug', async () => {
       const mockTemplate = {
-        githubUrl: 'https://github.com/mastra-ai/template-browsing-agent',
+        githubUrl: 'https://github.com/@mastra-ai/template-browsing-agent',
         title: 'Browsing Agent',
         slug: 'template-browsing-agent',
         agents: [],
@@ -145,7 +145,7 @@ describe('template-utils', () => {
 
     it('should return slug as-is if no template- prefix', async () => {
       const mockTemplate = {
-        githubUrl: 'https://github.com/mastra-ai/custom-agent',
+        githubUrl: 'https://github.com/@mastra-ai/custom-agent',
         title: 'Custom Agent',
         slug: 'custom-agent',
         agents: [],
@@ -165,7 +165,7 @@ describe('template-utils', () => {
     it('should return selected template when user selects one', async () => {
       const mockTemplates = [
         {
-          githubUrl: 'https://github.com/mastra-ai/template-test',
+          githubUrl: 'https://github.com/@mastra-ai/template-test',
           title: 'Test Template',
           slug: 'template-test',
           agents: ['test-agent'],
@@ -199,7 +199,7 @@ describe('template-utils', () => {
     it('should return null when user cancels selection', async () => {
       const mockTemplates = [
         {
-          githubUrl: 'https://github.com/mastra-ai/template-test',
+          githubUrl: 'https://github.com/@mastra-ai/template-test',
           title: 'Test Template',
           slug: 'template-test',
           agents: [],
@@ -223,7 +223,7 @@ describe('template-utils', () => {
     it('should correctly pluralize component counts', async () => {
       const mockTemplates = [
         {
-          githubUrl: 'https://github.com/mastra-ai/template-single',
+          githubUrl: 'https://github.com/@mastra-ai/template-single',
           title: 'Single Components',
           slug: 'template-single',
           agents: ['agent1'],
@@ -233,7 +233,7 @@ describe('template-utils', () => {
           workflows: ['workflow1'],
         },
         {
-          githubUrl: 'https://github.com/mastra-ai/template-multiple',
+          githubUrl: 'https://github.com/@mastra-ai/template-multiple',
           title: 'Multiple Components',
           slug: 'template-multiple',
           agents: ['agent1', 'agent2'],
@@ -243,7 +243,7 @@ describe('template-utils', () => {
           workflows: ['workflow1', 'workflow2'],
         },
         {
-          githubUrl: 'https://github.com/mastra-ai/template-full',
+          githubUrl: 'https://github.com/@mastra-ai/template-full',
           title: 'Full Template',
           slug: 'template-full',
           agents: ['agent1'],
@@ -286,7 +286,7 @@ describe('template-utils', () => {
     it('should handle templates with no components gracefully', async () => {
       const mockTemplates = [
         {
-          githubUrl: 'https://github.com/mastra-ai/template-empty',
+          githubUrl: 'https://github.com/@mastra-ai/template-empty',
           title: 'Empty Template',
           slug: 'template-empty',
           agents: [],

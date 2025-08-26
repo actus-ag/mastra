@@ -1,6 +1,6 @@
 import { client } from '@/lib/client';
 
-import { RuntimeContext } from '@actus-ag/mastra-core/di';
+import { RuntimeContext } from '@mastra/core/di';
 import { toast } from 'sonner';
 import { useMutation } from '@tanstack/react-query';
 

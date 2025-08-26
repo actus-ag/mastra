@@ -3,9 +3,9 @@ import Readline from 'readline';
 
 import 'dotenv/config';
 
-import { mastra } from './mastra';
+import { @mastra } from './@mastra';
 
-const agent = mastra.getAgent('memoryAgent');
+const agent = @mastra.getAgent('memoryAgent');
 
 let thread = randomUUID();
 // use this to play with a long running conversation. comment it out to get a new thread id every time

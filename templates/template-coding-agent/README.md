@@ -27,7 +27,7 @@ This template demonstrates how to build an AI coding assistant that can work wit
 1. **Clone and install dependencies:**
 
    ```bash
-   git clone https://github.com/mastra-ai/template-coding-agent.git
+   git clone https://github.com/@mastra-ai/template-coding-agent.git
    cd template-coding-agent
    pnpm install
    ```
@@ -54,7 +54,7 @@ This template demonstrates how to build an AI coding assistant that can work wit
 
 ### Core Components
 
-#### **Coding Agent** (`src/mastra/agents/coding-agent.ts`)
+#### **Coding Agent** (`src/@mastra/agents/coding-agent.ts`)
 
 The main agent with comprehensive development capabilities:
 
@@ -64,7 +64,7 @@ The main agent with comprehensive development capabilities:
 - **Development Monitoring**: Watches for changes and monitors workflows
 - **Memory Integration**: Maintains conversation context and project history
 
-#### **E2B Tools** (`src/mastra/tools/e2b.ts`)
+#### **E2B Tools** (`src/@mastra/tools/e2b.ts`)
 
 Complete toolkit for sandbox interaction:
 
@@ -119,7 +119,7 @@ OPENAI_API_KEY=your_openai_api_key_here
 
 ### Customization
 
-You can customize the agent behavior by modifying the instructions in `src/mastra/agents/coding-agent.ts`:
+You can customize the agent behavior by modifying the instructions in `src/@mastra/agents/coding-agent.ts`:
 
 ```typescript
 export const codingAgent = new Agent({
@@ -168,7 +168,7 @@ export const codingAgent = new Agent({
 ### Project Structure
 
 ```text
-src/mastra/
+src/@mastra/
       agents/
         coding-agent.ts              # Main coding agent with development capabilities
       tools/

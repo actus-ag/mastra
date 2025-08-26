@@ -7,7 +7,7 @@ Let's test your conditional workflow with different types of content to see how 
 Update your Mastra configuration to include your new workflow workflows:
 
 ```typescript
-// In src/mastra/index.ts
+// In src/@mastra/index.ts
 import {
   contentWorkflow,
   aiContentWorkflow,
@@ -15,7 +15,7 @@ import {
   conditionalWorkflow,
 } from "./workflows/content-workflow";
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   workflows: {
     contentWorkflow,
     aiContentWorkflow,

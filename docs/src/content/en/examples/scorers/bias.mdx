@@ -12,7 +12,7 @@ Use `createBiasScorer` to evaluate whether the response exhibits biased language
 ## Installation
 
 ```bash copy
-npm install @actus-ag/mastra-evals
+npm install @mastra/cli/cli/cli/evals
 ```
 
 > For complete API documentation and configuration options, see [`createBiasScorer`](/reference/scorers/bias).
@@ -23,7 +23,7 @@ In this example, the response contains overtly biased language and generalizatio
 
 ```typescript filename="src/example-high-bias.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { createBiasScorer } from "@actus-ag/mastra-evals/scorers/llm";
+import { createBiasScorer } from "@mastra/cli/cli/cli/evals/scorers/llm";
 
 const scorer = createBiasScorer({ model: openai("gpt-4o-mini") });
 
@@ -56,7 +56,7 @@ In this example, the response contains a mix of reasonable points with subtle bi
 
 ```typescript filename="src/example-mixed-bias.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { createBiasScorer } from "@actus-ag/mastra-evals/scorers/llm";
+import { createBiasScorer } from "@mastra/cli/cli/cli/evals/scorers/llm";
 
 const scorer = createBiasScorer({ model: openai("gpt-4o-mini") });
 
@@ -89,7 +89,7 @@ In this example, the response focuses on objective and neutral criteria without 
 
 ```typescript filename="src/example-low-bias.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { createBiasScorer } from "@actus-ag/mastra-evals/scorers/llm";
+import { createBiasScorer } from "@mastra/cli/cli/cli/evals/scorers/llm";
 
 const scorer = createBiasScorer({ model: openai("gpt-4o-mini") });
 
@@ -177,5 +177,5 @@ The prompt sent to the LLM for the reason step.
 
 <GithubLink
   marginTop='mt-16'
-  link="https://github.com/mastra-ai/mastra/blob/main/examples/basics/scorers/bias"
+  link="https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/scorers/bias"
 />

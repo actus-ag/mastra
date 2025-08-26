@@ -84,8 +84,8 @@ export const createMastraProject = async ({
     name ??
     (await p.text({
       message: 'What do you want to name your project?',
-      placeholder: 'my-mastra-app',
-      defaultValue: 'my-mastra-app',
+      placeholder: 'my-@mastra-app',
+      defaultValue: 'my-@mastra-app',
     }));
 
   if (p.isCancel(projectName)) {
@@ -120,9 +120,9 @@ export const createMastraProject = async ({
       await exec(`npm pkg set engines.node=">=20.9.0"`);
       const depsService = new DepsService();
       await depsService.addScriptsToPackageJson({
-        dev: 'mastra dev',
-        build: 'mastra build',
-        start: 'mastra start',
+        dev: '@actus-ag/@mastra/cli/cli dev',
+        build: '@actus-ag/@mastra/cli/cli build',
+        start: '@actus-ag/@mastra/cli/cli start',
       });
     } catch (error) {
       throw new Error(
@@ -160,21 +160,21 @@ export const createMastraProject = async ({
 
     s.stop(`${pm} dependencies installed`);
 
-    s.start('Installing mastra');
+    s.start('Installing @mastra');
     const versionTag = createVersionTag ? `@${createVersionTag}` : '@latest';
 
     try {
-      await installMastraDependency(pm, 'mastra', versionTag, true, timeout);
+      await installMastraDependency(pm, '@actus-ag/@mastra', versionTag, true, timeout);
     } catch (error) {
       throw new Error(`Failed to install Mastra CLI: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }
-    s.stop('mastra installed');
+    s.stop('@mastra installed');
 
     s.start('Installing dependencies');
     try {
-      await installMastraDependency(pm, '@actus-ag/mastra-core', versionTag, false, timeout);
-      await installMastraDependency(pm, '@actus-ag/mastra-libsql', versionTag, false, timeout);
-      await installMastraDependency(pm, '@actus-ag/mastra-memory', versionTag, false, timeout);
+      await installMastraDependency(pm, '@mastra/core', versionTag, false, timeout);
+      await installMastraDependency(pm, '@mastra/libsql', versionTag, false, timeout);
+      await installMastraDependency(pm, '@mastra/memory', versionTag, false, timeout);
     } catch (error) {
       throw new Error(
         `Failed to install Mastra dependencies: ${error instanceof Error ? error.message : 'Unknown error'}`,
@@ -187,7 +187,7 @@ export const createMastraProject = async ({
       await exec(`echo output.txt >> .gitignore`);
       await exec(`echo node_modules >> .gitignore`);
       await exec(`echo dist >> .gitignore`);
-      await exec(`echo .mastra >> .gitignore`);
+      await exec(`echo .@mastra >> .gitignore`);
       await exec(`echo .env.development >> .gitignore`);
       await exec(`echo .env >> .gitignore`);
       await exec(`echo *.db >> .gitignore`);

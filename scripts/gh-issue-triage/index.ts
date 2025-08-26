@@ -1,6 +1,6 @@
 import { Octokit } from 'octokit';
-import { MCPClient } from '@actus-ag/mastra-mcp';
-import { MastraClient } from '@actus-ag/mastra-client-js';
+import { MCPClient } from '@mastra/mcp';
+import { MastraClient } from '@mastra-client-js';
 
 const GITHUB_PERSONAL_ACCESS_TOKEN = process.env.GITHUB_PERSONAL_ACCESS_TOKEN;
 const OWNER = process.env.OWNER;
@@ -58,11 +58,11 @@ async function main() {
     auth: GITHUB_PERSONAL_ACCESS_TOKEN,
   });
 
-  const mastraClient = new MastraClient({
+  const @mastraClient = new MastraClient({
     baseUrl: MASTRA_BASE_URL || 'http://localhost:4111',
   });
 
-  const agent = mastraClient.getAgent('triageAgent');
+  const agent = @mastraClient.getAgent('triageAgent');
   // Context build
 
   const issue = await octokit.rest.issues.get({

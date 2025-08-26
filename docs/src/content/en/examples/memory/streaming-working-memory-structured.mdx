@@ -13,11 +13,11 @@ Let's break down how to create an agent with structured working memory. We'll bu
 
 ### 1. Setting up Structured Memory
 
-We'll configure the memory system with a short context window and provide a Zod schema for the todo list. For persistence, you can configure a storage provider like `@actus-ag/mastra-libsql`:
+We'll configure the memory system with a short context window and provide a Zod schema for the todo list. For persistence, you can configure a storage provider like `@mastra/cli/cli/cli/libsql`:
 
 ```typescript
-import { Memory } from "@actus-ag/mastra-memory";
-import { LibSQLStore } from "@actus-ag/mastra-libsql";
+import { Memory } from "@mastra/cli/cli/cli/memory";
+import { LibSQLStore } from "@mastra/cli/cli/cli/libsql";
 import { z } from "zod";
 
 // Define the schema for the todo list
@@ -41,7 +41,7 @@ const memory = new Memory({
     },
   },
   storage: new LibSQLStore({
-    url: "file:../mastra.db",
+    url: "file:../@@mastra/cli/cli/cli.db",
   }),
 });
 ```
@@ -52,7 +52,7 @@ We'll create an agent that uses this structured memory. The instructions should 
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 const todoAgent = new Agent({
   name: "TODO Agent",
@@ -75,7 +75,7 @@ For simple cases, you can use `maskStreamTags` to hide the working memory update
 
 ```typescript
 import { randomUUID } from "crypto";
-import { maskStreamTags } from "@actus-ag/mastra-core/utils";
+import { maskStreamTags } from "@mastra/cli/cli/cli/core/utils";
 
 // Start a conversation
 const threadId = randomUUID();

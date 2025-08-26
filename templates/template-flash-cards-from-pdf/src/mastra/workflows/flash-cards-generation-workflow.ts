@@ -1,6 +1,6 @@
-import { createWorkflow, createStep, mapVariable } from '@actus-ag/mastra-core/workflows';
+import { createWorkflow, createStep, mapVariable } from '@mastra/core/workflows';
 import { z } from 'zod';
-import { RuntimeContext } from '@actus-ag/mastra-core/di';
+import { RuntimeContext } from '@mastra/core/di';
 import { pdfContentExtractorTool } from '../tools/pdf-content-extractor-tool';
 import { contentAnalyzerTool } from '../tools/content-analyzer-tool';
 import { flashCardsGeneratorTool } from '../tools/flash-cards-generator-tool';
@@ -104,7 +104,7 @@ const extractPdfContentStep = createStep({
     inputType: z.enum(['url', 'attachment']),
     filename: z.string().optional(),
   }),
-  execute: async ({ inputData, runtimeContext, mastra }) => {
+  execute: async ({ inputData, runtimeContext, @mastra }) => {
     const { pdfUrl, pdfData, filename, subjectArea, focusAreas } = inputData;
 
     const inputType = pdfData ? 'attachment' : 'url';
@@ -114,7 +114,7 @@ const extractPdfContentStep = createStep({
 
     try {
       const extractionResult = await pdfContentExtractorTool.execute({
-        mastra,
+        @mastra,
         context: {
           pdfUrl,
           pdfData,
@@ -193,7 +193,7 @@ const analyzeContentStep = createStep({
     suggestedQuestionTypes: z.array(z.string()),
     finalSubjectArea: z.string(),
   }),
-  execute: async ({ inputData, runtimeContext, mastra }) => {
+  execute: async ({ inputData, runtimeContext, @mastra }) => {
     const { educationalSummary, keyTopics, definitions, concepts, facts, subjectArea, difficultyLevel, focusAreas } =
       inputData;
 
@@ -201,7 +201,7 @@ const analyzeContentStep = createStep({
 
     try {
       const analysisResult = await contentAnalyzerTool.execute({
-        mastra,
+        @mastra,
         context: {
           content: educationalSummary,
           subjectArea,
@@ -302,7 +302,7 @@ const generateFlashCardsStep = createStep({
       generatedAt: z.string(),
     }),
   }),
-  execute: async ({ inputData, runtimeContext, mastra }) => {
+  execute: async ({ inputData, runtimeContext, @mastra }) => {
     const {
       analyzedConcepts,
       analyzedDefinitions,
@@ -318,7 +318,7 @@ const generateFlashCardsStep = createStep({
 
     try {
       const generationResult = await flashCardsGeneratorTool.execute({
-        mastra,
+        @mastra,
         context: {
           concepts: analyzedConcepts,
           definitions: analyzedDefinitions,
@@ -377,7 +377,7 @@ const generateImagesStep = createStep({
       }),
     ),
   }),
-  execute: async ({ inputData, runtimeContext, mastra }) => {
+  execute: async ({ inputData, runtimeContext, @mastra }) => {
     const { flashCards, generateImages, imageStyle, subjectArea } = inputData;
 
     if (!generateImages) {
@@ -408,7 +408,7 @@ const generateImagesStep = createStep({
         if (shouldGenerateImage) {
           try {
             const imageResult = await imageGeneratorTool.execute({
-              mastra,
+              @mastra,
               context: {
                 concept: `${card.question} - ${card.answer}`,
                 subjectArea,

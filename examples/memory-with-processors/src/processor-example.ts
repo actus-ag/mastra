@@ -1,11 +1,11 @@
 import 'dotenv/config';
 import { openai } from '@ai-sdk/openai';
-import { Mastra } from '@actus-ag/mastra-core';
-import { PinoLogger } from '@actus-ag/mastra-loggers';
-import { createTool } from '@actus-ag/mastra-core/tools';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { Memory } from '@actus-ag/mastra-memory';
-import { TokenLimiter } from '@actus-ag/mastra-memory/processors';
+import { Mastra } from '@mastra/core';
+import { PinoLogger } from '@mastra/loggers';
+import { createTool } from '@mastra/core/tools';
+import { Agent } from '@mastra/core/agent';
+import { Memory } from '@mastra/memory';
+import { TokenLimiter } from '@mastra/memory/processors';
 import { readFileSync, existsSync } from 'fs';
 import { resolve } from 'path';
 import chalk from 'chalk';
@@ -92,7 +92,7 @@ const tokenTestAgent = new Agent({
 });
 
 // Create Mastra instance
-const mastra = new Mastra({
+const @mastra = new Mastra({
   agents: { tokenTestAgent },
   logger: new PinoLogger({ level: 'info' }),
 });
@@ -104,7 +104,7 @@ async function sendMessage(message: string) {
   console.log(`\n${chalk.green('You:')} ${message}`);
 
   // Get the agent response
-  const response = await mastra.getAgent('tokenTestAgent').generate(message, {
+  const response = await @mastra.getAgent('tokenTestAgent').generate(message, {
     threadId: 'token-test-thread',
     resourceId: 'demo-user',
   });

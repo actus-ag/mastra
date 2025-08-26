@@ -57,7 +57,7 @@ export class WorkflowInstance<
 > implements WorkflowResultReturn<TResult, TTriggerSchema, TSteps>
 {
   name: string;
-  #mastra?: Mastra;
+  #@mastra?: Mastra;
   #machines: Record<string, Machine<TSteps, TTriggerSchema>> = {};
 
   logger: IMastraLogger;
@@ -96,7 +96,7 @@ export class WorkflowInstance<
     steps,
     runId,
     retryConfig,
-    mastra,
+    @mastra,
     stepGraph,
     stepSubscriberGraph,
     onFinish,
@@ -107,7 +107,7 @@ export class WorkflowInstance<
     name: string;
     logger: IMastraLogger;
     steps: Record<string, StepNode>;
-    mastra?: Mastra;
+    @mastra?: Mastra;
     retryConfig?: RetryConfig;
     runId?: string;
     stepGraph: StepGraph;
@@ -132,9 +132,9 @@ export class WorkflowInstance<
     this.#stepSubscriberGraph = stepSubscriberGraph;
 
     this.#retryConfig = retryConfig;
-    this.#mastra = mastra;
+    this.#@mastra = @mastra;
 
-    this.#runId = runId ?? (this.#mastra?.generateId() || crypto.randomUUID());
+    this.#runId = runId ?? (this.#@mastra?.generateId() || crypto.randomUUID());
 
     this.#onFinish = onFinish;
 
@@ -216,7 +216,7 @@ export class WorkflowInstance<
       runtimeContext: RuntimeContext;
     } = { runtimeContext: new RuntimeContext() },
   ): Promise<Omit<WorkflowRunResult<TTriggerSchema, TSteps, TResult>, 'runId'>> {
-    this.#executionSpan = this.#mastra?.getTelemetry()?.tracer.startSpan(`workflow.${this.name}.execute`, {
+    this.#executionSpan = this.#@mastra?.getTelemetry()?.tracer.startSpan(`workflow.${this.name}.execute`, {
       attributes: { componentName: this.name, runId: this.runId },
     });
 
@@ -247,7 +247,7 @@ export class WorkflowInstance<
 
     const defaultMachine = new Machine<TSteps, TTriggerSchema, TResult>({
       logger: this.logger,
-      mastra: this.#mastra,
+      @mastra: this.#@mastra,
       runtimeContext,
       workflowInstance: this,
       name: this.name,
@@ -381,7 +381,7 @@ export class WorkflowInstance<
 
         const machine = new Machine<TSteps, TTriggerSchema, TResult>({
           logger: this.logger,
-          mastra: this.#mastra,
+          @mastra: this.#@mastra,
           runtimeContext: runtimeContext,
           workflowInstance: this,
           name: parentStepId === 'trigger' ? this.name : `${this.name}-${parentStepId}`,
@@ -409,7 +409,7 @@ export class WorkflowInstance<
    * Persists the workflow state to the database
    */
   async persistWorkflowSnapshot(): Promise<void> {
-    const storage = this.#mastra?.getStorage();
+    const storage = this.#@mastra?.getStorage();
     if (!storage) {
       this.logger.debug('Snapshot cannot be persisted. Mastra engine is not initialized', { runId: this.#runId });
       return;
@@ -489,7 +489,7 @@ export class WorkflowInstance<
   }
 
   async getState(): Promise<WorkflowRunState | null> {
-    const storedSnapshot = await this.#mastra?.storage?.loadWorkflowSnapshot({
+    const storedSnapshot = await this.#@mastra?.storage?.loadWorkflowSnapshot({
       workflowName: this.name,
       runId: this.runId,
     });
@@ -566,7 +566,7 @@ export class WorkflowInstance<
   }
 
   async #loadWorkflowSnapshot(runId: string) {
-    const storage = this.#mastra?.getStorage();
+    const storage = this.#@mastra?.getStorage();
     if (!storage) {
       this.logger.debug('Snapshot cannot be loaded. Mastra engine is not initialized', { runId });
       return;
@@ -709,8 +709,8 @@ export class WorkflowInstance<
     ) => {
       return async (data: any) => {
         return await otlpContext.with(trace.setSpan(otlpContext.active(), this.#executionSpan as Span), async () => {
-          if (this.#mastra?.getTelemetry()) {
-            return this.#mastra.getTelemetry()?.traceMethod(handler, {
+          if (this.#@mastra?.getTelemetry()) {
+            return this.#@mastra.getTelemetry()?.traceMethod(handler, {
               spanName,
               attributes,
             })(data);
@@ -737,7 +737,7 @@ export class WorkflowInstance<
       };
 
       // Only trace if telemetry is available and action exists
-      const finalAction = this.#mastra?.getTelemetry()
+      const finalAction = this.#@mastra?.getTelemetry()
         ? executeStep(execute, `workflow.${this.name}.action.${stepId}`, {
             componentName: this.name,
             runId: rest.runId as string,

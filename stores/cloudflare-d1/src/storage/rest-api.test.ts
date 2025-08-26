@@ -7,16 +7,16 @@ import {
   createSampleWorkflowSnapshot,
   checkWorkflowSnapshot,
 } from '@internal/storage-test-utils';
-import type { StorageThreadType } from '@actus-ag/mastra-core/memory';
-import type { StorageColumn, TABLE_NAMES } from '@actus-ag/mastra-core/storage';
+import type { StorageThreadType } from '@mastra/core/memory';
+import type { StorageColumn, TABLE_NAMES } from '@mastra/core/storage';
 import {
   TABLE_MESSAGES,
   TABLE_THREADS,
   TABLE_WORKFLOW_SNAPSHOT,
   TABLE_EVALS,
   TABLE_TRACES,
-} from '@actus-ag/mastra-core/storage';
-import type { WorkflowRunState } from '@actus-ag/mastra-core/workflows';
+} from '@mastra/core/storage';
+import type { WorkflowRunState } from '@mastra/core/workflows';
 import dotenv from 'dotenv';
 import { describe, it, expect, beforeAll, beforeEach, afterAll, vi, afterEach } from 'vitest';
 

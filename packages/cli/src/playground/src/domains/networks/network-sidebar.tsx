@@ -1,7 +1,7 @@
 import { v4 as uuid } from '@lukeed/uuid';
 import { useNavigate } from 'react-router';
-import { ChatThreads } from '@actus-ag/mastra-playground-ui';
-import { StorageThreadType } from '@actus-ag/mastra-core/memory';
+import { ChatThreads } from '@mastra/cli/cli/cli/playground-ui';
+import { StorageThreadType } from '@mastra/cli/cli/cli/core/memory';
 import { useDeleteNetworkThread } from '@/hooks/use-network-memory';
 
 export function NetworkSidebar({

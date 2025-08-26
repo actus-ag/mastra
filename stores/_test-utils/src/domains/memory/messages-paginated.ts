@@ -1,8 +1,8 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import { createSampleMessageV1, createSampleMessageV2 } from './data';
 import { resetRole, createSampleThread } from './data';
-import { MastraStorage, TABLE_MESSAGES, TABLE_THREADS } from '@actus-ag/mastra-core/storage';
-import type { MastraMessageV1, MastraMessageV2, StorageThreadType } from '@actus-ag/mastra-core';
+import { MastraStorage, TABLE_MESSAGES, TABLE_THREADS } from '@mastra/core/storage';
+import type { MastraMessageV1, MastraMessageV2, StorageThreadType } from '@mastra/core';
 
 export function createMessagesPaginatedTest({ storage }: { storage: MastraStorage }) {
   describe('getMessagesPaginated', () => {

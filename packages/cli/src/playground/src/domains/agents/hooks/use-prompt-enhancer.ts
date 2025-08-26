@@ -42,7 +42,7 @@ export function usePromptEnhancer({
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-mastra-dev-playground': 'true',
+          'x-@mastra-dev-playground': 'true',
         },
         body: JSON.stringify({
           instructions,

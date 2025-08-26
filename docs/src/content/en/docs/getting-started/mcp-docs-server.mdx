@@ -8,7 +8,7 @@ import { Tabs } from "nextra/components";
 
 # Mastra Tools for your agentic IDE
 
-`@actus-ag/mastra-mcp-docs-server` provides direct access to Mastra's complete knowledge base in Cursor, Windsurf, Cline, or any other IDE that supports MCP.
+`@mastra/cli/cli/cli/mcp-docs-server` provides direct access to Mastra's complete knowledge base in Cursor, Windsurf, Cline, or any other IDE that supports MCP.
 
 It has access to documentation, code examples, technical blog posts / feature announcements, and package changelogs which your IDE can read to help you build with Mastra.
 
@@ -68,9 +68,9 @@ Each tab shows the exact JSON structure and file paths needed for that IDE's MCP
 ```json
 {
   "mcpServers": {
-    "mastra": {
+    "@actus-ag/@@mastra/cli/cli/cli": {
       "command": "npx",
-      "args": ["-y", "@actus-ag/mastra-mcp-docs-server"]
+      "args": ["-y", "@mastra/cli/cli/cli/mcp-docs-server"]
     }
   }
 }
@@ -80,9 +80,9 @@ Each tab shows the exact JSON structure and file paths needed for that IDE's MCP
 ```json
 {
   "mcpServers": {
-    "mastra": {
+    "@actus-ag/@@mastra/cli/cli/cli": {
       "command": "npx",
-      "args": ["-y", "@actus-ag/mastra-mcp-docs-server"]
+      "args": ["-y", "@mastra/cli/cli/cli/mcp-docs-server"]
     }
   }
 }
@@ -92,9 +92,9 @@ Each tab shows the exact JSON structure and file paths needed for that IDE's MCP
 ```json
 {
   "servers": {
-    "mastra": {
+    "@actus-ag/@@mastra/cli/cli/cli": {
       "command": "npx",
-      "args": ["-y", "@actus-ag/mastra-mcp-docs-server"],
+      "args": ["-y", "@mastra/cli/cli/cli/mcp-docs-server"],
       "type": "stdio"
     }
   }
@@ -118,9 +118,9 @@ On latest Windsurf and Cursor the direct npx command works, while it's still unc
 ```json
 {
   "mcpServers": {
-    "mastra": {
+    "@actus-ag/@@mastra/cli/cli/cli": {
       "command": "npx",
-      "args": ["-y", "@actus-ag/mastra-mcp-docs-server"]
+      "args": ["-y", "@mastra/cli/cli/cli/mcp-docs-server"]
     }
   }
 }
@@ -130,9 +130,9 @@ On latest Windsurf and Cursor the direct npx command works, while it's still unc
 ```json
 {
   "mcpServers": {
-    "mastra": {
+    "@actus-ag/@@mastra/cli/cli/cli": {
       "command": "npx",
-      "args": ["-y", "@actus-ag/mastra-mcp-docs-server"]
+      "args": ["-y", "@mastra/cli/cli/cli/mcp-docs-server"]
     }
   }
 }
@@ -142,9 +142,9 @@ On latest Windsurf and Cursor the direct npx command works, while it's still unc
 ```json
 {
   "servers": {
-    "mastra": {
+    "@actus-ag/@@mastra/cli/cli/cli": {
       "command": "cmd",
-      "args": ["/c", "npx", "-y", "@actus-ag/mastra-mcp-docs-server"],
+      "args": ["/c", "npx", "-y", "@mastra/cli/cli/cli/mcp-docs-server"],
       "type": "stdio"
     }
   }
@@ -160,7 +160,7 @@ On latest Windsurf and Cursor the direct npx command works, while it's still unc
 If you followed the automatic installation, you'll see a popup when you open cursor in the bottom left corner to prompt you to enable the Mastra Docs MCP Server.
 
 <img
-  src="/image/enable-mastra-docs-cursor.png"
+  src="/image/enable-@@mastra/cli/cli/cli-docs-cursor.png"
   alt="Diagram showing cursor prompt to enable Mastra docs MCP server"
   width={800}
 />
@@ -242,7 +242,7 @@ Search the blog for:
 
 ### Package Changes
 
-Track updates for Mastra and `@mastra/*` packages:
+Track updates for Mastra and `@mastra/cli/cli/cli/*` packages:
 
 - Bug fixes
 - New features

@@ -72,11 +72,11 @@ export function Chat({ thread, resource }) {
 ```
 
 ```typescript filename="app/api/chat/route.ts" showLineNumbers copy
-import { MastraClient } from "@actus-ag/mastra-client-js";
-import { CoreMessage } from "@actus-ag/mastra-core";
+import { MastraClient } from "@@mastra/cli/cli/cli-client-js";
+import { CoreMessage } from "@mastra/cli/cli/cli/core";
 
 // Initialize the Mastra client to connect to your server
-const mastraClient = new MastraClient({
+const @@mastra/cli/cli/cliClient = new MastraClient({
   baseUrl: process.env.MASTRA_SERVER_URL || "http://localhost:4111",
   // Optional: Add API key if your server requires authentication
   headers: {
@@ -94,7 +94,7 @@ export async function POST(request: Request) {
   }
 
   // Get the agent from your Mastra Server
-  const agent = mastraClient.getAgent("ChatAgent"); // Use your agent's ID
+  const agent = @@mastra/cli/cli/cliClient.getAgent("ChatAgent"); // Use your agent's ID
 
   // Stream the response with memory context
   const response = await agent.stream({
@@ -244,7 +244,7 @@ function ChatApp() {
 
 ## Related
 
-- **[MastraClient Overview](../../docs/server-db/mastra-client.mdx)**: Learn more about the Mastra Client SDK
+- **[MastraClient Overview](../../docs/server-db/@@mastra/cli/cli/cli-client.mdx)**: Learn more about the Mastra Client SDK
 - **[Mastra Server](../../docs/deployment/server-deployment.mdx)**: How to deploy and configure a Mastra Server
 - **[Memory Overview](../../docs/memory/overview.mdx)**: Core concepts of memory resources and threads
 - **[AI SDK Integration](../../docs/frameworks/agentic-uis/ai-sdk.mdx#usechat)**: General useChat documentation

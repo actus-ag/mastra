@@ -40,8 +40,8 @@ Let's examine each part of the workflow creation process:
 
 Here's how you define a workflow in Mastra. The `name` field determines the workflow's API endpoint (`/workflows/$NAME/`), while the `triggerSchema` defines the structure of the workflow's trigger data:
 
-```ts filename="src/mastra/workflow/index.ts"
-import { LegacyStep, LegacyWorkflow } from "@actus-ag/mastra-core/workflows/legacy";
+```ts filename="src/@@mastra/cli/cli/cli/workflow/index.ts"
+import { LegacyStep, LegacyWorkflow } from "@mastra/cli/cli/cli/core/workflows/legacy";
 
 const myWorkflow = new LegacyWorkflow({
   name: "my-workflow",
@@ -55,7 +55,7 @@ const myWorkflow = new LegacyWorkflow({
 
 Now, we'll define the workflow's steps. Each step can have its own input and output schemas. Here, `stepOne` doubles an input value, and `stepTwo` increments that result if `stepOne` was successful. (To keep things simple, we aren't making any LLM calls in this example):
 
-```ts filename="src/mastra/workflow/index.ts"
+```ts filename="src/@@mastra/cli/cli/cli/workflow/index.ts"
 const stepOne = new LegacyStep({
   id: "stepOne",
   outputSchema: z.object({
@@ -85,7 +85,7 @@ const stepTwo = new LegacyStep({
 
 Now, let's create the control flow, and "commit" (finalize the workflow). In this case, `stepOne` runs first and is followed by `stepTwo`.
 
-```ts filename="src/mastra/workflow/index.ts"
+```ts filename="src/@@mastra/cli/cli/cli/workflow/index.ts"
 myWorkflow.step(stepOne).then(stepTwo).commit();
 ```
 
@@ -93,25 +93,25 @@ myWorkflow.step(stepOne).then(stepTwo).commit();
 
 Register your workflow with Mastra to enable logging and telemetry:
 
-```ts showLineNumbers filename="src/mastra/index.ts"
-import { Mastra } from "@actus-ag/mastra-core";
+```ts showLineNumbers filename="src/@@mastra/cli/cli/cli/index.ts"
+import { Mastra } from "@mastra/cli/cli/cli/core";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   legacy_workflows: { myWorkflow },
 });
 ```
 
-The workflow can also have the mastra instance injected into the context in the case where you need to create dynamic workflows:
+The workflow can also have the @@mastra/cli/cli/cli instance injected into the context in the case where you need to create dynamic workflows:
 
-```ts filename="src/mastra/workflow/index.ts"
-import { Mastra } from "@actus-ag/mastra-core";
-import { LegacyWorkflow } from "@actus-ag/mastra-core/workflows/legacy";
+```ts filename="src/@@mastra/cli/cli/cli/workflow/index.ts"
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { LegacyWorkflow } from "@mastra/cli/cli/cli/core/workflows/legacy";
 
-const mastra = new Mastra();
+const @@mastra/cli/cli/cli = new Mastra();
 
 const myWorkflow = new LegacyWorkflow({
   name: "my-workflow",
-  mastra,
+  @@mastra/cli/cli/cli,
 });
 ```
 
@@ -119,18 +119,18 @@ const myWorkflow = new LegacyWorkflow({
 
 Execute your workflow programmatically or via API:
 
-```ts showLineNumbers filename="src/mastra/run-workflow.ts" copy
-import { mastra } from "./index";
+```ts showLineNumbers filename="src/@@mastra/cli/cli/cli/run-workflow.ts" copy
+import { @@mastra/cli/cli/cli } from "./index";
 
 // Get the workflow
-const myWorkflow = mastra.legacy_getWorkflow("myWorkflow");
+const myWorkflow = @@mastra/cli/cli/cli.legacy_getWorkflow("myWorkflow");
 const { runId, start } = myWorkflow.createRun();
 
 // Start the workflow execution
 await start({ triggerData: { inputValue: 45 } });
 ```
 
-Or use the API (requires running `mastra dev`):
+Or use the API (requires running `@actus-ag/@mastra/cli/cli dev`):
 
 // Create workflow run
 

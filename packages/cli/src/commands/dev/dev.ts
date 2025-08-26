@@ -1,8 +1,8 @@
 import type { ChildProcess } from 'child_process';
 import process from 'node:process';
 import { join } from 'path';
-import { FileService } from '@actus-ag/mastra-deployer';
-import { getServerOptions } from '@actus-ag/mastra-deployer/build';
+import { FileService } from '@mastra/deployer';
+import { getServerOptions } from '@mastra/deployer/build';
 import { isWebContainer } from '@webcontainer/env';
 import { execa } from 'execa';
 import getPort from 'get-port';
@@ -44,7 +44,7 @@ const startServer = async (
     if (!isWebContainer()) {
       const instrumentation = import.meta.resolve('@opentelemetry/instrumentation/hook.mjs');
       commands.push(
-        `--import=${import.meta.resolve('mastra/telemetry-loader')}`,
+        `--import=${import.meta.resolve('@mastra/telemetry-loader')}`,
         '--import=./instrumentation.mjs',
         `--import=${instrumentation}`,
       );
@@ -58,7 +58,7 @@ const startServer = async (
         ...Object.fromEntries(env),
         MASTRA_DEV: 'true',
         PORT: port.toString(),
-        MASTRA_DEFAULT_STORAGE_URL: `file:${join(dotMastraPath, '..', 'mastra.db')}`,
+        MASTRA_DEFAULT_STORAGE_URL: `file:${join(dotMastraPath, '..', '@mastra.db')}`,
       },
       stdio: ['inherit', 'inherit', 'inherit', 'ipc'],
       reject: false,
@@ -174,14 +174,14 @@ export async function dev({
   customArgs?: string[];
 }) {
   const rootDir = root || process.cwd();
-  const mastraDir = dir ? (dir.startsWith('/') ? dir : join(process.cwd(), dir)) : join(process.cwd(), 'src', 'mastra');
-  const dotMastraPath = join(rootDir, '.mastra');
+  const @mastraDir = dir ? (dir.startsWith('/') ? dir : join(process.cwd(), dir)) : join(process.cwd(), 'src', '@actus-ag/@mastra');
+  const dotMastraPath = join(rootDir, '.@mastra');
 
   // You cannot express an "include all js/ts except these" in one single string glob pattern so by default an array is passed to negate test files.
-  const defaultToolsPath = join(mastraDir, 'tools/**/*.{js,ts}');
+  const defaultToolsPath = join(@mastraDir, 'tools/**/*.{js,ts}');
   const defaultToolsIgnorePaths = [
-    `!${join(mastraDir, 'tools/**/*.{test,spec}.{js,ts}')}`,
-    `!${join(mastraDir, 'tools/**/__tests__/**')}`,
+    `!${join(@mastraDir, 'tools/**/*.{test,spec}.{js,ts}')}`,
+    `!${join(@mastraDir, 'tools/**/__tests__/**')}`,
   ];
   // We pass an array to globby to allow for the aforementioned negations
   const defaultTools = [defaultToolsPath, ...defaultToolsIgnorePaths];
@@ -189,7 +189,7 @@ export async function dev({
   const startOptions = { inspect, inspectBrk, customArgs };
 
   const fileService = new FileService();
-  const entryFile = fileService.getFirstExistingFile([join(mastraDir, 'index.ts'), join(mastraDir, 'index.js')]);
+  const entryFile = fileService.getFirstExistingFile([join(@mastraDir, 'index.ts'), join(@mastraDir, 'index.js')]);
 
   const bundler = new DevBundler(env);
   bundler.__setLogger(logger);

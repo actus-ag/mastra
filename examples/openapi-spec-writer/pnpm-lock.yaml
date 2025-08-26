@@ -5,11 +5,11 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@mastra/core': link:../../packages/core
-  '@mastra/firecrawl': link:../../integrations/firecrawl
-  '@mastra/github': link:../../integrations/github
-  '@mastra/loggers': link:../../packages/loggers
-  '@mastra/rag': link:../../packages/rag
+  '@mastra/cli/cli/cli/core': link:../../packages/core
+  '@mastra/cli/cli/cli/firecrawl': link:../../integrations/firecrawl
+  '@mastra/cli/cli/cli/github': link:../../integrations/github
+  '@mastra/cli/cli/cli/loggers': link:../../packages/loggers
+  '@mastra/cli/cli/cli/rag': link:../../packages/rag
 
 importers:
 
@@ -18,19 +18,19 @@ importers:
       '@ai-sdk/openai':
         specifier: ^1.3.22
         version: 1.3.22(zod@3.25.67)
-      '@mastra/core':
+      '@mastra/cli/cli/cli/core':
         specifier: link:../../packages/core
         version: link:../../packages/core
-      '@mastra/firecrawl':
+      '@mastra/cli/cli/cli/firecrawl':
         specifier: link:../../integrations/firecrawl
         version: link:../../integrations/firecrawl
-      '@mastra/github':
+      '@mastra/cli/cli/cli/github':
         specifier: link:../../integrations/github
         version: link:../../integrations/github
-      '@mastra/loggers':
+      '@mastra/cli/cli/cli/loggers':
         specifier: link:../../packages/loggers
         version: link:../../packages/loggers
-      '@mastra/rag':
+      '@mastra/cli/cli/cli/rag':
         specifier: link:../../packages/rag
         version: link:../../packages/rag
       '@radix-ui/react-accordion':

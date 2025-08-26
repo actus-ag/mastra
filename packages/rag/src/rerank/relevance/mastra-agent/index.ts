@@ -1,7 +1,7 @@
-import { Agent } from '@actus-ag/mastra-core/agent';
-import type { MastraLanguageModel } from '@actus-ag/mastra-core/agent';
-import { createSimilarityPrompt } from '@actus-ag/mastra-core/relevance';
-import type { RelevanceScoreProvider } from '@actus-ag/mastra-core/relevance';
+import { Agent } from '@mastra/core/agent';
+import type { MastraLanguageModel } from '@mastra/core/agent';
+import { createSimilarityPrompt } from '@mastra/core/relevance';
+import type { RelevanceScoreProvider } from '@mastra/core/relevance';
 
 // Mastra Agent implementation
 export class MastraAgentRelevanceScorer implements RelevanceScoreProvider {

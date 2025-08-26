@@ -1,11 +1,11 @@
 import 'dotenv/config';
 import { makeSend, searchTool } from './utils';
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { Memory } from '@actus-ag/mastra-memory';
-import { TokenLimiter } from '@actus-ag/mastra-memory/processors';
-import { Mastra } from '@actus-ag/mastra-core';
-import { PinoLogger } from '@actus-ag/mastra-loggers';
+import { Agent } from '@mastra/core/agent';
+import { Memory } from '@mastra/memory';
+import { TokenLimiter } from '@mastra/memory/processors';
+import { Mastra } from '@mastra/core';
+import { PinoLogger } from '@mastra/loggers';
 
 const memory = new Memory({
   processors: [new TokenLimiter(500)],
@@ -24,7 +24,7 @@ const techSupport = new Agent({
   tools: { searchTool },
 });
 
-const mastra = new Mastra({
+const @mastra = new Mastra({
   agents: { techSupport },
   logger: new PinoLogger({ level: 'info' }),
 });
@@ -44,7 +44,7 @@ console.log(`
 
 const send = makeSend({
   agentName: `\n 💻 Support Agent`,
-  agent: mastra.getAgent(`techSupport`),
+  agent: @mastra.getAgent(`techSupport`),
 });
 
 await send(

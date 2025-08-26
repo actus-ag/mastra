@@ -1,7 +1,7 @@
 import { writeFileSync } from 'fs';
 import { join } from 'path';
 import process from 'process';
-import { Deployer } from '@actus-ag/mastra-deployer';
+import { Deployer } from '@mastra/deployer';
 import { move } from 'fs-extra/esm';
 
 export class VercelDeployer extends Deployer {
@@ -19,13 +19,13 @@ export class VercelDeployer extends Deployer {
   private getEntry(): string {
     return `
 import { handle } from 'hono/vercel'
-import { mastra } from '#mastra';
+import { @mastra } from '#@mastra';
 import { createHonoServer, getToolExports } from '#server';
 import { tools } from '#tools';
-import { evaluate } from '@actus-ag/mastra-core/eval';
-import { AvailableHooks, registerHook } from '@actus-ag/mastra-core/hooks';
-import { TABLE_EVALS } from '@actus-ag/mastra-core/storage';
-import { checkEvalStorageFields } from '@actus-ag/mastra-core/utils';
+import { evaluate } from '@mastra/core/eval';
+import { AvailableHooks, registerHook } from '@mastra/core/hooks';
+import { TABLE_EVALS } from '@mastra/core/storage';
+import { checkEvalStorageFields } from '@mastra/core/utils';
 
 registerHook(AvailableHooks.ON_GENERATION, ({ input, output, metric, runId, agentName, instructions }) => {
   evaluate({
@@ -40,10 +40,10 @@ registerHook(AvailableHooks.ON_GENERATION, ({ input, output, metric, runId, agen
 });
 
 registerHook(AvailableHooks.ON_EVALUATION, async traceObject => {
-  const storage = mastra.getStorage();
+  const storage = @mastra.getStorage();
   if (storage) {
     // Check for required fields
-    const logger = mastra?.getLogger();
+    const logger = @mastra?.getLogger();
     const areFieldsValid = checkEvalStorageFields(traceObject, logger);
     if (!areFieldsValid) return;
 
@@ -65,7 +65,7 @@ registerHook(AvailableHooks.ON_EVALUATION, async traceObject => {
   }
 });
 
-const app = await createHonoServer(mastra, { tools: getToolExports(tools) });
+const app = await createHonoServer(@mastra, { tools: getToolExports(tools) });
 
 export const GET = handle(app);
 export const POST = handle(app);
@@ -129,12 +129,12 @@ export const HEAD = handle(app);
   async lint(entryFile: string, outputDirectory: string, toolsPaths: (string | string[])[]): Promise<void> {
     await super.lint(entryFile, outputDirectory, toolsPaths);
 
-    const hasLibsql = (await this.deps.checkDependencies(['@actus-ag/mastra-libsql'])) === `ok`;
+    const hasLibsql = (await this.deps.checkDependencies(['@mastra/libsql'])) === `ok`;
 
     if (hasLibsql) {
       this.logger.error(
-        `Vercel Deployer does not support @libsql/client(which may have been installed by @actus-ag/mastra-libsql) as a dependency. 
-        Use other Mastra Storage options instead e.g @actus-ag/mastra-pg`,
+        `Vercel Deployer does not support @libsql/client(which may have been installed by @mastra/libsql) as a dependency. 
+        Use other Mastra Storage options instead e.g @mastra/pg`,
       );
       process.exit(1);
     }

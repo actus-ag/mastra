@@ -1,7 +1,7 @@
 import { Dialog, DialogContent, DialogPortal, DialogTitle } from '@/components/ui/dialog';
 import { createContext, useState } from 'react';
 import { ReactFlowProvider } from '@xyflow/react';
-import { SerializedStepFlowEntry } from '@actus-ag/mastra-core/workflows';
+import { SerializedStepFlowEntry } from '@mastra/cli/cli/cli/core/workflows';
 import { Workflow } from 'lucide-react';
 import { Text } from '@/components/ui/text';
 import { WorkflowNestedGraph } from '../workflow/workflow-nested-graph';
@@ -88,7 +88,7 @@ export function WorkflowNestedGraphProvider({
           <DialogContent className="w-[45rem] h-[45rem] max-w-[unset] bg-[#121212] p-[0.5rem]">
             <DialogTitle className="flex items-center gap-1.5 absolute top-3 left-3 z-50">
               <Workflow className="text-current w-4 h-4" />
-              <Text size="xs" weight="medium" className="text-mastra-el-6 capitalize">
+              <Text size="xs" weight="medium" className="text-@@mastra/cli/cli/cli-el-6 capitalize">
                 {label} workflow
               </Text>
             </DialogTitle>

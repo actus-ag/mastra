@@ -10,13 +10,13 @@ The LibSQL storage implementation provides a SQLite-compatible storage solution 
 ## Installation
 
 ```bash copy
-npm install @actus-ag/mastra-libsql@latest
+npm install @mastra/cli/cli/cli/libsql@latest
 ```
 
 ## Usage
 
 ```typescript copy showLineNumbers
-import { LibSQLStore } from "@actus-ag/mastra-libsql";
+import { LibSQLStore } from "@mastra/cli/cli/cli/libsql";
 
 // File database (development)
 const storage = new LibSQLStore({
@@ -65,10 +65,10 @@ For production use cases, use a persistent database URL: `libsql://your-database
 
 The storage implementation handles schema creation and updates automatically. It creates the following tables:
 
-- `mastra_workflow_snapshot`: Stores workflow state and execution data
-- `mastra_evals`: Stores evaluation results and metadata  
-- `mastra_threads`: Stores conversation threads
-- `mastra_messages`: Stores individual messages
-- `mastra_traces`: Stores telemetry and tracing data
-- `mastra_scorers`: Stores scoring and evaluation data
-- `mastra_resources`: Stores resource working memory data
+- `@@mastra/cli/cli/cli_workflow_snapshot`: Stores workflow state and execution data
+- `@@mastra/cli/cli/cli_evals`: Stores evaluation results and metadata  
+- `@@mastra/cli/cli/cli_threads`: Stores conversation threads
+- `@@mastra/cli/cli/cli_messages`: Stores individual messages
+- `@@mastra/cli/cli/cli_traces`: Stores telemetry and tracing data
+- `@@mastra/cli/cli/cli_scorers`: Stores scoring and evaluation data
+- `@@mastra/cli/cli/cli_resources`: Stores resource working memory data

@@ -1,4 +1,4 @@
-import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
+import { RuntimeContext } from '@mastra/core/runtime-context';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { GraphRAG } from '../graph-rag';
 import { vectorQuerySearch } from '../utils';
@@ -80,7 +80,7 @@ describe('createGraphRAGTool', () => {
       runtimeContext.set('restartProb', 0.42);
       const result = await tool.execute({
         context: { queryText: 'foo', topK: 2 },
-        mastra: mockMastra as any,
+        @mastra: mockMastra as any,
         runtimeContext,
       });
       expect(result.relevantContext).toEqual(['foo', 'bar']);

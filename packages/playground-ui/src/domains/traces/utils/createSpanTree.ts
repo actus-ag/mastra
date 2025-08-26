@@ -42,7 +42,7 @@ export const createSpanTree = (spans: Span[]) => {
       longest = span;
     }
 
-    if (span.name !== '.insert' && span.name !== 'mastra.getStorage') {
+    if (span.name !== '.insert' && span.name !== '@mastra.getStorage') {
       orderedTree.push(span);
     }
   }

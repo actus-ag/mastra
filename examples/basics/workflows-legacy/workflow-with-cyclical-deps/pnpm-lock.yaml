@@ -5,13 +5,13 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@mastra/core': link:../../../../packages/core
+  '@mastra/cli/cli/cli/core': link:../../../../packages/core
 
 importers:
 
   .:
     dependencies:
-      '@mastra/core':
+      '@mastra/cli/cli/cli/core':
         specifier: link:../../../../packages/core
         version: link:../../../../packages/core
       zod:

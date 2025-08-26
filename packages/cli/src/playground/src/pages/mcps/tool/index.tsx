@@ -7,11 +7,11 @@ import { toast } from 'sonner';
 import { resolveSerializedZodOutput } from '@/components/dynamic-form/utils';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Text } from '@/components/ui/text';
-import { Header, Breadcrumb, Crumb, usePlaygroundStore } from '@actus-ag/mastra-playground-ui';
+import { Header, Breadcrumb, Crumb, usePlaygroundStore } from '@mastra/cli/cli/cli/playground-ui';
 
 import { useMCPServerTool } from '@/hooks/use-mcp-server-tool';
 import ToolExecutor from '@/pages/tools/tool-executor';
-import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
+import { RuntimeContext } from '@mastra/cli/cli/cli/core/runtime-context';
 
 const MCPServerToolExecutor = () => {
   const { serverId, toolId } = useParams<{ serverId: string; toolId: string }>();
@@ -56,7 +56,7 @@ const MCPServerToolExecutor = () => {
 
   if (isLoading || (!mcpTool && !error)) {
     return (
-      <div className="h-full w-full bg-mastra-bg-1">
+      <div className="h-full w-full bg-@@mastra/cli/cli/cli-bg-1">
         <Header>
           <Breadcrumb>
             <Crumb as={Link} to={`/mcps`}>
@@ -73,14 +73,14 @@ const MCPServerToolExecutor = () => {
           </Breadcrumb>
         </Header>
         <div className="w-full h-full grid grid-cols-[300px_1fr] p-2 gap-2">
-          <div className="flex flex-col gap-4 border-[0.5px] border-mastra-border-1 rounded-[0.25rem] bg-mastra-bg-2 p-4 py-6">
-            <Text variant="secondary" className="text-mastra-el-3 px-4" size="xs">
+          <div className="flex flex-col gap-4 border-[0.5px] border-@@mastra/cli/cli/cli-border-1 rounded-[0.25rem] bg-@@mastra/cli/cli/cli-bg-2 p-4 py-6">
+            <Text variant="secondary" className="text-@@mastra/cli/cli/cli-el-3 px-4" size="xs">
               Input
             </Text>
             <Skeleton className="h-[200px] w-full" />
           </div>
-          <div className="flex flex-col gap-4 border-[0.5px] border-mastra-border-1 rounded-[0.25rem] bg-mastra-bg-2 p-4 py-6">
-            <Text variant="secondary" className="text-mastra-el-3 px-4" size="xs">
+          <div className="flex flex-col gap-4 border-[0.5px] border-@@mastra/cli/cli/cli-border-1 rounded-[0.25rem] bg-@@mastra/cli/cli/cli-bg-2 p-4 py-6">
+            <Text variant="secondary" className="text-@@mastra/cli/cli/cli-el-3 px-4" size="xs">
               Output
             </Text>
             <Skeleton className="h-[200px] w-full" />
@@ -92,7 +92,7 @@ const MCPServerToolExecutor = () => {
 
   if (error || !mcpTool) {
     return (
-      <div className="h-full w-full bg-mastra-bg-1 p-4">
+      <div className="h-full w-full bg-@@mastra/cli/cli/cli-bg-1 p-4">
         <Header>
           <Breadcrumb>
             <Crumb as={Link} to={`/mcps`}>
@@ -123,7 +123,7 @@ const MCPServerToolExecutor = () => {
   }
 
   return (
-    <div className="h-full w-full bg-mastra-bg-1 overflow-y-hidden">
+    <div className="h-full w-full bg-@@mastra/cli/cli/cli-bg-1 overflow-y-hidden">
       <Header>
         <Breadcrumb>
           <Crumb as={Link} to={`/mcps`}>

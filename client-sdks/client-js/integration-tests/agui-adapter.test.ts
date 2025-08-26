@@ -18,15 +18,15 @@ async function getAvailablePort(): Promise<number> {
 }
 
 describe('AGUIAdapter Integration Tests', () => {
-  let mastraServer: ReturnType<typeof spawn>;
+  let @mastraServer: ReturnType<typeof spawn>;
   let port: number;
 
   beforeAll(async () => {
     port = await getAvailablePort();
 
-    // Run mastra dev from the integration tests directory using the built CLI
+    // Run @actus-ag/@mastra/cli/cli dev from the integration tests directory using the built CLI
     const cliPath = path.resolve(import.meta.dirname, '..', '..', '..', 'packages', 'cli', 'dist', 'index.js');
-    mastraServer = spawn('node', [cliPath, 'dev', '--port', port.toString()], {
+    @mastraServer = spawn('node', [cliPath, 'dev', '--port', port.toString()], {
       cwd: path.resolve(import.meta.dirname),
       stdio: 'pipe',
       detached: true, // Run in a new process group so we can kill it and children
@@ -35,14 +35,14 @@ describe('AGUIAdapter Integration Tests', () => {
     // Wait for server to be ready
     await new Promise<void>((resolve, reject) => {
       let output = '';
-      mastraServer.stdout?.on('data', data => {
+      @mastraServer.stdout?.on('data', data => {
         output += data.toString();
         console.log(output);
         if (output.includes('http://localhost:')) {
           resolve();
         }
       });
-      mastraServer.stderr?.on('data', data => {
+      @mastraServer.stderr?.on('data', data => {
         console.error('Mastra server error:', data.toString());
       });
 
@@ -52,9 +52,9 @@ describe('AGUIAdapter Integration Tests', () => {
 
   afterAll(() => {
     // Kill the server and its process group
-    if (mastraServer?.pid) {
+    if (@mastraServer?.pid) {
       try {
-        process.kill(-mastraServer.pid, 'SIGTERM');
+        process.kill(-@mastraServer.pid, 'SIGTERM');
       } catch (e) {
         console.error('Failed to kill Mastra server:', e);
       }

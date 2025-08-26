@@ -17,7 +17,7 @@ export function CopyableContent({ content, label, multiline = false }: CopyableC
 
   return (
     <div className="group relative flex items-start gap-2">
-      <span className={cn('text-sm text-mastra-el-4', multiline ? 'whitespace-pre-wrap' : 'truncate')}>{content}</span>
+      <span className={cn('text-sm text-@@mastra/cli/cli/cli-el-4', multiline ? 'whitespace-pre-wrap' : 'truncate')}>{content}</span>
       <Button
         variant="ghost"
         size="sm"

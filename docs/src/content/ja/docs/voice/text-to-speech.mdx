@@ -53,7 +53,7 @@ Mastra は幅広い Text-to-Speech プロバイダーに対応しており、そ
 各プロバイダーは、必要に応じてインストールできる個別のパッケージとして実装されています。
 
 ```bash
-pnpm add @actus-ag/mastra-voice-openai  # Example for OpenAI
+pnpm add @mastra/cli/cli/cli/voice-openai  # Example for OpenAI
 ```
 
 ## speak メソッドの使用
@@ -61,9 +61,9 @@ pnpm add @actus-ag/mastra-voice-openai  # Example for OpenAI
 TTS の主なメソッドは `speak()` メソッドであり、テキストを音声に変換します。このメソッドは、話者やその他のプロバイダー固有のオプションを指定できるオプションを受け取ることができます。使い方は以下の通りです：
 
 ```typescript
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { openai } from "@ai-sdk/openai";
-import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
+import { OpenAIVoice } from "@mastra/cli/cli/cli/voice-openai";
 
 const voice = new OpenAIVoice();
 

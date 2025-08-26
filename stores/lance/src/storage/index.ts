@@ -1,10 +1,10 @@
 import { connect } from '@lancedb/lancedb';
 import type { Connection, ConnectionOptions } from '@lancedb/lancedb';
-import type { MastraMessageContentV2 } from '@actus-ag/mastra-core/agent';
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import type { MastraMessageV1, MastraMessageV2, StorageThreadType, TraceType } from '@actus-ag/mastra-core/memory';
-import type { ScoreRowData, ScoringSource } from '@actus-ag/mastra-core/scores';
-import { MastraStorage } from '@actus-ag/mastra-core/storage';
+import type { MastraMessageContentV2 } from '@mastra/core/agent';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import type { MastraMessageV1, MastraMessageV2, StorageThreadType, TraceType } from '@mastra/core/memory';
+import type { ScoreRowData, ScoringSource } from '@mastra/core/scores';
+import { MastraStorage } from '@mastra/core/storage';
 import type {
   TABLE_NAMES,
   PaginationInfo,
@@ -16,9 +16,9 @@ import type {
   StorageDomains,
   StorageGetTracesPaginatedArg,
   StorageResourceType,
-} from '@actus-ag/mastra-core/storage';
-import type { Trace } from '@actus-ag/mastra-core/telemetry';
-import type { WorkflowRunState } from '@actus-ag/mastra-core/workflows';
+} from '@mastra/core/storage';
+import type { Trace } from '@mastra/core/telemetry';
+import type { WorkflowRunState } from '@mastra/core/workflows';
 import { StoreLegacyEvalsLance } from './domains/legacy-evals';
 import { StoreMemoryLance } from './domains/memory';
 import { StoreOperationsLance } from './domains/operations';

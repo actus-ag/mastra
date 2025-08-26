@@ -156,7 +156,7 @@ whereDocument: { "$contains": "API documentation" }
     ### Basic Database Configuration
 
     ```typescript
-    import { createVectorQueryTool } from '@actus-ag/mastra-rag';
+    import { createVectorQueryTool } from '@mastra/cli/cli/cli/rag';
     
     const vectorTool = createVectorQueryTool({
       vectorStoreName: 'pinecone',
@@ -175,7 +175,7 @@ whereDocument: { "$contains": "API documentation" }
     ### Runtime Configuration Override
 
     ```typescript
-    import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
+    import { RuntimeContext } from '@mastra/cli/cli/cli/core/runtime-context';
     
     // Initial configuration
     const vectorTool = createVectorQueryTool({
@@ -199,7 +199,7 @@ whereDocument: { "$contains": "API documentation" }
     
     await vectorTool.execute({
       context: { queryText: 'search query' },
-      mastra,
+      @@mastra/cli/cli/cli,
       runtimeContext
     });
     ```

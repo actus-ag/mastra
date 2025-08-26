@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { createScorer } from '@actus-ag/mastra-core/scores';
+import { createScorer } from '@mastra/core/scores';
 import { z } from 'zod';
 import { generateGlutenPrompt, generateReasonPrompt, GLUTEN_INSTRUCTIONS } from './prompts';
 

@@ -5,13 +5,13 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@mastra/rag': link:../../../../packages/rag
+  '@mastra/cli/cli/cli/rag': link:../../../../packages/rag
 
 importers:
 
   .:
     dependencies:
-      '@mastra/rag':
+      '@mastra/cli/cli/cli/rag':
         specifier: link:../../../../packages/rag
         version: link:../../../../packages/rag
     devDependencies:

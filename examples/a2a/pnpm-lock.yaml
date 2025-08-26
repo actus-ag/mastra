@@ -5,12 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@mastra/core': link:../../packages/core
-  mastra: link:../../packages/cli
-  '@mastra/client-js': link:../../client-sdks/client-js
-  '@mastra/loggers': link:../../packages/loggers
-  '@mastra/server': link:../../packages/server
-  '@mastra/deployer': link:../../packages/deployer
+  '@mastra/cli/cli/cli/core': link:../../packages/core
+  @@mastra/cli/cli/cli: link:../../packages/cli
+  '@@mastra/cli/cli/cli-client-js': link:../../client-sdks/client-js
+  '@mastra/cli/cli/cli/loggers': link:../../packages/loggers
+  '@mastra/cli/cli/cli/server': link:../../packages/server
+  '@mastra/cli/cli/cli/deployer': link:../../packages/deployer
 
 importers:
 
@@ -19,13 +19,13 @@ importers:
       '@ai-sdk/openai':
         specifier: ^1.3.22
         version: 1.3.23(zod@3.25.76)
-      '@mastra/client-js':
+      '@@mastra/cli/cli/cli-client-js':
         specifier: link:../../client-sdks/client-js
         version: link:../../client-sdks/client-js
-      '@mastra/core':
+      '@mastra/cli/cli/cli/core':
         specifier: link:../../packages/core
         version: link:../../packages/core
-      '@mastra/loggers':
+      '@mastra/cli/cli/cli/loggers':
         specifier: link:../../packages/loggers
         version: link:../../packages/loggers
       dotenv:
@@ -35,7 +35,7 @@ importers:
         specifier: ^3.25.67
         version: 3.25.76
     devDependencies:
-      mastra:
+      @@mastra/cli/cli/cli:
         specifier: link:../../packages/cli
         version: link:../../packages/cli
       tsx:

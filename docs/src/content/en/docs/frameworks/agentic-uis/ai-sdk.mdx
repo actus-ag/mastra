@@ -24,7 +24,7 @@ When creating agents in Mastra, you can specify any AI SDK-supported model.
 
 ```typescript {7} filename="agents/weather-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 export const weatherAgent = new Agent({
   name: "Weather Agent",
@@ -92,11 +92,11 @@ export function Chat() {
 Requests sent using the `useChat` hook are handled by a standard server route. This example shows how to define a POST route using a Next.js Route Handler.
 
 ```typescript filename="app/api/chat/route.ts" showLineNumbers copy
-import { mastra } from "../../mastra";
+import { @@mastra/cli/cli/cli } from "../../@@mastra/cli/cli/cli";
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
-  const myAgent = mastra.getAgent("weatherAgent");
+  const myAgent = @@mastra/cli/cli/cli.getAgent("weatherAgent");
   const stream = await myAgent.stream(messages);
 
   return stream.toDataStreamResponse();
@@ -133,11 +133,11 @@ export function Completion() {
 Requests sent using the `useCompletion` hook are handled by a standard server route. This example shows how to define a POST route using a Next.js Route Handler.
 
 ```typescript filename="app/api/completion/route.ts" showLineNumbers copy
-import { mastra } from "../../../mastra";
+import { @@mastra/cli/cli/cli } from "../../../@@mastra/cli/cli/cli";
 
 export async function POST(req: Request) {
   const { prompt } = await req.json();
-  const myAgent = mastra.getAgent("weatherAgent");
+  const myAgent = @@mastra/cli/cli/cli.getAgent("weatherAgent");
   const stream = await myAgent.stream([{ role: "user", content: prompt }]);
 
   return stream.toDataStreamResponse();
@@ -174,12 +174,12 @@ export function Object() {
 Requests sent using the `useObject` hook are handled by a standard server route. This example shows how to define a POST route using a Next.js Route Handler.
 
 ```typescript filename="app/api/object/route.ts" showLineNumbers copy
-import { mastra } from "../../../mastra";
+import { @@mastra/cli/cli/cli } from "../../../@@mastra/cli/cli/cli";
 import { z } from "zod";
 
 export async function POST(req: Request) {
   const body = await req.json();
-  const myAgent = mastra.getAgent("weatherAgent");
+  const myAgent = @@mastra/cli/cli/cli.getAgent("weatherAgent");
   const stream = await myAgent.stream(body, {
     output: z.object({
       weather: z.string()
@@ -232,12 +232,12 @@ export function ChatExtra() {
 Requests sent using `sendExtraMessageFields` are handled by a standard server route. This example shows how to extract the custom data and populate a `RuntimeContext` instance.
 
 ```typescript {8,12} filename="app/api/chat-extra/route.ts" showLineNumbers copy
-import { mastra } from "../../../mastra";
-import { RuntimeContext } from "@actus-ag/mastra-core/runtime-context";
+import { @@mastra/cli/cli/cli } from "../../../@@mastra/cli/cli/cli";
+import { RuntimeContext } from "@mastra/cli/cli/cli/core/runtime-context";
 
 export async function POST(req: Request) {
   const { messages, data } = await req.json();
-  const myAgent = mastra.getAgent("weatherAgent");
+  const myAgent = @@mastra/cli/cli/cli.getAgent("weatherAgent");
 
   const runtimeContext = new RuntimeContext();
 
@@ -257,10 +257,10 @@ export async function POST(req: Request) {
 
 You can also populate the `RuntimeContext` by reading custom data in a server middleware:
 
-```typescript {6} filename="mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core/mastra";
+```typescript {6} filename="@@mastra/cli/cli/cli/index.ts" showLineNumbers copy
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   agents: { weatherAgent },
   server: {
     middleware: [
@@ -322,9 +322,9 @@ Install the required package:
 
 The `createDataStream` function allows you to stream additional data to the client.
 
-```typescript {1, 6} filename="mastra/agents/weather-agent.ts" showLineNumbers copy
+```typescript {1, 6} filename="@@mastra/cli/cli/cli/agents/weather-agent.ts" showLineNumbers copy
 import { createDataStream } from "ai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 export const weatherAgent = new Agent({...});
 
@@ -347,12 +347,12 @@ createDataStream({
 The `createDataStreamResponse` function creates a response object that streams data to the client.
 
 ```typescript {2,9} filename="app/api/chat-stream/route.ts" showLineNumbers copy
-import { mastra } from "../../../mastra";
+import { @@mastra/cli/cli/cli } from "../../../@@mastra/cli/cli/cli";
 import { createDataStreamResponse } from "ai";
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
-  const myAgent = mastra.getAgent("weatherAgent");
+  const myAgent = @@mastra/cli/cli/cli.getAgent("weatherAgent");
   const agentStream = await myAgent.stream(messages);
 
   const response = createDataStreamResponse({
@@ -382,7 +382,7 @@ export async function POST(req: Request) {
 
 This guide covers Mastra-specific considerations when migrating from AI SDK v4 to v5 beta.
 
-> Please add any feedback or bug reports to the [AI SDK v5 mega issue in Github.](https://github.com/mastra-ai/mastra/issues/5470)
+> Please add any feedback or bug reports to the [AI SDK v5 mega issue in Github.](https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/issues/5470)
 
 ### Official migration guide
 
@@ -411,34 +411,34 @@ Install the `@ai-v5` prerelease version of all Mastra packages:
 <Tabs items={["npm", "yarn", "pnpm", "bun"]}>
   <Tabs.Tab>
     ```bash copy
-    npm install mastra@ai-v5 @actus-ag/mastra-core@ai-v5 @actus-ag/mastra-memory@ai-v5
+    npm install @actus-ag/@mastra/cli/cli@ai-v5 @mastra/cli/cli/cli/core@ai-v5 @mastra/cli/cli/cli/memory@ai-v5
     ```
   </Tabs.Tab>
   <Tabs.Tab>
     ```bash copy
-    yarn add mastra@ai-v5 @actus-ag/mastra-core@ai-v5 @actus-ag/mastra-memory@ai-v5
+    yarn add @actus-ag/@mastra/cli/cli@ai-v5 @mastra/cli/cli/cli/core@ai-v5 @mastra/cli/cli/cli/memory@ai-v5
     ```
   </Tabs.Tab>
   <Tabs.Tab>
     ```bash copy
-    pnpm add mastra@ai-v5 @actus-ag/mastra-core@ai-v5 @actus-ag/mastra-memory@ai-v5
+    pnpm add @actus-ag/@mastra/cli/cli@ai-v5 @mastra/cli/cli/cli/core@ai-v5 @mastra/cli/cli/cli/memory@ai-v5
     ```
   </Tabs.Tab>
   <Tabs.Tab>
     ```bash copy
-    bun add mastra@ai-v5 @actus-ag/mastra-core@ai-v5 @actus-ag/mastra-memory@ai-v5
+    bun add @actus-ag/@mastra/cli/cli@ai-v5 @mastra/cli/cli/cli/core@ai-v5 @mastra/cli/cli/cli/memory@ai-v5
     ```
   </Tabs.Tab>
 </Tabs>
 
 Configure your Mastra instance with `v4` compatibility so your frontend, and the Mastra Playground will continue to work:
 
-```typescript {7} filename="mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core/mastra";
+```typescript {7} filename="@@mastra/cli/cli/cli/index.ts" showLineNumbers copy
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
 
 import { weatherAgent } from "./agents/weather-agent";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   agents: { weatherAgent },
   aiSdkCompat: 'v4',
 });
@@ -450,12 +450,12 @@ If your frontend calls a Mastra agent using a custom API route, wrap the `toUIMe
 
 
 ```typescript filename="app/api/chat/route.ts" showLineNumbers copy
-import { mastra } from "../../../mastra";
-import { createV4CompatibleResponse } from "@actus-ag/mastra-core/agent";
+import { @@mastra/cli/cli/cli } from "../../../@@mastra/cli/cli/cli";
+import { createV4CompatibleResponse } from "@mastra/cli/cli/cli/core/agent";
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
-  const myAgent = mastra.getAgent("weatherAgent");
+  const myAgent = @@mastra/cli/cli/cli.getAgent("weatherAgent");
   const stream = await myAgent.stream(messages);
 
   return createV4CompatibleResponse(stream.toUIMessageStreamResponse().body!);

@@ -18,11 +18,11 @@ description: "ワークフローステップ内でダイナミックなワーク
 ### 基本例
 
 ```typescript
-import { Mastra, Step, Workflow } from "@actus-ag/mastra-core";
+import { Mastra, Step, Workflow } from "@mastra/cli/cli/cli/core";
 import { z } from "zod";
 
-const isMastra = (mastra: any): mastra is Mastra => {
-  return mastra && typeof mastra === "object" && mastra instanceof Mastra;
+const isMastra = (@@mastra/cli/cli/cli: any): @@mastra/cli/cli/cli is Mastra => {
+  return @@mastra/cli/cli/cli && typeof @@mastra/cli/cli/cli === "object" && @@mastra/cli/cli/cli instanceof Mastra;
 };
 
 // Step that creates and runs a dynamic workflow
@@ -31,12 +31,12 @@ const createDynamicWorkflow = new Step({
   outputSchema: z.object({
     dynamicWorkflowResult: z.any(),
   }),
-  execute: async ({ context, mastra }) => {
-    if (!mastra) {
+  execute: async ({ context, @@mastra/cli/cli/cli }) => {
+    if (!@@mastra/cli/cli/cli) {
       throw new Error("Mastra instance not available");
     }
 
-    if (!isMastra(mastra)) {
+    if (!isMastra(@@mastra/cli/cli/cli)) {
       throw new Error("Invalid Mastra instance");
     }
 
@@ -45,7 +45,7 @@ const createDynamicWorkflow = new Step({
     // Create a new dynamic workflow
     const dynamicWorkflow = new Workflow({
       name: "dynamic-workflow",
-      mastra, // Pass the mastra instance to the new workflow
+      @@mastra/cli/cli/cli, // Pass the @@mastra/cli/cli/cli instance to the new workflow
       triggerSchema: z.object({
         dynamicInput: z.string(),
       }),
@@ -95,13 +95,13 @@ const mainWorkflow = new Workflow({
   triggerSchema: z.object({
     inputData: z.string(),
   }),
-  mastra: new Mastra(),
+  @@mastra/cli/cli/cli: new Mastra(),
 });
 
 mainWorkflow.step(createDynamicWorkflow).commit();
 
 // Register the workflow with Mastra
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   workflows: { mainWorkflow },
 });
 
@@ -118,8 +118,8 @@ const result = await run.start({
 入力パラメータに基づいて異なるワークフローを生成するワークフローファクトリーを作成できます。
 
 ```typescript
-const isMastra = (mastra: any): mastra is Mastra => {
-  return mastra && typeof mastra === "object" && mastra instanceof Mastra;
+const isMastra = (@@mastra/cli/cli/cli: any): @@mastra/cli/cli/cli is Mastra => {
+  return @@mastra/cli/cli/cli && typeof @@mastra/cli/cli/cli === "object" && @@mastra/cli/cli/cli instanceof Mastra;
 };
 
 const workflowFactory = new Step({
@@ -131,19 +131,19 @@ const workflowFactory = new Step({
   outputSchema: z.object({
     result: z.any(),
   }),
-  execute: async ({ context, mastra }) => {
-    if (!mastra) {
+  execute: async ({ context, @@mastra/cli/cli/cli }) => {
+    if (!@@mastra/cli/cli/cli) {
       throw new Error("Mastra instance not available");
     }
 
-    if (!isMastra(mastra)) {
+    if (!isMastra(@@mastra/cli/cli/cli)) {
       throw new Error("Invalid Mastra instance");
     }
 
     // Create a new dynamic workflow based on the type
     const dynamicWorkflow = new Workflow({
       name: `dynamic-${context.workflowType}-workflow`,
-      mastra,
+      @@mastra/cli/cli/cli,
       triggerSchema: z.object({
         input: z.string(),
       }),
@@ -214,7 +214,7 @@ const workflowFactory = new Step({
 
 ## 重要な考慮事項
 
-1. **Mastraインスタンス**: `execute`関数の`mastra`パラメータは、動的ワークフローを作成するために不可欠なMastraインスタンスへのアクセスを提供します。
+1. **Mastraインスタンス**: `execute`関数の`@actus-ag/@@mastra/cli/cli/cli`パラメータは、動的ワークフローを作成するために不可欠なMastraインスタンスへのアクセスを提供します。
 
 2. **エラー処理**: 動的ワークフローを作成する前に、常にMastraインスタンスが利用可能かどうかを確認してください。
 

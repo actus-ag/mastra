@@ -50,7 +50,7 @@ export const NextraLayout = ({
       nextThemes={{
         attribute: "class",
       }}
-      docsRepositoryBase="https://github.com/mastra-ai/mastra/blob/main/docs"
+      docsRepositoryBase="https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/docs"
       footer={footer}
       sidebar={{
         autoCollapse: true,

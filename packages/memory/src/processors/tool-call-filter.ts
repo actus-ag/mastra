@@ -1,5 +1,5 @@
-import type { CoreMessage } from '@actus-ag/mastra-core';
-import { MemoryProcessor } from '@actus-ag/mastra-core';
+import type { CoreMessage } from '@mastra/core';
+import { MemoryProcessor } from '@mastra/core';
 
 /**
  * Filters out tool calls and results from messages.

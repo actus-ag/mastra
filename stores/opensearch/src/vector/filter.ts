@@ -5,8 +5,8 @@ import type {
   OperatorValueMap,
   QueryOperator,
   VectorFilter,
-} from '@actus-ag/mastra-core/vector/filter';
-import { BaseFilterTranslator } from '@actus-ag/mastra-core/vector/filter';
+} from '@mastra/core/vector/filter';
+import { BaseFilterTranslator } from '@mastra/core/vector/filter';
 
 type OpenSearchOperatorValueMap = Omit<OperatorValueMap, '$options' | '$nor' | '$elemMatch'>;
 

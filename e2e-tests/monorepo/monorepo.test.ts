@@ -17,7 +17,7 @@ describe.for([['pnpm'] as const])(`%s monorepo`, ([pkgManager]) => {
       const tag = inject('tag');
       const registry = inject('registry');
 
-      fixturePath = await mkdtemp(join(tmpdir(), `mastra-monorepo-test-${pkgManager}-`));
+      fixturePath = await mkdtemp(join(tmpdir(), `@mastra-monorepo-test-${pkgManager}-`));
       process.env.npm_config_registry = registry;
       await setupMonorepo(fixturePath, tag, pkgManager);
     },
@@ -34,7 +34,7 @@ describe.for([['pnpm'] as const])(`%s monorepo`, ([pkgManager]) => {
 
   describe('tsconfig paths', () => {
     it('should resolve paths', async () => {
-      const inputFile = join(fixturePath, 'apps', 'custom', '.mastra', 'output', 'index.mjs');
+      const inputFile = join(fixturePath, 'apps', 'custom', '.@mastra', 'output', 'index.mjs');
       const bundle = await rollup({
         logLevel: 'silent',
         input: inputFile,
@@ -133,7 +133,7 @@ describe.for([['pnpm'] as const])(`%s monorepo`, ([pkgManager]) => {
     const cancelSignal = controller.signal;
 
     beforeAll(async () => {
-      const inputFile = join(fixturePath, 'apps', 'custom', '.mastra', 'output');
+      const inputFile = join(fixturePath, 'apps', 'custom', '.@mastra', 'output');
       proc = execaNode('index.mjs', {
         cwd: inputFile,
         cancelSignal,

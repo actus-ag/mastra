@@ -10,13 +10,13 @@ The PostgreSQL storage implementation provides a production-ready storage soluti
 ## Installation
 
 ```bash copy
-npm install @actus-ag/mastra-pg@latest
+npm install @mastra/cli/cli/cli/pg@latest
 ```
 
 ## Usage
 
 ```typescript copy showLineNumbers
-import { PostgresStore } from "@actus-ag/mastra-pg";
+import { PostgresStore } from "@mastra/cli/cli/cli/pg";
 
 const storage = new PostgresStore({
   connectionString: process.env.DATABASE_URL,
@@ -49,7 +49,7 @@ const storage = new PostgresStore({
 You can instantiate `PostgresStore` in the following ways:
 
 ```ts
-import { PostgresStore } from "@actus-ag/mastra-pg";
+import { PostgresStore } from "@mastra/cli/cli/cli/pg";
 
 // Using a connection string only
 const store1 = new PostgresStore({
@@ -88,13 +88,13 @@ const store5 = new PostgresStore({
 
 The storage implementation handles schema creation and updates automatically. It creates the following tables:
 
-- `mastra_workflow_snapshot`: Stores workflow state and execution data
-- `mastra_evals`: Stores evaluation results and metadata  
-- `mastra_threads`: Stores conversation threads
-- `mastra_messages`: Stores individual messages
-- `mastra_traces`: Stores telemetry and tracing data
-- `mastra_scorers`: Stores scoring and evaluation data
-- `mastra_resources`: Stores resource working memory data
+- `@@mastra/cli/cli/cli_workflow_snapshot`: Stores workflow state and execution data
+- `@@mastra/cli/cli/cli_evals`: Stores evaluation results and metadata  
+- `@@mastra/cli/cli/cli_threads`: Stores conversation threads
+- `@@mastra/cli/cli/cli_messages`: Stores individual messages
+- `@@mastra/cli/cli/cli_traces`: Stores telemetry and tracing data
+- `@@mastra/cli/cli/cli_scorers`: Stores scoring and evaluation data
+- `@@mastra/cli/cli/cli_resources`: Stores resource working memory data
 
 ### Direct Database and Pool Access
 

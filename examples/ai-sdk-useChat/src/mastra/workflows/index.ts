@@ -1,6 +1,6 @@
 import { anthropic } from '@ai-sdk/anthropic';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { Step, Workflow } from '@actus-ag/mastra-core/workflows';
+import { Agent } from '@mastra/core/agent';
+import { Step, Workflow } from '@mastra/core/workflows';
 import { z } from 'zod';
 
 const llm = anthropic('claude-3-5-sonnet-20241022');

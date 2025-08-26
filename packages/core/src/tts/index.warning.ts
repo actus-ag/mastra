@@ -7,6 +7,6 @@ export abstract class MastraTTS extends BaseMastraTTS {
   constructor(args: TTSConfig) {
     super(args);
 
-    this.logger.warn('Please import "MastraTTS" from "@actus-ag/mastra-core/tts" instead of "@actus-ag/mastra-core"');
+    this.logger.warn('Please import "MastraTTS" from "@mastra/core/tts" instead of "@mastra/core"');
   }
 }

@@ -15,7 +15,7 @@ Use `TextualDifferenceMetric` to evaluate the similarity between two text string
 ## Installation
 
 ```bash copy
-npm install @actus-ag/mastra-evals
+npm install @mastra/cli/cli/cli/evals
 ```
 
 ## No differences example
@@ -24,7 +24,7 @@ In this example, the texts are exactly the same. The metric identifies complete 
 
 
 ```typescript filename="src/example-no-differences.ts" showLineNumbers copy
-import { TextualDifferenceMetric } from "@actus-ag/mastra-evals/nlp";
+import { TextualDifferenceMetric } from "@mastra/cli/cli/cli/evals/nlp";
 
 const metric = new TextualDifferenceMetric();
 
@@ -56,7 +56,7 @@ The metric returns a high score, indicating the texts are identical. The detaile
 In this example, the texts have small variations. The metric detects these minor differences and returns a moderate similarity score.
 
 ```typescript filename="src/example-minor-differences.ts" showLineNumbers copy
-import { TextualDifferenceMetric } from "@actus-ag/mastra-evals/nlp";
+import { TextualDifferenceMetric } from "@mastra/cli/cli/cli/evals/nlp";
 
 const metric = new TextualDifferenceMetric();
 
@@ -89,7 +89,7 @@ The metric returns a moderate score reflecting the small variations between the 
 In this example, the texts differ significantly. The metric detects extensive changes and returns a low similarity score.
 
 ```typescript filename="src/example-major-differences.ts" showLineNumbers copy
-import { TextualDifferenceMetric } from "@actus-ag/mastra-evals/nlp";
+import { TextualDifferenceMetric } from "@mastra/cli/cli/cli/evals/nlp";
 
 const metric = new TextualDifferenceMetric();
 
@@ -164,5 +164,5 @@ An explanation for the score, with details including:
 
 <GithubLink
   marginTop='mt-16'
-  link="https://github.com/mastra-ai/mastra/blob/main/examples/basics/evals/textual-difference"
+  link="https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/evals/textual-difference"
 />

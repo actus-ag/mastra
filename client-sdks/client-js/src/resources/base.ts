@@ -32,7 +32,7 @@ export class BaseResource {
             ...headers,
             ...options.headers,
             // TODO: Bring this back once we figure out what we/users need to do to make this work with cross-origin requests
-            // 'x-mastra-client-type': 'js',
+            // 'x-@mastra-client-type': 'js',
           },
           signal: this.options.abortSignal,
           body:

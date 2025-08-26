@@ -1,20 +1,20 @@
-import type { Mastra } from '@actus-ag/mastra-core';
-import type { MCPServerBase, ServerInfo, ServerDetailInfo } from '@actus-ag/mastra-core/mcp';
+import type { Mastra } from '@mastra/core';
+import type { MCPServerBase, ServerInfo, ServerDetailInfo } from '@mastra/core/mcp';
 import { toReqRes, toFetchResponse } from 'fetch-to-node';
 import type { Context } from 'hono';
 import { handleError } from '../../error';
 
 // Helper function to get the Mastra instance from the context
-const getMastra = (c: Context): Mastra => c.get('mastra');
+const getMastra = (c: Context): Mastra => c.get('@actus-ag/@mastra');
 
 /**
  * Handler for Streamable HTTP requests (POST, GET, DELETE) to /api/mcp/:serverId/mcp
  */
 export const getMcpServerMessageHandler = async (c: Context) => {
-  const mastra = getMastra(c);
+  const @mastra = getMastra(c);
   const serverId = c.req.param('serverId');
   const { req, res } = toReqRes(c.req.raw);
-  const server = mastra.getMCPServer(serverId);
+  const server = @mastra.getMCPServer(serverId);
 
   if (!server) {
     // Use Node.js res to send response since we are not returning a Hono response
@@ -59,9 +59,9 @@ export const getMcpServerMessageHandler = async (c: Context) => {
  * and for posting messages to it (POST).
  */
 export const getMcpServerSseHandler = async (c: Context) => {
-  const mastra = getMastra(c);
+  const @mastra = getMastra(c);
   const serverId = c.req.param('serverId');
-  const server = mastra.getMCPServer(serverId);
+  const server = @mastra.getMCPServer(serverId);
 
   if (!server) {
     return c.json({ error: `MCP server '${serverId}' not found` }, 404);
@@ -93,13 +93,13 @@ export const getMcpServerSseHandler = async (c: Context) => {
  * Handler for GET /api/mcp/v0/servers - List MCP Servers (Registry Style)
  */
 export const listMcpRegistryServersHandler = async (c: Context) => {
-  const mastra = getMastra(c);
-  if (!mastra || typeof mastra.getMCPServers !== 'function') {
+  const @mastra = getMastra(c);
+  if (!@mastra || typeof @mastra.getMCPServers !== 'function') {
     c.get('logger')?.error('Mastra instance or getMCPServers method not available in listMcpRegistryServersHandler');
     return c.json({ error: 'Mastra instance or getMCPServers method not available' }, 500);
   }
 
-  const mcpServersMap = mastra.getMCPServers();
+  const mcpServersMap = @mastra.getMCPServers();
   if (!mcpServersMap) {
     c.get('logger')?.warn('getMCPServers returned undefined or null in listMcpRegistryServersHandler');
     return c.json({ servers: [], next: null, total_count: 0 });
@@ -136,16 +136,16 @@ export const listMcpRegistryServersHandler = async (c: Context) => {
  * Handler for GET /api/mcp/v0/servers/:id - Get MCP Server Details (Registry Style)
  */
 export const getMcpRegistryServerDetailHandler = async (c: Context) => {
-  const mastra = getMastra(c);
+  const @mastra = getMastra(c);
   const serverId = c.req.param('id');
   const requestedVersion = c.req.query('version'); // Get the requested version from query
 
-  if (!mastra || typeof mastra.getMCPServer !== 'function') {
+  if (!@mastra || typeof @mastra.getMCPServer !== 'function') {
     c.get('logger')?.error('Mastra instance or getMCPServer method not available in getMcpRegistryServerDetailHandler');
     return c.json({ error: 'Mastra instance or getMCPServer method not available' }, 500);
   }
 
-  const server = mastra.getMCPServer(serverId);
+  const server = @mastra.getMCPServer(serverId);
 
   if (!server) {
     return c.json({ error: `MCP server with ID '${serverId}' not found` }, 404);
@@ -173,15 +173,15 @@ export const getMcpRegistryServerDetailHandler = async (c: Context) => {
  * Handler for GET /api/mcp/:serverId/tools - List tools for a specific MCP Server
  */
 export const listMcpServerToolsHandler = async (c: Context) => {
-  const mastra = getMastra(c);
+  const @mastra = getMastra(c);
   const serverId = c.req.param('serverId');
 
-  if (!mastra || typeof mastra.getMCPServer !== 'function') {
+  if (!@mastra || typeof @mastra.getMCPServer !== 'function') {
     c.get('logger')?.error('Mastra instance or getMCPServer method not available in listMcpServerToolsHandler');
     return c.json({ error: 'Mastra instance or getMCPServer method not available' }, 500);
   }
 
-  const server = mastra.getMCPServer(serverId);
+  const server = @mastra.getMCPServer(serverId);
 
   if (!server) {
     return c.json({ error: `MCP server with ID '${serverId}' not found` }, 404);
@@ -205,16 +205,16 @@ export const listMcpServerToolsHandler = async (c: Context) => {
  * Handler for GET /api/mcp/:serverId/tools/:toolId - Get details for a specific tool on an MCP Server
  */
 export const getMcpServerToolDetailHandler = async (c: Context) => {
-  const mastra = getMastra(c);
+  const @mastra = getMastra(c);
   const serverId = c.req.param('serverId');
   const toolId = c.req.param('toolId');
 
-  if (!mastra || typeof mastra.getMCPServer !== 'function') {
+  if (!@mastra || typeof @mastra.getMCPServer !== 'function') {
     c.get('logger')?.error('Mastra instance or getMCPServer method not available in getMcpServerToolDetailHandler');
     return c.json({ error: 'Mastra instance or getMCPServer method not available' }, 500);
   }
 
-  const server = mastra.getMCPServer(serverId);
+  const server = @mastra.getMCPServer(serverId);
 
   if (!server) {
     return c.json({ error: `MCP server with ID '${serverId}' not found` }, 404);
@@ -243,16 +243,16 @@ export const getMcpServerToolDetailHandler = async (c: Context) => {
  * Handler for POST /api/mcp/:serverId/tools/:toolId/execute - Execute a tool on an MCP Server
  */
 export const executeMcpServerToolHandler = async (c: Context) => {
-  const mastra = getMastra(c);
+  const @mastra = getMastra(c);
   const serverId = c.req.param('serverId');
   const toolId = c.req.param('toolId');
 
-  if (!mastra || typeof mastra.getMCPServer !== 'function') {
+  if (!@mastra || typeof @mastra.getMCPServer !== 'function') {
     c.get('logger')?.error('Mastra instance or getMCPServer method not available in executeMcpServerToolHandler');
     return c.json({ error: 'Mastra instance or getMCPServer method not available' }, 500);
   }
 
-  const server = mastra.getMCPServer(serverId);
+  const server = @mastra.getMCPServer(serverId);
 
   if (!server) {
     return c.json({ error: `MCP server with ID '${serverId}' not found` }, 404);

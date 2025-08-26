@@ -1,4 +1,4 @@
-import type { MastraVector, QueryResult, IndexStats } from '@actus-ag/mastra-core/vector';
+import type { MastraVector, QueryResult, IndexStats } from '@mastra/core/vector';
 import { HTTPException } from '../http-exception';
 import type { Context } from '../types';
 
@@ -29,12 +29,12 @@ interface QueryRequest {
   includeVector?: boolean;
 }
 
-function getVector(mastra: Context['mastra'], vectorName?: string): MastraVector {
+function getVector(@mastra: Context['@actus-ag/@mastra'], vectorName?: string): MastraVector {
   if (!vectorName) {
     throw new HTTPException(400, { message: 'Vector name is required' });
   }
 
-  const vector = mastra.getVector(vectorName);
+  const vector = @mastra.getVector(vectorName);
   if (!vector) {
     throw new HTTPException(404, { message: `Vector store ${vectorName} not found` });
   }
@@ -43,13 +43,13 @@ function getVector(mastra: Context['mastra'], vectorName?: string): MastraVector
 }
 
 // Upsert vectors
-export async function upsertVectors({ mastra, vectorName, index }: VectorContext & { index: UpsertRequest }) {
+export async function upsertVectors({ @mastra, vectorName, index }: VectorContext & { index: UpsertRequest }) {
   try {
     if (!index?.indexName || !index?.vectors || !Array.isArray(index.vectors)) {
       throw new HTTPException(400, { message: 'Invalid request index. indexName and vectors array are required.' });
     }
 
-    const vector = getVector(mastra, vectorName);
+    const vector = getVector(@mastra, vectorName);
     const result = await vector.upsert(index);
     return { ids: result };
   } catch (error) {
@@ -59,10 +59,10 @@ export async function upsertVectors({ mastra, vectorName, index }: VectorContext
 
 // Create index
 export async function createIndex({
-  mastra,
+  @mastra,
   vectorName,
   index,
-}: Pick<VectorContext, 'mastra' | 'vectorName'> & { index: CreateIndexRequest }) {
+}: Pick<VectorContext, '@actus-ag/@mastra' | 'vectorName'> & { index: CreateIndexRequest }) {
   try {
     const { indexName, dimension, metric } = index;
 
@@ -76,7 +76,7 @@ export async function createIndex({
       throw new HTTPException(400, { message: 'Invalid metric. Must be one of: cosine, euclidean, dotproduct' });
     }
 
-    const vector = getVector(mastra, vectorName);
+    const vector = getVector(@mastra, vectorName);
     await vector.createIndex({ indexName, dimension, metric });
     return { success: true };
   } catch (error) {
@@ -86,16 +86,16 @@ export async function createIndex({
 
 // Query vectors
 export async function queryVectors({
-  mastra,
+  @mastra,
   vectorName,
   query,
-}: Pick<VectorContext, 'mastra' | 'vectorName'> & { query: QueryRequest }) {
+}: Pick<VectorContext, '@actus-ag/@mastra' | 'vectorName'> & { query: QueryRequest }) {
   try {
     if (!query?.indexName || !query?.queryVector || !Array.isArray(query.queryVector)) {
       throw new HTTPException(400, { message: 'Invalid request query. indexName and queryVector array are required.' });
     }
 
-    const vector = getVector(mastra, vectorName);
+    const vector = getVector(@mastra, vectorName);
     const results: QueryResult[] = await vector.query(query);
     return results;
   } catch (error) {
@@ -104,9 +104,9 @@ export async function queryVectors({
 }
 
 // List indexes
-export async function listIndexes({ mastra, vectorName }: Pick<VectorContext, 'mastra' | 'vectorName'>) {
+export async function listIndexes({ @mastra, vectorName }: Pick<VectorContext, '@actus-ag/@mastra' | 'vectorName'>) {
   try {
-    const vector = getVector(mastra, vectorName);
+    const vector = getVector(@mastra, vectorName);
 
     const indexes = await vector.listIndexes();
     return indexes.filter(Boolean);
@@ -117,16 +117,16 @@ export async function listIndexes({ mastra, vectorName }: Pick<VectorContext, 'm
 
 // Describe index
 export async function describeIndex({
-  mastra,
+  @mastra,
   vectorName,
   indexName,
-}: Pick<VectorContext, 'mastra' | 'vectorName'> & { indexName?: string }) {
+}: Pick<VectorContext, '@actus-ag/@mastra' | 'vectorName'> & { indexName?: string }) {
   try {
     if (!indexName) {
       throw new HTTPException(400, { message: 'Index name is required' });
     }
 
-    const vector = getVector(mastra, vectorName);
+    const vector = getVector(@mastra, vectorName);
     const stats: IndexStats = await vector.describeIndex({ indexName });
 
     return {
@@ -141,16 +141,16 @@ export async function describeIndex({
 
 // Delete index
 export async function deleteIndex({
-  mastra,
+  @mastra,
   vectorName,
   indexName,
-}: Pick<VectorContext, 'mastra' | 'vectorName'> & { indexName?: string }) {
+}: Pick<VectorContext, '@actus-ag/@mastra' | 'vectorName'> & { indexName?: string }) {
   try {
     if (!indexName) {
       throw new HTTPException(400, { message: 'Index name is required' });
     }
 
-    const vector = getVector(mastra, vectorName);
+    const vector = getVector(@mastra, vectorName);
     await vector.deleteIndex({ indexName });
     return { success: true };
   } catch (error) {

@@ -1,4 +1,4 @@
-import type { AiMessageType, MastraMessageV1, StorageThreadType as ThreadType } from '@actus-ag/mastra-core/memory';
+import type { AiMessageType, MastraMessageV1, StorageThreadType as ThreadType } from '@mastra/core/memory';
 import { useEffect } from 'react';
 import { toast } from 'sonner';
 import useSWR, { useSWRConfig } from 'swr';
@@ -120,7 +120,7 @@ export const useDeleteThread = () => {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        'x-mastra-dev-playground': 'true',
+        'x-@mastra-dev-playground': 'true',
       },
     });
 
@@ -169,7 +169,7 @@ export const useMemorySearch = ({
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'x-mastra-dev-playground': 'true',
+        'x-@mastra-dev-playground': 'true',
       },
     });
 

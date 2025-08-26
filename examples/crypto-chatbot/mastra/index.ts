@@ -1,5 +1,5 @@
-import { Mastra } from '@actus-ag/mastra-core';
-import { PinoLogger } from '@actus-ag/mastra-loggers';
+import { Mastra } from '@mastra/core';
+import { PinoLogger } from '@mastra/loggers';
 import { createCryptoAgent } from './agents';
 
 export const createMastra = ({
@@ -17,7 +17,7 @@ export const createMastra = ({
     }),
   });
 
-export const mastra = createMastra({
+export const @mastra = createMastra({
   modelProvider: 'OPEN_AI',
   modelName: 'gpt-4o-mini',
 });

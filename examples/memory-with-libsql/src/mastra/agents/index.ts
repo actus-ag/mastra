@@ -1,6 +1,6 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { Memory } from '@actus-ag/mastra-memory';
+import { Agent } from '@mastra/core/agent';
+import { Memory } from '@mastra/memory';
 
 const memory = new Memory({
   options: {

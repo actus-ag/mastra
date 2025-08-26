@@ -5,7 +5,7 @@ import {
   beforeAll,
   afterAll, //expect
 } from '@jest/globals';
-import { Mastra } from '@actus-ag/mastra-core';
+import { Mastra } from '@mastra/core';
 
 import { RagieIntegration } from '.';
 
@@ -28,7 +28,7 @@ const integrationFramework = Mastra.init({
     uri: dbUri,
   },
   systemHostURL: 'http://localhost:3000',
-  routeRegistrationPath: '/api/mastra',
+  routeRegistrationPath: '/api/@mastra',
 });
 
 //const integration = integrationFramework.getIntegration(integrationName) as RagieIntegration

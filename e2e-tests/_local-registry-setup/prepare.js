@@ -86,8 +86,8 @@ export async function prepareMonorepo(monorepoDir, glob, tag) {
         const content = readFileSync(join(monorepoDir, file), 'utf8');
 
         const parsed = JSON.parse(content);
-        if (parsed?.peerDependencies?.['@actus-ag/mastra-core']) {
-          parsed.peerDependencies['@actus-ag/mastra-core'] = 'workspace:*';
+        if (parsed?.peerDependencies?.['@mastra/core']) {
+          parsed.peerDependencies['@mastra/core'] = 'workspace:*';
         }
 
         writeFileSync(join(monorepoDir, file), JSON.stringify(parsed, null, 2));

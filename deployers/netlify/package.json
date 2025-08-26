@@ -1,6 +1,6 @@
 {
-  "name": "@actus-ag/mastra-deployer-netlify",
-  "version": "0.11.14",
+  "name": "@mastra/deployer-netlify",
+  "version": "0.11.16-alpha.0",
   "description": "",
   "type": "module",
   "files": [
@@ -31,16 +31,15 @@
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
-    "@actus-ag/mastra-deployer": "workspace:^",
+    "@mastra/deployer": "workspace:^",
     "@rollup/plugin-virtual": "^3.0.2",
     "date-fns": "^4.1.0",
     "execa": "^9.6.0",
-    "fs-extra": "^11.3.0",
-    "zod": "^3.25.67"
+    "fs-extra": "^11.3.0"
   },
   "devDependencies": {
     "@internal/lint": "workspace:*",
-    "@actus-ag/mastra-core": "workspace:*",
+    "@mastra/core": "workspace:*",
     "@microsoft/api-extractor": "^7.52.8",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.19.0",
@@ -51,6 +50,7 @@
     "@internal/types-builder": "workspace:*"
   },
   "peerDependencies": {
-    "@actus-ag/mastra-core": ">=0.10.1-0 <0.15.0-0"
+    "@mastra/core": ">=0.10.1-0 <0.15.0-0",
+    "zod": "^3.0.0 || ^4.0.0"
   }
 }

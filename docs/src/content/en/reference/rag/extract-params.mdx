@@ -10,7 +10,7 @@ ExtractParams configures metadata extraction from document chunks using LLM anal
 ## Example
 
 ```typescript showLineNumbers copy
-import { MDocument } from "@actus-ag/mastra-rag";
+import { MDocument } from "@mastra/cli/cli/cli/rag";
 
 const doc = MDocument.fromText(text);
 const chunks = await doc.chunk({
@@ -189,7 +189,7 @@ The `extract` parameter accepts the following fields:
 ## Advanced Example
 
 ```typescript showLineNumbers copy
-import { MDocument } from "@actus-ag/mastra-rag";
+import { MDocument } from "@mastra/cli/cli/cli/rag";
 
 const doc = MDocument.fromText(text);
 const chunks = await doc.chunk({
@@ -238,7 +238,7 @@ When using the `TitleExtractor`, you can group multiple chunks together for titl
 **Example:**
 
 ```ts
-import { MDocument } from "@actus-ag/mastra-rag";
+import { MDocument } from "@mastra/cli/cli/cli/rag";
 
 const doc = new MDocument({
   docs: [

@@ -40,7 +40,7 @@ export const tsConfigRule: LintRule = {
       logger.error('    "module": "CommonJS"');
       logger.error('  }');
       logger.error('For the recommended TypeScript configuration, see:');
-      logger.error('https://mastra.ai/en/docs/getting-started/installation#initialize-typescript');
+      logger.error('https://@mastra.ai/en/docs/getting-started/installation#initialize-typescript');
       return false;
     }
 

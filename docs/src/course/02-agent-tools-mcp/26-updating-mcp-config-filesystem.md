@@ -1,6 +1,6 @@
 # Updating Your MCP Configuration
 
-Now, let's update your MCP configuration in `src/mastra/agents/index.ts` to include the Filesystem server:
+Now, let's update your MCP configuration in `src/@mastra/agents/index.ts` to include the Filesystem server:
 
 ```typescript
 import path from "path";

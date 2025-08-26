@@ -7,7 +7,7 @@ import YouTube from "@/components/youtube";
 
 # エージェントIDEのためのMastraツール
 
-`@actus-ag/mastra-mcp-docs-server`は、Cursor、Windsurf、Cline、またはMCPをサポートする他のIDEでMastraの完全なナレッジベースに直接アクセスできるようにします。
+`@mastra/cli/cli/cli/mcp-docs-server`は、Cursor、Windsurf、Cline、またはMCPをサポートする他のIDEでMastraの完全なナレッジベースに直接アクセスできるようにします。
 
 これはドキュメント、コード例、技術ブログ投稿/機能アナウンス、パッケージの変更履歴にアクセスでき、あなたのIDEがMastraを使って構築するのを助けることができます。
 
@@ -42,10 +42,10 @@ IDEにインストールされると、プロンプトを書いて、エージ�
 
 ## 自動インストール
 
-MCPドキュメントサーバーは、`create-mastra`コマンドで`-m`フラグを使用してインストールできます。
+MCPドキュメントサーバーは、`@actus-ag/@actus-ag/create-@@mastra/cli/cli/cli`コマンドで`-m`フラグを使用してインストールできます。
 
 ```bash npm2yarn
-npm create mastra@latest --default -m cursor
+npm create @actus-ag/@mastra/cli/cli@latest --default -m cursor
 ```
 
 mcpオプションには以下が含まれます：
@@ -57,7 +57,7 @@ mcpオプションには以下が含まれます：
 
 または、以下の手順に従ってMCPサーバーを手動でインストールすることもできます。
 
-`pnpm create mastra@latest`を実行し、プロンプトが表示されたらCursorまたはWindsurfを選択してMCPサーバーをインストールします。他のIDEの場合、またはすでにMastraプロジェクトがある場合は、以下の手順に従ってMCPサーバーをインストールしてください。
+`pnpm create @actus-ag/@mastra/cli/cli@latest`を実行し、プロンプトが表示されたらCursorまたはWindsurfを選択してMCPサーバーをインストールします。他のIDEの場合、またはすでにMastraプロジェクトがある場合は、以下の手順に従ってMCPサーバーをインストールしてください。
 
 ## 手動インストール
 
@@ -75,9 +75,9 @@ import { Tabs } from "nextra/components";
 ```json
 {
   "mcpServers": {
-    "mastra": {
+    "@actus-ag/@@mastra/cli/cli/cli": {
       "command": "npx",
-      "args": ["-y", "@actus-ag/mastra-mcp-docs-server@latest"]
+      "args": ["-y", "@mastra/cli/cli/cli/mcp-docs-server@latest"]
     }
   }
 }
@@ -87,9 +87,9 @@ import { Tabs } from "nextra/components";
 ```json
 {
   "mcpServers": {
-    "mastra": {
+    "@actus-ag/@@mastra/cli/cli/cli": {
       "command": "npx",
-      "args": ["-y", "@actus-ag/mastra-mcp-docs-server@latest"]
+      "args": ["-y", "@mastra/cli/cli/cli/mcp-docs-server@latest"]
     }
   }
 }
@@ -99,9 +99,9 @@ import { Tabs } from "nextra/components";
 ```json
 {
   "servers": {
-    "mastra": {
+    "@actus-ag/@@mastra/cli/cli/cli": {
       "command": "npx",
-      "args": ["-y", "@actus-ag/mastra-mcp-docs-server@latest"]
+      "args": ["-y", "@mastra/cli/cli/cli/mcp-docs-server@latest"]
       "type": "stdio"
     }
   }
@@ -117,9 +117,9 @@ import { Tabs } from "nextra/components";
 ```json
 {
   "mcpServers": {
-    "mastra": {
+    "@actus-ag/@@mastra/cli/cli/cli": {
       "command": "cmd",
-      "args": ["/c", "npx", "-y", "@actus-ag/mastra-mcp-docs-server@latest"]
+      "args": ["/c", "npx", "-y", "@mastra/cli/cli/cli/mcp-docs-server@latest"]
     }
   }
 }
@@ -129,9 +129,9 @@ import { Tabs } from "nextra/components";
 ```json
 {
   "mcpServers": {
-    "mastra": {
+    "@actus-ag/@@mastra/cli/cli/cli": {
       "command": "cmd",
-      "args": ["/c", "npx", "-y", "@actus-ag/mastra-mcp-docs-server@latest"]
+      "args": ["/c", "npx", "-y", "@mastra/cli/cli/cli/mcp-docs-server@latest"]
     }
   }
 }
@@ -141,9 +141,9 @@ import { Tabs } from "nextra/components";
 ```json
 {
   "servers": {
-    "mastra": {
+    "@actus-ag/@@mastra/cli/cli/cli": {
       "command": "cmd",
-      "args": ["/c", "npx", "-y", "@actus-ag/mastra-mcp-docs-server@latest"],
+      "args": ["/c", "npx", "-y", "@mastra/cli/cli/cli/mcp-docs-server@latest"],
       "type": "stdio"
     }
   }
@@ -159,7 +159,7 @@ import { Tabs } from "nextra/components";
 自動インストールを行った場合、Cursorを開くと左下にポップアップが表示され、Mastra Docs MCP Serverを有効にするよう促されます。
 
 <img
-  src="/image/enable-mastra-docs-cursor.png"
+  src="/image/enable-@@mastra/cli/cli/cli-docs-cursor.png"
   alt="Mastra docs MCP server を有効にするよう促す cursor のダイアグラム"
   width={800}
 />
@@ -241,7 +241,7 @@ Mastraの完全なドキュメントにアクセス：
 
 ### パッケージの変更
 
-Mastraと`@mastra/*`パッケージの更新を追跡：
+Mastraと`@mastra/cli/cli/cli/*`パッケージの更新を追跡：
 
 - バグ修正
 - 新機能

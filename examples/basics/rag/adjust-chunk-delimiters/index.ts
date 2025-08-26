@@ -1,4 +1,4 @@
-import { MDocument } from '@actus-ag/mastra-rag';
+import { MDocument } from '@mastra/rag';
 
 const doc = MDocument.fromText(`Your plain text content...`);
 

@@ -1,9 +1,9 @@
 import { openai } from '@ai-sdk/openai';
-import { createTool } from '@actus-ag/mastra-core';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { LibSQLStore, LibSQLVector } from '@actus-ag/mastra-libsql';
-import { Memory } from '@actus-ag/mastra-memory';
-import { ToolCallFilter } from '@actus-ag/mastra-memory/processors';
+import { createTool } from '@mastra/core';
+import { Agent } from '@mastra/core/agent';
+import { LibSQLStore, LibSQLVector } from '@mastra/libsql';
+import { Memory } from '@mastra/memory';
+import { ToolCallFilter } from '@mastra/memory/processors';
 import { z } from 'zod';
 import { weatherTool } from '../tools/weather';
 
@@ -16,10 +16,10 @@ export const memory = new Memory({
     semanticRecall: true,
   },
   storage: new LibSQLStore({
-    url: 'file:mastra.db', // relative path from bundled .mastra/output dir
+    url: 'file:@mastra.db', // relative path from bundled .@mastra/output dir
   }),
   vector: new LibSQLVector({
-    connectionUrl: 'file:mastra.db', // relative path from bundled .mastra/output dir
+    connectionUrl: 'file:@mastra.db', // relative path from bundled .@mastra/output dir
   }),
   embedder: openai.embedding('text-embedding-3-small'),
 });
@@ -43,10 +43,10 @@ export const weatherAgent = new Agent({
 const memoryWithProcessor = new Memory({
   embedder: openai.embedding('text-embedding-3-small'),
   storage: new LibSQLStore({
-    url: 'file:mastra.db',
+    url: 'file:@mastra.db',
   }),
   vector: new LibSQLVector({
-    connectionUrl: 'file:mastra.db',
+    connectionUrl: 'file:@mastra.db',
   }),
   options: {
     semanticRecall: {

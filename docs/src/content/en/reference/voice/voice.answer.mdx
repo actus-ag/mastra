@@ -10,9 +10,9 @@ The `answer()` method is used in real-time voice providers to trigger the AI to 
 ## Usage Example
 
 ```typescript
-import { OpenAIRealtimeVoice } from "@actus-ag/mastra-voice-openai-realtime";
-import { getMicrophoneStream } from "@actus-ag/mastra-node-audio";
-import Speaker from "@actus-ag/mastra-node-speaker";
+import { OpenAIRealtimeVoice } from "@mastra/cli/cli/cli/voice-openai-realtime";
+import { getMicrophoneStream } from "@mastra/cli/cli/cli/node-audio";
+import Speaker from "@mastra/cli/cli/cli/node-speaker";
 
 const speaker = new Speaker({
   sampleRate: 24100, // Audio sample rate in Hz - standard for high-quality audio on MacBook Pro

@@ -8,12 +8,12 @@
   "dependencies": {
     "@ai-sdk/anthropic": "latest",
     "@ai-sdk/openai": "latest",
-    "@actus-ag/mastra-core": "latest",
+    "@mastra/core": "latest",
     "zod": "^3.25.67"
   },
   "pnpm": {
     "overrides": {
-      "@actus-ag/mastra-core": "link:../../../../packages/core"
+      "@mastra/core": "link:../../../../packages/core"
     }
   },
   "version": "0.0.1",

@@ -15,7 +15,7 @@ Use `AnswerRelevancyMetric` to evaluate how relevant the response is to the orig
 ## Installation
 
 ```bash copy
-npm install @actus-ag/mastra-evals
+npm install @mastra/cli/cli/cli/evals
 ```
 
 ## High relevancy example
@@ -24,7 +24,7 @@ In this example, the response accurately addresses the input query with specific
 
 ```typescript filename="src/example-high-answer-relevancy.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { AnswerRelevancyMetric } from "@actus-ag/mastra-evals/llm";
+import { AnswerRelevancyMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 const metric = new AnswerRelevancyMetric(openai("gpt-4o-mini"));
 
@@ -55,7 +55,7 @@ In this example, the response addresses the query in part but includes additiona
 
 ```typescript filename="src/example-partial-answer-relevancy.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { AnswerRelevancyMetric } from "@actus-ag/mastra-evals/llm";
+import { AnswerRelevancyMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 const metric = new AnswerRelevancyMetric(openai("gpt-4o-mini"));
 
@@ -87,7 +87,7 @@ In this example, the response does not address the query and contains informatio
 
 ```typescript filename="src/example-low-answer-relevancy.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { AnswerRelevancyMetric } from "@actus-ag/mastra-evals/llm";
+import { AnswerRelevancyMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 const metric = new AnswerRelevancyMetric(openai("gpt-4o-mini"));
 
@@ -157,5 +157,5 @@ An explanation for the score, with details including:
 
 <GithubLink
   marginTop='mt-16'
-  link="https://github.com/mastra-ai/mastra/blob/main/examples/basics/evals/answer-relevancy"
+  link="https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/evals/answer-relevancy"
 />

@@ -1,4 +1,4 @@
-import type { IMastraLogger } from '@actus-ag/mastra-core/logger';
+import type { IMastraLogger } from '@mastra/core/logger';
 
 export function formatDateForMongoDB(date: Date | string): Date {
   return typeof date === 'string' ? new Date(date) : date;

@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { FaithfulnessMetric } from '@actus-ag/mastra-evals/llm';
+import { FaithfulnessMetric } from '@mastra/evals/llm';
 
 // Example 1: High faithfulness (all claims supported by context)
 const context1 = [

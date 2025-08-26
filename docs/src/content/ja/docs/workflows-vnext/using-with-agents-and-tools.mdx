@@ -8,10 +8,10 @@ description: "Mastraワークフロー（vNext）のステップは、入力、�
 vNextワークフローでは、`createStep(agent)`を使用してMastraエージェントを直接ステップとして使用できます：
 
 ```typescript
-import { Mastra } from "@actus-ag/mastra-core";
+import { Mastra } from "@mastra/cli/cli/cli/core";
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows/vNext";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { createWorkflow, createStep } from "@mastra/cli/cli/cli/core/workflows/vNext";
 import { z } from "zod";
 
 const myAgent = new Agent({
@@ -61,7 +61,7 @@ myWorkflow
   .commit();
 
 // Create Mastra instance
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   agents: {
     myAgent,
   },
@@ -70,7 +70,7 @@ const mastra = new Mastra({
   },
 });
 
-const workflow = mastra.vnext_getWorkflow("myWorkflow");
+const workflow = @@mastra/cli/cli/cli.vnext_getWorkflow("myWorkflow");
 const run = workflow.createRun();
 
 // Run the workflow with a question
@@ -92,8 +92,8 @@ if (res.status === "success") {
 vNextワークフローでは、`createStep(tool)`を使用してMastraツールを直接ステップとして使用できます：
 
 ```typescript
-import { createTool, Mastra } from "@actus-ag/mastra-core";
-import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows/vNext";
+import { createTool, Mastra } from "@mastra/cli/cli/cli/core";
+import { createWorkflow, createStep } from "@mastra/cli/cli/cli/core/workflows/vNext";
 import { z } from "zod";
 
 // Create a weather tool
@@ -170,13 +170,13 @@ weatherWorkflow
   .commit();
 
 // Create Mastra instance
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   vnext_workflows: {
     weatherWorkflow,
   },
 });
 
-const workflow = mastra.vnext_getWorkflow("weatherWorkflow");
+const workflow = @@mastra/cli/cli/cli.vnext_getWorkflow("weatherWorkflow");
 const run = workflow.createRun();
 
 // Run the workflow
@@ -197,10 +197,10 @@ if (result.status === "success") {
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { Mastra } from "@actus-ag/mastra-core";
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { createTool } from "@actus-ag/mastra-core/tools";
-import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows/vNext";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { createTool } from "@mastra/cli/cli/cli/core/tools";
+import { createWorkflow, createStep } from "@mastra/cli/cli/cli/core/workflows/vNext";
 import { z } from "zod";
 
 // Define the weather fetching step
@@ -235,7 +235,7 @@ const planActivities = createStep({
     activities: z.array(z.string()),
   }),
   execute: async ({ inputData }) => {
-    mastra
+    @@mastra/cli/cli/cli
       .getLogger()
       ?.debug(`Planning activities for ${inputData.city} based on weather`);
     const activities = [];
@@ -283,10 +283,10 @@ const activityPlannerTool = createTool({
   outputSchema: z.object({
     activities: z.array(z.string()),
   }),
-  execute: async ({ context: { city }, mastra }) => {
-    mastra.getLogger()?.debug(`Tool executing for city: ${city}`);
+  execute: async ({ context: { city }, @@mastra/cli/cli/cli }) => {
+    @@mastra/cli/cli/cli.getLogger()?.debug(`Tool executing for city: ${city}`);
 
-    const workflow = mastra?.vnext_getWorkflow("weatherWorkflow");
+    const workflow = @@mastra/cli/cli/cli?.vnext_getWorkflow("weatherWorkflow");
     if (!workflow) {
       throw new Error("Weather workflow not found");
     }
@@ -321,7 +321,7 @@ const activityPlannerAgent = new Agent({
 });
 
 // Create the Mastra instance
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   vnext_workflows: {
     weatherWorkflow,
   },

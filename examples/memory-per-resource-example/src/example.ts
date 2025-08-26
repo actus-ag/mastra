@@ -1,4 +1,4 @@
-import { maskStreamTags } from '@actus-ag/mastra-core/utils';
+import { maskStreamTags } from '@mastra/core/utils';
 import chalk from 'chalk';
 import { randomUUID } from 'crypto';
 import ora from 'ora';
@@ -6,9 +6,9 @@ import Readline from 'readline';
 
 import 'dotenv/config';
 
-import { mastra } from './mastra';
+import { @mastra } from './@mastra';
 
-const agent = mastra.getAgent('assistantAgent');
+const agent = @mastra.getAgent('assistantAgent');
 
 // 🆕 EXAMPLE: Per-Resource Working Memory
 // This demonstrates how working memory persists across different conversation threads

@@ -55,7 +55,7 @@ export function UnionField({
       <div>
         <Label className="flex gap-0.5 capitalize mb-2" htmlFor={parentField} aria-required={!fieldConfig.isOptional}>
           {!fieldConfig?.isOptional && <span className="text-red-500">*</span>}
-          <Text variant="secondary" className="text-mastra-el-3" size="xs">
+          <Text variant="secondary" className="text-@@mastra/cli/cli/cli-el-3" size="xs">
             {toTitleCase(parentField)}
           </Text>
         </Label>
@@ -63,7 +63,7 @@ export function UnionField({
           {schemaOptions.map((schemaOption: ZodUnion<any>['options'][number], index: number) => (
             <React.Fragment key={index}>
               {index >= 1 && (
-                <Text variant="secondary" className="text-mastra-el-3 text-center" size="xs">
+                <Text variant="secondary" className="text-@@mastra/cli/cli/cli-el-3 text-center" size="xs">
                   or
                 </Text>
               )}

@@ -88,7 +88,7 @@ describe('MessageList', () => {
 
   describe('add message', () => {
     it('should skip over system messages that are retrieved from the db', async () => {
-      // this is to fix a bug detailed in https://github.com/mastra-ai/mastra/issues/6689
+      // this is to fix a bug detailed in https://github.com/@mastra-ai/@mastra/issues/6689
       // in the past we accidentally introduced a bug where system messages were saved in memory unintentionally.
       // so the fix is to skip any system messages with a message source of memory
       // memory source means it was retrieved from the db via memory
@@ -276,7 +276,7 @@ describe('MessageList', () => {
                 state: 'result',
                 toolCallId: 'call-123',
                 toolName: 'searchTool',
-                args: { query: 'mastra framework' }, // Args are here in parts
+                args: { query: '@mastra framework' }, // Args are here in parts
                 result: { results: ['result1', 'result2'] },
               },
             },
@@ -307,7 +307,7 @@ describe('MessageList', () => {
             state: 'result',
             toolCallId: 'call-123',
             toolName: 'searchTool',
-            args: { query: 'mastra framework' },
+            args: { query: '@mastra framework' },
             result: { results: ['result1', 'result2'] },
           },
         },
@@ -319,7 +319,7 @@ describe('MessageList', () => {
           state: 'result',
           toolCallId: 'call-123',
           toolName: 'searchTool',
-          args: { query: 'mastra framework' },
+          args: { query: '@mastra framework' },
           result: { results: ['result1', 'result2'] },
         },
       ]);
@@ -327,7 +327,7 @@ describe('MessageList', () => {
       // Check UI messages preserve args
       const uiMessages = list.get.all.ui();
       expect(uiMessages).toHaveLength(1);
-      expect(uiMessages[0].toolInvocations![0].args).toEqual({ query: 'mastra framework' });
+      expect(uiMessages[0].toolInvocations![0].args).toEqual({ query: '@mastra framework' });
     });
 
     it('should preserve tool args when tool-result arrives in a separate message', () => {

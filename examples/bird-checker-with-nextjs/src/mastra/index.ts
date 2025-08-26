@@ -1,6 +1,6 @@
-import { Mastra } from "@actus-ag/mastra-core";
+import { Mastra } from "@mastra/core";
 import { birdAgent } from "./agents";
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   agents: { birdAgent },
 });

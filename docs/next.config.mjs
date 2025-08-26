@@ -260,7 +260,7 @@ export default withGT(
         permanent: true,
       },
       {
-        source: "/docs/local-dev/mastra-init",
+        source: "/docs/local-dev/@mastra/cli/cli-init",
         destination: "/docs/getting-started/installation",
         permanent: true,
       },
@@ -440,38 +440,38 @@ export default withGT(
         permanent: true,
       },
       {
-        source: "/docs/reference/storage/mastra-storage",
+        source: "/docs/reference/storage/@mastra/cli/cli-storage",
         destination: "/reference/storage/libsql",
         permanent: true,
       },
       {
         source: "/docs/reference/tts/generate",
-        destination: "/reference/voice/mastra-voice",
+        destination: "/reference/voice/@mastra/cli/cli-voice",
         permanent: true,
       },
       {
         source: "/docs/reference/tts/providers-and-models",
-        destination: "/reference/voice/mastra-voice",
+        destination: "/reference/voice/@mastra/cli/cli-voice",
         permanent: true,
       },
       {
         source: "/docs/reference/tts/provider-and-models",
-        destination: "/reference/voice/mastra-voice",
+        destination: "/reference/voice/@mastra/cli/cli-voice",
         permanent: true,
       },
       {
         source: "/docs/reference/voice/voice.close",
-        destination: "/reference/voice/mastra-voice",
+        destination: "/reference/voice/@mastra/cli/cli-voice",
         permanent: true,
       },
       {
         source: "/docs/reference/voice/voice.off",
-        destination: "/reference/voice/mastra-voice",
+        destination: "/reference/voice/@mastra/cli/cli-voice",
         permanent: true,
       },
       {
         source: "/docs/reference/tts/stream",
-        destination: "/reference/voice/mastra-voice",
+        destination: "/reference/voice/@mastra/cli/cli-voice",
         permanent: true,
       },
       {
@@ -536,7 +536,7 @@ export default withGT(
       },
       {
         source: "/docs/client-js/overview",
-        destination: "/docs/server-db/mastra-client",
+        destination: "/docs/server-db/@mastra/cli/cli-client",
         permanent: true,
       },
       {
@@ -555,7 +555,7 @@ export default withGT(
         permanent: true,
       },
       {
-        source: "/docs/local-dev/mastra-dev",
+        source: "/docs/local-dev/@mastra/cli/cli-dev",
         destination: "/docs/server-db/local-dev-playground",
         permanent: true,
       },

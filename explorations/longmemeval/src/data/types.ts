@@ -1,4 +1,4 @@
-import { MemoryConfig } from '@actus-ag/mastra-core';
+import { MemoryConfig } from '@mastra/core';
 
 export type QuestionType =
   | 'single-session-user'

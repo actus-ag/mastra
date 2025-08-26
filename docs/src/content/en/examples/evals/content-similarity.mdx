@@ -15,7 +15,7 @@ Use `ContentSimilarityMetric` to evaluate how similar the response is to a refer
 ## Installation
 
 ```bash copy
-npm install @actus-ag/mastra-evals
+npm install @mastra/cli/cli/cli/evals
 ```
 
 ## High similarity example
@@ -23,7 +23,7 @@ npm install @actus-ag/mastra-evals
 In this example, the response closely resembles the query in both structure and meaning. Minor differences in tense and phrasing do not significantly affect the overall similarity.
 
 ```typescript filename="src/example-high-similarity.ts" showLineNumbers copy
-import { ContentSimilarityMetric } from "@actus-ag/mastra-evals/nlp";
+import { ContentSimilarityMetric } from "@mastra/cli/cli/cli/evals/nlp";
 
 const metric = new ContentSimilarityMetric();
 
@@ -53,7 +53,7 @@ The output receives a high score because the response preserves the intent and c
 In this example, the response shares some conceptual overlap with the query but diverges in structure and wording. Key elements remain present, but the phrasing introduces moderate variation.
 
 ```typescript filename="src/example-moderate-similarity.ts" showLineNumbers copy
-import { ContentSimilarityMetric } from "@actus-ag/mastra-evals/nlp";
+import { ContentSimilarityMetric } from "@mastra/cli/cli/cli/evals/nlp";
 
 const metric = new ContentSimilarityMetric();
 
@@ -83,7 +83,7 @@ The output receives a mid-range score because the response captures the general 
 In this example, the response and query are unrelated in meaning, despite having a similar grammatical structure. There is little to no shared content overlap.
 
 ```typescript filename="src/example-low-similarity.ts" showLineNumbers copy
-import { ContentSimilarityMetric } from "@actus-ag/mastra-evals/nlp";
+import { ContentSimilarityMetric } from "@mastra/cli/cli/cli/evals/nlp";
 
 const metric = new ContentSimilarityMetric();
 
@@ -150,5 +150,5 @@ An explanation for the score, with details including:
 
 <GithubLink
   marginTop='mt-16'
-  link="https://github.com/mastra-ai/mastra/blob/main/examples/basics/evals/content-similarity"
+  link="https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/evals/content-similarity"
 />

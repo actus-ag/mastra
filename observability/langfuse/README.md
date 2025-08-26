@@ -1,20 +1,20 @@
-# @actus-ag/mastra-langfuse
+# @mastra/langfuse
 
 Langfuse AI Observability exporter for Mastra applications.
 
 ## Installation
 
 ```bash
-npm install @actus-ag/mastra-langfuse
+npm install @mastra/langfuse
 ```
 
 ## Usage
 
 ```typescript
-import { LangfuseExporter } from '@actus-ag/mastra-langfuse';
+import { LangfuseExporter } from '@mastra/langfuse';
 
 // Use with Mastra
-const mastra = new Mastra({
+const @mastra = new Mastra({
   ...,
   observability: {
     instances: {

@@ -1,6 +1,6 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { createStep, createWorkflow } from '@actus-ag/mastra-core/workflows';
+import { Agent } from '@mastra/core/agent';
+import { createStep, createWorkflow } from '@mastra/core/workflows';
 import { z } from 'zod';
 
 const llm = openai('gpt-4o');

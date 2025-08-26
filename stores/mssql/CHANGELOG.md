@@ -1,4 +1,4 @@
-# @actus-ag/mastra-mssql
+# @mastra/mssql
 
 ## 0.3.1
 
@@ -22,14 +22,14 @@
 - Updated dependencies [c30bca8]
 - Updated dependencies [3b5fec7]
 - Updated dependencies [a8f129d]
-  - @actus-ag/mastra-core@0.14.0
+  - @mastra/core@0.14.0
 
 ## 0.3.1-alpha.0
 
 ### Patch Changes
 
 - 03997ae: Update peerdeps
-  - @actus-ag/mastra-core@0.14.0-alpha.7
+  - @mastra/core@0.14.0-alpha.7
 
 ## 0.3.0
 
@@ -68,7 +68,7 @@
 - Updated dependencies [5d377e5]
 - Updated dependencies [1fb812e]
 - Updated dependencies [35c5798]
-  - @actus-ag/mastra-core@0.13.0
+  - @mastra/core@0.13.0
 
 ## 0.3.0-alpha.1
 
@@ -82,7 +82,7 @@
 - Updated dependencies [2871020]
 - Updated dependencies [4a406ec]
 - Updated dependencies [5d377e5]
-  - @actus-ag/mastra-core@0.13.0-alpha.2
+  - @mastra/core@0.13.0-alpha.2
 
 ## 0.3.0-alpha.0
 
@@ -109,7 +109,7 @@
 - Updated dependencies [b0e43c1]
 - Updated dependencies [1fb812e]
 - Updated dependencies [35c5798]
-  - @actus-ag/mastra-core@0.13.0-alpha.1
+  - @mastra/core@0.13.0-alpha.1
 
 ## 0.2.3
 
@@ -141,14 +141,14 @@
 - Updated dependencies [b8efbb9]
 - Updated dependencies [71466e7]
 - Updated dependencies [0c99fbe]
-  - @actus-ag/mastra-core@0.12.0
+  - @mastra/core@0.12.0
 
 ## 0.2.3-alpha.1
 
 ### Patch Changes
 
 - f42c4c2: update peer deps for packages to latest core range
-  - @actus-ag/mastra-core@0.12.0-alpha.5
+  - @mastra/core@0.12.0-alpha.5
 
 ## 0.2.3-alpha.0
 
@@ -165,20 +165,20 @@
 - Updated dependencies [b8efbb9]
 - Updated dependencies [71466e7]
 - Updated dependencies [0c99fbe]
-  - @actus-ag/mastra-core@0.12.0-alpha.2
+  - @mastra/core@0.12.0-alpha.2
 
 ## 0.2.2
 
 ### Patch Changes
 
 - ce088f5: Update all peerdeps to latest core
-  - @actus-ag/mastra-core@0.11.1
+  - @mastra/core@0.11.1
 
 ## 0.2.1
 
 ### Patch Changes
 
-- 7ba91fa: Throw mastra errors methods not implemented yet
+- 7ba91fa: Throw @mastra errors methods not implemented yet
 - 03745fa: mssql provider
 - Updated dependencies [f248d53]
 - Updated dependencies [2affc57]
@@ -201,13 +201,13 @@
 - Updated dependencies [dcd4802]
 - Updated dependencies [cbddd18]
 - Updated dependencies [7ba91fa]
-  - @actus-ag/mastra-core@0.11.0
+  - @mastra/core@0.11.0
 
 ## 0.2.1-alpha.1
 
 ### Patch Changes
 
-- 7ba91fa: Throw mastra errors methods not implemented yet
+- 7ba91fa: Throw @mastra errors methods not implemented yet
 - Updated dependencies [f248d53]
 - Updated dependencies [2affc57]
 - Updated dependencies [66e13e3]
@@ -226,7 +226,7 @@
 - Updated dependencies [bea9dd1]
 - Updated dependencies [dcd4802]
 - Updated dependencies [7ba91fa]
-  - @actus-ag/mastra-core@0.11.0-alpha.2
+  - @mastra/core@0.11.0-alpha.2
 
 ## 0.2.1-alpha.0
 
@@ -236,7 +236,7 @@
 - Updated dependencies [7827943]
 - Updated dependencies [bf1e7e7]
 - Updated dependencies [cbddd18]
-  - @actus-ag/mastra-core@0.11.0-alpha.0
+  - @mastra/core@0.11.0-alpha.0
 
 ## 0.1.0
 

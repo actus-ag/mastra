@@ -1,8 +1,8 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@actus-ag/mastra-core';
-import { Memory } from '@actus-ag/mastra-memory';
-import { PgVector } from '@actus-ag/mastra-pg';
-import { UpstashStore } from '@actus-ag/mastra-upstash';
+import { Agent } from '@mastra/core';
+import { Memory } from '@mastra/memory';
+import { PgVector } from '@mastra/pg';
+import { UpstashStore } from '@mastra/upstash';
 
 const memory = new Memory({
   storage: new UpstashStore({

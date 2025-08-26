@@ -23,8 +23,8 @@ This pattern allows for safe, type-checked human intervention in automated workf
 This example demonstrates how to use the [Inquirer](https://www.npmjs.com/package/@inquirer/prompts) library to collect user input directly from the terminal when a workflow is suspended, creating a truly interactive human-in-the-loop experience.
 
 ```ts showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core";
-import { LegacyStep, LegacyWorkflow } from "@actus-ag/mastra-core/workflows/legacy";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { LegacyStep, LegacyWorkflow } from "@mastra/cli/cli/cli/core/workflows/legacy";
 import { z } from "zod";
 import { confirm, input, select } from "@inquirer/prompts";
 
@@ -209,7 +209,7 @@ recommendationWorkflow
   .commit();
 
 // Register the workflow
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   legacy_workflows: { recommendationWorkflow },
 });
 ```
@@ -217,7 +217,7 @@ const mastra = new Mastra({
 ```ts showLineNumbers copy
 // Example of using the workflow with Inquirer prompts
 async function runRecommendationWorkflow() {
-  const registeredWorkflow = mastra.legacy_getWorkflow(
+  const registeredWorkflow = @@mastra/cli/cli/cli.legacy_getWorkflow(
     "recommendationWorkflow",
   );
   const run = registeredWorkflow.createRun();
@@ -316,8 +316,8 @@ runRecommendationWorkflow().catch(console.error);
 This example demonstrates a more complex workflow that requires multiple human intervention points, such as in a content moderation system.
 
 ```ts showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core";
-import { LegacyStep, LegacyWorkflow } from "@actus-ag/mastra-core/workflows/legacy";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { LegacyStep, LegacyWorkflow } from "@mastra/cli/cli/cli/core/workflows/legacy";
 import { z } from "zod";
 import { select, input } from "@inquirer/prompts";
 
@@ -510,13 +510,13 @@ contentModerationWorkflow
   .commit();
 
 // Register the workflow
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   legacy_workflows: { contentModerationWorkflow },
 });
 
 // Example of using the workflow with Inquirer prompts
 async function runModerationDemo() {
-  const registeredWorkflow = mastra.legacy_getWorkflow(
+  const registeredWorkflow = @@mastra/cli/cli/cli.legacy_getWorkflow(
     "contentModerationWorkflow",
   );
   const run = registeredWorkflow.createRun();
@@ -720,7 +720,7 @@ Human-in-the-loop workflows are powerful for building systems that blend automat
 <br />
 <GithubLink
   link={
-    "https://github.com/mastra-ai/mastra/blob/main/examples/basics/workflows-legacy/human-in-the-loop"
+    "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/workflows-legacy/human-in-the-loop"
   }
 />
 

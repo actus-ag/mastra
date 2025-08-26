@@ -1,7 +1,7 @@
-import { mastra } from './src/mastra';
-import { glutenCheckerScorer } from './src/mastra/evals/gluten-checker';
+import { @mastra } from './src/@mastra';
+import { glutenCheckerScorer } from './src/@mastra/evals/gluten-checker';
 
-const chefAgent = mastra.getAgent('chefAgent');
+const chefAgent = @mastra.getAgent('chefAgent');
 
 // Example 1: Recipe with gluten
 const input1 = 'Can you give me a simple pasta recipe with exact measurements and timing?';

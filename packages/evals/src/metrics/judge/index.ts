@@ -1,5 +1,5 @@
-import { Agent } from '@actus-ag/mastra-core/agent';
-import type { LanguageModel } from '@actus-ag/mastra-core/llm';
+import { Agent } from '@mastra/core/agent';
+import type { LanguageModel } from '@mastra/core/llm';
 
 export abstract class MastraAgentJudge {
   protected readonly agent: Agent;

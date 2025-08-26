@@ -23,9 +23,9 @@ OPENAI_API_KEY=<your-api-key>
 
 Define the agent and provide `instructions`, which set its default behavior and describe how it should respond when no system prompt is supplied at runtime.
 
-```typescript filename="src/mastra/agents/example-harry-potter-agent.ts" showLineNumbers copy
+```typescript filename="src/@@mastra/cli/cli/cli/agents/example-harry-potter-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 export const harryPotterAgent = new Agent({
   name: "harry-potter-agent",
@@ -43,12 +43,12 @@ export const harryPotterAgent = new Agent({
 
 To use an agent, register it in your main Mastra instance.
 
-```typescript filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core/mastra";
+```typescript filename="src/@@mastra/cli/cli/cli/index.ts" showLineNumbers copy
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
 
 import { harryPotterAgent } from "./agents/example-harry-potter-agent";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // ...
   agents: { harryPotterAgent }
 });
@@ -61,9 +61,9 @@ Use `getAgent()` to retrieve the agent and call `generate()` with a prompt. As d
 ```typescript filename="src/test-harry-potter-agent.ts" showLineNumbers copy
 import "dotenv/config";
 
-import { mastra } from "./mastra";
+import { @@mastra/cli/cli/cli } from "./@@mastra/cli/cli/cli";
 
-const agent = mastra.getAgent("harryPotterAgent");
+const agent = @@mastra/cli/cli/cli.getAgent("harryPotterAgent");
 
 const response = await agent.generate("What is your favorite room in Hogwarts?");
 
@@ -77,9 +77,9 @@ By providing a different system prompt at runtime, the agent’s voice can be sw
 ```typescript {9-10} filename="src/test-harry-potter-agent.ts" showLineNumbers copy
 import "dotenv/config";
 
-import { mastra } from "./mastra";
+import { @@mastra/cli/cli/cli } from "./@@mastra/cli/cli/cli";
 
-const agent = mastra.getAgent("harryPotterAgent");
+const agent = @@mastra/cli/cli/cli.getAgent("harryPotterAgent");
 
 const response = await agent.generate([
   {
@@ -97,7 +97,7 @@ console.log(response.text);
 
 <GithubLink
   marginTop='mt-16'
-  link="https://github.com/mastra-ai/mastra/blob/main/examples/basics/agents/system-prompt"
+  link="https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/agents/system-prompt"
 />
 
 

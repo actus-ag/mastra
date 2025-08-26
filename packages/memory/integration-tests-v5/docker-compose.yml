@@ -6,7 +6,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: mastra
+      POSTGRES_DB: @mastra/cli/cli
     volumes:
       - pg_data:/var/lib/postgresql/data
     healthcheck:

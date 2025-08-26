@@ -1,7 +1,7 @@
 import type { Context, Handler, MiddlewareHandler } from 'hono';
 import type { DescribeRouteOptions } from 'hono-openapi';
 import { MastraError, ErrorDomain, ErrorCategory } from '../error';
-import type { Mastra } from '../mastra';
+import type { Mastra } from '../@mastra';
 import type { ApiRoute, MastraAuthConfig, Methods } from './types';
 
 export type { MastraAuthConfig, ContextWithMastra } from './types';
@@ -23,7 +23,7 @@ type RegisterApiRouteOptions<P extends string> = {
   handler?: Handler<
     {
       Variables: {
-        mastra: Mastra;
+        @mastra: Mastra;
       };
     },
     P,
@@ -33,7 +33,7 @@ type RegisterApiRouteOptions<P extends string> = {
     Handler<
       {
         Variables: {
-          mastra: Mastra;
+          @mastra: Mastra;
         };
       },
       P,

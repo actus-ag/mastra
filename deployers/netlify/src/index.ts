@@ -1,7 +1,7 @@
 import { join } from 'path';
 import process from 'process';
-import { Deployer } from '@actus-ag/mastra-deployer';
-import { DepsService } from '@actus-ag/mastra-deployer/services';
+import { Deployer } from '@mastra/deployer';
+import { DepsService } from '@mastra/deployer/services';
 import { move, writeJson } from 'fs-extra/esm';
 
 export class NetlifyDeployer extends Deployer {
@@ -62,13 +62,13 @@ export class NetlifyDeployer extends Deployer {
   private getEntry(): string {
     return `
     import { handle } from 'hono/netlify'
-    import { mastra } from '#mastra';
+    import { @mastra } from '#@mastra';
     import { createHonoServer, getToolExports } from '#server';
     import { tools } from '#tools';
-    import { evaluate } from '@actus-ag/mastra-core/eval';
-    import { AvailableHooks, registerHook } from '@actus-ag/mastra-core/hooks';
-    import { TABLE_EVALS } from '@actus-ag/mastra-core/storage';
-    import { checkEvalStorageFields } from '@actus-ag/mastra-core/utils';
+    import { evaluate } from '@mastra/core/eval';
+    import { AvailableHooks, registerHook } from '@mastra/core/hooks';
+    import { TABLE_EVALS } from '@mastra/core/storage';
+    import { checkEvalStorageFields } from '@mastra/core/utils';
 
     registerHook(AvailableHooks.ON_GENERATION, ({ input, output, metric, runId, agentName, instructions }) => {
       evaluate({
@@ -83,10 +83,10 @@ export class NetlifyDeployer extends Deployer {
     });
 
     registerHook(AvailableHooks.ON_EVALUATION, async traceObject => {
-      const storage = mastra.getStorage();
+      const storage = @mastra.getStorage();
       if (storage) {
         // Check for required fields
-        const logger = mastra.getLogger();
+        const logger = @mastra.getLogger();
         const areFieldsValid = checkEvalStorageFields(traceObject, logger);
         if (!areFieldsValid) return;
 
@@ -108,7 +108,7 @@ export class NetlifyDeployer extends Deployer {
       }
     });
 
-    const app = await createHonoServer(mastra, { tools: getToolExports(tools) });
+    const app = await createHonoServer(@mastra, { tools: getToolExports(tools) });
 
     export default handle(app)
 `;

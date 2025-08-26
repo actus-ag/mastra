@@ -1,11 +1,11 @@
-# @actus-ag/mastra-pg
+# @mastra/pg
 
 PostgreSQL implementation for Mastra, providing both vector similarity search (using pgvector) and general storage capabilities with connection pooling and transaction support.
 
 ## Installation
 
 ```bash
-npm install @actus-ag/mastra-pg
+npm install @mastra/pg
 ```
 
 ## Prerequisites
@@ -18,7 +18,7 @@ npm install @actus-ag/mastra-pg
 ### Vector Store
 
 ```typescript
-import { PgVector } from '@actus-ag/mastra-pg';
+import { PgVector } from '@mastra/pg';
 
 const vectorStore = new PgVector({ connectionString: 'postgresql://user:pass@localhost:5432/db' });
 
@@ -53,12 +53,12 @@ await vectorStore.disconnect();
 ### Storage
 
 ```typescript
-import { PostgresStore } from '@actus-ag/mastra-pg';
+import { PostgresStore } from '@mastra/pg';
 
 const store = new PostgresStore({
   host: 'localhost',
   port: 5432,
-  database: 'mastra',
+  database: '@actus-ag/@mastra',
   user: 'postgres',
   password: 'postgres',
 });

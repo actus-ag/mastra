@@ -1,4 +1,4 @@
-import { ContentSimilarityMetric } from '@actus-ag/mastra-evals/nlp';
+import { ContentSimilarityMetric } from '@mastra/evals/nlp';
 
 // Configure the metric
 const metric = new ContentSimilarityMetric();

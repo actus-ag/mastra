@@ -1,4 +1,4 @@
-import { createStep, createWorkflow } from '@actus-ag/mastra-core/workflows';
+import { createStep, createWorkflow } from '@mastra/core/workflows';
 import { z } from 'zod';
 
 export const myWorkflow = createWorkflow({
@@ -37,8 +37,8 @@ const step2 = createStep({
   outputSchema: z.object({
     result: z.string(),
   }),
-  execute: async ({ inputData, mastra, aiTracingContext }) => {
-    const agent = mastra.getAgent('chefAgentResponses');
+  execute: async ({ inputData, @mastra, aiTracingContext }) => {
+    const agent = @mastra.getAgent('chefAgentResponses');
     const response = await agent.generate(inputData.result, {
       aiTracingContext,
     });

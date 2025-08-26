@@ -3,12 +3,12 @@ import os from 'os';
 import path from 'path';
 import { ensureFile, readJSON, writeJSON } from 'fs-extra/esm';
 
-const args = ['-y', '@actus-ag/mastra-mcp-docs-server'];
+const args = ['-y', '@mastra/mcp-docs-server'];
 const createMcpConfig = (editor: Editor) => {
   if (editor === 'vscode') {
     return {
       servers: {
-        mastra:
+        @mastra:
           process.platform === `win32`
             ? {
                 command: 'cmd',
@@ -25,7 +25,7 @@ const createMcpConfig = (editor: Editor) => {
   }
   return {
     mcpServers: {
-      mastra: {
+      @mastra: {
         command: 'npx',
         args,
       },
@@ -125,14 +125,14 @@ export async function globalMCPIsAlreadyInstalled(editor: Editor) {
     if (editor === 'vscode') {
       if (!configContents.servers) return false;
       const hasMastraMCP = Object.values(configContents.servers).some((server?: any) =>
-        server?.args?.find((arg?: string) => arg?.includes(`@actus-ag/mastra-mcp-docs-server`)),
+        server?.args?.find((arg?: string) => arg?.includes(`@mastra/mcp-docs-server`)),
       );
       return hasMastraMCP;
     }
 
     if (!configContents?.mcpServers) return false;
     const hasMastraMCP = Object.values(configContents.mcpServers).some((server?: any) =>
-      server?.args?.find((arg?: string) => arg?.includes(`@actus-ag/mastra-mcp-docs-server`)),
+      server?.args?.find((arg?: string) => arg?.includes(`@mastra/mcp-docs-server`)),
     );
 
     return hasMastraMCP;

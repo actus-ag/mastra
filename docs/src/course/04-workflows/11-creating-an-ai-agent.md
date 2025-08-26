@@ -4,12 +4,12 @@ Learn how to create an Mastra agent that can be used within your workflows for m
 
 ## Creating a Content Analysis Agent
 
-Create a new file for your agent in the `src/mastra/agents` directory. Use `content-agent.ts` as the name of the file with the following contents:
+Create a new file for your agent in the `src/@mastra/agents` directory. Use `content-agent.ts` as the name of the file with the following contents:
 
 ```typescript
-// src/mastra/agents/content-agent.ts
+// src/@mastra/agents/content-agent.ts
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/core/agent";
 
 export const contentAgent = new Agent({
   name: "Content Agent",
@@ -36,13 +36,13 @@ export const contentAgent = new Agent({
 
 ## Registering and Testing Your Agent
 
-Open your `src/mastra/index.ts` file and add your agent (you may need to append it to the agents object in the Mastra class):
+Open your `src/@mastra/index.ts` file and add your agent (you may need to append it to the agents object in the Mastra class):
 
 ```typescript
 // Import your workflow
 import { contentAgent } from "./agents/content-agent";
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   // Register your agent here
   agents: {
     contentAgent,

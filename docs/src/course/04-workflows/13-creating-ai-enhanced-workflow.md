@@ -42,14 +42,14 @@ export const aiContentWorkflow = createWorkflow({
 Update your Mastra configuration to include both workflows and ensure the contentAgent has been added.
 
 ```typescript
-// In src/mastra/index.ts
+// In src/@mastra/index.ts
 import {
   contentWorkflow,
   aiContentWorkflow,
 } from "./workflows/content-workflow";
 import { contentAgent } from "./agents/content-agent";
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   workflows: {
     contentWorkflow,
     aiContentWorkflow, // Add the AI-enhanced version

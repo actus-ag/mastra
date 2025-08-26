@@ -1,16 +1,16 @@
 ---
-title: "mastra dev | Development Server | Mastra CLI"
-description: Documentation for the mastra dev command, which starts a development server for agents, tools, and workflows.
+title: "@actus-ag/@mastra/cli/cli dev | Development Server | Mastra CLI"
+description: Documentation for the @actus-ag/@mastra/cli/cli dev command, which starts a development server for agents, tools, and workflows.
 ---
 
-# mastra dev
+# @actus-ag/@mastra/cli/cli dev
 
-The `mastra dev` command starts a development server that exposes REST endpoints for your agents, tools, and workflows.
+The `@actus-ag/@mastra/cli/cli dev` command starts a development server that exposes REST endpoints for your agents, tools, and workflows.
 
 ## Usage
 
 ```bash
-mastra dev [options]
+@actus-ag/@mastra/cli/cli dev [options]
 ```
 
 ## Options
@@ -20,7 +20,7 @@ mastra dev [options]
     {
       name: "--dir",
       type: "string",
-      description: "Path to your mastra folder",
+      description: "Path to your @@mastra/cli/cli/cli folder",
       isOptional: true,
     },
     {
@@ -77,7 +77,7 @@ mastra dev [options]
 
 ## Routes
 
-Starting the server with `mastra dev` exposes a set of REST routes by default:
+Starting the server with `@actus-ag/@mastra/cli/cli dev` exposes a set of REST routes by default:
 
 ### System Routes
 
@@ -85,7 +85,7 @@ Starting the server with `mastra dev` exposes a set of REST routes by default:
 
 ### Agent Routes
 
-Agents are expected to be exported from `src/mastra/agents`.
+Agents are expected to be exported from `src/@@mastra/cli/cli/cli/agents`.
 
 - **GET `/api/agents`**: Lists the registered agents found in your Mastra folder.
 - **GET `/api/agents/:agentId`**: Get agent by ID.
@@ -102,7 +102,7 @@ Agents are expected to be exported from `src/mastra/agents`.
 
 ### Tool Routes
 
-Tools are expected to be exported from `src/mastra/tools` (or the configured tools directory).
+Tools are expected to be exported from `src/@@mastra/cli/cli/cli/tools` (or the configured tools directory).
 
 - **GET `/api/tools`**: Get all tools.
 - **GET `/api/tools/:toolId`**: Get tool by ID.
@@ -110,7 +110,7 @@ Tools are expected to be exported from `src/mastra/tools` (or the configured too
 
 ### Workflow Routes
 
-Workflows are expected to be exported from `src/mastra/workflows` (or the configured workflows directory).
+Workflows are expected to be exported from `src/@@mastra/cli/cli/cli/workflows` (or the configured workflows directory).
 
 - **GET `/api/workflows`**: Get all workflows.
 - **GET `/api/workflows/:workflowId`**: Get workflow by ID.
@@ -161,7 +161,7 @@ Workflows are expected to be exported from `src/mastra/workflows` (or the config
 
 ## Additional Notes
 
-The port defaults to 4111. Both the port and hostname can be configured via the mastra server config. See [Launch Development Server](/docs/server-db/local-dev-playground) for configuration details.
+The port defaults to 4111. Both the port and hostname can be configured via the @@mastra/cli/cli/cli server config. See [Launch Development Server](/docs/server-db/local-dev-playground) for configuration details.
 
 Make sure you have your environment variables set up in your `.env.development` or `.env` file for any providers you use (e.g., `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, etc.).
 
@@ -169,7 +169,7 @@ Make sure the `index.ts` file in your Mastra folder exports the Mastra instance 
 
 ### Example request
 
-To test an agent after running `mastra dev`:
+To test an agent after running `@actus-ag/@mastra/cli/cli dev`:
 
 ```bash copy
 curl -X POST http://localhost:4111/api/agents/myAgent/generate \
@@ -183,16 +183,16 @@ curl -X POST http://localhost:4111/api/agents/myAgent/generate \
 
 ## Advanced usage
 
-The `mastra dev` server obeys a few extra environment variables that can
+The `@actus-ag/@mastra/cli/cli dev` server obeys a few extra environment variables that can
 be handy during development:
 
 ### Disable build caching
 
 Set `MASTRA_DEV_NO_CACHE=1` to force a full rebuild rather than using
-the cached assets under `.mastra/`:
+the cached assets under `.@@mastra/cli/cli/cli/`:
 
 ```bash copy
-MASTRA_DEV_NO_CACHE=1 mastra dev
+MASTRA_DEV_NO_CACHE=1 @actus-ag/@mastra/cli/cli dev
 ```
 
 This helps when you are debugging bundler plugins or suspect stale
@@ -204,7 +204,7 @@ output.
 (primarily build and evaluation steps). For example:
 
 ```bash copy
-MASTRA_CONCURRENCY=4 mastra dev
+MASTRA_CONCURRENCY=4 @actus-ag/@mastra/cli/cli dev
 ```
 
 Leave it unset to let the CLI pick a sensible default for the machine.
@@ -218,7 +218,7 @@ OpenAI:
 ```bash copy
 OPENAI_API_KEY=<your-api-key> \
 OPENAI_BASE_URL=https://openrouter.example/v1 \
-mastra dev
+@actus-ag/@mastra/cli/cli dev
 ```
 
 and for Anthropic:
@@ -226,7 +226,7 @@ and for Anthropic:
 ```bash copy
 OPENAI_API_KEY=<your-api-key> \
 ANTHROPIC_BASE_URL=https://anthropic.internal \
-mastra dev
+@actus-ag/@mastra/cli/cli dev
 ```
 
 These are forwarded by the AI SDK and work with any `openai()` or
@@ -239,5 +239,5 @@ To opt out of anonymous CLI analytics set
 local playground.
 
 ```bash copy
-MASTRA_TELEMETRY_DISABLED=1 mastra dev
+MASTRA_TELEMETRY_DISABLED=1 @actus-ag/@mastra/cli/cli dev
 ```

@@ -64,14 +64,14 @@ export const examplesInputSchema = z.object({
 export type ExamplesInput = z.infer<typeof examplesInputSchema>;
 
 export const examplesTool = {
-  name: 'mastraExamples',
+  name: '@mastraExamples',
   description: `Get code examples from the Mastra.ai examples directory. 
     Without a specific example name, lists all available examples. 
     With an example name, returns the full source code of that example.
     You can also use keywords from the user query to find relevant examples, but prioritize example names.`,
   parameters: examplesInputSchema,
   execute: async (args: ExamplesInput) => {
-    void logger.debug('Executing mastraExamples tool', { example: args.example });
+    void logger.debug('Executing @mastraExamples tool', { example: args.example });
     try {
       if (!args.example) {
         const examples = await listCodeExamples();
@@ -82,7 +82,7 @@ export const examplesTool = {
       const result = await readCodeExample(filename, args.queryKeywords || []);
       return result;
     } catch (error) {
-      void logger.error('Failed to execute mastraExamples tool', error);
+      void logger.error('Failed to execute @mastraExamples tool', error);
       throw error;
     }
   },

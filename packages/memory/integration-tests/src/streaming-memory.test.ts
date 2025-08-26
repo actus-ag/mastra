@@ -5,14 +5,14 @@ import { createServer } from 'node:net';
 import path from 'node:path';
 import { openai } from '@ai-sdk/openai';
 import { useChat } from '@ai-sdk/react';
-import { Mastra } from '@actus-ag/mastra-core';
-import { Agent } from '@actus-ag/mastra-core/agent';
+import { Mastra } from '@mastra/core';
+import { Agent } from '@mastra/core/agent';
 import { renderHook, act, waitFor } from '@testing-library/react';
 import type { Message } from 'ai';
 import { JSDOM } from 'jsdom';
 import { describe, expect, it, beforeAll, afterAll } from 'vitest';
-import { memory, weatherAgent } from './mastra/agents/weather';
-import { weatherTool } from './mastra/tools/weather';
+import { memory, weatherAgent } from './@mastra/agents/weather';
+import { weatherTool } from './@mastra/tools/weather';
 
 // Helper to find an available port
 async function getAvailablePort(): Promise<number> {
@@ -89,7 +89,7 @@ describe('Memory Streaming Tests', () => {
     expect(response2).toContain('70 degrees');
   });
 
-  it('should use custom mastra ID generator for messages in memory', async () => {
+  it('should use custom @mastra ID generator for messages in memory', async () => {
     const agent = new Agent({
       name: 'test-msg-id',
       instructions: 'you are a helpful assistant.',
@@ -101,7 +101,7 @@ describe('Memory Streaming Tests', () => {
     const resourceId = 'test-resource-msg-id';
     const customIds: UUID[] = [];
 
-    const _mastra = new Mastra({
+    const _@mastra = new Mastra({
       idGenerator: () => {
         const id = randomUUID();
         customIds.push(id);
@@ -134,7 +134,7 @@ describe('Memory Streaming Tests', () => {
   });
 
   describe('should stream via useChat after tool call', () => {
-    let mastraServer: ReturnType<typeof spawn>;
+    let @mastraServer: ReturnType<typeof spawn>;
     let port: number;
     const threadId = randomUUID();
     const resourceId = 'test-resource';
@@ -142,7 +142,7 @@ describe('Memory Streaming Tests', () => {
     beforeAll(async () => {
       port = await getAvailablePort();
 
-      mastraServer = spawn(
+      @mastraServer = spawn(
         'pnpm',
         [
           path.resolve(import.meta.dirname, `..`, `..`, `..`, `cli`, `dist`, `index.js`),
@@ -159,14 +159,14 @@ describe('Memory Streaming Tests', () => {
       // Wait for server to be ready
       await new Promise<void>((resolve, reject) => {
         let output = '';
-        mastraServer.stdout?.on('data', data => {
+        @mastraServer.stdout?.on('data', data => {
           output += data.toString();
           console.log(output);
           if (output.includes('http://localhost:')) {
             resolve();
           }
         });
-        mastraServer.stderr?.on('data', data => {
+        @mastraServer.stderr?.on('data', data => {
           console.error('Mastra server error:', data.toString());
         });
 
@@ -176,9 +176,9 @@ describe('Memory Streaming Tests', () => {
 
     afterAll(() => {
       // Kill the server and its process group
-      if (mastraServer?.pid) {
+      if (@mastraServer?.pid) {
         try {
-          process.kill(-mastraServer.pid, 'SIGTERM');
+          process.kill(-@mastraServer.pid, 'SIGTERM');
         } catch (e) {
           console.error('Failed to kill Mastra server:', e);
         }

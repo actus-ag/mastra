@@ -1,4 +1,4 @@
-import { parseSqlIdentifier } from '@actus-ag/mastra-core/utils';
+import { parseSqlIdentifier } from '@mastra/core/utils';
 
 export function getSchemaName(schema?: string) {
   return schema ? `[${parseSqlIdentifier(schema, 'schema name')}]` : undefined;

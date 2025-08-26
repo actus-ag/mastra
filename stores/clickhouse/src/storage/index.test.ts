@@ -10,10 +10,10 @@ const TEST_CONFIG: ClickhouseConfig = {
   username: process.env.CLICKHOUSE_USERNAME || 'default',
   password: process.env.CLICKHOUSE_PASSWORD || 'password',
   // ttl: {
-  //   mastra_traces: {
+  //   @mastra_traces: {
   //     row: { interval: 600, unit: 'SECOND' },
   //   },
-  //   mastra_evals: {
+  //   @mastra_evals: {
   //     columns: {
   //       result: { interval: 10, unit: 'SECOND' },
   //     },

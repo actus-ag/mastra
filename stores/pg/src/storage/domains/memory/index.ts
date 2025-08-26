@@ -1,20 +1,20 @@
-import { MessageList } from '@actus-ag/mastra-core/agent';
-import type { MastraMessageContentV2 } from '@actus-ag/mastra-core/agent';
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import type { MastraMessageV1, MastraMessageV2, StorageThreadType } from '@actus-ag/mastra-core/memory';
+import { MessageList } from '@mastra/core/agent';
+import type { MastraMessageContentV2 } from '@mastra/core/agent';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import type { MastraMessageV1, MastraMessageV2, StorageThreadType } from '@mastra/core/memory';
 import {
   MemoryStorage,
   resolveMessageLimit,
   TABLE_MESSAGES,
   TABLE_RESOURCES,
   TABLE_THREADS,
-} from '@actus-ag/mastra-core/storage';
+} from '@mastra/core/storage';
 import type {
   StorageGetMessagesArg,
   PaginationInfo,
   StorageResourceType,
   ThreadSortOptions,
-} from '@actus-ag/mastra-core/storage';
+} from '@mastra/core/storage';
 import type { IDatabase } from 'pg-promise';
 import type { StoreOperationsPG } from '../operations';
 import { getTableName, getSchemaName } from '../utils';

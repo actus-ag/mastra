@@ -1,6 +1,6 @@
 {
-  "name": "@actus-ag/mastra-mcp-docs-server",
-  "version": "0.13.12",
+  "name": "@mastra/mcp-docs-server",
+  "version": "0.13.14-alpha.0",
   "description": "MCP server for accessing Mastra.ai documentation, changelogs, and news.",
   "type": "module",
   "main": "dist/index.js",
@@ -23,7 +23,7 @@
   "scripts": {
     "prepare-docs": "cross-env PREPARE=true node dist/prepare-docs/prepare.js",
     "build:cli": "tsup src/stdio.ts src/prepare-docs/prepare.ts --format esm --no-dts --treeshake=smallest --splitting && tsc -p tsconfig.build.json",
-    "pretest": "pnpm turbo build --filter @actus-ag/mastra-mcp-docs-server",
+    "pretest": "pnpm turbo build --filter @mastra/mcp-docs-server",
     "test": "vitest run",
     "lint": "eslint ."
   },
@@ -31,9 +31,9 @@
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
-    "@actus-ag/mastra-core": "workspace:*",
-    "@actus-ag/mastra-mcp": "workspace:^",
-    "@modelcontextprotocol/sdk": "^1.13.0",
+    "@mastra/core": "workspace:*",
+    "@mastra/mcp": "workspace:^",
+    "@modelcontextprotocol/sdk": "^1.17.3",
     "date-fns": "^4.1.0",
     "exit-hook": "^4.0.0",
     "jsdom": "^26.1.0",
@@ -45,7 +45,7 @@
   "devDependencies": {
     "@hono/node-server": "^1.17.1",
     "@internal/lint": "workspace:*",
-    "@actus-ag/mastra-core": "workspace:*",
+    "@mastra/core": "workspace:*",
     "@types/jsdom": "^21.1.7",
     "@types/node": "^20.19.0",
     "@types/turndown": "^5.0.5",

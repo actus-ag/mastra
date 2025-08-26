@@ -1,17 +1,17 @@
-import type { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
-import type { MastraScorerEntry, ScoreRowData } from '@actus-ag/mastra-core/scores';
-import type { StoragePagination } from '@actus-ag/mastra-core/storage';
+import type { RuntimeContext } from '@mastra/core/runtime-context';
+import type { MastraScorerEntry, ScoreRowData } from '@mastra/core/scores';
+import type { StoragePagination } from '@mastra/core/storage';
 import type { Context } from '../types';
 import { handleError } from './error';
 
 async function getScorersFromSystem({
-  mastra,
+  @mastra,
   runtimeContext,
 }: Context & {
   runtimeContext: RuntimeContext;
 }) {
-  const agents = mastra.getAgents();
-  const workflows = mastra.getWorkflows();
+  const agents = @mastra.getAgents();
+  const workflows = @mastra.getWorkflows();
 
   const scorersMap = new Map<string, MastraScorerEntry & { agentIds: string[]; workflowIds: string[] }>();
 
@@ -60,9 +60,9 @@ async function getScorersFromSystem({
   return Object.fromEntries(scorersMap.entries());
 }
 
-export async function getScorersHandler({ mastra, runtimeContext }: Context & { runtimeContext: RuntimeContext }) {
+export async function getScorersHandler({ @mastra, runtimeContext }: Context & { runtimeContext: RuntimeContext }) {
   const scorers = await getScorersFromSystem({
-    mastra,
+    @mastra,
     runtimeContext,
   });
 
@@ -70,12 +70,12 @@ export async function getScorersHandler({ mastra, runtimeContext }: Context & { 
 }
 
 export async function getScorerHandler({
-  mastra,
+  @mastra,
   scorerId,
   runtimeContext,
 }: Context & { scorerId: string; runtimeContext: RuntimeContext }) {
   const scorers = await getScorersFromSystem({
-    mastra,
+    @mastra,
     runtimeContext,
   });
 
@@ -89,13 +89,13 @@ export async function getScorerHandler({
 }
 
 export async function getScoresByRunIdHandler({
-  mastra,
+  @mastra,
   runId,
   pagination,
 }: Context & { runId: string; pagination: StoragePagination }) {
   try {
     const scores =
-      (await mastra.getStorage()?.getScoresByRunId?.({
+      (await @mastra.getStorage()?.getScoresByRunId?.({
         runId,
         pagination,
       })) || [];
@@ -106,7 +106,7 @@ export async function getScoresByRunIdHandler({
 }
 
 export async function getScoresByScorerIdHandler({
-  mastra,
+  @mastra,
   scorerId,
   pagination,
   entityId,
@@ -114,7 +114,7 @@ export async function getScoresByScorerIdHandler({
 }: Context & { scorerId: string; pagination: StoragePagination; entityId?: string; entityType?: string }) {
   try {
     const scores =
-      (await mastra.getStorage()?.getScoresByScorerId?.({
+      (await @mastra.getStorage()?.getScoresByScorerId?.({
         scorerId,
         pagination,
         entityId,
@@ -127,7 +127,7 @@ export async function getScoresByScorerIdHandler({
 }
 
 export async function getScoresByEntityIdHandler({
-  mastra,
+  @mastra,
   entityId,
   entityType,
   pagination,
@@ -136,15 +136,15 @@ export async function getScoresByEntityIdHandler({
     let entityIdToUse = entityId;
 
     if (entityType === 'AGENT') {
-      const agent = mastra.getAgentById(entityId);
+      const agent = @mastra.getAgentById(entityId);
       entityIdToUse = agent.id;
     } else if (entityType === 'WORKFLOW') {
-      const workflow = mastra.getWorkflowById(entityId);
+      const workflow = @mastra.getWorkflowById(entityId);
       entityIdToUse = workflow.id;
     }
 
     const scores =
-      (await mastra.getStorage()?.getScoresByEntityId?.({
+      (await @mastra.getStorage()?.getScoresByEntityId?.({
         entityId: entityIdToUse,
         entityType,
         pagination,
@@ -156,9 +156,9 @@ export async function getScoresByEntityIdHandler({
   }
 }
 
-export async function saveScoreHandler({ mastra, score }: Context & { score: ScoreRowData }) {
+export async function saveScoreHandler({ @mastra, score }: Context & { score: ScoreRowData }) {
   try {
-    const scores = (await mastra.getStorage()?.saveScore?.(score)) || [];
+    const scores = (await @mastra.getStorage()?.saveScore?.(score)) || [];
     return scores;
   } catch (error) {
     return handleError(error, 'Error saving score');

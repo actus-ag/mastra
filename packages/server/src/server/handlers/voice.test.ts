@@ -1,11 +1,11 @@
-import { Mastra } from '@actus-ag/mastra-core';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import type { MastraVoice } from '@actus-ag/mastra-core/voice';
-import { CompositeVoice } from '@actus-ag/mastra-core/voice';
+import { Mastra } from '@mastra/core';
+import { Agent } from '@mastra/core/agent';
+import type { MastraVoice } from '@mastra/core/voice';
+import { CompositeVoice } from '@mastra/core/voice';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { getSpeakersHandler, generateSpeechHandler, transcribeSpeechHandler } from './voice';
 
-vi.mock('@actus-ag/mastra-core/voice');
+vi.mock('@mastra/core/voice');
 
 function createAgentWithVoice({
   name,
@@ -31,11 +31,11 @@ describe('Voice Handlers', () => {
 
   const mockAgent = createAgentWithVoice({ voice: mockVoice });
 
-  let mastra: Mastra;
+  let @mastra: Mastra;
 
   beforeEach(() => {
     vi.clearAllMocks();
-    mastra = new Mastra({
+    @mastra = new Mastra({
       logger: false,
       agents: {
         'test-agent': mockAgent,
@@ -45,11 +45,11 @@ describe('Voice Handlers', () => {
 
   describe('getSpeakersHandler', () => {
     it('should throw error when agentId is not provided', async () => {
-      await expect(getSpeakersHandler({ mastra })).rejects.toThrow('Agent ID is required');
+      await expect(getSpeakersHandler({ @mastra })).rejects.toThrow('Agent ID is required');
     });
 
     it('should throw error when agent is not found', async () => {
-      await expect(getSpeakersHandler({ mastra, agentId: 'non-existent' })).rejects.toThrow(
+      await expect(getSpeakersHandler({ @mastra, agentId: 'non-existent' })).rejects.toThrow(
         'Agent with name non-existent not found',
       );
     });
@@ -58,7 +58,7 @@ describe('Voice Handlers', () => {
       const agentWithoutVoice = createAgentWithVoice();
       await expect(
         getSpeakersHandler({
-          mastra: new Mastra({ logger: false, agents: { 'test-agent': agentWithoutVoice } }),
+          @mastra: new Mastra({ logger: false, agents: { 'test-agent': agentWithoutVoice } }),
           agentId: 'test-agent',
         }),
       ).rejects.toThrow('No voice provider configured');
@@ -73,7 +73,7 @@ describe('Voice Handlers', () => {
       } as any);
 
       const result = await getSpeakersHandler({
-        mastra: new Mastra({ logger: false, agents: { 'test-agent': agent } }),
+        @mastra: new Mastra({ logger: false, agents: { 'test-agent': agent } }),
         agentId: 'test-agent',
       });
 
@@ -85,7 +85,7 @@ describe('Voice Handlers', () => {
     it('should throw error when agentId is not provided', async () => {
       await expect(
         generateSpeechHandler({
-          mastra,
+          @mastra,
           body: {
             text: 'test',
             speakerId: '1',
@@ -97,7 +97,7 @@ describe('Voice Handlers', () => {
     it('should throw error when text or speakerId is not provided', async () => {
       await expect(
         generateSpeechHandler({
-          mastra,
+          @mastra,
           agentId: 'test-agent',
           body: {
             text: 'test',
@@ -109,7 +109,7 @@ describe('Voice Handlers', () => {
     it('should throw error when agent is not found', async () => {
       await expect(
         generateSpeechHandler({
-          mastra,
+          @mastra,
           agentId: 'non-existent',
           body: {
             text: 'test',
@@ -124,7 +124,7 @@ describe('Voice Handlers', () => {
 
       await expect(
         generateSpeechHandler({
-          mastra: new Mastra({ logger: false, agents: { 'test-agent': agentWithoutVoice } }),
+          @mastra: new Mastra({ logger: false, agents: { 'test-agent': agentWithoutVoice } }),
           agentId: 'test-agent',
           body: {
             text: 'test',
@@ -144,7 +144,7 @@ describe('Voice Handlers', () => {
 
       await expect(
         generateSpeechHandler({
-          mastra: new Mastra({ logger: false, agents: { 'test-agent': agent } }),
+          @mastra: new Mastra({ logger: false, agents: { 'test-agent': agent } }),
           agentId: 'test-agent',
           body: {
             text: 'test',
@@ -168,7 +168,7 @@ describe('Voice Handlers', () => {
       } as any);
 
       const audioStream = await generateSpeechHandler({
-        mastra: new Mastra({ logger: false, agents: { 'test-agent': agent } }),
+        @mastra: new Mastra({ logger: false, agents: { 'test-agent': agent } }),
         agentId: 'test-agent',
         body: {
           text: 'test',
@@ -197,7 +197,7 @@ describe('Voice Handlers', () => {
       } as any);
 
       const audioStream = await generateSpeechHandler({
-        mastra: new Mastra({ logger: false, agents: { 'test-agent': agent } }),
+        @mastra: new Mastra({ logger: false, agents: { 'test-agent': agent } }),
         agentId: 'test-agent',
         body: {
           text: 'test',
@@ -214,7 +214,7 @@ describe('Voice Handlers', () => {
     it('should throw error when agentId is not provided', async () => {
       await expect(
         transcribeSpeechHandler({
-          mastra,
+          @mastra,
           body: {
             audioData: Buffer.from('test'),
           },
@@ -225,7 +225,7 @@ describe('Voice Handlers', () => {
     it('should throw error when audioData is not provided', async () => {
       await expect(
         transcribeSpeechHandler({
-          mastra,
+          @mastra,
           agentId: 'test-agent',
           body: {},
         }),
@@ -235,7 +235,7 @@ describe('Voice Handlers', () => {
     it('should throw error when agent is not found', async () => {
       await expect(
         transcribeSpeechHandler({
-          mastra,
+          @mastra,
           agentId: 'non-existent',
           body: {
             audioData: Buffer.from('test'),
@@ -249,7 +249,7 @@ describe('Voice Handlers', () => {
 
       await expect(
         transcribeSpeechHandler({
-          mastra: new Mastra({ logger: false, agents: { 'test-agent': agentWithoutVoice } }),
+          @mastra: new Mastra({ logger: false, agents: { 'test-agent': agentWithoutVoice } }),
           agentId: 'test-agent',
           body: {
             audioData: Buffer.from('test'),
@@ -267,7 +267,7 @@ describe('Voice Handlers', () => {
       } as any);
 
       const result = await transcribeSpeechHandler({
-        mastra,
+        @mastra,
         agentId: 'test-agent',
         body: {
           audioData: Buffer.from('test'),

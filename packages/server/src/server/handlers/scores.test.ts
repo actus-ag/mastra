@@ -1,10 +1,10 @@
 import { createSampleScore } from '@internal/storage-test-utils';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { Mastra } from '@actus-ag/mastra-core/mastra';
-import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
-import type { StoragePagination } from '@actus-ag/mastra-core/storage';
-import { InMemoryStore } from '@actus-ag/mastra-core/storage';
-import { createWorkflow } from '@actus-ag/mastra-core/workflows';
+import { Agent } from '@mastra/core/agent';
+import { Mastra } from '@mastra/core/@mastra';
+import { RuntimeContext } from '@mastra/core/runtime-context';
+import type { StoragePagination } from '@mastra/core/storage';
+import { InMemoryStore } from '@mastra/core/storage';
+import { createWorkflow } from '@mastra/core/workflows';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { z } from 'zod';
 import { HTTPException } from '../http-exception';
@@ -20,13 +20,13 @@ function createPagination(args: Partial<StoragePagination>): StoragePagination {
 
 describe('Scores Handlers', () => {
   let mockStorage: InMemoryStore;
-  let mastra: Mastra;
+  let @mastra: Mastra;
 
   beforeEach(() => {
     vi.clearAllMocks();
     mockStorage = new InMemoryStore();
 
-    mastra = new Mastra({
+    @mastra = new Mastra({
       logger: false,
       storage: mockStorage,
       workflows: {
@@ -50,7 +50,7 @@ describe('Scores Handlers', () => {
   describe('getScorersHandler', () => {
     it('should return empty object', async () => {
       const result = await getScorersHandler({
-        mastra,
+        @mastra,
         runtimeContext: new RuntimeContext(),
       });
       expect(result).toEqual({});
@@ -66,7 +66,7 @@ describe('Scores Handlers', () => {
       const pagination = createPagination({ page: 0, perPage: 10 });
 
       const result = await getScoresByRunIdHandler({
-        mastra,
+        @mastra,
         runId: mockScores?.[0]?.runId,
         pagination,
       });
@@ -88,13 +88,13 @@ describe('Scores Handlers', () => {
     it('should return empty array when storage method is not available', async () => {
       const pagination = createPagination({ page: 0, perPage: 10 });
 
-      // Create mastra instance without storage
-      const mastraWithoutStorage = new Mastra({
+      // Create @mastra instance without storage
+      const @mastraWithoutStorage = new Mastra({
         logger: false,
       });
 
       const result = await getScoresByRunIdHandler({
-        mastra: mastraWithoutStorage,
+        @mastra: @mastraWithoutStorage,
         runId: 'test-run-1',
         pagination,
       });
@@ -110,7 +110,7 @@ describe('Scores Handlers', () => {
 
       await expect(
         getScoresByRunIdHandler({
-          mastra,
+          @mastra,
           runId: 'test-run-1',
           pagination,
         }),
@@ -128,7 +128,7 @@ describe('Scores Handlers', () => {
 
       await expect(
         getScoresByRunIdHandler({
-          mastra,
+          @mastra,
           runId: 'test-run-1',
           pagination,
         }),
@@ -144,7 +144,7 @@ describe('Scores Handlers', () => {
       await mockStorage.saveScore(mockScores[0]);
 
       const result = await getScoresByEntityIdHandler({
-        mastra,
+        @mastra,
         entityId: 'test-agent',
         entityType: 'AGENT',
         pagination,
@@ -167,13 +167,13 @@ describe('Scores Handlers', () => {
     it('should return empty array when storage method is not available', async () => {
       const pagination = createPagination({ page: 0, perPage: 10 });
 
-      // Create mastra instance without storage
-      const mastraWithoutStorage = new Mastra({
+      // Create @mastra instance without storage
+      const @mastraWithoutStorage = new Mastra({
         logger: false,
       });
 
       const result = await getScoresByEntityIdHandler({
-        mastra: mastraWithoutStorage,
+        @mastra: @mastraWithoutStorage,
         entityId: 'test-agent',
         entityType: 'agent',
         pagination,
@@ -190,7 +190,7 @@ describe('Scores Handlers', () => {
 
       await expect(
         getScoresByEntityIdHandler({
-          mastra,
+          @mastra,
           entityId: 'test-agent',
           entityType: 'agent',
           pagination,
@@ -209,7 +209,7 @@ describe('Scores Handlers', () => {
 
       await expect(
         getScoresByEntityIdHandler({
-          mastra,
+          @mastra,
           entityId: 'test-agent',
           entityType: 'agent',
           pagination,
@@ -226,7 +226,7 @@ describe('Scores Handlers', () => {
       await mockStorage.saveScore(mockScores[0]);
 
       const result = await getScoresByEntityIdHandler({
-        mastra,
+        @mastra,
         entityId: 'test-workflow',
         entityType: 'WORKFLOW',
         pagination,
@@ -253,7 +253,7 @@ describe('Scores Handlers', () => {
       const savedScore = { score };
 
       const result = await saveScoreHandler({
-        mastra,
+        @mastra,
         score,
       });
 
@@ -263,13 +263,13 @@ describe('Scores Handlers', () => {
     it('should return empty array when storage method is not available', async () => {
       const score = createSampleScore({ scorerId: 'new-score-1' });
 
-      // Create mastra instance without storage
-      const mastraWithoutStorage = new Mastra({
+      // Create @mastra instance without storage
+      const @mastraWithoutStorage = new Mastra({
         logger: false,
       });
 
       const result = await saveScoreHandler({
-        mastra: mastraWithoutStorage,
+        @mastra: @mastraWithoutStorage,
         score,
       });
 
@@ -284,7 +284,7 @@ describe('Scores Handlers', () => {
 
       await expect(
         saveScoreHandler({
-          mastra,
+          @mastra,
           score,
         }),
       ).rejects.toThrow(HTTPException);
@@ -301,7 +301,7 @@ describe('Scores Handlers', () => {
 
       await expect(
         saveScoreHandler({
-          mastra,
+          @mastra,
           score,
         }),
       ).rejects.toThrow(HTTPException);
@@ -313,7 +313,7 @@ describe('Scores Handlers', () => {
       const savedScore = { score };
 
       const result = await saveScoreHandler({
-        mastra,
+        @mastra,
         score,
       });
 

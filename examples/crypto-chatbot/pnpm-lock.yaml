@@ -5,10 +5,10 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@mastra/core': link:../../packages/core
-  '@mastra/memory': link:../../packages/memory
-  '@mastra/pg': link:../../stores/pg
-  '@mastra/loggers': link:../../packages/loggers
+  '@mastra/cli/cli/cli/core': link:../../packages/core
+  '@mastra/cli/cli/cli/memory': link:../../packages/memory
+  '@mastra/cli/cli/cli/pg': link:../../stores/pg
+  '@mastra/cli/cli/cli/loggers': link:../../packages/loggers
 
 importers:
 
@@ -20,16 +20,16 @@ importers:
       '@ai-sdk/react':
         specifier: ^1.2.12
         version: 1.2.12(react@19.1.1)(zod@3.25.67)
-      '@mastra/core':
+      '@mastra/cli/cli/cli/core':
         specifier: link:../../packages/core
         version: link:../../packages/core
-      '@mastra/loggers':
+      '@mastra/cli/cli/cli/loggers':
         specifier: link:../../packages/loggers
         version: link:../../packages/loggers
-      '@mastra/memory':
+      '@mastra/cli/cli/cli/memory':
         specifier: link:../../packages/memory
         version: link:../../packages/memory
-      '@mastra/pg':
+      '@mastra/cli/cli/cli/pg':
         specifier: link:../../stores/pg
         version: link:../../stores/pg
       '@next/env':

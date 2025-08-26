@@ -1,6 +1,6 @@
-import type { MastraLanguageModel } from '@actus-ag/mastra-core/agent';
-import type { RelevanceScoreProvider } from '@actus-ag/mastra-core/relevance';
-import type { QueryResult } from '@actus-ag/mastra-core/vector';
+import type { MastraLanguageModel } from '@mastra/core/agent';
+import type { RelevanceScoreProvider } from '@mastra/core/relevance';
+import type { QueryResult } from '@mastra/core/vector';
 import { Big } from 'big.js';
 import { MastraAgentRelevanceScorer, CohereRelevanceScorer } from './relevance';
 

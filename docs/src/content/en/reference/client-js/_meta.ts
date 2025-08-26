@@ -1,5 +1,5 @@
 const meta = {
-  "mastra-client": "MastraClient",
+  "@mastra-client": "MastraClient",
   agents: "Agents API",
   memory: "Memory API",
   tools: "Tools API",

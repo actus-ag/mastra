@@ -24,11 +24,11 @@ NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY=your_algolia_search_api_key
 
 ## Index Configuration
 
-The search hook expects an index named `crawler_mastra crawler` by default. You can customize this by passing `indexName` in the search options:
+The search hook expects an index named `crawler_@mastra crawler` by default. You can customize this by passing `indexName` in the search options:
 
 ```typescript
 const searchOptions: AlgoliaSearchOptions = {
-  indexName: "crawler_mastra crawler",
+  indexName: "crawler_@mastra crawler",
   hitsPerPage: 20,
   attributesToRetrieve: ["title", "content", "url", "hierarchy"],
   attributesToHighlight: ["title", "content"],

@@ -1,22 +1,22 @@
-# @actus-ag/mastra-auth-clerk
+# @mastra/auth-clerk
 
 A Mastra authentication provider for Clerk, enabling seamless integration of Clerk authentication with Mastra applications.
 
 ## Installation
 
 ```bash
-npm install @actus-ag/mastra-auth-clerk
+npm install @mastra/auth-clerk
 # or
-yarn add @actus-ag/mastra-auth-clerk
+yarn add @mastra/auth-clerk
 # or
-pnpm add @actus-ag/mastra-auth-clerk
+pnpm add @mastra/auth-clerk
 ```
 
 ## Usage
 
 ```typescript
-import { Mastra } from '@actus-ag/mastra-core';
-import { MastraAuthClerk } from '@actus-ag/mastra-auth-clerk';
+import { Mastra } from '@mastra/core';
+import { MastraAuthClerk } from '@mastra/auth-clerk';
 
 // Initialize the Clerk auth provider
 const clerkAuth = new MastraAuthClerk({
@@ -29,7 +29,7 @@ const clerkAuth = new MastraAuthClerk({
 const clerkAuth = new MastraAuthClerk();
 
 // Enable auth in Mastra
-const mastra = new Mastra({
+const @mastra = new Mastra({
   ...
   server: {
     experimental_auth: clerkAuth,

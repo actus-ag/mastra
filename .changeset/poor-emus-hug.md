@@ -1,5 +1,5 @@
 ---
-'@actus-ag/mastra-core': patch
+'@mastra/core': patch
 ---
 
 changed scope to @actus-ag

@@ -1,6 +1,6 @@
 # What is Mastra?
 
-[Mastra](https://github.com/mastra-ai/mastra) is an open-source AI Agent Framework for TypeScript that includes all the basic primitives for AI engineering right out of the box:
+[Mastra](https://github.com/@mastra-ai/@mastra) is an open-source AI Agent Framework for TypeScript that includes all the basic primitives for AI engineering right out of the box:
 
 - Agents with tools, memory, and tracing
 - State-machine based workflows

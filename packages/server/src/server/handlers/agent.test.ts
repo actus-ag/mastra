@@ -1,10 +1,10 @@
 import { openai } from '@ai-sdk/openai';
-import type { AgentConfig } from '@actus-ag/mastra-core/agent';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { RuntimeContext } from '@actus-ag/mastra-core/di';
-import { Mastra } from '@actus-ag/mastra-core/mastra';
-import type { EvalRow, MastraStorage } from '@actus-ag/mastra-core/storage';
-import { createWorkflow, createStep } from '@actus-ag/mastra-core/workflows';
+import type { AgentConfig } from '@mastra/core/agent';
+import { Agent } from '@mastra/core/agent';
+import { RuntimeContext } from '@mastra/core/di';
+import { Mastra } from '@mastra/core/@mastra';
+import type { EvalRow, MastraStorage } from '@mastra/core/storage';
+import { createWorkflow, createStep } from '@mastra/core/workflows';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { z } from 'zod';
 import { HTTPException } from '../http-exception';
@@ -99,7 +99,7 @@ describe('Agent Handlers', () => {
 
   describe('getAgentsHandler', () => {
     it('should return serialized agents', async () => {
-      const result = await getAgentsHandler({ mastra: mockMastra, runtimeContext });
+      const result = await getAgentsHandler({ @mastra: mockMastra, runtimeContext });
 
       expect(result).toEqual({
         'test-agent': {
@@ -149,7 +149,7 @@ describe('Agent Handlers', () => {
       workflow.then(firstStep).then(secondStep);
       mockAgent = makeMockAgent({ workflows: { hello: workflow } });
       mockMastra = makeMastraMock({ agents: { 'test-agent': mockAgent } });
-      const result = await getAgentByIdHandler({ mastra: mockMastra, agentId: 'test-agent', runtimeContext });
+      const result = await getAgentByIdHandler({ @mastra: mockMastra, agentId: 'test-agent', runtimeContext });
 
       expect(result).toEqual({
         name: 'test-agent',
@@ -180,7 +180,7 @@ describe('Agent Handlers', () => {
 
     it('should throw 404 when agent not found', async () => {
       await expect(
-        getAgentByIdHandler({ mastra: mockMastra, runtimeContext, agentId: 'non-existing' }),
+        getAgentByIdHandler({ @mastra: mockMastra, runtimeContext, agentId: 'non-existing' }),
       ).rejects.toThrow(
         new HTTPException(404, {
           message: 'Agent with name non-existing not found',
@@ -194,7 +194,7 @@ describe('Agent Handlers', () => {
       const storage = mockMastra.getStorage();
       vi.spyOn(storage!, 'getEvalsByAgentName').mockResolvedValue(mockEvals);
 
-      const result = await getEvalsByAgentIdHandler({ mastra: mockMastra, agentId: 'test-agent', runtimeContext });
+      const result = await getEvalsByAgentIdHandler({ @mastra: mockMastra, agentId: 'test-agent', runtimeContext });
 
       expect(result).toEqual({
         id: 'test-agent',
@@ -209,7 +209,7 @@ describe('Agent Handlers', () => {
     it('should return live agent evals', async () => {
       vi.spyOn(mockMastra.getStorage()!, 'getEvalsByAgentName').mockResolvedValue(mockEvals);
 
-      const result = await getLiveEvalsByAgentIdHandler({ mastra: mockMastra, agentId: 'test-agent', runtimeContext });
+      const result = await getLiveEvalsByAgentIdHandler({ @mastra: mockMastra, agentId: 'test-agent', runtimeContext });
 
       expect(result).toEqual({
         id: 'test-agent',
@@ -226,7 +226,7 @@ describe('Agent Handlers', () => {
       (mockAgent.generate as any).mockResolvedValue(mockResult);
 
       const result = await generateHandler({
-        mastra: mockMastra,
+        @mastra: mockMastra,
         agentId: 'test-agent',
         body: {
           messages: ['test message'],
@@ -249,7 +249,7 @@ describe('Agent Handlers', () => {
     it('should throw 404 when agent not found', async () => {
       await expect(
         generateHandler({
-          mastra: mockMastra,
+          @mastra: mockMastra,
           agentId: 'non-existing',
           body: {
             messages: ['test message'],
@@ -278,7 +278,7 @@ describe('Agent Handlers', () => {
       (mockAgent.stream as any).mockResolvedValue(mockStreamResult);
 
       const result = await streamGenerateHandler({
-        mastra: mockMastra,
+        @mastra: mockMastra,
         agentId: 'test-agent',
         body: {
           messages: ['test message'],
@@ -301,7 +301,7 @@ describe('Agent Handlers', () => {
     it('should throw 404 when agent not found', async () => {
       await expect(
         streamGenerateHandler({
-          mastra: mockMastra,
+          @mastra: mockMastra,
           agentId: 'non-existing',
           body: {
             messages: ['test message'],
@@ -329,7 +329,7 @@ describe('Agent Handlers', () => {
       };
       (mockAgent.stream as any).mockResolvedValue(mockStreamResult);
       const updateResult = updateAgentModelHandler({
-        mastra: mockMastra,
+        @mastra: mockMastra,
         agentId: 'test-agent',
         body: {
           modelId: 'gpt-4o-mini',
@@ -345,7 +345,7 @@ describe('Agent Handlers', () => {
       //confirm that stream works fine after the model update
 
       const result = await streamGenerateHandler({
-        mastra: mockMastra,
+        @mastra: mockMastra,
         agentId: 'test-agent',
         body: {
           messages: ['test message'],

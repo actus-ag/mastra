@@ -1,4 +1,4 @@
-import { createTool } from "@actus-ag/mastra-core/tools";
+import { createTool } from "@mastra/core/tools";
 import { z } from "zod";
 import { firecrawl, github } from "../integrations";
 import { randomUUID } from "crypto";
@@ -93,14 +93,14 @@ export const generateSpecTool = createTool({
   id: "generate-spec",
   label: "Generate Spec",
   inputSchema: z.object({
-    mastra_entity_type: z.string(),
+    @mastra_entity_type: z.string(),
   }),
   outputSchema: z.object({
     success: z.boolean(),
     mergedSpec: z.string(),
   }),
   description: "Generate a spec from a website",
-  execute: async ({ context, runId, mastra }) => {
+  execute: async ({ context, runId, @mastra }) => {
     const crawledData =
       context?.steps?.["site-crawl"]?.status === "success"
         ? context?.steps?.["site-crawl"]?.output?.crawlData
@@ -110,7 +110,7 @@ export const generateSpecTool = createTool({
       throw new Error("No crawled data found");
     }
 
-    const agent = mastra?.agents?.["openapi-spec-gen-agent"];
+    const agent = @mastra?.agents?.["openapi-spec-gen-agent"];
 
     if (!agent) {
       throw new Error("Agent not found");
@@ -168,14 +168,14 @@ export const addToGitHubTool = createTool({
     pr_url: z.string().optional(),
   }),
   description: "Commit the spec to GitHub",
-  execute: async ({ context, runId, mastra }) => {
+  execute: async ({ context, runId, @mastra }) => {
     const client = await github.getApiClient();
 
     const content = context.yaml;
     const integrationName = context.integration_name.toLowerCase();
 
     console.log("Writing to Github for", context.integration_name);
-    const agent = mastra?.agents?.["openapi-spec-gen-agent"];
+    const agent = @mastra?.agents?.["openapi-spec-gen-agent"];
 
     const d = await agent?.generate(
       `Can you take this text blob and format it into proper YAML? ${content}`,

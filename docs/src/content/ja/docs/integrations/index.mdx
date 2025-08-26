@@ -18,15 +18,15 @@ Mastraのデフォルトインテグレーションは、個別にインスト�
 GitHubインテグレーションをインストールするには、次のコマンドを実行します：
 
 ```bash copy
-npm install @actus-ag/mastra-github@latest
+npm install @mastra/cli/cli/cli/github@latest
 ```
 
 2. **プロジェクトにインテグレーションを追加する**
 
-インテグレーション用の新しいファイル（例：`src/mastra/integrations/index.ts`）を作成し、インテグレーションをインポートします：
+インテグレーション用の新しいファイル（例：`src/@@mastra/cli/cli/cli/integrations/index.ts`）を作成し、インテグレーションをインポートします：
 
-```typescript filename="src/mastra/integrations/index.ts" showLineNumbers copy
-import { GithubIntegration } from "@actus-ag/mastra-github";
+```typescript filename="src/@@mastra/cli/cli/cli/integrations/index.ts" showLineNumbers copy
+import { GithubIntegration } from "@mastra/cli/cli/cli/github";
 
 export const github = new GithubIntegration({
   config: {
@@ -41,8 +41,8 @@ export const github = new GithubIntegration({
 
 これで、エージェントのツールを定義する際やワークフローでインテグレーションを使用できます。
 
-```typescript filename="src/mastra/tools/index.ts" showLineNumbers copy
-import { createTool } from "@actus-ag/mastra-core";
+```typescript filename="src/@@mastra/cli/cli/cli/tools/index.ts" showLineNumbers copy
+import { createTool } from "@mastra/cli/cli/cli/core";
 import { z } from "zod";
 import { github } from "../integrations";
 
@@ -82,9 +82,9 @@ export const getMainBranchRef = createTool({
 
 統合を利用するツールを定義したら、これらのツールをエージェントに含めることができます。
 
-```typescript filename="src/mastra/agents/index.ts" showLineNumbers copy
+```typescript filename="src/@@mastra/cli/cli/cli/agents/index.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { getMainBranchRef } from "../tools";
 
 export const codeReviewAgent = new Agent({
@@ -118,7 +118,7 @@ GITHUB_PAT=your_personal_access_token
 ### 例：Mem0統合の追加
 
 この例では、[Mem0](https://mem0.ai)プラットフォームを使用して、ツール使用を通じてエージェントに長期記憶機能を追加する方法を学びます。
-この記憶統合は、Mastraの独自の[エージェント記憶機能](https://mastra.ai/docs/agents/agent-memory)と併用することができます。
+この記憶統合は、Mastraの独自の[エージェント記憶機能](https://@@mastra/cli/cli/cli.ai/docs/agents/agent-memory)と併用することができます。
 Mem0を使用すると、エージェントはユーザーごとに事実を記憶し、そのユーザーとのすべてのやり取りで後で思い出すことができます。一方、Mastraの記憶はスレッドごとに機能します。両方を組み合わせて使用することで、Mem0は会話/やり取りを超えた長期的な記憶を保存し、Mastraの記憶は個々の会話内での線形的な会話履歴を維持します。
 
 1. **統合パッケージのインストール**
@@ -126,15 +126,15 @@ Mem0を使用すると、エージェントはユーザーごとに事実を記�
 Mem0統合をインストールするには、次のコマンドを実行します：
 
 ```bash copy
-npm install @actus-ag/mastra-mem0@latest
+npm install @mastra/cli/cli/cli/mem0@latest
 ```
 
 2. **プロジェクトに統合を追加する**
 
-統合用の新しいファイル（例：`src/mastra/integrations/index.ts`）を作成し、統合をインポートします：
+統合用の新しいファイル（例：`src/@@mastra/cli/cli/cli/integrations/index.ts`）を作成し、統合をインポートします：
 
-```typescript filename="src/mastra/integrations/index.ts" showLineNumbers copy
-import { Mem0Integration } from "@actus-ag/mastra-mem0";
+```typescript filename="src/@@mastra/cli/cli/cli/integrations/index.ts" showLineNumbers copy
+import { Mem0Integration } from "@mastra/cli/cli/cli/mem0";
 
 export const mem0 = new Mem0Integration({
   config: {
@@ -148,8 +148,8 @@ export const mem0 = new Mem0Integration({
 
 これで、エージェントのツールやワークフローを定義する際に統合を使用できます。
 
-```typescript filename="src/mastra/tools/index.ts" showLineNumbers copy
-import { createTool } from "@actus-ag/mastra-core";
+```typescript filename="src/@@mastra/cli/cli/cli/tools/index.ts" showLineNumbers copy
+import { createTool } from "@mastra/cli/cli/cli/core";
 import { z } from "zod";
 import { mem0 } from "../integrations";
 
@@ -196,12 +196,12 @@ export const mem0MemorizeTool = createTool({
 
 上記の例では：
 
-- `@actus-ag/mastra-mem0`統合をインポートします。
+- `@mastra/cli/cli/cli/mem0`統合をインポートします。
 - Mem0 APIクライアントを使用して新しい記憶を作成し、以前に保存した記憶を呼び出す2つのツールを定義します。
 - このツールは入力として`question`を受け取り、記憶を文字列として返します。
 
-```typescript filename="src/mastra/tools/index.ts" showLineNumbers copy
-import { createTool } from "@actus-ag/mastra-core";
+```typescript filename="src/@@mastra/cli/cli/cli/tools/index.ts" showLineNumbers copy
+import { createTool } from "@mastra/cli/cli/cli/core";
 import { z } from "zod";
 import { mem0 } from "../integrations";
 
@@ -248,7 +248,7 @@ export const mem0MemorizeTool = createTool({
 
 上記の例では：
 
-- `@actus-ag/mastra-mem0`統合をインポートします。
+- `@mastra/cli/cli/cli/mem0`統合をインポートします。
 - Mem0 APIクライアントを使用して新しい記憶を作成し、以前に保存された記憶を呼び出す2つのツールを定義します。
 - ツールは`question`を入力として受け取り、記憶を文字列として返します。
 
@@ -256,4 +256,4 @@ export const mem0MemorizeTool = createTool({
 
 Mastraは、いくつかの組み込み統合を提供しています。主にOAuthを必要としないAPIキーに基づく統合です。利用可能な統合には、Github、Stripe、Resend、Firecrawlなどがあります。
 
-利用可能な統合の完全なリストについては、[Mastraのコードベース](https://github.com/mastra-ai/mastra/tree/main/integrations)または[npmパッケージ](https://www.npmjs.com/search?q=%22%40mastra%22)を確認してください。
+利用可能な統合の完全なリストについては、[Mastraのコードベース](https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/tree/main/integrations)または[npmパッケージ](https://www.npmjs.com/search?q=%22%40@@mastra/cli/cli/cli%22)を確認してください。

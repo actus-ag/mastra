@@ -15,9 +15,9 @@ import { FileTree } from "nextra/components";
 
 ## CLIの使用
 
-`mastra init`はインタラクティブなCLIで、以下のことができます：
+`@actus-ag/@mastra/cli/cli init`はインタラクティブなCLIで、以下のことができます：
 
-- **Mastraファイルのディレクトリを選択する**：Mastraファイルを配置する場所を指定します（デフォルトは`src/mastra`）。
+- **Mastraファイルのディレクトリを選択する**：Mastraファイルを配置する場所を指定します（デフォルトは`src/@@mastra/cli/cli/cli`）。
 - **インストールするコンポーネントを選択する**：プロジェクトに含めたいコンポーネントを選択します：
   - エージェント
   - ツール
@@ -33,7 +33,7 @@ import { FileTree } from "nextra/components";
 <FileTree>
   <FileTree.Folder name="root" defaultOpen>
     <FileTree.Folder name="src" defaultOpen>
-      <FileTree.Folder name="mastra" defaultOpen>
+      <FileTree.Folder name="@actus-ag/@@mastra/cli/cli/cli" defaultOpen>
         <FileTree.Folder name="agents" defaultOpen>
           <FileTree.File name="index.ts" />
         </FileTree.Folder>
@@ -53,7 +53,7 @@ import { FileTree } from "nextra/components";
 ```
 root/
 ├── src/
-│   └── mastra/
+│   └── @@mastra/cli/cli/cli/
 │       ├── agents/
 │       │   └── index.ts
 │       ├── tools/
@@ -68,14 +68,14 @@ root/
 
 | フォルダ               | 説明                         |
 | ---------------------- | ---------------------------- |
-| `src/mastra`           | コアアプリケーションフォルダ |
-| `src/mastra/agents`    | エージェントの設定と定義     |
-| `src/mastra/tools`     | カスタムツールの定義         |
-| `src/mastra/workflows` | ワークフローの定義           |
+| `src/@@mastra/cli/cli/cli`           | コアアプリケーションフォルダ |
+| `src/@@mastra/cli/cli/cli/agents`    | エージェントの設定と定義     |
+| `src/@@mastra/cli/cli/cli/tools`     | カスタムツールの定義         |
+| `src/@@mastra/cli/cli/cli/workflows` | ワークフローの定義           |
 
 ### トップレベルファイル
 
 | ファイル              | 説明                       |
 | --------------------- | -------------------------- |
-| `src/mastra/index.ts` | Mastraのメイン設定ファイル |
+| `src/@@mastra/cli/cli/cli/index.ts` | Mastraのメイン設定ファイル |
 | `.env`                | 環境変数                   |

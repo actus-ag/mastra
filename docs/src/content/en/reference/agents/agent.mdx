@@ -9,9 +9,9 @@ The `Agent` class is the foundation for creating AI agents in Mastra. It provide
 
 ## Usage example
 
-```typescript filename="src/mastra/agents/test-agent.ts" showLineNumbers copy
+```typescript filename="src/@@mastra/cli/cli/cli/agents/test-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 export const agent = new Agent({
   name: "test-agent",
@@ -85,7 +85,7 @@ export const agent = new Agent({
       description: "Default options used when calling `stream()` in vNext mode.",
     },
     {
-      name: "mastra",
+      name: "@actus-ag/@@mastra/cli/cli/cli",
       type: "Mastra",
       isOptional: true,
       description: "Reference to the Mastra runtime instance (injected automatically).",

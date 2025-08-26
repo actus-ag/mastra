@@ -4,7 +4,7 @@ import {
   TABLE_RESOURCES,
   TABLE_SCORERS,
   type MastraStorage,
-} from '@actus-ag/mastra-core/storage';
+} from '@mastra/core/storage';
 import { createMessagesPaginatedTest } from './messages-paginated';
 import { createThreadsTest } from './threads';
 import { createMessagesUpdateTest } from './messages-update';

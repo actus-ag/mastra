@@ -1,7 +1,7 @@
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import { StoreOperations, TABLE_WORKFLOW_SNAPSHOT } from '@actus-ag/mastra-core/storage';
-import type { StorageColumn, TABLE_NAMES } from '@actus-ag/mastra-core/storage';
-import { parseSqlIdentifier } from '@actus-ag/mastra-core/utils';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import { StoreOperations, TABLE_WORKFLOW_SNAPSHOT } from '@mastra/core/storage';
+import type { StorageColumn, TABLE_NAMES } from '@mastra/core/storage';
+import { parseSqlIdentifier } from '@mastra/core/utils';
 import type { IDatabase } from 'pg-promise';
 import { getSchemaName, getTableName } from '../utils';
 
@@ -194,10 +194,10 @@ export class StoreOperationsPG extends StoreOperations {
                 ? `
             DO $$ BEGIN
               IF NOT EXISTS (
-                SELECT 1 FROM pg_constraint WHERE conname = '${constraintPrefix}mastra_workflow_snapshot_workflow_name_run_id_key'
+                SELECT 1 FROM pg_constraint WHERE conname = '${constraintPrefix}@mastra_workflow_snapshot_workflow_name_run_id_key'
               ) THEN
                 ALTER TABLE ${getTableName({ indexName: tableName, schemaName: getSchemaName(this.schemaName) })}
-                ADD CONSTRAINT ${constraintPrefix}mastra_workflow_snapshot_workflow_name_run_id_key
+                ADD CONSTRAINT ${constraintPrefix}@mastra_workflow_snapshot_workflow_name_run_id_key
                 UNIQUE (workflow_name, run_id);
               END IF;
             END $$;

@@ -1,7 +1,7 @@
 import fs from 'fs';
-import { fastembed } from '@actus-ag/mastra-fastembed';
-import { LibSQLStore, LibSQLVector } from '@actus-ag/mastra-libsql';
-import { Memory } from '@actus-ag/mastra-memory';
+import { fastembed } from '@mastra/fastembed';
+import { LibSQLStore, LibSQLVector } from '@mastra/libsql';
+import { Memory } from '@mastra/memory';
 import dotenv from 'dotenv';
 import { describe } from 'vitest';
 import { getResuableTests, StorageType } from './reusable-tests';

@@ -1,6 +1,6 @@
-import { Mastra } from '@actus-ag/mastra-core/mastra';
-import { PinoLogger } from '@actus-ag/mastra-loggers';
-import { LibSQLStore } from '@actus-ag/mastra-libsql';
+import { Mastra } from '@mastra/core/@mastra';
+import { PinoLogger } from '@mastra/loggers';
+import { LibSQLStore } from '@mastra/libsql';
 
 // Import agents
 import { adCopyAgent } from './agents/ad-copy-agent';
@@ -11,7 +11,7 @@ import { webContentAgent } from './agents/web-content-agent';
 // Import workflows
 import { adCopyGenerationWorkflow } from './workflows/ad-copy-generation-workflow';
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   workflows: {
     adCopyGenerationWorkflow,
   },
@@ -22,7 +22,7 @@ export const mastra = new Mastra({
     webContentAgent,
   },
   storage: new LibSQLStore({
-    url: 'file:../mastra.db',
+    url: 'file:../@mastra.db',
   }),
   logger: new PinoLogger({
     name: 'Mastra Ad Copy Template',

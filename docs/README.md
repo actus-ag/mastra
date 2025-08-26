@@ -6,7 +6,7 @@ If you'd like to contribute, see our list of open issues. We also welcome you to
 The first step is to clone the Repo
 
 ```bash
-git clone git@github.com:mastra-ai/mastra.git
+git clone git@github.com:@mastra-ai/@mastra.git
 cd docs
 ```
 

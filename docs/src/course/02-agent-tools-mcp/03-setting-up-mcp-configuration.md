@@ -1,9 +1,9 @@
 # Setting Up MCP Configuration
 
-Now, let's create a basic MCP configuration in your agent file. Open your `src/mastra/agents/index.ts` file and add the following imports:
+Now, let's create a basic MCP configuration in your agent file. Open your `src/@mastra/agents/index.ts` file and add the following imports:
 
 ```typescript
-import { MCPClient } from "@actus-ag/mastra-mcp";
+import { MCPClient } from "@mastra/mcp";
 ```
 
 Then, create a basic MCP configuration object:

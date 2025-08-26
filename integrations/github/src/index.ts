@@ -1,4 +1,4 @@
-import { Integration } from '@actus-ag/mastra-core/integration';
+import { Integration } from '@mastra/core/integration';
 
 import type * as integrationClient from './client/services.gen';
 import { GithubToolset } from './toolset';

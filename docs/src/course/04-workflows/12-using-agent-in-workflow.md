@@ -2,7 +2,7 @@
 
 Now you'll create a workflow step that uses your AI agent to provide intelligent content analysis.
 
-In each step, in the execute function, you have access to the `mastra` class which provides you the ability to access Agents, Tools, and even other Workflows. In this case, we use the `mastra` class to get our agent and call that agent's `generate()` function.
+In each step, in the execute function, you have access to the `@actus-ag/@mastra` class which provides you the ability to access Agents, Tools, and even other Workflows. In this case, we use the `@actus-ag/@mastra` class to get our agent and call that agent's `generate()` function.
 
 ## Creating an AI Analysis Step
 
@@ -38,7 +38,7 @@ const aiAnalysisStep = createStep({
       feedback: z.string(),
     }),
   }),
-  execute: async ({ inputData, mastra }) => {
+  execute: async ({ inputData, @mastra }) => {
     const { content, type, wordCount, metadata, summary } = inputData;
 
     // Create prompt for the AI agent
@@ -57,8 +57,8 @@ Please provide:
 Format as JSON: {"score": number, "feedback": "your feedback here"}
     `;
 
-    // Get the contentAgent from the mastra instance.
-    const contentAgent = mastra.getAgent("contentAgent");
+    // Get the contentAgent from the @mastra instance.
+    const contentAgent = @mastra.getAgent("contentAgent");
     const { text } = await contentAgent.generate([
       { role: "user", content: prompt },
     ]);

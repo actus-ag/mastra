@@ -15,7 +15,7 @@ import YouTube from "@/components/youtube";
 ## 前提条件
 
 - Node.jsがインストールされていること
-- Mastraがインストールされていること: `npm install @actus-ag/mastra-core@latest`
+- Mastraがインストールされていること: `npm install @mastra/cli/cli/cli/core@latest`
 
 ---
 
@@ -24,11 +24,11 @@ import YouTube from "@/components/youtube";
 <Steps>
 ### エージェントを定義する
 
-新しいファイル `src/mastra/agents/chefAgent.ts` を作成し、エージェントを定義します：
+新しいファイル `src/@@mastra/cli/cli/cli/agents/chefAgent.ts` を作成し、エージェントを定義します：
 
-```ts copy filename="src/mastra/agents/chefAgent.ts"
+```ts copy filename="src/@@mastra/cli/cli/cli/agents/chefAgent.ts"
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 export const chefAgent = new Agent({
   name: "chef-agent",
@@ -55,12 +55,12 @@ OPENAI_API_KEY=your_openai_api_key
 
 メインファイルで、エージェントを登録します：
 
-```ts copy filename="src/mastra/index.ts"
-import { Mastra } from "@actus-ag/mastra-core";
+```ts copy filename="src/@@mastra/cli/cli/cli/index.ts"
+import { Mastra } from "@mastra/cli/cli/cli/core";
 
 import { chefAgent } from "./agents/chefAgent";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   agents: { chefAgent },
 });
 ```
@@ -196,19 +196,19 @@ Query: I want to make lasagna, can you generate a lasagna recipe for me?
 
 <Steps>
 
-### `mastra dev`の使用
+### `@actus-ag/@mastra/cli/cli dev`の使用
 
-`mastra dev`コマンドを使用してエージェントをサービスとして実行できます：
+`@actus-ag/@mastra/cli/cli dev`コマンドを使用してエージェントをサービスとして実行できます：
 
 ```bash copy
-mastra dev
+@actus-ag/@mastra/cli/cli dev
 ```
 
 これにより、登録されたエージェントと対話するためのエンドポイントを公開するサーバーが起動します。
 
 ### シェフアシスタントAPIへのアクセス
 
-デフォルトでは、`mastra dev`は`http://localhost:4111`で実行されます。シェフアシスタントエージェントは以下のURLで利用可能です：
+デフォルトでは、`@actus-ag/@mastra/cli/cli dev`は`http://localhost:4111`で実行されます。シェフアシスタントエージェントは以下のURLで利用可能です：
 
 ```
 POST http://localhost:4111/api/agents/chefAgent/generate

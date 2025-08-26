@@ -1,5 +1,5 @@
-import { Agent } from '@actus-ag/mastra-core/agent';
-import type { MastraLanguageModel } from '@actus-ag/mastra-core/agent';
+import { Agent } from '@mastra/core/agent';
+import type { MastraLanguageModel } from '@mastra/core/agent';
 import { PromptTemplate, defaultQuestionExtractPrompt } from '../prompts';
 import type { QuestionExtractPrompt } from '../prompts';
 import type { BaseNode } from '../schema';
@@ -79,7 +79,7 @@ export class QuestionsAnsweredExtractor extends BaseExtractor {
 
     let questionsText = '';
     if (this.llm.specificationVersion === 'v2') {
-      const result = await miniAgent.generateVNext([{ role: 'user', content: prompt }], { format: 'mastra' });
+      const result = await miniAgent.generateVNext([{ role: 'user', content: prompt }], { format: '@actus-ag/@mastra' });
       questionsText = result.text;
     } else {
       const result = await miniAgent.generate([{ role: 'user', content: prompt }]);

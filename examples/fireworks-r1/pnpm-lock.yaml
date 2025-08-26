@@ -5,10 +5,10 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@mastra/core': link:../../packages/core
-  '@mastra/mcp': link:../../packages/mcp
-  '@mastra/memory': link:../../packages/memory
-  mastra: link:../../packages/mastra
+  '@mastra/cli/cli/cli/core': link:../../packages/core
+  '@mastra/cli/cli/cli/mcp': link:../../packages/mcp
+  '@mastra/cli/cli/cli/memory': link:../../packages/memory
+  @@mastra/cli/cli/cli: link:../../packages/@@mastra/cli/cli/cli
 
 importers:
 
@@ -20,13 +20,13 @@ importers:
       '@ai-sdk/fireworks':
         specifier: ^0.2.14
         version: 0.2.14(zod@3.25.67)
-      '@mastra/core':
+      '@mastra/cli/cli/cli/core':
         specifier: link:../../packages/core
         version: link:../../packages/core
-      '@mastra/mcp':
+      '@mastra/cli/cli/cli/mcp':
         specifier: link:../../packages/mcp
         version: link:../../packages/mcp
-      '@mastra/memory':
+      '@mastra/cli/cli/cli/memory':
         specifier: link:../../packages/memory
         version: link:../../packages/memory
       '@types/tinycolor2':
@@ -54,9 +54,9 @@ importers:
       dotenv:
         specifier: ^17.0.0
         version: 17.0.1
-      mastra:
-        specifier: link:../../packages/mastra
-        version: link:../../packages/mastra
+      @@mastra/cli/cli/cli:
+        specifier: link:../../packages/@@mastra/cli/cli/cli
+        version: link:../../packages/@@mastra/cli/cli/cli
       tsx:
         specifier: ^4.19.3
         version: 4.19.3

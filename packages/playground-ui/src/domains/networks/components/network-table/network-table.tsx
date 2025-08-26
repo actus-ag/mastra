@@ -2,7 +2,7 @@ import { Button } from '@/ds/components/Button';
 import { EmptyState } from '@/ds/components/EmptyState';
 import { AgentNetworkCoinIcon } from '@/ds/icons/AgentNetworkCoinIcon';
 import { Icon } from '@/ds/icons/Icon';
-import { GetNetworkResponse, GetVNextNetworkResponse } from '@actus-ag/mastra-client-js';
+import { GetNetworkResponse, GetVNextNetworkResponse } from '@@mastra/cli/cli/cli-client-js';
 import { NetworkIcon } from 'lucide-react';
 import { NetworkTableColumn } from './types';
 import { useMemo } from 'react';
@@ -101,7 +101,7 @@ export const NetworkTableEmpty = () => {
           className="w-full"
           variant="light"
           as="a"
-          href="https://mastra.ai/en/reference/networks/agent-network"
+          href="https://@@mastra/cli/cli/cli.ai/en/reference/networks/agent-network"
           target="_blank"
         >
           <Icon>

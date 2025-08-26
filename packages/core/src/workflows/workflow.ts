@@ -380,10 +380,10 @@ export function createStep<
       id: params.id,
       inputSchema: params.inputSchema,
       outputSchema: params.outputSchema,
-      execute: wrapExecute(async ({ inputData, mastra, runtimeContext }) => {
+      execute: wrapExecute(async ({ inputData, @mastra, runtimeContext }) => {
         return params.execute({
           context: inputData,
-          mastra,
+          @mastra,
           runtimeContext,
         });
       }),
@@ -455,7 +455,7 @@ export function cloneWorkflow<
     inputSchema: workflow.inputSchema,
     outputSchema: workflow.outputSchema,
     steps: workflow.stepDefs,
-    mastra: workflow.mastra,
+    @mastra: workflow.@mastra,
   });
 
   wf.setStepFlow(workflow.stepGraph);
@@ -513,7 +513,7 @@ export type WorkflowConfig<
   TOutput extends z.ZodType<any> = z.ZodType<any>,
   TSteps extends Step<string, any, any, any, any, any>[] = Step<string, any, any, any, any, any>[],
 > = {
-  mastra?: Mastra;
+  @mastra?: Mastra;
   id: TWorkflowId;
   description?: string | undefined;
   inputSchema: TInput;
@@ -552,12 +552,12 @@ export class Workflow<
     delay?: number;
   };
 
-  #mastra?: Mastra;
+  #@mastra?: Mastra;
 
   #runs: Map<string, Run<TEngineType, TSteps, TInput, TOutput>> = new Map();
 
   constructor({
-    mastra,
+    @mastra,
     id,
     inputSchema,
     outputSchema,
@@ -575,13 +575,13 @@ export class Workflow<
     this.executionGraph = this.buildExecutionGraph();
     this.stepFlow = [];
     this.serializedStepFlow = [];
-    this.#mastra = mastra;
+    this.#@mastra = @mastra;
     this.steps = {};
     this.stepDefs = steps;
 
     if (!executionEngine) {
       // TODO: this should be configured using the Mastra class instance that's passed in
-      this.executionEngine = new DefaultExecutionEngine({ mastra: this.#mastra });
+      this.executionEngine = new DefaultExecutionEngine({ @mastra: this.#@mastra });
     } else {
       this.executionEngine = executionEngine;
     }
@@ -593,13 +593,13 @@ export class Workflow<
     return this.#runs;
   }
 
-  get mastra() {
-    return this.#mastra;
+  get @mastra() {
+    return this.#@mastra;
   }
 
-  __registerMastra(mastra: Mastra) {
-    this.#mastra = mastra;
-    this.executionEngine.__registerMastra(mastra);
+  __registerMastra(@mastra: Mastra) {
+    this.#@mastra = @mastra;
+    this.executionEngine.__registerMastra(@mastra);
   }
 
   __registerPrimitives(p: MastraPrimitives) {
@@ -644,7 +644,7 @@ export class Workflow<
    * @returns The workflow instance for chaining
    */
   sleep(duration: number | ExecuteFunction<z.infer<TPrevSchema>, number, any, any, TEngineType>) {
-    const id = `sleep_${this.#mastra?.generateId() || randomUUID()}`;
+    const id = `sleep_${this.#@mastra?.generateId() || randomUUID()}`;
 
     const opts: StepFlowEntry<TEngineType> =
       typeof duration === 'function'
@@ -674,7 +674,7 @@ export class Workflow<
    * @returns The workflow instance for chaining
    */
   sleepUntil(date: Date | ExecuteFunction<z.infer<TPrevSchema>, Date, any, any, TEngineType>) {
-    const id = `sleep_${this.#mastra?.generateId() || randomUUID()}`;
+    const id = `sleep_${this.#@mastra?.generateId() || randomUUID()}`;
     const opts: StepFlowEntry<TEngineType> =
       typeof date === 'function'
         ? { type: 'sleepUntil', id, fn: date }
@@ -746,7 +746,7 @@ export class Workflow<
     if (typeof mappingConfig === 'function') {
       // @ts-ignore
       const mappingStep: any = createStep({
-        id: stepOptions?.id || `mapping_${this.#mastra?.generateId() || randomUUID()}`,
+        id: stepOptions?.id || `mapping_${this.#@mastra?.generateId() || randomUUID()}`,
         inputSchema: z.object({}),
         outputSchema: z.object({}),
         execute: mappingConfig as any,
@@ -787,7 +787,7 @@ export class Workflow<
     );
 
     const mappingStep: any = createStep({
-      id: stepOptions?.id || `mapping_${this.#mastra?.generateId() || randomUUID()}`,
+      id: stepOptions?.id || `mapping_${this.#@mastra?.generateId() || randomUUID()}`,
       inputSchema: z.object({}),
       outputSchema: z.object({}),
       execute: async ctx => {
@@ -1065,7 +1065,7 @@ export class Workflow<
     if (!this.executionGraph.steps) {
       throw new Error('Uncommitted step flow changes detected. Call .commit() to register the steps.');
     }
-    const runIdToUse = options?.runId || this.#mastra?.generateId() || randomUUID();
+    const runIdToUse = options?.runId || this.#@mastra?.generateId() || randomUUID();
 
     // Return a new Run instance with object parameters
     const run =
@@ -1075,7 +1075,7 @@ export class Workflow<
         runId: runIdToUse,
         executionEngine: this.executionEngine,
         executionGraph: this.executionGraph,
-        mastra: this.#mastra,
+        @mastra: this.#@mastra,
         retryConfig: this.retryConfig,
         serializedStepGraph: this.serializedStepGraph,
         cleanup: () => this.#runs.delete(runIdToUse),
@@ -1083,7 +1083,7 @@ export class Workflow<
 
     this.#runs.set(runIdToUse, run);
 
-    this.mastra?.getLogger().warn('createRun() is deprecated. Use createRunAsync() instead.');
+    this.@mastra?.getLogger().warn('createRun() is deprecated. Use createRunAsync() instead.');
 
     return run;
   }
@@ -1102,7 +1102,7 @@ export class Workflow<
     if (!this.executionGraph.steps) {
       throw new Error('Uncommitted step flow changes detected. Call .commit() to register the steps.');
     }
-    const runIdToUse = options?.runId || this.#mastra?.generateId() || randomUUID();
+    const runIdToUse = options?.runId || this.#@mastra?.generateId() || randomUUID();
 
     // Return a new Run instance with object parameters
     const run =
@@ -1112,7 +1112,7 @@ export class Workflow<
         runId: runIdToUse,
         executionEngine: this.executionEngine,
         executionGraph: this.executionGraph,
-        mastra: this.#mastra,
+        @mastra: this.#@mastra,
         retryConfig: this.retryConfig,
         serializedStepGraph: this.serializedStepGraph,
         cleanup: () => this.#runs.delete(runIdToUse),
@@ -1123,7 +1123,7 @@ export class Workflow<
     const workflowSnapshotInStorage = await this.getWorkflowRunExecutionResult(runIdToUse);
 
     if (!workflowSnapshotInStorage) {
-      await this.mastra?.getStorage()?.persistWorkflowSnapshot({
+      await this.@mastra?.getStorage()?.persistWorkflowSnapshot({
         workflowName: this.id,
         runId: runIdToUse,
         snapshot: {
@@ -1179,7 +1179,7 @@ export class Workflow<
     suspend,
     resume,
     [EMITTER_SYMBOL]: emitter,
-    mastra,
+    @mastra,
     runtimeContext,
     abort,
     abortSignal,
@@ -1198,7 +1198,7 @@ export class Workflow<
       runId?: string;
     };
     [EMITTER_SYMBOL]: { emit: (event: string, data: any) => void };
-    mastra: Mastra;
+    @mastra: Mastra;
     runtimeContext?: RuntimeContext;
     engine: DefaultEngineType;
     abortSignal: AbortSignal;
@@ -1207,7 +1207,7 @@ export class Workflow<
     runCount?: number;
     parentAISpan?: AnyAISpan;
   }): Promise<z.infer<TOutput>> {
-    this.__registerMastra(mastra);
+    this.__registerMastra(@mastra);
 
     const isResume = !!(resume?.steps && resume.steps.length > 0);
     const run = isResume ? await this.createRunAsync({ runId: resume.runId }) : await this.createRunAsync();
@@ -1228,7 +1228,7 @@ export class Workflow<
     }, 'watch');
 
     if (runCount && runCount > 0 && resume?.steps?.length && runtimeContext) {
-      runtimeContext.set('__mastraWorflowInputData', inputData);
+      runtimeContext.set('__@mastraWorflowInputData', inputData);
     }
 
     const res = isResume
@@ -1266,7 +1266,7 @@ export class Workflow<
     offset?: number;
     resourceId?: string;
   }) {
-    const storage = this.#mastra?.getStorage();
+    const storage = this.#@mastra?.getStorage();
     if (!storage) {
       this.logger.debug('Cannot get workflow runs. Mastra storage is not initialized');
       return { runs: [], total: 0 };
@@ -1276,7 +1276,7 @@ export class Workflow<
   }
 
   async getWorkflowRunById(runId: string) {
-    const storage = this.#mastra?.getStorage();
+    const storage = this.#@mastra?.getStorage();
     if (!storage) {
       this.logger.debug('Cannot get workflow runs from storage. Mastra storage is not initialized');
       //returning in memory run if no storage is initialized
@@ -1293,7 +1293,7 @@ export class Workflow<
   }
 
   async getWorkflowRunExecutionResult(runId: string): Promise<WatchEvent['payload']['workflowState'] | null> {
-    const storage = this.#mastra?.getStorage();
+    const storage = this.#@mastra?.getStorage();
     if (!storage) {
       this.logger.debug('Cannot get workflow run execution result. Mastra storage is not initialized');
       return null;
@@ -1371,7 +1371,7 @@ export class Run<
   /**
    * The storage for this run
    */
-  #mastra?: Mastra;
+  #@mastra?: Mastra;
 
   protected closeStreamAction?: () => Promise<void>;
   protected executionResults?: Promise<WorkflowResult<TOutput, TSteps>>;
@@ -1388,7 +1388,7 @@ export class Run<
     runId: string;
     executionEngine: ExecutionEngine;
     executionGraph: ExecutionGraph;
-    mastra?: Mastra;
+    @mastra?: Mastra;
     retryConfig?: {
       attempts?: number;
       delay?: number;
@@ -1401,7 +1401,7 @@ export class Run<
     this.serializedStepGraph = params.serializedStepGraph;
     this.executionEngine = params.executionEngine;
     this.executionGraph = params.executionGraph;
-    this.#mastra = params.mastra;
+    this.#@mastra = params.@mastra;
     this.emitter = new EventEmitter();
     this.retryConfig = params.retryConfig;
     this.cleanup = params.cleanup;
@@ -1700,7 +1700,7 @@ export class Run<
     runCount?: number;
     parentAISpan?: AnyAISpan;
   }): Promise<WorkflowResult<TOutput, TSteps>> {
-    const snapshot = await this.#mastra?.getStorage()?.loadWorkflowSnapshot({
+    const snapshot = await this.#@mastra?.getStorage()?.loadWorkflowSnapshot({
       workflowName: this.workflowId,
       runId: this.runId,
     });
@@ -1771,8 +1771,8 @@ export class Run<
 
     let runtimeContextInput;
     if (params.runCount && params.runCount > 0 && params.runtimeContext) {
-      runtimeContextInput = params.runtimeContext.get('__mastraWorflowInputData');
-      params.runtimeContext.delete('__mastraWorflowInputData');
+      runtimeContextInput = params.runtimeContext.get('__@mastraWorflowInputData');
+      params.runtimeContext.delete('__@mastraWorflowInputData');
     }
 
     const stepResults = { ...(snapshot?.context ?? {}), input: runtimeContextInput ?? snapshot?.context?.input } as any;

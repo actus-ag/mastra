@@ -1,4 +1,4 @@
-import { createWorkflow, createStep } from '@actus-ag/mastra-core/workflows';
+import { createWorkflow, createStep } from '@mastra/core/workflows';
 import { z } from 'zod';
 
 const incrementStep = createStep({

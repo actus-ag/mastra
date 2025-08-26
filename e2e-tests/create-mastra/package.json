@@ -1,9 +1,9 @@
 {
-  "name": "e2e-create-mastra",
+  "name": "e2e-create-@mastra/cli/cli",
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "E2E tests for @actus-ag/mastra-create-mastra",
+  "description": "E2E tests for @mastra/create-@mastra/cli/cli",
   "scripts": {
     "test": "vitest run"
   },

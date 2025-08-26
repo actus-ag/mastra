@@ -1,5 +1,5 @@
-import { Mastra } from '@actus-ag/mastra-core';
-import { Agent } from '@actus-ag/mastra-core/agent';
+import { Mastra } from '@mastra/core';
+import { Agent } from '@mastra/core/agent';
 import { MockLanguageModelV1 } from 'ai/test';
 import { simulateReadableStream } from 'ai';
 
@@ -28,7 +28,7 @@ const testAgent = new Agent({
   model: mockModel,
 });
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   agents: {
     test: testAgent,
   },

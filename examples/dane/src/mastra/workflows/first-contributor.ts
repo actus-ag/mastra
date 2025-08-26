@@ -1,4 +1,4 @@
-import { Step, Workflow } from '@actus-ag/mastra-core/workflows';
+import { Step, Workflow } from '@mastra/core/workflows';
 import { z } from 'zod';
 
 import { github } from '../integrations/index.js';
@@ -52,16 +52,16 @@ const generateMessage = new Step({
     checklist: z.string().array(),
     outro: z.string(),
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     const parentStep = context?.steps?.getPullRequest;
     if (!parentStep || parentStep.status !== 'success') {
       return { intro: '', checklist: [], outro: '' };
     }
 
-    const mastraDocsRes = await fetch('https://mastra.ai/llms.txt');
-    const mastraDocs = await mastraDocsRes.text();
+    const @mastraDocsRes = await fetch('https://@mastra.ai/llms.txt');
+    const @mastraDocs = await @mastraDocsRes.text();
 
-    const daneNewContributor = mastra?.getAgent('daneNewContributor');
+    const daneNewContributor = @mastra?.getAgent('daneNewContributor');
 
     const res = await daneNewContributor?.generate(
       `
@@ -79,7 +79,7 @@ END DIFF
 
 I'll give you some more context about Mastra:
 MASTRA DOCS
-${mastraDocs}
+${@mastraDocs}
 END MASTRA DOCS
 
 Write message to the contributor to thank them for their first contribution? And check if the following guidelines are followed, do not mention these checklist if they are actually checked:

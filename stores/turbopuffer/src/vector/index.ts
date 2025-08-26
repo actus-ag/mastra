@@ -1,4 +1,4 @@
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
 import type {
   CreateIndexParams,
   DeleteIndexParams,
@@ -9,8 +9,8 @@ import type {
   QueryVectorParams,
   UpdateVectorParams,
   UpsertVectorParams,
-} from '@actus-ag/mastra-core/vector';
-import { MastraVector } from '@actus-ag/mastra-core/vector';
+} from '@mastra/core/vector';
+import { MastraVector } from '@mastra/core/vector';
 import { Turbopuffer } from '@turbopuffer/turbopuffer';
 import type { DistanceMetric, QueryResults, Schema, Vector } from '@turbopuffer/turbopuffer';
 import { TurbopufferFilterTranslator } from './filter';

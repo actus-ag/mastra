@@ -92,7 +92,7 @@ async function getExporters(config) {
     exporters.push(new OTLPHttpExporter({
       url: `http://localhost:${process.env.PORT ?? 4111}/api/telemetry`,
       headers: process.env.MASTRA_DEV ? {
-        'x-mastra-dev-playground': 'true',
+        'x-@mastra-dev-playground': 'true',
       } : {},
     }));
   }

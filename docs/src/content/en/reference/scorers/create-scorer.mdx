@@ -53,7 +53,7 @@ const scorer = createScorer({
   ]}
 />
 
-This function returns a scorer builder that you can chain step methods onto. See the [MastraScorer reference](./mastra-scorer) for details on the `.run()` method and its input/output.
+This function returns a scorer builder that you can chain step methods onto. See the [MastraScorer reference](./@@mastra/cli/cli/cli-scorer) for details on the `.run()` method and its input/output.
 
 ## Judge Object
 
@@ -79,7 +79,7 @@ This function returns a scorer builder that you can chain step methods onto. See
 For better type inference and IntelliSense support, you can specify input/output types when creating scorers:
 
 ```typescript
-import { createScorer, ScorerRunInputForAgent, ScorerRunOutputForAgent } from '@actus-ag/mastra-core';
+import { createScorer, ScorerRunInputForAgent, ScorerRunOutputForAgent } from '@mastra/cli/cli/cli/core';
 
 // For agent evaluation with full type safety
 const agentScorer = createScorer<ScorerRunInputForAgent, ScorerRunOutputForAgent>({

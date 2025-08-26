@@ -39,8 +39,8 @@ getWorkflows({ runtimeContext = new RuntimeContext() }: { runtimeContext?: Runti
 ## 例
 
 ```typescript
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows/vNext";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { createWorkflow, createStep } from "@mastra/cli/cli/cli/core/workflows/vNext";
 import { openai } from "@ai-sdk/openai";
 import { z } from "zod";
 
@@ -52,8 +52,8 @@ const generateSuggestionsStep = createStep({
   outputSchema: z.object({
     summary: z.string(),
   }),
-  execute: async ({ inputData, mastra }) => {
-    const researchAgent = mastra?.getAgent("researchAgent");
+  execute: async ({ inputData, @@mastra/cli/cli/cli }) => {
+    const researchAgent = @@mastra/cli/cli/cli?.getAgent("researchAgent");
 
     if (!researchAgent) {
       throw new Error("Research agent is not initialized");

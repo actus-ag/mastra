@@ -1,12 +1,12 @@
 import { randomUUID } from 'crypto';
 import * as path from 'path';
 import { Worker } from 'worker_threads';
-import type { MastraMessageV1, SharedMemoryConfig } from '@actus-ag/mastra-core';
-import { MessageList } from '@actus-ag/mastra-core/agent';
-import type { LibSQLConfig, LibSQLVectorConfig } from '@actus-ag/mastra-libsql';
-import type { Memory } from '@actus-ag/mastra-memory';
-import type { PostgresConfig } from '@actus-ag/mastra-pg';
-import type { UpstashConfig } from '@actus-ag/mastra-upstash';
+import type { MastraMessageV1, SharedMemoryConfig } from '@mastra/core';
+import { MessageList } from '@mastra/core/agent';
+import type { LibSQLConfig, LibSQLVectorConfig } from '@mastra/libsql';
+import type { Memory } from '@mastra/memory';
+import type { PostgresConfig } from '@mastra/pg';
+import type { UpstashConfig } from '@mastra/upstash';
 import type { ToolResultPart, TextPart, ToolCallPart } from 'ai';
 import { afterAll, beforeEach, describe, expect, it } from 'vitest';
 

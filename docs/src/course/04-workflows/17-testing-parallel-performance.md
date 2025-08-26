@@ -7,14 +7,14 @@ Let's test your parallel workflow.
 Update your Mastra configuration to include your new workflow workflows:
 
 ```typescript
-// In src/mastra/index.ts
+// In src/@mastra/index.ts
 import {
   contentWorkflow,
   aiContentWorkflow,
   parallelAnalysisWorkflow,
 } from "./workflows/content-workflow";
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   workflows: {
     contentWorkflow,
     aiContentWorkflow,

@@ -163,8 +163,8 @@ async disconnect(): Promise<void>
 アプリ全体で単一のMCPサーバー接続を持つツールの場合、`getTools()`を使用してツールをエージェントに渡します：
 
 ```typescript
-import { MCPClient } from "@actus-ag/mastra-mcp";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { MCPClient } from "@mastra/cli/cli/cli/mcp";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { openai } from "@ai-sdk/openai";
 
 const mcp = new MCPClient({
@@ -200,8 +200,8 @@ const agent = new Agent({
 各ユーザーに新しいMCP接続が必要な場合は、`getToolsets()`を使用し、streamまたはgenerateを呼び出す際にツールを追加します：
 
 ```typescript
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { MCPClient } from "@actus-ag/mastra-mcp";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { MCPClient } from "@mastra/cli/cli/cli/mcp";
 import { openai } from "@ai-sdk/openai";
 
 // まずツールなしでエージェントを作成

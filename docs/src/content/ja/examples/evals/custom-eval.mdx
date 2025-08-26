@@ -36,7 +36,7 @@ OPENAI_API_KEY=your_api_key_here
 
 このプロンプトは、判定者の役割とコンテキストを設定します。
 
-```typescript copy showLineNumbers filename="src/mastra/evals/recipe-completeness/prompts.ts"
+```typescript copy showLineNumbers filename="src/@@mastra/cli/cli/cli/evals/recipe-completeness/prompts.ts"
 export const GLUTEN_INSTRUCTIONS = `You are a Master Chef that identifies if recipes contain gluten.`;
 ```
 
@@ -44,7 +44,7 @@ export const GLUTEN_INSTRUCTIONS = `You are a Master Chef that identifies if rec
 
 このプロンプトは、グルテンの含有を構造的に評価し、特定の成分をチェックします。
 
-```typescript copy showLineNumbers{3} filename="src/mastra/evals/recipe-completeness/prompts.ts"
+```typescript copy showLineNumbers{3} filename="src/@@mastra/cli/cli/cli/evals/recipe-completeness/prompts.ts"
 export const generateGlutenPrompt = ({
   output,
 }: {
@@ -85,7 +85,7 @@ Return your response in this format:
 
 このプロンプトは、レシピが完全か不完全かについての詳細な説明を生成します。
 
-```typescript copy showLineNumbers{34} filename="src/mastra/evals/recipe-completeness/prompts.ts"
+```typescript copy showLineNumbers{34} filename="src/@@mastra/cli/cli/cli/evals/recipe-completeness/prompts.ts"
 export const generateReasonPrompt = ({
   isGlutenFree,
   glutenSources,
@@ -106,9 +106,9 @@ Return your response in this format:
 
 レシピのグルテン含有量を評価するための専門的なジャッジを作成できます。上記で定義したプロンプトをインポートし、ジャッジで使用します。
 
-```typescript copy showLineNumbers filename="src/mastra/evals/gluten-checker/metricJudge.ts"
-import { type LanguageModel } from "@actus-ag/mastra-core/llm";
-import { MastraAgentJudge } from "@actus-ag/mastra-evals/judge";
+```typescript copy showLineNumbers filename="src/@@mastra/cli/cli/cli/evals/gluten-checker/metricJudge.ts"
+import { type LanguageModel } from "@mastra/cli/cli/cli/core/llm";
+import { MastraAgentJudge } from "@mastra/cli/cli/cli/evals/judge";
 import { z } from "zod";
 import {
   GLUTEN_INSTRUCTIONS,
@@ -161,7 +161,7 @@ export class RecipeCompletenessJudge extends MastraAgentJudge {
 
 ジャッジを使用するメトリッククラスを作成します：
 
-```typescript copy showLineNumbers filename="src/mastra/evals/gluten-checker/index.ts"
+```typescript copy showLineNumbers filename="src/@@mastra/cli/cli/cli/evals/gluten-checker/index.ts"
 export interface MetricResultWithInfo extends MetricResult {
   info: {
     reason: string;
@@ -209,9 +209,9 @@ export class GlutenCheckerMetric extends Metric {
 
 エージェントを作成し、メトリックを追加します：
 
-```typescript copy showLineNumbers filename="src/mastra/agents/chefAgent.ts"
+```typescript copy showLineNumbers filename="src/@@mastra/cli/cli/cli/agents/chefAgent.ts"
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 import { GlutenCheckerMetric } from "../evals";
 
@@ -232,9 +232,9 @@ export const chefAgent = new Agent({
 このメトリックをエージェントで使用する方法は次のとおりです：
 
 ```typescript copy showLineNumbers filename="src/index.ts"
-import { mastra } from "./mastra";
+import { @@mastra/cli/cli/cli } from "./@@mastra/cli/cli/cli";
 
-const chefAgent = mastra.getAgent("chefAgent");
+const chefAgent = @@mastra/cli/cli/cli.getAgent("chefAgent");
 const metric = chefAgent.evals.glutenChecker;
 
 // Example: Evaluate a recipe
@@ -269,6 +269,6 @@ console.log("Metric Result:", {
 <br />
 <GithubLink
   link={
-    "https://github.com/mastra-ai/mastra/blob/main/examples/basics/evals/custom-eval"
+    "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/evals/custom-eval"
   }
 />

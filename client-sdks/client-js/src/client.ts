@@ -1,5 +1,5 @@
 import type { AbstractAgent } from '@ag-ui/client';
-import type { ServerDetailInfo } from '@actus-ag/mastra-core/mcp';
+import type { ServerDetailInfo } from '@mastra/core/mcp';
 import { AGUIAdapter } from './adapters/agui';
 import {
   Agent,

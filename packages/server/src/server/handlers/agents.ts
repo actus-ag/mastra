@@ -8,8 +8,8 @@ import { openai } from '@ai-sdk/openai';
 import { openai as openaiV5 } from '@ai-sdk/openai-v5';
 import { xai } from '@ai-sdk/xai';
 import { xai as xaiV5 } from '@ai-sdk/xai-v5';
-import type { Agent } from '@actus-ag/mastra-core/agent';
-import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
+import type { Agent } from '@mastra/core/agent';
+import { RuntimeContext } from '@mastra/core/runtime-context';
 import { stringify } from 'superjson';
 import zodToJsonSchema from 'zod-to-json-schema';
 import { HTTPException } from '../http-exception';
@@ -61,9 +61,9 @@ export async function getSerializedAgentTools(tools: Record<string, any>) {
 }
 
 // Agent handlers
-export async function getAgentsHandler({ mastra, runtimeContext }: Context & { runtimeContext: RuntimeContext }) {
+export async function getAgentsHandler({ @mastra, runtimeContext }: Context & { runtimeContext: RuntimeContext }) {
   try {
-    const agents = mastra.getAgents();
+    const agents = @mastra.getAgents();
 
     const serializedAgentsMap = await Promise.all(
       Object.entries(agents).map(async ([id, agent]) => {
@@ -78,7 +78,7 @@ export async function getAgentsHandler({ mastra, runtimeContext }: Context & { r
         let serializedAgentWorkflows = {};
 
         if ('getWorkflows' in agent) {
-          const logger = mastra.getLogger();
+          const logger = @mastra.getLogger();
           try {
             const workflows = await agent.getWorkflows({ runtimeContext });
             serializedAgentWorkflows = Object.entries(workflows || {}).reduce<any>((acc, [key, workflow]) => {
@@ -125,13 +125,13 @@ export async function getAgentsHandler({ mastra, runtimeContext }: Context & { r
 }
 
 export async function getAgentByIdHandler({
-  mastra,
+  @mastra,
   runtimeContext,
   agentId,
   isPlayground = false,
 }: Context & { isPlayground?: boolean; runtimeContext: RuntimeContext; agentId: string }) {
   try {
-    const agent = mastra.getAgent(agentId);
+    const agent = @mastra.getAgent(agentId);
 
     if (!agent) {
       throw new HTTPException(404, { message: 'Agent not found' });
@@ -144,7 +144,7 @@ export async function getAgentByIdHandler({
     let serializedAgentWorkflows = {};
 
     if ('getWorkflows' in agent) {
-      const logger = mastra.getLogger();
+      const logger = @mastra.getLogger();
       try {
         const workflows = await agent.getWorkflows({ runtimeContext });
 
@@ -209,13 +209,13 @@ export async function getAgentByIdHandler({
 }
 
 export async function getEvalsByAgentIdHandler({
-  mastra,
+  @mastra,
   runtimeContext,
   agentId,
 }: Context & { runtimeContext: RuntimeContext; agentId: string }) {
   try {
-    const agent = mastra.getAgent(agentId);
-    const evals = (await mastra.getStorage()?.getEvalsByAgentName?.(agent.name, 'test')) || [];
+    const agent = @mastra.getAgent(agentId);
+    const evals = (await @mastra.getStorage()?.getEvalsByAgentName?.(agent.name, 'test')) || [];
     const instructions = await agent.getInstructions({ runtimeContext });
     return {
       id: agentId,
@@ -229,13 +229,13 @@ export async function getEvalsByAgentIdHandler({
 }
 
 export async function getLiveEvalsByAgentIdHandler({
-  mastra,
+  @mastra,
   runtimeContext,
   agentId,
 }: Context & { runtimeContext: RuntimeContext; agentId: string }) {
   try {
-    const agent = mastra.getAgent(agentId);
-    const evals = (await mastra.getStorage()?.getEvalsByAgentName?.(agent.name, 'live')) || [];
+    const agent = @mastra.getAgent(agentId);
+    const evals = (await @mastra.getStorage()?.getEvalsByAgentName?.(agent.name, 'live')) || [];
     const instructions = await agent.getInstructions({ runtimeContext });
 
     return {
@@ -250,7 +250,7 @@ export async function getLiveEvalsByAgentIdHandler({
 }
 
 export async function generateHandler({
-  mastra,
+  @mastra,
   runtimeContext,
   agentId,
   body,
@@ -266,7 +266,7 @@ export async function generateHandler({
   abortSignal?: AbortSignal;
 }) {
   try {
-    const agent = mastra.getAgent(agentId);
+    const agent = @mastra.getAgent(agentId);
 
     if (!agent) {
       throw new HTTPException(404, { message: 'Agent not found' });
@@ -298,7 +298,7 @@ export async function generateHandler({
 }
 
 export async function generateVNextHandler({
-  mastra,
+  @mastra,
   runtimeContext,
   agentId,
   body,
@@ -308,12 +308,12 @@ export async function generateVNextHandler({
   agentId: string;
   body: GetBody<'generateVNext'> & {
     runtimeContext?: Record<string, unknown>;
-    format?: 'mastra' | 'aisdk';
+    format?: '@actus-ag/@mastra' | 'aisdk';
   };
   abortSignal?: AbortSignal;
 }): Promise<ReturnType<Agent['generateVNext']>> {
   try {
-    const agent = mastra.getAgent(agentId);
+    const agent = @mastra.getAgent(agentId);
 
     if (!agent) {
       throw new HTTPException(404, { message: 'Agent not found' });
@@ -331,7 +331,7 @@ export async function generateVNextHandler({
     const result = await agent.generateVNext(messages, {
       ...rest,
       runtimeContext: finalRuntimeContext,
-      format: rest.format || 'mastra',
+      format: rest.format || '@actus-ag/@mastra',
       options: {
         ...(rest?.options ?? {}),
         abortSignal,
@@ -345,7 +345,7 @@ export async function generateVNextHandler({
 }
 
 export async function streamGenerateHandler({
-  mastra,
+  @mastra,
   runtimeContext,
   agentId,
   body,
@@ -361,7 +361,7 @@ export async function streamGenerateHandler({
   abortSignal?: AbortSignal;
 }): Promise<Response | undefined> {
   try {
-    const agent = mastra.getAgent(agentId);
+    const agent = @mastra.getAgent(agentId);
 
     if (!agent) {
       throw new HTTPException(404, { message: 'Agent not found' });
@@ -410,7 +410,7 @@ export async function streamGenerateHandler({
 }
 
 export function streamVNextGenerateHandler({
-  mastra,
+  @mastra,
   runtimeContext,
   agentId,
   body,
@@ -420,12 +420,12 @@ export function streamVNextGenerateHandler({
   agentId: string;
   body: GetBody<'streamVNext'> & {
     runtimeContext?: string;
-    format?: 'aisdk' | 'mastra';
+    format?: 'aisdk' | '@actus-ag/@mastra';
   };
   abortSignal?: AbortSignal;
 }): ReturnType<Agent['streamVNext']> {
   try {
-    const agent = mastra.getAgent(agentId);
+    const agent = @mastra.getAgent(agentId);
 
     if (!agent) {
       throw new HTTPException(404, { message: 'Agent not found' });
@@ -446,7 +446,7 @@ export function streamVNextGenerateHandler({
         ...(rest?.options ?? {}),
         abortSignal,
       },
-      format: body.format ?? 'mastra',
+      format: body.format ?? '@actus-ag/@mastra',
     });
 
     return streamResult;
@@ -456,7 +456,7 @@ export function streamVNextGenerateHandler({
 }
 
 export async function streamVNextUIMessageHandler({
-  mastra,
+  @mastra,
   runtimeContext,
   agentId,
   body,
@@ -470,7 +470,7 @@ export async function streamVNextUIMessageHandler({
   abortSignal?: AbortSignal;
 }): Promise<Response | undefined> {
   try {
-    const agent = mastra.getAgent(agentId);
+    const agent = @mastra.getAgent(agentId);
 
     if (!agent) {
       throw new HTTPException(404, { message: 'Agent not found' });
@@ -501,7 +501,7 @@ export async function streamVNextUIMessageHandler({
 }
 
 export async function updateAgentModelHandler({
-  mastra,
+  @mastra,
   agentId,
   body,
 }: Context & {
@@ -512,7 +512,7 @@ export async function updateAgentModelHandler({
   };
 }): Promise<{ message: string }> {
   try {
-    const agent = mastra.getAgent(agentId);
+    const agent = @mastra.getAgent(agentId);
 
     if (!agent) {
       throw new HTTPException(404, { message: 'Agent not found' });

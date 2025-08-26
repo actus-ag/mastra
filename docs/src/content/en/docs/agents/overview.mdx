@@ -26,16 +26,16 @@ This approach provides type safety and runtime validation, ensuring reliable beh
 To use agents, install the required dependencies:
 
 ```bash
-npm install @actus-ag/mastra-core @ai-sdk/openai
+npm install @mastra/cli/cli/cli/core @ai-sdk/openai
 ```
 
 > Mastra works with all AI SDK provider. See [Model Providers](../getting-started/model-providers.mdx) for more information.
 
 Import the necessary class from the agents module, and an LLM provider:
 
-```typescript filename="src/mastra/agents/test-agent.ts" showLineNumbers copy
+```typescript filename="src/@@mastra/cli/cli/cli/agents/test-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 ```
 ### LLM providers
 
@@ -51,9 +51,9 @@ OPENAI_API_KEY=<your-api-key>
 
 To create an agent in Mastra, use the `Agent` class. Every agent must include `instructions` to define its behavior, and a `model` parameter to specify the LLM provider and model:
 
-```typescript filename="src/mastra/agents/test-agent.ts" showLineNumbers copy
+```typescript filename="src/@@mastra/cli/cli/cli/agents/test-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 export const testAgent = new Agent({
   name: "test-agent",
@@ -69,11 +69,11 @@ export const testAgent = new Agent({
 
 Register your agent in the Mastra instance:
 
-```typescript showLineNumbers filename="src/mastra/index.ts" copy
-import { Mastra } from "@actus-ag/mastra-core/mastra";
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/index.ts" copy
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
 import { testAgent } from './agents/test-agent';
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // ...
   agents: { testAgent },
 });
@@ -81,10 +81,10 @@ export const mastra = new Mastra({
 
 ## Referencing an agent
 
-You can call agents from workflow steps, tools, the Mastra Client, or the command line. Get a reference by calling `.getAgent()` on your `mastra` or `mastraClient` instance, depending on your setup:
+You can call agents from workflow steps, tools, the Mastra Client, or the command line. Get a reference by calling `.getAgent()` on your `@actus-ag/@@mastra/cli/cli/cli` or `@@mastra/cli/cli/cliClient` instance, depending on your setup:
 
 ```typescript showLineNumbers copy
-const testAgent = mastra.getAgent("testAgent");
+const testAgent = @@mastra/cli/cli/cli.getAgent("testAgent");
 ```
 
 > See [Calling agents](../../examples/agents/calling-agents.mdx) for more information.
@@ -280,8 +280,8 @@ const response = await testAgent.generate("Help me organize my day", {
 
 ## Testing agents locally
 
-Use the `mastra dev` CLI command to run your agents behind a local API.
-By default, it loads exported agents from the `src/mastra/agents` directory and creates endpoints for testing (for example, `http://localhost:4111/api/agents/myAgent/generate`).
+Use the `@actus-ag/@mastra/cli/cli dev` CLI command to run your agents behind a local API.
+By default, it loads exported agents from the `src/@@mastra/cli/cli/cli/agents` directory and creates endpoints for testing (for example, `http://localhost:4111/api/agents/myAgent/generate`).
 It also launches a visual playground where you can chat with your agent and view execution traces.
 
 > For more information, see the [Local Dev Playground](/docs/server-db/local-dev-playground) documentation.

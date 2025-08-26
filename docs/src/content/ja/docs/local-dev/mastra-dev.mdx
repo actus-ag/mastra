@@ -1,5 +1,5 @@
 ---
-title: "`mastra dev`でエージェントを検査する | Mastra ローカル開発ドキュメント"
+title: "`@actus-ag/@mastra/cli/cli dev`でエージェントを検査する | Mastra ローカル開発ドキュメント"
 description: MastraアプリケーションのためのMastraローカル開発環境のドキュメント。
 ---
 
@@ -16,15 +16,15 @@ Mastraはローカルで開発しながらエージェント、ワークフロ�
 Mastra CLIを使用してMastra開発環境を起動するには、次のコマンドを実行します：
 
 ```bash
-mastra dev
+@actus-ag/@mastra/cli/cli dev
 ```
 
-デフォルトでは、サーバーはlocalhostのhttp://localhost:4111で実行されます。カスタムポートとホストはmastraサーバー設定で構成できます。
+デフォルトでは、サーバーはlocalhostのhttp://localhost:4111で実行されます。カスタムポートとホストは@@mastra/cli/cli/cliサーバー設定で構成できます。
 
 ```typescript
-import { Mastra } from "@actus-ag/mastra-core";
+import { Mastra } from "@mastra/cli/cli/cli/core";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   server: {
     port: "4111",
     host: "0.0.0.0",
@@ -34,7 +34,7 @@ export const mastra = new Mastra({
 
 ## 開発プレイグラウンド
 
-`mastra dev`はエージェント、ワークフロー、ツールを操作するためのプレイグラウンドUIを提供します。このプレイグラウンドは、開発中にMastraアプリケーションの各コンポーネントをテストするための専用インターフェースを提供します。
+`@actus-ag/@mastra/cli/cli dev`はエージェント、ワークフロー、ツールを操作するためのプレイグラウンドUIを提供します。このプレイグラウンドは、開発中にMastraアプリケーションの各コンポーネントをテストするための専用インターフェースを提供します。
 
 ### エージェントプレイグラウンド
 
@@ -87,20 +87,20 @@ export const mastra = new Mastra({
 
 ## REST API エンドポイント
 
-`mastra dev` は、ローカルの [Mastra Server](/docs/deployment/server) を通じて、エージェントとワークフローのための REST API ルートも起動します。これにより、デプロイ前に API エンドポイントをテストすることができます。すべてのエンドポイントの詳細については、[Mastra Dev リファレンス](/reference/cli/dev#routes) をご覧ください。
+`@actus-ag/@mastra/cli/cli dev` は、ローカルの [Mastra Server](/docs/deployment/server) を通じて、エージェントとワークフローのための REST API ルートも起動します。これにより、デプロイ前に API エンドポイントをテストすることができます。すべてのエンドポイントの詳細については、[Mastra Dev リファレンス](/reference/cli/dev#routes) をご覧ください。
 
 その後、[Mastra Client](/docs/deployment/client) SDK を活用して、提供された REST API ルートとシームレスにやり取りすることができます。
 
 ## OpenAPI 仕様
 
-`mastra dev` は http://localhost:4111/openapi.json で OpenAPI 仕様を提供します
+`@actus-ag/@mastra/cli/cli dev` は http://localhost:4111/openapi.json で OpenAPI 仕様を提供します
 
 Mastra インスタンスで OpenAPI ドキュメントを有効にするには、以下の設定を追加してください：
 
 ```typescript
-import { Mastra } from "@actus-ag/mastra-core";
+import { Mastra } from "@mastra/cli/cli/cli/core";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   server: {
     build: {
       openAPIDocs: true, // Enable OpenAPI documentation
@@ -112,13 +112,13 @@ export const mastra = new Mastra({
 
 ## Swagger UI
 
-Swagger UIは、APIエンドポイントをテストするためのインタラクティブなインターフェースを提供します。`mastra dev`はhttp://localhost:4111/swagger-uiでOpenAPI仕様を提供します。
+Swagger UIは、APIエンドポイントをテストするためのインタラクティブなインターフェースを提供します。`@actus-ag/@mastra/cli/cli dev`はhttp://localhost:4111/swagger-uiでOpenAPI仕様を提供します。
 MastraインスタンスでSwagger UIを有効にするには、以下の設定を追加してください：
 
 ```typescript
-import { Mastra } from "@actus-ag/mastra-core";
+import { Mastra } from "@mastra/cli/cli/cli/core";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   server: {
     build: {
       openAPIDocs: true, // Enable OpenAPI documentation
@@ -166,6 +166,6 @@ export const mastra = new Mastra({
 
 ## 概要
 
-`mastra dev` は、本番環境にデプロイする前に、自己完結型の環境でAIロジックを開発、デバッグ、反復することを容易にします。
+`@actus-ag/@mastra/cli/cli dev` は、本番環境にデプロイする前に、自己完結型の環境でAIロジックを開発、デバッグ、反復することを容易にします。
 
 - [Mastra Dev リファレンス](../../reference/cli/dev.mdx)

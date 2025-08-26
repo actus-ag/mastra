@@ -11,7 +11,7 @@ Mastra の `FaithfulnessMetric` は、LLM の出力が提供されたコンテ�
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { FaithfulnessMetric } from "@actus-ag/mastra-evals/llm";
+import { FaithfulnessMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");
@@ -158,7 +158,7 @@ console.log(result.info.reason); // "All claims are supported by the context."
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { FaithfulnessMetric } from "@actus-ag/mastra-evals/llm";
+import { FaithfulnessMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");

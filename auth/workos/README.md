@@ -1,4 +1,4 @@
-# @actus-ag/mastra-auth-workos
+# @mastra/auth-workos
 
 A WorkOS authentication provider for Mastra, enabling seamless integration of WorkOS authentication and authorization in your applications.
 
@@ -12,18 +12,18 @@ A WorkOS authentication provider for Mastra, enabling seamless integration of Wo
 ## Installation
 
 ```bash
-npm install @actus-ag/mastra-auth-workos
+npm install @mastra/auth-workos
 # or
-yarn add @actus-ag/mastra-auth-workos
+yarn add @mastra/auth-workos
 # or
-pnpm add @actus-ag/mastra-auth-workos
+pnpm add @mastra/auth-workos
 ```
 
 ## Usage
 
 ```typescript
-import { Mastra } from '@actus-ag/mastra-core';
-import { MastraAuthWorkos } from '@actus-ag/mastra-auth-workos';
+import { Mastra } from '@mastra/core';
+import { MastraAuthWorkos } from '@mastra/auth-workos';
 
 // Initialize with environment variables
 const auth = new MastraAuthWorkos();
@@ -35,7 +35,7 @@ const auth = new MastraAuthWorkos({
 });
 
 // Enable auth in Mastra
-const mastra = new Mastra({
+const @mastra = new Mastra({
   ...
   server: {
     experimental_auth: auth,

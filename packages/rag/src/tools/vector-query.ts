@@ -1,5 +1,5 @@
-import { createTool } from '@actus-ag/mastra-core/tools';
-import type { MastraVector } from '@actus-ag/mastra-core/vector';
+import { createTool } from '@mastra/core/tools';
+import type { MastraVector } from '@mastra/core/vector';
 import type { EmbeddingModel } from 'ai';
 import { z } from 'zod';
 
@@ -23,7 +23,7 @@ export const createVectorQueryTool = (options: VectorQueryToolOptions) => {
     description: toolDescription,
     inputSchema,
     outputSchema,
-    execute: async ({ context, mastra, runtimeContext }) => {
+    execute: async ({ context, @mastra, runtimeContext }) => {
       const indexName: string = runtimeContext.get('indexName') ?? options.indexName;
       const vectorStoreName: string =
         'vectorStore' in options ? storeName : (runtimeContext.get('vectorStoreName') ?? storeName);
@@ -41,7 +41,7 @@ export const createVectorQueryTool = (options: VectorQueryToolOptions) => {
       const queryText = context.queryText;
       const enableFilter = !!runtimeContext.get('filter') || (options.enableFilter ?? false);
 
-      const logger = mastra?.getLogger();
+      const logger = @mastra?.getLogger();
       if (!logger) {
         console.warn(
           '[VectorQueryTool] Logger not initialized: no debug or error logs will be recorded for this tool execution.',
@@ -61,8 +61,8 @@ export const createVectorQueryTool = (options: VectorQueryToolOptions) => {
         let vectorStore: MastraVector | undefined = undefined;
         if ('vectorStore' in options) {
           vectorStore = options.vectorStore;
-        } else if (mastra) {
-          vectorStore = mastra.getVector(vectorStoreName);
+        } else if (@mastra) {
+          vectorStore = @mastra.getVector(vectorStoreName);
         }
         if (!vectorStore) {
           if (logger) {

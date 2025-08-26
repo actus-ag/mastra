@@ -1,4 +1,4 @@
-import { parseFieldKey } from '@actus-ag/mastra-core/utils';
+import { parseFieldKey } from '@mastra/core/utils';
 import type {
   BasicOperator,
   NumericOperator,
@@ -7,7 +7,7 @@ import type {
   LogicalOperator,
   RegexOperator,
   VectorFilter,
-} from '@actus-ag/mastra-core/vector/filter';
+} from '@mastra/core/vector/filter';
 import type { PGVectorFilter } from './filter';
 
 type OperatorType =

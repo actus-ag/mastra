@@ -7,9 +7,9 @@ description: Documentation for integrating Keywords AI (an observability platfor
 
 [Keywords AI](https://docs.keywordsai.co/get-started/overview) is a full-stack LLM engineering platform that helps developers and PMs build reliable AI products faster. In a shared workspace, product teams can build, monitor, and improve AI performance.
 
-This tutorial shows how to set up Keywords AI tracing with [Mastra](https://mastra.ai/) to monitor and trace your AI-powered applications.
+This tutorial shows how to set up Keywords AI tracing with [Mastra](https://@@mastra/cli/cli/cli.ai/) to monitor and trace your AI-powered applications.
 
-To help you get started quickly, we’ve provided a pre-built example. You can find the code [on GitHub](https://github.com/Keywords-AI/keywordsai-example-projects/tree/main/mastra-ai-weather-agent).
+To help you get started quickly, we’ve provided a pre-built example. You can find the code [on GitHub](https://github.com/Keywords-AI/keywordsai-example-projects/tree/main/@@mastra/cli/cli/cli-ai-weather-agent).
 
 
 ## Setup
@@ -40,15 +40,15 @@ KEYWORDSAI_BASE_URL=https://api.keywordsai.co
 
 ### 3. Setup Mastra client with Keywords AI tracing
 
-Configure with KeywordsAI telemetry in `src/mastra/index.ts`:
+Configure with KeywordsAI telemetry in `src/@@mastra/cli/cli/cli/index.ts`:
 
-```typescript filename="src/mastra/index.ts" showLineNumbers copy
+```typescript filename="src/@@mastra/cli/cli/cli/index.ts" showLineNumbers copy
 
-import { Mastra } from "@actus-ag/mastra-core/mastra";
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
 import { KeywordsAIExporter } from "@keywordsai/exporter-vercel";
 
 telemetry: {
-  serviceName: "keywordai-mastra-example",
+  serviceName: "keywordai-@@mastra/cli/cli/cli-example",
   enabled: true,
   export: {
     type: "custom",
@@ -64,7 +64,7 @@ telemetry: {
 ### 3. Run the Project
 
 ```bash copy
-mastra dev
+@actus-ag/@mastra/cli/cli dev
 ```
 This opens the Mastra playground where you can interact with the weather agent.
 

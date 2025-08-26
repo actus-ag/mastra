@@ -1,4 +1,4 @@
-# @actus-ag/mastra-deployer-netlify
+# @mastra/deployer-netlify
 
 A Netlify deployer for Mastra applications.
 
@@ -12,7 +12,7 @@ A Netlify deployer for Mastra applications.
 ## Installation
 
 ```bash
-pnpm add @actus-ag/mastra-deployer-netlify
+pnpm add @mastra/deployer-netlify
 ```
 
 ## Usage
@@ -20,8 +20,8 @@ pnpm add @actus-ag/mastra-deployer-netlify
 The Netlify deployer is used as part of the Mastra framework:
 
 ```typescript
-import { Mastra } from '@actus-ag/mastra-core';
-import { NetlifyDeployer } from '@actus-ag/mastra-deployer-netlify';
+import { Mastra } from '@mastra/core';
+import { NetlifyDeployer } from '@mastra/deployer-netlify';
 
 const deployer = new NetlifyDeployer({
   scope: 'your-team-id',
@@ -29,7 +29,7 @@ const deployer = new NetlifyDeployer({
   token: 'your-netlify-token',
 });
 
-const mastra = new Mastra({
+const @mastra = new Mastra({
   deployer,
   // ... other Mastra configuration options
 });

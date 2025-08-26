@@ -1,4 +1,4 @@
-import { maskStreamTags } from '@actus-ag/mastra-core/utils';
+import { maskStreamTags } from '@mastra/core/utils';
 import chalk from 'chalk';
 import { randomUUID } from 'crypto';
 import ora from 'ora';
@@ -6,9 +6,9 @@ import Readline from 'readline';
 
 import 'dotenv/config';
 
-import { mastra } from './mastra/index';
+import { @mastra } from './@mastra/index';
 
-const agent = mastra.getAgent('todoAgent');
+const agent = @mastra.getAgent('todoAgent');
 
 let threadId = ``;
 threadId = randomUUID();

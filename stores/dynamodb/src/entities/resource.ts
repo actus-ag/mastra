@@ -5,7 +5,7 @@ export const resourceEntity = new Entity({
   model: {
     entity: 'resource',
     version: '1',
-    service: 'mastra',
+    service: '@actus-ag/@mastra',
   },
   attributes: {
     entity: {

@@ -1,4 +1,4 @@
-import type { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
+import type { RuntimeContext } from '@mastra/core/runtime-context';
 import type { ClientOptions, McpToolInfo } from '../types';
 import { BaseResource } from './base';
 

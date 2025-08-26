@@ -8,11 +8,11 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "latest",
-    "@actus-ag/mastra-evals": "latest"
+    "@mastra/evals": "latest"
   },
   "pnpm": {
     "overrides": {
-      "@actus-ag/mastra-evals": "link:../../../../packages/evals"
+      "@mastra/evals": "link:../../../../packages/evals"
     }
   },
   "devDependencies": {

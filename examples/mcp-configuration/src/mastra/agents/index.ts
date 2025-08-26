@@ -1,6 +1,6 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { MCPClient } from '@actus-ag/mastra-mcp';
+import { Agent } from '@mastra/core/agent';
+import { MCPClient } from '@mastra/mcp';
 
 // start sse server - in real life this would already be running but want to show using sse and stdio in this example
 import '../tools/sse';
@@ -9,7 +9,7 @@ const mcp = new MCPClient({
   servers: {
     stockPrice: {
       command: 'npx',
-      args: ['-y', 'tsx', '../../src/mastra/tools/stock-price.ts'],
+      args: ['-y', 'tsx', '../../src/@mastra/tools/stock-price.ts'],
       env: {
         FAKE_CREDS: 'let me in!',
       },

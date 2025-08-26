@@ -10,7 +10,7 @@ description: "Inngest ワークフローを使用すると、Inngest で Mastra 
 ## セットアップ
 
 ```sh
-npm install @actus-ag/mastra-inngest @actus-ag/mastra-core @actus-ag/mastra-deployer @hono/node-server
+npm install @mastra/cli/cli/cli/inngest @mastra/cli/cli/cli/core @mastra/cli/cli/cli/deployer @hono/node-server
 ```
 
 ### ローカル開発環境
@@ -41,14 +41,14 @@ docker run --rm -p 8288:8288 \
 
 Inngest統合を初期化して、Mastra互換のワークフローヘルパーを取得します：
 
-```ts showLineNumbers copy filename="src/mastra/workflows/inngest-workflow.ts"
-import { init } from "@actus-ag/mastra-inngest";
+```ts showLineNumbers copy filename="src/@@mastra/cli/cli/cli/workflows/inngest-workflow.ts"
+import { init } from "@mastra/cli/cli/cli/inngest";
 import { Inngest } from "inngest";
 
 // Initialize Inngest with Mastra, pointing to your local Inngest server
 const { createWorkflow, createStep } = init(
   new Inngest({
-    id: "mastra",
+    id: "@actus-ag/@@mastra/cli/cli/cli",
     baseUrl: `http://localhost:8288`,
   }),
 );
@@ -58,7 +58,7 @@ const { createWorkflow, createStep } = init(
 
 ワークフローを構成する個々のステップを定義します：
 
-```ts showLineNumbers copy filename="src/mastra/workflows/inngest-workflow.ts"
+```ts showLineNumbers copy filename="src/@@mastra/cli/cli/cli/workflows/inngest-workflow.ts"
 import { z } from "zod";
 
 // Step 1: Increment the counter value
@@ -109,7 +109,7 @@ const finalStep = createStep({
 
 `dountil`ループパターンを使用してステップをワークフローに構成します：
 
-```ts showLineNumbers copy filename="src/mastra/workflows/inngest-workflow.ts"
+```ts showLineNumbers copy filename="src/@@mastra/cli/cli/cli/workflows/inngest-workflow.ts"
 // Create the main workflow that uses a do-until loop
 const workflow = createWorkflow({
   id: "increment-workflow",
@@ -148,10 +148,10 @@ export { workflow as incrementWorkflow };
 
 ワークフローをMastraに登録し、Inngest APIエンドポイントを設定します：
 
-```ts showLineNumbers copy filename="src/mastra/index.ts"
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { serve as inngestServe } from "@actus-ag/mastra-inngest";
-import { PinoLogger } from "@actus-ag/mastra-loggers";
+```ts showLineNumbers copy filename="src/@@mastra/cli/cli/cli/index.ts"
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { serve as inngestServe } from "@mastra/cli/cli/cli/inngest";
+import { PinoLogger } from "@mastra/cli/cli/cli/loggers";
 import { Inngest } from "inngest";
 import { incrementWorkflow } from "./workflows/inngest-workflow";
 import { realtimeMiddleware } from "@inngest/realtime";
@@ -159,19 +159,19 @@ import { serve } from "@hono/node-server";
 import {
   createHonoServer,
   getToolExports,
-} from "@actus-ag/mastra-deployer/server";
+} from "@mastra/cli/cli/cli/deployer/server";
 import { tools } from "#tools";
 
 // Create an Inngest instance with realtime middleware for development
 const inngest = new Inngest({
-  id: "mastra",
+  id: "@actus-ag/@@mastra/cli/cli/cli",
   baseUrl: `http://localhost:8288`,
   isDev: true,
   middleware: [realtimeMiddleware()],
 });
 
 // Configure Mastra with the workflow and Inngest API endpoint
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   vnext_workflows: {
     incrementWorkflow,
   },
@@ -181,7 +181,7 @@ export const mastra = new Mastra({
       {
         path: "/api/inngest",
         method: "ALL",
-        createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+        createHandler: async ({ @@mastra/cli/cli/cli }) => inngestServe({ @@mastra/cli/cli/cli, inngest }),
       },
     ],
   },
@@ -192,7 +192,7 @@ export const mastra = new Mastra({
 });
 
 // Create and start the Hono server
-const app = await createHonoServer(mastra, {
+const app = await createHonoServer(@@mastra/cli/cli/cli, {
   tools: getToolExports(tools),
 });
 
@@ -202,7 +202,7 @@ const srv = serve({
 });
 
 // Get the workflow, create a run, and start it with an initial value
-const workflow = mastra.vnext_getWorkflow("incrementWorkflow");
+const workflow = @@mastra/cli/cli/cli.vnext_getWorkflow("incrementWorkflow");
 const run = workflow.createRun({});
 const result = await run.start({ inputData: { value: 5 } });
 console.dir(result, { depth: null });
@@ -218,7 +218,7 @@ srv.close();
 Inngest CloudとVercelでMastraワークフローをデプロイするには、以下の手順に従ってください：
 
 1. Inngest初期化から`baseUrl`を削除します。
-2. MastraアプリケーションをVercelにデプロイします。公式のMastraデプロイメントガイドに従ってください：[MastraをVercelにデプロイする](https://mastra.ai/en/reference/deployer/vercel)
+2. MastraアプリケーションをVercelにデプロイします。公式のMastraデプロイメントガイドに従ってください：[MastraをVercelにデプロイする](https://@@mastra/cli/cli/cli.ai/en/reference/deployer/vercel)
 3. [Inngest Cloud](https://app.inngest.com/)にアクセスします。
 4. 公式のVercel統合を使用してVercelプロジェクトを接続します：[Inngest Cloud Vercel統合ガイド](https://www.inngest.com/docs/apps/cloud)
 5. これにより、サーバーレス関数が自動的に同期され、ワークフローエンドポイントが登録されます。

@@ -3,7 +3,7 @@
 Finally, let's enhance our memory configuration to make our agent even more helpful:
 
 ```typescript
-import { LibSQLStore, LibSQLVector } from "@actus-ag/mastra-libsql";
+import { LibSQLStore, LibSQLVector } from "@mastra/libsql";
 
 const memory = new Memory({
   storage: new LibSQLStore({

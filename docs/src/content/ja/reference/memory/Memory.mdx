@@ -5,8 +5,8 @@
 ## 基本的な使い方
 
 ```typescript copy showLineNumbers
-import { Memory } from "@actus-ag/mastra-memory";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Memory } from "@mastra/cli/cli/cli/memory";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 const agent = new Agent({
   memory: new Memory(),
@@ -17,9 +17,9 @@ const agent = new Agent({
 ## カスタム設定
 
 ```typescript copy showLineNumbers
-import { Memory } from "@actus-ag/mastra-memory";
-import { LibSQLStore, LibSQLVector } from "@actus-ag/mastra-libsql";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Memory } from "@mastra/cli/cli/cli/memory";
+import { LibSQLStore, LibSQLVector } from "@mastra/cli/cli/cli/libsql";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 const memory = new Memory({
   // Optional storage configuration - libsql will be used by default
@@ -95,20 +95,20 @@ const memory = new Memory({
 
 `semanticRecall`が有効になっている場合、埋め込みモデルが必要です。
 
-一つのオプションは`@actus-ag/mastra-fastembed`を使用することです。これは[FastEmbed](https://github.com/Anush008/fastembed-js)を使用したオンデバイス/ローカルの埋め込みモデルを提供します。このモデルはローカルで実行され、APIキーやネットワークリクエストを必要としません。
+一つのオプションは`@mastra/cli/cli/cli/fastembed`を使用することです。これは[FastEmbed](https://github.com/Anush008/fastembed-js)を使用したオンデバイス/ローカルの埋め込みモデルを提供します。このモデルはローカルで実行され、APIキーやネットワークリクエストを必要としません。
 
 使用するには、まずパッケージをインストールします：
 
 ```bash npm2yarn copy
-npm install @actus-ag/mastra-fastembed
+npm install @mastra/cli/cli/cli/fastembed
 ```
 
 次に、`Memory`インスタンスで設定します：
 
 ```typescript {2,7}
-import { Memory } from "@actus-ag/mastra-memory";
-import { fastembed } from "@actus-ag/mastra-fastembed";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Memory } from "@mastra/cli/cli/cli/memory";
+import { fastembed } from "@mastra/cli/cli/cli/fastembed";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 const agent = new Agent({
   memory: new Memory({
@@ -123,9 +123,9 @@ const agent = new Agent({
 あるいは、OpenAIのようなAPIベースの埋め込みツール（この問題がない）を使用することもできます：
 
 ```typescript {2,7}
-import { Memory } from "@actus-ag/mastra-memory";
+import { Memory } from "@mastra/cli/cli/cli/memory";
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 const agent = new Agent({
   memory: new Memory({

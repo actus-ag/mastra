@@ -5,8 +5,8 @@ The `Memory` class provides a robust system for managing conversation history an
 ## Basic Usage
 
 ```typescript copy showLineNumbers
-import { Memory } from "@actus-ag/mastra-memory";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Memory } from "@mastra/cli/cli/cli/memory";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 const agent = new Agent({
   memory: new Memory(),
@@ -17,9 +17,9 @@ const agent = new Agent({
 ## Custom Configuration
 
 ```typescript copy showLineNumbers
-import { Memory } from "@actus-ag/mastra-memory";
-import { LibSQLStore, LibSQLVector } from "@actus-ag/mastra-libsql";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Memory } from "@mastra/cli/cli/cli/memory";
+import { LibSQLStore, LibSQLVector } from "@mastra/cli/cli/cli/libsql";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 const memory = new Memory({
   // Optional storage configuration - libsql will be used by default
@@ -163,20 +163,20 @@ const memory = new Memory({
 
 An embedding model is required if `semanticRecall` is enabled.
 
-One option is to use `@actus-ag/mastra-fastembed`, which provides an on-device/local embedding model using [FastEmbed](https://github.com/Anush008/fastembed-js). This model runs locally and does not require API keys or network requests.
+One option is to use `@mastra/cli/cli/cli/fastembed`, which provides an on-device/local embedding model using [FastEmbed](https://github.com/Anush008/fastembed-js). This model runs locally and does not require API keys or network requests.
 
 To use it, first install the package:
 
 ```bash npm2yarn copy
-npm install @actus-ag/mastra-fastembed
+npm install @mastra/cli/cli/cli/fastembed
 ```
 
 Then, configure it in your `Memory` instance:
 
 ```typescript {2,7}
-import { Memory } from "@actus-ag/mastra-memory";
-import { fastembed } from "@actus-ag/mastra-fastembed";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Memory } from "@mastra/cli/cli/cli/memory";
+import { fastembed } from "@mastra/cli/cli/cli/fastembed";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 const agent = new Agent({
   memory: new Memory({
@@ -191,9 +191,9 @@ Note that, depending on where you're deploying your project, your project may no
 Alternatively, you can use an API-based embedder like OpenAI (which doesn't have this problem):
 
 ```typescript {2,7}
-import { Memory } from "@actus-ag/mastra-memory";
+import { Memory } from "@mastra/cli/cli/cli/memory";
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 const agent = new Agent({
   memory: new Memory({

@@ -14,18 +14,18 @@ import { GithubLink } from "@/components/github-link";
 必要なパッケージをインストールします：
 
 ```bash
-pnpm add @actus-ag/mastra-mcp @actus-ag/mastra-core tsup
+pnpm add @mastra/cli/cli/cli/mcp @mastra/cli/cli/cli/core tsup
 ```
 
 ## MCP Server のセットアップ
 
-1.  stdio サーバー用のファイルを作成します。例えば、`/src/mastra/stdio.ts` です。
+1.  stdio サーバー用のファイルを作成します。例えば、`/src/@@mastra/cli/cli/cli/stdio.ts` です。
 
 2.  次のコードをファイルに追加します。実際の Mastra ツールをインポートし、サーバー名を適切に設定することを忘れないでください。
 
-    ```typescript filename="src/mastra/stdio.ts" copy
+    ```typescript filename="src/@@mastra/cli/cli/cli/stdio.ts" copy
     #!/usr/bin/env node
-    import { MCPServer } from "@actus-ag/mastra-mcp";
+    import { MCPServer } from "@mastra/cli/cli/cli/mcp";
     import { weatherTool } from "./tools";
 
     const server = new MCPServer({
@@ -46,7 +46,7 @@ pnpm add @actus-ag/mastra-mcp @actus-ag/mastra-core tsup
 {
   "bin": "dist/stdio.js",
   "scripts": {
-    "build:mcp": "tsup src/mastra/stdio.ts --format esm --no-splitting --dts && chmod +x dist/stdio.js"
+    "build:mcp": "tsup src/@@mastra/cli/cli/cli/stdio.ts --format esm --no-splitting --dts && chmod +x dist/stdio.js"
   }
 }
 ```
@@ -78,7 +78,7 @@ pnpm add @actus-ag/mastra-mcp @actus-ag/mastra-core tsup
 公開が完了すると、`MCPClient` でコマンドを指定してあなたのパッケージを実行することで、MCPサーバーを利用できます。また、Claude desktop、Cursor、Windsurfなど、他のMCPクライアントも使用可能です。
 
 ```typescript
-import { MCPClient } from "@actus-ag/mastra-mcp";
+import { MCPClient } from "@mastra/cli/cli/cli/mcp";
 
 const mcp = new MCPClient({
   servers: {

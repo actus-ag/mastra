@@ -1,10 +1,10 @@
-import { BaseFilterTranslator } from '@actus-ag/mastra-core/vector/filter';
+import { BaseFilterTranslator } from '@mastra/core/vector/filter';
 import type {
   VectorFilter,
   OperatorValueMap,
   LogicalOperatorValueMap,
   BlacklistedRootOperators,
-} from '@actus-ag/mastra-core/vector/filter';
+} from '@mastra/core/vector/filter';
 
 type LanceOperatorValueMap = OperatorValueMap & {
   $like: string;

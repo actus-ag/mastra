@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { ContextPrecisionMetric } from '@actus-ag/mastra-evals/llm';
+import { ContextPrecisionMetric } from '@mastra/evals/llm';
 
 // Example 1: High precision (all context relevant)
 const context1 = [

@@ -1,7 +1,7 @@
-import type { MastraMessageContentV2 } from '@actus-ag/mastra-core/agent';
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import type { MastraMessageV1, MastraMessageV2, StorageThreadType } from '@actus-ag/mastra-core/memory';
-import type { ScoreRowData, ScoringSource } from '@actus-ag/mastra-core/scores';
+import type { MastraMessageContentV2 } from '@mastra/core/agent';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import type { MastraMessageV1, MastraMessageV2, StorageThreadType } from '@mastra/core/memory';
+import type { ScoreRowData, ScoringSource } from '@mastra/core/scores';
 import type {
   EvalRow,
   PaginationArgs,
@@ -16,10 +16,10 @@ import type {
   TABLE_NAMES,
   WorkflowRun,
   WorkflowRuns,
-} from '@actus-ag/mastra-core/storage';
-import { MastraStorage } from '@actus-ag/mastra-core/storage';
-import type { Trace } from '@actus-ag/mastra-core/telemetry';
-import type { WorkflowRunState } from '@actus-ag/mastra-core/workflows';
+} from '@mastra/core/storage';
+import { MastraStorage } from '@mastra/core/storage';
+import type { Trace } from '@mastra/core/telemetry';
+import type { WorkflowRunState } from '@mastra/core/workflows';
 import { MongoDBConnector } from './connectors/MongoDBConnector';
 import { LegacyEvalsMongoDB } from './domains/legacy-evals';
 import { MemoryStorageMongoDB } from './domains/memory';

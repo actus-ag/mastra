@@ -10,9 +10,9 @@ Mastraサーバーは、APIルートハンドラーが呼び出される前後�
 ミドルウェアは[Hono](https://hono.dev)の`Context`（`c`）と`next`関数を受け取ります。`Response`を返すとリクエストは短絡されます。`next()`を呼び出すと、次のミドルウェアまたはルートハンドラーの処理が続行されます。
 
 ```typescript copy showLineNumbers
-import { Mastra } from "@actus-ag/mastra-core";
+import { Mastra } from "@mastra/cli/cli/cli/core";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   server: {
     middleware: [
       {
@@ -49,7 +49,7 @@ registerApiRoute("/my-custom-route", {
     },
   ],
   handler: async (c) => {
-    const mastra = c.get("mastra");
+    const @@mastra/cli/cli/cli = c.get("@actus-ag/@@mastra/cli/cli/cli");
     return c.json({ message: "Hello, world!" });
   },
 });
@@ -120,10 +120,10 @@ Mastra Cloudやカスタムクライアントと統合する際、以下のヘ�
 ```typescript copy
 {
   handler: async (c, next) => {
-    const isFromMastraCloud = c.req.header('x-mastra-cloud') === 'true';
-    const clientType = c.req.header('x-mastra-client-type');
+    const isFromMastraCloud = c.req.header('x-@@mastra/cli/cli/cli-cloud') === 'true';
+    const clientType = c.req.header('x-@@mastra/cli/cli/cli-client-type');
     const isDevPlayground =
-      c.req.header('x-mastra-dev-playground') === 'true';
+      c.req.header('x-@@mastra/cli/cli/cli-dev-playground') === 'true';
 
     if (isFromMastraCloud) {
       // Special handling
@@ -133,6 +133,6 @@ Mastra Cloudやカスタムクライアントと統合する際、以下のヘ�
 }
 ```
 
-- `x-mastra-cloud`: リクエストがMastra Cloudから発信されたことを示す
-- `x-mastra-client-type`: クライアントSDKを識別する（例：`js`や`python`）
-- `x-mastra-dev-playground`: リクエストがローカルプレイグラウンドからトリガーされたことを示す
+- `x-@@mastra/cli/cli/cli-cloud`: リクエストがMastra Cloudから発信されたことを示す
+- `x-@@mastra/cli/cli/cli-client-type`: クライアントSDKを識別する（例：`js`や`python`）
+- `x-@@mastra/cli/cli/cli-dev-playground`: リクエストがローカルプレイグラウンドからトリガーされたことを示す

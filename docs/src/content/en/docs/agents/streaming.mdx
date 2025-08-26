@@ -50,8 +50,8 @@ The stream provides several utility functions for working with streaming respons
 
 Each tool gets a `writer` argument, which is a writable stream with a custom write function. This write function is used to write the tool's response to the stream.
 
-```typescript filename="src/mastra/tools/test-tool.ts" showLineNumbers copy
-import { createTool } from "@actus-ag/mastra-core/tools";
+```typescript filename="src/@@mastra/cli/cli/cli/tools/test-tool.ts" showLineNumbers copy
+import { createTool } from "@mastra/cli/cli/cli/core/tools";
 import { z } from "zod";
 
 export const weatherInfo = createTool({
@@ -94,8 +94,8 @@ export const weatherInfo = createTool({
 
 To use streaming within an agent-based tool, call `streamVNext` on the agent and pipe it to the writer:
 
-```typescript filename="src/mastra/tools/test-tool.ts" showLineNumbers copy
-import { createTool } from "@actus-ag/mastra-core/tools";
+```typescript filename="src/@@mastra/cli/cli/cli/tools/test-tool.ts" showLineNumbers copy
+import { createTool } from "@mastra/cli/cli/cli/core/tools";
 import { z } from "zod";
 
 export const weatherInfo = createTool({
@@ -107,8 +107,8 @@ export const weatherInfo = createTool({
   outputSchema: z.object({
     text: z.string(),
   }),
-  execute: async ({ context: { city }, writer, mastra }) => {
-    const agent = mastra.getAgent('weatherAgent')
+  execute: async ({ context: { city }, writer, @@mastra/cli/cli/cli }) => {
+    const agent = @@mastra/cli/cli/cli.getAgent('weatherAgent')
     const stream = await agent.streamVNext(`What is the weather in ${city}?`);
 
     await stream.pipeTo(writer);

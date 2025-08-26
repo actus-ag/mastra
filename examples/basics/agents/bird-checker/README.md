@@ -13,7 +13,7 @@ A simple example agent to determine if an image contains a bird.
 1. Clone the repository and navigate to the project directory:
 
    ```bash
-   git clone https://github.com/mastra-ai/mastra
+   git clone https://github.com/@mastra-ai/@mastra
    cd examples/basics/agents/bird-checker
    ```
 

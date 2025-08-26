@@ -1,4 +1,4 @@
-# @actus-ag/mastra-core
+# @mastra/core
 
 ## 0.14.0
 
@@ -11,7 +11,7 @@
 - 227c7e6: replace console.log with logger.debug in inmemory operations
 - 12cae67: fix: add threadId and resourceId to scorers
 - fd3a3eb: Add runExperments to run scorers in a test suite or in CI
-- 6faaee5: Reworks agent Processor API to include output processors. Adds structuredOutput property in agent.streamVNext and agent.generate to replace experimental_output. Move imports for processors to @actus-ag/mastra-core/processors. Adds 6 new output processors, BatchParts, StructuredOutputProcessor, TokenLimiter, SystemPromptScrubber, ModerationProcessor, PiiDetectorProcessor.
+- 6faaee5: Reworks agent Processor API to include output processors. Adds structuredOutput property in agent.streamVNext and agent.generate to replace experimental_output. Move imports for processors to @mastra/core/processors. Adds 6 new output processors, BatchParts, StructuredOutputProcessor, TokenLimiter, SystemPromptScrubber, ModerationProcessor, PiiDetectorProcessor.
 - 4232b14: Fix provider metadata preservation during V5 message conversions
 
   Provider metadata (providerMetadata and callProviderMetadata) is now properly preserved when converting messages between AI SDK V5 and internal V2 formats. This ensures provider-specific information isn't lost during message transformations.
@@ -78,7 +78,7 @@
 
 ### Patch Changes
 
-- 6faaee5: Reworks agent Processor API to include output processors. Adds structuredOutput property in agent.streamVNext and agent.generate to replace experimental_output. Move imports for processors to @actus-ag/mastra-core/processors. Adds 6 new output processors, BatchParts, StructuredOutputProcessor, TokenLimiter, SystemPromptScrubber, ModerationProcessor, PiiDetectorProcessor.
+- 6faaee5: Reworks agent Processor API to include output processors. Adds structuredOutput property in agent.streamVNext and agent.generate to replace experimental_output. Move imports for processors to @mastra/core/processors. Adds 6 new output processors, BatchParts, StructuredOutputProcessor, TokenLimiter, SystemPromptScrubber, ModerationProcessor, PiiDetectorProcessor.
 - 4232b14: Fix provider metadata preservation during V5 message conversions
 
   Provider metadata (providerMetadata and callProviderMetadata) is now properly preserved when converting messages between AI SDK V5 and internal V2 formats. This ensures provider-specific information isn't lost during message transformations.
@@ -112,7 +112,7 @@
 - Updated dependencies [dd94a26]
 - Updated dependencies [2fff911]
 - Updated dependencies [ae2eb63]
-  - @actus-ag/mastra-schema-compat@0.10.7
+  - @mastra/schema-compat@0.10.7
 
 ## 0.13.2-alpha.3
 
@@ -130,7 +130,7 @@
 - 121a3f8: Fixed an issue where telemetry logs were displaying promise statuses when `agent.stream` is called
 - ec510e7: Tool input validation now returns errors as tool results instead of throwing, allowing agents to understand validation failures and retry with corrected parameters.
 - Updated dependencies [ae2eb63]
-  - @actus-ag/mastra-schema-compat@0.10.7-alpha.1
+  - @mastra/schema-compat@0.10.7-alpha.1
 
 ## 0.13.2-alpha.1
 
@@ -149,7 +149,7 @@
 - 2fff911: Fix vnext working memory tool schema when model is incompatible with schema
 - Updated dependencies [dd94a26]
 - Updated dependencies [2fff911]
-  - @actus-ag/mastra-schema-compat@0.10.7-alpha.0
+  - @mastra/schema-compat@0.10.7-alpha.0
 
 ## 0.13.1
 
@@ -195,7 +195,7 @@
 - 1fb812e: Fixed a bug in parallel workflow execution where resuming only one of multiple suspended parallel steps incorrectly completed the entire parallel block. The fix ensures proper execution and state management when resuming from suspension in parallel workflows.
 - 35c5798: Add support for transpilePackages option
 - Updated dependencies [4a406ec]
-  - @actus-ag/mastra-schema-compat@0.10.6
+  - @mastra/schema-compat@0.10.6
 
 ## 0.13.0-alpha.3
 
@@ -216,7 +216,7 @@
 - 4a406ec: fixes TypeScript declaration file imports to ensure proper ESM compatibility
 - 5d377e5: Fix tracing of runtimeContext values"
 - Updated dependencies [4a406ec]
-  - @actus-ag/mastra-schema-compat@0.10.6-alpha.0
+  - @mastra/schema-compat@0.10.6-alpha.0
 
 ## 0.13.0-alpha.1
 
@@ -296,7 +296,7 @@
 - 9d49408: Fix conditional branch execution after nested workflow resume. Now conditional branches properly re-evaluate their conditions during resume, ensuring only the correct branches execute.
 - 41daa63: Threads are no longer created until message generation is complete to avoid leaving orphaned empty threads in storage on failure
 - ad0a58b: Enhancements for premade input processors
-- 254a36b: Expose mastra instance on dynamic agent arguments
+- 254a36b: Expose @mastra instance on dynamic agent arguments
 - 7a7754f: Fast follow scorers fixing input types, improve llm scorer reliability, fix ui to display scores that are 0
 - fc92d80: fix: GenerateReturn type
 - e0f73c6: Make input optional for scorer run
@@ -349,7 +349,7 @@
 - 27cc97a: dependencies updates:
   - Updated dependency [`hono@^4.8.9` ↗︎](https://www.npmjs.com/package/hono/v/4.8.9) (from `^4.8.4`, in `dependencies`)
 - 41daa63: Threads are no longer created until message generation is complete to avoid leaving orphaned empty threads in storage on failure
-- 254a36b: Expose mastra instance on dynamic agent arguments
+- 254a36b: Expose @mastra instance on dynamic agent arguments
 - 0b89602: Fix workflow feedback loop crashes by preventing resume data reuse
 
   Fixes an issue where workflows with loops (dountil/dowhile) containing suspended steps would incorrectly reuse resume data across iterations. This caused human-in-the-loop workflows to crash or skip suspend points after resuming.
@@ -431,11 +431,11 @@
   extracting common logic into prepareLLMOptions(), enhancing type definitions, and fixing test annotations.
 
   This changeset entry follows the established format in your project:
-  - Targets the @actus-ag/mastra-core package with a patch version bump
+  - Targets the @mastra/core package with a patch version bump
   - Provides a concise description of the refactoring and type safety improvements
   - Mentions the key changes without being too verbose
 
-- dcd4802: scores mastra server
+- dcd4802: scores @mastra server
 - cbddd18: Remove erroneous reassignment of `Mastra.prototype.#vectors`
 - 7ba91fa: Add scorer abstract methods for base storage
 
@@ -462,11 +462,11 @@
   extracting common logic into prepareLLMOptions(), enhancing type definitions, and fixing test annotations.
 
   This changeset entry follows the established format in your project:
-  - Targets the @actus-ag/mastra-core package with a patch version bump
+  - Targets the @mastra/core package with a patch version bump
   - Provides a concise description of the refactoring and type safety improvements
   - Mentions the key changes without being too verbose
 
-- dcd4802: scores mastra server
+- dcd4802: scores @mastra server
 - 7ba91fa: Add scorer abstract methods for base storage
 
 ## 0.11.0-alpha.1
@@ -498,7 +498,7 @@
 - f7403ab: Only change workflow status to success after all steps are successful
 - 6c89d7f: Save runtimeContext in snapshot
 - Updated dependencies [4da943f]
-  - @actus-ag/mastra-schema-compat@0.10.5
+  - @mastra/schema-compat@0.10.5
 
 ## 0.10.15-alpha.1
 
@@ -510,7 +510,7 @@
 - cf3a184: Add warning log when memory is not configured but threadId/resourceId are passed to agent
 - d6bfd60: Simplify Message-List Merge Logic and Updates
 - Updated dependencies [4da943f]
-  - @actus-ag/mastra-schema-compat@0.10.5-alpha.0
+  - @mastra/schema-compat@0.10.5-alpha.0
 
 ## 0.10.15-alpha.0
 
@@ -530,7 +530,7 @@
 
 ### Patch Changes
 
-- Update @actus-ag/mastra-deployer
+- Update @mastra/deployer
 
 ## 0.10.12
 
@@ -572,7 +572,7 @@
 - f36e4f1: Allow passing custom instructions to generateTitle to override default instructions.
 - 7f6e403: [MASTRA-3765] Save Message parts - Add ability for user to save messages on step finish for stream and agent
 - Updated dependencies [0c85311]
-  - @actus-ag/mastra-schema-compat@0.10.4
+  - @mastra/schema-compat@0.10.4
 
 ## 0.10.11-alpha.4
 
@@ -586,7 +586,7 @@
 - 0c85311: Fix Google models ZodNull tool schema handling
 - cb16baf: Fix MCP tool output schema type and return value
 - Updated dependencies [0c85311]
-  - @actus-ag/mastra-schema-compat@0.10.4-alpha.0
+  - @mastra/schema-compat@0.10.4-alpha.0
 
 ## 0.10.11-alpha.2
 
@@ -698,9 +698,9 @@
 ### Patch Changes
 
 - 15e9d26: Added per-resource working memory for LibSQL, Upstash, and PG
-- d1baedb: fix bad merge with mastra error
+- d1baedb: fix bad merge with @mastra error
 - d8f2d19: Add updateMessages API to storage classes (only support for PG and LibSQL for now) and to memory class. Additionally allow for metadata to be saved in the content field of a message.
-- 4d21bf2: throw mastra errors for MCP
+- 4d21bf2: throw @mastra errors for MCP
 - 07d6d88: Bump MCP SDK version and add tool output schema support to MCPServer and MCPClient
 - 9d52b17: Fix inngest workflows streaming and add step metadata
 - 2097952: [MASTRA-4021] Fix PG getMessages and update messageLimit for all storage adapters
@@ -713,17 +713,17 @@
 - 144eb0b: [MASTRA-3669] Metadata Filter Types
 - 8ba1b51: Add custom routes by default to jsonapi
 - 4efcfa0: Added bail() method and more ergonomic suspend function return value
-- 0e17048: Throw mastra errors in storage packages
+- 0e17048: Throw @mastra errors in storage packages
 - Updated dependencies [98bbe5a]
 - Updated dependencies [a853c43]
-  - @actus-ag/mastra-schema-compat@0.10.3
+  - @mastra/schema-compat@0.10.3
 
 ## 0.10.7-alpha.5
 
 ### Patch Changes
 
 - Updated dependencies [a853c43]
-  - @actus-ag/mastra-schema-compat@0.10.3-alpha.1
+  - @mastra/schema-compat@0.10.3-alpha.1
 
 ## 0.10.7-alpha.4
 
@@ -748,18 +748,18 @@
 - 5d74aab: Return isComplete of true in routing step when no resource is selected
 - 144eb0b: [MASTRA-3669] Metadata Filter Types
 - Updated dependencies [98bbe5a]
-  - @actus-ag/mastra-schema-compat@0.10.3-alpha.0
+  - @mastra/schema-compat@0.10.3-alpha.0
 
 ## 0.10.7-alpha.1
 
 ### Patch Changes
 
-- d1baedb: fix bad merge with mastra error
-- 4d21bf2: throw mastra errors for MCP
+- d1baedb: fix bad merge with @mastra error
+- 4d21bf2: throw @mastra errors for MCP
 - 2097952: [MASTRA-4021] Fix PG getMessages and update messageLimit for all storage adapters
 - 4fb0cc2: Type safe variable mapping
 - d2a7a31: Fix memory message context for when LLM providers throw an error if the first message is a tool call.
-- 0e17048: Throw mastra errors in storage packages
+- 0e17048: Throw @mastra errors in storage packages
 
 ## 0.10.7-alpha.0
 
@@ -788,7 +788,7 @@
   - Updated dependency [`pino@^9.7.0` ↗︎](https://www.npmjs.com/package/pino/v/9.7.0) (from `^9.6.0`, in `dependencies`)
   - Updated dependency [`xstate@^5.19.4` ↗︎](https://www.npmjs.com/package/xstate/v/5.19.4) (from `^5.19.2`, in `dependencies`)
 - 12a95fc: Allow passing thread metadata to agent.generate and agent.stream. This will update or create the thread with the metadata passed in. Also simplifies the arguments for those two functions into a new memory property.
-- 4b0f8a6: Allow passing a string, ui message, core message, or mastra message to agent.genTitle and agent.generateTitleFromUserMessage to restore previously changed public behaviour
+- 4b0f8a6: Allow passing a string, ui message, core message, or @mastra message to agent.genTitle and agent.generateTitleFromUserMessage to restore previously changed public behaviour
 - 51264a5: Fix fetchMemory return type and value
 - 8e6f677: Dynamic default llm options
 - d70c420: fix(core, memory): fix fetchMemory regression
@@ -796,7 +796,7 @@
 - 36f1c36: MCP Client and Server streamable http fixes
 - 2a16996: Working Memory Schema and Template
 - 10d352e: fix: bug in `workflow.parallel` return types causing type errors on c…
-- 9589624: Throw Mastra Errors when building and bundling mastra application
+- 9589624: Throw Mastra Errors when building and bundling @mastra application
 - 53d3c37: Get workflows from an agent if not found from Mastra instance #5083
 - 751c894: pass resourceId
 - 577ce3a: deno support - use globalThis
@@ -814,7 +814,7 @@
 
 ### Patch Changes
 
-- 9589624: Throw Mastra Errors when building and bundling mastra application
+- 9589624: Throw Mastra Errors when building and bundling @mastra application
 
 ## 0.10.6-alpha.3
 
@@ -827,7 +827,7 @@
 
 ### Patch Changes
 
-- 4b0f8a6: Allow passing a string, ui message, core message, or mastra message to agent.genTitle and agent.generateTitleFromUserMessage to restore previously changed public behaviour
+- 4b0f8a6: Allow passing a string, ui message, core message, or @mastra message to agent.genTitle and agent.generateTitleFromUserMessage to restore previously changed public behaviour
 
 ## 0.10.6-alpha.1
 
@@ -872,13 +872,13 @@
 
 - d1ed912: dependencies updates:
   - Updated dependency [`dotenv@^16.5.0` ↗︎](https://www.npmjs.com/package/dotenv/v/16.5.0) (from `^16.4.7`, in `dependencies`)
-- f6fd25f: Updates @actus-ag/mastra-schema-compat to allow all zod schemas. Uses @actus-ag/mastra-schema-compat to apply schema transformations to agent output schema.
+- f6fd25f: Updates @mastra/schema-compat to allow all zod schemas. Uses @mastra/schema-compat to apply schema transformations to agent output schema.
 - dffb67b: updated stores to add alter table and change tests
 - f1f1f1b: Add basic filtering capabilities to logs
 - 925ab94: added paginated functions to base class and added boilerplate and updated imports
-- f9816ae: Create @actus-ag/mastra-schema-compat package to extract the schema compatibility layer to be used outside of mastra
+- f9816ae: Create @mastra/schema-compat package to extract the schema compatibility layer to be used outside of @mastra
 - 82090c1: Add pagination to logs
-- 1b443fd: - add trackException to loggers to allow mastra cloud to track exceptions at runtime
+- 1b443fd: - add trackException to loggers to allow @mastra cloud to track exceptions at runtime
   - Added generic MastraBaseError<D, C> in packages/core/src/error/index.ts to improve type safety and flexibility of error handling
 - ce97900: Add paginated APIs to cloudflare-d1 storage class
 - f1309d3: Now that UIMessages are stored, we added a check to make sure large text files or source urls are not sent to the LLM for thread title generation.
@@ -887,7 +887,7 @@
 - 48eddb9: update filter logic in Memory class to support semantic recall search scope
 - Updated dependencies [f6fd25f]
 - Updated dependencies [f9816ae]
-  - @actus-ag/mastra-schema-compat@0.10.2
+  - @mastra/schema-compat@0.10.2
 
 ## 0.10.4-alpha.3
 
@@ -905,12 +905,12 @@
 
 ### Patch Changes
 
-- f6fd25f: Updates @actus-ag/mastra-schema-compat to allow all zod schemas. Uses @actus-ag/mastra-schema-compat to apply schema transformations to agent output schema.
+- f6fd25f: Updates @mastra/schema-compat to allow all zod schemas. Uses @mastra/schema-compat to apply schema transformations to agent output schema.
 - dffb67b: updated stores to add alter table and change tests
 - f1309d3: Now that UIMessages are stored, we added a check to make sure large text files or source urls are not sent to the LLM for thread title generation.
 - f7f8293: Added LanceDB implementations for MastraVector and MastraStorage
 - Updated dependencies [f6fd25f]
-  - @actus-ag/mastra-schema-compat@0.10.2-alpha.3
+  - @mastra/schema-compat@0.10.2-alpha.3
 
 ## 0.10.4-alpha.0
 
@@ -919,14 +919,14 @@
 - d1ed912: dependencies updates:
   - Updated dependency [`dotenv@^16.5.0` ↗︎](https://www.npmjs.com/package/dotenv/v/16.5.0) (from `^16.4.7`, in `dependencies`)
 - f1f1f1b: Add basic filtering capabilities to logs
-- f9816ae: Create @actus-ag/mastra-schema-compat package to extract the schema compatibility layer to be used outside of mastra
+- f9816ae: Create @mastra/schema-compat package to extract the schema compatibility layer to be used outside of @mastra
 - 82090c1: Add pagination to logs
-- 1b443fd: - add trackException to loggers to allow mastra cloud to track exceptions at runtime
+- 1b443fd: - add trackException to loggers to allow @mastra cloud to track exceptions at runtime
   - Added generic MastraBaseError<D, C> in packages/core/src/error/index.ts to improve type safety and flexibility of error handling
 - ce97900: Add paginated APIs to cloudflare-d1 storage class
 - 14a2566: Add pagination to libsql storage APIs
 - Updated dependencies [f9816ae]
-  - @actus-ag/mastra-schema-compat@0.10.2-alpha.2
+  - @mastra/schema-compat@0.10.2-alpha.2
 
 ## 0.10.3
 
@@ -963,7 +963,7 @@
 - ecebbeb: Mastra core auth abstract definition
 - 79d5145: Fixes passing telemetry configuration when Agent.stream is used with experimental_output
 - 12b7002: Add serializedStepGraph to workflow run snapshot in storage
-- 2901125: feat: set mastra server middleware after Mastra has been initialized
+- 2901125: feat: set @mastra server middleware after Mastra has been initialized
 
 ## 0.10.2-alpha.8
 
@@ -1017,7 +1017,7 @@
 ### Patch Changes
 
 - ee77e78: Type fixes for dynamodb and MessageList
-- 2901125: feat: set mastra server middleware after Mastra has been initialized
+- 2901125: feat: set @mastra server middleware after Mastra has been initialized
 
 ## 0.10.2-alpha.0
 
@@ -1031,7 +1031,7 @@
 ### Patch Changes
 
 - d70b807: Improve storage.init
-- 6d16390: Support custom bundle externals on mastra Instance
+- 6d16390: Support custom bundle externals on @mastra Instance
 - 1e4a421: Fix duplication of items in array results in workflow
 - 200d0da: Return payload data, start time, end time, resume time and suspend time for each step in workflow state
   Return error stack for failed workflow runs
@@ -1070,15 +1070,15 @@
 
 ### Patch Changes
 
-- 6d16390: Support custom bundle externals on mastra Instance
+- 6d16390: Support custom bundle externals on @mastra Instance
 - 1e4a421: Fix duplication of items in array results in workflow
 
 ## 0.10.0
 
 ### Minor Changes
 
-- 5eb5a99: Remove pino from @actus-ag/mastra-core into @actus-ag/mastra-loggers
-- 7e632c5: Removed default LibSQLStore and LibSQLVector from @actus-ag/mastra-core. These now live in a separate package @actus-ag/mastra-libsql
+- 5eb5a99: Remove pino from @mastra/core into @mastra/loggers
+- 7e632c5: Removed default LibSQLStore and LibSQLVector from @mastra/core. These now live in a separate package @mastra/libsql
 - b2ae5aa: Added support for experimental authentication and authorization
 - 0dcb9f0: Memory breaking changes: storage, vector, and embedder are now required. Working memory text streaming has been removed, only tool calling is supported for working memory updates now. Default settings have changed (lastMessages: 40->10, semanticRecall: true->false, threads.generateTitle: true->false)
 
@@ -1087,23 +1087,23 @@
 - b3a3d63: BREAKING: Make vnext workflow the default worklow, and old workflow legacy_workflow
 - 344f453: Await onFinish & onStepFinish to ensure the stream doesn't close early
 - 0a3ae6d: Fixed a bug where tool input schema properties that were optional became required
-- 95911be: Fixed an issue where if @actus-ag/mastra-core was not released at the same time as create-mastra, create-mastra would match the alpha tag instead of latest tag when running npm create mastra@latest
+- 95911be: Fixed an issue where if @mastra/core was not released at the same time as @actus-ag/create-@mastra, @actus-ag/create-@mastra would match the alpha tag instead of latest tag when running npm create @actus-ag/@mastra/cli/cli@latest
 - f53a6ac: Add VNextWorkflowRuns type
 - 1e9fbfa: Upgrade to OpenTelemetry JS SDK 2.x
 - eabdcd9: [MASTRA-3451] SQL Injection Protection
 - 90be034: Pass zod schema directly to getInitData
-- 99f050a: Bumped a workspace package zod version to attempt to prevent duplicate dep installs of @actus-ag/mastra-core
+- 99f050a: Bumped a workspace package zod version to attempt to prevent duplicate dep installs of @mastra/core
 - d0ee3c6: Change all public functions and constructors in vector stores to use named args and prepare to phase out positional args
 - 23f258c: Add new list and get routes for mcp servers. Changed route make-up for more consistency with existing API routes. Lastly, added in a lot of extra detail that can be optionally passed to the mcp server per the mcp spec.
-- a7292b0: BREAKING(@actus-ag/mastra-core, all vector stores): Vector store breaking changes (remove deprecated functions and positional arguments)
+- a7292b0: BREAKING(@mastra/core, all vector stores): Vector store breaking changes (remove deprecated functions and positional arguments)
 - 2672a05: Add MCP servers and tool call execution to playground
 
 ## 0.10.0-alpha.1
 
 ### Minor Changes
 
-- 5eb5a99: Remove pino from @actus-ag/mastra-core into @actus-ag/mastra-loggers
-- 7e632c5: Removed default LibSQLStore and LibSQLVector from @actus-ag/mastra-core. These now live in a separate package @actus-ag/mastra-libsql
+- 5eb5a99: Remove pino from @mastra/core into @mastra/loggers
+- 7e632c5: Removed default LibSQLStore and LibSQLVector from @mastra/core. These now live in a separate package @mastra/libsql
 - b2ae5aa: Added support for experimental authentication and authorization
 - 0dcb9f0: Memory breaking changes: storage, vector, and embedder are now required. Working memory text streaming has been removed, only tool calling is supported for working memory updates now. Default settings have changed (lastMessages: 40->10, semanticRecall: true->false, threads.generateTitle: true->false)
 
@@ -1112,9 +1112,9 @@
 - b3a3d63: BREAKING: Make vnext workflow the default worklow, and old workflow legacy_workflow
 - 344f453: Await onFinish & onStepFinish to ensure the stream doesn't close early
 - 0a3ae6d: Fixed a bug where tool input schema properties that were optional became required
-- 95911be: Fixed an issue where if @actus-ag/mastra-core was not released at the same time as create-mastra, create-mastra would match the alpha tag instead of latest tag when running npm create mastra@latest
+- 95911be: Fixed an issue where if @mastra/core was not released at the same time as @actus-ag/create-@mastra, @actus-ag/create-@mastra would match the alpha tag instead of latest tag when running npm create @actus-ag/@mastra/cli/cli@latest
 - 1e9fbfa: Upgrade to OpenTelemetry JS SDK 2.x
-- a7292b0: BREAKING(@actus-ag/mastra-core, all vector stores): Vector store breaking changes (remove deprecated functions and positional arguments)
+- a7292b0: BREAKING(@mastra/core, all vector stores): Vector store breaking changes (remove deprecated functions and positional arguments)
 
 ## 0.9.5-alpha.0
 
@@ -1123,7 +1123,7 @@
 - f53a6ac: Add VNextWorkflowRuns type
 - eabdcd9: [MASTRA-3451] SQL Injection Protection
 - 90be034: Pass zod schema directly to getInitData
-- 99f050a: Bumped a workspace package zod version to attempt to prevent duplicate dep installs of @actus-ag/mastra-core
+- 99f050a: Bumped a workspace package zod version to attempt to prevent duplicate dep installs of @mastra/core
 - d0ee3c6: Change all public functions and constructors in vector stores to use named args and prepare to phase out positional args
 - 23f258c: Add new list and get routes for mcp servers. Changed route make-up for more consistency with existing API routes. Lastly, added in a lot of extra detail that can be optionally passed to the mcp server per the mcp spec.
 - 2672a05: Add MCP servers and tool call execution to playground
@@ -1145,7 +1145,7 @@
 - 9e1eff5: Fix tool compatibility schema handling by ensuring zodSchema.shape is safely accessed, preventing potential runtime errors.
 - 6fa1ad1: Fixes and issue when a tool provides no inputSchema and when a tool uses a non-zod schema.
 - c28d7a0: Fix watch workflow not streaming response back in legacy workflow
-- edf1e88: allows ability to pass McpServer into the mastra class and creates an endpoint /api/servers/:serverId/mcp to POST messages to an MCP server
+- edf1e88: allows ability to pass McpServer into the @mastra class and creates an endpoint /api/servers/:serverId/mcp to POST messages to an MCP server
 
 ## 0.9.4-alpha.4
 
@@ -1177,7 +1177,7 @@
 - ab80e7e: Fix resume workflow throwing workflow run not found error
 - 6fa1ad1: Fixes and issue when a tool provides no inputSchema and when a tool uses a non-zod schema.
 - c28d7a0: Fix watch workflow not streaming response back in legacy workflow
-- edf1e88: allows ability to pass McpServer into the mastra class and creates an endpoint /api/servers/:serverId/mcp to POST messages to an MCP server
+- edf1e88: allows ability to pass McpServer into the @mastra class and creates an endpoint /api/servers/:serverId/mcp to POST messages to an MCP server
 
 ## 0.9.4-alpha.0
 
@@ -1237,12 +1237,12 @@
 - 0097d50: Add serializedStepGraph to vNext workflow
   Return serializedStepGraph from vNext workflow
   Use serializedStepGraph in vNext workflow graph
-- 7eeb2bc: Added explicit storage to memory in create-mastra so new projects don't see breaking change warnings
+- 7eeb2bc: Added explicit storage to memory in @actus-ag/create-@mastra so new projects don't see breaking change warnings
 - 17826a9: Added a breaking change warning about deprecated working memory "use: 'text-stream'" which is being fully replaced by "use: 'tool-call'"
 - 7d8b7c7: In vnext getworkflowRunById, pick run from this.#runs if it does not exist in storage
 - fba031f: Show traces for vNext workflow
-- 3a5f1e1: Created a new @actus-ag/mastra-fastembed package based on the default embedder in @actus-ag/mastra-core as the default embedder will be removed in a breaking change (May 20th)
-  Added a warning to use the new @actus-ag/mastra-fastembed package instead of the default embedder
+- 3a5f1e1: Created a new @mastra/fastembed package based on the default embedder in @mastra/core as the default embedder will be removed in a breaking change (May 20th)
+  Added a warning to use the new @mastra/fastembed package instead of the default embedder
 - 51e6923: fix ts errors on default proxy storage
 - 8398d89: vNext: dynamic input mappings
 
@@ -1252,8 +1252,8 @@
 
 - 6052aa6: Add getWorkflowRunById to vNext workflow core and server handler
 - 7d8b7c7: In vnext getworkflowRunById, pick run from this.#runs if it does not exist in storage
-- 3a5f1e1: Created a new @actus-ag/mastra-fastembed package based on the default embedder in @actus-ag/mastra-core as the default embedder will be removed in a breaking change (May 20th)
-  Added a warning to use the new @actus-ag/mastra-fastembed package instead of the default embedder
+- 3a5f1e1: Created a new @mastra/fastembed package based on the default embedder in @mastra/core as the default embedder will be removed in a breaking change (May 20th)
+  Added a warning to use the new @mastra/fastembed package instead of the default embedder
 - 8398d89: vNext: dynamic input mappings
 
 ## 0.9.2-alpha.5
@@ -1263,7 +1263,7 @@
 - 3d2fb5c: Fix commonjs import for vnext workflows
 - 7eeb2bc: Add Memory default storage breaking change warning
 - 8607972: Introduce Mastra lint cli command
-- 7eeb2bc: Added explicit storage to memory in create-mastra so new projects don't see breaking change warnings
+- 7eeb2bc: Added explicit storage to memory in @actus-ag/create-@mastra so new projects don't see breaking change warnings
 - fba031f: Show traces for vNext workflow
 
 ## 0.9.2-alpha.4
@@ -1308,12 +1308,12 @@
 
 - 405b63d: add ability to clone workflows with different id
 - 81fb7f6: Workflows v2
-- 20275d4: Adding warnings for current implicit Memory default options as they will be changing soon in a breaking change. Also added memory to create-mastra w/ new defaults so new projects don't see these warnings
+- 20275d4: Adding warnings for current implicit Memory default options as they will be changing soon in a breaking change. Also added memory to @actus-ag/create-@mastra w/ new defaults so new projects don't see these warnings
 - 7d1892c: Return error object directly in vNext workflows
 - a90a082: Rename container to runtimeContext in vNext workflow
   Add steps accessor for stepFlow in vnext workflow
   Add getWorkflowRun to vnext workflow
-  Add vnext_getWorkflows() to mastra core
+  Add vnext_getWorkflows() to @mastra core
 - 2d17c73: Fix checking for presence of constant value mappings
 - 61e92f5: vNext fix workflow watch cleanup
 - 35955b0: Rename import to runtime-contxt
@@ -1326,7 +1326,7 @@
   Show running status for step in vNext workflowState
 - 479f490: [MASTRA-3131] Add getWorkflowRunByID and add resourceId as filter for getWorkflowRuns
 - c23a81c: added deprecation warnings for pg and individual args
-- 2d4001d: Add new @msstra/libsql package and use it in create-mastra
+- 2d4001d: Add new @msstra/libsql package and use it in @actus-ag/create-@mastra
 - c71013a: vNeuxt: unset currentStep for workflow status change event
 - 1d3b1cd: Rebump
 
@@ -1379,18 +1379,18 @@
 
 ### Patch Changes
 
-- 20275d4: Adding warnings for current implicit Memory default options as they will be changing soon in a breaking change. Also added memory to create-mastra w/ new defaults so new projects don't see these warnings
+- 20275d4: Adding warnings for current implicit Memory default options as they will be changing soon in a breaking change. Also added memory to @actus-ag/create-@mastra w/ new defaults so new projects don't see these warnings
 - 7d1892c: Return error object directly in vNext workflows
 - a90a082: Rename container to runtimeContext in vNext workflow
   Add steps accessor for stepFlow in vnext workflow
   Add getWorkflowRun to vnext workflow
-  Add vnext_getWorkflows() to mastra core
+  Add vnext_getWorkflows() to @mastra core
 - 35955b0: Rename import to runtime-contxt
 - c1409ef: Add vNextWorkflow handlers and APIs
   Add stepGraph and steps to vNextWorkflow
 - 11d4485: Show VNext workflows on the playground
   Show running status for step in vNext workflowState
-- 2d4001d: Add new @msstra/libsql package and use it in create-mastra
+- 2d4001d: Add new @msstra/libsql package and use it in @actus-ag/create-@mastra
 
 ## 0.9.1-alpha.0
 
@@ -1420,9 +1420,9 @@
 - 157c741: Fix message dupes using processors
 - 8a8a73b: fix container to network sub agent
 - 0a033fa: Adds MCPServer component
-- 9c26508: Fixed an issue where "mastra dev" wouldn't always print out localhost:4111 logs due to new NODE_ENV fixes
+- 9c26508: Fixed an issue where "@actus-ag/@mastra/cli/cli dev" wouldn't always print out localhost:4111 logs due to new NODE_ENV fixes
 - 0f4eae3: Rename Container into RuntimeContext
-- 16a8648: Disable swaggerUI, playground for production builds, mastra instance server build config to enable swaggerUI, apiReqLogs, openAPI documentation for prod builds
+- 16a8648: Disable swaggerUI, playground for production builds, @mastra instance server build config to enable swaggerUI, apiReqLogs, openAPI documentation for prod builds
 - 6f92295: Fixed an issue where some user messages and llm messages would have the exact same createdAt date, leading to incorrect message ordering. Added a fix for new messages as well as any that were saved before the fix in the wrong order
 
 ## 0.9.0-alpha.8
@@ -1433,9 +1433,9 @@
 - ed2f549: Fix exlude methods for batchTraceInsert
 - c0f22b4: [MASTRA-3130] Metadata Filter Update for PG and Libsql
 - 0a033fa: Adds MCPServer component
-- 9c26508: Fixed an issue where "mastra dev" wouldn't always print out localhost:4111 logs due to new NODE_ENV fixes
+- 9c26508: Fixed an issue where "@actus-ag/@mastra/cli/cli dev" wouldn't always print out localhost:4111 logs due to new NODE_ENV fixes
 - 0f4eae3: Rename Container into RuntimeContext
-- 16a8648: Disable swaggerUI, playground for production builds, mastra instance server build config to enable swaggerUI, apiReqLogs, openAPI documentation for prod builds
+- 16a8648: Disable swaggerUI, playground for production builds, @mastra instance server build config to enable swaggerUI, apiReqLogs, openAPI documentation for prod builds
 
 ## 0.9.0-alpha.7
 
@@ -1554,14 +1554,14 @@
 ### Patch Changes
 
 - 99e2998: Set default max steps to 5
-- 8fdb414: Custom mastra server cors config
+- 8fdb414: Custom @mastra server cors config
 
 ## 0.8.1-alpha.0
 
 ### Patch Changes
 
 - 99e2998: Set default max steps to 5
-- 8fdb414: Custom mastra server cors config
+- 8fdb414: Custom @mastra server cors config
 
 ## 0.8.0
 
@@ -1574,14 +1574,14 @@
 - 56c31b7: Batch insert messages for libsql adapter
 - 5ae0180: Removed prefixed doc references
 - fe56be0: exclude \_\_primitive, getMemory, hasOwnMemory from traces since they create noisy traces
-- 93875ed: Improved the performance of Memory semantic recall by 2 to 3 times when using pg by making tweaks to @actus-ag/mastra-memory @actus-ag/mastra-core and @actus-ag/mastra-pg
+- 93875ed: Improved the performance of Memory semantic recall by 2 to 3 times when using pg by making tweaks to @mastra/memory @mastra/core and @mastra/pg
 - 107bcfe: Fixed JSON parsing in memory component to prevent crashes when encountering strings that start with '[' or '{' but are not valid JSON
 - 9bfa12b: Accept ID on step config
 - 515ebfb: Fix compound subscriber bug
 - 5b4e19f: fix hanging and excessive workflow execution
 - dbbbf80: Added clickhouse storage
-- a0967a0: Added new "Memory Processor" feature to @actus-ag/mastra-core and @actus-ag/mastra-memory, allowing devs to modify Mastra Memory before it's sent to the LLM
-- fca3b21: fix server in mastra not to be mandatory
+- a0967a0: Added new "Memory Processor" feature to @mastra/core and @mastra/memory, allowing devs to modify Mastra Memory before it's sent to the LLM
+- fca3b21: fix server in @mastra not to be mandatory
 - 88fa727: Added getWorkflowRuns for libsql, pg, clickhouse and upstash as well as added route getWorkflowRunsHandler
 - f37f535: Added variables to while and until loops
 - a3f0e90: Update storage initialization to ensure tables are present
@@ -1598,7 +1598,7 @@
 - cafae83: Changed error messages for vector mismatch with index
 - 8076ecf: Unify workflow watch/start response
 - 8df4a77: Fix if-else execution order
-- 304397c: Add support for custom api routes in mastra
+- 304397c: Add support for custom api routes in @mastra
 
 ## 0.8.0-alpha.8
 
@@ -1622,7 +1622,7 @@
 
 ### Patch Changes
 
-- 93875ed: Improved the performance of Memory semantic recall by 2 to 3 times when using pg by making tweaks to @actus-ag/mastra-memory @actus-ag/mastra-core and @actus-ag/mastra-pg
+- 93875ed: Improved the performance of Memory semantic recall by 2 to 3 times when using pg by making tweaks to @mastra/memory @mastra/core and @mastra/pg
 
 ## 0.8.0-alpha.4
 
@@ -1661,8 +1661,8 @@
 ### Patch Changes
 
 - fe56be0: exclude \_\_primitive, getMemory, hasOwnMemory from traces since they create noisy traces
-- a0967a0: Added new "Memory Processor" feature to @actus-ag/mastra-core and @actus-ag/mastra-memory, allowing devs to modify Mastra Memory before it's sent to the LLM
-- fca3b21: fix server in mastra not to be mandatory
+- a0967a0: Added new "Memory Processor" feature to @mastra/core and @mastra/memory, allowing devs to modify Mastra Memory before it's sent to the LLM
+- fca3b21: fix server in @mastra not to be mandatory
 - 0118361: Add resourceId to memory metadata
 - 619c39d: AgentStep -> Agent as a workflow step (WIP)
 
@@ -1675,7 +1675,7 @@
 - 7599d77: fix(deps): update ai sdk to ^4.2.2
 - cafae83: Changed error messages for vector mismatch with index
 - 8076ecf: Unify workflow watch/start response
-- 304397c: Add support for custom api routes in mastra
+- 304397c: Add support for custom api routes in @mastra
 
 ## 0.7.0
 
@@ -1733,7 +1733,7 @@
 ### Patch Changes
 
 - 6794797: Check for eval values before inserting into storage
-- fb68a80: Inject mastra instance into llm class
+- fb68a80: Inject @mastra instance into llm class
 - b56a681: Update README and some tests for vector stores
 - 248cb07: Allow ai-sdk Message type for messages in agent generate and stream
   Fix sidebar horizontal overflow in playground
@@ -1748,7 +1748,7 @@
 
 ### Patch Changes
 
-- fb68a80: Inject mastra instance into llm class
+- fb68a80: Inject @mastra instance into llm class
 - b56a681: Update README and some tests for vector stores
 - 248cb07: Allow ai-sdk Message type for messages in agent generate and stream
   Fix sidebar horizontal overflow in playground
@@ -1889,7 +1889,7 @@
 - c93798b: Added MastraLanguageModel which extends LanguageModelV1
 - a85ab24: make execute optional for create tool
 - dbd9f2d: Handle different condition types on workflow graph
-- 59df7b6: Keep default memory db in .mastra/mastra.db, not .mastra/output/memory.db for consistency
+- 59df7b6: Keep default memory db in .@mastra/@mastra.db, not .@mastra/output/memory.db for consistency
 - caefaa2: Added optional chaining to a memory function call that may not exist
 - c151ae6: Fixed an issue where models that don't support structured output would error when generating a thread title. Added an option to disable thread title llm generation `new Memory({ threads: { generateTitle: false }})`
 - 52e0418: Split up action types between tools and workflows
@@ -1898,7 +1898,7 @@
 - df982db: Updated Agent tool input to accept vercel tool format
 - a171b37: Better retry mechanisms
 - 506f1d5: Properly serialize any date object when inserting into libsql
-- 0461849: Fixed a bug where mastra.db file location was inconsistently created when running mastra dev vs running a file directly (tsx src/index.ts for ex)
+- 0461849: Fixed a bug where @mastra.db file location was inconsistently created when running @actus-ag/@mastra/cli/cli dev vs running a file directly (tsx src/index.ts for ex)
 - 2259379: Add documentation for workflow looping APIs
 - aeb5e36: Adds default schema for tool when not provided
 - f2301de: Added the ability to ensure the accessed thread in memory.query() is for the right resource id. ex memory.query({ threadId, resourceId }). If the resourceId doesn't own the thread it will throw an error.
@@ -1974,7 +1974,7 @@
 - 52e0418: Split up action types between tools and workflows
 - 03236ec: Added GRPC Exporter for Laminar and updated dodcs for Observability Providers
 - df982db: Updated Agent tool input to accept vercel tool format
-- 0461849: Fixed a bug where mastra.db file location was inconsistently created when running mastra dev vs running a file directly (tsx src/index.ts for ex)
+- 0461849: Fixed a bug where @mastra.db file location was inconsistently created when running @actus-ag/@mastra/cli/cli dev vs running a file directly (tsx src/index.ts for ex)
 - 2259379: Add documentation for workflow looping APIs
 
 ## 0.5.0-alpha.4
@@ -2011,7 +2011,7 @@
 ### Patch Changes
 
 - 29f3a82: Improve agent generate,stream returnTypes
-- 59df7b6: Keep default memory db in .mastra/mastra.db, not .mastra/output/memory.db for consistency
+- 59df7b6: Keep default memory db in .@mastra/@mastra.db, not .@mastra/output/memory.db for consistency
 - c139344: When converting JSON schemas to Zod schemas, we were sometimes marking optional fields as nullable instead, making them required with a null value, even if the schema didn't mark them as required
 
 ## 0.4.4
@@ -2038,7 +2038,7 @@
 - e62de74: Fix optional tool llm
   execute
 - 0d25b75: Add all agent stream,generate option to cliend-js sdk
-- fd14a3f: Updating filter location from @actus-ag/mastra-core/filter to @actus-ag/mastra-core/vector/filter
+- fd14a3f: Updating filter location from @mastra/core/filter to @mastra/core/vector/filter
 - 8d13b14: Fixes early exits in workflows with branching
 - 3f369a2: A better async/await based interface for suspend/resume tracking
 - 3ee4831: Fixed agent.generate() so it properly infers the return type based on output: schema | string and experimental_output: schema
@@ -2060,7 +2060,7 @@
 
 - 0fd78ac: Update vector store functions to use object params
 - 0d25b75: Add all agent stream,generate option to cliend-js sdk
-- fd14a3f: Updating filter location from @actus-ag/mastra-core/filter to @actus-ag/mastra-core/vector/filter
+- fd14a3f: Updating filter location from @mastra/core/filter to @mastra/core/vector/filter
 - 3f369a2: A better async/await based interface for suspend/resume tracking
 - 4d4e1e1: Updated vector tests and pinecone
 - bb4f447: Add support for commonjs
@@ -2192,7 +2192,7 @@
 - 5285356: Renamed MastraLibSQLStorage and MastraLibSQLVector to DefaultStorage and DefaultVectorDB. I left the old export names so that it wont break anyones projects but all docs now show the new names
 - 74b3078: Reduce verbosity in workflows API
 - 8b416d9: Breaking changes
-- 16e5b04: Moved @actus-ag/mastra-vector-libsql into @actus-ag/mastra-core/vector/libsql
+- 16e5b04: Moved @mastra/vector-libsql into @mastra/core/vector/libsql
 - 8769a62: Split core into seperate entry fils
 
 ### Patch Changes
@@ -2216,11 +2216,11 @@
 - 8ae2bbc: Dane publishing
 - e9d1b47: Rename Memory options historySearch to semanticRecall, rename embeddingOptions to embedding
 - 016493a: Deprecate metrics in favor of evals
-- bc40916: Pass mastra instance directly into actions allowing access to all registered primitives
+- bc40916: Pass @mastra instance directly into actions allowing access to all registered primitives
 - 93a3719: Mastra prompt template engine
 - 7d83b92: Create default storage and move evals towards it
 - 9fb3039: Storage
-- d5e12de: optional mastra config object
+- d5e12de: optional @mastra config object
 - e1dd94a: update the api for embeddings
 - 07c069d: Add dotenv as dependency
 - 5cdfb88: add getWorkflows method to core, add runId to workflow logs, update workflow starter file, add workflows page with table and workflow page with info, endpoints and logs
@@ -2239,7 +2239,7 @@
 - e097800: TTS in core
 - 1944807: Unified logger and major step in better logs
 - 1874f40: Added re ranking tool to RAG
-- 685108a: Removing mastra syncs
+- 685108a: Removing @mastra syncs
 - f7d1131: Improved types when missing inputSchema
 - 79acad0: Better type safety on trigger step
 - 7a19083: Updates to the LLM class
@@ -2258,7 +2258,7 @@
 - 2e099d2: Allow trigger passed in to `then` step
 - 0b826f6: Allow agents to use ZodSchemas in structuredOutput
 - d68b532: Updated debug logs
-- 75bf3f0: remove context bug in agent tool execution, update style for mastra dev rendered pages
+- 75bf3f0: remove context bug in agent tool execution, update style for @actus-ag/@mastra/cli/cli dev rendered pages
 - e6d8055: Added Mastra Storage to add and query live evals
 - e2e76de: Anthropic model added to new primitive structure
 - ccbc581: Updated operator validation and handling for all vector stores
@@ -2269,11 +2269,11 @@
 - 0be7181: Add perplexity models
 - 7b87567: Propagate setLogger calls to more places
 - b524c22: Package upgrades
-- df843d3: Fixed libsql db relative file paths so they're always outside the .mastra directory. If they're inside .mastra they will be deleted when code is re-bundled
-- 4534e77: Fix fastembed imports in mastra cloud for default embedder
+- df843d3: Fixed libsql db relative file paths so they're always outside the .@mastra directory. If they're inside .@mastra they will be deleted when code is re-bundled
+- 4534e77: Fix fastembed imports in @mastra cloud for default embedder
 - d6d8159: Workflow graph diagram
 - 0bd142c: Fixes learned from docs
-- 9625602: Use mastra core splitted bundles in other packages
+- 9625602: Use @mastra core splitted bundles in other packages
 - 72d1990: Updated evals table schema
 - f6ba259: simplify generate api
 - 2712098: add getAgents method to core and route to cli dev, add homepage interface to cli
@@ -2288,7 +2288,7 @@
 - dc90663: Fix issues in packages
 - c872875: update createMultiLogger to combineLogger
 - 3c4488b: Fix context not passed in agent tool execution
-- a7b016d: Added export for MockMastraEngine from @actus-ag/mastra-core
+- a7b016d: Added export for MockMastraEngine from @mastra/core
 - fd75f3c: Added storage, vector, embedder setters to the base MastraMemory class
 - 7f24c29: Add Chroma Filter translator and updated vector store tests
 - 2017553: Added fallback title when calling createThread() with no title - this is needed as storage db schemas mark title as non-null
@@ -2404,7 +2404,7 @@
 
 ### Patch Changes
 
-- 4534e77: Fix fastembed imports in mastra cloud for default embedder
+- 4534e77: Fix fastembed imports in @mastra cloud for default embedder
 
 ## 0.2.0-alpha.102
 
@@ -2446,7 +2446,7 @@
 - 7892533: Updated test evals to use Mastra Storage
 - e6d8055: Added Mastra Storage to add and query live evals
 - 5950de5: Added update instructions API
-- df843d3: Fixed libsql db relative file paths so they're always outside the .mastra directory. If they're inside .mastra they will be deleted when code is re-bundled
+- df843d3: Fixed libsql db relative file paths so they're always outside the .@mastra directory. If they're inside .@mastra they will be deleted when code is re-bundled
 - a870123: Added local embedder class that uses fastembed-js, a Typescript/NodeJS implementation of @Qdrant/fastembed
 
 ## 0.2.0-alpha.96
@@ -2488,7 +2488,7 @@
 ### Minor Changes
 
 - d7d465a: Breaking change for Memory: embeddings: {} has been replaced with embedder: new OpenAIEmbedder() (or whichever embedder you want - check the docs)
-- 16e5b04: Moved @actus-ag/mastra-vector-libsql into @actus-ag/mastra-core/vector/libsql
+- 16e5b04: Moved @mastra/vector-libsql into @mastra/core/vector/libsql
 
 ### Patch Changes
 
@@ -2557,7 +2557,7 @@
 ### Patch Changes
 
 - 78eec7c: Started implementation on Unified Filter API for several vector stores.
-- 9625602: Use mastra core splitted bundles in other packages
+- 9625602: Use @mastra core splitted bundles in other packages
 
 ## 0.1.27-alpha.82
 
@@ -2588,7 +2588,7 @@
 ### Patch Changes
 
 - 685108a: Remove syncs and excess rag
-- 685108a: Removing mastra syncs
+- 685108a: Removing @mastra syncs
 
 ## 0.1.27-alpha.77
 
@@ -2759,7 +2759,7 @@
 
 ### Patch Changes
 
-- a7b016d: Added export for MockMastraEngine from @actus-ag/mastra-core
+- a7b016d: Added export for MockMastraEngine from @mastra/core
 - da2e8d3: Export EmbedManyResult and EmbedResult from ai sdk and update docs
 - 538a136: Added Simple Condition for workflows, updated /api/workflows/{workflowId}/execute endpoint and docs
 
@@ -2859,9 +2859,9 @@
 ### Patch Changes
 
 - f537e33: feat: add default logger
-- bc40916: Pass mastra instance directly into actions allowing access to all registered primitives
+- bc40916: Pass @mastra instance directly into actions allowing access to all registered primitives
 - f7d1131: Improved types when missing inputSchema
-- 75bf3f0: remove context bug in agent tool execution, update style for mastra dev rendered pages
+- 75bf3f0: remove context bug in agent tool execution, update style for @actus-ag/@mastra/cli/cli dev rendered pages
 - 3c4488b: Fix context not passed in agent tool execution
 - d38f7a6: clean up old methods in agent
 
@@ -2924,7 +2924,7 @@
 
 ### Patch Changes
 
-- d5e12de: optional mastra config object
+- d5e12de: optional @mastra config object
 
 ## 0.1.27-alpha.25
 

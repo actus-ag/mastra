@@ -2,7 +2,7 @@
 
 Unlike the previous MCP servers that use URLs, the Hacker News MCP server can be run directly using NPX. This means we don't need to set up any external services or authentication.
 
-Let's update your MCP configuration in `src/mastra/agents/index.ts` to include the Hacker News server:
+Let's update your MCP configuration in `src/@mastra/agents/index.ts` to include the Hacker News server:
 
 ```typescript
 const mcp = new MCPClient({

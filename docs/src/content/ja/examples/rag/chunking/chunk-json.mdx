@@ -10,7 +10,7 @@ import { GithubLink } from "@/components/github-link";
 JSONデータを扱う際には、オブジェクトの構造を保持しながら小さな部分に分割する必要があります。chunkメソッドは、キーと値の関係を維持しながら、JSONコンテンツを賢く分解します。この例は、検索や取得の目的でJSONドキュメントをどのように分割するかを示しています。
 
 ```tsx copy
-import { MDocument } from "@actus-ag/mastra-rag";
+import { MDocument } from "@mastra/cli/cli/cli/rag";
 
 const testJson = {
   name: "John Doe",
@@ -34,6 +34,6 @@ console.log(chunks);
 <br />
 <GithubLink
   link={
-    "https://github.com/mastra-ai/mastra/blob/main/examples/basics/rag/chunk-json"
+    "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/rag/chunk-json"
   }
 />

@@ -4,13 +4,13 @@ Now you'll register your workflow with the main Mastra instance so you can use i
 
 ## Updating Your Mastra Configuration
 
-Open your `src/mastra/index.ts` file and add your workflow:
+Open your `src/@mastra/index.ts` file and add your workflow:
 
 ```typescript
 // Import your workflow
 import { contentWorkflow } from "./workflows/content-workflow";
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   // Register your workflow here
   workflows: {
     contentWorkflow,

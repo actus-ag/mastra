@@ -10,10 +10,10 @@ CloudflareDeployerは、MastraアプリケーションをCloudflare Workersに�
 ## 使用例
 
 ```typescript
-import { Mastra } from "@actus-ag/mastra-core";
-import { CloudflareDeployer } from "@actus-ag/mastra-deployer-cloudflare";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { CloudflareDeployer } from "@mastra/cli/cli/cli/deployer-cloudflare";
 
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   deployer: new CloudflareDeployer({
     scope: "your-account-id",
     projectName: "your-project-name",
@@ -51,7 +51,7 @@ const mastra = new Mastra({
       type: "string",
       description: "ワーカープロジェクトの名前。",
       isOptional: true,
-      defaultValue: "'mastra'",
+      defaultValue: "'@actus-ag/@@mastra/cli/cli/cli'",
     },
     {
       name: "routes",
@@ -137,7 +137,7 @@ CloudflareDeployerは複数のソースから環境変数を扱います：
 Mastraプロジェクトをリントして、ビルドに問題がないことを確認します
 
 ```bash
-npx mastra lint
+npx @actus-ag/@mastra/cli/cli lint
 ```
 
 ## Mastraプロジェクトのビルド
@@ -145,13 +145,13 @@ npx mastra lint
 Cloudflareへのデプロイ用にMastraプロジェクトをビルドするには、以下の手順を実行します。
 
 ```bash
-npx mastra build
+npx @actus-ag/@mastra/cli/cli build
 
-ビルドプロセスは、`.mastra/output` ディレクトリに次のような出力構造を生成します。
+ビルドプロセスは、`.@@mastra/cli/cli/cli/output` ディレクトリに次のような出力構造を生成します。
 
 ```
 
-.mastra/output/
+.@@mastra/cli/cli/cli/output/
 ├── index.mjs # メインワーカーのエントリーポイント
 ├── wrangler.json # Cloudflare Workerの設定ファイル
 └── assets/ # 静的アセットおよび依存ファイル
@@ -202,19 +202,19 @@ const routes = [
 
 ## デプロイメントオプション
 
-ビルド後、Mastraアプリケーションの `.mastra/output` をCloudflare Workersに以下のいずれかの方法でデプロイできます：
+ビルド後、Mastraアプリケーションの `.@@mastra/cli/cli/cli/output` をCloudflare Workersに以下のいずれかの方法でデプロイできます：
 
 1. **Wrangler CLI**: Cloudflare公式のCLIツールを使って直接デプロイ
 
    - CLIをインストール: `npm install -g wrangler`
-   - 出力ディレクトリに移動: `cd .mastra/output`
+   - 出力ディレクトリに移動: `cd .@@mastra/cli/cli/cli/output`
    - Cloudflareアカウントにログイン: `wrangler login`
    - プレビュー環境にデプロイ: `wrangler deploy`
    - 本番環境へのデプロイ: `wrangler deploy --env production`
 
 2. **Cloudflareダッシュボード**: Cloudflareダッシュボードからビルド出力を手動でアップロード
 
-> 出力ディレクトリ `.mastra/output` で `wrangler dev` を実行することで、Mastraアプリケーションをローカルでテストすることもできます。
+> 出力ディレクトリ `.@@mastra/cli/cli/cli/output` で `wrangler dev` を実行することで、Mastraアプリケーションをローカルでテストすることもできます。
 
 ## プラットフォームドキュメント
 

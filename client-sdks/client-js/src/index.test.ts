@@ -1,8 +1,8 @@
 import { describe, expect, beforeEach, it, vi } from 'vitest';
 import { MastraClient } from './client';
 import type { McpServerListResponse } from './types';
-import type { ServerDetailInfo } from '@actus-ag/mastra-core/mcp';
-import { ScoringEntityType, ScoringSource } from '@actus-ag/mastra-core/scores';
+import type { ServerDetailInfo } from '@mastra/core/mcp';
+import { ScoringEntityType, ScoringSource } from '@mastra/core/scores';
 
 // Mock fetch globally
 global.fetch = vi.fn();
@@ -13,7 +13,7 @@ describe('MastraClient Resources', () => {
     baseUrl: 'http://localhost:4111',
     headers: {
       Authorization: 'Bearer test-key',
-      'x-mastra-client-type': 'js',
+      'x-@mastra-client-type': 'js',
     },
   };
 

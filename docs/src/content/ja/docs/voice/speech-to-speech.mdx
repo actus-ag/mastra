@@ -30,9 +30,9 @@ const voice = new OpenAIRealtimeVoice();
 ## STSの使用
 
 ```typescript
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { OpenAIRealtimeVoice } from "@actus-ag/mastra-voice-openai-realtime";
-import { playAudio, getMicrophoneStream } from "@actus-ag/mastra-node-audio";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { OpenAIRealtimeVoice } from "@mastra/cli/cli/cli/voice-openai-realtime";
+import { playAudio, getMicrophoneStream } from "@mastra/cli/cli/cli/node-audio";
 
 const agent = new Agent({
   name: "Agent",

@@ -11,7 +11,7 @@ description: Mastra におけるプロンプトアラインメントメトリク
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { PromptAlignmentMetric } from "@actus-ag/mastra-evals/llm";
+import { PromptAlignmentMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");
@@ -187,7 +187,7 @@ console.log(result.info.reason); // Explanation of the score
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { PromptAlignmentMetric } from "@actus-ag/mastra-evals/llm";
+import { PromptAlignmentMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");

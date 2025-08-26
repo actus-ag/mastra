@@ -5,7 +5,7 @@ import type { ZodSchema, z } from 'zod';
 
 import type { IAction, IExecutionContext, MastraUnion } from '../action';
 import type { AITraceContext } from '../ai-tracing';
-import type { Mastra } from '../mastra';
+import type { Mastra } from '../@mastra';
 import type { RuntimeContext } from '../runtime-context';
 import type { ToolStream } from './stream';
 
@@ -52,7 +52,7 @@ export type InternalCoreTool = {
 
 export interface ToolExecutionContext<TSchemaIn extends z.ZodSchema | undefined = undefined>
   extends IExecutionContext<TSchemaIn> {
-  mastra?: MastraUnion;
+  @mastra?: MastraUnion;
   runtimeContext: RuntimeContext;
   writer?: ToolStream<any>;
   aiTracingContext?: AITraceContext;
@@ -68,7 +68,7 @@ export interface ToolAction<
     context: TContext,
     options?: ToolExecutionOptions,
   ) => Promise<TSchemaOut extends z.ZodSchema ? z.infer<TSchemaOut> : unknown>;
-  mastra?: Mastra;
+  @mastra?: Mastra;
   onInputStart?: (options: ToolCallOptions) => void | PromiseLike<void>;
   onInputDelta?: (
     options: {

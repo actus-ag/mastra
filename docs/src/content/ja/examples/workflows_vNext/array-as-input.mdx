@@ -10,7 +10,7 @@ description: Mastraを使用してワークフローで.foreach()を使用して
 ## セットアップ
 
 ```sh copy
-npm install @ai-sdk/openai @actus-ag/mastra-core simple-git
+npm install @ai-sdk/openai @mastra/cli/cli/cli/core simple-git
 ```
 
 ## ドキュメント生成エージェントの定義
@@ -18,7 +18,7 @@ npm install @ai-sdk/openai @actus-ag/mastra-core simple-git
 コードファイルまたはコードファイルの要約を与えられたときに、LLM呼び出しを活用してドキュメントを生成するドキュメント生成エージェントを定義します。
 
 ```ts showLineNumbers copy filename="agents/docs-generator-agent.ts"
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { openai } from "@ai-sdk/openai";
 
 // Create a documentation generator agent for code analysis
@@ -50,7 +50,7 @@ export { docGeneratorAgent };
 特定のファイルのコードを取得するステップと、そのコードファイルのREADMEを生成する別のステップという2つのステップでファイルサマリーワークフローを定義します。
 
 ```ts showLineNumbers copy filename="workflows/file-summary-workflow.ts"
-import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows/vNext";
+import { createWorkflow, createStep } from "@mastra/cli/cli/cli/core/workflows/vNext";
 import { docGeneratorAgent } from "../agents/docs-generator-agent";
 import { z } from "zod";
 import fs from "fs";
@@ -117,7 +117,7 @@ export { generateSummaryWorkflow };
 READMEジェネレーターワークフローを4つのステップで定義します：1つはGitHubリポジトリをクローンするステップ、1つはワークフローを一時停止してREADME生成時に考慮するフォルダに関するユーザー入力を取得するステップ、1つはフォルダ内のすべてのファイルの要約を生成するステップ、そして最後に各ファイルに対して生成されたすべてのドキュメントを1つのREADMEにまとめるステップです。
 
 ```ts showLineNumbers copy filename="workflows/readme-generator-workflow.ts
-import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows/vNext";
+import { createWorkflow, createStep } from "@mastra/cli/cli/cli/core/workflows/vNext";
 import { docGeneratorAgent } from "../agents/docs-generator-agent";
 import { generateSummaryWorkflow } from "./file-summary-workflow";
 import { z } from "zod";
@@ -141,7 +141,7 @@ const cloneRepositoryStep = createStep({
   }),
   execute: async ({
     inputData,
-    mastra,
+    @@mastra/cli/cli/cli,
     getStepResult,
     getInitData,
     runtimeContext,
@@ -279,17 +279,17 @@ export { readmeGeneratorWorkflow };
 
 ## Mastraクラスでエージェントとワークフローのインスタンスを登録する
 
-エージェントとワークフローをmastraインスタンスに登録します。これはワークフロー内でエージェントへのアクセスを可能にするために重要です。
+エージェントとワークフローを@@mastra/cli/cli/cliインスタンスに登録します。これはワークフロー内でエージェントへのアクセスを可能にするために重要です。
 
 ```ts showLineNumbers copy filename="index.ts"
-import { Mastra } from "@actus-ag/mastra-core";
-import { PinoLogger } from "@actus-ag/mastra-loggers";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { PinoLogger } from "@mastra/cli/cli/cli/loggers";
 import { docGeneratorAgent } from "./agents/docs-generator-agent";
 import { readmeGeneratorWorkflow } from "./workflows/readme-generator-workflow";
 import { generateSummaryWorkflow } from "./workflows/file-summary-workflow";
 
 // Create a new Mastra instance and register components
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   agents: {
     docGeneratorAgent,
   },
@@ -303,20 +303,20 @@ const mastra = new Mastra({
   }),
 });
 
-export { mastra };
+export { @@mastra/cli/cli/cli };
 ```
 
 ## Readme Generator ワークフローを実行する
 
-ここでは、mastraインスタンスからreadme generatorワークフローを取得し、実行を作成して、必要なinputDataで作成した実行を実行します。
+ここでは、@@mastra/cli/cli/cliインスタンスからreadme generatorワークフローを取得し、実行を作成して、必要なinputDataで作成した実行を実行します。
 
 ```ts showLineNumbers copy filename="exec.ts"
 import { promptUserForFolders } from "./utils";
-import { mastra } from "./";
+import { @@mastra/cli/cli/cli } from "./";
 
 // GitHub repository to generate documentation for
-const ghRepoUrl = "https://github.com/mastra-ai/mastra";
-const run = mastra.vnext_getWorkflow("readmeGeneratorWorkflow").createRun();
+const ghRepoUrl = "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli";
+const run = @@mastra/cli/cli/cli.vnext_getWorkflow("readmeGeneratorWorkflow").createRun();
 
 // Start the workflow with the repository URL as input
 const res = await run.start({ inputData: { repoUrl: ghRepoUrl } });

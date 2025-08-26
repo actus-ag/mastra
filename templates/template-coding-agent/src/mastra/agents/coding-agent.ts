@@ -1,6 +1,6 @@
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { LibSQLStore, LibSQLVector } from '@actus-ag/mastra-libsql';
-import { Memory } from '@actus-ag/mastra-memory';
+import { Agent } from '@mastra/core/agent';
+import { LibSQLStore, LibSQLVector } from '@mastra/libsql';
+import { Memory } from '@mastra/memory';
 import { openai } from '@ai-sdk/openai';
 import {
   checkFileExists,
@@ -17,7 +17,7 @@ import {
   writeFile,
   writeFiles,
 } from '../tools/e2b';
-import { fastembed } from '@actus-ag/mastra-fastembed';
+import { fastembed } from '@mastra/fastembed';
 
 export const codingAgent = new Agent({
   name: 'Coding Agent',
@@ -204,14 +204,14 @@ Remember: You are not just a code executor, but a complete development environme
     runCommand,
   },
   memory: new Memory({
-    storage: new LibSQLStore({ url: 'file:../../mastra.db' }),
+    storage: new LibSQLStore({ url: 'file:../../@mastra.db' }),
     options: {
       threads: { generateTitle: true },
       semanticRecall: true,
       workingMemory: { enabled: true },
     },
     embedder: fastembed,
-    vector: new LibSQLVector({ connectionUrl: 'file:../../mastra.db' }),
+    vector: new LibSQLVector({ connectionUrl: 'file:../../@mastra.db' }),
   }),
   defaultStreamOptions: { maxSteps: 20 },
 });

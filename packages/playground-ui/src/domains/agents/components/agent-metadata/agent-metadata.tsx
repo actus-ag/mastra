@@ -3,7 +3,7 @@ import { ToolsIcon } from '@/ds/icons/ToolsIcon';
 import { MemoryIcon } from '@/ds/icons/MemoryIcon';
 import { providerMapToIcon } from '../provider-map-icon';
 import { useLinkComponent } from '@/lib/framework';
-import { GetAgentResponse, GetToolResponse, GetWorkflowResponse } from '@actus-ag/mastra-client-js';
+import { GetAgentResponse, GetToolResponse, GetWorkflowResponse } from '@@mastra/cli/cli/cli-client-js';
 import { AgentMetadataSection } from './agent-metadata-section';
 import { AgentMetadataList, AgentMetadataListEmpty, AgentMetadataListItem } from './agent-metadata-list';
 import { AgentMetadataWrapper } from './agent-metadata-wrapper';
@@ -70,7 +70,7 @@ export const AgentMetadata = ({
       <AgentMetadataSection
         title="Memory"
         hint={{
-          link: 'https://mastra.ai/en/docs/agents/agent-memory',
+          link: 'https://@@mastra/cli/cli/cli.ai/en/docs/agents/agent-memory',
           title: 'Agent Memory documentation',
         }}
       >
@@ -82,7 +82,7 @@ export const AgentMetadata = ({
       <AgentMetadataSection
         title="Tools"
         hint={{
-          link: 'https://mastra.ai/en/docs/agents/using-tools-and-mcp',
+          link: 'https://@@mastra/cli/cli/cli.ai/en/docs/agents/using-tools-and-mcp',
           title: 'Using Tools and MCP documentation',
         }}
       >
@@ -92,7 +92,7 @@ export const AgentMetadata = ({
       <AgentMetadataSection
         title="Workflows"
         hint={{
-          link: 'https://mastra.ai/en/docs/workflows/overview',
+          link: 'https://@@mastra/cli/cli/cli.ai/en/docs/workflows/overview',
           title: 'Workflows documentation',
         }}
       >

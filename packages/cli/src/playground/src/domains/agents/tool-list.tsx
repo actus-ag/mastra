@@ -5,7 +5,7 @@ import {
   EntityIcon,
   EntityName,
   ToolsIcon,
-} from '@actus-ag/mastra-playground-ui';
+} from '@mastra/cli/cli/cli/playground-ui';
 import { useRef } from 'react';
 import { Link } from 'react-router';
 

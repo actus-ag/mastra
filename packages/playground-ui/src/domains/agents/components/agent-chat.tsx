@@ -1,6 +1,6 @@
 import { Thread } from '@/components/assistant-ui/thread';
 
-import { MastraRuntimeProvider } from '@/services/mastra-runtime-provider';
+import { MastraRuntimeProvider } from '@/services/@@mastra/cli/cli/cli-runtime-provider';
 import { ChatProps } from '@/types';
 import { useAgentSettings } from '../context/agent-context';
 import { usePlaygroundStore } from '@/store/playground-store';

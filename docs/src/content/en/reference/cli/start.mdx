@@ -1,25 +1,25 @@
 ---
-title: 'mastra start'
+title: '@actus-ag/@mastra/cli/cli start'
 description: 'Start your built Mastra application'
 ---
 
-# mastra start
+# @actus-ag/@mastra/cli/cli start
 
 Start your built Mastra application. This command is used to run your built Mastra application in production mode.
 Telemetry is enabled by default.
 
 ## Usage
-After building your project with `mastra build` run:
+After building your project with `@actus-ag/@mastra/cli/cli build` run:
 
 ```bash
-mastra start [options]
+@actus-ag/@mastra/cli/cli start [options]
 ```
 
 ## Options
 
 | Option | Description |
 |--------|-------------|
-| `-d, --dir <path>` | Path to your built Mastra output directory (default: .mastra/output) |
+| `-d, --dir <path>` | Path to your built Mastra output directory (default: .@@mastra/cli/cli/cli/output) |
 | `-nt, --no-telemetry` | Enable OpenTelemetry instrumentation for observability |
 
 ## Examples
@@ -27,17 +27,17 @@ mastra start [options]
 Start the application with default settings:
 
 ```bash
-mastra start
+@actus-ag/@mastra/cli/cli start
 ```
 
 Start from a custom output directory:
 
 ```bash
-mastra start --dir ./my-output
+@actus-ag/@mastra/cli/cli start --dir ./my-output
 ```
 
 Start with telemetry disabled:
 
 ```bash
-mastra start -nt
+@actus-ag/@mastra/cli/cli start -nt
 ```

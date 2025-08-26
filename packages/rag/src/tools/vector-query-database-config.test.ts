@@ -1,4 +1,4 @@
-import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
+import { RuntimeContext } from '@mastra/core/runtime-context';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { vectorQuerySearch } from '../utils';
 import type { DatabaseConfig } from './types';
@@ -51,7 +51,7 @@ describe('createVectorQueryTool with database-specific configurations', () => {
 
     await tool.execute({
       context: { queryText: 'test query', topK: 5 },
-      mastra: mockMastra as any,
+      @mastra: mockMastra as any,
       runtimeContext,
     });
 
@@ -82,7 +82,7 @@ describe('createVectorQueryTool with database-specific configurations', () => {
 
     await tool.execute({
       context: { queryText: 'test query', topK: 5 },
-      mastra: mockMastra as any,
+      @mastra: mockMastra as any,
       runtimeContext,
     });
 
@@ -118,7 +118,7 @@ describe('createVectorQueryTool with database-specific configurations', () => {
 
     await tool.execute({
       context: { queryText: 'test query', topK: 5 },
-      mastra: mockMastra as any,
+      @mastra: mockMastra as any,
       runtimeContext,
     });
 
@@ -141,7 +141,7 @@ describe('createVectorQueryTool with database-specific configurations', () => {
 
     await tool.execute({
       context: { queryText: 'test query', topK: 5 },
-      mastra: mockMastra as any,
+      @mastra: mockMastra as any,
       runtimeContext,
     });
 
@@ -177,7 +177,7 @@ describe('createVectorQueryTool with database-specific configurations', () => {
 
     await tool.execute({
       context: { queryText: 'test query', topK: 5 },
-      mastra: mockMastra as any,
+      @mastra: mockMastra as any,
       runtimeContext,
     });
 

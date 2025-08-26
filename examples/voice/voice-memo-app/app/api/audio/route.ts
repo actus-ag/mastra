@@ -1,4 +1,4 @@
-import { mastra } from '@/src/mastra';
+import { @mastra } from '@/src/@mastra';
 import { Readable } from 'node:stream';
 
 export async function POST(req: Request) {
@@ -9,7 +9,7 @@ export async function POST(req: Request) {
   const buffer = Buffer.from(arrayBuffer);
   const readable = Readable.from(buffer);
 
-  const noteTakerAgent = mastra.getAgent('noteTakerAgent');
+  const noteTakerAgent = @mastra.getAgent('noteTakerAgent');
   const text = (await noteTakerAgent.voice?.listen(readable)) as string;
 
   return new Response(JSON.stringify({ text }), {

@@ -43,9 +43,9 @@ vi.mock('../../services/service.deps', () => {
 });
 
 describe('CLI', () => {
-  test('creates the mastra directory and components directories', async () => {
+  test('creates the @mastra directory and components directories', async () => {
     const mockCreateMastraDir = vi.spyOn(utils, 'createMastraDir').mockImplementation(async directory => {
-      const dirPath = `${directory}/mastra`;
+      const dirPath = `${directory}/@mastra`;
       fs.mkdirSync(dirPath, { recursive: true }); // Simulate directory creation
       return { ok: true, dirPath };
     });
@@ -66,17 +66,17 @@ describe('CLI', () => {
     });
 
     expect(mockCreateMastraDir).toHaveBeenCalledWith('/mock');
-    expect(mockCreateComponentsDir).toHaveBeenCalledWith('/mock/mastra', 'agents');
-    expect(mockCreateComponentsDir).toHaveBeenCalledWith('/mock/mastra', 'tools');
+    expect(mockCreateComponentsDir).toHaveBeenCalledWith('/mock/@mastra', 'agents');
+    expect(mockCreateComponentsDir).toHaveBeenCalledWith('/mock/@mastra', 'tools');
 
-    expect(fs.existsSync('/mock/mastra')).toBe(true);
-    expect(fs.existsSync('/mock/mastra/agents')).toBe(true);
-    expect(fs.existsSync('/mock/mastra/tools')).toBe(true);
+    expect(fs.existsSync('/mock/@mastra')).toBe(true);
+    expect(fs.existsSync('/mock/@mastra/agents')).toBe(true);
+    expect(fs.existsSync('/mock/@mastra/tools')).toBe(true);
   });
 
   test('generates correct index file content', async () => {
     vi.spyOn(utils, 'createMastraDir').mockImplementation(async directory => {
-      const dirPath = `${directory}/mastra`;
+      const dirPath = `${directory}/@mastra`;
       fs.mkdirSync(dirPath, { recursive: true });
       return { ok: true, dirPath };
     });
@@ -84,8 +84,8 @@ describe('CLI', () => {
     vi.spyOn(utils, 'writeIndexFile').mockImplementation(async ({ dirPath, addExample }) => {
       const content = addExample
         ? `
-        import { Mastra } from '@actus-ag/mastra-core';
-        export const mastra = new Mastra({});
+        import { Mastra } from '@mastra/core';
+        export const @mastra = new Mastra({});
       `
         : ``;
       fs.writeFileSync(`${dirPath}/index.ts`, content); // Simulate file creation
@@ -99,16 +99,16 @@ describe('CLI', () => {
       llmApiKey: 'sk-...',
     });
 
-    const writtenFile = fs.readFileSync('/mock/mastra/index.ts', 'utf-8');
+    const writtenFile = fs.readFileSync('/mock/@mastra/index.ts', 'utf-8');
     expect(writtenFile).toContain('Mastra');
-    expect(writtenFile).toContain('export const mastra = new Mastra({');
+    expect(writtenFile).toContain('export const @mastra = new Mastra({');
   });
 
   test('generates env file', async () => {
     DepsService.prototype.checkDependencies = vi.fn(() => Promise.resolve('ok'));
 
     vi.spyOn(utils, 'createMastraDir').mockImplementation(async directory => {
-      const dirPath = `${directory}/mastra`;
+      const dirPath = `${directory}/@mastra`;
       fs.mkdirSync(dirPath, { recursive: true });
       return { ok: true, dirPath };
     });
@@ -152,8 +152,8 @@ describe('CLI', () => {
   //   expect(fs.existsSync('/mock')).toBe(false);
   // });
 
-  // test('stops initialization if mastra core is not installed', async () => {
-  //   DepsService.prototype.checkDependencies = jest.fn(() => Promise.resolve('Install @actus-ag/mastra-core before running this command (npm install @actus-ag/mastra-core)'));
+  // test('stops initialization if @mastra core is not installed', async () => {
+  //   DepsService.prototype.checkDependencies = jest.fn(() => Promise.resolve('Install @mastra/core before running this command (npm install @mastra/core)'));
 
   //   jest.spyOn(utils, 'createMastraDir').mockImplementation(async () => {
   //     return { ok: false }; // Simulate failure to create directory
@@ -167,20 +167,20 @@ describe('CLI', () => {
   //     showSpinner: false,
   //   });
 
-  //   expect(logger.error).toHaveBeenCalledWith('Install @actus-ag/mastra-core before running this command (npm install @actus-ag/mastra-core)');
+  //   expect(logger.error).toHaveBeenCalledWith('Install @mastra/core before running this command (npm install @mastra/core)');
   //   expect(utils.createMastraDir).not.toHaveBeenCalled();
   //   expect(utils.writeIndexFile).not.toHaveBeenCalled();
 
   //   expect(fs.existsSync('/mock')).toBe(false);
   // });
 
-  test('stops initialization if mastra is already setup', async () => {
+  test('stops initialization if @mastra is already setup', async () => {
     DepsService.prototype.checkDependencies = vi.fn(() => Promise.resolve('ok'));
 
-    fs.mkdirSync('/mock/mastra', { recursive: true });
+    fs.mkdirSync('/mock/@mastra', { recursive: true });
 
     vi.spyOn(utils, 'createMastraDir').mockImplementation(async directory => {
-      const dirPath = `${directory}/mastra`;
+      const dirPath = `${directory}/@mastra`;
       fs.mkdirSync(dirPath, { recursive: true });
       return { ok: false };
     });
@@ -199,6 +199,6 @@ describe('CLI', () => {
     expect(mockWriteIndexFile).not.toHaveBeenCalled();
     expect(mockWriteAPIKey).not.toHaveBeenCalled();
 
-    expect(fs.existsSync('/mock/mastra')).toBe(true);
+    expect(fs.existsSync('/mock/@mastra')).toBe(true);
   });
 });

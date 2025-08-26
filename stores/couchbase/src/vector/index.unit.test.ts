@@ -670,15 +670,15 @@ describe('Unit Testing CouchbaseVector', () => {
       // Test each possible metric mapping from the imported DISTANCE_MAPPING constant
       const metricsToTest = Object.keys(DISTANCE_MAPPING) as Array<keyof typeof DISTANCE_MAPPING>;
 
-      for (const mastraMetric of metricsToTest) {
+      for (const @mastraMetric of metricsToTest) {
         clearAllMocks();
-        const couchbaseMetric = DISTANCE_MAPPING[mastraMetric];
+        const couchbaseMetric = DISTANCE_MAPPING[@mastraMetric];
 
         // Test createIndex maps Mastra metric to Couchbase metric
         await couchbase_client.createIndex({
           indexName: test_indexName,
           dimension: 3,
-          metric: mastraMetric,
+          metric: @mastraMetric,
         });
 
         // Verify the upsertIndex was called with the correct Couchbase metric
@@ -714,7 +714,7 @@ describe('Unit Testing CouchbaseVector', () => {
         });
 
         const stats = await couchbase_client.describeIndex({ indexName: test_indexName });
-        expect(stats.metric).toBe(mastraMetric);
+        expect(stats.metric).toBe(@mastraMetric);
       }
     });
 

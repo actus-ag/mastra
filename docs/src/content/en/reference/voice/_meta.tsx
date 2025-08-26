@@ -1,7 +1,7 @@
 import { Tag } from "@/components/tag";
 
 const meta = {
-  "mastra-voice": "Mastra Voice",
+  "@@mastra/cli/cli/cli-voice": "Mastra Voice",
   "composite-voice": "Composite Voice",
   "voice.speak": ".speak()",
   "voice.listen": ".listen()",

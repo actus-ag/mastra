@@ -12,7 +12,7 @@
     "@assistant-ui/react": "0.7.85",
     "@assistant-ui/react-markdown": "^0.7.21",
     "@assistant-ui/react-ui": "^0.1.8",
-    "@actus-ag/mastra-client-js": "latest",
+    "@mastraent-js": "latest",
     "next": "^15.3.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
@@ -21,7 +21,7 @@
   },
   "pnpm": {
     "overrides": {
-      "@actus-ag/mastra-client-js": "link:../../client-sdks/client-js"
+      "@mastraent-js": "link:../../client-sdks/client-js"
     }
   },
   "devDependencies": {

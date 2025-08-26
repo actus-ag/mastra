@@ -1,4 +1,4 @@
-import { createTool } from '@actus-ag/mastra-core/tools';
+import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
 
 const MAX_TEXT_LENGTH = 4000;
@@ -15,7 +15,7 @@ export const generateQuestionsFromTextTool = createTool({
     questionCount: z.number().describe('Number of questions generated'),
     success: z.boolean().describe('Whether question generation was successful'),
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     const { extractedText, maxQuestions = 10 } = context;
 
     console.log('❓ Generating questions from extracted text...');
@@ -36,7 +36,7 @@ export const generateQuestionsFromTextTool = createTool({
     }
 
     try {
-      const agent = mastra?.getAgent('textQuestionAgent');
+      const agent = @mastra?.getAgent('textQuestionAgent');
       if (!agent) {
         throw new Error('Question generator agent not found');
       }

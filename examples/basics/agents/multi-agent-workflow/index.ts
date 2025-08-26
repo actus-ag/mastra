@@ -1,7 +1,7 @@
 import { anthropic } from '@ai-sdk/anthropic';
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@actus-ag/mastra-core';
-import { createStep, createWorkflow } from '@actus-ag/mastra-core/workflows';
+import { Agent } from '@mastra/core';
+import { createStep, createWorkflow } from '@mastra/core/workflows';
 import { z } from 'zod';
 
 const copywriterAgent = new Agent({

@@ -1,4 +1,4 @@
-import { createTool } from '@actus-ag/mastra-core/tools';
+import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
 import { experimental_generateImage as generateImage } from 'ai';
 import { openai } from '@ai-sdk/openai';
@@ -14,7 +14,7 @@ const s3Client = new S3Client({
   },
 });
 
-const BUCKET_NAME = process.env.S3_BUCKET_NAME || 'mastra-generated-images';
+const BUCKET_NAME = process.env.S3_BUCKET_NAME || '@mastra-generated-images';
 const PUBLIC_URL_BASE = process.env.S3_PUBLIC_URL_BASE || `https://${BUCKET_NAME}.s3.amazonaws.com`;
 
 // Helper function to upload image to cloud storage

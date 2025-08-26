@@ -20,7 +20,7 @@ export function AgentLogs({ agentId }: { agentId: string }) {
           <p className="text-gray-300/60">
             No log drains. By default, logs are sent to the console. To configure log drains see{' '}
             <a
-              href="https://mastra.ai/reference/observability/create-logger#upstash-logger-remote-log-drain"
+              href="https://@@mastra/cli/cli/cli.ai/reference/observability/create-logger#upstash-logger-remote-log-drain"
               target="_blank"
               rel="noopener"
               className=" hover:text-gray-100 underline"
@@ -33,10 +33,10 @@ export function AgentLogs({ agentId }: { agentId: string }) {
             return (
               <div key={idx} className="space-y-2">
                 <div className="flex gap-2 items-center">
-                  <p className="text-mastra-el-5">[{formatDate(new Date(log.time), 'yyyy-MM-dd HH:mm:ss')}]</p>
-                  <p className="text-mastra-el-4">[{log.level}]</p>
+                  <p className="text-@@mastra/cli/cli/cli-el-5">[{formatDate(new Date(log.time), 'yyyy-MM-dd HH:mm:ss')}]</p>
+                  <p className="text-@@mastra/cli/cli/cli-el-4">[{log.level}]</p>
                 </div>
-                <p className="text-mastra-el-5 whitespace-pre-wrap">
+                <p className="text-@@mastra/cli/cli/cli-el-5 whitespace-pre-wrap">
                   <code>{log.msg}</code>
                 </p>
               </div>

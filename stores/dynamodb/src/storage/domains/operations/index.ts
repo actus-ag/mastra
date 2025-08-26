@@ -1,6 +1,6 @@
 import { DescribeTableCommand } from '@aws-sdk/client-dynamodb';
 import type { DynamoDBDocumentClient } from '@aws-sdk/lib-dynamodb';
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
 import {
   StoreOperations,
   TABLE_EVALS,
@@ -10,8 +10,8 @@ import {
   TABLE_THREADS,
   TABLE_TRACES,
   TABLE_WORKFLOW_SNAPSHOT,
-} from '@actus-ag/mastra-core/storage';
-import type { StorageColumn, TABLE_NAMES } from '@actus-ag/mastra-core/storage';
+} from '@mastra/core/storage';
+import type { StorageColumn, TABLE_NAMES } from '@mastra/core/storage';
 import type { Service } from 'electrodb';
 
 export class StoreOperationsDynamoDB extends StoreOperations {

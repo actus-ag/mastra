@@ -33,22 +33,22 @@ All commands create the same Mastra project but use different package manager sy
 <Tabs items={["npm", "yarn", "pnpm", "bun"]}>
   <Tabs.Tab>
     ```bash copy
-    npm install mastra@latest @actus-ag/mastra-core@latest @actus-ag/mastra-libsql@latest @actus-ag/mastra-client-js@latest
+    npm install @actus-ag/@mastra/cli/cli@latest @mastra/cli/cli/cli/core@latest @mastra/cli/cli/cli/libsql@latest @@mastra/cli/cli/cli-client-js@latest
     ```
   </Tabs.Tab>
   <Tabs.Tab>
     ```bash copy
-    yarn add mastra@latest @actus-ag/mastra-core@latest @actus-ag/mastra-libsql@latest @actus-ag/mastra-client-js@latest
+    yarn add @actus-ag/@mastra/cli/cli@latest @mastra/cli/cli/cli/core@latest @mastra/cli/cli/cli/libsql@latest @@mastra/cli/cli/cli-client-js@latest
     ```
   </Tabs.Tab>
   <Tabs.Tab>
     ```bash copy
-    pnpm add mastra@latest @actus-ag/mastra-core@latest @actus-ag/mastra-libsql@latest @actus-ag/mastra-client-js@latest
+    pnpm add @actus-ag/@mastra/cli/cli@latest @mastra/cli/cli/cli/core@latest @mastra/cli/cli/cli/libsql@latest @@mastra/cli/cli/cli-client-js@latest
     ```
   </Tabs.Tab>
   <Tabs.Tab>
     ```bash copy
-    bun add mastra@latest @actus-ag/mastra-core@latest @actus-ag/mastra-libsql@latest @actus-ag/mastra-client-js@latest
+    bun add @actus-ag/@mastra/cli/cli@latest @mastra/cli/cli/cli/core@latest @mastra/cli/cli/cli/libsql@latest @@mastra/cli/cli/cli-client-js@latest
     ```
   </Tabs.Tab>
 </Tabs>
@@ -62,21 +62,21 @@ To integrate Mastra into your project, you have two options:
 Run the following command to quickly scaffold the default Weather agent with sensible defaults:
 
 ```bash copy
-npx mastra@latest init --dir . --components agents,tools --example --llm openai
+npx @actus-ag/@mastra/cli/cli@latest init --dir . --components agents,tools --example --llm openai
 ```
 
-> See [mastra init](/reference/cli/init) for more information.
+> See [@actus-ag/@mastra/cli/cli init](/reference/cli/init) for more information.
 
 ### 2. Use the Interactive CLI
 
 If you prefer to customize the setup, run the `init` command and choose from the options when prompted:
 
 ```bash copy
-npx mastra@latest init
+npx @actus-ag/@mastra/cli/cli@latest init
 ```
 
 <Callout type="warning">
-By default, `mastra init` suggests `src` as the install location. If you're using Vite/React at the root of your project (e.g., `app`, not `src/app`), enter `.` when prompted:
+By default, `@actus-ag/@mastra/cli/cli init` suggests `src` as the install location. If you're using Vite/React at the root of your project (e.g., `app`, not `src/app`), enter `.` when prompted:
 </Callout>
 
 Add the `dev` and `build` scripts to `package.json`:
@@ -87,8 +87,8 @@ Add the `dev` and `build` scripts to `package.json`:
     {
       "scripts": {
         ...
-        "dev:mastra": "mastra dev --dir mastra",
-        "build:mastra": "mastra build --dir mastra"
+        "dev:@@mastra/cli/cli/cli": "@actus-ag/@mastra/cli/cli dev --dir @@mastra/cli/cli/cli",
+        "build:@@mastra/cli/cli/cli": "@actus-ag/@mastra/cli/cli build --dir @@mastra/cli/cli/cli"
       }
     }
     ```
@@ -98,8 +98,8 @@ Add the `dev` and `build` scripts to `package.json`:
     {
       "scripts": {
         ...
-        "dev:mastra": "mastra dev --dir src/mastra",
-        "build:mastra": "mastra build --dir src/mastra"
+        "dev:@@mastra/cli/cli/cli": "@actus-ag/@mastra/cli/cli dev --dir src/@@mastra/cli/cli/cli",
+        "build:@@mastra/cli/cli/cli": "@actus-ag/@mastra/cli/cli build --dir src/@@mastra/cli/cli/cli"
       }
     }
     ```
@@ -113,7 +113,7 @@ Modify the `tsconfig.json` file in your project root:
 ```json filename="tsconfig.json"
 {
   ...
-  "exclude": ["dist", ".mastra"]
+  "exclude": ["dist", ".@@mastra/cli/cli/cli"]
 }
 ```
 
@@ -127,10 +127,10 @@ OPENAI_API_KEY=<your-api-key>
 
 ## Update .gitignore
 
-Add `.mastra` to your `.gitignore` file:
+Add `.@@mastra/cli/cli/cli` to your `.gitignore` file:
 
 ```bash filename=".gitignore" copy
-.mastra
+.@@mastra/cli/cli/cli
 ```
 
 ## Start the Mastra Dev Server
@@ -140,12 +140,12 @@ Start the Mastra Dev Server to expose your agents as REST endpoints:
 <Tabs items={["npm", "CLI"]}>
   <Tabs.Tab>
     ```bash copy
-    npm run dev:mastra
+    npm run dev:@@mastra/cli/cli/cli
     ```
   </Tabs.Tab>
   <Tabs.Tab>
     ```bash copy
-    mastra dev:mastra
+    @actus-ag/@mastra/cli/cli dev:@@mastra/cli/cli/cli
     ```
   </Tabs.Tab>
 </Tabs>
@@ -162,13 +162,13 @@ Create a new directory and file. Then add the example code:
 
 ```bash copy
 mkdir lib
-touch lib/mastra.ts
+touch lib/@@mastra/cli/cli/cli.ts
 ```
 
-```typescript filename="lib/mastra.ts" showLineNumbers copy
-import { MastraClient } from "@actus-ag/mastra-client-js";
+```typescript filename="lib/@@mastra/cli/cli/cli.ts" showLineNumbers copy
+import { MastraClient } from "@@mastra/cli/cli/cli-client-js";
 
-export const mastraClient = new MastraClient({
+export const @@mastra/cli/cli/cliClient = new MastraClient({
   baseUrl: import.meta.env.VITE_MASTRA_API_URL || "http://localhost:4111",
 });
 ```
@@ -196,7 +196,7 @@ touch app/routes/test.tsx
 
 ```typescript filename="app/routes/test.tsx" showLineNumbers copy
 import { useState } from "react";
-import { mastraClient } from "../../lib/mastra";
+import { @@mastra/cli/cli/cliClient } from "../../lib/@@mastra/cli/cli/cli";
 
 export default function Test() {
   const [result, setResult] = useState<string | null>(null);
@@ -206,7 +206,7 @@ export default function Test() {
 
     const formData = new FormData(event.currentTarget);
     const city = formData.get("city")?.toString();
-    const agent = mastraClient.getAgent("weatherAgent");
+    const agent = @@mastra/cli/cli/cliClient.getAgent("weatherAgent");
 
     const response = await agent.generate({
       messages: [{ role: "user", content: `What's the weather like in ${city}?` }]

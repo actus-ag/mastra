@@ -6,28 +6,28 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "mastra dev"
+    "dev": "@mastra/cli/cli dev"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "type": "module",
   "dependencies": {
-    "@ai-sdk/openai": "^1.3.22",
-    "@actus-ag/mastra-core": "latest",
-    "@actus-ag/mastra-voice-elevenlabs": "latest",
-    "@actus-ag/mastra-voice-openai": "latest",
-    "@actus-ag/mastra-voice-playai": "latest",
-    "mastra": "latest",
+    "@ai-sdk/openai": "^1.3.24",
+    "@mastra/core": "latest",
+    "@mastra/voice-elevenlabs": "latest",
+    "@mastra/voice-openai": "latest",
+    "@mastra/voice-playai": "latest",
+    "@mastra/cli/cli": "latest",
     "zod": "^3.25.67"
   },
   "pnpm": {
     "overrides": {
-      "@actus-ag/mastra-core": "link:../../../../packages/core",
-      "@actus-ag/mastra-voice-elevenlabs": "link:../../../../voice/elevenlabs",
-      "@actus-ag/mastra-voice-openai": "link:../../../../voice/openai",
-      "@actus-ag/mastra-voice-playai": "link:../../../../voice/playai",
-      "mastra": "link:../../../../packages/cli"
+      "@mastra/core": "link:../../../../packages/core",
+      "@mastra/voice-elevenlabs": "link:../../../../voice/elevenlabs",
+      "@mastra/voice-openai": "link:../../../../voice/openai",
+      "@mastra/voice-playai": "link:../../../../voice/playai",
+      "@mastra/cli/cli": "link:../../../../packages/cli"
     }
   },
   "devDependencies": {

@@ -7,7 +7,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import { CircleCheck } from 'lucide-react';
 import Spinner from '@/components/ui/spinner';
 import { Select, SelectItem, SelectContent, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { UpdateModelParams } from '@actus-ag/mastra-client-js';
+import { UpdateModelParams } from '@@mastra/cli/cli/cli-client-js';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 
 export interface AgentMetadataModelSwitcherProps {

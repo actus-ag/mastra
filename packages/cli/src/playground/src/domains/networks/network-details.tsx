@@ -1,7 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Brain, ChevronDown, RefreshCw } from 'lucide-react';
 import { Agent } from '@/components/ui/agent-logo';
-import { GetNetworkResponse, GetVNextNetworkResponse } from '@actus-ag/mastra-client-js';
+import { GetNetworkResponse, GetVNextNetworkResponse } from '@@mastra/cli/cli/cli-client-js';
 import { useContext } from 'react';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
@@ -18,7 +18,7 @@ import {
   ToolsIcon,
   Txt,
   WorkflowIcon,
-} from '@actus-ag/mastra-playground-ui';
+} from '@mastra/cli/cli/cli/playground-ui';
 
 type NetworkDetailsProps = {
   network: GetNetworkResponse | GetVNextNetworkResponse;
@@ -33,19 +33,19 @@ export function NetworkDetails({ network, isVNext }: NetworkDetailsProps) {
     <ScrollArea className="pt-2 px-4 pb-4 text-xs">
       <div className="p-4 space-y-4">
         <div>
-          <h3 className="text-sm font-medium text-mastra-el-5 mb-1">Network Name</h3>
-          <p className="text-sm text-mastra-el-4">{network.name}</p>
+          <h3 className="text-sm font-medium text-@@mastra/cli/cli/cli-el-5 mb-1">Network Name</h3>
+          <p className="text-sm text-@@mastra/cli/cli/cli-el-4">{network.name}</p>
         </div>
 
         <div>
-          <h3 className="text-sm font-medium text-mastra-el-5 mb-1">Instructions</h3>
-          <div className="max-h-36 overflow-auto rounded border border-mastra-el-2 bg-mastra-bg-2 p-2">
-            <p className="text-sm text-mastra-el-4">{network.instructions || 'No instructions provided'}</p>
+          <h3 className="text-sm font-medium text-@@mastra/cli/cli/cli-el-5 mb-1">Instructions</h3>
+          <div className="max-h-36 overflow-auto rounded border border-@@mastra/cli/cli/cli-el-2 bg-@@mastra/cli/cli/cli-bg-2 p-2">
+            <p className="text-sm text-@@mastra/cli/cli/cli-el-4">{network.instructions || 'No instructions provided'}</p>
           </div>
         </div>
 
         <div>
-          <h3 className="text-sm font-medium text-mastra-el-5 mb-1">Agents</h3>
+          <h3 className="text-sm font-medium text-@@mastra/cli/cli/cli-el-5 mb-1">Agents</h3>
           <div className="flex items-center gap-2">
             <Agent />
             <Badge variant="outline" className="text-xs">
@@ -57,7 +57,7 @@ export function NetworkDetails({ network, isVNext }: NetworkDetailsProps) {
         {isVNext && (
           <>
             <div>
-              <h3 className="text-sm font-medium text-mastra-el-5 mb-1">Workflows</h3>
+              <h3 className="text-sm font-medium text-@@mastra/cli/cli/cli-el-5 mb-1">Workflows</h3>
               <div className="flex items-center gap-2">
                 <WorkflowIcon />
                 <Badge variant="outline" className="text-xs">
@@ -67,7 +67,7 @@ export function NetworkDetails({ network, isVNext }: NetworkDetailsProps) {
               </div>
             </div>
             <div>
-              <h3 className="text-sm font-medium text-mastra-el-5 mb-1">Tools</h3>
+              <h3 className="text-sm font-medium text-@@mastra/cli/cli/cli-el-5 mb-1">Tools</h3>
               <div className="flex items-center gap-2">
                 <ToolsIcon />
                 <Badge variant="outline" className="text-xs">
@@ -80,17 +80,17 @@ export function NetworkDetails({ network, isVNext }: NetworkDetailsProps) {
         )}
 
         <div>
-          <h3 className="text-sm font-medium text-mastra-el-5 mb-1">Routing Model</h3>
+          <h3 className="text-sm font-medium text-@@mastra/cli/cli/cli-el-5 mb-1">Routing Model</h3>
           <div className="flex items-center gap-2">
-            <Brain className="h-4 w-4 text-mastra-el-4" />
+            <Brain className="h-4 w-4 text-@@mastra/cli/cli/cli-el-4" />
             <Badge className="border-none text-xs">{network.routingModel?.modelId || 'Unknown'}</Badge>
           </div>
         </div>
 
         <div>
-          <h3 className="text-sm font-medium text-mastra-el-5 mb-1">Routing Model Settings</h3>
+          <h3 className="text-sm font-medium text-@@mastra/cli/cli/cli-el-5 mb-1">Routing Model Settings</h3>
           {isVNext ? (
-            <div className="flex flex-col gap-3 text-mastra-el-5 pb-4">
+            <div className="flex flex-col gap-3 text-@@mastra/cli/cli/cli-el-5 pb-4">
               <Entry label="Chat Method">
                 <RadioGroup
                   orientation="horizontal"
@@ -124,7 +124,7 @@ export function NetworkDetails({ network, isVNext }: NetworkDetailsProps) {
               )}
             </div>
           ) : (
-            <div className="flex flex-col gap-3 text-mastra-el-5 pb-4">
+            <div className="flex flex-col gap-3 text-@@mastra/cli/cli/cli-el-5 pb-4">
               <Entry label="Temperature">
                 <div className="flex flex-row justify-between items-center gap-2">
                   <Slider
@@ -154,12 +154,12 @@ export function NetworkDetails({ network, isVNext }: NetworkDetailsProps) {
               </Entry>
               <Collapsible>
                 <CollapsibleTrigger className="w-full group flex flex-row justify-between items-center pt-1 py-2">
-                  <span className="text-mastra-el-3 text-[12px] group-hover:text-mastra-el-5">Extended Settings</span>
-                  <ChevronDown className="w-4 h-4 text-mastra-el-3 group-hover:text-mastra-el-5" />
+                  <span className="text-@@mastra/cli/cli/cli-el-3 text-[12px] group-hover:text-@@mastra/cli/cli/cli-el-5">Extended Settings</span>
+                  <ChevronDown className="w-4 h-4 text-@@mastra/cli/cli/cli-el-3 group-hover:text-@@mastra/cli/cli/cli-el-5" />
                 </CollapsibleTrigger>
                 <CollapsibleContent className="flex flex-col gap-2 pt-2">
                   <div className="flex flex-col gap-2">
-                    <Label className="text-mastra-el-3 text-[12px]">Top K</Label>
+                    <Label className="text-@@mastra/cli/cli/cli-el-3 text-[12px]">Top K</Label>
                     <Input
                       type="number"
                       value={modelSettings?.topK}
@@ -172,7 +172,7 @@ export function NetworkDetails({ network, isVNext }: NetworkDetailsProps) {
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <Label className="text-mastra-el-3 text-[12px]">Frequency Penalty</Label>
+                    <Label className="text-@@mastra/cli/cli/cli-el-3 text-[12px]">Frequency Penalty</Label>
                     <Input
                       type="number"
                       value={modelSettings?.frequencyPenalty}
@@ -185,7 +185,7 @@ export function NetworkDetails({ network, isVNext }: NetworkDetailsProps) {
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <Label className="text-mastra-el-3 text-[12px]">Presence Penalty</Label>
+                    <Label className="text-@@mastra/cli/cli/cli-el-3 text-[12px]">Presence Penalty</Label>
                     <Input
                       type="number"
                       value={modelSettings?.presencePenalty}
@@ -198,7 +198,7 @@ export function NetworkDetails({ network, isVNext }: NetworkDetailsProps) {
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <Label className="text-mastra-el-3 text-[12px]">Max Tokens</Label>
+                    <Label className="text-@@mastra/cli/cli/cli-el-3 text-[12px]">Max Tokens</Label>
                     <Input
                       type="number"
                       value={modelSettings?.maxTokens}
@@ -211,7 +211,7 @@ export function NetworkDetails({ network, isVNext }: NetworkDetailsProps) {
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <Label className="text-mastra-el-3 text-[12px]">Max Steps</Label>
+                    <Label className="text-@@mastra/cli/cli/cli-el-3 text-[12px]">Max Steps</Label>
                     <Input
                       type="number"
                       value={modelSettings?.maxSteps}
@@ -224,7 +224,7 @@ export function NetworkDetails({ network, isVNext }: NetworkDetailsProps) {
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <Label className="text-mastra-el-3 text-[12px]">Max Retries</Label>
+                    <Label className="text-@@mastra/cli/cli/cli-el-3 text-[12px]">Max Retries</Label>
                     <Input
                       type="number"
                       value={modelSettings?.maxRetries}
@@ -256,8 +256,8 @@ export function NetworkDetails({ network, isVNext }: NetworkDetailsProps) {
                     })
                   }
                 >
-                  <span className="text-mastra-el-3 text-[12px] group-hover:text-mastra-el-5">Reset</span>
-                  <RefreshCw className="!w-3 !h-3 text-mastra-el-3 group-hover:text-mastra-el-5" />
+                  <span className="text-@@mastra/cli/cli/cli-el-3 text-[12px] group-hover:text-@@mastra/cli/cli/cli-el-5">Reset</span>
+                  <RefreshCw className="!w-3 !h-3 text-@@mastra/cli/cli/cli-el-3 group-hover:text-@@mastra/cli/cli/cli-el-5" />
                 </Button>
               </div>
             </div>

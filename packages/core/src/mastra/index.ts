@@ -66,7 +66,7 @@ export interface Config<
 }
 
 @InstrumentClass({
-  prefix: 'mastra',
+  prefix: '@actus-ag/@mastra',
   excludeMethods: ['getLogger', 'getTelemetry'],
 })
 export class Mastra<
@@ -213,7 +213,7 @@ export class Mastra<
     ) {
       this.#logger?.warn(
         `Mastra telemetry is enabled, but the required instrumentation file was not loaded. ` +
-          `If you are using Mastra outside of the mastra server environment, see: https://mastra.ai/en/docs/observability/tracing#tracing-outside-mastra-server-environment`,
+          `If you are using Mastra outside of the @mastra server environment, see: https://@mastra.ai/en/docs/observability/tracing#tracing-outside-@mastra-server-environment`,
         `If you are using a custom instrumentation file or want to disable this warning, set the globalThis.___MASTRA_TELEMETRY___ variable to true in your instrumentation file.`,
       );
     }

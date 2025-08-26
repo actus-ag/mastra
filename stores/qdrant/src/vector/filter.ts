@@ -1,4 +1,4 @@
-import { BaseFilterTranslator } from '@actus-ag/mastra-core/vector/filter';
+import { BaseFilterTranslator } from '@mastra/core/vector/filter';
 import type {
   VectorFilter,
   LogicalOperator,
@@ -6,7 +6,7 @@ import type {
   OperatorValueMap,
   LogicalOperatorValueMap,
   BlacklistedRootOperators,
-} from '@actus-ag/mastra-core/vector/filter';
+} from '@mastra/core/vector/filter';
 
 type QdrantOperatorValueMap = Omit<OperatorValueMap, '$options' | '$elemMatch' | '$all'> & {
   /**

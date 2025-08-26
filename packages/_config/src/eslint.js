@@ -26,7 +26,7 @@ export const createConfig = async () =>
     {
       ignores: [
         '**/.tsup/**',
-        '**/.mastra/**',
+        '**/.@mastra/**',
         '**/.cache/**',
         '**/node_modules/**',
         '**/build/**',

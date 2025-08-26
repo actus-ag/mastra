@@ -25,9 +25,9 @@ UNSPLASH_ACCESS_KEY=<your-unsplash-access-key>
 
 Create a simple agent that analyzes images to identify objects, describe scenes, and answer questions about visual content.
 
-```typescript filename="src/mastra/agents/example-image-analysis-agent.ts" showLineNumbers copy
+```typescript filename="src/@@mastra/cli/cli/cli/agents/example-image-analysis-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 export const imageAnalysisAgent = new Agent({
   name: "image-analysis",
@@ -46,12 +46,12 @@ export const imageAnalysisAgent = new Agent({
 
 To use an agent, register it in your main Mastra instance.
 
-```typescript filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core/mastra";
+```typescript filename="src/@@mastra/cli/cli/cli/index.ts" showLineNumbers copy
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
 
 import { imageAnalysisAgent } from "./agents/example-image-analysis-agent";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // ...
   agents: { imageAnalysisAgent }
 });
@@ -61,7 +61,7 @@ export const mastra = new Mastra({
 
 This function retrieves a random image from Unsplash to pass to the agent for analysis.
 
-```typescript filename="src/mastra/utils/get-random-image.ts" showLineNumbers copy
+```typescript filename="src/@@mastra/cli/cli/cli/utils/get-random-image.ts" showLineNumbers copy
 export const getRandomImage = async (): Promise<string> => {
   const queries = ["wildlife", "feathers", "flying", "birds"];
   const query = queries[Math.floor(Math.random() * queries.length)];
@@ -88,11 +88,11 @@ Use `getAgent()` to retrieve a reference to the agent, then call `generate()` wi
 ```typescript filename="src/test-image-analysis.ts" showLineNumbers copy
 import "dotenv/config";
 
-import { mastra } from "./mastra";
-import { getRandomImage } from "./mastra/utils/get-random-image";
+import { @@mastra/cli/cli/cli } from "./@@mastra/cli/cli/cli";
+import { getRandomImage } from "./@@mastra/cli/cli/cli/utils/get-random-image";
 
 const imageUrl = await getRandomImage();
-const agent = mastra.getAgent("imageAnalysisAgent");
+const agent = @@mastra/cli/cli/cli.getAgent("imageAnalysisAgent");
 
 const response = await agent.generate([
   {
@@ -116,7 +116,7 @@ console.log(response.text);
 
 <GithubLink
   marginTop='mt-16'
-  link="https://github.com/mastra-ai/mastra/blob/main/examples/basics/agents/bird-checker"
+  link="https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/agents/bird-checker"
 />
 
 ## Related

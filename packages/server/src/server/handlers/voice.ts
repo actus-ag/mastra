@@ -1,5 +1,5 @@
 import { Readable } from 'stream';
-import type { Agent } from '@actus-ag/mastra-core/agent';
+import type { Agent } from '@mastra/core/agent';
 import { HTTPException } from '../http-exception';
 import type { Context } from '../types';
 
@@ -13,13 +13,13 @@ interface VoiceContext extends Context {
 /**
  * Get available speakers for an agent
  */
-export async function getSpeakersHandler({ mastra, agentId }: VoiceContext) {
+export async function getSpeakersHandler({ @mastra, agentId }: VoiceContext) {
   try {
     if (!agentId) {
       throw new HTTPException(400, { message: 'Agent ID is required' });
     }
 
-    const agent = mastra.getAgent(agentId);
+    const agent = @mastra.getAgent(agentId);
 
     if (!agent) {
       throw new HTTPException(404, { message: 'Agent not found' });
@@ -42,7 +42,7 @@ export async function getSpeakersHandler({ mastra, agentId }: VoiceContext) {
  * Generate speech from text
  */
 export async function generateSpeechHandler({
-  mastra,
+  @mastra,
   agentId,
   body,
 }: VoiceContext & {
@@ -60,7 +60,7 @@ export async function generateSpeechHandler({
       text: body?.text,
     });
 
-    const agent = mastra.getAgent(agentId);
+    const agent = @mastra.getAgent(agentId);
 
     if (!agent) {
       throw new HTTPException(404, { message: 'Agent not found' });
@@ -88,7 +88,7 @@ export async function generateSpeechHandler({
  * Transcribe speech to text
  */
 export async function transcribeSpeechHandler({
-  mastra,
+  @mastra,
   agentId,
   body,
 }: VoiceContext & {
@@ -106,7 +106,7 @@ export async function transcribeSpeechHandler({
       throw new HTTPException(400, { message: 'Audio data is required' });
     }
 
-    const agent = mastra.getAgent(agentId);
+    const agent = @mastra.getAgent(agentId);
 
     if (!agent) {
       throw new HTTPException(404, { message: 'Agent not found' });
@@ -132,13 +132,13 @@ export async function transcribeSpeechHandler({
 /**
  * Get available listeners for an agent
  */
-export async function getListenerHandler({ mastra, agentId }: VoiceContext) {
+export async function getListenerHandler({ @mastra, agentId }: VoiceContext) {
   try {
     if (!agentId) {
       throw new HTTPException(400, { message: 'Agent ID is required' });
     }
 
-    const agent = mastra.getAgent(agentId);
+    const agent = @mastra.getAgent(agentId);
 
     if (!agent) {
       throw new HTTPException(404, { message: 'Agent not found' });

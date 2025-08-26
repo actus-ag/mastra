@@ -7,16 +7,16 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "latest",
-    "@actus-ag/mastra-core": "latest",
-    "@actus-ag/mastra-rag": "latest",
-    "@actus-ag/mastra-pg": "latest",
+    "@mastra/core": "latest",
+    "@mastra/rag": "latest",
+    "@mastra/pg": "latest",
     "ai": "latest"
   },
   "pnpm": {
     "overrides": {
-      "@actus-ag/mastra-core": "link:../../../../packages/core",
-      "@actus-ag/mastra-rag": "link:../../../../packages/rag",
-      "@actus-ag/mastra-pg": "link:../../../../stores/pg"
+      "@mastra/core": "link:../../../../packages/core",
+      "@mastra/rag": "link:../../../../packages/rag",
+      "@mastra/pg": "link:../../../../stores/pg"
     }
   },
   "devDependencies": {

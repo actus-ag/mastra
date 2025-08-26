@@ -3,10 +3,10 @@ import 'dotenv/config';
 import Readline from 'readline';
 
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import type { CoreMessage } from '@actus-ag/mastra-core';
-import { MemoryProcessor, MemoryProcessorOpts } from '@actus-ag/mastra-core/memory';
-import { Memory } from '@actus-ag/mastra-memory';
+import { Agent } from '@mastra/core/agent';
+import type { CoreMessage } from '@mastra/core';
+import { MemoryProcessor, MemoryProcessorOpts } from '@mastra/core/memory';
+import { Memory } from '@mastra/memory';
 
 import { makeSend } from './utils';
 

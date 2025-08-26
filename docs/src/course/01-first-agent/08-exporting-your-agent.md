@@ -1,16 +1,16 @@
 # Exporting Your Agent
 
-To make your agent available to the playground, you need to export it through the Mastra class in your `src/mastra/index.ts` file.
+To make your agent available to the playground, you need to export it through the Mastra class in your `src/@mastra/index.ts` file.
 
 First, import the necessary dependencies and your agent:
 
 ```typescript
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { PinoLogger } from "@actus-ag/mastra-loggers";
-import { LibSQLStore } from "@actus-ag/mastra-libsql";
+import { Mastra } from "@mastra/core/@mastra";
+import { PinoLogger } from "@mastra/loggers";
+import { LibSQLStore } from "@mastra/libsql";
 import { financialAgent } from "./agents/financial-agent";
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   agents: {
     financialAgent,
   },

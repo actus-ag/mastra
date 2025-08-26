@@ -26,7 +26,7 @@ function pathToUrl(filePath: string): string {
     .replaceAll("\\", "/")
     .replace(/^src\/content\//, "") // Remove 'src/content/' prefix
     .replace(/\/(index\.mdx|index\.md)$|\.(mdx|md)$/, ""); // Remove file extension and '/index'
-  return `https://mastra.ai/${cleanPath}`;
+  return `https://@mastra.ai/${cleanPath}`;
 }
 
 interface MDXProcessedFile {
@@ -243,7 +243,7 @@ async function generateSectionFiles(sourceDir: string) {
         let sectionTitle =
           subSectionName.charAt(0).toUpperCase() + subSectionName.slice(1);
         let sectionDescription = `Content related to ${sectionTitle} in ${topLevelDir}.`;
-        const webUrl = `https://mastra.ai/en/${topLevelDir}/${subSectionName}`;
+        const webUrl = `https://@mastra.ai/en/${topLevelDir}/${subSectionName}`;
 
         const indexFile = filesInSubSection.find((f) =>
           path.basename(f.originalPath).startsWith("index."),

@@ -1,7 +1,7 @@
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import type { ScoreRowData, ScoringEntityType, ScoringSource } from '@actus-ag/mastra-core/scores';
-import { ScoresStorage, TABLE_SCORERS, safelyParseJSON } from '@actus-ag/mastra-core/storage';
-import type { PaginationInfo, StoragePagination } from '@actus-ag/mastra-core/storage';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import type { ScoreRowData, ScoringEntityType, ScoringSource } from '@mastra/core/scores';
+import { ScoresStorage, TABLE_SCORERS, safelyParseJSON } from '@mastra/core/storage';
+import type { PaginationInfo, StoragePagination } from '@mastra/core/storage';
 import type { StoreOperationsMongoDB } from '../operations';
 
 function transformScoreRow(row: Record<string, any>): ScoreRowData {

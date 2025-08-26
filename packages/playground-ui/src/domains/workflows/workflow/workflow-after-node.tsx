@@ -25,7 +25,7 @@ export function WorkflowAfterNode({ data }: NodeProps<AfterNode>) {
     <Collapsible
       open={open}
       onOpenChange={setOpen}
-      className={cn('bg-mastra-bg-3 rounded-md w-[274px] flex flex-col p-2 gap-2')}
+      className={cn('bg-@@mastra/cli/cli/cli-bg-3 rounded-md w-[274px] flex flex-col p-2 gap-2')}
     >
       <Handle type="target" position={Position.Top} style={{ visibility: 'hidden' }} />
 
@@ -33,7 +33,7 @@ export function WorkflowAfterNode({ data }: NodeProps<AfterNode>) {
         <Text
           size={'xs'}
           weight="medium"
-          className="text-mastra-el-3 bg-mastra-bg-11 my-auto block rounded-[0.125rem] px-2 py-1 text-[10px] w-fit"
+          className="text-@@mastra/cli/cli/cli-el-3 bg-@@mastra/cli/cli/cli-bg-11 my-auto block rounded-[0.125rem] px-2 py-1 text-[10px] w-fit"
         >
           AFTER
         </Text>
@@ -45,9 +45,9 @@ export function WorkflowAfterNode({ data }: NodeProps<AfterNode>) {
       </CollapsibleTrigger>
       <CollapsibleContent className="flex flex-col gap-2">
         {steps.map(step => (
-          <div className="text-sm bg-mastra-bg-9 flex items-center gap-[6px] rounded-sm  p-2" key={step}>
+          <div className="text-sm bg-@@mastra/cli/cli/cli-bg-9 flex items-center gap-[6px] rounded-sm  p-2" key={step}>
             <Footprints className="text-current w-4 h-4" />
-            <Text size="xs" weight="medium" className="text-mastra-el-6 capitalize">
+            <Text size="xs" weight="medium" className="text-@@mastra/cli/cli/cli-el-6 capitalize">
               {step}
             </Text>
           </div>

@@ -1,4 +1,4 @@
-import { createTool } from '@actus-ag/mastra-core/tools';
+import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
 import Exa from 'exa-js';
 import 'dotenv/config';
@@ -12,7 +12,7 @@ export const webSearchTool = createTool({
   inputSchema: z.object({
     query: z.string().describe('The search query to run'),
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     console.log('Executing web search tool');
     const { query } = context;
 
@@ -36,7 +36,7 @@ export const webSearchTool = createTool({
       console.log(`Found ${results.length} search results, summarizing content...`);
 
       // Get the summarization agent
-      const summaryAgent = mastra!.getAgent('webSummarizationAgent');
+      const summaryAgent = @mastra!.getAgent('webSummarizationAgent');
 
       // Process each result with summarization
       const processedResults = [];

@@ -27,7 +27,7 @@ export async function setupMonorepo(pathToStoreFiles, tag, pkgManager) {
     env: process.env,
   });
 
-  console.log('building mastra...');
+  console.log('building @mastra...');
   spawnSync(pkgManager, ['build'], {
     cwd: join(newPath, 'apps', 'custom'),
     stdio: 'inherit',

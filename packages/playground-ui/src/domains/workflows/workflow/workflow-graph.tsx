@@ -9,7 +9,7 @@ import { WorkflowGraphInner } from './workflow-graph-inner';
 import { WorkflowNestedGraphProvider } from '../context/workflow-nested-graph-context';
 import { WorkflowRunContext } from '../context/workflow-run-context';
 import { useContext } from 'react';
-import { GetWorkflowResponse } from '@actus-ag/mastra-client-js';
+import { GetWorkflowResponse } from '@@mastra/cli/cli/cli-client-js';
 import { WorkflowSendEventFormProps } from './workflow-run-event-form';
 
 export interface WorkflowGraphProps {

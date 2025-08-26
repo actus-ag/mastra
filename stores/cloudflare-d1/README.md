@@ -1,4 +1,4 @@
-# @actus-ag/mastra-cloudflare-d1
+# @mastra/cloudflare-d1
 
 A Mastra store for Cloudflare D1 SQL databases, supporting threads, messages, workflows, evaluations, and traces with robust SQL features.
 
@@ -25,7 +25,7 @@ A Mastra store for Cloudflare D1 SQL databases, supporting threads, messages, wo
 ## Installation
 
 ```bash
-pnpm add @actus-ag/mastra-cloudflare-d1
+pnpm add @mastra/cloudflare-d1
 ```
 
 ## Usage
@@ -33,31 +33,31 @@ pnpm add @actus-ag/mastra-cloudflare-d1
 ### With Workers D1 Binding
 
 ```typescript
-import { D1Store } from '@actus-ag/mastra-cloudflare-d1';
+import { D1Store } from '@mastra/cloudflare-d1';
 
 const store = new D1Store({
   binding: env.DB, // D1Database binding from Worker environment
-  tablePrefix: 'mastra_', // optional
+  tablePrefix: '@mastra_', // optional
 });
 ```
 
 ### With REST API
 
 ```typescript
-import { D1Store } from '@actus-ag/mastra-cloudflare-d1';
+import { D1Store } from '@mastra/cloudflare-d1';
 
 const store = new D1Store({
   accountId: '<your-account-id>',
   databaseId: '<your-d1-database-id>',
   apiToken: '<your-api-token>',
-  tablePrefix: 'mastra_', // optional
+  tablePrefix: '@mastra_', // optional
 });
 ```
 
 ### Or you can pass any client implementation you want
 
 ```typescript
-import { D1Store } from '@actus-ag/mastra-cloudflare-d1';
+import { D1Store } from '@mastra/cloudflare-d1';
 
 const store = new D1Store({
   client: {
@@ -65,7 +65,7 @@ const store = new D1Store({
       // do something
     },
   },
-  tablePrefix: 'mastra_', // optional
+  tablePrefix: '@mastra_', // optional
 });
 ```
 
@@ -132,11 +132,11 @@ All metadata and custom fields are automatically serialized/deserialized as JSON
 
 Each logical Mastra table maps to a SQL table in D1 (with optional prefix):
 
-- `mastra_threads` — stores threads
-- `mastra_messages` — stores messages
-- `mastra_workflow_snapshot` — stores workflow snapshots
-- `mastra_evals` — stores evaluations
-- `mastra_traces` — stores traces
+- `@mastra_threads` — stores threads
+- `@mastra_messages` — stores messages
+- `@mastra_workflow_snapshot` — stores workflow snapshots
+- `@mastra_evals` — stores evaluations
+- `@mastra_traces` — stores traces
 
 (The prefix is configurable via `tablePrefix`.)
 

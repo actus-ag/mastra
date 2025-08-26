@@ -22,7 +22,7 @@ export default function Header() {
             <ExamplesDropdown />
 
             <a
-              href="https://github.com/mastra-ai/mastra/tree/main/examples/travel-app"
+              href="https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/tree/main/examples/travel-app"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[var(--brut-green)] p-2 border-2 border-black transform -rotate-2 hover:rotate-0 transition-all shadow-[4px_4px_0px_0px_#000000] hover:shadow-none hover:translate-x-1 hover:translate-y-1"

@@ -12,8 +12,8 @@ Workflow steps can be suspended and resumed at any point in the workflow executi
 ## Basic Example
 
 ```ts showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core";
-import { LegacyStep, LegacyWorkflow } from "@actus-ag/mastra-core/workflows/legacy";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { LegacyStep, LegacyWorkflow } from "@mastra/cli/cli/cli/core/workflows/legacy";
 import { z } from "zod";
 
 const stepOne = new LegacyStep({
@@ -62,12 +62,12 @@ myWorkflow.step(stepOne).then(stepTwo).commit();
 
 ```ts showLineNumbers copy
 // Register the workflow
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   legacy_workflows: { registeredWorkflow: myWorkflow },
 });
 
 // Get registered workflow from Mastra
-const registeredWorkflow = mastra.legacy_getWorkflow("registeredWorkflow");
+const registeredWorkflow = @@mastra/cli/cli/cli.legacy_getWorkflow("registeredWorkflow");
 const { runId, start } = registeredWorkflow.createRun();
 
 // Start watching the workflow before executing it
@@ -96,8 +96,8 @@ await start({ triggerData: { inputValue: 45 } });
 This example demonstrates a more complex workflow with multiple suspension points using the async/await pattern. It simulates a content generation workflow that requires human intervention at different stages.
 
 ```ts showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core";
-import { LegacyStep, LegacyWorkflow } from "@actus-ag/mastra-core/workflows/legacy";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { LegacyStep, LegacyWorkflow } from "@mastra/cli/cli/cli/core/workflows/legacy";
 import { z } from "zod";
 
 // Step 1: Get user input
@@ -258,7 +258,7 @@ contentWorkflow
 
 ```ts showLineNumbers copy
 // Register the workflow
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   legacy_workflows: { contentWorkflow },
 });
 
@@ -289,7 +289,7 @@ function calculateCompletenessScore(_: string = "") {
 
 // Usage example
 async function runWorkflow() {
-  const workflow = mastra.legacy_getWorkflow("contentWorkflow");
+  const workflow = @@mastra/cli/cli/cli.legacy_getWorkflow("contentWorkflow");
   const { runId, start } = workflow.createRun();
 
   let finalResult: any;

@@ -1,5 +1,5 @@
-import { MastraClient } from '@actus-ag/mastra-client-js';
+import { MastraClient } from '@mastra-client-js';
 
-export const mastraClient = new MastraClient({
+export const @mastraClient = new MastraClient({
   baseUrl: 'http://localhost:4111',
 });

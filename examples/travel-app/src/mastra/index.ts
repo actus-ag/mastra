@@ -1,10 +1,10 @@
-import { Mastra } from "@actus-ag/mastra-core";
-import { PinoLogger } from "@actus-ag/mastra-loggers";
+import { Mastra } from "@mastra/core";
+import { PinoLogger } from "@mastra/loggers";
 import { travelAgent, travelAnalyzer } from "./agents";
 import { syncCsvDataWorkflow } from "./workflows/attractions";
 import { storage } from "./agents/storage";
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   workflows: { syncCsvDataWorkflow },
   storage,
   agents: { travelAgent, travelAnalyzer },

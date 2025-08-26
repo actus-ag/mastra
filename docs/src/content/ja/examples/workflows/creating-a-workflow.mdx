@@ -10,7 +10,7 @@ import { GithubLink } from "@/components/github-link";
 ワークフローは、構造化されたパスで操作のシーケンスを定義し実行することを可能にします。この例では、単一のステップを持つワークフローを示します。
 
 ```ts showLineNumbers copy
-import { Step, Workflow } from "@actus-ag/mastra-core/workflows";
+import { Step, Workflow } from "@mastra/cli/cli/cli/core/workflows";
 import { z } from "zod";
 
 const myWorkflow = new Workflow({
@@ -52,6 +52,6 @@ console.log(res.results);
 <br />
 <GithubLink
   link={
-    "https://github.com/mastra-ai/mastra/blob/main/examples/basics/workflows/create-workflow"
+    "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/workflows/create-workflow"
   }
 />

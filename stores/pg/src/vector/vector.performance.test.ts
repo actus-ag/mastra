@@ -98,7 +98,7 @@ async function smartWarmup(
   }
 }
 
-const connectionString = process.env.DB_URL || `postgresql://postgres:postgres@localhost:5435/mastra`;
+const connectionString = process.env.DB_URL || `postgresql://postgres:postgres@localhost:5435/@mastra`;
 describe('PostgreSQL Index Performance', () => {
   let vectorDB: PGPerformanceVector;
   const testIndexName = 'test_index_performance';

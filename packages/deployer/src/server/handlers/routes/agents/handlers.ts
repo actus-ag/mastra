@@ -1,5 +1,5 @@
-import type { Mastra } from '@actus-ag/mastra-core';
-import type { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
+import type { Mastra } from '@mastra/core';
+import type { RuntimeContext } from '@mastra/core/runtime-context';
 import {
   getAgentsHandler as getOriginalAgentsHandler,
   getAgentByIdHandler as getOriginalAgentByIdHandler,
@@ -11,7 +11,7 @@ import {
   updateAgentModelHandler as getOriginalUpdateAgentModelHandler,
   generateVNextHandler as getOriginalVNextGenerateHandler,
   streamVNextUIMessageHandler as getOriginalStreamVNextUIMessageHandler,
-} from '@actus-ag/mastra-server/handlers/agents';
+} from '@mastra/server/handlers/agents';
 import type { Context } from 'hono';
 
 import { stream } from 'hono/streaming';
@@ -44,7 +44,7 @@ export const vNextBodyOptions: any = {
     description: 'Memory options for the conversation',
   },
   savePerStep: { type: 'boolean', description: 'Whether to save messages incrementally on step finish' },
-  format: { type: 'string', enum: ['mastra', 'aisdk'], description: 'Response format' },
+  format: { type: 'string', enum: ['@actus-ag/@mastra', 'aisdk'], description: 'Response format' },
   toolChoice: {
     oneOf: [
       { type: 'string', enum: ['auto', 'none', 'required'] },
@@ -73,7 +73,7 @@ export const vNextBodyOptions: any = {
 // Agent handlers
 export async function getAgentsHandler(c: Context) {
   const serializedAgents = await getOriginalAgentsHandler({
-    mastra: c.get('mastra'),
+    @mastra: c.get('@actus-ag/@mastra'),
     runtimeContext: c.get('runtimeContext'),
   });
 
@@ -81,13 +81,13 @@ export async function getAgentsHandler(c: Context) {
 }
 
 export async function getAgentByIdHandler(c: Context) {
-  const mastra: Mastra = c.get('mastra');
+  const @mastra: Mastra = c.get('@actus-ag/@mastra');
   const agentId = c.req.param('agentId');
   const runtimeContext: RuntimeContext = c.get('runtimeContext');
-  const isPlayground = c.req.header('x-mastra-dev-playground') === 'true';
+  const isPlayground = c.req.header('x-@mastra-dev-playground') === 'true';
 
   const result = await getOriginalAgentByIdHandler({
-    mastra,
+    @mastra,
     agentId,
     runtimeContext,
     isPlayground,
@@ -97,12 +97,12 @@ export async function getAgentByIdHandler(c: Context) {
 }
 
 export async function getEvalsByAgentIdHandler(c: Context) {
-  const mastra: Mastra = c.get('mastra');
+  const @mastra: Mastra = c.get('@actus-ag/@mastra');
   const agentId = c.req.param('agentId');
   const runtimeContext: RuntimeContext = c.get('runtimeContext');
 
   const result = await getOriginalEvalsByAgentIdHandler({
-    mastra,
+    @mastra,
     agentId,
     runtimeContext,
   });
@@ -111,12 +111,12 @@ export async function getEvalsByAgentIdHandler(c: Context) {
 }
 
 export async function getLiveEvalsByAgentIdHandler(c: Context) {
-  const mastra: Mastra = c.get('mastra');
+  const @mastra: Mastra = c.get('@actus-ag/@mastra');
   const agentId = c.req.param('agentId');
   const runtimeContext: RuntimeContext = c.get('runtimeContext');
 
   const result = await getOriginalLiveEvalsByAgentIdHandler({
-    mastra,
+    @mastra,
     agentId,
     runtimeContext,
   });
@@ -126,13 +126,13 @@ export async function getLiveEvalsByAgentIdHandler(c: Context) {
 
 export async function generateHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.param('agentId');
     const runtimeContext: RuntimeContext = c.get('runtimeContext');
     const body = await c.req.json();
 
     const result = await getOriginalGenerateHandler({
-      mastra,
+      @mastra,
       agentId,
       runtimeContext,
       body,
@@ -147,13 +147,13 @@ export async function generateHandler(c: Context) {
 
 export async function generateVNextHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.param('agentId');
     const runtimeContext: RuntimeContext = c.get('runtimeContext');
     const body = await c.req.json();
 
     const result = await getOriginalVNextGenerateHandler({
-      mastra,
+      @mastra,
       agentId,
       runtimeContext,
       body,
@@ -168,13 +168,13 @@ export async function generateVNextHandler(c: Context) {
 
 export async function streamGenerateHandler(c: Context): Promise<Response | undefined> {
   try {
-    const mastra = c.get('mastra');
+    const @mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.param('agentId');
     const runtimeContext: RuntimeContext = c.get('runtimeContext');
     const body = await c.req.json();
 
     const streamResponse = await getOriginalStreamGenerateHandler({
-      mastra,
+      @mastra,
       agentId,
       runtimeContext,
       body,
@@ -189,11 +189,11 @@ export async function streamGenerateHandler(c: Context): Promise<Response | unde
 
 export async function streamVNextGenerateHandler(c: Context): Promise<Response | undefined> {
   try {
-    const mastra = c.get('mastra');
+    const @mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.param('agentId');
     const runtimeContext: RuntimeContext = c.get('runtimeContext');
     const body = await c.req.json();
-    const logger = mastra.getLogger();
+    const logger = @mastra.getLogger();
 
     c.header('Transfer-Encoding', 'chunked');
 
@@ -202,7 +202,7 @@ export async function streamVNextGenerateHandler(c: Context): Promise<Response |
       async stream => {
         try {
           const streamResponse = await getOriginalStreamVNextGenerateHandler({
-            mastra,
+            @mastra,
             agentId,
             runtimeContext,
             body,
@@ -238,13 +238,13 @@ export async function streamVNextGenerateHandler(c: Context): Promise<Response |
 
 export async function streamVNextUIMessageHandler(c: Context): Promise<Response | undefined> {
   try {
-    const mastra = c.get('mastra');
+    const @mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.param('agentId');
     const runtimeContext: RuntimeContext = c.get('runtimeContext');
     const body = await c.req.json();
 
     const streamResponse = await getOriginalStreamVNextUIMessageHandler({
-      mastra,
+      @mastra,
       agentId,
       runtimeContext,
       body,
@@ -272,8 +272,8 @@ export async function setAgentInstructionsHandler(c: Context) {
       return c.json({ error: 'Missing required fields' }, 400);
     }
 
-    const mastra: Mastra = c.get('mastra');
-    const agent = mastra.getAgent(agentId);
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
+    const agent = @mastra.getAgent(agentId);
     if (!agent) {
       return c.json({ error: 'Agent not found' }, 404);
     }
@@ -293,12 +293,12 @@ export async function setAgentInstructionsHandler(c: Context) {
 
 export async function updateAgentModelHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.param('agentId');
     const body = await c.req.json();
 
     const result = await getOriginalUpdateAgentModelHandler({
-      mastra,
+      @mastra,
       agentId,
       body,
     });

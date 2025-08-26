@@ -15,10 +15,10 @@ interface TelemetryContext extends Context {
   };
 }
 
-export async function getTelemetryHandler({ mastra, body }: TelemetryContext) {
+export async function getTelemetryHandler({ @mastra, body }: TelemetryContext) {
   try {
-    const telemetry = mastra.getTelemetry();
-    const storage = mastra.getStorage();
+    const telemetry = @mastra.getTelemetry();
+    const storage = @mastra.getStorage();
 
     if (!telemetry) {
       throw new HTTPException(400, { message: 'Telemetry is not initialized' });
@@ -60,10 +60,10 @@ export async function getTelemetryHandler({ mastra, body }: TelemetryContext) {
   }
 }
 
-export async function storeTelemetryHandler({ mastra, body }: Context & { body: { resourceSpans: any[] } }) {
+export async function storeTelemetryHandler({ @mastra, body }: Context & { body: { resourceSpans: any[] } }) {
   try {
-    const storage = mastra.getStorage();
-    const logger = mastra.getLogger();
+    const storage = @mastra.getStorage();
+    const logger = @mastra.getLogger();
 
     if (!storage) {
       return {

@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as os from 'os';
 import * as path from 'path';
-import type { MCPServer } from '@actus-ag/mastra-mcp';
+import type { MCPServer } from '@mastra/mcp';
 
 // Logger interface for type safety
 export interface Logger {
@@ -26,7 +26,7 @@ export const writeErrorLog = (message: string, data?: any) => {
   // Write to file
   try {
     // Ensure cache directory exists
-    const cacheDir = path.join(os.homedir(), '.cache', 'mastra', 'mcp-docs-server-logs');
+    const cacheDir = path.join(os.homedir(), '.cache', '@actus-ag/@mastra', 'mcp-docs-server-logs');
     fs.mkdirSync(cacheDir, { recursive: true });
 
     // Create log file path with timestamp

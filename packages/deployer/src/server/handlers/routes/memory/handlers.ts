@@ -1,10 +1,10 @@
-import type { Mastra } from '@actus-ag/mastra-core';
+import type { Mastra } from '@mastra/core';
 import type {
   StorageGetMessagesArg,
   MastraMessageFormat,
   ThreadOrderBy,
   ThreadSortDirection,
-} from '@actus-ag/mastra-core/storage';
+} from '@mastra/core/storage';
 import {
   getMemoryStatusHandler as getOriginalMemoryStatusHandler,
   getMemoryConfigHandler as getOriginalMemoryConfigHandler,
@@ -21,7 +21,7 @@ import {
   updateWorkingMemoryHandler as getOriginalUpdateWorkingMemoryHandler,
   searchMemoryHandler as getOriginalSearchMemoryHandler,
   deleteMessagesHandler as getOriginalDeleteMessagesHandler,
-} from '@actus-ag/mastra-server/handlers/memory';
+} from '@mastra/server/handlers/memory';
 import type { Context } from 'hono';
 
 import { handleError } from '../../error';
@@ -30,12 +30,12 @@ import { parseLimit } from '../../utils/query-parsers';
 // Memory handlers
 export async function getMemoryStatusHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.query('agentId');
     const networkId = c.req.query('networkId');
 
     const result = await getOriginalMemoryStatusHandler({
-      mastra,
+      @mastra,
       agentId,
       networkId,
     });
@@ -48,12 +48,12 @@ export async function getMemoryStatusHandler(c: Context) {
 
 export async function getMemoryConfigHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.query('agentId');
     const networkId = c.req.query('networkId');
 
     const result = await getOriginalMemoryConfigHandler({
-      mastra,
+      @mastra,
       agentId,
       networkId,
     });
@@ -66,7 +66,7 @@ export async function getMemoryConfigHandler(c: Context) {
 
 export async function getThreadsHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.query('agentId');
     const resourceId = c.req.query('resourceid');
     const networkId = c.req.query('networkId');
@@ -74,7 +74,7 @@ export async function getThreadsHandler(c: Context) {
     const sortDirection = c.req.query('sortDirection') as ThreadSortDirection | undefined;
 
     const result = await getOriginalThreadsHandler({
-      mastra,
+      @mastra,
       agentId,
       resourceId,
       networkId,
@@ -90,7 +90,7 @@ export async function getThreadsHandler(c: Context) {
 
 export async function getThreadsPaginatedHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.query('agentId');
     const resourceId = c.req.query('resourceId');
     const networkId = c.req.query('networkId');
@@ -100,7 +100,7 @@ export async function getThreadsPaginatedHandler(c: Context) {
     const sortDirection = c.req.query('sortDirection') as ThreadSortDirection | undefined;
 
     const result = await getOriginalGetThreadsPaginatedHandler({
-      mastra,
+      @mastra,
       agentId,
       resourceId,
       networkId,
@@ -118,13 +118,13 @@ export async function getThreadsPaginatedHandler(c: Context) {
 
 export async function getThreadByIdHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.query('agentId');
     const threadId = c.req.param('threadId');
     const networkId = c.req.query('networkId');
 
     const result = await getOriginalThreadByIdHandler({
-      mastra,
+      @mastra,
       agentId,
       threadId,
       networkId,
@@ -138,13 +138,13 @@ export async function getThreadByIdHandler(c: Context) {
 
 export async function saveMessagesHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.query('agentId');
     const networkId = c.req.query('networkId');
     const body = await c.req.json();
 
     const result = await getOriginalSaveMessagesHandler({
-      mastra,
+      @mastra,
       agentId,
       body,
       networkId,
@@ -158,13 +158,13 @@ export async function saveMessagesHandler(c: Context) {
 
 export async function createThreadHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.query('agentId');
     const networkId = c.req.query('networkId');
     const body = await c.req.json();
 
     const result = await getOriginalCreateThreadHandler({
-      mastra,
+      @mastra,
       agentId,
       body,
       networkId,
@@ -178,14 +178,14 @@ export async function createThreadHandler(c: Context) {
 
 export async function updateThreadHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.query('agentId');
     const threadId = c.req.param('threadId');
     const networkId = c.req.query('networkId');
     const body = await c.req.json();
 
     const result = await getOriginalUpdateThreadHandler({
-      mastra,
+      @mastra,
       agentId,
       threadId,
       body,
@@ -200,13 +200,13 @@ export async function updateThreadHandler(c: Context) {
 
 export async function deleteThreadHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.query('agentId');
     const threadId = c.req.param('threadId');
     const networkId = c.req.query('networkId');
 
     const result = await getOriginalDeleteThreadHandler({
-      mastra,
+      @mastra,
       agentId,
       threadId,
       networkId,
@@ -220,14 +220,14 @@ export async function deleteThreadHandler(c: Context) {
 
 export async function getMessagesHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.query('agentId');
     const networkId = c.req.query('networkId');
     const threadId = c.req.param('threadId');
     const limit = parseLimit(c.req.query('limit'));
 
     const result = await getOriginalGetMessagesHandler({
-      mastra,
+      @mastra,
       agentId,
       threadId,
       networkId,
@@ -242,7 +242,7 @@ export async function getMessagesHandler(c: Context) {
 
 export async function getMessagesPaginatedHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const threadId = c.req.param('threadId');
     const resourceId = c.req.query('resourceId');
     const format = (c.req.query('format') || 'v1') as MastraMessageFormat;
@@ -260,7 +260,7 @@ export async function getMessagesPaginatedHandler(c: Context) {
     }
 
     const result = await getOriginalGetMessagesPaginatedHandler({
-      mastra,
+      @mastra,
       threadId,
       resourceId,
       format,
@@ -275,14 +275,14 @@ export async function getMessagesPaginatedHandler(c: Context) {
 
 export async function updateWorkingMemoryHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.query('agentId');
     const threadId = c.req.param('threadId');
     const networkId = c.req.query('networkId');
     const body = await c.req.json();
 
     const result = await getOriginalUpdateWorkingMemoryHandler({
-      mastra,
+      @mastra,
       agentId,
       threadId,
       body,
@@ -297,14 +297,14 @@ export async function updateWorkingMemoryHandler(c: Context) {
 
 export async function getWorkingMemoryHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.query('agentId');
     const threadId = c.req.param('threadId');
     const resourceId = c.req.query('resourceId');
     const networkId = c.req.query('networkId');
 
     const result = await getOriginalGetWorkingMemoryHandler({
-      mastra,
+      @mastra,
       agentId,
       threadId,
       resourceId,
@@ -319,7 +319,7 @@ export async function getWorkingMemoryHandler(c: Context) {
 
 export async function searchMemoryHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.query('agentId');
     const searchQuery = c.req.query('searchQuery');
     const resourceId = c.req.query('resourceId');
@@ -330,7 +330,7 @@ export async function searchMemoryHandler(c: Context) {
     const runtimeContext = c.get('runtimeContext');
 
     const result = await getOriginalSearchMemoryHandler({
-      mastra,
+      @mastra,
       agentId,
       searchQuery: searchQuery!,
       resourceId: resourceId!,
@@ -349,7 +349,7 @@ export async function searchMemoryHandler(c: Context) {
 
 export async function deleteMessagesHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.query('agentId');
     const networkId = c.req.query('networkId');
     const runtimeContext = c.get('runtimeContext');
@@ -357,7 +357,7 @@ export async function deleteMessagesHandler(c: Context) {
     const messageIds = body?.messageIds;
 
     const result = await getOriginalDeleteMessagesHandler({
-      mastra,
+      @mastra,
       agentId,
       messageIds,
       networkId,

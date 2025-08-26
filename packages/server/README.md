@@ -1,13 +1,13 @@
-# @actus-ag/mastra-server
+# @mastra/server
 
 Typed HTTP handlers and utilities for exposing a `Mastra` instance over HTTP.
-This package powers `mastra dev` and can be added to your own server to provide
+This package powers `@actus-ag/@mastra/cli/cli dev` and can be added to your own server to provide
 REST and streaming endpoints for agents, workflows, telemetry and more.
 
 ## Installation
 
 ```bash
-npm install @actus-ag/mastra-server
+npm install @mastra/server
 ```
 
 ## Usage
@@ -18,16 +18,16 @@ web framework of choice:
 
 ```typescript
 import { Hono } from 'hono';
-import { handlers } from '@actus-ag/mastra-server';
-import { mastra } from './mastra-instance';
+import { handlers } from '@mastra/server';
+import { @mastra } from './@mastra-instance';
 
 const app = new Hono();
 
-app.get('/mastra/agents', ctx => handlers.agents.getAgentsHandler({ mastra, runtimeContext: ctx }));
-app.post('/mastra/agents/:id/generate', async ctx => {
+app.get('/@mastra/agents', ctx => handlers.agents.getAgentsHandler({ @mastra, runtimeContext: ctx }));
+app.post('/@mastra/agents/:id/generate', async ctx => {
   const body = await ctx.req.json();
   return handlers.agents.generateHandler({
-    mastra,
+    @mastra,
     runtimeContext: ctx,
     agentId: ctx.req.param('id'),
     body,
@@ -37,7 +37,7 @@ app.post('/mastra/agents/:id/generate', async ctx => {
 // Mount additional handlers as required
 ```
 
-Running `mastra dev` starts a local development UI at
+Running `@actus-ag/@mastra/cli/cli dev` starts a local development UI at
 `http://localhost:3000` using these handlers.
 
 ## Available Handler Groups
@@ -64,7 +64,7 @@ be refreshed by running:
 pnpm run pull:openapispec
 ```
 
-within the `@actus-ag/mastra-server` directory.
+within the `@mastra/server` directory.
 
 ## License
 

@@ -1,6 +1,6 @@
 import { PassThrough } from 'stream';
 
-import { MastraVoice } from '@actus-ag/mastra-core/voice';
+import { MastraVoice } from '@mastra/core/voice';
 import OpenAI from 'openai';
 
 type OpenAIVoiceId = 'alloy' | 'echo' | 'fable' | 'onyx' | 'nova' | 'shimmer' | 'ash' | 'coral' | 'sage';

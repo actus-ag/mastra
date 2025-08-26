@@ -1,7 +1,7 @@
-import { Step, Workflow } from "@actus-ag/mastra-core/workflows";
+import { Step, Workflow } from "@mastra/core/workflows";
 import { z } from "zod";
 
-import { mastra } from "../index";
+import { @mastra } from "../index";
 import { Booking } from "../integrations/Booking";
 
 const booking = new Booking({
@@ -102,7 +102,7 @@ function createArrangementStep({
         };
       }
 
-      const agent = mastra.getAgent("travelAnalyzer");
+      const agent = @mastra.getAgent("travelAnalyzer");
       const messages = [
         `
                 Available ${type}s: ${JSON.stringify(items)}

@@ -7,8 +7,8 @@
 設定なしでメモリを初期化すると、LibSQLがストレージとベクトルデータベースとして使用されます。
 
 ```typescript copy showLineNumbers
-import { Memory } from "@actus-ag/mastra-memory";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Memory } from "@mastra/cli/cli/cli/memory";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 // Initialize memory with LibSQL defaults
 const memory = new Memory();
@@ -29,15 +29,15 @@ const memoryAgent = new Agent({
 FastEmbed（ローカルの埋め込みモデル）をエンベッダーとして使用するには、まずパッケージをインストールします：
 
 ```bash npm2yarn copy
-npm install @actus-ag/mastra-fastembed
+npm install @mastra/cli/cli/cli/fastembed
 ```
 
 次に、メモリ設定で構成します：
 
 ```typescript {3,12}
 import { openai } from "@ai-sdk/openai";
-import { LibSQLStore, LibSQLVector } from "@actus-ag/mastra-libsql";
-import { fastembed } from "@actus-ag/mastra-fastembed";
+import { LibSQLStore, LibSQLVector } from "@mastra/cli/cli/cli/libsql";
+import { fastembed } from "@mastra/cli/cli/cli/fastembed";
 
 const customMemory = new Memory({
   storage: new LibSQLStore({

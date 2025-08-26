@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
-import { GetScorerResponse, GetScoresResponse } from '@actus-ag/mastra-client-js';
-import { useMastraClient } from '@/contexts/mastra-client-context';
+import { GetScorerResponse, GetScoresResponse } from '@@mastra/cli/cli/cli-client-js';
+import { useMastraClient } from '@/contexts/@@mastra/cli/cli/cli-client-context';
 
 export const useScoresByEntityId = (entityId: string, entityType: string, page: number = 0) => {
   const client = useMastraClient();

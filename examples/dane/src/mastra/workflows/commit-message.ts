@@ -1,11 +1,11 @@
 import { confirm } from '@inquirer/prompts';
-import { Step, Workflow } from '@actus-ag/mastra-core/workflows';
+import { Step, Workflow } from '@mastra/core/workflows';
 import chalk from 'chalk';
 import { execSync } from 'child_process';
 import { z } from 'zod';
 
 import { fsTool } from '../tools/fs.js';
-import { RuntimeContext } from '@actus-ag/mastra-core/di';
+import { RuntimeContext } from '@mastra/core/di';
 
 export const commitMessageGenerator = new Workflow({
   name: 'commit-message',
@@ -58,7 +58,7 @@ const generateMessage = new Step({
     generated: z.boolean(),
     guidelines: z.array(z.string()),
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     const diffData = context?.getStepResult<{ diff: string }>('getDiff');
     const fileData = context?.getStepResult<{ fileData: any }>('readConventionalCommitSpec');
 
@@ -66,7 +66,7 @@ const generateMessage = new Step({
       return { commitMessage: '', generated: false, guidelines: [] };
     }
 
-    const daneCommitGenerator = mastra?.getAgent('daneCommitMessage');
+    const daneCommitGenerator = @mastra?.getAgent('daneCommitMessage');
 
     const res = await daneCommitGenerator?.generate(
       `

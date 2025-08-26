@@ -5,8 +5,8 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@mastra/playground-ui': ../packages/playground-ui
-  '@mastra/client-js': ../sdk-clients/client-js
+  '@mastra/cli/cli/cli/playground-ui': ../packages/playground-ui
+  '@@mastra/cli/cli/cli-client-js': ../sdk-clients/client-js
 
 importers:
 

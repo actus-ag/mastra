@@ -1,22 +1,22 @@
 import { randomUUID } from 'node:crypto';
 import { google } from '@ai-sdk/google';
 import { openai } from '@ai-sdk/openai';
-import { Mastra } from '@actus-ag/mastra-core';
-import type { CoreMessage } from '@actus-ag/mastra-core';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import type { UIMessageWithMetadata } from '@actus-ag/mastra-core/agent';
-import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
-import { MockStore } from '@actus-ag/mastra-core/storage';
-import { fastembed } from '@actus-ag/mastra-fastembed';
-import { LibSQLStore, LibSQLVector } from '@actus-ag/mastra-libsql';
-import { Memory } from '@actus-ag/mastra-memory';
+import { Mastra } from '@mastra/core';
+import type { CoreMessage } from '@mastra/core';
+import { Agent } from '@mastra/core/agent';
+import type { UIMessageWithMetadata } from '@mastra/core/agent';
+import { RuntimeContext } from '@mastra/core/runtime-context';
+import { MockStore } from '@mastra/core/storage';
+import { fastembed } from '@mastra/fastembed';
+import { LibSQLStore, LibSQLVector } from '@mastra/libsql';
+import { Memory } from '@mastra/memory';
 import { describe, expect, it } from 'vitest';
 import { z } from 'zod';
-import { memoryProcessorAgent, weatherAgent } from './mastra/agents/weather';
-import { weatherTool, weatherToolCity } from './mastra/tools/weather';
+import { memoryProcessorAgent, weatherAgent } from './@mastra/agents/weather';
+import { weatherTool, weatherToolCity } from './@mastra/tools/weather';
 
 describe('Agent Memory Tests', () => {
-  const dbFile = 'file:mastra-agent.db';
+  const dbFile = 'file:@mastra-agent.db';
 
   it(`inherits storage from Mastra instance`, async () => {
     const agent = new Agent({
@@ -29,7 +29,7 @@ describe('Agent Memory Tests', () => {
         },
       }),
     });
-    const mastra = new Mastra({
+    const @mastra = new Mastra({
       agents: {
         agent,
       },
@@ -37,14 +37,14 @@ describe('Agent Memory Tests', () => {
         url: dbFile,
       }),
     });
-    const agentMemory = (await mastra.getAgent('agent').getMemory())!;
+    const agentMemory = (await @mastra.getAgent('agent').getMemory())!;
     await expect(agentMemory.query({ threadId: '1' })).resolves.not.toThrow();
     const agentMemory2 = (await agent.getMemory())!;
     await expect(agentMemory2.query({ threadId: '1' })).resolves.not.toThrow();
   });
 
   it('should inherit storage from Mastra instance when workingMemory is enabled', async () => {
-    const mastra = new Mastra({
+    const @mastra = new Mastra({
       storage: new LibSQLStore({
         url: dbFile,
       }),
@@ -64,7 +64,7 @@ describe('Agent Memory Tests', () => {
       },
     });
 
-    const agent = mastra.getAgent('testAgent');
+    const agent = @mastra.getAgent('testAgent');
     const memory = await agent.getMemory();
     expect(memory).toBeDefined();
 
@@ -94,7 +94,7 @@ describe('Agent Memory Tests', () => {
   });
 
   it('should work with resource-scoped working memory when storage supports it', async () => {
-    const mastra = new Mastra({
+    const @mastra = new Mastra({
       storage: new LibSQLStore({
         url: dbFile,
       }),
@@ -115,7 +115,7 @@ describe('Agent Memory Tests', () => {
       },
     });
 
-    const agent = mastra.getAgent('testAgent');
+    const agent = @mastra.getAgent('testAgent');
     const memory = await agent.getMemory();
 
     expect(memory).toBeDefined();

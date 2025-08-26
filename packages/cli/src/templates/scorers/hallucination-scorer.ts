@@ -1,6 +1,6 @@
 export const hallucinationScorer = `
 import { openai } from "@ai-sdk/openai";
-import { createHallucinationScorer } from "@actus-ag/mastra-evals/scorers/llm";
+import { createHallucinationScorer } from "@mastra/evals/scorers/llm";
  
 const scorer = createHallucinationScorer({ model: openai("gpt-4o-mini"), options: {
   context: [

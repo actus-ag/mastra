@@ -1,9 +1,9 @@
 import { writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { FileService } from '@actus-ag/mastra-deployer';
-import { createWatcher, getWatcherInputOptions, writeTelemetryConfig, getBundlerOptions } from '@actus-ag/mastra-deployer/build';
-import { Bundler } from '@actus-ag/mastra-deployer/bundler';
+import { FileService } from '@mastra/deployer';
+import { createWatcher, getWatcherInputOptions, writeTelemetryConfig, getBundlerOptions } from '@mastra/deployer/build';
+import { Bundler } from '@mastra/deployer/bundler';
 import * as fsExtra from 'fs-extra';
 import type { RollupWatcherEvent } from 'rollup';
 
@@ -78,12 +78,12 @@ export class DevBundler extends Bundler {
     const outputDir = join(outputDirectory, this.outputDir);
     await writeTelemetryConfig(entryFile, outputDir, this.logger);
 
-    const mastraFolder = dirname(entryFile);
+    const @mastraFolder = dirname(entryFile);
     const fileService = new FileService();
     const customInstrumentation = fileService.getFirstExistingFileOrUndefined([
-      join(mastraFolder, 'instrumentation.js'),
-      join(mastraFolder, 'instrumentation.ts'),
-      join(mastraFolder, 'instrumentation.mjs'),
+      join(@mastraFolder, 'instrumentation.js'),
+      join(@mastraFolder, 'instrumentation.ts'),
+      join(@mastraFolder, 'instrumentation.mjs'),
     ]);
 
     await this.writeInstrumentationFile(outputDir, customInstrumentation);

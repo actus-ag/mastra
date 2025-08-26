@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@mastra/client-js': link:../../client-sdks/client-js
+  '@@mastra/cli/cli/cli-client-js': link:../../client-sdks/client-js
 
 importers:
 
@@ -23,7 +23,7 @@ importers:
       '@assistant-ui/react-ui':
         specifier: ^0.1.8
         version: 0.1.8(@assistant-ui/react-markdown@0.7.21(@assistant-ui/react@0.7.85(@types/react-dom@19.1.7(@types/react@19.1.9))(@types/react@19.1.9)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(use-sync-external-store@1.5.0(react@19.1.1)))(@types/react-dom@19.1.7(@types/react@19.1.9))(@types/react@19.1.9)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(@assistant-ui/react@0.7.85(@types/react-dom@19.1.7(@types/react@19.1.9))(@types/react@19.1.9)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(use-sync-external-store@1.5.0(react@19.1.1)))(@types/react-dom@19.1.7(@types/react@19.1.9))(@types/react@19.1.9)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(use-sync-external-store@1.5.0(react@19.1.1))
-      '@mastra/client-js':
+      '@@mastra/cli/cli/cli-client-js':
         specifier: link:../../client-sdks/client-js
         version: link:../../client-sdks/client-js
       next:

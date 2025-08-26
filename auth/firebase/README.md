@@ -1,15 +1,15 @@
-# @actus-ag/mastra-auth-firebase
+# @mastra/auth-firebase
 
 A Firebase authentication integration package for Mastra applications. This package provides seamless integration with Firebase Authentication and Firestore for user authentication and authorization.
 
 ## Installation
 
 ```bash
-npm install @actus-ag/mastra-auth-firebase
+npm install @mastra/auth-firebase
 # or
-yarn add @actus-ag/mastra-auth-firebase
+yarn add @mastra/auth-firebase
 # or
-pnpm add @actus-ag/mastra-auth-firebase
+pnpm add @mastra/auth-firebase
 ```
 
 ## Features
@@ -23,8 +23,8 @@ pnpm add @actus-ag/mastra-auth-firebase
 ## Usage
 
 ```typescript
-import { Mastra } from '@actus-ag/mastra-core';
-import { MastraAuthFirebase } from '@actus-ag/mastra-auth-firebase';
+import { Mastra } from '@mastra/core';
+import { MastraAuthFirebase } from '@mastra/auth-firebase';
 
 // Initialize with default configuration
 const auth = new MastraAuthFirebase();
@@ -36,7 +36,7 @@ const auth = new MastraAuthFirebase({
 });
 
 // Enable auth in Mastra
-const mastra = new Mastra({
+const @mastra = new Mastra({
   ...
   server: {
     experimental_auth: auth,

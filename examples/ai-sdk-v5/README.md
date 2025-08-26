@@ -1,6 +1,6 @@
 # Mastra + AI SDK v5 Example
 
-This example demonstrates how to integrate [Mastra](https://mastra.ai) with [AI SDK v5](https://sdk.vercel.ai/) in a Next.js application. It showcases a weather agent with real-time chat capabilities, persistent memory, and tool integration.
+This example demonstrates how to integrate [Mastra](https://@mastra.ai) with [AI SDK v5](https://sdk.vercel.ai/) in a Next.js application. It showcases a weather agent with real-time chat capabilities, persistent memory, and tool integration.
 
 ## Features
 
@@ -76,7 +76,7 @@ The example shows how to:
 - **`/app/page.tsx`**: React chat interface using `useChat` hook
 - **`/app/api/chat/route.ts`**: Streaming chat endpoint with Mastra agent
 - **`/app/api/initial-chat/route.ts`**: Loads conversation history from memory
-- **`/src/mastra/`**: Mastra configuration, agents, and tools
+- **`/src/@mastra/`**: Mastra configuration, agents, and tools
 
 ## Try It Out
 
@@ -90,5 +90,5 @@ The agent will use its weather tool to fetch real-time data and provide detailed
 
 ## Learn More
 
-- [Mastra Documentation](https://docs.mastra.ai) - Learn about Mastra's features and capabilities
+- [Mastra Documentation](https://docs.@mastra.ai) - Learn about Mastra's features and capabilities
 - [AI SDK Documentation](https://sdk.vercel.ai) - Explore AI SDK v5 features

@@ -1,4 +1,4 @@
-# create-mastra
+# @actus-ag/create-@mastra
 
 ## 0.10.22
 
@@ -83,13 +83,13 @@
 
 ### Patch Changes
 
-- ad04455: Missed changeset in last release, needed to include create-mastra
+- ad04455: Missed changeset in last release, needed to include @actus-ag/create-@mastra
 
 ## 0.10.15-alpha.0
 
 ### Patch Changes
 
-- ad04455: Missed changeset in last release, needed to include create-mastra
+- ad04455: Missed changeset in last release, needed to include @actus-ag/create-@mastra
 
 ## 0.10.14
 
@@ -230,7 +230,7 @@
 - 4219597: add JSON input close to form input
 - b790fd1: Use SerializedStepFlowEntry in playground
 - a7a836a: Highlight send event button
-- 18ca936: Update rollup config for create-mastra
+- 18ca936: Update rollup config for @actus-ag/create-@mastra
 
 ## 0.10.10-alpha.3
 
@@ -244,7 +244,7 @@
 ### Patch Changes
 
 - 4219597: add JSON input close to form input
-- 18ca936: Update rollup config for create-mastra
+- 18ca936: Update rollup config for @actus-ag/create-@mastra
 
 ## 0.10.10-alpha.1
 
@@ -356,7 +356,7 @@
   - Updated dependency [`pino@^9.7.0` ↗︎](https://www.npmjs.com/package/pino/v/9.7.0) (from `^9.6.0`, in `dependencies`)
   - Updated dependency [`posthog-node@^4.18.0` ↗︎](https://www.npmjs.com/package/posthog-node/v/4.18.0) (from `^4.10.1`, in `dependencies`)
 - 5f2aa3e: Move workflow hooks to playground
-- 44ba52d: Add proper error message when installation of mastra fails
+- 44ba52d: Add proper error message when installation of @mastra fails
 - 311132e: move useWorkflow to playground instead of playground-ui
 - 3270d9d: Fix runtime context being undefined
 - 53d3c37: Get workflows from an agent if not found from Mastra instance #5083
@@ -372,7 +372,7 @@
 
 ### Patch Changes
 
-- 44ba52d: Add proper error message when installation of mastra fails
+- 44ba52d: Add proper error message when installation of @mastra fails
 - 3270d9d: Fix runtime context being undefined
 - fc677d7: For final result for a workflow
 
@@ -483,7 +483,7 @@
 
 - b4365f6: add empty states for agents network and tools
 - d0932ac: add multi modal input behind feature flag
-- bed0916: Update default tools path in mastra dev,build
+- bed0916: Update default tools path in @actus-ag/@mastra/cli/cli dev,build
 - 3c2dba5: add workflow run list
 - 23d56b1: Handle dev server errors, restart, exit
 - 267773e: Show map config on workflow graph
@@ -521,7 +521,7 @@
 
 - b4365f6: add empty states for agents network and tools
 - d0932ac: add multi modal input behind feature flag
-- bed0916: Update default tools path in mastra dev,build
+- bed0916: Update default tools path in @actus-ag/@mastra/cli/cli dev,build
 - 23d56b1: Handle dev server errors, restart, exit
 
 ## 0.10.1-alpha.1
@@ -545,7 +545,7 @@
 - ae122cc: show the entities ID close to the copy button
 - 99552bc: revamp the UI of the tools page
 - f2d3352: fix overflow scroll in runtime context
-- 95911be: Fixed an issue where if @actus-ag/mastra-core was not released at the same time as create-mastra, create-mastra would match the alpha tag instead of latest tag when running npm create mastra@latest
+- 95911be: Fixed an issue where if @mastra/core was not released at the same time as @actus-ag/create-@mastra, @actus-ag/create-@mastra would match the alpha tag instead of latest tag when running npm create @actus-ag/@mastra/cli/cli@latest
 - db4211d: improve the UI/UX of the runtime context with formatting, copying, docs and syntax highlighting
 - 9b7294a: Revamp the UI for the right sidebar of the agents page
 - e2c2cf1: Persist playground agent settings across refresh
@@ -573,7 +573,7 @@
 - b3a3d63: BREAKING: Make vnext workflow the default worklow, and old workflow legacy_workflow
 - ae122cc: show the entities ID close to the copy button
 - f2d3352: fix overflow scroll in runtime context
-- 95911be: Fixed an issue where if @actus-ag/mastra-core was not released at the same time as create-mastra, create-mastra would match the alpha tag instead of latest tag when running npm create mastra@latest
+- 95911be: Fixed an issue where if @mastra/core was not released at the same time as @actus-ag/create-@mastra, @actus-ag/create-@mastra would match the alpha tag instead of latest tag when running npm create @actus-ag/@mastra/cli/cli@latest
 - fd69cc3: revamp UI of workflow "Run" pane
 - cbf153f: Handle broken images on the playground
 - 0cae9b1: sidebar adjustments (storing status + showing the action of collapsing / expanding)
@@ -596,13 +596,13 @@
 
 ### Patch Changes
 
-- a3435f8: Add node engine to create-mastra project package.json
+- a3435f8: Add node engine to @actus-ag/create-@mastra project package.json
 
 ## 0.3.3-alpha.0
 
 ### Patch Changes
 
-- a3435f8: Add node engine to create-mastra project package.json
+- a3435f8: Add node engine to @actus-ag/create-@mastra project package.json
 
 ## 0.3.2
 
@@ -632,7 +632,7 @@
 
 ### Patch Changes
 
-- 144fa1b: lift up the traces fetching and allow to pass them down in the TracesTable. It allows passing down mastra client traces OR clickhouse traces
+- 144fa1b: lift up the traces fetching and allow to pass them down in the TracesTable. It allows passing down @mastra client traces OR clickhouse traces
 - 33b84fd: fix showing sig digits in trace / span duration
 - 4155f47: Add parameters to filter workflow runs
   Add fromDate and toDate to telemetry parameters
@@ -648,7 +648,7 @@
 
 ### Patch Changes
 
-- 144fa1b: lift up the traces fetching and allow to pass them down in the TracesTable. It allows passing down mastra client traces OR clickhouse traces
+- 144fa1b: lift up the traces fetching and allow to pass them down in the TracesTable. It allows passing down @mastra client traces OR clickhouse traces
 
 ## 0.3.1-alpha.4
 
@@ -689,7 +689,7 @@
 
 ### Minor Changes
 
-- e126a44: improve non-interactive mode of the mastra cli and create-mastra by adding --no-example and --dir flags
+- e126a44: improve non-interactive mode of the @mastra cli and @actus-ag/create-@mastra by adding --no-example and --dir flags
 
 ### Patch Changes
 
@@ -706,10 +706,10 @@
   Show running status for step in vNext workflowState
 - ca665d3: fix the ui for smaller screen regarding traces
 - 57b25ed: Use resumeSchema to show inputs on the playground for suspended workflows
-- f1d4b7a: Add x-mastra-dev-playground header to all playground requests
+- f1d4b7a: Add x-@mastra-dev-playground header to all playground requests
 - 5a66ced: add click on trace row
 - 8863033: Fix tools api in local dev api
-- 2d4001d: Add new @msstra/libsql package and use it in create-mastra
+- 2d4001d: Add new @msstra/libsql package and use it in @actus-ag/create-@mastra
 
 ## 0.3.0-alpha.5
 
@@ -745,13 +745,13 @@
 - 70124e1: revamp the ui for traces
 - 926821d: Fix triggerSchema default not showing in workflow ui
 - 57b25ed: Use resumeSchema to show inputs on the playground for suspended workflows
-- f1d4b7a: Add x-mastra-dev-playground header to all playground requests
+- f1d4b7a: Add x-@mastra-dev-playground header to all playground requests
 
 ## 0.3.0-alpha.0
 
 ### Minor Changes
 
-- e126a44: improve non-interactive mode of the mastra cli and create-mastra by adding --no-example and --dir flags
+- e126a44: improve non-interactive mode of the @mastra cli and @actus-ag/create-@mastra by adding --no-example and --dir flags
 
 ### Patch Changes
 
@@ -760,22 +760,22 @@
 - 11d4485: Show VNext workflows on the playground
   Show running status for step in vNext workflowState
 - 8863033: Fix tools api in local dev api
-- 2d4001d: Add new @msstra/libsql package and use it in create-mastra
+- 2d4001d: Add new @msstra/libsql package and use it in @actus-ag/create-@mastra
 
 ## 0.2.9
 
 ### Patch Changes
 
 - 7e92011: Include tools with deployment builds
-- 7184dc5: Add support to pass project path directly to create-mastra and improve tag handling
-- 16a8648: Disable swaggerUI, playground for production builds, mastra instance server build config to enable swaggerUI, apiReqLogs, openAPI documentation for prod builds
+- 7184dc5: Add support to pass project path directly to @actus-ag/create-@mastra and improve tag handling
+- 16a8648: Disable swaggerUI, playground for production builds, @mastra instance server build config to enable swaggerUI, apiReqLogs, openAPI documentation for prod builds
 - bdbde72: Sync DS components with Cloud
 
 ## 0.2.9-alpha.2
 
 ### Patch Changes
 
-- 16a8648: Disable swaggerUI, playground for production builds, mastra instance server build config to enable swaggerUI, apiReqLogs, openAPI documentation for prod builds
+- 16a8648: Disable swaggerUI, playground for production builds, @mastra instance server build config to enable swaggerUI, apiReqLogs, openAPI documentation for prod builds
 - bdbde72: Sync DS components with Cloud
 
 ## 0.2.9-alpha.1
@@ -788,14 +788,14 @@
 
 ### Patch Changes
 
-- 7184dc5: Add support to pass project path directly to create-mastra and improve tag handling
+- 7184dc5: Add support to pass project path directly to @actus-ag/create-@mastra and improve tag handling
 
 ## 0.2.8
 
 ### Patch Changes
 
 - 1ebbfbf: Ability to toggle stream vs generate in playground
-- a2318cd: Revamp mastra deply dx, Make mastra build command output deployment ready build
+- a2318cd: Revamp @mastra deply dx, Make @actus-ag/@mastra/cli/cli build command output deployment ready build
 - 37bb612: Add Elastic-2.0 licensing for packages
 - c8fe5f0: change the header of all pages with the one from the DS
 
@@ -809,7 +809,7 @@
 
 ### Patch Changes
 
-- a2318cd: Revamp mastra deply dx, Make mastra build command output deployment ready build
+- a2318cd: Revamp @mastra deply dx, Make @actus-ag/@mastra/cli/cli build command output deployment ready build
 - 37bb612: Add Elastic-2.0 licensing for packages
 - c8fe5f0: change the header of all pages with the one from the DS
 
@@ -839,14 +839,14 @@
 ### Patch Changes
 
 - 99e2998: Set default max steps to 5
-- 8fdb414: Custom mastra server cors config
+- 8fdb414: Custom @mastra server cors config
 
 ## 0.2.6-alpha.0
 
 ### Patch Changes
 
 - 99e2998: Set default max steps to 5
-- 8fdb414: Custom mastra server cors config
+- 8fdb414: Custom @mastra server cors config
 
 ## 0.2.5
 
@@ -922,7 +922,7 @@
 - 2447900: Show No input for steps without input on traces UI
 - c30787b: Stop automatically scrolling to bottom in agent chat if user has scrolled up
 - 214e7ce: Only mark required fields as required on the playground
-- 0b496ff: Load env vars on mastra deploy
+- 0b496ff: Load env vars on @actus-ag/@mastra/cli/cli deploy
 - 2134786: Fix traces navigation not working in playground
 
 ## 0.2.3-alpha.2
@@ -944,7 +944,7 @@
 - 2447900: Show No input for steps without input on traces UI
 - c30787b: Stop automatically scrolling to bottom in agent chat if user has scrolled up
 - 214e7ce: Only mark required fields as required on the playground
-- 0b496ff: Load env vars on mastra deploy
+- 0b496ff: Load env vars on @actus-ag/@mastra/cli/cli deploy
 
 ## 0.2.2
 
@@ -987,13 +987,13 @@
 
 ### Minor Changes
 
-- f9b6ab5: add Cerebras as a llm provider to create-mastra@latest
+- f9b6ab5: add Cerebras as a llm provider to @actus-ag/@actus-ag/create-@actus-ag/@mastra/cli/cli@latest
 
 ### Patch Changes
 
 - 0f24546: Add google as a new LLM provider option in project creation
 - 1291e89: Add resizable-panel to playground-ui and use in agent and workflow sidebars
-- 9ba1e97: update playground ui for mastra and create-mastra
+- 9ba1e97: update playground ui for @mastra and @actus-ag/create-@mastra
 - 5baf1ec: animate new traces
 - 9116d70: Handle the different workflow methods in workflow graph
 - 0709d99: add prop for dynamic empty text
@@ -1010,12 +1010,12 @@
 
 ### Minor Changes
 
-- f9b6ab5: add Cerebras as a llm provider to create-mastra@latest
+- f9b6ab5: add Cerebras as a llm provider to @actus-ag/@actus-ag/create-@actus-ag/@mastra/cli/cli@latest
 
 ### Patch Changes
 
 - 1291e89: Add resizable-panel to playground-ui and use in agent and workflow sidebars
-- 9ba1e97: update playground ui for mastra and create-mastra
+- 9ba1e97: update playground ui for @mastra and @actus-ag/create-@mastra
 
 ## 0.1.10-alpha.0
 
@@ -1028,7 +1028,7 @@
 ### Patch Changes
 
 - c49f798: remove hardcoded localhost url in playground
-- d3d6fae: Deprecate mastra dev --env flag
+- d3d6fae: Deprecate @actus-ag/@mastra/cli/cli dev --env flag
 
 ## 0.1.9-alpha.1
 
@@ -1040,13 +1040,13 @@
 
 ### Patch Changes
 
-- d3d6fae: Deprecate mastra dev --env flag
+- d3d6fae: Deprecate @actus-ag/@mastra/cli/cli dev --env flag
 
 ## 0.1.8
 
 ### Patch Changes
 
-- 5fae49e: Configurable timeout on npm create mastra
+- 5fae49e: Configurable timeout on npm create @mastra
 - 91d2e30: Fix init in non npm project
 - 960690d: Improve client-js workflow watch dx
 - dbd9f2d: Handle different condition types on workflow graph
@@ -1054,10 +1054,10 @@
 - a80bdaf: persist data in run tab in dev
 - e5149bb: Fix playground-ui agent-evals tab-content
 - 8deb34c: Better workflow watch api + watch workflow by runId
-- 36d970e: Make tools discovery work in mastra dev
+- 36d970e: Make tools discovery work in @actus-ag/@mastra/cli/cli dev
 - 144b3d5: Update traces table UI, agent Chat UI
   Fix get workflows breaking
-- 62565c1: --no-timeout npm create mastra flag
+- 62565c1: --no-timeout npm create @mastra flag
 - 9035565: Update tools dev playground inputs for different fieldtypes
 - af7466e: fix playground issues
 - fd4a1d7: Update cjs bundling to make sure files are split
@@ -1074,7 +1074,7 @@
 
 - dbd9f2d: Handle different condition types on workflow graph
 - 8deb34c: Better workflow watch api + watch workflow by runId
-- 36d970e: Make tools discovery work in mastra dev
+- 36d970e: Make tools discovery work in @actus-ag/@mastra/cli/cli dev
 - fd4a1d7: Update cjs bundling to make sure files are split
 
 ## 0.1.8-alpha.3
@@ -1103,9 +1103,9 @@
 
 ### Patch Changes
 
-- 5fae49e: Configurable timeout on npm create mastra
+- 5fae49e: Configurable timeout on npm create @mastra
 - 960690d: Improve client-js workflow watch dx
-- 62565c1: --no-timeout npm create mastra flag
+- 62565c1: --no-timeout npm create @mastra flag
 
 ## 0.1.7
 
@@ -1125,13 +1125,13 @@
 
 ### Patch Changes
 
-- 2d68431: Fix mastra server error processing
+- 2d68431: Fix @mastra server error processing
 
 ## 0.1.6-alpha.0
 
 ### Patch Changes
 
-- 2d68431: Fix mastra server error processing
+- 2d68431: Fix @mastra server error processing
 
 ## 0.1.5
 
@@ -1144,74 +1144,74 @@
 ### Patch Changes
 
 - 13ba53a: Remove cli postinstall script
-- bd98fb6: Fix yarn create mastra, use correct install commnad for deps install
-- 5c7b8db: create-mastra version tag discovery
-- cd80117: pnpm create mastra versionTag discovery
-- dd3a52b: pass createVersionTag to create mastra deps
+- bd98fb6: Fix yarn create @mastra, use correct install commnad for deps install
+- 5c7b8db: @actus-ag/create-@mastra version tag discovery
+- cd80117: pnpm create @mastra versionTag discovery
+- dd3a52b: pass createVersionTag to create @mastra deps
 
 ## 0.1.4-alpha.3
 
 ### Patch Changes
 
-- bd98fb6: Fix yarn create mastra, use correct install commnad for deps install
+- bd98fb6: Fix yarn create @mastra, use correct install commnad for deps install
 
 ## 0.1.4-alpha.2
 
 ### Patch Changes
 
-- cd80117: pnpm create mastra versionTag discovery
+- cd80117: pnpm create @mastra versionTag discovery
 
 ## 0.1.4-alpha.1
 
 ### Patch Changes
 
-- 5c7b8db: create-mastra version tag discovery
+- 5c7b8db: @actus-ag/create-@mastra version tag discovery
 
 ## 0.1.4-alpha.0
 
 ### Patch Changes
 
 - 13ba53a: Remove cli postinstall script
-- dd3a52b: pass createVersionTag to create mastra deps
+- dd3a52b: pass createVersionTag to create @mastra deps
 
 ## 0.1.3
 
 ### Patch Changes
 
-- dfe2df9: Fix mastra create workflow starter
+- dfe2df9: Fix @mastra create workflow starter
 
 ## 0.1.3-alpha.0
 
 ### Patch Changes
 
-- dfe2df9: Fix mastra create workflow starter
+- dfe2df9: Fix @mastra create workflow starter
 
 ## 0.1.2
 
 ### Patch Changes
 
-- c5a68f9: Optimize create mastra deps install
-- a9e8d7c: Fix create mastra deps install
+- c5a68f9: Optimize create @mastra deps install
+- a9e8d7c: Fix create @mastra deps install
 
 ## 0.1.2-alpha.0
 
 ### Patch Changes
 
-- c5a68f9: Optimize create mastra deps install
-- a9e8d7c: Fix create mastra deps install
+- c5a68f9: Optimize create @mastra deps install
+- a9e8d7c: Fix create @mastra deps install
 
 ## 0.1.1
 
 ### Patch Changes
 
-- 936dc26: Add mastra server endpoints for watch/resume + plug watch and resume functionality to dev playground
+- 936dc26: Add @mastra server endpoints for watch/resume + plug watch and resume functionality to dev playground
 - b0b975d: Update package installation to latest instead of alpha
 
 ## 0.1.1-alpha.0
 
 ### Patch Changes
 
-- 936dc26: Add mastra server endpoints for watch/resume + plug watch and resume functionality to dev playground
+- 936dc26: Add @mastra server endpoints for watch/resume + plug watch and resume functionality to dev playground
 - b0b975d: Update package installation to latest instead of alpha
 
 ## 0.1.0
@@ -1224,32 +1224,32 @@
 
 ### Patch Changes
 
-- abdd42d: polish mastra create, fix create-mastra publishing
+- abdd42d: polish @mastra create, fix @actus-ag/create-@mastra publishing
 - 7344dd7: Fix tool executor ui bugs
 - b97ca96: Tracing into default storage
-- 9c10484: new create-mastra version
+- 9c10484: new @actus-ag/create-@mastra version
 - 1d68b0c: update dane publishing
-- 255fc56: create mastra bundle correctly
+- 255fc56: create @mastra bundle correctly
 - edd70b5: changeset
 - cefd906: cli interactive api key configuration
 - 0b74006: Workflow updates
 - 9c10484: update all packages
 - 70dabd9: Fix broken publish
 - 21fe536: add keyword tags for packages and update readmes
-- aacfff6: publish new mastra, create-mastra
+- aacfff6: publish new @mastra, @actus-ag/create-@mastra
 - a18e96c: Array schemas for dev tool playground
 - b425845: Logger and execa logs
-- 7db55f6: Install aisdk model provider for in create-mastra init
+- 7db55f6: Install aisdk model provider for in @actus-ag/create-@actus-ag/@mastra/cli/cli init
 - 188ffa8: Fix cli create not parsing components flag
 - 932d86c: Fix build
 - de60682: Fix playground thread navigation
 - fee6d63: Republish
 - c18a0c0: Fix creation of new threads in dev playground
-- 32cd966: new mastra create command, publish create-mastra a way to quickly spin up mastra apps
+- 32cd966: new @mastra create command, publish @actus-ag/create-@mastra a way to quickly spin up @mastra apps
 - 04434b6: Create separate logger file
 - 215a1c2: Fix bad cli create starter files copying
 - 9fb59d6: changeset
-- 2667e66: fix create mastra publishing
+- 2667e66: fix create @mastra publishing
 - 4f1d1a1: Enforce types ann cleanup package.json
 
 ## 0.1.0-alpha.40
@@ -1287,7 +1287,7 @@
 
 ### Patch Changes
 
-- 7db55f6: Install aisdk model provider for in create-mastra init
+- 7db55f6: Install aisdk model provider for in @actus-ag/create-@actus-ag/@mastra/cli/cli init
 - c18a0c0: Fix creation of new threads in dev playground
 
 ## 0.1.0-alpha.34
@@ -1304,7 +1304,7 @@
 
 ### Patch Changes
 
-- 9c10484: new create-mastra version
+- 9c10484: new @actus-ag/create-@mastra version
 - 9c10484: update all packages
 
 ## 0.1.0-alpha.32
@@ -1329,7 +1329,7 @@
 
 ### Patch Changes
 
-- 255fc56: create mastra bundle correctly
+- 255fc56: create @mastra bundle correctly
 
 ## 0.1.0-alpha.28
 
@@ -1368,7 +1368,7 @@
 - Updated dependencies [c4cd3ff]
 - Updated dependencies [dde845f]
 - Updated dependencies [2b4d224]
-  - mastra@0.1.57-alpha.90
+  - @actus-ag/@mastra/cli/cli@0.1.57-alpha.90
 
 ## 0.1.0-alpha.22
 
@@ -1376,52 +1376,52 @@
 
 - Updated dependencies [c4cd3ff]
 - Updated dependencies [dde845f]
-  - mastra@0.1.57-alpha.89
+  - @actus-ag/@mastra/cli/cli@0.1.57-alpha.89
 
 ## 0.1.0-alpha.21
 
 ### Patch Changes
 
 - Updated dependencies [dc90663]
-  - mastra@0.1.57-alpha.88
+  - @actus-ag/@mastra/cli/cli@0.1.57-alpha.88
 
 ## 0.1.0-alpha.20
 
 ### Patch Changes
 
-- mastra@0.1.57-alpha.87
+- @actus-ag/@mastra/cli/cli@0.1.57-alpha.87
 
 ## 0.1.0-alpha.19
 
 ### Patch Changes
 
 - Updated dependencies [606bbbe]
-  - mastra@0.1.57-alpha.86
+  - @actus-ag/@mastra/cli/cli@0.1.57-alpha.86
 
 ## 0.1.0-alpha.18
 
 ### Patch Changes
 
-- mastra@0.1.57-alpha.85
+- @actus-ag/@mastra/cli/cli@0.1.57-alpha.85
 
 ## 0.1.0-alpha.17
 
 ### Patch Changes
 
-- mastra@0.1.57-alpha.84
+- @actus-ag/@mastra/cli/cli@0.1.57-alpha.84
 
 ## 0.1.0-alpha.16
 
 ### Patch Changes
 
-- mastra@0.1.57-alpha.83
+- @actus-ag/@mastra/cli/cli@0.1.57-alpha.83
 
 ## 0.1.0-alpha.15
 
 ### Patch Changes
 
 - Updated dependencies [6cc479d]
-  - mastra@0.1.57-alpha.82
+  - @actus-ag/@mastra/cli/cli@0.1.57-alpha.82
 
 ## 0.1.0-alpha.14
 
@@ -1430,33 +1430,33 @@
 - 0b74006: Workflow updates
 - Updated dependencies [837a288]
 - Updated dependencies [0b74006]
-  - mastra@0.1.57-alpha.81
+  - @actus-ag/@mastra/cli/cli@0.1.57-alpha.81
 
 ## 0.1.0-alpha.13
 
 ### Patch Changes
 
-- mastra@0.1.57-alpha.80
+- @actus-ag/@mastra/cli/cli@0.1.57-alpha.80
 
 ## 0.1.0-alpha.12
 
 ### Patch Changes
 
-- mastra@0.1.57-alpha.79
+- @actus-ag/@mastra/cli/cli@0.1.57-alpha.79
 
 ## 0.1.0-alpha.11
 
 ### Patch Changes
 
 - Updated dependencies [f79a9ff]
-  - mastra@0.1.57-alpha.78
+  - @actus-ag/@mastra/cli/cli@0.1.57-alpha.78
 
 ## 0.1.0-alpha.10
 
 ### Patch Changes
 
 - Updated dependencies [538a136]
-  - mastra@0.1.57-alpha.77
+  - @actus-ag/@mastra/cli/cli@0.1.57-alpha.77
 
 ## 0.1.0-alpha.9
 
@@ -1465,13 +1465,13 @@
 - cefd906: cli interactive api key configuration
 - Updated dependencies [b6f9860]
 - Updated dependencies [cefd906]
-  - mastra@0.1.57-alpha.76
+  - @actus-ag/@mastra/cli/cli@0.1.57-alpha.76
 
 ## 0.1.0-alpha.8
 
 ### Patch Changes
 
-- mastra@0.1.57-alpha.75
+- @actus-ag/@mastra/cli/cli@0.1.57-alpha.75
 
 ## 0.1.0-alpha.7
 
@@ -1479,23 +1479,23 @@
 
 - edd70b5: changeset
 - Updated dependencies [edd70b5]
-  - mastra@0.1.57-alpha.74
+  - @actus-ag/@mastra/cli/cli@0.1.57-alpha.74
 
 ## 0.1.0-alpha.6
 
 ### Patch Changes
 
-- aacfff6: publish new mastra, create-mastra
+- aacfff6: publish new @mastra, @actus-ag/create-@mastra
 - Updated dependencies [aacfff6]
-  - mastra@0.1.57-alpha.73
+  - @actus-ag/@mastra/cli/cli@0.1.57-alpha.73
 
 ## 0.1.0-alpha.5
 
 ### Patch Changes
 
-- 2667e66: fix create mastra publishing
+- 2667e66: fix create @mastra publishing
 - Updated dependencies [2667e66]
-  - mastra@0.1.57-alpha.72
+  - @actus-ag/@mastra/cli/cli@0.1.57-alpha.72
 
 ## 0.1.0-alpha.4
 
@@ -1503,27 +1503,27 @@
 
 - 1d68b0c: update dane publishing
 - Updated dependencies [1d68b0c]
-  - mastra@0.1.57-alpha.71
+  - @actus-ag/@mastra/cli/cli@0.1.57-alpha.71
 
 ## 0.1.0-alpha.3
 
 ### Patch Changes
 
-- abdd42d: polish mastra create, fix create-mastra publishing
+- abdd42d: polish @mastra create, fix @actus-ag/create-@mastra publishing
 - Updated dependencies [abdd42d]
-  - mastra@0.1.57-alpha.70
+  - @actus-ag/@mastra/cli/cli@0.1.57-alpha.70
 
 ## 0.1.0-alpha.2
 
 ### Patch Changes
 
-- 32cd966: new mastra create command, publish create-mastra a way to quickly spin up mastra apps
+- 32cd966: new @mastra create command, publish @actus-ag/create-@mastra a way to quickly spin up @mastra apps
 - Updated dependencies [32cd966]
-  - mastra@0.1.57-alpha.69
+  - @actus-ag/@mastra/cli/cli@0.1.57-alpha.69
 
 ## 0.1.1-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [c156b63]
-  - mastra@0.1.57-alpha.68
+  - @actus-ag/@mastra/cli/cli@0.1.57-alpha.68

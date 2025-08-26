@@ -1,9 +1,9 @@
 ---
-title: "@actus-ag/mastra-mcp-docs-server"
+title: "@mastra/cli/cli/cli/mcp-docs-server"
 description: "Serve Mastra docs, examples and blog posts over MCP"
 ---
 
-The `@actus-ag/mastra-mcp-docs-server` package runs a small [Model Context
+The `@mastra/cli/cli/cli/mcp-docs-server` package runs a small [Model Context
 Protocol](https://github.com/modelcontextprotocol/mcp) server that makes
 Mastra documentation, code examples, blog posts and changelogs
 queryable by an LLM agent. It can be invoked manually from the command
@@ -12,7 +12,7 @@ line or configured inside an MCP-aware IDE such as Cursor or Windsurf.
 ## Running from the CLI
 
 ```bash
-npx -y @actus-ag/mastra-mcp-docs-server
+npx -y @mastra/cli/cli/cli/mcp-docs-server
 ```
 
 The command above runs a stdio based MCP server. The process will keep
@@ -25,24 +25,24 @@ be pointed at the `@wong2/mcp-cli` package for exploration.
 Rebuild the docs before serving (useful if you've modified docs locally):
 
 ```bash
-REBUILD_DOCS_ON_START=true npx -y @actus-ag/mastra-mcp-docs-server
+REBUILD_DOCS_ON_START=true npx -y @mastra/cli/cli/cli/mcp-docs-server
 ```
 
 Enable verbose logging while experimenting:
 
 ```bash
-DEBUG=1 npx -y @actus-ag/mastra-mcp-docs-server
+DEBUG=1 npx -y @mastra/cli/cli/cli/mcp-docs-server
 ```
 
 Serve blog posts from a custom domain:
 
 ```bash
-BLOG_URL=https://my-blog.example npx -y @actus-ag/mastra-mcp-docs-server
+BLOG_URL=https://my-blog.example npx -y @mastra/cli/cli/cli/mcp-docs-server
 ```
 
 ## Environment variables
 
-`@actus-ag/mastra-mcp-docs-server` honours a few environment variables that tweak
+`@mastra/cli/cli/cli/mcp-docs-server` honours a few environment variables that tweak
 its behaviour:
 
 - **`REBUILD_DOCS_ON_START`** - when set to `true` the server rebuilds
@@ -52,7 +52,7 @@ its behaviour:
 prepare-docs`) looks for `PREPARE=true` to copy Markdown sources from
   the repository into `.docs`.
 - **`BLOG_URL`** - base URL used for fetching blog posts.
-  Defaults to `https://mastra.ai`.
+  Defaults to `https://@@mastra/cli/cli/cli.ai`.
 - **`DEBUG`** or **`NODE_ENV=development`** - increase logging written
   to `stderr`.
 
@@ -70,8 +70,8 @@ pnpm mcp-docs-server prepare-docs
 ```
 
 The script will copy documentation from
-`mastra/docs/src/content/en/docs` and
-`mastra/docs/src/content/en/reference` into the package. Once rebuilt,
+`@@mastra/cli/cli/cli/docs/src/content/en/docs` and
+`@@mastra/cli/cli/cli/docs/src/content/en/reference` into the package. Once rebuilt,
 start the server with `REBUILD_DOCS_ON_START=true` so the fresh content
 is served.
 

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import StoryForm from './StoryForm';
 import AudioPlayer from './AudioPlayer';
 import DirectionInput from './DirectionInput';
-import { mastraClient } from '@/lib/mastra-client';
+import { @@mastra/cli/cli/cliClient } from '@/lib/@@mastra/cli/cli/cli-client';
 
 type StoryPhase = 'input' | 'beginning' | 'middle' | 'end';
 interface FormattedContent {
@@ -81,7 +81,7 @@ export default function StoryManager() {
   const handleInitialSubmit = async (formData: FormData) => {
     setIsLoading(true);
     try {
-      const agent = mastraClient.getAgent('storyTellerAgent');
+      const agent = @@mastra/cli/cli/cliClient.getAgent('storyTellerAgent');
       const message = `Current phase: BEGINNING. Story genre: ${formData.genre}, Protagonist name: ${formData.protagonistDetails.name}, Protagonist age: ${formData.protagonistDetails.age}, Protagonist gender: ${formData.protagonistDetails.gender}, Protagonist occupation: ${formData.protagonistDetails.occupation}, Story Setting: ${formData.setting}`;
       const storyResponse = await agent.generate({
         messages: [{ role: 'user', content: message }],
@@ -121,7 +121,7 @@ export default function StoryManager() {
   const handleDirectionSubmit = async (direction: string) => {
     setIsLoading(true);
     try {
-      const agent = mastraClient.getAgent('storyTellerAgent');
+      const agent = @@mastra/cli/cli/cliClient.getAgent('storyTellerAgent');
       const nextPhase = storyState.phase === 'beginning' ? 'middle' : 'end';
       const storyResponse = await agent.generate({
         messages: [

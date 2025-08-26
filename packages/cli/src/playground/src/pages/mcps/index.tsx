@@ -15,13 +15,13 @@ import {
   WorkflowIcon,
   MainContentLayout,
   MainContentContent,
-} from '@actus-ag/mastra-playground-ui';
+} from '@mastra/cli/cli/cli/playground-ui';
 
 import { useMCPServers } from '@/hooks/use-mcp-servers';
 import { useMCPServerTools } from '@/hooks/use-mcp-server-tools';
 import { client } from '@/lib/client';
 
-import { ServerInfo } from '@actus-ag/mastra-core/mcp';
+import { ServerInfo } from '@mastra/cli/cli/cli/core/mcp';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 
@@ -123,7 +123,7 @@ const MCPs = () => {
                 className="w-full"
                 variant="light"
                 as="a"
-                href="https://mastra.ai/en/docs/getting-started/mcp-docs-server"
+                href="https://@@mastra/cli/cli/cli.ai/en/docs/getting-started/mcp-docs-server"
                 target="_blank"
               >
                 <Icon>

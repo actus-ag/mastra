@@ -1,4 +1,4 @@
-import type { Tool } from '@actus-ag/mastra-core/tools';
+import type { Tool } from '@mastra/core/tools';
 import { z } from 'zod';
 import { queryTextDescription, topKDescription, filterDescription } from './default-settings';
 

@@ -24,14 +24,14 @@ description: "Mastra evalsを使用してAIエージェントの品質を評価�
 
 Evalsはエージェントに追加する必要があります。以下は要約、コンテンツの類似性、およびトーンの一貫性のメトリクスを使用した例です：
 
-```typescript copy showLineNumbers filename="src/mastra/agents/index.ts"
-import { Agent } from "@actus-ag/mastra-core/agent";
+```typescript copy showLineNumbers filename="src/@@mastra/cli/cli/cli/agents/index.ts"
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { openai } from "@ai-sdk/openai";
-import { SummarizationMetric } from "@actus-ag/mastra-evals/llm";
+import { SummarizationMetric } from "@mastra/cli/cli/cli/evals/llm";
 import {
   ContentSimilarityMetric,
   ToneConsistencyMetric,
-} from "@actus-ag/mastra-evals/nlp";
+} from "@mastra/cli/cli/cli/evals/nlp";
 
 const model = openai("gpt-4o");
 
@@ -47,7 +47,7 @@ export const myAgent = new Agent({
 });
 ```
 
-`mastra dev`を使用すると、Mastraダッシュボードでeval結果を表示できます。
+`@actus-ag/@mastra/cli/cli dev`を使用すると、Mastraダッシュボードでeval結果を表示できます。
 
 ## 自動テストを超えて
 

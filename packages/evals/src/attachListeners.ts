@@ -1,16 +1,16 @@
-import type { Mastra } from '@actus-ag/mastra-core';
-import { AvailableHooks, registerHook } from '@actus-ag/mastra-core/hooks';
-import { TABLE_EVALS } from '@actus-ag/mastra-core/storage';
-import { checkEvalStorageFields } from '@actus-ag/mastra-core/utils';
+import type { Mastra } from '@mastra/core';
+import { AvailableHooks, registerHook } from '@mastra/core/hooks';
+import { TABLE_EVALS } from '@mastra/core/storage';
+import { checkEvalStorageFields } from '@mastra/core/utils';
 
 import { GLOBAL_RUN_ID_ENV_KEY } from './constants';
 
-export async function attachListeners(mastra?: Mastra) {
+export async function attachListeners(@mastra?: Mastra) {
   registerHook(AvailableHooks.ON_EVALUATION, async traceObject => {
-    const storage = mastra?.getStorage();
+    const storage = @mastra?.getStorage();
     if (storage) {
       // Check for required fields
-      const logger = mastra?.getLogger();
+      const logger = @mastra?.getLogger();
       const areFieldsValid = checkEvalStorageFields(traceObject, logger);
       if (!areFieldsValid) return;
 

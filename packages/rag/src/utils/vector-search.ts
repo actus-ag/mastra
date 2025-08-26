@@ -1,5 +1,5 @@
-import type { MastraVector, QueryResult, QueryVectorParams } from '@actus-ag/mastra-core/vector';
-import type { VectorFilter } from '@actus-ag/mastra-core/vector/filter';
+import type { MastraVector, QueryResult, QueryVectorParams } from '@mastra/core/vector';
+import type { VectorFilter } from '@mastra/core/vector/filter';
 import { embed } from 'ai';
 import type { EmbeddingModel } from 'ai';
 import type { DatabaseConfig } from '../tools/types';

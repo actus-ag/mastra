@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import * as p from '@clack/prompts';
 
-const DEFAULT_SCORERS_DIR = 'src/mastra/scorers';
+const DEFAULT_SCORERS_DIR = 'src/@mastra/scorers';
 
 export function writeScorer(filename: string, content: string, customPath?: string): { ok: true; message: string } {
   const rootDir = process.cwd();

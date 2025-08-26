@@ -1,7 +1,7 @@
-import { Workflow, Step } from "@actus-ag/mastra-core/workflows";
+import { Workflow, Step } from "@mastra/core/workflows";
 import { z } from "zod";
 import { addToGitHubTool, generateSpecTool, siteCrawlTool } from "../tools";
-// import { MDocument } from "@actus-ag/mastra-rag";
+// import { MDocument } from "@mastra/rag";
 
 const syncStep = new Step({
   id: "site-crawl-sync-step",
@@ -85,7 +85,7 @@ export const openApiSpecGenWorkflow = new Workflow({
   })
   .then(generateSpecTool, {
     variables: {
-      mastra_entity_type: {
+      @mastra_entity_type: {
         step: syncStep,
         path: "entityType",
       },

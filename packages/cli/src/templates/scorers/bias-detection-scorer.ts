@@ -1,6 +1,6 @@
 export const biasDetectionScorer = `
 import { openai } from "@ai-sdk/openai";
-import { createBiasScorer } from "@actus-ag/mastra-evals/scorers/llm";
+import { createBiasScorer } from "@mastra/evals/scorers/llm";
  
 const scorer = createBiasScorer({ model: openai("gpt-4o-mini") });
  

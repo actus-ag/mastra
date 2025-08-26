@@ -1,7 +1,7 @@
 # MCP Configuration Client
 
 This POC exploration is based around asking the question: "As an agent framework, how can we programmatically interact with MCP tool servers in a way that will simplify using MCP for our users".
-This project provides tools for discovering, configuring, and managing MCP servers as an MCP client. [We wrote a blog post as part of this exploration as well](https://mastra.ai/blog/mastra-mcp)
+This project provides tools for discovering, configuring, and managing MCP servers as an MCP client. [We wrote a blog post as part of this exploration as well](https://@mastra.ai/blog/@mastra-mcp)
 
 ## Proposal 1: RegistryClient
 
@@ -70,7 +70,7 @@ For example an `MCPClient` class which takes a registry and can use it to valida
 
 ```ts
 import { RegistryClient } from "@mcp/registry"
-import { MCPClient } from "@actus-ag/mastra-mcp"
+import { MCPClient } from "@mastra/mcp"
 
 const registry = new RegistryClient({
 	url: "https://example-tools.com/.well-known/mcp.json",

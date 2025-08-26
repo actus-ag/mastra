@@ -34,7 +34,7 @@ You can mix and match approaches within a single scorer - for example, use a fun
 Every scorer starts with the `createScorer` factory function, which requires a name and description, and optionally accepts a judge configuration for LLM-based steps.
 
 ```typescript
-import { createScorer } from '@actus-ag/mastra-core/scores';
+import { createScorer } from '@mastra/cli/cli/cli/core/scores';
 import { openai } from '@ai-sdk/openai';
 
 const glutenCheckerScorer = createScorer({
@@ -214,4 +214,4 @@ const glutenCheckerScorer = createScorer({...})
 **Examples and Resources:**
 - [Custom Scorer Example](/examples/scorers/custom-scorer) - Complete walkthrough
 - [createScorer API Reference](/reference/scorers/create-scorer) - Complete technical documentation
-- [Built-in Scorers Source Code](https://github.com/mastra-ai/mastra/tree/main/packages/evals/src/scorers) - Real implementations for reference
+- [Built-in Scorers Source Code](https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/tree/main/packages/evals/src/scorers) - Real implementations for reference

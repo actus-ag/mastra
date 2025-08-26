@@ -3,17 +3,17 @@ title: カスタムAPIルート
 ---
 
 ```typescript showLineNumbers
-import { Mastra } from "@actus-ag/mastra-core";
-import { registerApiRoute } from "@actus-ag/mastra-core/server";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { registerApiRoute } from "@mastra/cli/cli/cli/core/server";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   server: {
     apiRoutes: [
       registerApiRoute("/my-custom-route", {
         method: "GET",
         handler: async (c) => {
-          const mastra = c.get("mastra");
-          const agents = await mastra.getAgent("my-agent");
+          const @@mastra/cli/cli/cli = c.get("@actus-ag/@@mastra/cli/cli/cli");
+          const agents = await @@mastra/cli/cli/cli.getAgent("my-agent");
           return c.json({ message: "Hello, world!" });
         },
       }),

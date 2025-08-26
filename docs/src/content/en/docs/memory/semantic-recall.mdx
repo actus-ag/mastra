@@ -26,8 +26,8 @@ After getting a response from the LLM, all new messages (user, assistant, and to
 Semantic recall is enabled by default, so if you give your agent memory it will be included:
 
 ```typescript {9}
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { Memory } from "@actus-ag/mastra-memory";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { Memory } from "@mastra/cli/cli/cli/memory";
 import { openai } from "@ai-sdk/openai";
 
 const agent = new Agent({
@@ -67,9 +67,9 @@ Note: currently, `scope: 'resource'` for semantic recall is supported by the fol
 Semantic recall relies on a [storage and vector db](/reference/memory/Memory#parameters) to store messages and their embeddings.
 
 ```ts {8-17}
-import { Memory } from "@actus-ag/mastra-memory";
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { LibSQLStore, LibSQLVector } from "@actus-ag/mastra-libsql";
+import { Memory } from "@mastra/cli/cli/cli/memory";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { LibSQLStore, LibSQLVector } from "@mastra/cli/cli/cli/libsql";
 
 const agent = new Agent({
   memory: new Memory({
@@ -95,18 +95,18 @@ const agent = new Agent({
 
 Semantic recall relies on an [embedding model](/reference/memory/Memory#embedder) to convert messages into embeddings. You can specify any [embedding model](https://sdk.vercel.ai/docs/ai-sdk-core/embeddings) compatible with the AI SDK.
 
-To use FastEmbed (a local embedding model), install `@actus-ag/mastra-fastembed`:
+To use FastEmbed (a local embedding model), install `@mastra/cli/cli/cli/fastembed`:
 
 ```bash npm2yarn copy
-npm install @actus-ag/mastra-fastembed
+npm install @mastra/cli/cli/cli/fastembed
 ```
 
 Then configure it in your memory:
 
 ```ts {3,8}
-import { Memory } from "@actus-ag/mastra-memory";
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { fastembed } from "@actus-ag/mastra-fastembed";
+import { Memory } from "@mastra/cli/cli/cli/memory";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { fastembed } from "@mastra/cli/cli/cli/fastembed";
 
 const agent = new Agent({
   memory: new Memory({
@@ -119,8 +119,8 @@ const agent = new Agent({
 Alternatively, use a different provider like OpenAI:
 
 ```ts {3,8}
-import { Memory } from "@actus-ag/mastra-memory";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Memory } from "@mastra/cli/cli/cli/memory";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { openai } from "@ai-sdk/openai";
 
 const agent = new Agent({

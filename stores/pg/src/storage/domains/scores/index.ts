@@ -1,7 +1,7 @@
-import type { PaginationInfo, StoragePagination } from '@actus-ag/mastra-core';
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import type { ScoreRowData, ScoringSource } from '@actus-ag/mastra-core/scores';
-import { safelyParseJSON, ScoresStorage, TABLE_SCORERS } from '@actus-ag/mastra-core/storage';
+import type { PaginationInfo, StoragePagination } from '@mastra/core';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import type { ScoreRowData, ScoringSource } from '@mastra/core/scores';
+import { safelyParseJSON, ScoresStorage, TABLE_SCORERS } from '@mastra/core/storage';
 import type { IDatabase } from 'pg-promise';
 import type { StoreOperationsPG } from '../operations';
 import { getTableName } from '../utils';

@@ -9,7 +9,7 @@ const meta = {
   rag: { title: "RAG" },
   "local-dev": { title: "ローカル開発" },
   deployment: { title: "デプロイメント" },
-  "mastra-cloud": { title: "Mastra Cloud" },
+  "@mastra-cloud": { title: "Mastra Cloud" },
   observability: { title: "可観測性" },
   evals: { title: "評価" },
   frameworks: { title: "フレームワーク" },

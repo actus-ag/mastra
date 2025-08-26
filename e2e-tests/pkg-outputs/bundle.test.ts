@@ -41,7 +41,7 @@ describe.for(allPackages.map(pkg => [relative(join(__dirname.replaceAll('\\', '/
     });
 
     describe.concurrent.for(imports.filter(x => !x.endsWith('.css')).map(x => [x]))('%s', async ([importPath]) => {
-      it.skipIf(pkgJson.name === 'mastra')('should use .js and .d.ts extensions when using import', async () => {
+      it.skipIf(pkgJson.name === '@actus-ag/@mastra')('should use .js and .d.ts extensions when using import', async () => {
         if (importPath === './package.json') {
           return;
         }
@@ -61,7 +61,7 @@ describe.for(allPackages.map(pkg => [relative(join(__dirname.replaceAll('\\', '/
         }
       });
 
-      it.skipIf(pkgName === 'packages/playground-ui' || pkgJson.name === 'mastra')(
+      it.skipIf(pkgName === 'packages/playground-ui' || pkgJson.name === '@actus-ag/@mastra')(
         'should use .cjs and .d.ts extensions when using require',
         async () => {
           if (importPath === './package.json') {
@@ -88,13 +88,13 @@ describe.for(allPackages.map(pkg => [relative(join(__dirname.replaceAll('\\', '/
     });
 
     it.skipIf(
-      pkgJson.name === 'mastra' ||
-        pkgJson.name === 'create-mastra' ||
-        pkgJson.name === '@actus-ag/mastra-client-js' ||
+      pkgJson.name === '@actus-ag/@mastra' ||
+        pkgJson.name === '@actus-ag/@actus-ag/create-@mastra' ||
+        pkgJson.name === '@mastra-client-js' ||
         !pkgJson.name.startsWith('@mastra/'),
-    )('should have @actus-ag/mastra-core as a peer dependency if used', async () => {
+    )('should have @mastra/core as a peer dependency if used', async () => {
       console.log(pkgJson.name);
-      const hasMastraCoreAsDependency = pkgJson?.dependencies?.['@actus-ag/mastra-core'];
+      const hasMastraCoreAsDependency = pkgJson?.dependencies?.['@mastra/core'];
       expect(hasMastraCoreAsDependency).toBe(undefined);
     });
   },

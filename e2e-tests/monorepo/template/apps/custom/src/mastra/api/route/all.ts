@@ -1,4 +1,4 @@
-import { registerApiRoute } from '@actus-ag/mastra-core/server';
+import { registerApiRoute } from '@mastra/core/server';
 
 export const allRoute = registerApiRoute('/all', {
   method: 'ALL',

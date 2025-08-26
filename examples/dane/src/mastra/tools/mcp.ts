@@ -1,4 +1,4 @@
-import { MCPClient } from '@actus-ag/mastra-mcp';
+import { MCPClient } from '@mastra/mcp';
 
 export const slack = new MCPClient({
   servers: {

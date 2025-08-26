@@ -13,13 +13,13 @@ Mastraと組み合わせることで、双方向の状態同期とインタラ�
 
 ## Mastraプロジェクトを作成する
 
-`mastra` CLIを使用して新しいMastraプロジェクトを作成します：
+`@actus-ag/@@mastra/cli/cli/cli` CLIを使用して新しいMastraプロジェクトを作成します：
 
 <Tabs items={["npx", "npm", "yarn", "pnpm"]}>
-  <Tabs.Tab>```bash copy npx create-mastra@latest ```</Tabs.Tab>
-  <Tabs.Tab>```bash copy npm create mastra ```</Tabs.Tab>
-  <Tabs.Tab>```bash copy yarn create mastra ```</Tabs.Tab>
-  <Tabs.Tab>```bash copy pnpm create mastra ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy npx @actus-ag/@actus-ag/create-@actus-ag/@mastra/cli/cli@latest ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy npm create @@mastra/cli/cli/cli ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy yarn create @@mastra/cli/cli/cli ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy pnpm create @@mastra/cli/cli/cli ```</Tabs.Tab>
 </Tabs>
 
 プロジェクトの構築時にエージェントの例を選択してください。これにより、天気エージェントが提供されます。
@@ -43,33 +43,33 @@ MastraのカスタムAPIルートを活用して、CopilotKitのランタイム�
 現在のバージョンの統合では、`MastraClient`を使用してMastraエージェントをCopilotKitのAGUI形式にフォーマットしています。
 
 <Tabs items={["npm", "yarn", "pnpm"]}>
-  <Tabs.Tab>```bash copy npm install @actus-ag/mastra-client-js ```</Tabs.Tab>
-  <Tabs.Tab>```bash copy yarn add @actus-ag/mastra-client-js ```</Tabs.Tab>
-  <Tabs.Tab>```bash copy pnpm add @actus-ag/mastra-client-js ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy npm install @actus-ag/@@mastra/cli/cli/client-js ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy yarn add @actus-ag/@@mastra/cli/cli/client-js ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy pnpm add @actus-ag/@@mastra/cli/cli/client-js ```</Tabs.Tab>
 </Tabs>
 
 次に、CopilotKit用のカスタムAPIルートでMastraインスタンスを更新しましょう。
 
 ```typescript copy
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { PinoLogger } from "@actus-ag/mastra-loggers";
-import { LibSQLStore } from "@actus-ag/mastra-libsql";
-import { registerApiRoute } from "@actus-ag/mastra-core/server";
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { PinoLogger } from "@mastra/cli/cli/cli/loggers";
+import { LibSQLStore } from "@mastra/cli/cli/cli/libsql";
+import { registerApiRoute } from "@mastra/cli/cli/cli/core/server";
 import {
   CopilotRuntime,
   copilotRuntimeNodeHttpEndpoint,
   ExperimentalEmptyAdapter,
 } from "@copilotkit/runtime";
-import { MastraClient } from "@actus-ag/mastra-client-js";
+import { MastraClient } from "@@mastra/cli/cli/cli-client-js";
 import { weatherAgent } from "./agents";
 
 const serviceAdapter = new ExperimentalEmptyAdapter();
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   agents: { weatherAgent },
   storage: new LibSQLStore({
     // stores telemetry, evals, ... into memory storage,
-    // if you need to persist, change to file:../mastra.db
+    // if you need to persist, change to file:../@@mastra/cli/cli/cli.db
     url: ":memory:",
   }),
   logger: new PinoLogger({
@@ -82,7 +82,7 @@ export const mastra = new Mastra({
         method: `POST`,
         handler: async (c) => {
           // N.B. Current integration leverages MastraClient to fetch AGUI.
-          // Future versions will support fetching AGUI from mastra context.
+          // Future versions will support fetching AGUI from @@mastra/cli/cli/cli context.
           const client = new MastraClient({
             baseUrl: "http://localhost:4111",
           });
@@ -105,7 +105,7 @@ export const mastra = new Mastra({
 });
 ```
 
-このセットアップにより、MastraサーバーでCopilotKitが実行されるようになりました。`mastra dev`コマンドでMastraサーバーを起動できます。
+このセットアップにより、MastraサーバーでCopilotKitが実行されるようになりました。`@actus-ag/@mastra/cli/cli dev`コマンドでMastraサーバーを起動できます。
 
 ## UIのセットアップ
 

@@ -28,9 +28,9 @@ export default function Page() {
             and a collection of enabled tools:
           </p>
           <CodeBlock
-            fileName="src/mastra/agents/index.ts"
+            fileName="src/@@mastra/cli/cli/cli/agents/index.ts"
             language="typescript"
-            code={`import { Agent } from '@actus-ag/mastra-core';
+            code={`import { Agent } from '@mastra/cli/cli/cli/core';
 import { anthropic } from '@ai-sdk/anthropic';
 
 export const travelAgent = new Agent({
@@ -61,7 +61,7 @@ export const travelAgent = new Agent({
             code for the <code>searchFlights</code> tool
           </p>
           <CodeBlock
-            fileName="mastra/agents/index.ts"
+            fileName="@@mastra/cli/cli/cli/agents/index.ts"
             language="typescript"
             code={`export const searchFlights = createTool({
   label: 'Get Flight Info',

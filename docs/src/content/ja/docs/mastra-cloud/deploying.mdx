@@ -30,7 +30,7 @@ Mastra Cloud は、Vercel や Netlify のようなプラットフォームに似
 
    - プロジェクト名を設定します（デフォルトはリポジトリ名）
    - デプロイするブランチを選択します（通常は `main`）
-   - Mastra ディレクトリパスを設定します（デフォルトは `src/mastra`）
+   - Mastra ディレクトリパスを設定します（デフォルトは `src/@@mastra/cli/cli/cli`）
    - 必要な環境変数（API キーなど）を追加します
 
 3. **Git からのデプロイ**
@@ -52,12 +52,12 @@ Mastra Cloudはギット駆動のワークフローに従います：
 
 各プロジェクトには2つのURLが付与されます。
 
-1. **プロジェクト専用ドメイン**: `https://[project-name].mastra.cloud`
+1. **プロジェクト専用ドメイン**: `https://[project-name].@@mastra/cli/cli/cli.cloud`
 
-   - 例: `https://gray-acoustic-helicopter.mastra.cloud`
+   - 例: `https://gray-acoustic-helicopter.@@mastra/cli/cli/cli.cloud`
 
-2. **デプロイメント専用ドメイン**: `https://[deployment-id].mastra.cloud`
-   - 例: `https://young-loud-caravan-6156280f-ad56-4ec8-9701-6bb5271fd73d.mastra.cloud`
+2. **デプロイメント専用ドメイン**: `https://[deployment-id].@@mastra/cli/cli/cli.cloud`
+   - 例: `https://young-loud-caravan-6156280f-ad56-4ec8-9701-6bb5271fd73d.@@mastra/cli/cli/cli.cloud`
 
 これらのURLから、デプロイしたエージェントやワークフローに直接アクセスできます。
 

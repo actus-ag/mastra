@@ -1,11 +1,11 @@
 import { openai } from '@ai-sdk/openai';
-import type { Task, MessageSendParams } from '@actus-ag/mastra-core/a2a';
-import { MastraA2AError } from '@actus-ag/mastra-core/a2a';
-import type { AgentConfig } from '@actus-ag/mastra-core/agent';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { Mastra } from '@actus-ag/mastra-core/mastra';
-import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
-import type { MastraStorage } from '@actus-ag/mastra-core/storage';
+import type { Task, MessageSendParams } from '@mastra/core/a2a';
+import { MastraA2AError } from '@mastra/core/a2a';
+import type { AgentConfig } from '@mastra/core/agent';
+import { Agent } from '@mastra/core/agent';
+import { Mastra } from '@mastra/core/@mastra';
+import { RuntimeContext } from '@mastra/core/runtime-context';
+import type { MastraStorage } from '@mastra/core/storage';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { InMemoryTaskStore } from '../a2a/store';
 import {
@@ -74,7 +74,7 @@ describe('A2A Handler', () => {
 
     it('should return the agent card', async () => {
       const agentCard = await getAgentCardByIdHandler({
-        mastra: mockMastra,
+        @mastra: mockMastra,
         runtimeContext: new RuntimeContext(),
         agentId: 'test-agent',
       });
@@ -95,7 +95,7 @@ describe('A2A Handler', () => {
           "name": "test-agent",
           "provider": {
             "organization": "Mastra",
-            "url": "https://mastra.ai",
+            "url": "https://@mastra.ai",
           },
           "skills": [],
           "url": "/a2a/test-agent",
@@ -107,7 +107,7 @@ describe('A2A Handler', () => {
     it('should allow custom execution URL', async () => {
       const customUrl = '/custom/execution/url';
       const agentCard = await getAgentCardByIdHandler({
-        mastra: mockMastra,
+        @mastra: mockMastra,
         runtimeContext: new RuntimeContext(),
         agentId: 'test-agent',
         executionUrl: customUrl,
@@ -121,7 +121,7 @@ describe('A2A Handler', () => {
         url: 'https://custom.org',
       };
       const agentCard = await getAgentCardByIdHandler({
-        mastra: mockMastra,
+        @mastra: mockMastra,
         runtimeContext: new RuntimeContext(),
         agentId: 'test-agent',
         provider: customProvider,
@@ -132,7 +132,7 @@ describe('A2A Handler', () => {
     it('should allow custom version', async () => {
       const customVersion = '2.0';
       const agentCard = await getAgentCardByIdHandler({
-        mastra: mockMastra,
+        @mastra: mockMastra,
         runtimeContext: new RuntimeContext(),
         agentId: 'test-agent',
         version: customVersion,

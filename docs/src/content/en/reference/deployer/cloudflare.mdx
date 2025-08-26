@@ -9,14 +9,14 @@ The `CloudflareDeployer` class handles deployment of standalone Mastra applicati
 
 ## Usage example
 
-```typescript filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { CloudflareDeployer } from "@actus-ag/mastra-deployer-cloudflare";
+```typescript filename="src/@@mastra/cli/cli/cli/index.ts" showLineNumbers copy
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { CloudflareDeployer } from "@mastra/cli/cli/cli/deployer-cloudflare";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // ...
   deployer: new CloudflareDeployer({
-    projectName: "hello-mastra",
+    projectName: "hello-@@mastra/cli/cli/cli",
     routes: [
       {
         pattern: "example.com/*",
@@ -55,7 +55,7 @@ export const mastra = new Mastra({
       type: "string",
       description: "Name of your worker project.",
       isOptional: true,
-      defaultValue: "'mastra'",
+      defaultValue: "'@actus-ag/@@mastra/cli/cli/cli'",
     },
     {
       name: "routes",

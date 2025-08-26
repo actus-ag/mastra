@@ -14,16 +14,16 @@ export async function getPackageVersion() {
 
 export async function getCreateVersionTag(): Promise<string | undefined> {
   try {
-    const pkgPath = fileURLToPath(import.meta.resolve('create-mastra/package.json'));
+    const pkgPath = fileURLToPath(import.meta.resolve('@actus-ag/create-@mastra/package.json'));
     const json = await fsExtra.readJSON(pkgPath);
 
-    const { stdout } = await execa('npm', ['dist-tag', 'create-mastra']);
+    const { stdout } = await execa('npm', ['dist-tag', '@actus-ag/@actus-ag/create-@mastra']);
     const tagLine = stdout.split('\n').find(distLine => distLine.endsWith(`: ${json.version}`));
     const tag = tagLine ? tagLine.split(':')[0].trim() : 'latest';
 
     return tag;
   } catch {
-    console.error('We could not resolve the create-mastra version tag, falling back to "latest"');
+    console.error('We could not resolve the @actus-ag/create-@mastra version tag, falling back to "latest"');
   }
 
   return 'latest';

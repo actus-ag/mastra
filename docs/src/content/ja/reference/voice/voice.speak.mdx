@@ -10,7 +10,7 @@ description: "すべてのMastra音声プロバイダーで利用可能なspeak(
 ## 使用例
 
 ```typescript
-import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
+import { OpenAIVoice } from "@mastra/cli/cli/cli/voice-openai";
 // Initialize a voice provider
 const voice = new OpenAIVoice({
   speaker: "alloy", // Default voice
@@ -160,8 +160,8 @@ const audioStreamFromTextStream = await voice.speak(textStream);
 - オーディオチャンクを受信するためにイベントリスナーを登録する必要があります
 
 ```typescript
-import { OpenAIRealtimeVoice } from "@actus-ag/mastra-voice-openai-realtime";
-import Speaker from "@actus-ag/mastra-node-speaker";
+import { OpenAIRealtimeVoice } from "@mastra/cli/cli/cli/voice-openai-realtime";
+import Speaker from "@mastra/cli/cli/cli/node-speaker";
 
 const speaker = new Speaker({
   sampleRate: 24100, // オーディオサンプルレート（Hz）- MacBook Proの高品質オーディオの標準
@@ -185,9 +185,9 @@ await voice.speak("Hello, this is realtime speech!");
 `CompositeVoice`を使用する場合、`speak()`メソッドは設定された音声提供プロバイダーに処理を委任します：
 
 ```typescript
-import { CompositeVoice } from "@actus-ag/mastra-core/voice";
-import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
-import { PlayAIVoice } from "@actus-ag/mastra-voice-playai";
+import { CompositeVoice } from "@mastra/cli/cli/cli/core/voice";
+import { OpenAIVoice } from "@mastra/cli/cli/cli/voice-openai";
+import { PlayAIVoice } from "@mastra/cli/cli/cli/voice-playai";
 const voice = new CompositeVoice({
   speakProvider: new PlayAIVoice(),
   listenProvider: new OpenAIVoice(),

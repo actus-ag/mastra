@@ -1,6 +1,6 @@
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import type { ScoreRowData, ScoringSource } from '@actus-ag/mastra-core/scores';
-import { ScoresStorage, TABLE_SCORERS } from '@actus-ag/mastra-core/storage';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import type { ScoreRowData, ScoringSource } from '@mastra/core/scores';
+import { ScoresStorage, TABLE_SCORERS } from '@mastra/core/storage';
 import type { Redis } from '@upstash/redis';
 import type { StoreOperationsUpstash } from '../operations';
 import { processRecord } from '../utils';

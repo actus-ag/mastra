@@ -25,24 +25,24 @@ There are different kinds of evals, each serving a specific purpose. Here are so
 
 ## Installation
 
-To access Mastra's evals feature install the `@actus-ag/mastra-evals` package.
+To access Mastra's evals feature install the `@mastra/cli/cli/cli/evals` package.
 
 ```bash copy
-npm install @actus-ag/mastra-evals@latest
+npm install @mastra/cli/cli/cli/evals@latest
 ```
 
 ## Getting Started
 
 Evals need to be added to an agent. Here's an example using the summarization, content similarity, and tone consistency metrics:
 
-```typescript copy showLineNumbers filename="src/mastra/agents/index.ts"
-import { Agent } from "@actus-ag/mastra-core/agent";
+```typescript copy showLineNumbers filename="src/@@mastra/cli/cli/cli/agents/index.ts"
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { openai } from "@ai-sdk/openai";
-import { SummarizationMetric } from "@actus-ag/mastra-evals/llm";
+import { SummarizationMetric } from "@mastra/cli/cli/cli/evals/llm";
 import {
   ContentSimilarityMetric,
   ToneConsistencyMetric,
-} from "@actus-ag/mastra-evals/nlp";
+} from "@mastra/cli/cli/cli/evals/nlp";
 
 const model = openai("gpt-4o");
 
@@ -58,7 +58,7 @@ export const myAgent = new Agent({
 });
 ```
 
-You can view eval results in the Mastra dashboard when using `mastra dev`.
+You can view eval results in the Mastra dashboard when using `@actus-ag/@mastra/cli/cli dev`.
 
 ## Beyond Automated Testing
 

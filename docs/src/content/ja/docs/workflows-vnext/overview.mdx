@@ -8,7 +8,7 @@ description: "Mastraのワークフロー（vNext）は、分岐、並列実行�
 vNextワークフローを使用するには、まずvNextモジュールから必要な関数をインポートします：
 
 ```typescript
-import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows/vNext";
+import { createWorkflow, createStep } from "@mastra/cli/cli/cli/core/workflows/vNext";
 import { z } from "zod"; // For schema validation
 ```
 
@@ -53,7 +53,7 @@ const myStep = createStep({
   }),
   execute: async ({
     inputData,
-    mastra,
+    @@mastra/cli/cli/cli,
     getStepResult,
     getInitData,
     runtimeContext,
@@ -80,7 +80,7 @@ const myStep = createStep({
 
 - `inputData`: inputSchemaに一致する入力データ
 - `resumeData`: 一時停止状態からステップを再開する際に、resumeSchemaに一致する再開データ。ステップが再開される場合にのみ存在します。
-- `mastra`: mastraサービス（エージェント、ツールなど）へのアクセス
+- `@actus-ag/@@mastra/cli/cli/cli`: @@mastra/cli/cli/cliサービス（エージェント、ツールなど）へのアクセス
 - `getStepResult`: 他のステップの結果にアクセスするための関数
 - `getInitData`: どのステップでもワークフローの初期入力データにアクセスするための関数
 - `suspend`: ワークフロー実行を一時停止するための関数（ユーザーとのインタラクション用）
@@ -105,13 +105,13 @@ const myWorkflow = createWorkflow({
   .then(step3)
   .commit();
 
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   vnext_workflows: {
     myWorkflow,
   },
 });
 
-const run = mastra.vnext_getWorkflow("myWorkflow").createRun();
+const run = @@mastra/cli/cli/cli.vnext_getWorkflow("myWorkflow").createRun();
 ```
 
 ワークフローオプションの`steps`プロパティは、ステップ結果へのアクセスに対する型安全性を提供します。ワークフローで使用するステップを宣言すると、TypeScriptは`result.steps`へのアクセス時に型安全性を確保します：
@@ -167,7 +167,7 @@ import {
   createStep,
   cloneStep,
   cloneWorkflow,
-} from "@actus-ag/mastra-core/workflows/vNext";
+} from "@mastra/cli/cli/cli/core/workflows/vNext";
 
 const myWorkflow = createWorkflow({
   id: "my-workflow",

@@ -1,5 +1,5 @@
-import type { JwtPayload } from '@actus-ag/mastra-auth';
-import { verifyJwks } from '@actus-ag/mastra-auth';
+import type { JwtPayload } from '@mastra/auth';
+import { verifyJwks } from '@mastra/auth';
 import { WorkOS } from '@workos-inc/node';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { MastraAuthWorkos } from './index';
@@ -17,7 +17,7 @@ vi.mock('@workos-inc/node', () => ({
 }));
 
 // Mock the verifyJwks function
-vi.mock('@actus-ag/mastra-auth', () => ({
+vi.mock('@mastra/auth', () => ({
   verifyJwks: vi.fn().mockResolvedValue({
     sub: 'user123',
     email: 'test@example.com',

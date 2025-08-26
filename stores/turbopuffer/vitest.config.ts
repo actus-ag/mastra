@@ -11,7 +11,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@actus-ag/mastra-core': resolve(__dirname, '../../packages/core/src'),
+      '@mastra/core': resolve(__dirname, '../../packages/core/src'),
     },
   },
 });

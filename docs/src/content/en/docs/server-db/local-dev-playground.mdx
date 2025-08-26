@@ -1,5 +1,5 @@
 ---
-title: "Inspecting agents and workflows with mastra dev | Mastra Local Dev Docs"
+title: "Inspecting agents and workflows with @actus-ag/@mastra/cli/cli dev | Mastra Local Dev Docs"
 description: Documentation for the Mastra local development environment for Mastra applications.
 ---
 
@@ -36,7 +36,7 @@ Start the local development server by running:
   </Tab>
   <Tab>
     ```bash copy
-    mastra dev
+    @actus-ag/@mastra/cli/cli dev
     ```
   </Tab>
 </Tabs>
@@ -59,7 +59,7 @@ The Playground lets you interact with your agents, workflows, and tools. It prov
 Quickly test and debug your agents during development using the interactive chat interface in the Agent Playground.
 
 <VideoPlayer
-  src="https://res.cloudinary.com/mastra-assets/video/upload/v1751406022/local-dev-agents-playground_100_m3begx.mp4"
+  src="https://res.cloudinary.com/@@mastra/cli/cli/cli-assets/video/upload/v1751406022/local-dev-agents-playground_100_m3begx.mp4"
 />
 
 Key features:
@@ -75,7 +75,7 @@ Key features:
 Validate workflows by supplying defined inputs and visualizing each step within the Workflow Playground.
 
 <VideoPlayer
-  src="https://res.cloudinary.com/mastra-assets/video/upload/v1751406027/local-dev-workflows-playground_100_rbc466.mp4"
+  src="https://res.cloudinary.com/@@mastra/cli/cli/cli-assets/video/upload/v1751406027/local-dev-workflows-playground_100_rbc466.mp4"
 />
 
 Key features:
@@ -91,7 +91,7 @@ Key features:
 Quickly test and debug custom tools in isolation using the Tools Playground, without running a full agent or workflow.
 
 <VideoPlayer
-  src="https://res.cloudinary.com/mastra-assets/video/upload/v1751406316/local-dev-agents-tools_100_fe1jdt.mp4"
+  src="https://res.cloudinary.com/@@mastra/cli/cli/cli-assets/video/upload/v1751406316/local-dev-agents-tools_100_fe1jdt.mp4"
 />
 
 Key features:
@@ -126,10 +126,10 @@ The local development server includes an OpenAPI specification available at: [ht
 
 To include OpenAPI documentation in your production server, enable it in the Mastra instance:
 
-```typescript {7} filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core/mastra";
+```typescript {7} filename="src/@@mastra/cli/cli/cli/index.ts" showLineNumbers copy
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // ...
   server: {
     build: {
@@ -145,10 +145,10 @@ The local development server includes an interactive Swagger UI - API explorer a
 
 To include Swagger UI in your production server, enable it in the Mastra instance:
 
-```typescript {7} filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core/mastra";
+```typescript {7} filename="src/@@mastra/cli/cli/cli/index.ts" showLineNumbers copy
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // ...
   server: {
     build: {
@@ -172,10 +172,10 @@ This setup lets you start developing immediately with production-like behavior, 
 
 By default, the server runs on port `4111`. You can customize the host and port through the Mastra server configuration.
 
-```typescript {6,7} filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core/mastra";
+```typescript {6,7} filename="src/@@mastra/cli/cli/cli/index.ts" showLineNumbers copy
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // ...
   server: {
     port: 8080,
@@ -187,6 +187,6 @@ export const mastra = new Mastra({
 
 ## Next steps
 
-- [Mastra Cloud](/docs/mastra-cloud/overview)
+- [Mastra Cloud](/docs/@@mastra/cli/cli/cli-cloud/overview)
 - [Deployment Overview](/docs/deployment/overview)
 - [Mastra Client SDK](/docs/client-js/overview)

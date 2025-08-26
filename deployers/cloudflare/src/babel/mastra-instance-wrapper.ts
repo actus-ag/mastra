@@ -5,7 +5,7 @@ import * as babel from '@babel/core';
  * Babel plugin that transforms Mastra exports for Cloudflare Workers compatibility.
  *
  * This plugin:
- * 1. Identifies named exports of the 'mastra' variable
+ * 1. Identifies named exports of the '@actus-ag/@mastra' variable
  * 2. Checks if the export is a new instance of the 'Mastra' class
  * 3. Wraps the Mastra instantiation in an arrow function to ensure proper initialization
  *    in the Cloudflare Workers environment
@@ -17,18 +17,18 @@ import * as babel from '@babel/core';
  *
  * @example
  * // Before transformation:
- * export const mastra = new Mastra();
+ * export const @mastra = new Mastra();
  *
  * // After transformation:
- * export const mastra = () => new Mastra();
+ * export const @mastra = () => new Mastra();
  */
-export function mastraInstanceWrapper(): PluginObj {
-  const exportName = 'mastra';
+export function @mastraInstanceWrapper(): PluginObj {
+  const exportName = '@actus-ag/@mastra';
   const className = 'Mastra';
   const t = babel.types;
 
   return {
-    name: 'wrap-mastra',
+    name: 'wrap-@mastra',
     visitor: {
       ExportNamedDeclaration(path) {
         if (t.isVariableDeclaration(path.node?.declaration)) {
@@ -39,7 +39,7 @@ export function mastraInstanceWrapper(): PluginObj {
               t.isIdentifier(declaration.init.callee, { name: className })
             ) {
               declaration.init = t.arrowFunctionExpression([], declaration.init);
-              // there should be only one "mastra" export, so we can exit the loop
+              // there should be only one "@actus-ag/@mastra" export, so we can exit the loop
               break;
             }
           }

@@ -1,5 +1,5 @@
-import { Agent } from '@actus-ag/mastra-core/agent';
-import type { MastraLanguageModel } from '@actus-ag/mastra-core/agent';
+import { Agent } from '@mastra/core/agent';
+import type { MastraLanguageModel } from '@mastra/core/agent';
 import { PromptTemplate, defaultSummaryPrompt } from '../prompts';
 import type { SummaryPrompt } from '../prompts';
 import type { BaseNode } from '../schema';
@@ -78,7 +78,7 @@ export class SummaryExtractor extends BaseExtractor {
 
     let summary = '';
     if (this.llm.specificationVersion === 'v2') {
-      const result = await miniAgent.generateVNext([{ role: 'user', content: prompt }], { format: 'mastra' });
+      const result = await miniAgent.generateVNext([{ role: 'user', content: prompt }], { format: '@actus-ag/@mastra' });
       summary = result.text;
     } else {
       const result = await miniAgent.generate([{ role: 'user', content: prompt }]);

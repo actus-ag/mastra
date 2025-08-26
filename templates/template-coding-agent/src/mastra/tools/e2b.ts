@@ -1,4 +1,4 @@
-import { createTool } from '@actus-ag/mastra-core/tools';
+import { createTool } from '@mastra/core/tools';
 import z from 'zod';
 import { FilesystemEventType, FileType, Sandbox } from '@e2b/code-interpreter';
 

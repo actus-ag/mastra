@@ -7,19 +7,19 @@ In this final step, we'll bring together all the memory features we've explored 
 Let's create a comprehensive agent that utilizes conversation history, semantic recall, and working memory:
 
 ```typescript
-// src/mastra/agents/memory-agent.ts
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { Memory } from "@actus-ag/mastra-memory";
+// src/@mastra/agents/memory-agent.ts
+import { Agent } from "@mastra/core/agent";
+import { Memory } from "@mastra/memory";
 import { openai } from "@ai-sdk/openai";
-import { LibSQLStore, LibSQLVector } from "@actus-ag/mastra-libsql";
+import { LibSQLStore, LibSQLVector } from "@mastra/libsql";
 
 // Create a comprehensive memory configuration
 const memory = new Memory({
   storage: new LibSQLStore({
-    url: "file:../../memory.db", // relative path from the `.mastra/output` directory
+    url: "file:../../memory.db", // relative path from the `.@mastra/output` directory
   }),
   vector: new LibSQLVector({
-    connectionUrl: "file:../../vector.db", // relative path from the `.mastra/output` directory
+    connectionUrl: "file:../../vector.db", // relative path from the `.@mastra/output` directory
   }),
   embedder: openai.embedding("text-embedding-3-small"),
   options: {

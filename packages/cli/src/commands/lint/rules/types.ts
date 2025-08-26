@@ -1,13 +1,13 @@
 export interface LintContext {
   rootDir: string;
-  mastraDir: string;
+  @mastraDir: string;
   outputDirectory: string;
   discoveredTools: string[];
   packageJson: {
     dependencies?: Record<string, string>;
     devDependencies?: Record<string, string>;
   };
-  mastraPackages: {
+  @mastraPackages: {
     name: string;
     version: string;
     isAlpha: boolean;

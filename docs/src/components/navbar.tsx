@@ -77,7 +77,7 @@ export const Nav = ({ stars, locale }: { stars: number; locale: string }) => {
       logo={<Logo />}
       logoLink={process.env.NEXT_PUBLIC_APP_URL}
       projectIcon={<GithubStarCount stars={stars} />}
-      projectLink="https://github.com/mastra-ai/mastra"
+      projectLink="https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli"
       chatIcon={null}
       chatLink={""}
       className="relative px-6"
@@ -115,7 +115,7 @@ export const SearchWrapperMobile = ({ locale }: { locale: string }) => {
 
   // Configure Algolia search options
   const searchOptions = {
-    indexName: "crawler_mastra crawler",
+    indexName: "crawler_@@mastra/cli/cli/cli crawler",
     hitsPerPage: 20,
     attributesToRetrieve: ["title", "content", "url", "hierarchy"],
     attributesToHighlight: ["title", "content"],

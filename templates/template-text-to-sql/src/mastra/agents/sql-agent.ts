@@ -1,7 +1,7 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { LibSQLStore } from '@actus-ag/mastra-libsql';
-import { Memory } from '@actus-ag/mastra-memory';
+import { Agent } from '@mastra/core/agent';
+import { LibSQLStore } from '@mastra/libsql';
+import { Memory } from '@mastra/memory';
 import { databaseIntrospectionTool } from '../tools/database-introspection-tool';
 import { databaseSeedingTool } from '../tools/database-seeding-tool';
 import { sqlExecutionTool } from '../tools/sql-execution-tool';
@@ -10,7 +10,7 @@ import { sqlGenerationTool } from '../tools/sql-generation-tool';
 // Initialize memory with LibSQLStore for persistence
 const memory = new Memory({
   storage: new LibSQLStore({
-    url: 'file:../mastra.db', // Or your database URL
+    url: 'file:../@mastra.db', // Or your database URL
   }),
 });
 

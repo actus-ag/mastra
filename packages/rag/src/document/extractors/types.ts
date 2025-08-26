@@ -1,5 +1,5 @@
 import { createOpenAI } from '@ai-sdk/openai';
-import type { MastraLanguageModel } from '@actus-ag/mastra-core/agent';
+import type { MastraLanguageModel } from '@mastra/core/agent';
 import type {
   KeywordExtractPrompt,
   QuestionExtractPrompt,

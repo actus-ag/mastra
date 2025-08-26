@@ -1,10 +1,10 @@
 // Import auth providers
-import { MastraAuthFirebase } from '@actus-ag/mastra-auth-firebase';
-import { MastraAuthSupabase } from '@actus-ag/mastra-auth-supabase';
-import { MastraAuthAuth0 } from '@actus-ag/mastra-auth-auth0';
-import { MastraAuthWorkos } from '@actus-ag/mastra-auth-workos';
-import { MastraAuthClerk } from '@actus-ag/mastra-auth-clerk';
-import { MastraJwtAuth } from '@actus-ag/mastra-auth';
+import { MastraAuthFirebase } from '@mastra/auth-firebase';
+import { MastraAuthSupabase } from '@mastra/auth-supabase';
+import { MastraAuthAuth0 } from '@mastra/auth-auth0';
+import { MastraAuthWorkos } from '@mastra/auth-workos';
+import { MastraAuthClerk } from '@mastra/auth-clerk';
+import { MastraJwtAuth } from '@mastra/auth';
 
 // Get the configured auth provider based on environment
 export function getAuthProvider() {

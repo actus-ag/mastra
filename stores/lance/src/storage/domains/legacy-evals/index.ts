@@ -1,7 +1,7 @@
 import type { Connection } from '@lancedb/lancedb';
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import { LegacyEvalsStorage, TABLE_EVALS } from '@actus-ag/mastra-core/storage';
-import type { EvalRow, PaginationInfo } from '@actus-ag/mastra-core/storage';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import { LegacyEvalsStorage, TABLE_EVALS } from '@mastra/core/storage';
+import type { EvalRow, PaginationInfo } from '@mastra/core/storage';
 
 export class StoreLegacyEvalsLance extends LegacyEvalsStorage {
   private client: Connection;

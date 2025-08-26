@@ -100,7 +100,7 @@ export const ShowcaseGrid = () => {
       description:
         "AI-powered assistant that creates podcasts from the sources you upload",
       image: "notebook-lm.png",
-      link: "https://notebooklm-mastra.vercel.app/",
+      link: "https://notebooklm-@@mastra/cli/cli/cli.vercel.app/",
     },
     {
       title: "Repo Base",
@@ -131,7 +131,7 @@ export const ShowcaseGrid = () => {
       title: "Text-to-SQL",
       description: "Generate SQL queries from natural language",
       image: "text-to-sql.png",
-      link: "https://mastra-text-to-sql.vercel.app/",
+      link: "https://@@mastra/cli/cli/cli-text-to-sql.vercel.app/",
     },
   ];
 

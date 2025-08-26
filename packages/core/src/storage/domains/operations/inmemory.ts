@@ -9,13 +9,13 @@ export class StoreOperationsInMemory extends StoreOperations {
   constructor() {
     super();
     this.data = {
-      mastra_workflow_snapshot: new Map(),
-      mastra_evals: new Map(),
-      mastra_messages: new Map(),
-      mastra_threads: new Map(),
-      mastra_traces: new Map(),
-      mastra_resources: new Map(),
-      mastra_scorers: new Map(),
+      @mastra_workflow_snapshot: new Map(),
+      @mastra_evals: new Map(),
+      @mastra_messages: new Map(),
+      @mastra_threads: new Map(),
+      @mastra_traces: new Map(),
+      @mastra_resources: new Map(),
+      @mastra_scorers: new Map(),
     };
   }
 

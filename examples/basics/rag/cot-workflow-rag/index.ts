@@ -1,9 +1,9 @@
 import { openai } from '@ai-sdk/openai';
-import { Mastra } from '@actus-ag/mastra-core';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { Step, Workflow } from '@actus-ag/mastra-core/workflows';
-import { PgVector } from '@actus-ag/mastra-pg';
-import { createVectorQueryTool, MDocument } from '@actus-ag/mastra-rag';
+import { Mastra } from '@mastra/core';
+import { Agent } from '@mastra/core/agent';
+import { Step, Workflow } from '@mastra/core/workflows';
+import { PgVector } from '@mastra/pg';
+import { createVectorQueryTool, MDocument } from '@mastra/rag';
 import { embedMany } from 'ai';
 import { z } from 'zod';
 
@@ -35,9 +35,9 @@ const analyzeContext = new Step({
   outputSchema: z.object({
     initialAnalysis: z.string(),
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     console.log('---------------------------');
-    const ragAgent = mastra?.getAgent('ragAgent');
+    const ragAgent = @mastra?.getAgent('ragAgent');
     const query = context?.getStepResult<{ query: string }>('trigger')?.query;
 
     const analysisPrompt = `${query} 1. First, carefully analyze the retrieved context chunks and identify key information.`;
@@ -55,9 +55,9 @@ const breakdownThoughts = new Step({
   outputSchema: z.object({
     breakdown: z.string(),
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     console.log('---------------------------');
-    const ragAgent = mastra?.getAgent('ragAgent');
+    const ragAgent = @mastra?.getAgent('ragAgent');
     const analysis = context?.getStepResult<{ initialAnalysis: string }>('analyzeContext')?.initialAnalysis;
 
     const connectionPrompt = `
@@ -79,9 +79,9 @@ const connectPieces = new Step({
   outputSchema: z.object({
     connections: z.string(),
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     console.log('---------------------------');
-    const ragAgent = mastra?.getAgent('ragAgent');
+    const ragAgent = @mastra?.getAgent('ragAgent');
     const process = context?.getStepResult<{ breakdown: string }>('breakdownThoughts')?.breakdown;
     const connectionPrompt = `
         Based on the breakdown: ${process}
@@ -102,9 +102,9 @@ const drawConclusions = new Step({
   outputSchema: z.object({
     conclusions: z.string(),
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     console.log('---------------------------');
-    const ragAgent = mastra?.getAgent('ragAgent');
+    const ragAgent = @mastra?.getAgent('ragAgent');
     const evidence = context?.getStepResult<{ connections: string }>('connectPieces')?.connections;
     const conclusionPrompt = `
         Based on the connections: ${evidence}
@@ -125,9 +125,9 @@ const finalAnswer = new Step({
   outputSchema: z.object({
     finalAnswer: z.string(),
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     console.log('---------------------------');
-    const ragAgent = mastra?.getAgent('ragAgent');
+    const ragAgent = @mastra?.getAgent('ragAgent');
     const conclusions = context?.getStepResult<{ conclusions: string }>('drawConclusions')?.conclusions;
     const answerPrompt = `
         Based on the conclusions: ${conclusions}
@@ -155,7 +155,7 @@ ragWorkflow.commit();
 
 const pgVector = new PgVector({ connectionString: process.env.POSTGRES_CONNECTION_STRING! });
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   agents: { ragAgent },
   vectors: { pgVector },
   workflows: { ragWorkflow },
@@ -193,7 +193,7 @@ const { embeddings } = await embedMany({
   values: chunks.map(chunk => chunk.text),
 });
 
-const vectorStore = mastra.getVector('pgVector');
+const vectorStore = @mastra.getVector('pgVector');
 await vectorStore.createIndex({
   indexName: 'embeddings',
   dimension: 1536,

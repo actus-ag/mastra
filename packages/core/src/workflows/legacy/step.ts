@@ -17,7 +17,7 @@ export class LegacyStep<
   payload?: TSchemaIn extends z.ZodSchema ? Partial<z.infer<TSchemaIn>> : unknown;
   execute: (context: TContext) => Promise<TSchemaOut extends z.ZodSchema ? z.infer<TSchemaOut> : unknown>;
   retryConfig?: RetryConfig;
-  mastra?: Mastra;
+  @mastra?: Mastra;
 
   constructor({
     id,

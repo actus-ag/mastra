@@ -11,7 +11,7 @@ Deploy your Mastra applications to Azure App Services.
 
 <Callout>
   This guide assumes your Mastra application has been created using the default
-  `npx create-mastra@latest` command.
+  `npx @actus-ag/@actus-ag/create-@actus-ag/@mastra/cli/cli@latest` command.
   For more information on how to create a new Mastra application,
   refer to our [getting started guide](/docs/getting-started/installation)
 </Callout>
@@ -20,7 +20,7 @@ Deploy your Mastra applications to Azure App Services.
 
 - An [Azure account](https://azure.microsoft.com/) with an active subscription
 - A [GitHub repository](https://github.com/) containing your Mastra application
-- Your Mastra application should be created using `npx create-mastra@latest`
+- Your Mastra application should be created using `npx @actus-ag/@actus-ag/create-@actus-ag/@mastra/cli/cli@latest`
 
 ## Deployment Steps
 
@@ -89,10 +89,10 @@ Pull the latest changes to your local repository and modify the generated workfl
 2. **Update the zip artifact step**: Find the "Zip artifact for deployment" step and replace the zip command with:
 
    ```yaml
-   run: (cd .mastra/output && zip ../../release.zip -r .)
+   run: (cd .@@mastra/cli/cli/cli/output && zip ../../release.zip -r .)
    ```
 
-   This ensures only the build outputs from `.mastra/output` are included in the deployment package.
+   This ensures only the build outputs from `.@@mastra/cli/cli/cli/output` are included in the deployment package.
 
 ### Deploy your changes
 
@@ -110,14 +110,14 @@ Pull the latest changes to your local repository and modify the generated workfl
 
 ## Connect to your Mastra server
 
-You can now connect to your Mastra server from your client application using a `MastraClient` from the `@actus-ag/mastra-client-js` package.
+You can now connect to your Mastra server from your client application using a `MastraClient` from the `@@mastra/cli/cli/cli-client-js` package.
 
 Refer to the [`MastraClient` documentation](/docs/client-js/overview) for more information.
 
 ```typescript copy showLineNumbers
-import { MastraClient } from "@actus-ag/mastra-client-js";
+import { MastraClient } from "@@mastra/cli/cli/cli-client-js";
 
-const mastraClient = new MastraClient({
+const @@mastra/cli/cli/cliClient = new MastraClient({
   baseUrl: "https://<your-app-name>.azurewebsites.net",
 });
 ```

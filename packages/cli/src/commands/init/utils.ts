@@ -90,9 +90,9 @@ export async function writeAgentSample(llmProvider: LLMProvider, destPath: strin
 `;
   const content = `
 ${providerImport}
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { Memory } from '@actus-ag/mastra-memory';
-import { LibSQLStore } from '@actus-ag/mastra-libsql';
+import { Agent } from '@mastra/core/agent';
+import { Memory } from '@mastra/memory';
+import { LibSQLStore } from '@mastra/libsql';
 ${addExampleTool ? `import { weatherTool } from '../tools/weather-tool';` : ''}
 
 export const weatherAgent = new Agent({
@@ -102,7 +102,7 @@ export const weatherAgent = new Agent({
   ${addExampleTool ? 'tools: { weatherTool },' : ''}
   memory: new Memory({
     storage: new LibSQLStore({
-      url: "file:../mastra.db", // path is relative to the .mastra/output directory
+      url: "file:../@mastra.db", // path is relative to the .@mastra/output directory
     })
   })
 });
@@ -117,7 +117,7 @@ export const weatherAgent = new Agent({
 }
 
 export async function writeWorkflowSample(destPath: string) {
-  const content = `import { createStep, createWorkflow } from '@actus-ag/mastra-core/workflows';
+  const content = `import { createStep, createWorkflow } from '@mastra/core/workflows';
 import { z } from 'zod';
 
 const forecastSchema = z.object({
@@ -213,14 +213,14 @@ const planActivities = createStep({
   outputSchema: z.object({
     activities: z.string(),
   }),
-  execute: async ({ inputData, mastra }) => {
+  execute: async ({ inputData, @mastra }) => {
     const forecast = inputData
 
     if (!forecast) {
       throw new Error('Forecast data not found')
     }
 
-    const agent = mastra?.getAgent('weatherAgent');
+    const agent = @mastra?.getAgent('weatherAgent');
     if (!agent) {
       throw new Error('Weather agent not found');
     }
@@ -364,9 +364,9 @@ export const writeIndexFile = async ({
       await fs.writeFile(
         destPath,
         `
-import { Mastra } from '@actus-ag/mastra-core';
+import { Mastra } from '@mastra/core';
 
-export const mastra = new Mastra()
+export const @mastra = new Mastra()
         `,
       );
 
@@ -375,16 +375,16 @@ export const mastra = new Mastra()
     await fs.writeFile(
       destPath,
       `
-import { Mastra } from '@actus-ag/mastra-core/mastra';
-import { PinoLogger } from '@actus-ag/mastra-loggers';
-import { LibSQLStore } from '@actus-ag/mastra-libsql';
+import { Mastra } from '@mastra/core/@mastra';
+import { PinoLogger } from '@mastra/loggers';
+import { LibSQLStore } from '@mastra/libsql';
 ${addWorkflow ? `import { weatherWorkflow } from './workflows/weather-workflow';` : ''}
 ${addAgent ? `import { weatherAgent } from './agents/weather-agent';` : ''}
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   ${filteredExports.join('\n  ')}
   storage: new LibSQLStore({
-    // stores telemetry, evals, ... into memory storage, if it needs to persist, change to file:../mastra.db
+    // stores telemetry, evals, ... into memory storage, if it needs to persist, change to file:../@mastra.db
     url: ":memory:",
   }),
   logger: new PinoLogger({
@@ -410,17 +410,17 @@ export const checkInitialization = async (dirPath: string) => {
 
 export const checkAndInstallCoreDeps = async (addExample: boolean) => {
   const depsService = new DepsService();
-  let depCheck = await depsService.checkDependencies(['@actus-ag/mastra-core']);
+  let depCheck = await depsService.checkDependencies(['@mastra/core']);
 
   if (depCheck !== 'ok') {
-    await installCoreDeps('@actus-ag/mastra-core');
+    await installCoreDeps('@mastra/core');
   }
 
   if (addExample) {
-    depCheck = await depsService.checkDependencies(['@actus-ag/mastra-libsql']);
+    depCheck = await depsService.checkDependencies(['@mastra/libsql']);
 
     if (depCheck !== 'ok') {
-      await installCoreDeps('@actus-ag/mastra-libsql');
+      await installCoreDeps('@mastra/libsql');
     }
   }
 };
@@ -448,7 +448,7 @@ export async function installCoreDeps(pkg: string) {
     const depsService = new DepsService();
 
     await depsService.installPackages([`${pkg}@latest`]);
-    spinner.success('@actus-ag/mastra-core installed successfully');
+    spinner.success('@mastra/core installed successfully');
   } catch (err) {
     console.error(err);
   }
@@ -492,7 +492,7 @@ export const createMastraDir = async (directory: string): Promise<{ ok: true; di
     .split('/')
     .filter(item => item !== '');
 
-  const dirPath = path.join(process.cwd(), ...dir, 'mastra');
+  const dirPath = path.join(process.cwd(), ...dir, '@actus-ag/@mastra');
 
   try {
     await fs.access(dirPath);
@@ -520,7 +520,7 @@ export const writeCodeSample = async (
 
 export const interactivePrompt = async () => {
   p.intro(color.inverse(' Mastra Init '));
-  const mastraProject = await p.group(
+  const @mastraProject = await p.group(
     {
       directory: () =>
         p.text({
@@ -642,7 +642,7 @@ export const interactivePrompt = async () => {
     },
   );
 
-  return mastraProject;
+  return @mastraProject;
 };
 
 export const checkPkgJson = async () => {
@@ -662,6 +662,6 @@ export const checkPkgJson = async () => {
     return;
   }
 
-  logger.debug('package.json not found, create one or run "mastra create" to create a new project');
+  logger.debug('package.json not found, create one or run "@mastra create" to create a new project');
   process.exit(0);
 };

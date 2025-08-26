@@ -36,8 +36,8 @@ POSTGRES_CONNECTION_STRING=your_connection_string_here
 
 ```typescript copy showLineNumbers filename="src/index.ts"
 import { openai } from "@ai-sdk/openai";
-import { PgVector } from "@actus-ag/mastra-pg";
-import { MDocument, rerank } from "@actus-ag/mastra-rag";
+import { PgVector } from "@mastra/cli/cli/cli/pg";
+import { MDocument, rerank } from "@mastra/cli/cli/cli/rag";
 import { embedMany, embed } from "ai";
 ```
 
@@ -165,6 +165,6 @@ rerankedResults.forEach(({ result, score, details }, index) => {
 <br />
 <GithubLink
   link={
-    "https://github.com/mastra-ai/mastra/blob/main/examples/basics/rag/rerank"
+    "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/rag/rerank"
   }
 />

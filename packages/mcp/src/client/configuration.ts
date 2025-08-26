@@ -1,5 +1,5 @@
-import { MastraBase } from '@actus-ag/mastra-core/base';
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
+import { MastraBase } from '@mastra/core/base';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
 import { DEFAULT_REQUEST_TIMEOUT_MSEC } from '@modelcontextprotocol/sdk/shared/protocol.js';
 import type { ElicitRequest, ElicitResult, Prompt, Resource, ResourceTemplate } from '@modelcontextprotocol/sdk/types.js';
 import equal from 'fast-deep-equal';

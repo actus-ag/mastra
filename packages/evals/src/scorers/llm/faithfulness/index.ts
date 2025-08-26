@@ -1,6 +1,6 @@
-import type { LanguageModel } from '@actus-ag/mastra-core/llm';
-import { createScorer } from '@actus-ag/mastra-core/scores';
-import type { ScorerRunInputForAgent, ScorerRunOutputForAgent } from '@actus-ag/mastra-core/scores';
+import type { LanguageModel } from '@mastra/core/llm';
+import { createScorer } from '@mastra/core/scores';
+import type { ScorerRunInputForAgent, ScorerRunOutputForAgent } from '@mastra/core/scores';
 import { z } from 'zod';
 import { roundToTwoDecimals, getAssistantMessageFromRunOutput, getUserMessageFromRunInput } from '../../utils';
 import {

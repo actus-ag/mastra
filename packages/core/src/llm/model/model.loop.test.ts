@@ -9,7 +9,7 @@ const model = new MastraLLMVNext({
 });
 
 describe('MastraLLMVNext', () => {
-  it('should generate text - mastra', async () => {
+  it('should generate text - @mastra', async () => {
     const result = model.stream({
       messages: [
         {
@@ -37,7 +37,7 @@ describe('MastraLLMVNext', () => {
     console.log(await result.aisdk.v5.getFullOutput());
   }, 10000);
 
-  it('should stream text - mastra', async () => {
+  it('should stream text - @mastra', async () => {
     const result = model.stream({
       messages: [
         {
@@ -70,7 +70,7 @@ describe('MastraLLMVNext', () => {
     }
   }, 10000);
 
-  it('should stream object - mastra/aisdk', async () => {
+  it('should stream object - @mastra/aisdk', async () => {
     const result = model.stream({
       messages: [
         {
@@ -94,7 +94,7 @@ describe('MastraLLMVNext', () => {
     console.log(await result.object);
   }, 10000);
 
-  it('should generate object - mastra', async () => {
+  it('should generate object - @mastra', async () => {
     const result = model.stream({
       messages: [
         {
@@ -138,7 +138,7 @@ describe('MastraLLMVNext', () => {
     console.log(res.object);
   }, 20000);
 
-  it('full stream object - mastra', async () => {
+  it('full stream object - @mastra', async () => {
     const result = model.stream({
       messages: [
         {

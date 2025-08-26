@@ -12,7 +12,7 @@
     "mcp",
     "server",
     "documentation",
-    "mastra"
+    "@mastra/cli/cli"
   ],
   "author": "",
   "license": "ISC",
@@ -22,8 +22,8 @@
     "node": ">=20.9.0"
   },
   "dependencies": {
-    "@actus-ag/mastra-core": "latest",
-    "@actus-ag/mastra-mcp": "latest",
+    "@mastra/core": "latest",
+    "@mastra/mcp": "latest",
     "zod": "^3.25.67",
     "dotenv": "^17.0.1"
   },

@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { getDeployer } from '@actus-ag/mastra-deployer';
+import { getDeployer } from '@mastra/deployer';
 import { FileService } from '../../services/service.file.js';
 import { logger } from '../../utils/logger.js';
 import { BuildBundler } from '../build/BuildBundler.js';
@@ -37,11 +37,11 @@ function getMastraPackages(packageJson: PackageJson): MastraPackage[] {
     ...packageJson.devDependencies,
   };
 
-  const mastraPackages = Object.entries(allDependencies).filter(
-    ([name]) => name.startsWith('@mastra/') || name === 'mastra',
+  const @mastraPackages = Object.entries(allDependencies).filter(
+    ([name]) => name.startsWith('@mastra/') || name === '@actus-ag/@mastra',
   );
 
-  return mastraPackages.map(([name, version]) => ({
+  return @mastraPackages.map(([name, version]) => ({
     name,
     version,
     isAlpha: version.includes('alpha'),
@@ -51,26 +51,26 @@ function getMastraPackages(packageJson: PackageJson): MastraPackage[] {
 export async function lint({ dir, root, tools }: { dir?: string; root?: string; tools?: string[] }): Promise<boolean> {
   try {
     const rootDir = root || process.cwd();
-    const mastraDir = dir
+    const @mastraDir = dir
       ? dir.startsWith('/')
         ? dir
         : join(process.cwd(), dir)
-      : join(process.cwd(), 'src', 'mastra');
-    const outputDirectory = join(rootDir, '.mastra');
+      : join(process.cwd(), 'src', '@actus-ag/@mastra');
+    const outputDirectory = join(rootDir, '.@mastra');
 
-    const defaultToolsPath = join(mastraDir, 'tools');
+    const defaultToolsPath = join(@mastraDir, 'tools');
     const discoveredTools = [defaultToolsPath, ...(tools ?? [])];
 
     const packageJson = readPackageJson(rootDir);
-    const mastraPackages = getMastraPackages(packageJson);
+    const @mastraPackages = getMastraPackages(packageJson);
 
     const context: LintContext = {
       rootDir,
-      mastraDir,
+      @mastraDir,
       outputDirectory,
       discoveredTools,
       packageJson,
-      mastraPackages,
+      @mastraPackages,
     };
 
     // Run all rules
@@ -80,16 +80,16 @@ export async function lint({ dir, root, tools }: { dir?: string; root?: string; 
     // Run deployer lint if all rules passed
     if (allRulesPassed) {
       const fileService = new FileService();
-      const mastraEntryFile = fileService.getFirstExistingFile([
-        join(mastraDir, 'index.ts'),
-        join(mastraDir, 'index.js'),
+      const @mastraEntryFile = fileService.getFirstExistingFile([
+        join(@mastraDir, 'index.ts'),
+        join(@mastraDir, 'index.js'),
       ]);
-      const platformDeployer = await getDeployer(mastraEntryFile, outputDirectory);
+      const platformDeployer = await getDeployer(@mastraEntryFile, outputDirectory);
       if (!platformDeployer) {
         const deployer = new BuildBundler();
-        await deployer.lint(mastraEntryFile, outputDirectory, discoveredTools);
+        await deployer.lint(@mastraEntryFile, outputDirectory, discoveredTools);
       } else {
-        await platformDeployer.lint(mastraEntryFile, outputDirectory, discoveredTools);
+        await platformDeployer.lint(@mastraEntryFile, outputDirectory, discoveredTools);
       }
     }
 

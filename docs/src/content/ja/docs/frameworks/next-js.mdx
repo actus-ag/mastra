@@ -23,10 +23,10 @@ MastraをNext.jsアプリケーションに統合する主な方法は2つあり
 CLIを使用して新しいMastraプロジェクトを作成します：
 
 <Tabs items={["npx", "npm", "yarn", "pnpm"]}>
-  <Tabs.Tab>```bash copy npx create-mastra@latest ```</Tabs.Tab>
-  <Tabs.Tab>```bash copy npm create mastra ```</Tabs.Tab>
-  <Tabs.Tab>```bash copy yarn create mastra ```</Tabs.Tab>
-  <Tabs.Tab>```bash copy pnpm create mastra ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy npx @actus-ag/@actus-ag/create-@actus-ag/@mastra/cli/cli@latest ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy npm create @@mastra/cli/cli/cli ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy yarn create @@mastra/cli/cli/cli ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy pnpm create @@mastra/cli/cli/cli ```</Tabs.Tab>
 </Tabs>
 
 詳細なセットアップ手順については、[インストールガイド](/docs/getting-started/installation)をご覧ください。
@@ -34,21 +34,21 @@ CLIを使用して新しいMastraプロジェクトを作成します：
 ### MastraClientのインストール
 
 <Tabs items={["npm", "yarn", "pnpm", "bun"]}>
-  <Tabs.Tab>```bash copy npm install @actus-ag/mastra-client-js@latest ```</Tabs.Tab>
-  <Tabs.Tab>```bash copy yarn add @actus-ag/mastra-client-js@latest ```</Tabs.Tab>
-  <Tabs.Tab>```bash copy pnpm add @actus-ag/mastra-client-js@latest ```</Tabs.Tab>
-  <Tabs.Tab>```bash copy bun add @actus-ag/mastra-client-js@latest ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy npm install @actus-ag/@@mastra/cli/cli/client-js@latest ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy yarn add @actus-ag/@@mastra/cli/cli/client-js@latest ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy pnpm add @actus-ag/@@mastra/cli/cli/client-js@latest ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy bun add @@mastra/cli/cli/cli-client-js@latest ```</Tabs.Tab>
 </Tabs>
 
 ### MastraClientの使用
 
 クライアントインスタンスを作成し、Next.jsアプリケーションで使用します：
 
-```typescript filename="lib/mastra.ts" copy
-import { MastraClient } from "@actus-ag/mastra-client-js";
+```typescript filename="lib/@@mastra/cli/cli/cli.ts" copy
+import { MastraClient } from "@@mastra/cli/cli/cli-client-js";
 
 // Initialize the client
-export const mastraClient = new MastraClient({
+export const @@mastra/cli/cli/cliClient = new MastraClient({
   baseUrl: process.env.NEXT_PUBLIC_MASTRA_API_URL || "http://localhost:4111",
 });
 ```
@@ -58,12 +58,12 @@ Reactコンポーネントでの使用例：
 ```typescript filename="app/components/SimpleWeather.tsx" copy
 'use client'
 
-import { mastraClient } from '@/lib/mastra'
+import { @@mastra/cli/cli/cliClient } from '@/lib/@@mastra/cli/cli/cli'
 
 export function SimpleWeather() {
   async function handleSubmit(formData: FormData) {
     const city = formData.get('city')
-    const agent = mastraClient.getAgent('weatherAgent')
+    const agent = @@mastra/cli/cli/cliClient.getAgent('weatherAgent')
 
     try {
       const response = await agent.generate({
@@ -107,12 +107,12 @@ cd your-nextjs-app
 次に初期化コマンドを実行します：
 
 <Tabs items={["npm", "yarn", "pnpm"]}>
-  <Tabs.Tab>```bash copy npx mastra@latest init ```</Tabs.Tab>
-  <Tabs.Tab>```bash copy yarn dlx mastra@latest init ```</Tabs.Tab>
-  <Tabs.Tab>```bash copy pnpm dlx mastra@latest init ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy npx @actus-ag/@mastra/cli/cli@latest init ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy yarn dlx @actus-ag/@mastra/cli/cli@latest init ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy pnpm dlx @actus-ag/@mastra/cli/cli@latest init ```</Tabs.Tab>
 </Tabs>
 
-これによりNext.jsプロジェクトにMastraがセットアップされます。初期化やその他の設定オプションの詳細については、[mastra init リファレンス](/reference/cli/init)をご覧ください。
+これによりNext.jsプロジェクトにMastraがセットアップされます。初期化やその他の設定オプションの詳細については、[@actus-ag/@mastra/cli/cli init リファレンス](/reference/cli/init)をご覧ください。
 
 ### Next.jsの設定
 
@@ -121,7 +121,7 @@ cd your-nextjs-app
 ```js filename="next.config.js" copy
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  serverExternalPackages: ["@mastra/*"],
+  serverExternalPackages: ["@mastra/cli/cli/cli/*"],
   // ... その他のNext.js設定
 };
 
@@ -133,10 +133,10 @@ module.exports = nextConfig;
 ```typescript filename="app/actions.ts" copy
 "use server";
 
-import { mastra } from "@/mastra";
+import { @@mastra/cli/cli/cli } from "@/@@mastra/cli/cli/cli";
 
 export async function getWeatherInfo(city: string) {
-  const agent = mastra.getAgent("weatherAgent");
+  const agent = @@mastra/cli/cli/cli.getAgent("weatherAgent");
 
   const result = await agent.generate(`What's the weather like in ${city}?`);
 
@@ -171,12 +171,12 @@ export function Weather() {
 #### APIルートの例
 
 ```typescript filename="app/api/chat/route.ts" copy
-import { mastra } from "@/mastra";
+import { @@mastra/cli/cli/cli } from "@/@@mastra/cli/cli/cli";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   const { city } = await req.json();
-  const agent = mastra.getAgent("weatherAgent");
+  const agent = @@mastra/cli/cli/cli.getAgent("weatherAgent");
 
   const result = await agent.stream(`What's the weather like in ${city}?`);
 

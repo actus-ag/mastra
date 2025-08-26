@@ -20,7 +20,7 @@ Real-time monitoring, suspend/resume, and step-level observability are enabled v
 ## Setup
 
 ```sh
-npm install @actus-ag/mastra-inngest @actus-ag/mastra-core @actus-ag/mastra-deployer
+npm install @mastra/cli/cli/cli/inngest @mastra/cli/cli/cli/core @mastra/cli/cli/cli/deployer
 ```
 
 ## Building an Inngest Workflow
@@ -33,12 +33,12 @@ Initialize the Inngest integration to obtain Mastra-compatible workflow helpers.
 
 In development
 
-```ts showLineNumbers copy filename="src/mastra/inngest/index.ts"
+```ts showLineNumbers copy filename="src/@@mastra/cli/cli/cli/inngest/index.ts"
 import { Inngest } from "inngest";
 import { realtimeMiddleware } from "@inngest/realtime";
 
 export const inngest = new Inngest({
-  id: "mastra",
+  id: "@actus-ag/@@mastra/cli/cli/cli",
   baseUrl:"http://localhost:8288",
   isDev: true,
   middleware: [realtimeMiddleware()],
@@ -47,12 +47,12 @@ export const inngest = new Inngest({
 
 In production
 
-```ts showLineNumbers copy filename="src/mastra/inngest/index.ts"
+```ts showLineNumbers copy filename="src/@@mastra/cli/cli/cli/inngest/index.ts"
 import { Inngest } from "inngest";
 import { realtimeMiddleware } from "@inngest/realtime";
 
 export const inngest = new Inngest({
-  id: "mastra",
+  id: "@actus-ag/@@mastra/cli/cli/cli",
   middleware: [realtimeMiddleware()],
 });
 ```
@@ -61,10 +61,10 @@ export const inngest = new Inngest({
 
 Define the individual steps that will compose your workflow:
 
-```ts showLineNumbers copy filename="src/mastra/workflows/index.ts"
+```ts showLineNumbers copy filename="src/@@mastra/cli/cli/cli/workflows/index.ts"
 import { z } from "zod";
 import { inngest } from "../inngest";
-import { init } from "@actus-ag/mastra-inngest";
+import { init } from "@mastra/cli/cli/cli/inngest";
 
 // Initialize Inngest with Mastra, pointing to your local Inngest server
 const { createWorkflow, createStep } = init(inngest);
@@ -88,7 +88,7 @@ const incrementStep = createStep({
 
 Compose the steps into a workflow using the `dountil` loop pattern. The createWorkflow function creates a function on inngest server that is invocable.
 
-```ts showLineNumbers copy filename="src/mastra/workflows/index.ts"
+```ts showLineNumbers copy filename="src/@@mastra/cli/cli/cli/workflows/index.ts"
 // workflow that is registered as a function on inngest server
 const workflow = createWorkflow({
   id: "increment-workflow",
@@ -109,27 +109,27 @@ export { workflow as incrementWorkflow };
 
 Register the workflow with Mastra and configure the Inngest API endpoint:
 
-```ts showLineNumbers copy filename="src/mastra/index.ts"
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { serve as inngestServe } from "@actus-ag/mastra-inngest";
+```ts showLineNumbers copy filename="src/@@mastra/cli/cli/cli/index.ts"
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { serve as inngestServe } from "@mastra/cli/cli/cli/inngest";
 import { incrementWorkflow } from "./workflows";
 import { inngest } from "./inngest";
-import { PinoLogger } from "@actus-ag/mastra-loggers";
+import { PinoLogger } from "@mastra/cli/cli/cli/loggers";
 
 // Configure Mastra with the workflow and Inngest API endpoint
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   workflows: {
     incrementWorkflow,
   },
   server: {
-    // The server configuration is required to allow local docker container can connect to the mastra server
+    // The server configuration is required to allow local docker container can connect to the @@mastra/cli/cli/cli server
     host: "0.0.0.0",
     apiRoutes: [
       // This API route is used to register the Mastra workflow (inngest function) on the inngest server
       {
         path: "/api/inngest",
         method: "ALL",
-        createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+        createHandler: async ({ @@mastra/cli/cli/cli }) => inngestServe({ @@mastra/cli/cli/cli, inngest }),
         // The inngestServe function integrates Mastra workflows with Inngest by:
         // 1. Creating Inngest functions for each workflow with unique IDs (workflow.${workflowId})
         // 2. Setting up event handlers that:
@@ -156,7 +156,7 @@ export const mastra = new Mastra({
 > - Mastra project set up
 > - Dependencies installed (`npm install`)
 
-1. Run `npx mastra dev` to start the Mastra server on local to serve the server on port 4111.
+1. Run `npx @actus-ag/@mastra/cli/cli dev` to start the Mastra server on local to serve the server on port 4111.
 2. Start the Inngest Dev Server (via Docker)
    In a new terminal, run:
 
@@ -209,10 +209,10 @@ docker run --rm -p 8288:8288 \
 
 1. Add Vercel Deployer to Mastra instance
 
-```ts showLineNumbers copy filename="src/mastra/index.ts"
-import { VercelDeployer } from "@actus-ag/mastra-deployer-vercel";
+```ts showLineNumbers copy filename="src/@@mastra/cli/cli/cli/index.ts"
+import { VercelDeployer } from "@mastra/cli/cli/cli/deployer-vercel";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // ...other config
   deployer: new VercelDeployer({
     teamSlug: "your_team_slug",
@@ -230,16 +230,16 @@ export const mastra = new Mastra({
 > export VERCEL_TOKEN=your_vercel_token
 > ```
 
-2. Build the mastra instance
+2. Build the @@mastra/cli/cli/cli instance
 
 ```sh
-npx mastra build
+npx @actus-ag/@mastra/cli/cli build
 ```
 
 3. Deploy to Vercel
 
 ```sh
-cd .mastra/output
+cd .@@mastra/cli/cli/cli/output
 vercel --prod
 ```
 

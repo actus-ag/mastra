@@ -1,4 +1,4 @@
-import { createTool } from '@actus-ag/mastra-core/tools';
+import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
 
 const flashCardSchema = z.object({
@@ -65,7 +65,7 @@ export const flashCardsGeneratorTool = createTool({
       generatedAt: z.string(),
     }),
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     const {
       concepts,
       definitions,
@@ -79,7 +79,7 @@ export const flashCardsGeneratorTool = createTool({
     console.log(`🃏 Generating ${numberOfCards} flash cards for ${subjectArea}...`);
 
     try {
-      const flashCardsGeneratorAgent = mastra?.getAgent('flashCardsGeneratorAgent');
+      const flashCardsGeneratorAgent = @mastra?.getAgent('flashCardsGeneratorAgent');
       if (!flashCardsGeneratorAgent) {
         throw new Error('Flash cards generator agent not found');
       }

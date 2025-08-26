@@ -1,4 +1,4 @@
-import type { TABLE_NAMES, TABLE_SCHEMAS, StorageColumn } from '@actus-ag/mastra-core/storage';
+import type { TABLE_NAMES, TABLE_SCHEMAS, StorageColumn } from '@mastra/core/storage';
 import {
   TABLE_MESSAGES,
   TABLE_RESOURCES,
@@ -8,7 +8,7 @@ import {
   TABLE_TRACES,
   TABLE_WORKFLOW_SNAPSHOT,
   safelyParseJSON,
-} from '@actus-ag/mastra-core/storage';
+} from '@mastra/core/storage';
 
 export const TABLE_ENGINES: Record<TABLE_NAMES, string> = {
   [TABLE_MESSAGES]: `MergeTree()`,

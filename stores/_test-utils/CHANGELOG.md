@@ -21,7 +21,7 @@
 - Updated dependencies [c30bca8]
 - Updated dependencies [3b5fec7]
 - Updated dependencies [a8f129d]
-  - @actus-ag/mastra-core@0.14.0
+  - @mastra/core@0.14.0
 
 ## 0.0.25
 
@@ -39,14 +39,14 @@
 - Updated dependencies [63449d0]
 - Updated dependencies [121a3f8]
 - Updated dependencies [ec510e7]
-  - @actus-ag/mastra-core@0.13.2
+  - @mastra/core@0.13.2
 
 ## 0.0.24
 
 ### Patch Changes
 
 - Updated dependencies [cd0042e]
-  - @actus-ag/mastra-core@0.13.1
+  - @mastra/core@0.13.1
 
 ## 0.0.23
 
@@ -66,7 +66,7 @@
 - Updated dependencies [5d377e5]
 - Updated dependencies [1fb812e]
 - Updated dependencies [35c5798]
-  - @actus-ag/mastra-core@0.13.0
+  - @mastra/core@0.13.0
 
 ## 0.0.22
 
@@ -79,7 +79,7 @@
 - Updated dependencies [d30b1a0]
 - Updated dependencies [bff87f7]
 - Updated dependencies [b4a8df0]
-  - @actus-ag/mastra-core@0.12.1
+  - @mastra/core@0.12.1
 
 ## 0.0.20
 
@@ -108,7 +108,7 @@
 - Updated dependencies [b8efbb9]
 - Updated dependencies [71466e7]
 - Updated dependencies [0c99fbe]
-  - @actus-ag/mastra-core@0.12.0
+  - @mastra/core@0.12.0
 
 ## 0.0.19
 
@@ -116,7 +116,7 @@
 
 ### Patch Changes
 
-- @actus-ag/mastra-core@0.11.1
+- @mastra/core@0.11.1
 
 ## 0.0.17
 
@@ -143,7 +143,7 @@
 - Updated dependencies [dcd4802]
 - Updated dependencies [cbddd18]
 - Updated dependencies [7ba91fa]
-  - @actus-ag/mastra-core@0.11.0
+  - @mastra/core@0.11.0
 
 ## 0.0.16
 
@@ -163,7 +163,7 @@
 - Updated dependencies [c22a91f]
 - Updated dependencies [f7403ab]
 - Updated dependencies [6c89d7f]
-  - @actus-ag/mastra-core@0.10.15
+  - @mastra/core@0.10.15
 
 ## 0.0.15
 
@@ -171,7 +171,7 @@
 
 - Updated dependencies [b4a9811]
 - Updated dependencies [4d5583d]
-  - @actus-ag/mastra-core@0.10.12
+  - @mastra/core@0.10.12
 
 ## 0.0.14
 
@@ -191,14 +191,14 @@
 - Updated dependencies [cb16baf]
 - Updated dependencies [f36e4f1]
 - Updated dependencies [7f6e403]
-  - @actus-ag/mastra-core@0.10.11
+  - @mastra/core@0.10.11
 
 ## 0.0.13
 
 ### Patch Changes
 
 - Updated dependencies [4d3fbdf]
-  - @actus-ag/mastra-core@0.10.10
+  - @mastra/core@0.10.10
 
 ## 0.0.12
 
@@ -219,7 +219,7 @@
 - Updated dependencies [57929df]
 - Updated dependencies [b7852ed]
 - Updated dependencies [6320a61]
-  - @actus-ag/mastra-core@0.10.9
+  - @mastra/core@0.10.9
 
 ## 0.0.11
 
@@ -229,7 +229,7 @@
 - Updated dependencies [3e04487]
 - Updated dependencies [a344ac7]
 - Updated dependencies [dc4ca0a]
-  - @actus-ag/mastra-core@0.10.8
+  - @mastra/core@0.10.8
 
 ## 0.0.10
 
@@ -252,7 +252,7 @@
 - Updated dependencies [8ba1b51]
 - Updated dependencies [4efcfa0]
 - Updated dependencies [0e17048]
-  - @actus-ag/mastra-core@0.10.7
+  - @mastra/core@0.10.7
 
 ## 0.0.9
 
@@ -273,14 +273,14 @@
 - Updated dependencies [751c894]
 - Updated dependencies [577ce3a]
 - Updated dependencies [9260b3a]
-  - @actus-ag/mastra-core@0.10.6
+  - @mastra/core@0.10.6
 
 ## 0.0.8
 
 ### Patch Changes
 
 - Updated dependencies [13c97f9]
-  - @actus-ag/mastra-core@0.10.5
+  - @mastra/core@0.10.5
 
 ## 0.0.7
 
@@ -299,14 +299,14 @@
 - Updated dependencies [14a2566]
 - Updated dependencies [f7f8293]
 - Updated dependencies [48eddb9]
-  - @actus-ag/mastra-core@0.10.4
+  - @mastra/core@0.10.4
 
 ## 0.0.6
 
 ### Patch Changes
 
 - Updated dependencies [2b0fc7e]
-  - @actus-ag/mastra-core@0.10.3
+  - @mastra/core@0.10.3
 
 ## 0.0.5
 
@@ -331,7 +331,7 @@
 - Updated dependencies [79d5145]
 - Updated dependencies [12b7002]
 - Updated dependencies [2901125]
-  - @actus-ag/mastra-core@0.10.2
+  - @mastra/core@0.10.2
 
 ## 0.0.3
 
@@ -347,7 +347,7 @@
 - Updated dependencies [5c41100]
 - Updated dependencies [d6a759b]
 - Updated dependencies [6015bdf]
-  - @actus-ag/mastra-core@0.10.1
+  - @mastra/core@0.10.1
 
 ## 0.0.2
 
@@ -370,7 +370,7 @@
 - Updated dependencies [a7292b0]
 - Updated dependencies [0dcb9f0]
 - Updated dependencies [2672a05]
-  - @actus-ag/mastra-core@0.10.0
+  - @mastra/core@0.10.0
 
 ## 0.0.2-alpha.5
 
@@ -381,7 +381,7 @@
 - Updated dependencies [8607972]
 - Updated dependencies [7eeb2bc]
 - Updated dependencies [fba031f]
-  - @actus-ag/mastra-core@0.9.2-alpha.5
+  - @mastra/core@0.9.2-alpha.5
 
 ## 0.0.2-alpha.4
 
@@ -389,7 +389,7 @@
 
 - Updated dependencies [ccef9f9]
 - Updated dependencies [51e6923]
-  - @actus-ag/mastra-core@0.9.2-alpha.4
+  - @mastra/core@0.9.2-alpha.4
 
 ## 0.0.2-alpha.3
 
@@ -398,28 +398,28 @@
 - Updated dependencies [967b41c]
 - Updated dependencies [4155f47]
 - Updated dependencies [17826a9]
-  - @actus-ag/mastra-core@0.9.2-alpha.3
+  - @mastra/core@0.9.2-alpha.3
 
 ## 0.0.2-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [26738f4]
-  - @actus-ag/mastra-core@0.9.2-alpha.2
+  - @mastra/core@0.9.2-alpha.2
 
 ## 0.0.2-alpha.1
 
 ### Patch Changes
 
 - Updated dependencies [b804723]
-  - @actus-ag/mastra-core@0.9.2-alpha.1
+  - @mastra/core@0.9.2-alpha.1
 
 ## 0.0.2-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [0097d50]
-  - @actus-ag/mastra-core@0.9.2-alpha.0
+  - @mastra/core@0.9.2-alpha.0
 
 ## 0.0.1
 
@@ -444,35 +444,35 @@
 - Updated dependencies [2d4001d]
 - Updated dependencies [c71013a]
 - Updated dependencies [1d3b1cd]
-  - @actus-ag/mastra-core@0.9.1
+  - @mastra/core@0.9.1
 
 ## 0.0.1-alpha.7
 
 ### Patch Changes
 
 - Updated dependencies [2d17c73]
-  - @actus-ag/mastra-core@0.9.1-alpha.8
+  - @mastra/core@0.9.1-alpha.8
 
 ## 0.0.1-alpha.6
 
 ### Patch Changes
 
 - Updated dependencies [1d3b1cd]
-  - @actus-ag/mastra-core@0.9.1-alpha.7
+  - @mastra/core@0.9.1-alpha.7
 
 ## 0.0.1-alpha.5
 
 ### Patch Changes
 
 - Updated dependencies [c23a81c]
-  - @actus-ag/mastra-core@0.9.1-alpha.6
+  - @mastra/core@0.9.1-alpha.6
 
 ## 0.0.1-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [3e7b69d]
-  - @actus-ag/mastra-core@0.9.1-alpha.5
+  - @mastra/core@0.9.1-alpha.5
 
 ## 0.0.1-alpha.3
 
@@ -481,14 +481,14 @@
 - 479f490: [MASTRA-3131] Add getWorkflowRunByID and add resourceId as filter for getWorkflowRuns
 - Updated dependencies [e4943b8]
 - Updated dependencies [479f490]
-  - @actus-ag/mastra-core@0.9.1-alpha.4
+  - @mastra/core@0.9.1-alpha.4
 
 ## 0.0.1-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [6262bd5]
-  - @actus-ag/mastra-core@0.9.1-alpha.3
+  - @mastra/core@0.9.1-alpha.3
 
 ## 0.0.1-alpha.1
 
@@ -497,7 +497,7 @@
 - Updated dependencies [405b63d]
 - Updated dependencies [61e92f5]
 - Updated dependencies [c71013a]
-  - @actus-ag/mastra-core@0.9.1-alpha.2
+  - @mastra/core@0.9.1-alpha.2
 
 ## 0.0.1-alpha.0
 
@@ -510,4 +510,4 @@
 - Updated dependencies [c1409ef]
 - Updated dependencies [11d4485]
 - Updated dependencies [2d4001d]
-  - @actus-ag/mastra-core@0.9.1-alpha.1
+  - @mastra/core@0.9.1-alpha.1

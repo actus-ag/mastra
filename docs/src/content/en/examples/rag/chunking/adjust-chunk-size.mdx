@@ -10,7 +10,7 @@ import { GithubLink } from "@/components/github-link";
 When processing large documents, you might need to adjust how much text is included in each chunk. By default, chunks are 1024 characters long, but you can customize this size to better match your content and memory requirements. This example shows how to set a custom chunk size when splitting documents.
 
 ```tsx copy
-import { MDocument } from "@actus-ag/mastra-rag";
+import { MDocument } from "@mastra/cli/cli/cli/rag";
 
 const doc = MDocument.fromText("Your plain text content...");
 
@@ -26,6 +26,6 @@ const chunks = await doc.chunk({
 <br />
 <GithubLink
   link={
-    "https://github.com/mastra-ai/mastra/blob/main/examples/basics/rag/adjust-chunk-size"
+    "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/rag/adjust-chunk-size"
   }
 />

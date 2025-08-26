@@ -1,7 +1,7 @@
-import { mastra } from './mastra';
+import { @mastra } from './@mastra';
 
 async function main() {
-  const researchNetwork = mastra.getNetwork('Research_Network');
+  const researchNetwork = @mastra.getNetwork('Research_Network');
 
   if (!researchNetwork) {
     throw new Error('Research network not found');

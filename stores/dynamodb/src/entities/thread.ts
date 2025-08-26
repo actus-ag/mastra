@@ -5,7 +5,7 @@ export const threadEntity = new Entity({
   model: {
     entity: 'thread',
     version: '1',
-    service: 'mastra',
+    service: '@actus-ag/@mastra',
   },
   attributes: {
     entity: {

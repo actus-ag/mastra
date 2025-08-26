@@ -17,7 +17,7 @@
 		"dist"
 	],
 	"dependencies": {
-		"@actus-ag/mastra-mcp-configuration": "workspace:*",
+		"@mastra/mcp-configuration": "workspace:*",
 		"@mcp/registry": "workspace:*",
 		"ink": "^4.1.0",
 		"ink-form": "^2.0.1",

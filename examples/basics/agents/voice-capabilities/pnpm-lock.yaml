@@ -5,11 +5,11 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@mastra/core': link:../../../../packages/core
-  '@mastra/voice-elevenlabs': link:../../../../voice/elevenlabs
-  '@mastra/voice-openai': link:../../../../voice/openai
-  '@mastra/voice-playai': link:../../../../voice/playai
-  mastra: link:../../../../packages/cli
+  '@mastra/cli/cli/cli/core': link:../../../../packages/core
+  '@mastra/cli/cli/cli/voice-elevenlabs': link:../../../../voice/elevenlabs
+  '@mastra/cli/cli/cli/voice-openai': link:../../../../voice/openai
+  '@mastra/cli/cli/cli/voice-playai': link:../../../../voice/playai
+  @@mastra/cli/cli/cli: link:../../../../packages/cli
 
 importers:
 
@@ -18,19 +18,19 @@ importers:
       '@ai-sdk/openai':
         specifier: ^1.3.22
         version: 1.3.22(zod@3.25.67)
-      '@mastra/core':
+      '@mastra/cli/cli/cli/core':
         specifier: link:../../../../packages/core
         version: link:../../../../packages/core
-      '@mastra/voice-elevenlabs':
+      '@mastra/cli/cli/cli/voice-elevenlabs':
         specifier: link:../../../../voice/elevenlabs
         version: link:../../../../voice/elevenlabs
-      '@mastra/voice-openai':
+      '@mastra/cli/cli/cli/voice-openai':
         specifier: link:../../../../voice/openai
         version: link:../../../../voice/openai
-      '@mastra/voice-playai':
+      '@mastra/cli/cli/cli/voice-playai':
         specifier: link:../../../../voice/playai
         version: link:../../../../voice/playai
-      mastra:
+      @@mastra/cli/cli/cli:
         specifier: link:../../../../packages/cli
         version: link:../../../../packages/cli
       zod:

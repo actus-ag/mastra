@@ -15,7 +15,7 @@ Use `PromptAlignmentMetric` to evaluate how well a response follows a given set 
 ## Installation
 
 ```bash copy
-npm install @actus-ag/mastra-evals
+npm install @mastra/cli/cli/cli/evals
 ```
 
 ## Perfect alignment example
@@ -24,7 +24,7 @@ In this example, the response follows all applicable instructions from the input
 
 ```typescript filename="src/example-high-perfect-alignment.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { PromptAlignmentMetric } from "@actus-ag/mastra-evals/llm";
+import { PromptAlignmentMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 const metric = new PromptAlignmentMetric(openai("gpt-4o-mini"), {
   instructions: [
@@ -67,7 +67,7 @@ In this example, the response follows some of the instructions but omits others.
 
 ```typescript filename="src/example-high-mixed-alignment.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { PromptAlignmentMetric } from "@actus-ag/mastra-evals/llm";
+import { PromptAlignmentMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 const metric = new PromptAlignmentMetric(openai("gpt-4o-mini"), {
   instructions: [
@@ -111,7 +111,7 @@ In this example, the response does not address any of the instructions because t
 
 ```typescript filename="src/example-non-applicable-alignment.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { PromptAlignmentMetric } from "@actus-ag/mastra-evals/llm";
+import { PromptAlignmentMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 const metric = new PromptAlignmentMetric(openai("gpt-4o-mini"), {
   instructions: [
@@ -199,5 +199,5 @@ An explanation for the score, with details including:
 
 <GithubLink
   marginTop='mt-16'
-  link="https://github.com/mastra-ai/mastra/blob/main/examples/basics/evals/prompt-alignment"
+  link="https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/evals/prompt-alignment"
 />

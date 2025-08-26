@@ -1,6 +1,6 @@
-import { createTool } from '@actus-ag/mastra-core/tools';
+import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
-import { Agent } from '@actus-ag/mastra-core/agent';
+import { Agent } from '@mastra/core/agent';
 import type { CoreMessage, StreamTextResult } from 'ai';
 import chalk from 'chalk';
 import { randomUUID } from 'node:crypto';

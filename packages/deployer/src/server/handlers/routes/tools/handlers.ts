@@ -1,10 +1,10 @@
-import type { Mastra } from '@actus-ag/mastra-core';
+import type { Mastra } from '@mastra/core';
 import {
   getToolsHandler as getOriginalToolsHandler,
   getToolByIdHandler as getOriginalToolByIdHandler,
   executeToolHandler as getOriginalExecuteToolHandler,
   executeAgentToolHandler as getOriginalExecuteAgentToolHandler,
-} from '@actus-ag/mastra-server/handlers/tools';
+} from '@mastra/server/handlers/tools';
 import type { Context } from 'hono';
 
 import { handleError } from '../../error';
@@ -43,14 +43,14 @@ export async function getToolByIdHandler(c: Context) {
 export function executeToolHandler(tools: Record<string, any>) {
   return async (c: Context) => {
     try {
-      const mastra: Mastra = c.get('mastra');
+      const @mastra: Mastra = c.get('@actus-ag/@mastra');
       const runtimeContext = c.get('runtimeContext');
       const toolId = decodeURIComponent(c.req.param('toolId'));
       const runId = c.req.query('runId');
       const { data } = await c.req.json();
 
       const result = await getOriginalExecuteToolHandler(tools)({
-        mastra,
+        @mastra,
         toolId,
         data,
         runtimeContext,
@@ -66,14 +66,14 @@ export function executeToolHandler(tools: Record<string, any>) {
 
 export async function executeAgentToolHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const runtimeContext = c.get('runtimeContext');
     const agentId = c.req.param('agentId');
     const toolId = c.req.param('toolId');
     const { data } = await c.req.json();
 
     const result = await getOriginalExecuteAgentToolHandler({
-      mastra,
+      @mastra,
       agentId,
       toolId,
       data,

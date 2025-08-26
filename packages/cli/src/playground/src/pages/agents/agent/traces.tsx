@@ -1,4 +1,4 @@
-import { TracesView } from '@actus-ag/mastra-playground-ui';
+import { TracesView } from '@mastra/cli/cli/cli/playground-ui';
 import { useParams } from 'react-router';
 
 import { useAgent } from '@/hooks/use-agents';

@@ -14,7 +14,7 @@ description: エージェントで作業メモリを使用する例
 ### テキストストリームモード（デフォルト）
 
 ```typescript
-import { Memory } from "@actus-ag/mastra-memory";
+import { Memory } from "@mastra/cli/cli/cli/memory";
 
 const memory = new Memory({
   options: {
@@ -64,7 +64,7 @@ const agent = new Agent({
 
 ```typescript
 import { randomUUID } from "crypto";
-import { maskStreamTags } from "@actus-ag/mastra-core/utils";
+import { maskStreamTags } from "@mastra/cli/cli/cli/core/utils";
 
 const threadId = randomUUID();
 const resourceId = "SOME_USER_ID";

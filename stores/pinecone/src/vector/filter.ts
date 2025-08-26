@@ -1,4 +1,4 @@
-import { BaseFilterTranslator } from '@actus-ag/mastra-core/vector/filter';
+import { BaseFilterTranslator } from '@mastra/core/vector/filter';
 import type {
   VectorFilter,
   OperatorSupport,
@@ -8,7 +8,7 @@ import type {
   QueryOperator,
   FilterValue,
   OperatorCondition,
-} from '@actus-ag/mastra-core/vector/filter';
+} from '@mastra/core/vector/filter';
 
 type InitialOperatorValueMap = Omit<OperatorValueMap, '$regex' | '$options' | '$elemMatch' | '$all'> & {
   $contains: string;

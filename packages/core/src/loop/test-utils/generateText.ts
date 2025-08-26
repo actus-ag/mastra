@@ -1988,8 +1988,8 @@ export function generateTextTestsV5({ loopFn, runId }: { loopFn: typeof loop; ru
             "attributes": {
               "aisdk.model.id": "mock-model-id",
               "aisdk.model.provider": "mock-provider",
-              "mastra.operationId": "mastra.generate",
-              "operation.name": "mastra.generate",
+              "@mastra.operationId": "@mastra.generate",
+              "operation.name": "@mastra.generate",
               "stream.prompt.messages": "[{"role":"user","content":[{"type":"text","text":"test-input"}]}]",
               "stream.response.finishReason": "stop",
               "stream.response.text": "",
@@ -2000,14 +2000,14 @@ export function generateTextTestsV5({ loopFn, runId }: { loopFn: typeof loop; ru
               "stream.usage.totalTokens": 13,
             },
             "events": [],
-            "name": "mastra.generate",
+            "name": "@mastra.generate",
           },
           {
             "attributes": {
               "aisdk.model.id": "mock-model-id",
               "aisdk.model.provider": "mock-provider",
-              "mastra.operationId": "mastra.generate.aisdk.doStream",
-              "operation.name": "mastra.generate.aisdk.doStream",
+              "@mastra.operationId": "@mastra.generate.aisdk.doStream",
+              "operation.name": "@mastra.generate.aisdk.doStream",
               "stream.prompt.messages": "[{"role":"user","content":[{"type":"text","text":"test-input"}]}]",
               "stream.prompt.toolChoice": "auto",
               "stream.prompt.tools": [
@@ -2039,19 +2039,19 @@ export function generateTextTestsV5({ loopFn, runId }: { loopFn: typeof loop; ru
                 "name": "ai.stream.finish",
               },
             ],
-            "name": "mastra.generate.aisdk.doStream",
+            "name": "@mastra.generate.aisdk.doStream",
           },
           {
             "attributes": {
-              "mastra.operationId": "mastra.stream.toolCall",
-              "operation.name": "mastra.stream.toolCall",
+              "@mastra.operationId": "@mastra.stream.toolCall",
+              "operation.name": "@mastra.stream.toolCall",
               "stream.toolCall.args": "{"value":"value"}",
               "stream.toolCall.result": ""result1"",
               "stream.toolCall.toolCallId": "call-1",
               "stream.toolCall.toolName": "tool1",
             },
             "events": [],
-            "name": "mastra.stream.toolCall",
+            "name": "@mastra.stream.toolCall",
           },
         ]
       `);

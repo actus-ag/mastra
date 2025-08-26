@@ -1,5 +1,5 @@
-import type { Mastra } from '@actus-ag/mastra-core';
-import { Agent } from '@actus-ag/mastra-core/agent';
+import type { Mastra } from '@mastra/core';
+import { Agent } from '@mastra/core/agent';
 import type { Context } from 'hono';
 import { z } from 'zod';
 
@@ -20,8 +20,8 @@ export async function generateSystemPromptHandler(c: Context) {
       return c.json({ error: 'Missing instructions in request body' }, 400);
     }
 
-    const mastra: Mastra<any> = c.get('mastra');
-    const agent = mastra.getAgent(agentId);
+    const @mastra: Mastra<any> = c.get('@actus-ag/@mastra');
+    const agent = @mastra.getAgent(agentId);
 
     if (!agent) {
       return c.json({ error: 'Agent not found' }, 404);
@@ -31,8 +31,8 @@ export async function generateSystemPromptHandler(c: Context) {
 
     try {
       // Get both test and live evals
-      const testEvals = (await mastra.getStorage()?.getEvalsByAgentName?.(agent.name, 'test')) || [];
-      const liveEvals = (await mastra.getStorage()?.getEvalsByAgentName?.(agent.name, 'live')) || [];
+      const testEvals = (await @mastra.getStorage()?.getEvalsByAgentName?.(agent.name, 'test')) || [];
+      const liveEvals = (await @mastra.getStorage()?.getEvalsByAgentName?.(agent.name, 'live')) || [];
       // Format eval results for the prompt
       const evalsMapped = [...testEvals, ...liveEvals].filter(
         ({ instructions: evalInstructions }) => evalInstructions === instructions,
@@ -49,7 +49,7 @@ export async function generateSystemPromptHandler(c: Context) {
         )
         .join('');
     } catch (error) {
-      mastra.getLogger().error(`Error fetching evals`, { error });
+      @mastra.getLogger().error(`Error fetching evals`, { error });
     }
 
     const ENHANCE_SYSTEM_PROMPT_INSTRUCTIONS = `

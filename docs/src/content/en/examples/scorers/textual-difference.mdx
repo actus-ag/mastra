@@ -12,7 +12,7 @@ Use `createTextualDifferenceScorer` to evaluate the similarity between two text 
 ## Installation
 
 ```bash copy
-npm install @actus-ag/mastra-evals
+npm install @mastra/cli/cli/cli/evals
 ```
 
 > For complete API documentation and configuration options, see [`createTextualDifferenceScorer`](/reference/scorers/textual-difference).
@@ -22,7 +22,7 @@ npm install @actus-ag/mastra-evals
 In this example, the texts are exactly the same. The scorer identifies complete similarity with a perfect score and no detected changes.
 
 ```typescript filename="src/example-no-differences.ts" showLineNumbers copy
-import { createTextualDifferenceScorer } from "@actus-ag/mastra-evals/scorers/code";
+import { createTextualDifferenceScorer } from "@mastra/cli/cli/cli/evals/scorers/code";
 
 const scorer = createTextualDifferenceScorer();
 
@@ -59,7 +59,7 @@ The scorer returns a high score, indicating the texts are identical. The detaile
 In this example, the texts have small variations. The scorer detects these minor differences and returns a moderate similarity score.
 
 ```typescript filename="src/example-minor-differences.ts" showLineNumbers copy
-import { createTextualDifferenceScorer } from "@actus-ag/mastra-evals/scorers/code";
+import { createTextualDifferenceScorer } from "@mastra/cli/cli/cli/evals/scorers/code";
 
 const scorer = createTextualDifferenceScorer();
 
@@ -96,7 +96,7 @@ The scorer returns a moderate score reflecting the small variations between the 
 In this example, the texts differ significantly. The scorer detects extensive changes and returns a low similarity score.
 
 ```typescript filename="src/example-major-differences.ts" showLineNumbers copy
-import { createTextualDifferenceScorer } from "@actus-ag/mastra-evals/scorers/code";
+import { createTextualDifferenceScorer } from "@mastra/cli/cli/cli/evals/scorers/code";
 
 const scorer = createTextualDifferenceScorer();
 
@@ -176,5 +176,5 @@ Object with difference metrics:
 
 <GithubLink
   marginTop='mt-16'
-  link="https://github.com/mastra-ai/mastra/blob/main/examples/basics/scorers/textual-difference"
+  link="https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/scorers/textual-difference"
 />

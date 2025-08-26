@@ -1,6 +1,6 @@
 import { anthropic } from "@ai-sdk/anthropic";
-import { Memory } from "@actus-ag/mastra-memory";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Memory } from "@mastra/memory";
+import { Agent } from "@mastra/core/agent";
 
 import {
   searchAirbnb,

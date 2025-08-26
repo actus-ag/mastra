@@ -32,7 +32,7 @@ import { MastraLLMVNext } from '../llm/model/model.loop';
 import type { ModelLoopStreamArgs } from '../llm/model/model.loop.types';
 import type { TripwireProperties, MastraLanguageModel } from '../llm/model/shared.types';
 import { RegisteredLogger } from '../logger';
-import type { Mastra } from '../mastra';
+import type { Mastra } from '../@mastra';
 import type { MastraMemory } from '../memory/memory';
 import type { MemoryConfig, StorageThreadType } from '../memory/types';
 import type { InputProcessor, OutputProcessor } from '../processors/index';
@@ -137,7 +137,7 @@ export class Agent<
   #instructions: DynamicArgument<string>;
   readonly #description?: string;
   model?: DynamicArgument<MastraLanguageModel>;
-  #mastra?: Mastra;
+  #@mastra?: Mastra;
   #memory?: DynamicArgument<MastraMemory>;
   #workflows?: DynamicArgument<Record<string, Workflow>>;
   #defaultGenerateOptions: DynamicArgument<AgentGenerateOptions>;
@@ -191,11 +191,11 @@ export class Agent<
 
     this.evals = {} as TMetrics;
 
-    if (config.mastra) {
-      this.__registerMastra(config.mastra);
+    if (config.@mastra) {
+      this.__registerMastra(config.@mastra);
       this.__registerPrimitives({
-        telemetry: config.mastra.getTelemetry(),
-        logger: config.mastra.getLogger(),
+        telemetry: config.@mastra.getTelemetry(),
+        logger: config.@mastra.getLogger(),
       });
     }
 
@@ -285,7 +285,7 @@ export class Agent<
     if (typeof this.#memory !== 'function') {
       resolvedMemory = this.#memory;
     } else {
-      const result = this.#memory({ runtimeContext, mastra: this.#mastra });
+      const result = this.#memory({ runtimeContext, @mastra: this.#@mastra });
       resolvedMemory = await Promise.resolve(result);
 
       if (!resolvedMemory) {
@@ -304,11 +304,11 @@ export class Agent<
       }
     }
 
-    if (this.#mastra && resolvedMemory) {
-      resolvedMemory.__registerMastra(this.#mastra);
+    if (this.#@mastra && resolvedMemory) {
+      resolvedMemory.__registerMastra(this.#@mastra);
 
       if (!resolvedMemory.hasOwnStorage) {
-        const storage = this.#mastra.getStorage();
+        const storage = this.#@mastra.getStorage();
         if (storage) {
           resolvedMemory.setStorage(storage);
         }
@@ -342,14 +342,14 @@ export class Agent<
   }: { runtimeContext?: RuntimeContext } = {}): Promise<Record<string, Workflow>> {
     let workflowRecord;
     if (typeof this.#workflows === 'function') {
-      workflowRecord = await Promise.resolve(this.#workflows({ runtimeContext, mastra: this.#mastra }));
+      workflowRecord = await Promise.resolve(this.#workflows({ runtimeContext, @mastra: this.#@mastra }));
     } else {
       workflowRecord = this.#workflows ?? {};
     }
 
     Object.entries(workflowRecord || {}).forEach(([_workflowName, workflow]) => {
-      if (this.#mastra) {
-        workflow.__registerMastra(this.#mastra);
+      if (this.#@mastra) {
+        workflow.__registerMastra(this.#@mastra);
       }
     });
 
@@ -363,7 +363,7 @@ export class Agent<
       return this.#scorers;
     }
 
-    const result = this.#scorers({ runtimeContext, mastra: this.#mastra });
+    const result = this.#scorers({ runtimeContext, @mastra: this.#@mastra });
     return resolveMaybePromise(result, scorers => {
       if (!scorers) {
         const mastraError = new MastraError({
@@ -423,7 +423,7 @@ export class Agent<
       return this.#instructions;
     }
 
-    const result = this.#instructions({ runtimeContext, mastra: this.#mastra });
+    const result = this.#instructions({ runtimeContext, @mastra: this.#@mastra });
     return resolveMaybePromise(result, instructions => {
       if (!instructions) {
         const mastraError = new MastraError({
@@ -455,7 +455,7 @@ export class Agent<
       return this.#defaultGenerateOptions;
     }
 
-    const result = this.#defaultGenerateOptions({ runtimeContext, mastra: this.#mastra });
+    const result = this.#defaultGenerateOptions({ runtimeContext, @mastra: this.#@mastra });
     return resolveMaybePromise(result, options => {
       if (!options) {
         const mastraError = new MastraError({
@@ -483,7 +483,7 @@ export class Agent<
       return this.#defaultStreamOptions;
     }
 
-    const result = this.#defaultStreamOptions({ runtimeContext, mastra: this.#mastra });
+    const result = this.#defaultStreamOptions({ runtimeContext, @mastra: this.#@mastra });
     return resolveMaybePromise(result, options => {
       if (!options) {
         const mastraError = new MastraError({
@@ -514,7 +514,7 @@ export class Agent<
       return this.#defaultVNextStreamOptions as AgentExecutionOptions<Output, StructuredOutput>;
     }
 
-    const result = this.#defaultVNextStreamOptions({ runtimeContext, mastra: this.#mastra }) as
+    const result = this.#defaultVNextStreamOptions({ runtimeContext, @mastra: this.#@mastra }) as
       | AgentExecutionOptions<Output, StructuredOutput>
       | Promise<AgentExecutionOptions<Output, StructuredOutput>>;
 
@@ -566,7 +566,7 @@ export class Agent<
       return ensureToolProperties(this.#tools) as TTools;
     }
 
-    const result = this.#tools({ runtimeContext, mastra: this.#mastra });
+    const result = this.#tools({ runtimeContext, @mastra: this.#@mastra });
 
     return resolveMaybePromise(result, tools => {
       if (!tools) {
@@ -624,16 +624,16 @@ export class Agent<
     // If model is provided, resolve it; otherwise use the agent's model
     const modelToUse = model
       ? typeof model === 'function'
-        ? model({ runtimeContext, mastra: this.#mastra })
+        ? model({ runtimeContext, @mastra: this.#@mastra })
         : model
       : this.getModel({ runtimeContext });
 
     return resolveMaybePromise(modelToUse, resolvedModel => {
       let llm: MastraLLM;
       if (resolvedModel.specificationVersion === 'v2') {
-        llm = new MastraLLMVNext({ model: resolvedModel, mastra: this.#mastra });
+        llm = new MastraLLMVNext({ model: resolvedModel, @mastra: this.#@mastra });
       } else {
-        llm = new MastraLLMV1({ model: resolvedModel, mastra: this.#mastra });
+        llm = new MastraLLMV1({ model: resolvedModel, @mastra: this.#@mastra });
       }
 
       // Apply stored primitives if available
@@ -641,8 +641,8 @@ export class Agent<
         llm.__registerPrimitives(this.#primitives);
       }
 
-      if (this.#mastra) {
-        llm.__registerMastra(this.#mastra);
+      if (this.#@mastra) {
+        llm.__registerMastra(this.#@mastra);
       }
 
       return llm;
@@ -676,7 +676,7 @@ export class Agent<
       return this.model;
     }
 
-    const result = this.model({ runtimeContext, mastra: this.#mastra });
+    const result = this.model({ runtimeContext, @mastra: this.#@mastra });
     return resolveMaybePromise(result, model => {
       if (!model) {
         const mastraError = new MastraError({
@@ -724,8 +724,8 @@ export class Agent<
     this.logger.debug(`[Agents:${this.name}] initialized.`, { model: this.model, name: this.name });
   }
 
-  __registerMastra(mastra: Mastra) {
-    this.#mastra = mastra;
+  __registerMastra(@mastra: Mastra) {
+    this.#@mastra = @mastra;
     // Mastra will be passed to the LLM when it's created in getLLM()
   }
 
@@ -954,14 +954,14 @@ export class Agent<
     resourceId,
     threadId,
     runtimeContext,
-    mastraProxy,
+    @mastraProxy,
     agentAISpan,
   }: {
     runId?: string;
     resourceId?: string;
     threadId?: string;
     runtimeContext: RuntimeContext;
-    mastraProxy?: MastraUnion;
+    @mastraProxy?: MastraUnion;
     agentAISpan?: AnyAISpan;
   }) {
     let convertedMemoryTools: Record<string, CoreTool> = {};
@@ -984,7 +984,7 @@ export class Agent<
           threadId,
           resourceId,
           logger: this.logger,
-          mastra: mastraProxy as MastraUnion | undefined,
+          @mastra: @mastraProxy as MastraUnion | undefined,
           memory,
           agentName: this.name,
           runtimeContext,
@@ -1021,7 +1021,7 @@ export class Agent<
       });
       // Create traced version of runInputProcessors similar to workflow _runStep pattern
       const tracedRunInputProcessors = (messageList: MessageList) => {
-        const telemetry = this.#mastra?.getTelemetry();
+        const telemetry = this.#@mastra?.getTelemetry();
         if (!telemetry) {
           return runner.runInputProcessors(messageList, undefined);
         }
@@ -1092,7 +1092,7 @@ export class Agent<
 
       // Create traced version of runOutputProcessors similar to workflow _runStep pattern
       const tracedRunOutputProcessors = (messageList: MessageList) => {
-        const telemetry = this.#mastra?.getTelemetry();
+        const telemetry = this.#@mastra?.getTelemetry();
         if (!telemetry) {
           return runner.runOutputProcessors(messageList, undefined);
         }
@@ -1165,7 +1165,7 @@ export class Agent<
     runId,
     resourceId,
     threadId,
-    mastraProxy,
+    @mastraProxy,
     writableStream,
     agentAISpan,
   }: {
@@ -1173,7 +1173,7 @@ export class Agent<
     resourceId?: string;
     threadId?: string;
     runtimeContext: RuntimeContext;
-    mastraProxy?: MastraUnion;
+    @mastraProxy?: MastraUnion;
     writableStream?: WritableStream<ChunkType>;
     agentAISpan?: AnyAISpan;
   }) {
@@ -1201,7 +1201,7 @@ export class Agent<
           threadId,
           resourceId,
           logger: this.logger,
-          mastra: mastraProxy as MastraUnion | undefined,
+          @mastra: @mastraProxy as MastraUnion | undefined,
           memory,
           agentName: this.name,
           runtimeContext,
@@ -1231,7 +1231,7 @@ export class Agent<
     resourceId,
     toolsets,
     runtimeContext,
-    mastraProxy,
+    @mastraProxy,
     agentAISpan,
   }: {
     runId?: string;
@@ -1239,7 +1239,7 @@ export class Agent<
     resourceId?: string;
     toolsets: ToolsetsInput;
     runtimeContext: RuntimeContext;
-    mastraProxy?: MastraUnion;
+    @mastraProxy?: MastraUnion;
     agentAISpan?: AnyAISpan;
   }) {
     let toolsForRequest: Record<string, CoreTool> = {};
@@ -1260,7 +1260,7 @@ export class Agent<
             threadId,
             resourceId,
             logger: this.logger,
-            mastra: mastraProxy as MastraUnion | undefined,
+            @mastra: @mastraProxy as MastraUnion | undefined,
             memory,
             agentName: this.name,
             runtimeContext,
@@ -1281,7 +1281,7 @@ export class Agent<
     threadId,
     resourceId,
     runtimeContext,
-    mastraProxy,
+    @mastraProxy,
     clientTools,
     agentAISpan,
   }: {
@@ -1289,7 +1289,7 @@ export class Agent<
     threadId?: string;
     resourceId?: string;
     runtimeContext: RuntimeContext;
-    mastraProxy?: MastraUnion;
+    @mastraProxy?: MastraUnion;
     clientTools?: ToolsInput;
     agentAISpan?: AnyAISpan;
   }) {
@@ -1309,7 +1309,7 @@ export class Agent<
           threadId,
           resourceId,
           logger: this.logger,
-          mastra: mastraProxy as MastraUnion | undefined,
+          @mastra: @mastraProxy as MastraUnion | undefined,
           memory,
           agentName: this.name,
           runtimeContext,
@@ -1471,11 +1471,11 @@ export class Agent<
     writableStream?: WritableStream<ChunkType>;
     agentAISpan?: AnyAISpan;
   }): Promise<Record<string, CoreTool>> {
-    let mastraProxy = undefined;
+    let @mastraProxy = undefined;
     const logger = this.logger;
 
-    if (this.#mastra) {
-      mastraProxy = createMastraProxy({ mastra: this.#mastra, logger });
+    if (this.#@mastra) {
+      @mastraProxy = createMastraProxy({ @mastra: this.#@mastra, logger });
     }
 
     const assignedTools = await this.getAssignedTools({
@@ -1483,7 +1483,7 @@ export class Agent<
       resourceId,
       threadId,
       runtimeContext,
-      mastraProxy,
+      @mastraProxy,
       writableStream,
       agentAISpan,
     });
@@ -1493,7 +1493,7 @@ export class Agent<
       resourceId,
       threadId,
       runtimeContext,
-      mastraProxy,
+      @mastraProxy,
       agentAISpan,
     });
 
@@ -1502,7 +1502,7 @@ export class Agent<
       resourceId,
       threadId,
       runtimeContext,
-      mastraProxy,
+      @mastraProxy,
       toolsets: toolsets!,
       agentAISpan,
     });
@@ -1512,7 +1512,7 @@ export class Agent<
       resourceId,
       threadId,
       runtimeContext,
-      mastraProxy,
+      @mastraProxy,
       clientTools: clientTools!,
       agentAISpan,
     });
@@ -1718,7 +1718,7 @@ export class Agent<
         const messageList = new MessageList({
           threadId,
           resourceId,
-          generateMessageId: this.#mastra?.generateId?.bind(this.#mastra),
+          generateMessageId: this.#@mastra?.generateId?.bind(this.#@mastra),
           // @ts-ignore Flag for agent network messages
           _agentNetworkAppend: this._agentNetworkAppend,
         })
@@ -1891,7 +1891,7 @@ Message ${msg.threadId && msg.threadId !== threadObject.id ? 'from previous conv
         const processedList = new MessageList({
           threadId: threadObject.id,
           resourceId,
-          generateMessageId: this.#mastra?.generateId?.bind(this.#mastra),
+          generateMessageId: this.#@mastra?.generateId?.bind(this.#@mastra),
           // @ts-ignore Flag for agent network messages
           _agentNetworkAppend: this._agentNetworkAppend,
         })
@@ -1978,7 +1978,7 @@ Message ${msg.threadId && msg.threadId !== threadObject.id ? 'from previous conv
         const messageListResponses = new MessageList({
           threadId,
           resourceId,
-          generateMessageId: this.#mastra?.generateId?.bind(this.#mastra),
+          generateMessageId: this.#@mastra?.generateId?.bind(this.#@mastra),
           // @ts-ignore Flag for agent network messages
           _agentNetworkAppend: this._agentNetworkAppend,
         })
@@ -2165,7 +2165,7 @@ Message ${msg.threadId && msg.threadId !== threadObject.id ? 'from previous conv
     const input = userInputMessages
       .map(message => (typeof message.content === 'string' ? message.content : ''))
       .join('\n');
-    const runIdToUse = runId || this.#mastra?.generateId() || randomUUID();
+    const runIdToUse = runId || this.#@mastra?.generateId() || randomUUID();
 
     if (Object.keys(this.evals || {}).length > 0) {
       for (const metric of Object.values(this.evals || {})) {
@@ -2374,7 +2374,7 @@ Message ${msg.threadId && msg.threadId !== threadObject.id ? 'from previous conv
         `[Agent:${this.name}] - No memory is configured but resourceId and threadId were passed in args. This will not work.`,
       );
     }
-    const runId = args.runId || this.#mastra?.generateId() || randomUUID();
+    const runId = args.runId || this.#@mastra?.generateId() || randomUUID();
     const instructions = args.instructions || (await this.getInstructions({ runtimeContext }));
     const llm = await this.getLLM({ runtimeContext });
 
@@ -2533,7 +2533,7 @@ Message ${msg.threadId && msg.threadId !== threadObject.id ? 'from previous conv
 
     const llm = (await this.getLLM({ runtimeContext })) as MastraLLMVNext;
 
-    const runId = options.runId || this.#mastra?.generateId() || randomUUID();
+    const runId = options.runId || this.#@mastra?.generateId() || randomUUID();
     const instructions = options.instructions || (await this.getInstructions({ runtimeContext }));
 
     // Set Telemetry context
@@ -2631,7 +2631,7 @@ Message ${msg.threadId && msg.threadId !== threadObject.id ? 'from previous conv
         const messageList = new MessageList({
           threadId: thread?.id,
           resourceId,
-          generateMessageId: this.#mastra?.generateId?.bind(this.#mastra),
+          generateMessageId: this.#@mastra?.generateId?.bind(this.#@mastra),
           // @ts-ignore Flag for agent network messages
           _agentNetworkAppend: this._agentNetworkAppend,
         })
@@ -2802,7 +2802,7 @@ Message ${msg.threadId && msg.threadId !== threadObject.id ? 'from previous conv
         const processedList = new MessageList({
           threadId: threadObject.id,
           resourceId,
-          generateMessageId: this.#mastra?.generateId?.bind(this.#mastra),
+          generateMessageId: this.#@mastra?.generateId?.bind(this.#@mastra),
           // @ts-ignore Flag for agent network messages
           _agentNetworkAppend: this._agentNetworkAppend,
         })
@@ -3245,7 +3245,7 @@ Message ${msg.threadId && msg.threadId !== threadObject.id ? 'from previous conv
   async generateVNext<
     OUTPUT extends ZodSchema | JSONSchema7 | undefined = undefined,
     STRUCTURED_OUTPUT extends ZodSchema | JSONSchema7 | undefined = undefined,
-    FORMAT extends 'aisdk' | 'mastra' = 'mastra',
+    FORMAT extends 'aisdk' | '@actus-ag/@mastra' = '@actus-ag/@mastra',
   >(
     messages: MessageListInput,
     options?: AgentExecutionOptions<OUTPUT, STRUCTURED_OUTPUT, FORMAT>,
@@ -3278,7 +3278,7 @@ Message ${msg.threadId && msg.threadId !== threadObject.id ? 'from previous conv
   async streamVNext<
     OUTPUT extends ZodSchema | JSONSchema7 | undefined = undefined,
     STRUCTURED_OUTPUT extends ZodSchema | JSONSchema7 | undefined = undefined,
-    FORMAT extends 'mastra' | 'aisdk' | undefined = undefined,
+    FORMAT extends '@actus-ag/@mastra' | 'aisdk' | undefined = undefined,
   >(
     messages: MessageListInput,
     streamOptions?: AgentExecutionOptions<OUTPUT, STRUCTURED_OUTPUT, FORMAT>,
@@ -4043,7 +4043,7 @@ Message ${msg.threadId && msg.threadId !== threadObject.id ? 'from previous conv
     if (typeof instructions === 'string') {
       return instructions;
     } else {
-      const result = instructions({ runtimeContext, mastra: this.#mastra });
+      const result = instructions({ runtimeContext, @mastra: this.#@mastra });
       return resolveMaybePromise(result, resolvedInstructions => {
         return resolvedInstructions || DEFAULT_TITLE_INSTRUCTIONS;
       });

@@ -13,8 +13,8 @@ Mastra supports the OpenTelemetry Protocol (OTLP) for tracing and monitoring you
 
 Here's a simple example of enabling telemetry:
 
-```ts filename="mastra.config.ts" showLineNumbers copy
-export const mastra = new Mastra({
+```ts filename="@@mastra/cli/cli/cli.config.ts" showLineNumbers copy
+export const @@mastra/cli/cli/cli = new Mastra({
   // ... other config
   telemetry: {
     serviceName: "my-app",
@@ -73,8 +73,8 @@ OTEL_EXPORTER_OTLP_HEADERS=x-api-key=your-api-key
 
 Then in your config:
 
-```ts filename="mastra.config.ts" showLineNumbers copy
-export const mastra = new Mastra({
+```ts filename="@@mastra/cli/cli/cli.config.ts" showLineNumbers copy
+export const @@mastra/cli/cli/cli = new Mastra({
   // ... other config
   telemetry: {
     serviceName: "my-app",
@@ -107,7 +107,7 @@ For a complete list of supported observability providers and their configuration
 
 ### Custom Instrumentation files
 
-You can define custom instrumentation files in your Mastra project by placing them in the `/mastra` folder. Mastra automatically detects and bundles these files instead of using the default instrumentation.
+You can define custom instrumentation files in your Mastra project by placing them in the `/@@mastra/cli/cli/cli` folder. Mastra automatically detects and bundles these files instead of using the default instrumentation.
 
 #### Supported File Types
 
@@ -118,7 +118,7 @@ Mastra looks for instrumentation files with these extensions:
 
 #### Example
 
-```ts filename="/mastra/instrumentation.ts" showLineNumbers copy
+```ts filename="/@@mastra/cli/cli/cli/instrumentation.ts" showLineNumbers copy
 import { NodeSDK } from '@opentelemetry/sdk-node';
 import { getNodeAutoInstrumentations } from '@opentelemetry/auto-instrumentations-node';
 import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-http';
@@ -137,14 +137,14 @@ When Mastra finds a custom instrumentation file, it automatically replaces the d
 
 ### Tracing Outside Mastra Server Environment
 
-When using `mastra start` or `mastra dev` commands, Mastra automatically provisions and loads the necessary instrumentation files for tracing. However, when using Mastra as a dependency in your own application (outside the Mastra server environment), you'll need to manually provide the instrumentation file.
+When using `@actus-ag/@mastra/cli/cli start` or `@actus-ag/@mastra/cli/cli dev` commands, Mastra automatically provisions and loads the necessary instrumentation files for tracing. However, when using Mastra as a dependency in your own application (outside the Mastra server environment), you'll need to manually provide the instrumentation file.
 
 To enable tracing in this case:
 
 1. Enable Mastra telemetry in your configuration:
 
 ```typescript
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   telemetry: {
     enabled: true,
   },

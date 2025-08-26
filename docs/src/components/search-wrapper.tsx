@@ -62,7 +62,7 @@ export const SearchWrapper = ({ locale }: { locale: string }) => {
 
   // Configure Algolia search options
   const searchOptions = {
-    indexName: "crawler_mastra crawler",
+    indexName: "crawler_@@mastra/cli/cli/cli crawler",
     hitsPerPage: 20,
     attributesToRetrieve: ["title", "content", "url", "hierarchy"],
     attributesToHighlight: ["title", "content"],

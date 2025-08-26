@@ -1,14 +1,14 @@
 import chalk from 'chalk';
 import { execSync } from 'child_process';
 
-import { mastra } from '../mastra/index.js';
+import { @mastra } from '../@mastra/index.js';
 
 export async function commitMessageCommand() {
   console.log(chalk.green("Hi! I'm Dane!"));
   console.log(chalk.green('Let me generate a commit message for you..\n'));
 
   try {
-    const workflow = mastra.getWorkflow('commitMessage');
+    const workflow = @mastra.getWorkflow('commitMessage');
     if (!workflow) {
       console.error(chalk.red('Commit message workflow not found. Make sure it is properly set up.'));
       process.exit(1);

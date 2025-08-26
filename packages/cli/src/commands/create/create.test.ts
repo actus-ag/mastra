@@ -92,7 +92,7 @@ vi.mock('fs/promises', async () => {
 
 describe('create command with --template flag', () => {
   const mockTemplate = {
-    githubUrl: 'https://github.com/mastra-ai/template-test',
+    githubUrl: 'https://github.com/@mastra-ai/template-test',
     title: 'Test Template',
     slug: 'template-test',
     agents: ['test-agent'],
@@ -296,15 +296,15 @@ describe('create command with --template flag', () => {
               JSON.stringify({
                 name: 'test-project',
                 dependencies: {
-                  '@actus-ag/mastra-core': '^1.0.0',
+                  '@mastra/core': '^1.0.0',
                 },
               }),
           } as Response;
         }
-        if (urlStr.includes('/src/mastra/index.ts')) {
+        if (urlStr.includes('/src/@mastra/index.ts')) {
           return {
             ok: true,
-            text: async () => 'export const mastra = new Mastra({});',
+            text: async () => 'export const @mastra = new Mastra({});',
           } as Response;
         }
         return { ok: false } as Response;
@@ -317,7 +317,7 @@ describe('create command with --template flag', () => {
 
       const { create } = await import('./create');
       await create({
-        template: 'https://github.com/mastra-ai/template-deep-research',
+        template: 'https://github.com/@mastra-ai/template-deep-research',
         projectName: 'my-github-project',
       });
 
@@ -325,8 +325,8 @@ describe('create command with --template flag', () => {
       expect(mockSpinner.stop).toHaveBeenCalledWith('Valid Mastra project ✓');
       expect(cloneTemplate).toHaveBeenCalledWith({
         template: expect.objectContaining({
-          githubUrl: 'https://github.com/mastra-ai/template-deep-research',
-          title: 'mastra-ai/template-deep-research',
+          githubUrl: 'https://github.com/@mastra-ai/template-deep-research',
+          title: '@mastra-ai/template-deep-research',
           slug: 'template-deep-research',
         }),
         projectName: 'my-github-project',
@@ -345,7 +345,7 @@ describe('create command with --template flag', () => {
       };
       vi.mocked(spinner).mockReturnValue(mockSpinner);
 
-      // Mock fetch to return project without @actus-ag/mastra-core
+      // Mock fetch to return project without @mastra/core
       vi.mocked(global.fetch).mockImplementation(async url => {
         const urlStr = typeof url === 'string' ? url : url.toString();
         if (urlStr.includes('/package.json')) {
@@ -358,7 +358,7 @@ describe('create command with --template flag', () => {
               }),
           } as Response;
         }
-        if (urlStr.includes('/src/mastra/index.ts')) {
+        if (urlStr.includes('/src/@mastra/index.ts')) {
           return { ok: false } as Response;
         }
         return { ok: false } as Response;
@@ -375,8 +375,8 @@ describe('create command with --template flag', () => {
       expect(mockSpinner.start).toHaveBeenCalledWith('Validating GitHub repository...');
       expect(mockSpinner.stop).toHaveBeenCalledWith('Validation failed');
       expect(log.error).toHaveBeenCalledWith('This does not appear to be a valid Mastra project:');
-      expect(log.error).toHaveBeenCalledWith('  - Missing @actus-ag/mastra-core dependency in package.json');
-      expect(log.error).toHaveBeenCalledWith('  - Missing src/mastra/index.ts file');
+      expect(log.error).toHaveBeenCalledWith('  - Missing @mastra/core dependency in package.json');
+      expect(log.error).toHaveBeenCalledWith('  - Missing src/@mastra/index.ts file');
     });
 
     it('should detect GitHub URLs correctly', async () => {

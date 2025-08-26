@@ -9,10 +9,10 @@ This example demonstrates how to create an agent that maintains a working memory
 
 ## Setup
 
-First, set up the memory system with working memory enabled. Note that `new Memory()` without a configured storage provider will not persist data across application restarts. For persistence, you can configure a storage provider like `@actus-ag/mastra-libsql`:
+First, set up the memory system with working memory enabled. Note that `new Memory()` without a configured storage provider will not persist data across application restarts. For persistence, you can configure a storage provider like `@mastra/cli/cli/cli/libsql`:
 
 ```typescript
-import { Memory } from "@actus-ag/mastra-memory";
+import { Memory } from "@mastra/cli/cli/cli/memory";
 
 const memory = new Memory({
   options: {
@@ -21,7 +21,7 @@ const memory = new Memory({
     },
   },
   storage: new LibSQLStore({
-    url: "file:../mastra.db",
+    url: "file:../@@mastra/cli/cli/cli.db",
   }),
 });
 ```

@@ -19,7 +19,7 @@ const defaultSettings: AgentSettings = {
 export function useAgentSettingsState({ agentId }: AgentSettingsStateProps) {
   const [settings, setSettingsState] = useState<AgentSettings | undefined>(undefined);
 
-  const LOCAL_STORAGE_KEY = `mastra-agent-store-${agentId}`;
+  const LOCAL_STORAGE_KEY = `@mastra-agent-store-${agentId}`;
 
   useEffect(() => {
     try {

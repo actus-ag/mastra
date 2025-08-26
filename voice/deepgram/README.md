@@ -1,11 +1,11 @@
-# @actus-ag/mastra-voice-deepgram
+# @mastra/voice-deepgram
 
 Deepgram voice integration for Mastra, providing both Text-to-Speech (TTS) and Speech-to-Text (STT) capabilities using Deepgram's advanced AI models.
 
 ## Installation
 
 ```bash
-npm install @actus-ag/mastra-voice-deepgram
+npm install @mastra/voice-deepgram
 ```
 
 ## Configuration
@@ -19,7 +19,7 @@ DEEPGRAM_API_KEY=your_api_key
 ## Usage
 
 ```typescript
-import { DeepgramVoice } from '@actus-ag/mastra-voice-deepgram';
+import { DeepgramVoice } from '@mastra/voice-deepgram';
 
 // Create voice with both speech and listening capabilities
 const voice = new DeepgramVoice({

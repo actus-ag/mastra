@@ -16,7 +16,7 @@ import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 const fetchStars = async () => {
   try {
-    const res = await fetch("https://api.github.com/repos/mastra-ai/mastra", {
+    const res = await fetch("https://api.github.com/repos/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli", {
       next: { revalidate: 3600 }, // Revalidate every hour
     });
     const data = await res.json();

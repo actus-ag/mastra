@@ -1,4 +1,4 @@
-import { createCompletenessScorer } from '@actus-ag/mastra-evals/scorers/code';
+import { createCompletenessScorer } from '@mastra/evals/scorers/code';
 
 // Configure the scorer
 const scorer = createCompletenessScorer();

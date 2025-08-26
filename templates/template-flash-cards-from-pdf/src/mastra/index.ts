@@ -1,6 +1,6 @@
-import { Mastra } from '@actus-ag/mastra-core/mastra';
-import { PinoLogger } from '@actus-ag/mastra-loggers';
-import { LibSQLStore } from '@actus-ag/mastra-libsql';
+import { Mastra } from '@mastra/core/@mastra';
+import { PinoLogger } from '@mastra/loggers';
+import { LibSQLStore } from '@mastra/libsql';
 
 // Import agents
 import { flashCardsAgent } from './agents/flash-cards-agent';
@@ -12,7 +12,7 @@ import { pdfSummarizationAgent } from './agents/pdf-summarization-agent';
 // Import workflows
 import { flashCardsGenerationWorkflow } from './workflows/flash-cards-generation-workflow';
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   workflows: {
     flashCardsGenerationWorkflow,
   },
@@ -24,7 +24,7 @@ export const mastra = new Mastra({
     pdfSummarizationAgent,
   },
   storage: new LibSQLStore({
-    url: 'file:../mastra.db',
+    url: 'file:../@mastra.db',
   }),
   logger: new PinoLogger({
     name: 'Mastra Flash Cards Template',

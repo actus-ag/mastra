@@ -1,22 +1,22 @@
-import type { Mastra } from '@actus-ag/mastra-core';
-import type { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
+import type { Mastra } from '@mastra/core';
+import type { RuntimeContext } from '@mastra/core/runtime-context';
 import {
   getNetworksHandler as getOriginalNetworksHandler,
   getNetworkByIdHandler as getOriginalNetworkByIdHandler,
   generateHandler as getOriginalGenerateHandler,
   streamGenerateHandler as getOriginalStreamGenerateHandler,
-} from '@actus-ag/mastra-server/handlers/network';
+} from '@mastra/server/handlers/network';
 import type { Context } from 'hono';
 
 import { handleError } from '../../error';
 
 export async function getNetworksHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const runtimeContext: RuntimeContext = c.get('runtimeContext');
 
     const networks = await getOriginalNetworksHandler({
-      mastra,
+      @mastra,
       runtimeContext,
     });
 
@@ -28,12 +28,12 @@ export async function getNetworksHandler(c: Context) {
 
 export async function getNetworkByIdHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const networkId = c.req.param('networkId');
     const runtimeContext: RuntimeContext = c.get('runtimeContext');
 
     const network = await getOriginalNetworkByIdHandler({
-      mastra,
+      @mastra,
       networkId,
       runtimeContext,
     });
@@ -46,13 +46,13 @@ export async function getNetworkByIdHandler(c: Context) {
 
 export async function generateHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const runtimeContext: RuntimeContext = c.get('runtimeContext');
     const networkId = c.req.param('networkId');
     const body = await c.req.json();
 
     const result = await getOriginalGenerateHandler({
-      mastra,
+      @mastra,
       runtimeContext,
       networkId,
       body,
@@ -66,13 +66,13 @@ export async function generateHandler(c: Context) {
 
 export async function streamGenerateHandler(c: Context): Promise<Response | undefined> {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const runtimeContext: RuntimeContext = c.get('runtimeContext');
     const networkId = c.req.param('networkId');
     const body = await c.req.json();
 
     const streamResponse = await getOriginalStreamGenerateHandler({
-      mastra,
+      @mastra,
       runtimeContext,
       networkId,
       body,

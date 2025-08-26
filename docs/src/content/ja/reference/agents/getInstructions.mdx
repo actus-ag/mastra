@@ -48,7 +48,7 @@ getInstructions({ runtimeContext }: { runtimeContext?: RuntimeContext } = {}): s
 ### 基本的な使い方
 
 ```typescript
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { openai } from "@ai-sdk/openai";
 
 // Create an agent with static instructions
@@ -67,8 +67,8 @@ console.log(instructions); // "You are a helpful assistant that provides concise
 ### RuntimeContextとの併用
 
 ```typescript
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { RuntimeContext } from "@actus-ag/mastra-core/runtime-context";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { RuntimeContext } from "@mastra/cli/cli/cli/core/runtime-context";
 import { openai } from "@ai-sdk/openai";
 
 // Create an agent with dynamic instructions

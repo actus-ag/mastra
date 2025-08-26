@@ -1,5 +1,5 @@
-import { DefaultStorage } from '@actus-ag/mastra-core/storage/libsql';
-import { Memory } from '@actus-ag/mastra-memory';
+import { DefaultStorage } from '@mastra/core/storage/libsql';
+import { Memory } from '@mastra/memory';
 import dotenv from 'dotenv';
 import { describe } from 'vitest';
 

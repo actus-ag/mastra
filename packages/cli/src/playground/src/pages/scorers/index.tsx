@@ -1,5 +1,5 @@
-import { useScorers } from '@actus-ag/mastra-playground-ui';
-import { DataTable, Header, HeaderTitle, MainContentLayout } from '@actus-ag/mastra-playground-ui';
+import { useScorers } from '@mastra/cli/cli/cli/playground-ui';
+import { DataTable, Header, HeaderTitle, MainContentLayout } from '@mastra/cli/cli/cli/playground-ui';
 import { scorersTableColumns } from '@/domains/agents/table.columns';
 
 export default function Scorers() {

@@ -10,13 +10,13 @@ Cloudflare KV ストレージの実装は、Cloudflare Workers KV を使用し�
 ## インストール
 
 ```bash copy
-npm install @actus-ag/mastra-cloudflare@latest
+npm install @mastra/cli/cli/cli/cloudflare@latest
 ```
 
 ## 使い方
 
 ```typescript copy showLineNumbers
-import { CloudflareStore } from "@actus-ag/mastra-cloudflare";
+import { CloudflareStore } from "@mastra/cli/cli/cli/cloudflare";
 
 // --- Example 1: Using Workers Binding ---
 const storageWorkers = new CloudflareStore({

@@ -1,9 +1,9 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@actus-ag/mastra-core/agent';
-// import { Memory } from '@actus-ag/mastra-memory';
-import { LibSQLStore } from '@actus-ag/mastra-libsql';
+import { Agent } from '@mastra/core/agent';
+// import { Memory } from '@mastra/memory';
+import { LibSQLStore } from '@mastra/libsql';
 
-// import { OpenAIVoice } from '@actus-ag/mastra-voice-openai';
+// import { OpenAIVoice } from '@mastra/voice-openai';
 
 import { weatherTool } from '../tools';
 
@@ -11,7 +11,7 @@ import { weatherTool } from '../tools';
 
 // const memory = new Memory({
 //   storage: new LibSQLStore({
-//     url: 'file:../mastra.db', // Or your database URL
+//     url: 'file:../@mastra.db', // Or your database URL
 //   }),
 // });
 

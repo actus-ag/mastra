@@ -13,11 +13,11 @@ The following code snippets provide example implementations of Text-to-Speech (T
 
 The following example shows how to set up a story generator agent with TTS capabilities on the backend:
 
-```typescript filename="src/mastra/agents/index.ts"
+```typescript filename="src/@@mastra/cli/cli/cli/agents/index.ts"
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
-import { Memory } from "@actus-ag/mastra-memory";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { OpenAIVoice } from "@mastra/cli/cli/cli/voice-openai";
+import { Memory } from "@mastra/cli/cli/cli/memory";
 
 const instructions = `
     You are an Interactive Storyteller Agent. Your job is to create engaging
@@ -36,12 +36,12 @@ export const storyTellerAgent = new Agent({
 
 This snippet demonstrates how to register the agent with your Mastra instance:
 
-```typescript filename="src/mastra/index.ts"
-import { PinoLogger } from "@actus-ag/mastra-loggers";
-import { Mastra } from "@actus-ag/mastra-core/mastra";
+```typescript filename="src/@@mastra/cli/cli/cli/index.ts"
+import { PinoLogger } from "@mastra/cli/cli/cli/loggers";
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
 import { storyTellerAgent } from "./agents";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   agents: { storyTellerAgent },
   logger: new PinoLogger({
     name: "Mastra",
@@ -55,9 +55,9 @@ export const mastra = new Mastra({
 Here we use the Mastra Client SDK to interact with our Mastra server. For more information about the Mastra Client SDK, check out the [documentation](/docs/deployment/client).
 
 ```typescript filename="src/app/page.tsx"
-import { MastraClient } from "@actus-ag/mastra-client-js";
+import { MastraClient } from "@@mastra/cli/cli/cli-client-js";
 
-export const mastraClient = new MastraClient({
+export const @@mastra/cli/cli/cliClient = new MastraClient({
   baseUrl: "http://localhost:4111", // Replace with your Mastra backend URL
 });
 ```
@@ -70,7 +70,7 @@ This example demonstrates how to get a reference to a Mastra agent, generate sto
 const handleInitialSubmit = async (formData: FormData) => {
   setIsLoading(true);
   try {
-    const agent = mastraClient.getAgent("storyTellerAgent");
+    const agent = @@mastra/cli/cli/cliClient.getAgent("storyTellerAgent");
     const message = `Current phase: BEGINNING. Story genre: ${formData.genre}, Protagonist name: ${formData.protagonistDetails.name}, Protagonist age: ${formData.protagonistDetails.age}, Protagonist gender: ${formData.protagonistDetails.gender}, Protagonist occupation: ${formData.protagonistDetails.occupation}, Story Setting: ${formData.setting}`;
     const storyResponse = await agent.generate({
       messages: [{ role: "user", content: message }],
@@ -154,6 +154,6 @@ You can view the complete implementation of the Interactive Story Generator on o
 <br />
 <GithubLink
   link={
-    "https://github.com/mastra-ai/voice-examples/tree/main/text-to-speech/interactive-story"
+    "https://github.com/@@mastra/cli/cli/cli-ai/voice-examples/tree/main/text-to-speech/interactive-story"
   }
 />

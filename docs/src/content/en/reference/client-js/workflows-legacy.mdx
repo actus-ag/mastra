@@ -12,7 +12,7 @@ The Workflows (Legacy) API provides methods to interact with and execute automat
 Retrieve a list of all available legacy workflows:
 
 ```typescript
-const workflows = await mastraClient.getLegacyWorkflows();
+const workflows = await @@mastra/cli/cli/cliClient.getLegacyWorkflows();
 ```
 
 ## Working with a Specific Legacy Workflow
@@ -20,7 +20,7 @@ const workflows = await mastraClient.getLegacyWorkflows();
 Get an instance of a specific legacy workflow:
 
 ```typescript
-const workflow = mastraClient.getLegacyWorkflow("workflow-id");
+const workflow = @@mastra/cli/cli/cliClient.getLegacyWorkflow("workflow-id");
 ```
 
 ## Legacy Workflow Methods
@@ -70,7 +70,7 @@ Watch legacy workflow transitions
 ```typescript
 try {
   // Get workflow instance
-  const workflow = mastraClient.getLegacyWorkflow("workflow-id");
+  const workflow = @@mastra/cli/cli/cliClient.getLegacyWorkflow("workflow-id");
 
   // Create a workflow run
   const { runId } = workflow.createRun();

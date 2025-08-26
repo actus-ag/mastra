@@ -353,8 +353,8 @@ Mastraはステップ間でデータを受け渡すためのいくつかの方�
 
 より良い型安全性のために、`getStepResult`に型パラメータを提供できます：
 
-```typescript showLineNumbers filename="src/mastra/workflows/get-step-result.ts" copy
-import { Step, Workflow } from "@actus-ag/mastra-core/workflows";
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/workflows/get-step-result.ts" copy
+import { Step, Workflow } from "@mastra/cli/cli/cli/core/workflows";
 import { z } from "zod";
 
 const fetchUserStep = new Step({
@@ -392,8 +392,8 @@ const analyzeDataStep = new Step({
 
 最も型安全なアプローチは、`getStepResult`呼び出しでステップを直接参照することです：
 
-```typescript showLineNumbers filename="src/mastra/workflows/step-reference.ts" copy
-import { Step, Workflow } from "@actus-ag/mastra-core/workflows";
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/workflows/step-reference.ts" copy
+import { Step, Workflow } from "@mastra/cli/cli/cli/core/workflows";
 import { z } from "zod";
 
 // Define step with output schema
@@ -439,8 +439,8 @@ workflow.step(fetchUserStep).then(processUserStep).commit();
 このアプローチは依存関係を明確にし、優れた型安全性を提供します。
 ステップに注入されたデータは`context.inputData`オブジェクトで利用可能であり、ステップの`inputSchema`に基づいて型付けされます。
 
-```typescript showLineNumbers filename="src/mastra/workflows/variable-mapping.ts" copy
-import { Step, Workflow } from "@actus-ag/mastra-core/workflows";
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/workflows/variable-mapping.ts" copy
+import { Step, Workflow } from "@mastra/cli/cli/cli/core/workflows";
 import { z } from "zod";
 
 const fetchUserStep = new Step({
@@ -499,8 +499,8 @@ workflow
 contextオブジェクトは、すべてのステップ結果とその出力に直接アクセスする手段を提供します。この方法はより柔軟ですが、型安全性を維持するためには注意が必要です。
 ステップの結果には `context.steps` オブジェクトを通じて直接アクセスできます:
 
-```typescript showLineNumbers filename="src/mastra/workflows/context-access.ts" copy
-import { Step, Workflow } from "@actus-ag/mastra-core/workflows";
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/workflows/context-access.ts" copy
+import { Step, Workflow } from "@mastra/cli/cli/cli/core/workflows";
 import { z } from "zod";
 
 const processOrderStep = new Step({
@@ -534,8 +534,8 @@ workflow.step(fetchUserStep).then(processOrderStep).commit();
 ワークフロー全体で包括的な型安全性を確保するために、すべてのステップの型を定義し、それらをWorkflowに渡すことができます。
 これにより、条件や最終的なワークフロー出力でcontextオブジェクトやステップ結果に対して型安全性を得ることができます。
 
-```typescript showLineNumbers filename="src/mastra/workflows/workflow-typing.ts" copy
-import { Step, Workflow } from "@actus-ag/mastra-core/workflows";
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/workflows/workflow-typing.ts" copy
+import { Step, Workflow } from "@mastra/cli/cli/cli/core/workflows";
 import { z } from "zod";
 
 // Create steps with typed outputs
@@ -587,8 +587,8 @@ workflow
 
 ステップ結果に加えて、ワークフローを開始した元のトリガーデータにもアクセスできます:
 
-```typescript showLineNumbers filename="src/mastra/workflows/trigger-data.ts" copy
-import { Step, Workflow } from "@actus-ag/mastra-core/workflows";
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/workflows/trigger-data.ts" copy
+import { Step, Workflow } from "@mastra/cli/cli/cli/core/workflows";
 import { z } from "zod";
 
 // Define trigger schema
@@ -625,8 +625,8 @@ workflow.step(processOrderStep).commit();
 
 ステップに注入されたデータは `context.inputData` オブジェクトで利用でき、ステップの `inputSchema` に基づいて型付けされます。
 
-```typescript showLineNumbers filename="src/mastra/workflows/resume-data.ts" copy
-import { Step, Workflow } from "@actus-ag/mastra-core/workflows";
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/workflows/resume-data.ts" copy
+import { Step, Workflow } from "@mastra/cli/cli/cli/core/workflows";
 import { z } from "zod";
 
 const processOrderStep = new Step({
@@ -673,8 +673,8 @@ console.log({ resumedResult });
 
 `Workflow` 型パラメータにステップ型を注入することで、ワークフローの結果に型安全にアクセスできます。
 
-```typescript showLineNumbers filename="src/mastra/workflows/get-results.ts" copy
-import { Workflow } from "@actus-ag/mastra-core/workflows";
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/workflows/get-results.ts" copy
+import { Workflow } from "@mastra/cli/cli/cli/core/workflows";
 
 const fetchUserStep = new Step({
   id: "fetchUser",

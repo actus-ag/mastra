@@ -20,14 +20,14 @@ export interface ExecutionGraph<TEngineType = any> {
  * Providers will implement this class to provide their own execution logic
  */
 export abstract class ExecutionEngine extends MastraBase {
-  protected mastra?: Mastra;
-  constructor({ mastra }: { mastra?: Mastra }) {
+  protected @mastra?: Mastra;
+  constructor({ @mastra }: { @mastra?: Mastra }) {
     super({ name: 'ExecutionEngine', component: RegisteredLogger.WORKFLOW });
-    this.mastra = mastra;
+    this.@mastra = @mastra;
   }
 
-  __registerMastra(mastra: Mastra) {
-    this.mastra = mastra;
+  __registerMastra(@mastra: Mastra) {
+    this.@mastra = @mastra;
   }
 
   /**

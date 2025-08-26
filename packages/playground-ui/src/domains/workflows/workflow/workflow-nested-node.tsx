@@ -1,7 +1,7 @@
 import { Handle, Position } from '@xyflow/react';
 import type { NodeProps, Node } from '@xyflow/react';
 import { CircleDashed, HourglassIcon, Loader2, PauseIcon } from 'lucide-react';
-import { SerializedStepFlowEntry } from '@actus-ag/mastra-core/workflows';
+import { SerializedStepFlowEntry } from '@mastra/cli/cli/cli/core/workflows';
 
 import { cn } from '@/lib/utils';
 import { useContext } from 'react';

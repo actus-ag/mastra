@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@mastra/evals': link:../../../packages/evals
+  '@mastra/cli/cli/cli/evals': link:../../../packages/evals
 
 importers:
 
@@ -14,7 +14,7 @@ importers:
       '@ai-sdk/openai':
         specifier: latest
         version: 1.3.17(zod@3.24.3)
-      '@mastra/evals':
+      '@mastra/cli/cli/cli/evals':
         specifier: link:../../../packages/evals
         version: link:../../../packages/evals
     devDependencies:

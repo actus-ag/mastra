@@ -1314,7 +1314,7 @@ if (process.env.ENABLE_TESTS === 'true') {
 //   });
 
 //   describe('Schema Support', () => {
-//     const customSchema = 'mastraTest';
+//     const customSchema = '@mastraTest';
 //     let customSchemaStore: MSSQLStore;
 
 //     beforeAll(async () => {
@@ -2114,7 +2114,7 @@ if (process.env.ENABLE_TESTS === 'true') {
 //   });
 
 //   describe('Permission Handling (MSSQL)', () => {
-//     const schemaRestrictedUser = 'mastra_schema_restricted_storage';
+//     const schemaRestrictedUser = '@mastra_schema_restricted_storage';
 //     const restrictedPassword = 'Test123!@#'; // MSSQL requires a strong password
 //     const testSchema = 'testSchema';
 //     const adminConfig = {

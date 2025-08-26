@@ -12,7 +12,7 @@ describe('mem0', () => {
     integration = new Mem0Integration({
       config: {
         apiKey: API_KEY,
-        user_id: `mastra-test-${new Date().toISOString()}`,
+        user_id: `@mastra-test-${new Date().toISOString()}`,
       },
     });
   });

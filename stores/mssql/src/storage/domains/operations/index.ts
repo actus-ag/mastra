@@ -1,7 +1,7 @@
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import { StoreOperations, TABLE_WORKFLOW_SNAPSHOT } from '@actus-ag/mastra-core/storage';
-import type { StorageColumn, TABLE_NAMES } from '@actus-ag/mastra-core/storage';
-import { parseSqlIdentifier } from '@actus-ag/mastra-core/utils';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import { StoreOperations, TABLE_WORKFLOW_SNAPSHOT } from '@mastra/core/storage';
+import type { StorageColumn, TABLE_NAMES } from '@mastra/core/storage';
+import { parseSqlIdentifier } from '@mastra/core/utils';
 import sql from 'mssql';
 import { getSchemaName, getTableName } from '../utils';
 
@@ -237,7 +237,7 @@ export class StoreOperationsMSSQL extends StoreOperations {
       }
 
       if (tableName === TABLE_WORKFLOW_SNAPSHOT) {
-        const constraintName = 'mastra_workflow_snapshot_workflow_name_run_id_key';
+        const constraintName = '@mastra_workflow_snapshot_workflow_name_run_id_key';
         const checkConstraintSql = `SELECT 1 AS found FROM sys.key_constraints WHERE name = @constraintName`;
         const checkConstraintRequest = this.pool.request();
         checkConstraintRequest.input('constraintName', constraintName);

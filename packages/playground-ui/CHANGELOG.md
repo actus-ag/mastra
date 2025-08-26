@@ -1,4 +1,4 @@
-# @actus-ag/mastra-playground-ui
+# @mastra/playground-ui
 
 ## 5.2.0
 
@@ -35,8 +35,8 @@
 - Updated dependencies [c30bca8]
 - Updated dependencies [3b5fec7]
 - Updated dependencies [a8f129d]
-  - @actus-ag/mastra-core@0.14.0
-  - @actus-ag/mastra-client-js@0.10.22
+  - @mastra/core@0.14.0
+  - @mastra-client-js@0.10.22
 
 ## 5.2.0-alpha.6
 
@@ -46,8 +46,8 @@
 
 ### Patch Changes
 
-- @actus-ag/mastra-core@0.14.0-alpha.7
-- @actus-ag/mastra-client-js@0.10.22-alpha.7
+- @mastra/core@0.14.0-alpha.7
+- @mastra-client-js@0.10.22-alpha.7
 
 ## 5.1.21-alpha.5
 
@@ -57,8 +57,8 @@
 - Updated dependencies [ad888a2]
 - Updated dependencies [481751d]
 - Updated dependencies [194e395]
-  - @actus-ag/mastra-core@0.14.0-alpha.6
-  - @actus-ag/mastra-client-js@0.10.22-alpha.6
+  - @mastra/core@0.14.0-alpha.6
+  - @mastra-client-js@0.10.22-alpha.6
 
 ## 5.1.21-alpha.4
 
@@ -89,8 +89,8 @@
 - Updated dependencies [7cb3fc0]
 - Updated dependencies [195eabb]
 - Updated dependencies [b78b95b]
-  - @actus-ag/mastra-core@0.14.0-alpha.4
-  - @actus-ag/mastra-client-js@0.10.22-alpha.4
+  - @mastra/core@0.14.0-alpha.4
+  - @mastra-client-js@0.10.22-alpha.4
 
 ## 5.1.21-alpha.2
 
@@ -100,8 +100,8 @@
 - Updated dependencies [227c7e6]
 - Updated dependencies [fd3a3eb]
 - Updated dependencies [a8f129d]
-  - @actus-ag/mastra-core@0.14.0-alpha.3
-  - @actus-ag/mastra-client-js@0.10.22-alpha.3
+  - @mastra/core@0.14.0-alpha.3
+  - @mastra-client-js@0.10.22-alpha.3
 
 ## 5.1.21-alpha.1
 
@@ -115,16 +115,16 @@
 - Updated dependencies [cf4f357]
 - Updated dependencies [a722c0b]
 - Updated dependencies [3b5fec7]
-  - @actus-ag/mastra-core@0.14.0-alpha.1
-  - @actus-ag/mastra-client-js@0.10.22-alpha.1
+  - @mastra/core@0.14.0-alpha.1
+  - @mastra-client-js@0.10.22-alpha.1
 
 ## 5.1.21-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [c30bca8]
-  - @actus-ag/mastra-core@0.13.3-alpha.0
-  - @actus-ag/mastra-client-js@0.10.22-alpha.0
+  - @mastra/core@0.13.3-alpha.0
+  - @mastra-client-js@0.10.22-alpha.0
 
 ## 5.1.20
 
@@ -148,8 +148,8 @@
 - Updated dependencies [121a3f8]
 - Updated dependencies [ce04175]
 - Updated dependencies [ec510e7]
-  - @actus-ag/mastra-core@0.13.2
-  - @actus-ag/mastra-client-js@0.10.21
+  - @mastra/core@0.13.2
+  - @mastra-client-js@0.10.21
 
 ## 5.1.20-alpha.1
 
@@ -165,8 +165,8 @@
 - Updated dependencies [121a3f8]
 - Updated dependencies [ce04175]
 - Updated dependencies [ec510e7]
-  - @actus-ag/mastra-core@0.13.2-alpha.2
-  - @actus-ag/mastra-client-js@0.10.21-alpha.2
+  - @mastra/core@0.13.2-alpha.2
+  - @mastra-client-js@0.10.21-alpha.2
 
 ## 5.1.20-alpha.0
 
@@ -177,24 +177,24 @@
 - Updated dependencies [dd94a26]
 - Updated dependencies [3ba6772]
 - Updated dependencies [2fff911]
-  - @actus-ag/mastra-core@0.13.2-alpha.0
-  - @actus-ag/mastra-client-js@0.10.21-alpha.0
+  - @mastra/core@0.13.2-alpha.0
+  - @mastra-client-js@0.10.21-alpha.0
 
 ## 5.1.19
 
 ### Patch Changes
 
 - Updated dependencies [cd0042e]
-  - @actus-ag/mastra-core@0.13.1
-  - @actus-ag/mastra-client-js@0.10.20
+  - @mastra/core@0.13.1
+  - @mastra-client-js@0.10.20
 
 ## 5.1.19-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [cd0042e]
-  - @actus-ag/mastra-core@0.13.1-alpha.0
-  - @actus-ag/mastra-client-js@0.10.20-alpha.0
+  - @mastra/core@0.13.1-alpha.0
+  - @mastra-client-js@0.10.20-alpha.0
 
 ## 5.1.18
 
@@ -219,8 +219,8 @@
 - Updated dependencies [5d377e5]
 - Updated dependencies [1fb812e]
 - Updated dependencies [35c5798]
-  - @actus-ag/mastra-core@0.13.0
-  - @actus-ag/mastra-client-js@0.10.19
+  - @mastra/core@0.13.0
+  - @mastra-client-js@0.10.19
 
 ## 5.1.18-alpha.3
 
@@ -241,8 +241,8 @@
 - Updated dependencies [42dfc48]
 - Updated dependencies [4a406ec]
 - Updated dependencies [5d377e5]
-  - @actus-ag/mastra-core@0.13.0-alpha.2
-  - @actus-ag/mastra-client-js@0.10.19-alpha.2
+  - @mastra/core@0.13.0-alpha.2
+  - @mastra-client-js@0.10.19-alpha.2
 
 ## 5.1.18-alpha.1
 
@@ -253,8 +253,8 @@
 - Updated dependencies [b0e43c1]
 - Updated dependencies [1fb812e]
 - Updated dependencies [35c5798]
-  - @actus-ag/mastra-core@0.13.0-alpha.1
-  - @actus-ag/mastra-client-js@0.10.19-alpha.1
+  - @mastra/core@0.13.0-alpha.1
+  - @mastra-client-js@0.10.19-alpha.1
 
 ## 5.1.18-alpha.0
 
@@ -263,8 +263,8 @@
 - Updated dependencies [94f4812]
 - Updated dependencies [e202b82]
 - Updated dependencies [e00f6a0]
-  - @actus-ag/mastra-core@0.12.2-alpha.0
-  - @actus-ag/mastra-client-js@0.10.19-alpha.0
+  - @mastra/core@0.12.2-alpha.0
+  - @mastra-client-js@0.10.19-alpha.0
 
 ## 5.1.17
 
@@ -280,8 +280,8 @@
 - Updated dependencies [d30b1a0]
 - Updated dependencies [bff87f7]
 - Updated dependencies [b4a8df0]
-  - @actus-ag/mastra-client-js@0.10.18
-  - @actus-ag/mastra-core@0.12.1
+  - @mastra-client-js@0.10.18
+  - @mastra/core@0.12.1
 
 ## 5.1.17-alpha.0
 
@@ -296,8 +296,8 @@
 - Updated dependencies [d30b1a0]
 - Updated dependencies [bff87f7]
 - Updated dependencies [b4a8df0]
-  - @actus-ag/mastra-client-js@0.10.18-alpha.0
-  - @actus-ag/mastra-core@0.12.1-alpha.0
+  - @mastra-client-js@0.10.18-alpha.0
+  - @mastra/core@0.12.1-alpha.0
 
 ## 5.1.16
 
@@ -337,16 +337,16 @@
 - Updated dependencies [b8efbb9]
 - Updated dependencies [71466e7]
 - Updated dependencies [0c99fbe]
-  - @actus-ag/mastra-core@0.12.0
-  - @actus-ag/mastra-client-js@0.10.17
+  - @mastra/core@0.12.0
+  - @mastra-client-js@0.10.17
 
 ## 5.1.16-alpha.2
 
 ### Patch Changes
 
 - f42c4c2: update peer deps for packages to latest core range
-  - @actus-ag/mastra-core@0.12.0-alpha.5
-  - @actus-ag/mastra-client-js@0.10.17-alpha.5
+  - @mastra/core@0.12.0-alpha.5
+  - @mastra-client-js@0.10.17-alpha.5
 
 ## 5.1.16-alpha.1
 
@@ -356,8 +356,8 @@
 - Updated dependencies [e0f73c6]
 - Updated dependencies [cda801d]
 - Updated dependencies [a77c823]
-  - @actus-ag/mastra-core@0.12.0-alpha.1
-  - @actus-ag/mastra-client-js@0.10.17-alpha.1
+  - @mastra/core@0.12.0-alpha.1
+  - @mastra-client-js@0.10.17-alpha.1
 
 ## 5.1.16-alpha.0
 
@@ -379,16 +379,16 @@
 - Updated dependencies [23a6a7c]
 - Updated dependencies [09bca64]
 - Updated dependencies [b641ba3]
-  - @actus-ag/mastra-core@0.12.0-alpha.0
-  - @actus-ag/mastra-client-js@0.10.17-alpha.0
+  - @mastra/core@0.12.0-alpha.0
+  - @mastra-client-js@0.10.17-alpha.0
 
 ## 5.1.15
 
 ### Patch Changes
 
 - ce088f5: Update all peerdeps to latest core
-  - @actus-ag/mastra-core@0.11.1
-  - @actus-ag/mastra-client-js@0.10.16
+  - @mastra/core@0.11.1
+  - @mastra-client-js@0.10.16
 
 ## 5.1.14
 
@@ -433,8 +433,8 @@
 - Updated dependencies [80c2b06]
 - Updated dependencies [7ba91fa]
 - Updated dependencies [6f6e651]
-  - @actus-ag/mastra-client-js@0.10.15
-  - @actus-ag/mastra-core@0.11.0
+  - @mastra-client-js@0.10.15
+  - @mastra/core@0.11.0
 
 ## 5.1.14-alpha.3
 
@@ -474,8 +474,8 @@
 - Updated dependencies [80c2b06]
 - Updated dependencies [7ba91fa]
 - Updated dependencies [6f6e651]
-  - @actus-ag/mastra-client-js@0.10.15-alpha.2
-  - @actus-ag/mastra-core@0.11.0-alpha.2
+  - @mastra-client-js@0.10.15-alpha.2
+  - @mastra/core@0.11.0-alpha.2
 
 ## 5.1.14-alpha.1
 
@@ -485,8 +485,8 @@
 - 59f0dcd: Add light background color for step statuses
 - cf8d497: factorize tabs component between cloud and core
 - 80692d5: refactor: sharing only the UI and not data fetching for traces
-  - @actus-ag/mastra-core@0.11.0-alpha.1
-  - @actus-ag/mastra-client-js@0.10.15-alpha.1
+  - @mastra/core@0.11.0-alpha.1
+  - @mastra-client-js@0.10.15-alpha.1
 
 ## 5.1.14-alpha.0
 
@@ -498,8 +498,8 @@
 - Updated dependencies [7827943]
 - Updated dependencies [bf1e7e7]
 - Updated dependencies [cbddd18]
-  - @actus-ag/mastra-client-js@0.10.15-alpha.0
-  - @actus-ag/mastra-core@0.11.0-alpha.0
+  - @mastra-client-js@0.10.15-alpha.0
+  - @mastra/core@0.11.0-alpha.0
 
 ## 5.1.13
 
@@ -537,8 +537,8 @@
 - Updated dependencies [c22a91f]
 - Updated dependencies [f7403ab]
 - Updated dependencies [6c89d7f]
-  - @actus-ag/mastra-client-js@0.10.14
-  - @actus-ag/mastra-core@0.10.15
+  - @mastra-client-js@0.10.14
+  - @mastra/core@0.10.15
 
 ## 5.1.13-alpha.2
 
@@ -560,8 +560,8 @@
 - Updated dependencies [c3a30de]
 - Updated dependencies [cf3a184]
 - Updated dependencies [d6bfd60]
-  - @actus-ag/mastra-core@0.10.15-alpha.1
-  - @actus-ag/mastra-client-js@0.10.14-alpha.1
+  - @mastra/core@0.10.15-alpha.1
+  - @mastra-client-js@0.10.14-alpha.1
 
 ## 5.1.13-alpha.0
 
@@ -588,8 +588,8 @@
 - Updated dependencies [c22a91f]
 - Updated dependencies [f7403ab]
 - Updated dependencies [6c89d7f]
-  - @actus-ag/mastra-client-js@0.10.14-alpha.0
-  - @actus-ag/mastra-core@0.10.15-alpha.0
+  - @mastra-client-js@0.10.14-alpha.0
+  - @mastra/core@0.10.15-alpha.0
 
 ## 5.1.12
 
@@ -600,8 +600,8 @@
 - Updated dependencies [b4a9811]
 - Updated dependencies [4d5583d]
 - Updated dependencies [44731a4]
-  - @actus-ag/mastra-client-js@0.10.11
-  - @actus-ag/mastra-core@0.10.12
+  - @mastra-client-js@0.10.11
+  - @mastra/core@0.10.12
 
 ## 5.1.12-alpha.0
 
@@ -611,8 +611,8 @@
 - Updated dependencies [9468be4]
 - Updated dependencies [b4a9811]
 - Updated dependencies [44731a4]
-  - @actus-ag/mastra-client-js@0.10.11-alpha.0
-  - @actus-ag/mastra-core@0.10.12-alpha.0
+  - @mastra-client-js@0.10.11-alpha.0
+  - @mastra/core@0.10.12-alpha.0
 
 ## 5.1.11
 
@@ -647,16 +647,16 @@
 - Updated dependencies [cb16baf]
 - Updated dependencies [f36e4f1]
 - Updated dependencies [7f6e403]
-  - @actus-ag/mastra-core@0.10.11
-  - @actus-ag/mastra-client-js@0.10.10
+  - @mastra/core@0.10.11
+  - @mastra-client-js@0.10.10
 
 ## 5.1.11-alpha.4
 
 ### Patch Changes
 
 - c1cceea: Bump peerdeps of @matra/core
-  - @actus-ag/mastra-core@0.10.11-alpha.4
-  - @actus-ag/mastra-client-js@0.10.10-alpha.4
+  - @mastra/core@0.10.11-alpha.4
+  - @mastra-client-js@0.10.10-alpha.4
 
 ## 5.1.11-alpha.3
 
@@ -669,8 +669,8 @@
 - Updated dependencies [132027f]
 - Updated dependencies [0c85311]
 - Updated dependencies [cb16baf]
-  - @actus-ag/mastra-core@0.10.11-alpha.3
-  - @actus-ag/mastra-client-js@0.10.10-alpha.3
+  - @mastra/core@0.10.11-alpha.3
+  - @mastra-client-js@0.10.10-alpha.3
 
 ## 5.1.11-alpha.2
 
@@ -689,8 +689,8 @@
 - Updated dependencies [1c1c6a1]
 - Updated dependencies [565cc0c]
 - Updated dependencies [18da791]
-  - @actus-ag/mastra-core@0.10.11-alpha.2
-  - @actus-ag/mastra-client-js@0.10.10-alpha.2
+  - @mastra/core@0.10.11-alpha.2
+  - @mastra-client-js@0.10.10-alpha.2
 
 ## 5.1.11-alpha.1
 
@@ -698,8 +698,8 @@
 
 - a7a836a: Highlight send event button
 - Updated dependencies [7f6e403]
-  - @actus-ag/mastra-core@0.10.11-alpha.1
-  - @actus-ag/mastra-client-js@0.10.10-alpha.1
+  - @mastra/core@0.10.11-alpha.1
+  - @mastra-client-js@0.10.10-alpha.1
 
 ## 5.1.11-alpha.0
 
@@ -711,8 +711,8 @@
 - Updated dependencies [b790fd1]
 - Updated dependencies [d7ed04d]
 - Updated dependencies [f36e4f1]
-  - @actus-ag/mastra-core@0.10.11-alpha.0
-  - @actus-ag/mastra-client-js@0.10.10-alpha.0
+  - @mastra/core@0.10.11-alpha.0
+  - @mastra-client-js@0.10.10-alpha.0
 
 ## 5.1.10
 
@@ -723,8 +723,8 @@
 - Updated dependencies [b60f510]
 - Updated dependencies [6997af1]
 - Updated dependencies [4d3fbdf]
-  - @actus-ag/mastra-client-js@0.10.9
-  - @actus-ag/mastra-core@0.10.10
+  - @mastra-client-js@0.10.9
+  - @mastra/core@0.10.10
 
 ## 5.1.10-alpha.1
 
@@ -733,8 +733,8 @@
 - 6997af1: add send event to server, deployer, client-js and playground-ui
 - Updated dependencies [b60f510]
 - Updated dependencies [6997af1]
-  - @actus-ag/mastra-client-js@0.10.9-alpha.1
-  - @actus-ag/mastra-core@0.10.10-alpha.1
+  - @mastra-client-js@0.10.9-alpha.1
+  - @mastra/core@0.10.10-alpha.1
 
 ## 5.1.10-alpha.0
 
@@ -742,8 +742,8 @@
 
 - 45f0dba: Display too-call finish reason error in playground
 - Updated dependencies [4d3fbdf]
-  - @actus-ag/mastra-core@0.10.10-alpha.0
-  - @actus-ag/mastra-client-js@0.10.9-alpha.0
+  - @mastra/core@0.10.10-alpha.0
+  - @mastra-client-js@0.10.9-alpha.0
 
 ## 5.1.9
 
@@ -777,8 +777,8 @@
 - Updated dependencies [7e801dd]
 - Updated dependencies [b7852ed]
 - Updated dependencies [6320a61]
-  - @actus-ag/mastra-core@0.10.9
-  - @actus-ag/mastra-client-js@0.10.8
+  - @mastra/core@0.10.9
+  - @mastra-client-js@0.10.8
 
 ## 5.1.9-alpha.0
 
@@ -812,8 +812,8 @@
 - Updated dependencies [7e801dd]
 - Updated dependencies [b7852ed]
 - Updated dependencies [6320a61]
-  - @actus-ag/mastra-core@0.10.9-alpha.0
-  - @actus-ag/mastra-client-js@0.10.8-alpha.0
+  - @mastra/core@0.10.9-alpha.0
+  - @mastra-client-js@0.10.8-alpha.0
 
 ## 5.1.8
 
@@ -824,8 +824,8 @@
 - Updated dependencies [3e04487]
 - Updated dependencies [a344ac7]
 - Updated dependencies [dc4ca0a]
-  - @actus-ag/mastra-core@0.10.8
-  - @actus-ag/mastra-client-js@0.10.7
+  - @mastra/core@0.10.8
+  - @mastra-client-js@0.10.7
 
 ## 5.1.8-alpha.1
 
@@ -834,8 +834,8 @@
 - Updated dependencies [b8f16b2]
 - Updated dependencies [3e04487]
 - Updated dependencies [dc4ca0a]
-  - @actus-ag/mastra-core@0.10.8-alpha.1
-  - @actus-ag/mastra-client-js@0.10.7-alpha.1
+  - @mastra/core@0.10.8-alpha.1
+  - @mastra-client-js@0.10.7-alpha.1
 
 ## 5.1.8-alpha.0
 
@@ -843,8 +843,8 @@
 
 - a344ac7: Fix tool streaming in agent network
 - Updated dependencies [a344ac7]
-  - @actus-ag/mastra-client-js@0.10.7-alpha.0
-  - @actus-ag/mastra-core@0.10.8-alpha.0
+  - @mastra-client-js@0.10.7-alpha.0
+  - @mastra/core@0.10.8-alpha.0
 
 ## 5.1.7
 
@@ -884,15 +884,15 @@
 - Updated dependencies [4efcfa0]
 - Updated dependencies [c0d41f6]
 - Updated dependencies [0e17048]
-  - @actus-ag/mastra-client-js@0.10.6
-  - @actus-ag/mastra-core@0.10.7
+  - @mastra-client-js@0.10.6
+  - @mastra/core@0.10.7
 
 ## 5.1.7-alpha.7
 
 ### Patch Changes
 
 - Updated dependencies [c0d41f6]
-  - @actus-ag/mastra-client-js@0.10.6-alpha.6
+  - @mastra-client-js@0.10.6-alpha.6
 
 ## 5.1.7-alpha.6
 
@@ -902,8 +902,8 @@
   - Updated dependency [`@codemirror/lang-json@^6.0.2` ↗︎](https://www.npmjs.com/package/@codemirror/lang-json/v/6.0.2) (from `^6.0.1`, in `dependencies`)
 - 5af21a8: fix: remove final output on workflows for now
 - Updated dependencies [bee3fe4]
-  - @actus-ag/mastra-client-js@0.10.6-alpha.5
-  - @actus-ag/mastra-core@0.10.7-alpha.5
+  - @mastra-client-js@0.10.6-alpha.5
+  - @mastra/core@0.10.7-alpha.5
 
 ## 5.1.7-alpha.5
 
@@ -917,8 +917,8 @@
 ### Patch Changes
 
 - Updated dependencies [a8b194f]
-  - @actus-ag/mastra-core@0.10.7-alpha.4
-  - @actus-ag/mastra-client-js@0.10.6-alpha.4
+  - @mastra/core@0.10.7-alpha.4
+  - @mastra-client-js@0.10.6-alpha.4
 
 ## 5.1.7-alpha.3
 
@@ -928,8 +928,8 @@
 - Updated dependencies [792c4c0]
 - Updated dependencies [502fe05]
 - Updated dependencies [4efcfa0]
-  - @actus-ag/mastra-client-js@0.10.6-alpha.3
-  - @actus-ag/mastra-core@0.10.7-alpha.3
+  - @mastra-client-js@0.10.6-alpha.3
+  - @mastra/core@0.10.7-alpha.3
 
 ## 5.1.7-alpha.2
 
@@ -946,8 +946,8 @@
 - Updated dependencies [5d74aab]
 - Updated dependencies [5d74aab]
 - Updated dependencies [144eb0b]
-  - @actus-ag/mastra-client-js@0.10.6-alpha.2
-  - @actus-ag/mastra-core@0.10.7-alpha.2
+  - @mastra-client-js@0.10.6-alpha.2
+  - @mastra/core@0.10.7-alpha.2
 
 ## 5.1.7-alpha.1
 
@@ -960,8 +960,8 @@
 - Updated dependencies [4fb0cc2]
 - Updated dependencies [d2a7a31]
 - Updated dependencies [0e17048]
-  - @actus-ag/mastra-core@0.10.7-alpha.1
-  - @actus-ag/mastra-client-js@0.10.6-alpha.1
+  - @mastra/core@0.10.7-alpha.1
+  - @mastra-client-js@0.10.6-alpha.1
 
 ## 5.1.7-alpha.0
 
@@ -971,8 +971,8 @@
 - Updated dependencies [d8f2d19]
 - Updated dependencies [9d52b17]
 - Updated dependencies [8ba1b51]
-  - @actus-ag/mastra-core@0.10.7-alpha.0
-  - @actus-ag/mastra-client-js@0.10.6-alpha.0
+  - @mastra/core@0.10.7-alpha.0
+  - @mastra-client-js@0.10.6-alpha.0
 
 ## 5.1.6
 
@@ -1034,8 +1034,8 @@
 - Updated dependencies [751c894]
 - Updated dependencies [577ce3a]
 - Updated dependencies [9260b3a]
-  - @actus-ag/mastra-client-js@0.10.5
-  - @actus-ag/mastra-core@0.10.6
+  - @mastra-client-js@0.10.5
+  - @mastra/core@0.10.6
 
 ## 5.1.6-alpha.5
 
@@ -1045,16 +1045,16 @@
 - Updated dependencies [12a95fc]
 - Updated dependencies [51264a5]
 - Updated dependencies [8e6f677]
-  - @actus-ag/mastra-core@0.10.6-alpha.5
-  - @actus-ag/mastra-client-js@0.10.5-alpha.5
+  - @mastra/core@0.10.6-alpha.5
+  - @mastra-client-js@0.10.5-alpha.5
 
 ## 5.1.6-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [9589624]
-  - @actus-ag/mastra-core@0.10.6-alpha.4
-  - @actus-ag/mastra-client-js@0.10.5-alpha.4
+  - @mastra/core@0.10.6-alpha.4
+  - @mastra-client-js@0.10.5-alpha.4
 
 ## 5.1.6-alpha.3
 
@@ -1062,16 +1062,16 @@
 
 - Updated dependencies [d70c420]
 - Updated dependencies [2a16996]
-  - @actus-ag/mastra-core@0.10.6-alpha.3
-  - @actus-ag/mastra-client-js@0.10.5-alpha.3
+  - @mastra/core@0.10.6-alpha.3
+  - @mastra-client-js@0.10.5-alpha.3
 
 ## 5.1.6-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [4b0f8a6]
-  - @actus-ag/mastra-core@0.10.6-alpha.2
-  - @actus-ag/mastra-client-js@0.10.5-alpha.2
+  - @mastra/core@0.10.6-alpha.2
+  - @mastra-client-js@0.10.5-alpha.2
 
 ## 5.1.6-alpha.1
 
@@ -1083,8 +1083,8 @@
 - Updated dependencies [751c894]
 - Updated dependencies [577ce3a]
 - Updated dependencies [9260b3a]
-  - @actus-ag/mastra-client-js@0.10.5-alpha.1
-  - @actus-ag/mastra-core@0.10.6-alpha.1
+  - @mastra-client-js@0.10.5-alpha.1
+  - @mastra/core@0.10.6-alpha.1
 
 ## 5.1.6-alpha.0
 
@@ -1132,8 +1132,8 @@
 - Updated dependencies [36f1c36]
 - Updated dependencies [10d352e]
 - Updated dependencies [53d3c37]
-  - @actus-ag/mastra-client-js@0.10.5-alpha.0
-  - @actus-ag/mastra-core@0.10.6-alpha.0
+  - @mastra-client-js@0.10.5-alpha.0
+  - @mastra/core@0.10.6-alpha.0
 
 ## 5.1.5
 
@@ -1141,8 +1141,8 @@
 
 - 13c97f9: Save run status, result and error in storage snapshot
 - Updated dependencies [13c97f9]
-  - @actus-ag/mastra-core@0.10.5
-  - @actus-ag/mastra-client-js@0.10.4
+  - @mastra/core@0.10.5
+  - @mastra-client-js@0.10.4
 
 ## 5.1.4
 
@@ -1173,8 +1173,8 @@
 - Updated dependencies [67d21b5]
 - Updated dependencies [f7f8293]
 - Updated dependencies [48eddb9]
-  - @actus-ag/mastra-client-js@0.10.3
-  - @actus-ag/mastra-core@0.10.4
+  - @mastra-client-js@0.10.3
+  - @mastra/core@0.10.4
 
 ## 5.1.4-alpha.5
 
@@ -1187,16 +1187,16 @@
 ### Patch Changes
 
 - Updated dependencies [925ab94]
-  - @actus-ag/mastra-core@0.10.4-alpha.3
-  - @actus-ag/mastra-client-js@0.10.3-alpha.3
+  - @mastra/core@0.10.4-alpha.3
+  - @mastra-client-js@0.10.3-alpha.3
 
 ## 5.1.4-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [48eddb9]
-  - @actus-ag/mastra-core@0.10.4-alpha.2
-  - @actus-ag/mastra-client-js@0.10.3-alpha.2
+  - @mastra/core@0.10.4-alpha.2
+  - @mastra-client-js@0.10.3-alpha.2
 
 ## 5.1.4-alpha.2
 
@@ -1218,8 +1218,8 @@
 - Updated dependencies [dffb67b]
 - Updated dependencies [f1309d3]
 - Updated dependencies [f7f8293]
-  - @actus-ag/mastra-client-js@0.10.3-alpha.1
-  - @actus-ag/mastra-core@0.10.4-alpha.1
+  - @mastra-client-js@0.10.3-alpha.1
+  - @mastra/core@0.10.4-alpha.1
 
 ## 5.1.4-alpha.0
 
@@ -1236,8 +1236,8 @@
 - Updated dependencies [ce97900]
 - Updated dependencies [14a2566]
 - Updated dependencies [67d21b5]
-  - @actus-ag/mastra-core@0.10.4-alpha.0
-  - @actus-ag/mastra-client-js@0.10.3-alpha.0
+  - @mastra/core@0.10.4-alpha.0
+  - @mastra-client-js@0.10.3-alpha.0
 
 ## 5.1.3
 
@@ -1262,7 +1262,7 @@
 - 9faee5b: small fixes in the workflows graph
 - 4b23936: fix: typos
 - 631683f: move workflow runs list in playground-ui instead of playground
-- 068b850: fix: able to pass headers to playground components which are using the mastra client
+- 068b850: fix: able to pass headers to playground components which are using the @mastra client
 - f0d559f: Fix peerdeps for alpha channel
 - f6ddf55: fix traces not showing and reduce API surface from playground ui
 - 9a31c09: Highlight steps in nested workflows on workflow graph
@@ -1285,8 +1285,8 @@
 - Updated dependencies [12b7002]
 - Updated dependencies [f0d559f]
 - Updated dependencies [2901125]
-  - @actus-ag/mastra-core@0.10.2
-  - @actus-ag/mastra-client-js@0.10.2
+  - @mastra/core@0.10.2
+  - @mastra-client-js@0.10.2
 
 ## 5.1.2-alpha.7
 
@@ -1295,8 +1295,8 @@
 - Updated dependencies [37643b8]
 - Updated dependencies [b72c768]
 - Updated dependencies [79d5145]
-  - @actus-ag/mastra-core@0.10.2-alpha.8
-  - @actus-ag/mastra-client-js@0.10.2-alpha.3
+  - @mastra/core@0.10.2-alpha.8
+  - @mastra-client-js@0.10.2-alpha.3
 
 ## 5.1.2-alpha.6
 
@@ -1306,7 +1306,7 @@
 - 631683f: move workflow runs list in playground-ui instead of playground
 - Updated dependencies [99fd6cf]
 - Updated dependencies [8dc94d8]
-  - @actus-ag/mastra-core@0.10.2-alpha.6
+  - @mastra/core@0.10.2-alpha.6
 
 ## 5.1.2-alpha.5
 
@@ -1316,7 +1316,7 @@
 - Updated dependencies [1b5fc55]
 - Updated dependencies [add596e]
 - Updated dependencies [ecebbeb]
-  - @actus-ag/mastra-core@0.10.2-alpha.5
+  - @mastra/core@0.10.2-alpha.5
 
 ## 5.1.2-alpha.4
 
@@ -1331,18 +1331,18 @@
 
 - Updated dependencies [c5bf1ce]
 - Updated dependencies [12b7002]
-  - @actus-ag/mastra-client-js@0.10.2-alpha.2
-  - @actus-ag/mastra-core@0.10.2-alpha.4
+  - @mastra-client-js@0.10.2-alpha.2
+  - @mastra/core@0.10.2-alpha.4
 
 ## 5.1.2-alpha.2
 
 ### Patch Changes
 
-- 068b850: fix: able to pass headers to playground components which are using the mastra client
+- 068b850: fix: able to pass headers to playground components which are using the @mastra client
 - Updated dependencies [ab5adbe]
 - Updated dependencies [195c428]
 - Updated dependencies [f73e11b]
-  - @actus-ag/mastra-core@0.10.2-alpha.3
+  - @mastra/core@0.10.2-alpha.3
 
 ## 5.1.2-alpha.1
 
@@ -1352,8 +1352,8 @@
 - f6ddf55: fix traces not showing and reduce API surface from playground ui
 - Updated dependencies [1e8bb40]
 - Updated dependencies [f0d559f]
-  - @actus-ag/mastra-core@0.10.2-alpha.2
-  - @actus-ag/mastra-client-js@0.10.2-alpha.1
+  - @mastra/core@0.10.2-alpha.2
+  - @mastra-client-js@0.10.2-alpha.1
 
 ## 5.1.2-alpha.0
 
@@ -1364,8 +1364,8 @@
 - 9a31c09: Highlight steps in nested workflows on workflow graph
 - Updated dependencies [592a2db]
 - Updated dependencies [e5dc18d]
-  - @actus-ag/mastra-client-js@0.10.2-alpha.0
-  - @actus-ag/mastra-core@0.10.2-alpha.0
+  - @mastra-client-js@0.10.2-alpha.0
+  - @mastra/core@0.10.2-alpha.0
 
 ## 5.1.1
 
@@ -1392,8 +1392,8 @@
 - Updated dependencies [5c41100]
 - Updated dependencies [d6a759b]
 - Updated dependencies [6015bdf]
-  - @actus-ag/mastra-core@0.10.1
-  - @actus-ag/mastra-client-js@0.10.1
+  - @mastra/core@0.10.1
+  - @mastra-client-js@0.10.1
 
 ## 5.1.1-alpha.5
 
@@ -1403,7 +1403,7 @@
   Highlight borders for conditions too on workflow graph
   Fix watch stream
 - Updated dependencies [267773e]
-  - @actus-ag/mastra-client-js@0.10.1-alpha.3
+  - @mastra-client-js@0.10.1-alpha.3
 
 ## 5.1.1-alpha.4
 
@@ -1412,7 +1412,7 @@
 - 3c2dba5: add workflow run list
 - 33f1c64: revamp the experience for workflows
 - Updated dependencies [d70b807]
-  - @actus-ag/mastra-core@0.10.1-alpha.3
+  - @mastra/core@0.10.1-alpha.3
 
 ## 5.1.1-alpha.3
 
@@ -1420,8 +1420,8 @@
 
 - 6015bdf: Leverage defaultAgentStreamOption, defaultAgentGenerateOption in playground
 - Updated dependencies [6015bdf]
-  - @actus-ag/mastra-client-js@0.10.1-alpha.2
-  - @actus-ag/mastra-core@0.10.1-alpha.2
+  - @mastra-client-js@0.10.1-alpha.2
+  - @mastra/core@0.10.1-alpha.2
 
 ## 5.1.1-alpha.2
 
@@ -1435,8 +1435,8 @@
 - Updated dependencies [38aee50]
 - Updated dependencies [5c41100]
 - Updated dependencies [d6a759b]
-  - @actus-ag/mastra-core@0.10.1-alpha.1
-  - @actus-ag/mastra-client-js@0.10.1-alpha.1
+  - @mastra/core@0.10.1-alpha.1
+  - @mastra-client-js@0.10.1-alpha.1
 
 ## 5.1.1-alpha.1
 
@@ -1451,14 +1451,14 @@
 - Updated dependencies [6d16390]
 - Updated dependencies [1e4a421]
 - Updated dependencies [f622cfa]
-  - @actus-ag/mastra-core@0.10.1-alpha.0
-  - @actus-ag/mastra-client-js@0.10.1-alpha.0
+  - @mastra/core@0.10.1-alpha.0
+  - @mastra-client-js@0.10.1-alpha.0
 
 ## 5.1.0
 
 ### Minor Changes
 
-- 83da932: Move @actus-ag/mastra-core to peerdeps
+- 83da932: Move @mastra/core to peerdeps
 
 ### Patch Changes
 
@@ -1495,14 +1495,14 @@
 - Updated dependencies [0dcb9f0]
 - Updated dependencies [5063646]
 - Updated dependencies [2672a05]
-  - @actus-ag/mastra-client-js@0.10.0
-  - @actus-ag/mastra-core@0.10.0
+  - @mastra-client-js@0.10.0
+  - @mastra/core@0.10.0
 
 ## 5.1.0-alpha.1
 
 ### Minor Changes
 
-- 83da932: Move @actus-ag/mastra-core to peerdeps
+- 83da932: Move @mastra/core to peerdeps
 
 ### Patch Changes
 
@@ -1525,8 +1525,8 @@
 - Updated dependencies [a7292b0]
 - Updated dependencies [0dcb9f0]
 - Updated dependencies [5063646]
-  - @actus-ag/mastra-client-js@0.2.0-alpha.1
-  - @actus-ag/mastra-core@0.10.0-alpha.1
+  - @mastra-client-js@0.2.0-alpha.1
+  - @mastra/core@0.10.0-alpha.1
 
 ## 5.0.5-alpha.0
 
@@ -1546,8 +1546,8 @@
 - Updated dependencies [fddae56]
 - Updated dependencies [23f258c]
 - Updated dependencies [2672a05]
-  - @actus-ag/mastra-client-js@0.1.23-alpha.0
-  - @actus-ag/mastra-core@0.9.5-alpha.0
+  - @mastra-client-js@0.1.23-alpha.0
+  - @mastra/core@0.9.5-alpha.0
 
 ## 5.0.4
 
@@ -1574,8 +1574,8 @@
 - Updated dependencies [6fa1ad1]
 - Updated dependencies [c28d7a0]
 - Updated dependencies [edf1e88]
-  - @actus-ag/mastra-core@0.9.4
-  - @actus-ag/mastra-client-js@0.1.22
+  - @mastra/core@0.9.4
+  - @mastra-client-js@0.1.22
 
 ## 5.0.4-alpha.4
 
@@ -1583,8 +1583,8 @@
 
 - Updated dependencies [5c70b8a]
 - Updated dependencies [3e9c131]
-  - @actus-ag/mastra-client-js@0.1.22-alpha.4
-  - @actus-ag/mastra-core@0.9.4-alpha.4
+  - @mastra-client-js@0.1.22-alpha.4
+  - @mastra/core@0.9.4-alpha.4
 
 ## 5.0.4-alpha.3
 
@@ -1596,8 +1596,8 @@
 - Updated dependencies [da082f8]
 - Updated dependencies [0c3d117]
 - Updated dependencies [a5810ce]
-  - @actus-ag/mastra-core@0.9.4-alpha.3
-  - @actus-ag/mastra-client-js@0.1.22-alpha.3
+  - @mastra/core@0.9.4-alpha.3
+  - @mastra-client-js@0.1.22-alpha.3
 
 ## 5.0.4-alpha.2
 
@@ -1608,8 +1608,8 @@
 - Updated dependencies [c2b980b]
 - Updated dependencies [973e5ac]
 - Updated dependencies [9e1eff5]
-  - @actus-ag/mastra-client-js@0.1.22-alpha.2
-  - @actus-ag/mastra-core@0.9.4-alpha.2
+  - @mastra-client-js@0.1.22-alpha.2
+  - @mastra/core@0.9.4-alpha.2
 
 ## 5.0.4-alpha.1
 
@@ -1619,8 +1619,8 @@
 - Updated dependencies [6fa1ad1]
 - Updated dependencies [c28d7a0]
 - Updated dependencies [edf1e88]
-  - @actus-ag/mastra-core@0.9.4-alpha.1
-  - @actus-ag/mastra-client-js@0.1.22-alpha.1
+  - @mastra/core@0.9.4-alpha.1
+  - @mastra-client-js@0.1.22-alpha.1
 
 ## 5.0.4-alpha.0
 
@@ -1630,8 +1630,8 @@
 - Updated dependencies [cb1f698]
 - Updated dependencies [daf942f]
 - Updated dependencies [0b8b868]
-  - @actus-ag/mastra-client-js@0.1.22-alpha.0
-  - @actus-ag/mastra-core@0.9.4-alpha.0
+  - @mastra-client-js@0.1.22-alpha.0
+  - @mastra/core@0.9.4-alpha.0
 
 ## 5.0.3
 
@@ -1652,8 +1652,8 @@
 - Updated dependencies [62c9e7d]
 - Updated dependencies [644f8ad]
 - Updated dependencies [70dbf51]
-  - @actus-ag/mastra-core@0.9.3
-  - @actus-ag/mastra-client-js@0.1.21
+  - @mastra/core@0.9.3
+  - @mastra-client-js@0.1.21
 
 ## 5.0.3-alpha.1
 
@@ -1667,8 +1667,8 @@
 - Updated dependencies [9cd1a46]
 - Updated dependencies [62c9e7d]
 - Updated dependencies [70dbf51]
-  - @actus-ag/mastra-core@0.9.3-alpha.1
-  - @actus-ag/mastra-client-js@0.1.21-alpha.1
+  - @mastra/core@0.9.3-alpha.1
+  - @mastra-client-js@0.1.21-alpha.1
 
 ## 5.0.3-alpha.0
 
@@ -1680,8 +1680,8 @@
 - Updated dependencies [526c570]
 - Updated dependencies [b5d2de0]
 - Updated dependencies [644f8ad]
-  - @actus-ag/mastra-client-js@0.1.21-alpha.0
-  - @actus-ag/mastra-core@0.9.3-alpha.0
+  - @mastra-client-js@0.1.21-alpha.0
+  - @mastra/core@0.9.3-alpha.0
 
 ## 5.0.2
 
@@ -1689,7 +1689,7 @@
 
 - 2cf3b8f: dependencies updates:
   - Updated dependency [`zod@^3.24.3` ↗︎](https://www.npmjs.com/package/zod/v/3.24.3) (from `^3.24.2`, in `dependencies`)
-- 144fa1b: lift up the traces fetching and allow to pass them down in the TracesTable. It allows passing down mastra client traces OR clickhouse traces
+- 144fa1b: lift up the traces fetching and allow to pass them down in the TracesTable. It allows passing down @mastra client traces OR clickhouse traces
 - 33b84fd: fix showing sig digits in trace / span duration
 - 26738f4: Switched from a custom MCP tools schema deserializer to json-schema-to-zod - fixes an issue where MCP tool schemas didn't deserialize properly in Mastra playground. Also added support for testing tools with no input arguments in playground
 - 0097d50: Add serializedStepGraph to vNext workflow
@@ -1719,21 +1719,21 @@
 - Updated dependencies [3a5f1e1]
 - Updated dependencies [51e6923]
 - Updated dependencies [8398d89]
-  - @actus-ag/mastra-client-js@0.1.20
-  - @actus-ag/mastra-core@0.9.2
+  - @mastra-client-js@0.1.20
+  - @mastra/core@0.9.2
 
 ## 5.0.2-alpha.6
 
 ### Patch Changes
 
-- 144fa1b: lift up the traces fetching and allow to pass them down in the TracesTable. It allows passing down mastra client traces OR clickhouse traces
+- 144fa1b: lift up the traces fetching and allow to pass them down in the TracesTable. It allows passing down @mastra client traces OR clickhouse traces
 - Updated dependencies [6052aa6]
 - Updated dependencies [7d8b7c7]
 - Updated dependencies [2e4f8e9]
 - Updated dependencies [3a5f1e1]
 - Updated dependencies [8398d89]
-  - @actus-ag/mastra-core@0.9.2-alpha.6
-  - @actus-ag/mastra-client-js@0.1.20-alpha.6
+  - @mastra/core@0.9.2-alpha.6
+  - @mastra-client-js@0.1.20-alpha.6
 
 ## 5.0.2-alpha.5
 
@@ -1745,8 +1745,8 @@
 - Updated dependencies [8607972]
 - Updated dependencies [7eeb2bc]
 - Updated dependencies [fba031f]
-  - @actus-ag/mastra-core@0.9.2-alpha.5
-  - @actus-ag/mastra-client-js@0.1.20-alpha.5
+  - @mastra/core@0.9.2-alpha.5
+  - @mastra-client-js@0.1.20-alpha.5
 
 ## 5.0.2-alpha.4
 
@@ -1755,8 +1755,8 @@
 - 5b43dd0: revamp ui for threads
 - Updated dependencies [ccef9f9]
 - Updated dependencies [51e6923]
-  - @actus-ag/mastra-core@0.9.2-alpha.4
-  - @actus-ag/mastra-client-js@0.1.20-alpha.4
+  - @mastra/core@0.9.2-alpha.4
+  - @mastra-client-js@0.1.20-alpha.4
 
 ## 5.0.2-alpha.3
 
@@ -1767,8 +1767,8 @@
 - Updated dependencies [967b41c]
 - Updated dependencies [4155f47]
 - Updated dependencies [17826a9]
-  - @actus-ag/mastra-core@0.9.2-alpha.3
-  - @actus-ag/mastra-client-js@0.1.20-alpha.3
+  - @mastra/core@0.9.2-alpha.3
+  - @mastra-client-js@0.1.20-alpha.3
 
 ## 5.0.2-alpha.2
 
@@ -1776,8 +1776,8 @@
 
 - 26738f4: Switched from a custom MCP tools schema deserializer to json-schema-to-zod - fixes an issue where MCP tool schemas didn't deserialize properly in Mastra playground. Also added support for testing tools with no input arguments in playground
 - Updated dependencies [26738f4]
-  - @actus-ag/mastra-core@0.9.2-alpha.2
-  - @actus-ag/mastra-client-js@0.1.20-alpha.2
+  - @mastra/core@0.9.2-alpha.2
+  - @mastra-client-js@0.1.20-alpha.2
 
 ## 5.0.2-alpha.1
 
@@ -1786,8 +1786,8 @@
 - Updated dependencies [254f5c3]
 - Updated dependencies [b804723]
 - Updated dependencies [2429c74]
-  - @actus-ag/mastra-client-js@0.1.20-alpha.1
-  - @actus-ag/mastra-core@0.9.2-alpha.1
+  - @mastra-client-js@0.1.20-alpha.1
+  - @mastra/core@0.9.2-alpha.1
 
 ## 5.0.2-alpha.0
 
@@ -1797,8 +1797,8 @@
   Return serializedStepGraph from vNext workflow
   Use serializedStepGraph in vNext workflow graph
 - Updated dependencies [0097d50]
-  - @actus-ag/mastra-client-js@0.1.20-alpha.0
-  - @actus-ag/mastra-core@0.9.2-alpha.0
+  - @mastra-client-js@0.1.20-alpha.0
+  - @mastra/core@0.9.2-alpha.0
 
 ## 5.0.1
 
@@ -1815,7 +1815,7 @@
   Show running status for step in vNext workflowState
 - ca665d3: fix the ui for smaller screen regarding traces
 - 57b25ed: Use resumeSchema to show inputs on the playground for suspended workflows
-- f1d4b7a: Add x-mastra-dev-playground header to all playground requests
+- f1d4b7a: Add x-@mastra-dev-playground header to all playground requests
 - 5a66ced: add click on trace row
 - Updated dependencies [405b63d]
 - Updated dependencies [81fb7f6]
@@ -1836,8 +1836,8 @@
 - Updated dependencies [2d4001d]
 - Updated dependencies [c71013a]
 - Updated dependencies [1d3b1cd]
-  - @actus-ag/mastra-core@0.9.1
-  - @actus-ag/mastra-client-js@0.1.19
+  - @mastra/core@0.9.1
+  - @mastra-client-js@0.1.19
 
 ## 5.0.1-alpha.9
 
@@ -1850,32 +1850,32 @@
 ### Patch Changes
 
 - Updated dependencies [2d17c73]
-  - @actus-ag/mastra-core@0.9.1-alpha.8
-  - @actus-ag/mastra-client-js@0.1.19-alpha.8
+  - @mastra/core@0.9.1-alpha.8
+  - @mastra-client-js@0.1.19-alpha.8
 
 ## 5.0.1-alpha.7
 
 ### Patch Changes
 
 - Updated dependencies [1d3b1cd]
-  - @actus-ag/mastra-core@0.9.1-alpha.7
-  - @actus-ag/mastra-client-js@0.1.19-alpha.7
+  - @mastra/core@0.9.1-alpha.7
+  - @mastra-client-js@0.1.19-alpha.7
 
 ## 5.0.1-alpha.6
 
 ### Patch Changes
 
 - Updated dependencies [c23a81c]
-  - @actus-ag/mastra-core@0.9.1-alpha.6
-  - @actus-ag/mastra-client-js@0.1.19-alpha.6
+  - @mastra/core@0.9.1-alpha.6
+  - @mastra-client-js@0.1.19-alpha.6
 
 ## 5.0.1-alpha.5
 
 ### Patch Changes
 
 - Updated dependencies [3e7b69d]
-  - @actus-ag/mastra-core@0.9.1-alpha.5
-  - @actus-ag/mastra-client-js@0.1.19-alpha.5
+  - @mastra/core@0.9.1-alpha.5
+  - @mastra-client-js@0.1.19-alpha.5
 
 ## 5.0.1-alpha.4
 
@@ -1885,8 +1885,8 @@
 - 5a66ced: add click on trace row
 - Updated dependencies [e4943b8]
 - Updated dependencies [479f490]
-  - @actus-ag/mastra-core@0.9.1-alpha.4
-  - @actus-ag/mastra-client-js@0.1.19-alpha.4
+  - @mastra/core@0.9.1-alpha.4
+  - @mastra-client-js@0.1.19-alpha.4
 
 ## 5.0.1-alpha.3
 
@@ -1896,8 +1896,8 @@
 - 0c3c4f4: Playground routing model settings for AgentNetworks
 - 1700eca: fixing overflow on agent traces
 - Updated dependencies [6262bd5]
-  - @actus-ag/mastra-core@0.9.1-alpha.3
-  - @actus-ag/mastra-client-js@0.1.19-alpha.3
+  - @mastra/core@0.9.1-alpha.3
+  - @mastra-client-js@0.1.19-alpha.3
 
 ## 5.0.1-alpha.2
 
@@ -1906,12 +1906,12 @@
 - 70124e1: revamp the ui for traces
 - 926821d: Fix triggerSchema default not showing in workflow ui
 - 57b25ed: Use resumeSchema to show inputs on the playground for suspended workflows
-- f1d4b7a: Add x-mastra-dev-playground header to all playground requests
+- f1d4b7a: Add x-@mastra-dev-playground header to all playground requests
 - Updated dependencies [405b63d]
 - Updated dependencies [61e92f5]
 - Updated dependencies [c71013a]
-  - @actus-ag/mastra-core@0.9.1-alpha.2
-  - @actus-ag/mastra-client-js@0.1.19-alpha.2
+  - @mastra/core@0.9.1-alpha.2
+  - @mastra-client-js@0.1.19-alpha.2
 
 ## 5.0.1-alpha.1
 
@@ -1928,16 +1928,16 @@
 - Updated dependencies [b50b9b7]
 - Updated dependencies [11d4485]
 - Updated dependencies [2d4001d]
-  - @actus-ag/mastra-core@0.9.1-alpha.1
-  - @actus-ag/mastra-client-js@0.1.19-alpha.1
+  - @mastra/core@0.9.1-alpha.1
+  - @mastra-client-js@0.1.19-alpha.1
 
 ## 5.0.1-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [81fb7f6]
-  - @actus-ag/mastra-core@0.9.1-alpha.0
-  - @actus-ag/mastra-client-js@0.1.19-alpha.0
+  - @mastra/core@0.9.1-alpha.0
+  - @mastra-client-js@0.1.19-alpha.0
 
 ## 5.0.0
 
@@ -1961,8 +1961,8 @@
 - Updated dependencies [0f4eae3]
 - Updated dependencies [16a8648]
 - Updated dependencies [6f92295]
-  - @actus-ag/mastra-core@0.9.0
-  - @actus-ag/mastra-client-js@0.1.18
+  - @mastra/core@0.9.0
+  - @mastra-client-js@0.1.18
 
 ## 5.0.0-alpha.8
 
@@ -1977,56 +1977,56 @@
 - Updated dependencies [9c26508]
 - Updated dependencies [0f4eae3]
 - Updated dependencies [16a8648]
-  - @actus-ag/mastra-core@0.9.0-alpha.8
-  - @actus-ag/mastra-client-js@0.1.18-alpha.8
+  - @mastra/core@0.9.0-alpha.8
+  - @mastra-client-js@0.1.18-alpha.8
 
 ## 5.0.0-alpha.7
 
 ### Patch Changes
 
 - Updated dependencies [71d9444]
-  - @actus-ag/mastra-core@0.9.0-alpha.7
-  - @actus-ag/mastra-client-js@0.1.18-alpha.7
+  - @mastra/core@0.9.0-alpha.7
+  - @mastra-client-js@0.1.18-alpha.7
 
 ## 5.0.0-alpha.6
 
 ### Patch Changes
 
 - Updated dependencies [157c741]
-  - @actus-ag/mastra-core@0.9.0-alpha.6
-  - @actus-ag/mastra-client-js@0.1.18-alpha.6
+  - @mastra/core@0.9.0-alpha.6
+  - @mastra-client-js@0.1.18-alpha.6
 
 ## 5.0.0-alpha.5
 
 ### Patch Changes
 
 - Updated dependencies [08bb78e]
-  - @actus-ag/mastra-core@0.9.0-alpha.5
-  - @actus-ag/mastra-client-js@0.1.18-alpha.5
+  - @mastra/core@0.9.0-alpha.5
+  - @mastra-client-js@0.1.18-alpha.5
 
 ## 5.0.0-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [7e92011]
-  - @actus-ag/mastra-core@0.9.0-alpha.4
-  - @actus-ag/mastra-client-js@0.1.18-alpha.4
+  - @mastra/core@0.9.0-alpha.4
+  - @mastra-client-js@0.1.18-alpha.4
 
 ## 5.0.0-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [fe3ae4d]
-  - @actus-ag/mastra-core@0.9.0-alpha.3
-  - @actus-ag/mastra-client-js@0.1.18-alpha.3
+  - @mastra/core@0.9.0-alpha.3
+  - @mastra-client-js@0.1.18-alpha.3
 
 ## 4.0.5-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [9ee4293]
-  - @actus-ag/mastra-core@0.8.4-alpha.2
-  - @actus-ag/mastra-client-js@0.1.18-alpha.2
+  - @mastra/core@0.8.4-alpha.2
+  - @mastra-client-js@0.1.18-alpha.2
 
 ## 4.0.5-alpha.1
 
@@ -2034,16 +2034,16 @@
 
 - Updated dependencies [8a8a73b]
 - Updated dependencies [6f92295]
-  - @actus-ag/mastra-core@0.8.4-alpha.1
-  - @actus-ag/mastra-client-js@0.1.18-alpha.1
+  - @mastra/core@0.8.4-alpha.1
+  - @mastra-client-js@0.1.18-alpha.1
 
 ## 4.0.5-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [03f3cd0]
-  - @actus-ag/mastra-core@0.8.4-alpha.0
-  - @actus-ag/mastra-client-js@0.1.18-alpha.0
+  - @mastra/core@0.8.4-alpha.0
+  - @mastra-client-js@0.1.18-alpha.0
 
 ## 4.0.4
 
@@ -2065,8 +2065,8 @@
 - Updated dependencies [37bb612]
 - Updated dependencies [bc4acb3]
 - Updated dependencies [7f1b291]
-  - @actus-ag/mastra-core@0.8.3
-  - @actus-ag/mastra-client-js@0.1.17
+  - @mastra/core@0.8.3
+  - @mastra-client-js@0.1.17
 
 ## 4.0.4-alpha.6
 
@@ -2074,8 +2074,8 @@
 
 - d72318f: Refactored the evals table to use the DS tables
 - Updated dependencies [d72318f]
-  - @actus-ag/mastra-core@0.8.3-alpha.5
-  - @actus-ag/mastra-client-js@0.1.17-alpha.5
+  - @mastra/core@0.8.3-alpha.5
+  - @mastra-client-js@0.1.17-alpha.5
 
 ## 4.0.4-alpha.5
 
@@ -2090,24 +2090,24 @@
 - 1ebbfbf: Ability to toggle stream vs generate in playground
 - 9b47dfa: Fix dynamic form for suspended workflow in playground ui
 - Updated dependencies [7f1b291]
-  - @actus-ag/mastra-core@0.8.3-alpha.4
-  - @actus-ag/mastra-client-js@0.1.17-alpha.4
+  - @mastra/core@0.8.3-alpha.4
+  - @mastra-client-js@0.1.17-alpha.4
 
 ## 4.0.4-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [10a8caf]
-  - @actus-ag/mastra-core@0.8.3-alpha.3
-  - @actus-ag/mastra-client-js@0.1.17-alpha.3
+  - @mastra/core@0.8.3-alpha.3
+  - @mastra-client-js@0.1.17-alpha.3
 
 ## 4.0.4-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [0bcc862]
-  - @actus-ag/mastra-core@0.8.3-alpha.2
-  - @actus-ag/mastra-client-js@0.1.17-alpha.2
+  - @mastra/core@0.8.3-alpha.2
+  - @mastra-client-js@0.1.17-alpha.2
 
 ## 4.0.4-alpha.1
 
@@ -2120,16 +2120,16 @@
 - Updated dependencies [32e7b71]
 - Updated dependencies [37bb612]
 - Updated dependencies [bc4acb3]
-  - @actus-ag/mastra-core@0.8.3-alpha.1
-  - @actus-ag/mastra-client-js@0.1.17-alpha.1
+  - @mastra/core@0.8.3-alpha.1
+  - @mastra-client-js@0.1.17-alpha.1
 
 ## 4.0.4-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [359b089]
-  - @actus-ag/mastra-core@0.8.3-alpha.0
-  - @actus-ag/mastra-client-js@0.1.17-alpha.0
+  - @mastra/core@0.8.3-alpha.0
+  - @mastra-client-js@0.1.17-alpha.0
 
 ## 4.0.3
 
@@ -2138,8 +2138,8 @@
 - d3c372c: Show status UI of steps on playground workflow when workflow has no triggerSchema
   Show number of steps on workflows table
 - Updated dependencies [a06aadc]
-  - @actus-ag/mastra-core@0.8.2
-  - @actus-ag/mastra-client-js@0.1.16
+  - @mastra/core@0.8.2
+  - @mastra-client-js@0.1.16
 
 ## 4.0.3-alpha.0
 
@@ -2148,8 +2148,8 @@
 - d3c372c: Show status UI of steps on playground workflow when workflow has no triggerSchema
   Show number of steps on workflows table
 - Updated dependencies [a06aadc]
-  - @actus-ag/mastra-core@0.8.2-alpha.0
-  - @actus-ag/mastra-client-js@0.1.16-alpha.0
+  - @mastra/core@0.8.2-alpha.0
+  - @mastra-client-js@0.1.16-alpha.0
 
 ## 4.0.2
 
@@ -2158,8 +2158,8 @@
 - 99e2998: Set default max steps to 5
 - Updated dependencies [99e2998]
 - Updated dependencies [8fdb414]
-  - @actus-ag/mastra-core@0.8.1
-  - @actus-ag/mastra-client-js@0.1.15
+  - @mastra/core@0.8.1
+  - @mastra-client-js@0.1.15
 
 ## 4.0.2-alpha.0
 
@@ -2168,8 +2168,8 @@
 - 99e2998: Set default max steps to 5
 - Updated dependencies [99e2998]
 - Updated dependencies [8fdb414]
-  - @actus-ag/mastra-core@0.8.1-alpha.0
-  - @actus-ag/mastra-client-js@0.1.15-alpha.0
+  - @mastra/core@0.8.1-alpha.0
+  - @mastra-client-js@0.1.15-alpha.0
 
 ## 4.0.1
 
@@ -2232,8 +2232,8 @@
 - Updated dependencies [8076ecf]
 - Updated dependencies [8df4a77]
 - Updated dependencies [304397c]
-  - @actus-ag/mastra-core@0.8.0
-  - @actus-ag/mastra-client-js@0.1.14
+  - @mastra/core@0.8.0
+  - @mastra-client-js@0.1.14
 
 ## 4.0.0-alpha.9
 
@@ -2251,16 +2251,16 @@
 - Updated dependencies [055c4ea]
 - Updated dependencies [bffd64f]
 - Updated dependencies [8df4a77]
-  - @actus-ag/mastra-client-js@0.1.14-alpha.8
-  - @actus-ag/mastra-core@0.8.0-alpha.8
+  - @mastra-client-js@0.1.14-alpha.8
+  - @mastra/core@0.8.0-alpha.8
 
 ## 4.0.0-alpha.7
 
 ### Patch Changes
 
 - Updated dependencies [febc8a6]
-  - @actus-ag/mastra-core@0.8.0-alpha.7
-  - @actus-ag/mastra-client-js@0.1.14-alpha.7
+  - @mastra/core@0.8.0-alpha.7
+  - @mastra-client-js@0.1.14-alpha.7
 
 ## 4.0.0-alpha.6
 
@@ -2271,24 +2271,24 @@
 - d16ed18: Make playground-ui dynamic forms better
 - Updated dependencies [a3f0e90]
 - Updated dependencies [5646a01]
-  - @actus-ag/mastra-core@0.8.0-alpha.6
-  - @actus-ag/mastra-client-js@0.1.14-alpha.6
+  - @mastra/core@0.8.0-alpha.6
+  - @mastra-client-js@0.1.14-alpha.6
 
 ## 4.0.0-alpha.5
 
 ### Patch Changes
 
 - Updated dependencies [93875ed]
-  - @actus-ag/mastra-core@0.8.0-alpha.5
-  - @actus-ag/mastra-client-js@0.1.14-alpha.5
+  - @mastra/core@0.8.0-alpha.5
+  - @mastra-client-js@0.1.14-alpha.5
 
 ## 4.0.0-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [d7e08e8]
-  - @actus-ag/mastra-core@0.8.0-alpha.4
-  - @actus-ag/mastra-client-js@0.1.14-alpha.4
+  - @mastra/core@0.8.0-alpha.4
+  - @mastra-client-js@0.1.14-alpha.4
 
 ## 4.0.0-alpha.3
 
@@ -2307,8 +2307,8 @@
 - Updated dependencies [6330967]
 - Updated dependencies [8393832]
 - Updated dependencies [6330967]
-  - @actus-ag/mastra-core@0.8.0-alpha.3
-  - @actus-ag/mastra-client-js@0.1.14-alpha.3
+  - @mastra/core@0.8.0-alpha.3
+  - @mastra-client-js@0.1.14-alpha.3
 
 ## 4.0.0-alpha.2
 
@@ -2318,8 +2318,8 @@
 - Updated dependencies [dbbbf80]
 - Updated dependencies [84fe241]
 - Updated dependencies [99d43b9]
-  - @actus-ag/mastra-core@0.8.0-alpha.2
-  - @actus-ag/mastra-client-js@0.1.14-alpha.2
+  - @mastra/core@0.8.0-alpha.2
+  - @mastra-client-js@0.1.14-alpha.2
 
 ## 4.0.0-alpha.1
 
@@ -2331,8 +2331,8 @@
 - Updated dependencies [fca3b21]
 - Updated dependencies [0118361]
 - Updated dependencies [619c39d]
-  - @actus-ag/mastra-core@0.8.0-alpha.1
-  - @actus-ag/mastra-client-js@0.1.14-alpha.1
+  - @mastra/core@0.8.0-alpha.1
+  - @mastra-client-js@0.1.14-alpha.1
 
 ## 3.0.1-alpha.0
 
@@ -2345,8 +2345,8 @@
 - Updated dependencies [cafae83]
 - Updated dependencies [8076ecf]
 - Updated dependencies [304397c]
-  - @actus-ag/mastra-core@0.7.1-alpha.0
-  - @actus-ag/mastra-client-js@0.1.14-alpha.0
+  - @mastra/core@0.7.1-alpha.0
+  - @mastra-client-js@0.1.14-alpha.0
 
 ## 3.0.0
 
@@ -2370,8 +2370,8 @@
 - Updated dependencies [a4686e8]
 - Updated dependencies [6530ad1]
 - Updated dependencies [27439ad]
-  - @actus-ag/mastra-core@0.7.0
-  - @actus-ag/mastra-client-js@0.1.13
+  - @mastra/core@0.7.0
+  - @mastra-client-js@0.1.13
 
 ## 3.0.0-alpha.4
 
@@ -2387,8 +2387,8 @@
 - Updated dependencies [160f88e]
 - Updated dependencies [b3b34f5]
 - Updated dependencies [a4686e8]
-  - @actus-ag/mastra-client-js@0.1.13-alpha.3
-  - @actus-ag/mastra-core@0.7.0-alpha.3
+  - @mastra-client-js@0.1.13-alpha.3
+  - @mastra/core@0.7.0-alpha.3
 
 ## 3.0.0-alpha.2
 
@@ -2398,8 +2398,8 @@
 - Updated dependencies [a8bd4cf]
 - Updated dependencies [7a3eeb0]
 - Updated dependencies [6530ad1]
-  - @actus-ag/mastra-core@0.7.0-alpha.2
-  - @actus-ag/mastra-client-js@0.1.13-alpha.2
+  - @mastra/core@0.7.0-alpha.2
+  - @mastra-client-js@0.1.13-alpha.2
 
 ## 3.0.0-alpha.1
 
@@ -2411,8 +2411,8 @@
 - Updated dependencies [0b54522]
 - Updated dependencies [1af25d5]
 - Updated dependencies [27439ad]
-  - @actus-ag/mastra-core@0.7.0-alpha.1
-  - @actus-ag/mastra-client-js@0.1.13-alpha.1
+  - @mastra/core@0.7.0-alpha.1
+  - @mastra-client-js@0.1.13-alpha.1
 
 ## 2.0.5-alpha.0
 
@@ -2421,8 +2421,8 @@
 - Updated dependencies [b4fbc59]
 - Updated dependencies [0206617]
 - Updated dependencies [3811029]
-  - @actus-ag/mastra-core@0.6.5-alpha.0
-  - @actus-ag/mastra-client-js@0.1.13-alpha.0
+  - @mastra/core@0.6.5-alpha.0
+  - @mastra-client-js@0.1.13-alpha.0
 
 ## 2.0.4
 
@@ -2438,8 +2438,8 @@
 - Updated dependencies [05ef3e0]
 - Updated dependencies [b56a681]
 - Updated dependencies [248cb07]
-  - @actus-ag/mastra-core@0.6.4
-  - @actus-ag/mastra-client-js@0.1.12
+  - @mastra/core@0.6.4
+  - @mastra-client-js@0.1.12
 
 ## 2.0.4-alpha.1
 
@@ -2447,8 +2447,8 @@
 
 - 77e4c35: Pop a dialog showing the functional condition when a functional condition is clicked on workflow graph
 - Updated dependencies [6794797]
-  - @actus-ag/mastra-core@0.6.4-alpha.1
-  - @actus-ag/mastra-client-js@0.1.12-alpha.1
+  - @mastra/core@0.6.4-alpha.1
+  - @mastra-client-js@0.1.12-alpha.1
 
 ## 2.0.4-alpha.0
 
@@ -2462,8 +2462,8 @@
 - Updated dependencies [05ef3e0]
 - Updated dependencies [b56a681]
 - Updated dependencies [248cb07]
-  - @actus-ag/mastra-core@0.6.4-alpha.0
-  - @actus-ag/mastra-client-js@0.1.12-alpha.0
+  - @mastra/core@0.6.4-alpha.0
+  - @mastra-client-js@0.1.12-alpha.0
 
 ## 2.0.3
 
@@ -2472,16 +2472,16 @@
 - 404640e: AgentNetwork changeset
 - Updated dependencies [404640e]
 - Updated dependencies [3bce733]
-  - @actus-ag/mastra-client-js@0.1.11
-  - @actus-ag/mastra-core@0.6.3
+  - @mastra-client-js@0.1.11
+  - @mastra/core@0.6.3
 
 ## 2.0.3-alpha.1
 
 ### Patch Changes
 
 - Updated dependencies [3bce733]
-  - @actus-ag/mastra-core@0.6.3-alpha.1
-  - @actus-ag/mastra-client-js@0.1.11-alpha.1
+  - @mastra/core@0.6.3-alpha.1
+  - @mastra-client-js@0.1.11-alpha.1
 
 ## 2.0.3-alpha.0
 
@@ -2489,8 +2489,8 @@
 
 - 404640e: AgentNetwork changeset
 - Updated dependencies [404640e]
-  - @actus-ag/mastra-client-js@0.1.11-alpha.0
-  - @actus-ag/mastra-core@0.6.3-alpha.0
+  - @mastra-client-js@0.1.11-alpha.0
+  - @mastra/core@0.6.3-alpha.0
 
 ## 2.0.2
 
@@ -2498,8 +2498,8 @@
 
 - Updated dependencies [beaf1c2]
 - Updated dependencies [3084e13]
-  - @actus-ag/mastra-core@0.6.2
-  - @actus-ag/mastra-client-js@0.1.10
+  - @mastra/core@0.6.2
+  - @mastra-client-js@0.1.10
 
 ## 2.0.2-alpha.0
 
@@ -2507,8 +2507,8 @@
 
 - Updated dependencies [beaf1c2]
 - Updated dependencies [3084e13]
-  - @actus-ag/mastra-core@0.6.2-alpha.0
-  - @actus-ag/mastra-client-js@0.1.10-alpha.0
+  - @mastra/core@0.6.2-alpha.0
+  - @mastra-client-js@0.1.10-alpha.0
 
 ## 2.0.1
 
@@ -2531,8 +2531,8 @@
 - Updated dependencies [9116d70]
 - Updated dependencies [6e559a0]
 - Updated dependencies [5f43505]
-  - @actus-ag/mastra-core@0.6.1
-  - @actus-ag/mastra-client-js@0.1.9
+  - @mastra/core@0.6.1
+  - @mastra-client-js@0.1.9
 
 ## 2.0.1-alpha.2
 
@@ -2546,8 +2546,8 @@
 - Updated dependencies [dfbb131]
 - Updated dependencies [0850b4c]
 - Updated dependencies [9116d70]
-  - @actus-ag/mastra-core@0.6.1-alpha.2
-  - @actus-ag/mastra-client-js@0.1.9-alpha.2
+  - @mastra/core@0.6.1-alpha.2
+  - @mastra-client-js@0.1.9-alpha.2
 
 ## 2.0.1-alpha.1
 
@@ -2561,16 +2561,16 @@
 - Updated dependencies [44631b1]
 - Updated dependencies [6e559a0]
 - Updated dependencies [5f43505]
-  - @actus-ag/mastra-core@0.6.1-alpha.1
-  - @actus-ag/mastra-client-js@0.1.9-alpha.1
+  - @mastra/core@0.6.1-alpha.1
+  - @mastra-client-js@0.1.9-alpha.1
 
 ## 2.0.1-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [7bcfaee]
-  - @actus-ag/mastra-core@0.6.1-alpha.0
-  - @actus-ag/mastra-client-js@0.1.9-alpha.0
+  - @mastra/core@0.6.1-alpha.0
+  - @mastra-client-js@0.1.9-alpha.0
 
 ## 2.0.0
 
@@ -2581,8 +2581,8 @@
 - Updated dependencies [95b4144]
 - Updated dependencies [3729dbd]
 - Updated dependencies [c2144f4]
-  - @actus-ag/mastra-core@0.6.0
-  - @actus-ag/mastra-client-js@0.1.8
+  - @mastra/core@0.6.0
+  - @mastra-client-js@0.1.8
 
 ## 2.0.0-alpha.1
 
@@ -2592,16 +2592,16 @@
 - Updated dependencies [1c8cda4]
 - Updated dependencies [95b4144]
 - Updated dependencies [c2144f4]
-  - @actus-ag/mastra-core@0.6.0-alpha.1
-  - @actus-ag/mastra-client-js@0.1.8-alpha.1
+  - @mastra/core@0.6.0-alpha.1
+  - @mastra-client-js@0.1.8-alpha.1
 
 ## 1.0.1-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [3729dbd]
-  - @actus-ag/mastra-core@0.5.1-alpha.0
-  - @actus-ag/mastra-client-js@0.1.8-alpha.0
+  - @mastra/core@0.5.1-alpha.0
+  - @mastra-client-js@0.1.8-alpha.0
 
 ## 1.0.0
 
@@ -2653,8 +2653,8 @@
 - Updated dependencies [358f069]
 - Updated dependencies [fd4a1d7]
 - Updated dependencies [c139344]
-  - @actus-ag/mastra-core@0.5.0
-  - @actus-ag/mastra-client-js@0.1.7
+  - @mastra/core@0.5.0
+  - @mastra-client-js@0.1.7
 
 ## 1.0.0-alpha.12
 
@@ -2662,8 +2662,8 @@
 
 - 07a7470: Move WorkflowTrigger to playground-ui package and use in dev playground
 - Updated dependencies [a85ab24]
-  - @actus-ag/mastra-core@0.5.0-alpha.12
-  - @actus-ag/mastra-client-js@0.1.7-alpha.12
+  - @mastra/core@0.5.0-alpha.12
+  - @mastra-client-js@0.1.7-alpha.12
 
 ## 1.0.0-alpha.11
 
@@ -2677,16 +2677,16 @@
 - Updated dependencies [8deb34c]
 - Updated dependencies [a171b37]
 - Updated dependencies [fd4a1d7]
-  - @actus-ag/mastra-core@0.5.0-alpha.11
-  - @actus-ag/mastra-client-js@0.1.7-alpha.11
+  - @mastra/core@0.5.0-alpha.11
+  - @mastra-client-js@0.1.7-alpha.11
 
 ## 1.0.0-alpha.10
 
 ### Patch Changes
 
 - Updated dependencies [a910463]
-  - @actus-ag/mastra-core@0.5.0-alpha.10
-  - @actus-ag/mastra-client-js@0.1.7-alpha.10
+  - @mastra/core@0.5.0-alpha.10
+  - @mastra-client-js@0.1.7-alpha.10
 
 ## 1.0.0-alpha.9
 
@@ -2696,32 +2696,32 @@
 - Updated dependencies [1e8bcbc]
 - Updated dependencies [aeb5e36]
 - Updated dependencies [f2301de]
-  - @actus-ag/mastra-core@0.5.0-alpha.9
-  - @actus-ag/mastra-client-js@0.1.7-alpha.9
+  - @mastra/core@0.5.0-alpha.9
+  - @mastra-client-js@0.1.7-alpha.9
 
 ## 1.0.0-alpha.8
 
 ### Patch Changes
 
 - Updated dependencies [506f1d5]
-  - @actus-ag/mastra-core@0.5.0-alpha.8
-  - @actus-ag/mastra-client-js@0.1.7-alpha.8
+  - @mastra/core@0.5.0-alpha.8
+  - @mastra-client-js@0.1.7-alpha.8
 
 ## 1.0.0-alpha.7
 
 ### Patch Changes
 
 - Updated dependencies [ee667a2]
-  - @actus-ag/mastra-core@0.5.0-alpha.7
-  - @actus-ag/mastra-client-js@0.1.7-alpha.7
+  - @mastra/core@0.5.0-alpha.7
+  - @mastra-client-js@0.1.7-alpha.7
 
 ## 1.0.0-alpha.6
 
 ### Patch Changes
 
 - Updated dependencies [f6678e4]
-  - @actus-ag/mastra-core@0.5.0-alpha.6
-  - @actus-ag/mastra-client-js@0.1.7-alpha.6
+  - @mastra/core@0.5.0-alpha.6
+  - @mastra-client-js@0.1.7-alpha.6
 
 ## 1.0.0-alpha.5
 
@@ -2742,8 +2742,8 @@
 - Updated dependencies [0461849]
 - Updated dependencies [2259379]
 - Updated dependencies [358f069]
-  - @actus-ag/mastra-core@0.5.0-alpha.5
-  - @actus-ag/mastra-client-js@0.1.7-alpha.5
+  - @mastra/core@0.5.0-alpha.5
+  - @mastra-client-js@0.1.7-alpha.5
 
 ## 1.0.0-alpha.4
 
@@ -2753,24 +2753,24 @@
 - 144b3d5: Update traces table UI, agent Chat UI
   Fix get workflows breaking
 - Updated dependencies [d79aedf]
-  - @actus-ag/mastra-core@0.5.0-alpha.4
-  - @actus-ag/mastra-client-js@0.1.7-alpha.4
+  - @mastra/core@0.5.0-alpha.4
+  - @mastra-client-js@0.1.7-alpha.4
 
 ## 1.0.0-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [3d0e290]
-  - @actus-ag/mastra-core@0.5.0-alpha.3
-  - @actus-ag/mastra-client-js@0.1.7-alpha.3
+  - @mastra/core@0.5.0-alpha.3
+  - @mastra-client-js@0.1.7-alpha.3
 
 ## 1.0.0-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [02ffb7b]
-  - @actus-ag/mastra-core@0.5.0-alpha.2
-  - @actus-ag/mastra-client-js@0.1.7-alpha.2
+  - @mastra/core@0.5.0-alpha.2
+  - @mastra-client-js@0.1.7-alpha.2
 
 ## 1.0.0-alpha.1
 
@@ -2778,8 +2778,8 @@
 
 - e5149bb: Fix playground-ui agent-evals tab-content
 - Updated dependencies [dab255b]
-  - @actus-ag/mastra-core@0.5.0-alpha.1
-  - @actus-ag/mastra-client-js@0.1.7-alpha.1
+  - @mastra/core@0.5.0-alpha.1
+  - @mastra-client-js@0.1.7-alpha.1
 
 ## 1.0.0-alpha.0
 
@@ -2790,24 +2790,24 @@
 - Updated dependencies [960690d]
 - Updated dependencies [59df7b6]
 - Updated dependencies [c139344]
-  - @actus-ag/mastra-core@0.5.0-alpha.0
-  - @actus-ag/mastra-client-js@0.1.7-alpha.0
+  - @mastra/core@0.5.0-alpha.0
+  - @mastra-client-js@0.1.7-alpha.0
 
 ## 0.0.2
 
 ### Patch Changes
 
 - Updated dependencies [1da20e7]
-  - @actus-ag/mastra-core@0.4.4
-  - @actus-ag/mastra-client-js@0.1.6
+  - @mastra/core@0.4.4
+  - @mastra-client-js@0.1.6
 
 ## 0.0.2-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [1da20e7]
-  - @actus-ag/mastra-core@0.4.4-alpha.0
-  - @actus-ag/mastra-client-js@0.1.6-alpha.0
+  - @mastra/core@0.4.4-alpha.0
+  - @mastra-client-js@0.1.6-alpha.0
 
 ## 0.0.1
 
@@ -2832,16 +2832,16 @@
 - Updated dependencies [108793c]
 - Updated dependencies [5f28f44]
 - Updated dependencies [dabecf4]
-  - @actus-ag/mastra-core@0.4.3
-  - @actus-ag/mastra-client-js@0.1.5
+  - @mastra/core@0.4.3
+  - @mastra-client-js@0.1.5
 
 ## 0.0.1-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [dabecf4]
-  - @actus-ag/mastra-core@0.4.3-alpha.4
-  - @actus-ag/mastra-client-js@0.1.5-alpha.4
+  - @mastra/core@0.4.3-alpha.4
+  - @mastra-client-js@0.1.5-alpha.4
 
 ## 0.0.1-alpha.2
 
@@ -2856,5 +2856,5 @@
 - Updated dependencies [7a64aff]
 - Updated dependencies [4d4e1e1]
 - Updated dependencies [bb4f447]
-  - @actus-ag/mastra-core@0.4.3-alpha.3
-  - @actus-ag/mastra-client-js@0.1.5-alpha.3
+  - @mastra/core@0.4.3-alpha.3
+  - @mastra-client-js@0.1.5-alpha.3

@@ -200,14 +200,14 @@ describe('makeCoreTool', () => {
   });
 
   it('should convert a Mastra tool correctly', async () => {
-    const mastraTool = createTool({
+    const @mastraTool = createTool({
       id: 'test',
       description: 'Test description',
       inputSchema: z.object({ name: z.string() }),
       execute: async () => ({ result: 'success' }),
     });
 
-    const coreTool = makeCoreTool(mastraTool, mockOptions);
+    const coreTool = makeCoreTool(@mastraTool, mockOptions);
 
     expect(coreTool.description).toBe('Test description');
     expect(coreTool.parameters).toBeDefined();
@@ -219,7 +219,7 @@ describe('makeCoreTool', () => {
   it('should handle tool execution errors correctly', async () => {
     const errorSpy = vi.spyOn(ConsoleLogger.prototype, 'error');
     const error = new Error('Test error');
-    const mastraTool = createTool({
+    const @mastraTool = createTool({
       id: 'test',
       description: 'Test description',
       inputSchema: z.object({ name: z.string() }),
@@ -228,7 +228,7 @@ describe('makeCoreTool', () => {
       },
     });
 
-    const coreTool = makeCoreTool(mastraTool, mockOptions);
+    const coreTool = makeCoreTool(@mastraTool, mockOptions);
     expect(coreTool.execute).toBeDefined();
 
     if (coreTool.execute) {

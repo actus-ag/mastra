@@ -5,7 +5,7 @@ export const traceEntity = new Entity({
   model: {
     entity: 'trace',
     version: '1',
-    service: 'mastra',
+    service: '@actus-ag/@mastra',
   },
   attributes: {
     entity: {

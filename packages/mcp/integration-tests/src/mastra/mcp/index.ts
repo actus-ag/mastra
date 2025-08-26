@@ -1,5 +1,5 @@
-import { createTool } from '@actus-ag/mastra-core/tools';
-import { MCPServer } from '@actus-ag/mastra-mcp';
+import { createTool } from '@mastra/core/tools';
+import { MCPServer } from '@mastra/mcp';
 import { z } from 'zod';
 
 export const myMcpServer = new MCPServer({

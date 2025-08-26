@@ -1,5 +1,5 @@
 {
-  "name": "@actus-ag/mastra-firecrawl",
+  "name": "@mastra/firecrawl",
   "version": "1.2.13",
   "description": "",
   "type": "module",
@@ -33,7 +33,7 @@
   "devDependencies": {
     "@internal/lint": "workspace:*",
     "@jest/globals": "^29.7.0",
-    "@actus-ag/mastra-core": "workspace:*",
+    "@mastra/core": "workspace:*",
     "@microsoft/api-extractor": "^7.52.8",
     "@rollup/plugin-image": "^3.0.3",
     "@types/jest": "^29.5.14",
@@ -41,7 +41,7 @@
     "@types/node": "^20.19.0",
     "eslint": "^9.30.1",
     "jest": "^29.7.0",
-    "ts-jest": "^29.3.4",
+    "ts-jest": "^29.4.1",
     "tsup": "^8.5.0",
     "typescript": "^5.8.3",
     "@internal/types-builder": "workspace:*"
@@ -51,11 +51,11 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@hey-api/client-fetch": "^0.3.4",
-    "@actus-ag/mastra-rag": "workspace:^",
+    "@mastra/rag": "workspace:^",
     "ts-to-zod": "^3.15.0",
     "zod": "^3.25.67"
   },
   "peerDependencies": {
-    "@actus-ag/mastra-core": ">=0.10.7-0 <0.15.0-0"
+    "@mastra/core": ">=0.10.7-0 <0.15.0-0"
   }
 }

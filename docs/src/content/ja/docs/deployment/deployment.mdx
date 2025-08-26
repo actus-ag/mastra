@@ -25,19 +25,19 @@ description: "プラットフォーム固有のデプロイヤーまたは標準
 - **[Cloudflare Workers](/reference/deployer/cloudflare)**
 - **[Vercel](/reference/deployer/vercel)**
 - **[Netlify](/reference/deployer/netlify)**
-- **[Mastra Cloud](/docs/mastra-cloud/overview)** _(ベータ)_。早期アクセスのために[クラウドウェイトリスト](https://mastra.ai/cloud-beta)に参加できます。
+- **[Mastra Cloud](/docs/@@mastra/cli/cli/cli-cloud/overview)** _(ベータ)_。早期アクセスのために[クラウドウェイトリスト](https://@@mastra/cli/cli/cli.ai/cloud-beta)に参加できます。
 
 ### デプロイヤーのインストール
 
 ```bash copy
 # For Cloudflare
-npm install @actus-ag/mastra-deployer-cloudflare@latest
+npm install @mastra/cli/cli/cli/deployer-cloudflare@latest
 
 # For Vercel
-npm install @actus-ag/mastra-deployer-vercel@latest
+npm install @mastra/cli/cli/cli/deployer-vercel@latest
 
 # For Netlify
-npm install @actus-ag/mastra-deployer-netlify@latest
+npm install @mastra/cli/cli/cli/deployer-netlify@latest
 ```
 
 ### デプロイヤーの設定
@@ -45,11 +45,11 @@ npm install @actus-ag/mastra-deployer-netlify@latest
 エントリーファイルでデプロイヤーを設定します：
 
 ```typescript copy showLineNumbers
-import { Mastra } from "@actus-ag/mastra-core";
-imoprt { ConsoleLogger } from "@actus-ag/mastra-core/logger";
-import { CloudflareDeployer } from "@actus-ag/mastra-deployer-cloudflare";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+imoprt { ConsoleLogger } from "@mastra/cli/cli/cli/core/logger";
+import { CloudflareDeployer } from "@mastra/cli/cli/cli/deployer-cloudflare";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   agents: {
     /* your agents here */
   },
@@ -121,8 +121,8 @@ new NetlifyDeployer({
 ターゲットプラットフォーム向けにMastraプロジェクトをビルドするには、次のコマンドを実行します：
 
 ```bash
-npx mastra build
+npx @actus-ag/@mastra/cli/cli build
 ```
 
 Deployerを使用すると、ビルド出力は自動的にターゲットプラットフォーム用に準備されます。
-その後、プラットフォーム（Vercel、netlify、cloudfare など）のCLI/UIを通じて、ビルド出力 `.mastra/output` をデプロイできます。
+その後、プラットフォーム（Vercel、netlify、cloudfare など）のCLI/UIを通じて、ビルド出力 `.@@mastra/cli/cli/cli/output` をデプロイできます。

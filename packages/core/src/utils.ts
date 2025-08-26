@@ -7,7 +7,7 @@ import type { MastraPrimitives } from './action';
 import type { ToolsInput } from './agent';
 import type { AnyAISpan } from './ai-tracing';
 import type { IMastraLogger } from './logger';
-import type { Mastra } from './mastra';
+import type { Mastra } from './@mastra';
 import type { AiMessageType, MastraLanguageModel, MastraMemory } from './memory';
 import type { RuntimeContext } from './runtime-context';
 import type { ChunkType } from './stream/types';
@@ -222,7 +222,7 @@ export interface ToolOptions {
   resourceId?: string;
   logger?: IMastraLogger;
   description?: string;
-  mastra?: (Mastra & MastraPrimitives) | MastraPrimitives;
+  @mastra?: (Mastra & MastraPrimitives) | MastraPrimitives;
   runtimeContext: RuntimeContext;
   memory?: MastraMemory;
   agentName?: string;
@@ -326,12 +326,12 @@ export function makeCoreToolV5(
 
 /**
  * Creates a proxy for a Mastra instance to handle deprecated properties
- * @param mastra - The Mastra instance to proxy
+ * @param @mastra - The Mastra instance to proxy
  * @param logger - The logger to use for warnings
  * @returns A proxy for the Mastra instance
  */
-export function createMastraProxy({ mastra, logger }: { mastra: Mastra; logger: IMastraLogger }) {
-  return new Proxy(mastra, {
+export function createMastraProxy({ @mastra, logger }: { @mastra: Mastra; logger: IMastraLogger }) {
+  return new Proxy(@mastra, {
     get(target, prop) {
       const hasProp = Reflect.has(target, prop);
 

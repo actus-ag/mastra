@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { LogLevel } from '@actus-ag/mastra-core/logger';
+import { LogLevel } from '@mastra/core/logger';
 import { describe, it, expect, beforeEach, vi, afterAll } from 'vitest';
 import { PinoLogger } from '../pino.js';
 

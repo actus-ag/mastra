@@ -10,10 +10,10 @@ NetlifyDeployerは、Mastraアプリケーションをネットリファイ・�
 ## 使用例
 
 ```typescript
-import { Mastra } from "@actus-ag/mastra-core";
-import { NetlifyDeployer } from "@actus-ag/mastra-deployer-netlify";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { NetlifyDeployer } from "@mastra/cli/cli/cli/deployer-netlify";
 
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   deployer: new NetlifyDeployer({
     scope: "your-team-slug",
     projectName: "your-project-name",
@@ -64,7 +64,7 @@ NetlifyDeployerは複数のソースから環境変数を扱います：
 Mastraプロジェクトをリントして、ビルドに問題がないことを確認します
 
 ```bash
-npx mastra lint
+npx @actus-ag/@mastra/cli/cli lint
 ```
 
 ## Mastraプロジェクトのビルド
@@ -72,13 +72,13 @@ npx mastra lint
 Netlifyへのデプロイ用にMastraプロジェクトをビルドするには、以下の手順を実行します。
 
 ```bash
-npx mastra build
+npx @actus-ag/@mastra/cli/cli build
 ```
 
-ビルドプロセスにより、`.mastra/output`ディレクトリに次のような出力構造が生成されます。
+ビルドプロセスにより、`.@@mastra/cli/cli/cli/output`ディレクトリに次のような出力構造が生成されます。
 
 ```
-.mastra/output/
+.@@mastra/cli/cli/cli/output/
 ├── netlify/
 │   └── functions/
 │       └── api/
@@ -88,7 +88,7 @@ npx mastra build
 
 ### Netlifyの設定
 
-NetlifyDeployerは、`.mastra/output`内に自動的に`netlify.toml`設定ファイルを次の内容で生成します。
+NetlifyDeployerは、`.@@mastra/cli/cli/cli/output`内に自動的に`netlify.toml`設定ファイルを次の内容で生成します。
 
 ```toml
 [functions]
@@ -104,12 +104,12 @@ to = "/.netlify/functions/api/:splat"
 
 ## デプロイメントオプション
 
-ビルド後、Mastraアプリケーションの `.mastra/output` をNetlifyに以下のいずれかの方法でデプロイできます：
+ビルド後、Mastraアプリケーションの `.@@mastra/cli/cli/cli/output` をNetlifyに以下のいずれかの方法でデプロイできます：
 
 1. **Netlify CLI**: Netlifyの公式CLIツールを使って直接デプロイ
 
    - CLIをインストール: `npm install -g netlify-cli`
-   - 出力ディレクトリに移動: `cd .mastra/output`
+   - 出力ディレクトリに移動: `cd .@@mastra/cli/cli/cli/output`
    - functionsディレクトリを指定してデプロイ: `netlify deploy --dir . --functions ./netlify/functions`
    - 本番環境にデプロイする場合は `--prod` フラグを追加: `netlify deploy --prod --dir . --functions ./netlify/functions`
 
@@ -117,7 +117,7 @@ to = "/.netlify/functions/api/:splat"
 
 3. **Netlify Dev**: Netlifyの開発環境でMastraアプリケーションをローカルで実行
 
-> 出力ディレクトリ `.mastra/output` で `netlify dev` を実行することで、Mastraアプリケーションをローカルでテストすることもできます。
+> 出力ディレクトリ `.@@mastra/cli/cli/cli/output` で `netlify dev` を実行することで、Mastraアプリケーションをローカルでテストすることもできます。
 
 ## プラットフォームドキュメント
 

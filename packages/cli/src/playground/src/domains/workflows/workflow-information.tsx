@@ -10,7 +10,7 @@ import {
   Tab,
   TabContent,
   EntityHeader,
-} from '@actus-ag/mastra-playground-ui';
+} from '@mastra/cli/cli/cli/playground-ui';
 
 import { WorkflowLogs } from './workflow-logs';
 import {
@@ -25,7 +25,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip
 
 import { CopyIcon } from 'lucide-react';
 import { useCopyToClipboard } from '@/hooks/use-copy-to-clipboard';
-import { WorkflowRuns } from '@actus-ag/mastra-playground-ui';
+import { WorkflowRuns } from '@mastra/cli/cli/cli/playground-ui';
 import { useNavigate, useParams } from 'react-router';
 import { useWorkflowRuns } from '@/pages/workflows/workflow/hooks/use-workflow-runs';
 

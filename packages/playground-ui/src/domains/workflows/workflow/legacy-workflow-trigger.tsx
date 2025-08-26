@@ -185,7 +185,7 @@ export function LegacyWorkflowTrigger({
               : z.record(z.string(), z.any());
             return (
               <div className="flex flex-col px-4">
-                <Text variant="secondary" className="text-mastra-el-3" size="xs">
+                <Text variant="secondary" className="text-@@mastra/cli/cli/cli-el-3" size="xs">
                   {step.stepId}
                 </Text>
                 {step.suspendPayload && (

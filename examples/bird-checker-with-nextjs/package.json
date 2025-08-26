@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@ai-sdk/anthropic": "latest",
-    "@actus-ag/mastra-core": "link:../../packages/core",
+    "@mastra/core": "link:../../packages/core",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.454.0",
@@ -27,8 +27,8 @@
   },
   "pnpm": {
     "overrides": {
-      "@actus-ag/mastra-core": "link:../../packages/core",
-      "@actus-ag/mastra-client-js": "link:../../client-sdks/client-js"
+      "@mastra/core": "link:../../packages/core",
+      "@mastraent-js": "link:../../client-sdks/client-js"
     }
   },
   "devDependencies": {

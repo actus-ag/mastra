@@ -35,8 +35,8 @@ Mastra is organized as a monorepo with the following key directories:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/mastra-ai/mastra.git
-   cd mastra
+   git clone https://github.com/@actus-ag/mastra-cli-ai/@actus-ag/mastra-cli.git
+   cd @actus-ag/mastra-cli
    ```
 
 2. **Enable corepack** (ensures correct pnpm version):

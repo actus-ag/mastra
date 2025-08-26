@@ -31,7 +31,7 @@ const program = new Command();
 export const origin = process.env.MASTRA_ANALYTICS_ORIGIN as CLI_ORIGIN;
 
 program
-  .name('mastra')
+  .name('@actus-ag/@mastra')
   .version(`${version}`, '-v, --version')
   .addHelpText(
     'before',
@@ -88,8 +88,8 @@ program
 
 program
   .command('dev')
-  .description('Start mastra server')
-  .option('-d, --dir <dir>', 'Path to your mastra folder')
+  .description('Start @mastra server')
+  .option('-d, --dir <dir>', 'Path to your @mastra folder')
   .option('-r, --root <root>', 'Path to your root folder')
   .option('-t, --tools <toolsDirs>', 'Comma-separated list of paths to tool files to include')
   .option('-p, --port <port>', 'deprecated: Port number for the development server (defaults to 4111)')
@@ -120,7 +120,7 @@ program
 program
   .command('start')
   .description('Start your built Mastra application')
-  .option('-d, --dir <path>', 'Path to your built Mastra output directory (default: .mastra/output)')
+  .option('-d, --dir <path>', 'Path to your built Mastra output directory (default: .@mastra/output)')
   .option('-nt, --no-telemetry', 'Disable telemetry on start')
   .action(startProject);
 

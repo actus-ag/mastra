@@ -1,17 +1,17 @@
 import { openai } from '@ai-sdk/openai';
 import { anthropic } from '@ai-sdk/anthropic';
-import { NewAgentNetwork } from '@actus-ag/mastra-core/network/vNext';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { createStep, createWorkflow } from '@actus-ag/mastra-core/workflows';
-import { LibSQLStore } from '@actus-ag/mastra-libsql';
-import { Memory } from '@actus-ag/mastra-memory';
+import { NewAgentNetwork } from '@mastra/core/network/vNext';
+import { Agent } from '@mastra/core/agent';
+import { createStep, createWorkflow } from '@mastra/core/workflows';
+import { LibSQLStore } from '@mastra/libsql';
+import { Memory } from '@mastra/memory';
 import { z } from 'zod';
 import { weatherAgent } from '../agents';
 import { weatherTool } from '../tools';
 
 const memory = new Memory({
   storage: new LibSQLStore({
-    url: 'file:../mastra.db', // Or your database URL
+    url: 'file:../@mastra.db', // Or your database URL
   }),
 });
 

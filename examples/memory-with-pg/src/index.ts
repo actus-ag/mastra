@@ -1,6 +1,6 @@
 import { randomUUID } from 'crypto';
 
-import { mastra } from './mastra';
+import { @mastra } from './@mastra';
 
 function log(message: string) {
   console.log(`\n>>Prompt: ${message}
@@ -8,7 +8,7 @@ function log(message: string) {
   return message;
 }
 
-const agent = mastra.getAgent('chefAgent');
+const agent = @mastra.getAgent('chefAgent');
 const threadId = randomUUID();
 const resourceId = 'SOME_USER_ID';
 

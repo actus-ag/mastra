@@ -24,7 +24,7 @@ interface StreamOptions {
 }
 
 interface EnhancedSpan extends Span {
-  __mastraStreamingSpan?: boolean;
+  __@mastraStreamingSpan?: boolean;
 }
 
 function isStreamingResult(result: unknown, methodName: string): boolean {
@@ -81,7 +81,7 @@ function enhanceStreamingArgumentsWithTelemetry(
     };
 
     enhancedArgs[1] = enhancedStreamOptions;
-    span.__mastraStreamingSpan = true;
+    span.__@mastraStreamingSpan = true;
 
     return enhancedArgs;
   }
@@ -202,7 +202,7 @@ export function withSpan(options: {
               }
             })
             .finally(() => {
-              if (!span.__mastraStreamingSpan) {
+              if (!span.__@mastraStreamingSpan) {
                 span.end();
               }
             });

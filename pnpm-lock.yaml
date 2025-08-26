@@ -56,7 +56,7 @@ importers:
         specifier: ^6.0.12
         version: 6.0.12
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -86,11 +86,11 @@ importers:
       '@clerk/backend':
         specifier: ^1.34.0
         version: 1.34.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      '@actus-ag/mastra-auth':
+      '@mastra/cli/cli/cli/auth':
         specifier: workspace:*
         version: link:../../packages/auth
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -121,7 +121,7 @@ importers:
         specifier: ^13.4.0
         version: 13.4.0(encoding@0.1.13)
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -152,7 +152,7 @@ importers:
         specifier: ^2.50.3
         version: 2.50.3(bufferutil@4.0.9)(utf-8-validate@6.0.3)
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -179,14 +179,14 @@ importers:
 
   auth/workos:
     dependencies:
-      '@actus-ag/mastra-auth':
+      '@mastra/cli/cli/cli/auth':
         specifier: workspace:*
         version: link:../../packages/auth
       '@workos-inc/node':
         specifier: ^7.57.0
         version: 7.57.0(express@5.1.0)(next@15.3.4(@opentelemetry/api@1.9.0)(@playwright/test@1.53.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -219,7 +219,7 @@ importers:
       '@ai-sdk/ui-utils':
         specifier: ^1.2.11
         version: 1.2.11(zod@3.25.76)
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@lukeed/uuid':
@@ -280,7 +280,7 @@ importers:
       '@babel/core':
         specifier: ^7.28.0
         version: 7.28.0
-      '@actus-ag/mastra-deployer':
+      '@mastra/cli/cli/cli/deployer':
         specifier: workspace:^
         version: link:../../packages/deployer
       '@rollup/plugin-virtual':
@@ -299,7 +299,7 @@ importers:
       '@babel/types':
         specifier: ^7.28.2
         version: 7.28.2
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -332,7 +332,7 @@ importers:
 
   deployers/netlify:
     dependencies:
-      '@actus-ag/mastra-deployer':
+      '@mastra/cli/cli/cli/deployer':
         specifier: workspace:^
         version: link:../../packages/deployer
       '@rollup/plugin-virtual':
@@ -351,7 +351,7 @@ importers:
         specifier: ^3.25.67
         version: 3.25.76
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -384,7 +384,7 @@ importers:
 
   deployers/vercel:
     dependencies:
-      '@actus-ag/mastra-deployer':
+      '@mastra/cli/cli/cli/deployer':
         specifier: workspace:^
         version: link:../../packages/deployer
       '@rollup/plugin-virtual':
@@ -394,7 +394,7 @@ importers:
         specifier: ^11.3.0
         version: 11.3.0
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -430,25 +430,25 @@ importers:
       '@ai-sdk/anthropic':
         specifier: ^1.2.12
         version: 1.2.12(zod@3.25.76)
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@actus-ag/mastra-github':
+      '@mastra/cli/cli/cli/github':
         specifier: workspace:*
         version: link:../../integrations/github
-      '@actus-ag/mastra-libsql':
+      '@mastra/cli/cli/cli/libsql':
         specifier: workspace:*
         version: link:../../stores/libsql
-      '@actus-ag/mastra-mcp':
+      '@mastra/cli/cli/cli/mcp':
         specifier: workspace:*
         version: link:../../packages/mcp
-      '@actus-ag/mastra-memory':
+      '@mastra/cli/cli/cli/memory':
         specifier: workspace:*
         version: link:../../packages/memory
-      '@actus-ag/mastra-rag':
+      '@mastra/cli/cli/cli/rag':
         specifier: workspace:*
         version: link:../../packages/rag
-      '@actus-ag/mastra-upstash':
+      '@mastra/cli/cli/cli/upstash':
         specifier: workspace:*
         version: link:../../stores/upstash
       '@inquirer/prompts':
@@ -503,7 +503,7 @@ importers:
         specifier: ^3.25.67
         version: 3.25.76
     devDependencies:
-      '@actus-ag/mastra-cli':
+      '@actus-ag/@@mastra/cli/cli/cli':
         specifier: workspace:*
         version: link:../../packages/cli
       '@types/node':
@@ -524,19 +524,19 @@ importers:
       '@ai-sdk/provider':
         specifier: ^1.1.3
         version: 1.1.3
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@actus-ag/mastra-fastembed':
+      '@mastra/cli/cli/cli/fastembed':
         specifier: workspace:*
         version: link:../../packages/fastembed
-      '@actus-ag/mastra-libsql':
+      '@mastra/cli/cli/cli/libsql':
         specifier: workspace:*
         version: link:../../stores/libsql
-      '@actus-ag/mastra-memory':
+      '@mastra/cli/cli/cli/memory':
         specifier: workspace:*
         version: link:../../packages/memory
-      '@actus-ag/mastra-rag':
+      '@mastra/cli/cli/cli/rag':
         specifier: workspace:*
         version: link:../../packages/rag
       '@huggingface/hub':
@@ -591,7 +591,7 @@ importers:
 
   integrations/firecrawl:
     dependencies:
-      '@actus-ag/mastra-rag':
+      '@mastra/cli/cli/cli/rag':
         specifier: workspace:^
         version: link:../../packages/rag
       '@hey-api/client-fetch':
@@ -604,7 +604,7 @@ importers:
         specifier: ^3.25.67
         version: 3.25.76
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -659,7 +659,7 @@ importers:
         specifier: ^3.25.67
         version: 3.25.76
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -711,7 +711,7 @@ importers:
         specifier: ^2.1.36
         version: 2.1.36(@anthropic-ai/sdk@0.27.3(encoding@0.1.13))(@cloudflare/workers-types@4.20250819.0)(@google/genai@1.15.0(@modelcontextprotocol/sdk@1.17.3)(bufferutil@4.0.9)(encoding@0.1.13)(utf-8-validate@6.0.3))(@langchain/core@0.3.59(openai@5.11.0(ws@8.18.3(bufferutil@4.0.9)(utf-8-validate@6.0.3))(zod@3.25.76)))(@mistralai/mistralai@1.7.2(zod@3.25.76))(@qdrant/js-client-rest@1.15.0(typescript@5.8.3))(@supabase/supabase-js@2.50.3(bufferutil@4.0.9)(utf-8-validate@6.0.3))(@types/jest@29.5.14)(@types/pg@8.15.5)(@types/sqlite3@3.1.11)(cloudflare@4.5.0(encoding@0.1.13))(encoding@0.1.13)(groq-sdk@0.5.0(encoding@0.1.13))(neo4j-driver@5.28.1)(ollama@0.5.16)(pg@8.16.3)(redis@5.8.2)(sqlite3@5.1.7)(ws@8.18.3(bufferutil@4.0.9)(utf-8-validate@6.0.3))
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -757,7 +757,7 @@ importers:
         specifier: ^3.25.67
         version: 3.25.76
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/types-builder':
@@ -800,7 +800,7 @@ importers:
         specifier: ^3.38.4
         version: 3.38.4
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -870,7 +870,7 @@ importers:
         specifier: ^3.2.0
         version: 3.2.0
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../core
       '@internal/lint':
@@ -903,13 +903,13 @@ importers:
       '@clack/prompts':
         specifier: ^0.11.0
         version: 0.11.0
-      '@actus-ag/mastra-deployer':
+      '@mastra/cli/cli/cli/deployer':
         specifier: workspace:^
         version: link:../deployer
-      '@actus-ag/mastra-loggers':
+      '@mastra/cli/cli/cli/loggers':
         specifier: workspace:^
         version: link:../loggers
-      '@actus-ag/mastra-mcp':
+      '@mastra/cli/cli/cli/mcp':
         specifier: workspace:^
         version: link:../mcp
       '@lukeed/uuid':
@@ -1006,13 +1006,13 @@ importers:
         specifier: ^3.24.5
         version: 3.24.6(zod@3.25.76)
     devDependencies:
-      '@actus-ag/mastra-client-js':
+      '@@mastra/cli/cli/cli-client-js':
         specifier: workspace:*
         version: link:../../client-sdks/client-js
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../core
-      '@actus-ag/mastra-playground-ui':
+      '@mastra/cli/cli/cli/playground-ui':
         specifier: workspace:*
         version: link:../playground-ui
       '@internal/lint':
@@ -1072,10 +1072,10 @@ importers:
       '@codemirror/lang-json':
         specifier: ^6.0.2
         version: 6.0.2
-      '@actus-ag/mastra-client-js':
+      '@@mastra/cli/cli/cli-client-js':
         specifier: workspace:*
         version: link:../../../../client-sdks/client-js
-      '@actus-ag/mastra-playground-ui':
+      '@mastra/cli/cli/cli/playground-ui':
         specifier: workspace:^
         version: link:../../../playground-ui
       '@hookform/resolvers':
@@ -1260,7 +1260,7 @@ importers:
         specifier: ^2.0.1
         version: 2.0.1(@opentelemetry/api@1.9.0)
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../core
       '@internal/lint':
@@ -1305,7 +1305,7 @@ importers:
       '@ai-sdk/ui-utils':
         specifier: ^1.2.11
         version: 1.2.11(zod@3.25.76)
-      '@actus-ag/mastra-schema-compat':
+      '@mastra/cli/cli/cli/schema-compat':
         specifier: workspace:*
         version: link:../schema-compat
       '@opentelemetry/api':
@@ -1463,7 +1463,7 @@ importers:
         specifier: ^3.25.67
         version: 3.25.76
 
-  packages/create-mastra:
+  packages/@actus-ag/create-@@mastra/cli/cli/cli:
     dependencies:
       commander:
         specifier: ^12.1.0
@@ -1487,7 +1487,7 @@ importers:
         specifier: ^3.6.2
         version: 3.6.2
     devDependencies:
-      '@actus-ag/mastra-cli':
+      '@actus-ag/@@mastra/cli/cli/cli':
         specifier: workspace:^
         version: link:../cli
       '@internal/lint':
@@ -1541,7 +1541,7 @@ importers:
       '@babel/preset-typescript':
         specifier: ^7.27.1
         version: 7.27.1(@babel/core@7.28.0)
-      '@actus-ag/mastra-server':
+      '@mastra/cli/cli/cli/server':
         specifier: workspace:^
         version: link:../server
       '@neon-rs/load':
@@ -1617,10 +1617,10 @@ importers:
         specifier: ^3.25.67
         version: 3.25.76
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../core
-      '@actus-ag/mastra-mcp':
+      '@mastra/cli/cli/cli/mcp':
         specifier: workspace:^
         version: link:../mcp
       '@hono/node-server':
@@ -1705,7 +1705,7 @@ importers:
       '@ai-sdk/openai':
         specifier: ^1.3.22
         version: 1.3.24(zod@3.25.76)
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../core
       '@internal/lint':
@@ -1785,7 +1785,7 @@ importers:
         specifier: ^13.0.0
         version: 13.0.0
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../core
       '@internal/lint':
@@ -1843,7 +1843,7 @@ importers:
       '@ai-sdk/openai':
         specifier: ^1.3.22
         version: 1.3.24(zod@3.25.76)
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../core
       '@hono/node-server':
@@ -1897,10 +1897,10 @@ importers:
 
   packages/mcp-docs-server:
     dependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../core
-      '@actus-ag/mastra-mcp':
+      '@mastra/cli/cli/cli/mcp':
         specifier: workspace:^
         version: link:../mcp
       '@modelcontextprotocol/sdk':
@@ -1983,10 +1983,10 @@ importers:
         specifier: ^3.24.5
         version: 3.24.6(zod@3.25.76)
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../core
-      '@actus-ag/mastra-mcp':
+      '@mastra/cli/cli/cli/mcp':
         specifier: workspace:^
         version: link:../mcp
       '@hono/node-server':
@@ -2034,10 +2034,10 @@ importers:
       '@ai-sdk/react':
         specifier: ^1.2.12
         version: 1.2.12(react@19.1.1)(zod@3.25.76)
-      '@actus-ag/mastra-client-js':
+      '@@mastra/cli/cli/cli-client-js':
         specifier: workspace:*
         version: link:../../../client-sdks/client-js
-      '@actus-ag/mastra-mcp':
+      '@mastra/cli/cli/cli/mcp':
         specifier: workspace:*
         version: link:..
       dotenv:
@@ -2047,10 +2047,10 @@ importers:
         specifier: ^3.25.67
         version: 3.25.76
     devDependencies:
-      '@actus-ag/mastra-cli':
+      '@actus-ag/@@mastra/cli/cli/cli':
         specifier: workspace:*
         version: link:../../cli
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../core
       '@testing-library/react':
@@ -2071,7 +2071,7 @@ importers:
 
   packages/memory:
     dependencies:
-      '@actus-ag/mastra-schema-compat':
+      '@mastra/cli/cli/cli/schema-compat':
         specifier: workspace:*
         version: link:../schema-compat
       '@upstash/redis':
@@ -2117,7 +2117,7 @@ importers:
       '@ai-sdk/openai':
         specifier: ^1.3.22
         version: 1.3.24(zod@3.25.76)
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../core
       '@internal/lint':
@@ -2165,19 +2165,19 @@ importers:
       '@ai-sdk/react':
         specifier: ^1.2.1
         version: 1.2.12(react@19.1.1)(zod@3.25.76)
-      '@actus-ag/mastra-fastembed':
+      '@mastra/cli/cli/cli/fastembed':
         specifier: workspace:*
         version: link:../../fastembed
-      '@actus-ag/mastra-libsql':
+      '@mastra/cli/cli/cli/libsql':
         specifier: workspace:*
         version: link:../../../stores/libsql
-      '@actus-ag/mastra-memory':
+      '@mastra/cli/cli/cli/memory':
         specifier: workspace:*
         version: link:..
-      '@actus-ag/mastra-pg':
+      '@mastra/cli/cli/cli/pg':
         specifier: workspace:*
         version: link:../../../stores/pg
-      '@actus-ag/mastra-upstash':
+      '@mastra/cli/cli/cli/upstash':
         specifier: workspace:*
         version: link:../../../stores/upstash
       dotenv:
@@ -2190,10 +2190,10 @@ importers:
         specifier: ^3.24.3
         version: 3.25.76
     devDependencies:
-      '@actus-ag/mastra-cli':
+      '@actus-ag/@@mastra/cli/cli/cli':
         specifier: workspace:*
         version: link:../../cli
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../core
       '@faker-js/faker':
@@ -2232,13 +2232,13 @@ importers:
 
   packages/memory/integration-tests-v5:
     dependencies:
-      '@actus-ag/mastra-fastembed':
+      '@mastra/cli/cli/cli/fastembed':
         specifier: workspace:*
         version: link:../../fastembed
-      '@actus-ag/mastra-libsql':
+      '@mastra/cli/cli/cli/libsql':
         specifier: workspace:*
         version: link:../../../stores/libsql
-      '@actus-ag/mastra-memory':
+      '@mastra/cli/cli/cli/memory':
         specifier: workspace:*
         version: link:..
       dotenv:
@@ -2260,10 +2260,10 @@ importers:
       '@ai-sdk/react':
         specifier: ^2.0.15
         version: 2.0.19(react@19.1.1)(zod@3.25.76)
-      '@actus-ag/mastra-cli':
+      '@actus-ag/@@mastra/cli/cli/cli':
         specifier: workspace:*
         version: link:../../cli
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../core
       '@faker-js/faker':
@@ -2329,7 +2329,7 @@ importers:
       '@dagrejs/dagre':
         specifier: ^1.1.5
         version: 1.1.5
-      '@actus-ag/mastra-client-js':
+      '@@mastra/cli/cli/cli-client-js':
         specifier: workspace:^
         version: link:../../client-sdks/client-js
       '@hookform/resolvers':
@@ -2498,7 +2498,7 @@ importers:
         specifier: ^5.0.7
         version: 5.0.7(@types/react@19.1.9)(react@19.1.1)(use-sync-external-store@1.5.0(react@19.1.1))
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../core
       '@storybook/addon-docs':
@@ -2586,7 +2586,7 @@ importers:
       '@ai-sdk/openai':
         specifier: ^1.3.22
         version: 1.3.24(zod@3.25.76)
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../core
       '@internal/lint':
@@ -2698,7 +2698,7 @@ importers:
       '@ai-sdk/xai-v5':
         specifier: npm:@ai-sdk/xai@2.0.0
         version: '@ai-sdk/xai@2.0.0(zod@3.25.76)'
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../core
       '@internal/lint':
@@ -2744,7 +2744,7 @@ importers:
         specifier: '*'
         version: 3.2.4(@types/debug@4.1.12)(@types/node@20.19.9)(@vitest/ui@3.2.3)(jiti@2.4.2)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@6.0.3))(terser@5.43.1)(tsx@4.20.4)(yaml@2.8.0)
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
 
@@ -2754,7 +2754,7 @@ importers:
         specifier: ^1.5.0
         version: 1.5.0
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -2788,7 +2788,7 @@ importers:
         specifier: ^3.0.11
         version: 3.0.11
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -2825,7 +2825,7 @@ importers:
         specifier: ^1.12.1
         version: 1.12.1
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -2865,7 +2865,7 @@ importers:
       '@cloudflare/workers-types':
         specifier: ^4.20250816.0
         version: 4.20250819.0
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -2911,7 +2911,7 @@ importers:
       '@cloudflare/workers-types':
         specifier: ^4.20250816.0
         version: 4.20250819.0
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -2954,7 +2954,7 @@ importers:
         specifier: ^4.5.0
         version: 4.5.0
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3003,7 +3003,7 @@ importers:
         specifier: ^3.4.3
         version: 3.4.3(@aws-sdk/client-dynamodb@3.859.0)
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3052,7 +3052,7 @@ importers:
         specifier: ^18.1.0
         version: 18.1.0
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:^
         version: link:../../packages/core
       '@internal/lint':
@@ -3089,7 +3089,7 @@ importers:
         specifier: ^0.15.10
         version: 0.15.10(bufferutil@4.0.9)(utf-8-validate@6.0.3)
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3135,7 +3135,7 @@ importers:
         specifier: ^11.1.0
         version: 11.1.0
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3172,7 +3172,7 @@ importers:
         specifier: ^10.0.4
         version: 10.0.4
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3212,7 +3212,7 @@ importers:
         specifier: ^3.5.1
         version: 3.5.1
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3255,7 +3255,7 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3295,7 +3295,7 @@ importers:
         specifier: ^3.0.3
         version: 3.0.3
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3332,7 +3332,7 @@ importers:
         specifier: ^1.15.0
         version: 1.15.0(typescript@5.8.3)
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3369,7 +3369,7 @@ importers:
         specifier: ^0.6.17
         version: 0.6.17
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3409,7 +3409,7 @@ importers:
         specifier: ^1.2.2
         version: 1.2.2
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3449,7 +3449,7 @@ importers:
         specifier: ^4.5.0
         version: 4.5.0(encoding@0.1.13)
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3486,7 +3486,7 @@ importers:
         specifier: ^1.45.0
         version: 1.45.0(bufferutil@4.0.9)(utf-8-validate@6.0.3)
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3526,7 +3526,7 @@ importers:
       '@cloudflare/workers-types':
         specifier: ^4.20250816.0
         version: 4.20250819.0
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3563,7 +3563,7 @@ importers:
         specifier: ^3.25.67
         version: 3.25.76
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3600,7 +3600,7 @@ importers:
         specifier: ^3.25.67
         version: 3.25.76
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3634,7 +3634,7 @@ importers:
         specifier: ^3.25.67
         version: 3.25.76
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3677,7 +3677,7 @@ importers:
         specifier: ^3.25.67
         version: 3.25.76
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3720,7 +3720,7 @@ importers:
         specifier: ^3.23.5
         version: 3.24.6(zod@3.25.76)
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3757,7 +3757,7 @@ importers:
         specifier: ^3.25.67
         version: 3.25.76
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3794,7 +3794,7 @@ importers:
         specifier: ^3.25.67
         version: 3.25.76
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3834,7 +3834,7 @@ importers:
         specifier: ^3.24.5
         version: 3.24.6(zod@3.25.76)
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3874,7 +3874,7 @@ importers:
         specifier: ^3.25.67
         version: 3.25.76
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3908,7 +3908,7 @@ importers:
         specifier: ^3.25.67
         version: 3.25.76
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3945,7 +3945,7 @@ importers:
         specifier: ^3.25.67
         version: 3.25.76
     devDependencies:
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
       '@internal/lint':
@@ -3991,13 +3991,13 @@ importers:
       '@ai-sdk/openai':
         specifier: ^1.3.22
         version: 1.3.24(zod@3.25.76)
-      '@actus-ag/mastra-core':
+      '@mastra/cli/cli/cli/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@actus-ag/mastra-deployer':
+      '@mastra/cli/cli/cli/deployer':
         specifier: workspace:*
         version: link:../../packages/deployer
-      '@actus-ag/mastra-libsql':
+      '@mastra/cli/cli/cli/libsql':
         specifier: workspace:*
         version: link:../../stores/libsql
       '@hono/node-server':

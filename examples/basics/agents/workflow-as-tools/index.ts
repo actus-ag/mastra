@@ -1,7 +1,7 @@
-import { Mastra } from '@actus-ag/mastra-core';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { createStep, createWorkflow } from '@actus-ag/mastra-core/workflows';
-import { createTool } from '@actus-ag/mastra-core/tools';
+import { Mastra } from '@mastra/core';
+import { Agent } from '@mastra/core/agent';
+import { createStep, createWorkflow } from '@mastra/core/workflows';
+import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
 import { openai } from '@ai-sdk/openai';
 
@@ -108,7 +108,7 @@ export const startWeatherTool = createTool({
     runId: z.string(),
   }),
   execute: async ({ context }) => {
-    const workflow = mastra.getWorkflow('weatherWorkflowWithSuspend');
+    const workflow = @mastra.getWorkflow('weatherWorkflowWithSuspend');
     const run = await workflow.createRun();
     await run.start({
       inputData: {},
@@ -129,7 +129,7 @@ export const resumeWeatherTool = createTool({
   }),
   outputSchema: forecastSchema,
   execute: async ({ context }) => {
-    const workflow = mastra.getWorkflow('weatherWorkflowWithSuspend');
+    const workflow = @mastra.getWorkflow('weatherWorkflowWithSuspend');
     const run = await workflow.createRun({
       runId: context.runId,
     });
@@ -161,13 +161,13 @@ The result will be the weather forecast for the city.`,
   tools: { startWeatherTool, resumeWeatherTool },
 });
 
-const mastra = new Mastra({
+const @mastra = new Mastra({
   agents: { weatherAgentWithWorkflow },
   workflows: { weatherWorkflowWithSuspend },
 });
 
 async function main() {
-  const agent = mastra.getAgent('weatherAgentWithWorkflow');
+  const agent = @mastra.getAgent('weatherAgentWithWorkflow');
   const result = await agent.generate([
     {
       role: 'user',

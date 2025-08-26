@@ -5,7 +5,7 @@ export const scoreEntity = new Entity({
   model: {
     entity: 'score',
     version: '1',
-    service: 'mastra',
+    service: '@actus-ag/@mastra',
   },
   attributes: {
     entity: {

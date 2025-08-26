@@ -27,7 +27,7 @@ Common scenarios for suspending workflows include:
 Here's a simple workflow that suspends when a value is too low and resumes when given a higher value:
 
 ```typescript
-import { LegacyStep, LegacyWorkflow } from "@actus-ag/mastra-core/workflows/legacy";
+import { LegacyStep, LegacyWorkflow } from "@mastra/cli/cli/cli/core/workflows/legacy";
 
 const stepTwo = new LegacyStep({
   id: "stepTwo",
@@ -111,7 +111,7 @@ workflow
   .commit();
 
 // Register the workflow with Mastra
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   legacy_workflows: { workflow },
 });
 ```
@@ -120,7 +120,7 @@ export const mastra = new Mastra({
 
 ```typescript
 // Get the workflow and create a run
-const wf = mastra.legacy_getWorkflow("multi-suspend-workflow");
+const wf = @@mastra/cli/cli/cli.legacy_getWorkflow("multi-suspend-workflow");
 const run = wf.createRun();
 
 // Start the workflow
@@ -226,7 +226,7 @@ approvalWorkflow
 
 ```typescript
 // Get the workflow
-const workflow = mastra.legacy_getWorkflow("approval-workflow");
+const workflow = @@mastra/cli/cli/cli.legacy_getWorkflow("approval-workflow");
 const run = workflow.createRun();
 
 // Start the workflow
@@ -282,10 +282,10 @@ When a workflow is suspended using `await suspend()`, Mastra automatically persi
 By default, Mastra uses LibSQL as its storage engine:
 
 ```typescript
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { LibSQLStore } from "@actus-ag/mastra-libsql";
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { LibSQLStore } from "@mastra/cli/cli/cli/libsql";
 
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   storage: new LibSQLStore({
     url: "file:./storage.db", // Local file-based database for development
     // For production, use a persistent URL:
@@ -308,14 +308,14 @@ The LibSQL storage can be configured in different modes:
 For serverless applications or environments where Redis is preferred:
 
 ```bash copy
-npm install @actus-ag/mastra-upstash@latest
+npm install @mastra/cli/cli/cli/upstash@latest
 ```
 
 ```typescript
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { UpstashStore } from "@actus-ag/mastra-upstash";
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { UpstashStore } from "@mastra/cli/cli/cli/upstash";
 
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   storage: new UpstashStore({
     url: process.env.UPSTASH_URL,
     token: process.env.UPSTASH_TOKEN,
@@ -335,10 +335,10 @@ const mastra = new Mastra({
 To handle suspended workflows, use the `watch` method to monitor workflow status per run and `resume` to continue execution:
 
 ```typescript
-import { mastra } from "./index";
+import { @@mastra/cli/cli/cli } from "./index";
 
 // Get the workflow
-const myWorkflow = mastra.legacy_getWorkflow("myWorkflow");
+const myWorkflow = @@mastra/cli/cli/cli.legacy_getWorkflow("myWorkflow");
 const { start, watch, resume } = myWorkflow.createRun();
 
 // Start watching the workflow before executing it

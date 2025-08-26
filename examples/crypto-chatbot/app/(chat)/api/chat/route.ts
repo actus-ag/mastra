@@ -4,7 +4,7 @@ import { models } from '@/ai/models';
 import { auth } from '@/app/(auth)/auth';
 import { getMostRecentUserMessage } from '@/lib/utils';
 
-import { createMastra } from '@/mastra';
+import { createMastra } from '@/@mastra';
 
 export const maxDuration = 60;
 
@@ -34,12 +34,12 @@ export async function POST(request: Request) {
     return new Response('No user message found', { status: 400 });
   }
 
-  const mastra = createMastra({
+  const @mastra = createMastra({
     modelProvider: model.provider,
     modelName: model.apiIdentifier,
   });
 
-  const cryptoAgent = mastra.getAgent('cryptoAgent');
+  const cryptoAgent = @mastra.getAgent('cryptoAgent');
 
   if (!cryptoAgent) {
     return new Response('Agent not found', { status: 404 });
@@ -77,17 +77,17 @@ export async function DELETE(request: Request) {
   }
 
   try {
-    const mastra = createMastra({
+    const @mastra = createMastra({
       modelProvider: models[0].provider,
       modelName: models[0].apiIdentifier,
     });
-    const chat = await mastra.memory?.getThreadById({ threadId: id });
+    const chat = await @mastra.memory?.getThreadById({ threadId: id });
 
     if (chat?.resourceId !== session.user.id) {
       return new Response('Unauthorized', { status: 401 });
     }
 
-    await mastra.memory?.deleteThread(id);
+    await @mastra.memory?.deleteThread(id);
 
     return new Response('Chat deleted', { status: 200 });
   } catch (error) {

@@ -17,7 +17,7 @@ import { usePlaygroundStore } from '@/store/playground-store';
 import { Icon } from '@/ds/icons';
 import { Txt } from '@/ds/components/Txt';
 
-import { GetWorkflowResponse, WorkflowWatchResult } from '@actus-ag/mastra-client-js';
+import { GetWorkflowResponse, WorkflowWatchResult } from '@@mastra/cli/cli/cli-client-js';
 import { SyntaxHighlighter } from '@/components/ui/syntax-highlighter';
 import { Dialog, DialogPortal, DialogTitle, DialogContent } from '@/components/ui/dialog';
 import { WorkflowStatus } from './workflow-status';
@@ -245,7 +245,7 @@ export function WorkflowTrigger({
               : z.record(z.string(), z.any());
             return (
               <div className="flex flex-col px-4" key={step.stepId}>
-                <Text variant="secondary" className="text-mastra-el-3" size="xs">
+                <Text variant="secondary" className="text-@@mastra/cli/cli/cli-el-3" size="xs">
                   {step.stepId}
                 </Text>
                 {step.suspendPayload && (
@@ -305,7 +305,7 @@ export function WorkflowTrigger({
           <>
             <hr className="border-border1 border-sm my-5" />
             <div className="flex flex-col gap-2">
-              <Text variant="secondary" className="px-4 text-mastra-el-3" size="xs">
+              <Text variant="secondary" className="px-4 text-@@mastra/cli/cli/cli-el-3" size="xs">
                 Status
               </Text>
               <div className="px-4 flex flex-col gap-4">

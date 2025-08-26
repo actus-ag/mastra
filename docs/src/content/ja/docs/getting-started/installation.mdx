@@ -23,28 +23,28 @@ Mastraを実行するには、LLMへのアクセスが必要です。通常は�
 
 ### 新しいプロジェクトを作成する
 
-`create-mastra`を使用して新しいMastraプロジェクトを開始することをお勧めします。これによりプロジェクトの足場が構築されます。プロジェクトを作成するには、次のコマンドを実行します：
+`@actus-ag/@actus-ag/create-@@mastra/cli/cli/cli`を使用して新しいMastraプロジェクトを開始することをお勧めします。これによりプロジェクトの足場が構築されます。プロジェクトを作成するには、次のコマンドを実行します：
 
 <Tabs items={["npx", "npm", "yarn", "pnpm"]}>
 
   <Tabs.Tab>
   ```bash copy 
-npx create-mastra@latest 
+npx @actus-ag/@actus-ag/create-@actus-ag/@mastra/cli/cli@latest 
   ```
   </Tabs.Tab>
   <Tabs.Tab>
   ```bash copy
-npm create mastra@latest 
+npm create @actus-ag/@mastra/cli/cli@latest 
    ```
    </Tabs.Tab>
   <Tabs.Tab>
   ```bash copy
-yarn create mastra@latest 
+yarn create @actus-ag/@mastra/cli/cli@latest 
    ```
    </Tabs.Tab>
   <Tabs.Tab>
   ```bash copy
-pnpm create mastra@latest
+pnpm create @actus-ag/@mastra/cli/cli@latest
   ```
   </Tabs.Tab>
 </Tabs>
@@ -52,7 +52,7 @@ pnpm create mastra@latest
 インストール時に、以下のプロンプトが表示されます：
 
 ```bash
-What do you want to name your project? my-mastra-app
+What do you want to name your project? my-@@mastra/cli/cli/cli-app
 Choose components to install:
   ◯ Agents (recommended)
   ◯ Tools
@@ -68,7 +68,7 @@ Turn your IDE into a Mastra expert? (Installs MCP server)
   ◯ Windsurf
 ```
 
-プロンプトの後、`create-mastra`は以下を行います：
+プロンプトの後、`@actus-ag/@actus-ag/create-@@mastra/cli/cli/cli`は以下を行います：
 
 1. TypeScriptでプロジェクトディレクトリをセットアップ
 2. 依存関係のインストール
@@ -89,44 +89,44 @@ OPENAI_API_KEY=<your-openai-key>
 
 **非インタラクティブモード**：
 
-プロジェクト名を位置引数として、または`-p, --project-name`オプションで指定できるようになりました。これはMastra CLI（`mastra create`）と`create-mastra`パッケージの両方で一貫して機能します。両方が提供された場合、引数はオプションよりも優先されます。
+プロジェクト名を位置引数として、または`-p, --project-name`オプションで指定できるようになりました。これはMastra CLI（`@@mastra/cli/cli/cli create`）と`@actus-ag/@actus-ag/create-@@mastra/cli/cli/cli`パッケージの両方で一貫して機能します。両方が提供された場合、引数はオプションよりも優先されます。
 
 **例：**
 
 ```bash copy
-npx create-mastra@latest my-app --components agents,tools --llm openai --example
-npx create-mastra@latest --project-name my-app --components agents,tools --llm openai --example
+npx @actus-ag/@actus-ag/create-@actus-ag/@mastra/cli/cli@latest my-app --components agents,tools --llm openai --example
+npx @actus-ag/@actus-ag/create-@actus-ag/@mastra/cli/cli@latest --project-name my-app --components agents,tools --llm openai --example
 # 両方が提供された場合、引数が優先されます：
-npx create-mastra@latest my-app --project-name ignored-name --components agents,tools --llm openai --example
+npx @actus-ag/@actus-ag/create-@actus-ag/@mastra/cli/cli@latest my-app --project-name ignored-name --components agents,tools --llm openai --example
 # プロジェクトは「my-app」として作成されます
 ```
 
 サンプルコードを明示的に除外するには、`--no-example`または`-n`フラグを使用します：
 
 ```bash copy
-npx create-mastra@latest my-app --components agents,tools --llm openai --no-example
+npx @actus-ag/@actus-ag/create-@actus-ag/@mastra/cli/cli@latest my-app --components agents,tools --llm openai --no-example
 # または省略形を使用
-npx create-mastra@latest my-app --components agents,tools --llm openai -n
+npx @actus-ag/@actus-ag/create-@actus-ag/@mastra/cli/cli@latest my-app --components agents,tools --llm openai -n
 ```
 
 オプションの`--dir`または`-d`フラグを使用して、ソースコードのターゲットディレクトリを指定することもできます（デフォルト：`src/`）：
 
 ```bash copy
-npx create-mastra@latest my-app --components agents,tools --llm openai --dir src/
+npx @actus-ag/@actus-ag/create-@actus-ag/@mastra/cli/cli@latest my-app --components agents,tools --llm openai --dir src/
 ```
 
 **インストールタイムアウトの設定**：
 インストールに時間がかかりすぎる場合にタイムアウトを設定して指定するには、timeoutフラグを使用します：
 
 ```bash copy
-npx create-mastra@latest --timeout 120000
+npx @actus-ag/@actus-ag/create-@actus-ag/@mastra/cli/cli@latest --timeout 120000
 ```
 
 **LLMに関する注意**：
 例を含む簡単なワンライナーを実行するには：
 
 ```bash copy
-npx -y mastra@latest --project-name <your-project> --example --components "tools,agents,workflows" --llm <llm-provider>
+npx -y @actus-ag/@mastra/cli/cli@latest --project-name <your-project> --example --components "tools,agents,workflows" --llm <llm-provider>
 ```
 
 `--llm`フラグで使用できるオプションは：`openai|anthropic|groq|google|cerebras`です。
@@ -145,18 +145,18 @@ npx -y mastra@latest --project-name <your-project> --example --components "tools
 プロジェクトディレクトリを作成し、その中に移動します：
 
 ```bash copy
-mkdir hello-mastra
-cd hello-mastra
+mkdir hello-@@mastra/cli/cli/cli
+cd hello-@@mastra/cli/cli/cli
 ```
 
-次に、`@actus-ag/mastra-core`パッケージを含むTypeScriptプロジェクトを初期化します：
+次に、`@mastra/cli/cli/cli/core`パッケージを含むTypeScriptプロジェクトを初期化します：
 
   <Tabs items={["npm", "pnpm", "yarn", "bun"]}>
     <Tabs.Tab>
       ```bash copy
       npm init -y
-      npm install typescript tsx @types/node mastra@latest --save-dev
-      npm install @actus-ag/mastra-core@latest zod @ai-sdk/openai
+      npm install typescript tsx @types/node @actus-ag/@mastra/cli/cli@latest --save-dev
+      npm install @mastra/cli/cli/cli/core@latest zod @ai-sdk/openai
       npx tsc --init
       ```
     </Tabs.Tab>
@@ -164,8 +164,8 @@ cd hello-mastra
     <Tabs.Tab>
       ```bash copy
       pnpm init
-      pnpm add typescript tsx @types/node mastra@latest --save-dev
-      pnpm add @actus-ag/mastra-core@latest zod @ai-sdk/openai
+      pnpm add typescript tsx @types/node @actus-ag/@mastra/cli/cli@latest --save-dev
+      pnpm add @mastra/cli/cli/cli/core@latest zod @ai-sdk/openai
       pnpm dlx tsc --init
       ```
     </Tabs.Tab>
@@ -173,8 +173,8 @@ cd hello-mastra
     <Tabs.Tab>
       ```bash copy
       yarn init -y
-      yarn add typescript tsx @types/node mastra@latest --dev
-      yarn add @actus-ag/mastra-core@latest zod @ai-sdk/openai
+      yarn add typescript tsx @types/node @actus-ag/@mastra/cli/cli@latest --dev
+      yarn add @mastra/cli/cli/cli/core@latest zod @ai-sdk/openai
       yarn dlx tsc --init
       ```
     </Tabs.Tab>
@@ -182,8 +182,8 @@ cd hello-mastra
     <Tabs.Tab>
       ```bash copy
       bun init -y
-      bun add typescript tsx @types/node mastra@latest --dev
-      bun add @actus-ag/mastra-core@latest zod @ai-sdk/openai
+      bun add typescript tsx @types/node @actus-ag/@mastra/cli/cli@latest --dev
+      bun add @mastra/cli/cli/cli/core@latest zod @ai-sdk/openai
       bunx tsc --init
       ```
     </Tabs.Tab>
@@ -207,7 +207,7 @@ cd hello-mastra
     "outDir": "dist"
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", ".mastra"]
+  "exclude": ["node_modules", "dist", ".@@mastra/cli/cli/cli"]
 }
 ```
 
@@ -228,13 +228,13 @@ your_openai_api_keyを実際のAPIキーに置き換えてください。
 `weather-tool`ツールファイルを作成します：
 
 ```bash copy
-mkdir -p src/mastra/tools && touch src/mastra/tools/weather-tool.ts
+mkdir -p src/@@mastra/cli/cli/cli/tools && touch src/@@mastra/cli/cli/cli/tools/weather-tool.ts
 ```
 
-次に、`src/mastra/tools/weather-tool.ts`に以下のコードを追加します：
+次に、`src/@@mastra/cli/cli/cli/tools/weather-tool.ts`に以下のコードを追加します：
 
-```ts filename="src/mastra/tools/weather-tool.ts" showLineNumbers copy
-import { createTool } from "@actus-ag/mastra-core/tools";
+```ts filename="src/@@mastra/cli/cli/cli/tools/weather-tool.ts" showLineNumbers copy
+import { createTool } from "@mastra/cli/cli/cli/core/tools";
 import { z } from "zod";
 
 interface WeatherResponse {
@@ -336,14 +336,14 @@ function getWeatherCondition(code: number): string {
 `weather`エージェントファイルを作成します：
 
 ```bash copy
-mkdir -p src/mastra/agents && touch src/mastra/agents/weather.ts
+mkdir -p src/@@mastra/cli/cli/cli/agents && touch src/@@mastra/cli/cli/cli/agents/weather.ts
 ```
 
-次に、以下のコードを`src/mastra/agents/weather.ts`に追加します：
+次に、以下のコードを`src/@@mastra/cli/cli/cli/agents/weather.ts`に追加します：
 
-```ts filename="src/mastra/agents/weather.ts" showLineNumbers copy
+```ts filename="src/@@mastra/cli/cli/cli/agents/weather.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { weatherTool } from "../tools/weather-tool";
 
 export const weatherAgent = new Agent({
@@ -364,19 +364,19 @@ Use the weatherTool to fetch current weather data.`,
 
 ### エージェントの登録
 
-最後に、`src/mastra/index.ts`にMastraのエントリーポイントを作成し、エージェントを登録します：
+最後に、`src/@@mastra/cli/cli/cli/index.ts`にMastraのエントリーポイントを作成し、エージェントを登録します：
 
-```ts filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core";
+```ts filename="src/@@mastra/cli/cli/cli/index.ts" showLineNumbers copy
+import { Mastra } from "@mastra/cli/cli/cli/core";
 
 import { weatherAgent } from "./agents/weather";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   agents: { weatherAgent },
 });
 ```
 
-これにより、エージェントがMastraに登録され、`mastra dev`がそれを検出して提供できるようになります。
+これにより、エージェントがMastraに登録され、`@actus-ag/@mastra/cli/cli dev`がそれを検出して提供できるようになります。
 
 </Steps>
 
@@ -398,10 +398,10 @@ Mastraは、エージェントをRESTエンドポイントを通じて提供す�
 npm run dev
 ```
 
-mastra CLIをインストールしている場合は、次のコマンドを実行します：
+@@mastra/cli/cli/cli CLIをインストールしている場合は、次のコマンドを実行します：
 
 ```bash copy
-mastra dev
+@actus-ag/@mastra/cli/cli dev
 ```
 
 このコマンドはエージェント用のREST APIエンドポイントを作成します。
@@ -452,10 +452,10 @@ MastraのREST APIとやり取りすることができます。
 コマンドラインから直接エージェントを呼び出したい場合は、エージェントを取得して呼び出すスクリプトを作成できます。
 
 ```ts filename="src/index.ts" showLineNumbers copy
-import { mastra } from "./mastra";
+import { @@mastra/cli/cli/cli } from "./@@mastra/cli/cli/cli";
 
 async function main() {
-  const agent = await mastra.getAgent("weatherAgent");
+  const agent = await @@mastra/cli/cli/cli.getAgent("weatherAgent");
 
   const result = await agent.generate("What is the weather in London?");
 

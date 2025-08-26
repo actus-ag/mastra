@@ -19,7 +19,7 @@ Mastraは、ランタイム変数を使用してワークフローとステッ�
 ## 基本的な使用方法
 
 ```typescript
-const myWorkflow = mastra.getWorkflow("myWorkflow");
+const myWorkflow = @@mastra/cli/cli/cli.getWorkflow("myWorkflow");
 const { runId, start, resume } = myWorkflow.createRun();
 
 // Define your runtimeContext's type structure
@@ -42,8 +42,8 @@ await start({
 HTTPヘッダーから乗数値を動的に設定する方法は次のとおりです：
 
 ```typescript filename="src/index.ts"
-import { Mastra } from "@actus-ag/mastra-core";
-import { RuntimeContext } from "@actus-ag/mastra-core/di";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { RuntimeContext } from "@mastra/cli/cli/cli/core/di";
 import { workflow as myWorkflow } from "./workflows";
 
 // Define runtimeContext type with clear, descriptive types
@@ -51,7 +51,7 @@ type WorkflowRuntimeContext = {
   multiplier: number;
 };
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   workflows: {
     myWorkflow,
   },
@@ -81,7 +81,7 @@ export const mastra = new Mastra({
 ステップはruntimeContext変数にアクセスでき、ワークフローのruntimeContextタイプに準拠する必要があります：
 
 ```typescript
-import { Step } from "@actus-ag/mastra-core/workflow";
+import { Step } from "@mastra/cli/cli/cli/core/workflow";
 import { z } from "zod";
 
 // Define step input/output types

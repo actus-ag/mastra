@@ -4,7 +4,7 @@ The Mastra Playground provides a visual interface to test and run your workflows
 
 ## Starting the Development Server
 
-Start your Mastra development server using the `mastra dev` command. If you are using npm the command is:
+Start your Mastra development server using the `@actus-ag/@mastra/cli/cli dev` command. If you are using npm the command is:
 
 ```bash
 npm run dev

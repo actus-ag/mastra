@@ -26,7 +26,7 @@ function pathToUrl(filePath: string): string {
     .replaceAll("\\", "/") // windows support
     .replace(/^src\/content\//, "")
     .replace(/\/index\.mdx$|\.mdx$/, "");
-  return `https://mastra.ai/${cleanPath}`;
+  return `https://@mastra.ai/${cleanPath}`;
 }
 
 async function concatenateMDXDocs(sourceDir: string) {

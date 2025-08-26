@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { logger } from '../logger';
 import { blogPostSchema } from '../utils';
 
-const BLOG_BASE_URL = process.env.BLOG_URL || 'https://mastra.ai';
+const BLOG_BASE_URL = process.env.BLOG_URL || 'https://@mastra.ai';
 
 // Helper function to fetch blog posts as markdown
 async function fetchBlogPosts(): Promise<string> {
@@ -82,12 +82,12 @@ export const blogInputSchema = z.object({
 export type BlogInput = z.infer<typeof blogInputSchema>;
 
 export const blogTool = {
-  name: 'mastraBlog',
+  name: '@mastraBlog',
   description:
     'Get Mastra.ai blog content. Without a URL, returns a list of all blog posts. With a URL, returns the specific blog post content in markdown format. The blog contains changelog posts as well as announcements and posts about Mastra features and AI news',
   parameters: blogInputSchema,
   execute: async (args: BlogInput) => {
-    void logger.debug('Executing mastraBlog tool', { url: args.url });
+    void logger.debug('Executing @mastraBlog tool', { url: args.url });
     try {
       let content: string;
       if (args.url.trim() !== `/api/blog`) {
@@ -97,7 +97,7 @@ export const blogTool = {
       }
       return content;
     } catch (error) {
-      void logger.error('Failed to execute mastraBlog tool', error);
+      void logger.error('Failed to execute @mastraBlog tool', error);
       throw error;
     }
   },

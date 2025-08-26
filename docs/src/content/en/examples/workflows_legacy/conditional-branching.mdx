@@ -14,8 +14,8 @@ Workflows often need to follow different paths based on conditions. This example
 This example shows a simple legacy workflow that takes different paths based on a numeric value:
 
 ```ts showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core";
-import { LegacyStep, LegacyWorkflow } from "@actus-ag/mastra-core/workflows/legacy";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { LegacyStep, LegacyWorkflow } from "@mastra/cli/cli/cli/core/workflows/legacy";
 import { z } from "zod";
 
 // Step that provides the initial value
@@ -97,13 +97,13 @@ conditionalWorkflow
   .commit();
 
 // Register the workflow
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   legacy_workflows: { conditionalWorkflow },
 });
 
 // Example usage
 async function runWorkflow(inputValue: number) {
-  const workflow = mastra.legacy_getWorkflow("conditionalWorkflow");
+  const workflow = @@mastra/cli/cli/cli.legacy_getWorkflow("conditionalWorkflow");
   const { start } = workflow.createRun();
 
   const result = await start({
@@ -150,7 +150,7 @@ conditionalWorkflow
 <br />
 <GithubLink
   link={
-    "https://github.com/mastra-ai/mastra/blob/main/examples/basics/workflows-legacy/conditional-branching"
+    "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/workflows-legacy/conditional-branching"
   }
 />
 

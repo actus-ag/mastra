@@ -18,7 +18,7 @@ import {
   Txt,
   MainContentLayout,
   MainContentContent,
-} from '@actus-ag/mastra-playground-ui';
+} from '@mastra/cli/cli/cli/playground-ui';
 
 const AgentTool = () => {
   const { toolId, agentId } = useParams();

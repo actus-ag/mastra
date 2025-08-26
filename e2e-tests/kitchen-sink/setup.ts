@@ -28,7 +28,7 @@ export default async function setup() {
 
   console.log('[Setup] Publishing packages');
 
-  const packages = ['mastra', '@actus-ag/mastra-loggers', '@actus-ag/mastra-playground-ui'];
+  const packages = ['@actus-ag/@mastra', '@mastra/loggers', '@mastra/playground-ui'];
   const publishFilterArgs = packages.map(p => [`--filter="${p}^..."`, `--filter="${p}"`]).flat();
 
   publishPackages(publishFilterArgs, tag, rootDir, registry);

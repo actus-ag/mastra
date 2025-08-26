@@ -16,7 +16,7 @@ This allows you to cancel long-running operations within your tools, such as net
 You access the `abortSignal` in the second parameter of the tool's `execute` function.
 
 ```typescript
-import { createTool } from "@actus-ag/mastra-core/tools";
+import { createTool } from "@mastra/cli/cli/cli/core/tools";
 import { z } from "zod";
 
 export const longRunningTool = createTool({
@@ -51,7 +51,7 @@ export const longRunningTool = createTool({
 To use this, provide an `AbortController`'s signal when calling the agent:
 
 ```typescript
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 // Assume 'agent' is an Agent instance with longRunningTool configured
 
 const controller = new AbortController();
@@ -88,7 +88,7 @@ npm install ai
 
 Here's an example of a tool defined using the Vercel AI SDK format:
 
-```typescript filename="src/mastra/tools/vercelWeatherTool.ts" copy
+```typescript filename="src/@@mastra/cli/cli/cli/tools/vercelWeatherTool.ts" copy
 import { tool } from "ai";
 import { z } from "zod";
 
@@ -108,11 +108,11 @@ export const vercelWeatherTool = tool({
 
 You can then add this tool to your Mastra agent just like any other tool:
 
-```typescript filename="src/mastra/agents/mixedToolsAgent.ts"
-import { Agent } from "@actus-ag/mastra-core/agent";
+```typescript filename="src/@@mastra/cli/cli/cli/agents/mixedToolsAgent.ts"
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { openai } from "@ai-sdk/openai";
 import { vercelWeatherTool } from "../tools/vercelWeatherTool"; // Vercel AI SDK tool
-import { mastraTool } from "../tools/mastraTool"; // Mastra createTool tool
+import { @@mastra/cli/cli/cliTool } from "../tools/@@mastra/cli/cli/cliTool"; // Mastra createTool tool
 
 export const mixedToolsAgent = new Agent({
   name: "Mixed Tools Agent",
@@ -120,7 +120,7 @@ export const mixedToolsAgent = new Agent({
   model: openai("gpt-4o-mini"),
   tools: {
     weatherVercel: vercelWeatherTool,
-    someMastraTool: mastraTool,
+    someMastraTool: @@mastra/cli/cli/cliTool,
   },
 });
 ```

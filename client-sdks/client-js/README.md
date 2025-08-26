@@ -1,17 +1,17 @@
 # Mastra Client
 
-JavaScript/TypeScript client library for the [Mastra AI](https://mastra.ai) framework. This client provides a simple interface to interact with Mastra AI's APIs for agents, vectors, memory, tools, and workflows.
+JavaScript/TypeScript client library for the [Mastra AI](https://@mastra.ai) framework. This client provides a simple interface to interact with Mastra AI's APIs for agents, vectors, memory, tools, and workflows.
 
 ## Installation
 
 ```bash
-npm install @actus-ag/mastra-client-js
+npm install @actus-ag/@mastraent-js
 ```
 
 ## Quick Start
 
 ```typescript
-import { MastraClient } from '@actus-ag/mastra-client-js';
+import { MastraClient } from '@mastra-client-js';
 
 // Initialize the client
 const client = new MastraClient({

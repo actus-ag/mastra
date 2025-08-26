@@ -1,4 +1,4 @@
-import type { MetricResult } from '@actus-ag/mastra-core/eval';
+import type { MetricResult } from '@mastra/core/eval';
 import { randomUUID } from 'crypto';
 
 export const createSampleEval = (agentName: string, isTest = false, createdAt?: Date) => {

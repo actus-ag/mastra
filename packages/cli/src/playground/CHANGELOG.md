@@ -1,4 +1,4 @@
-# @actus-ag/mastra-playground
+# @mastra/playground
 
 ## 0.0.4
 

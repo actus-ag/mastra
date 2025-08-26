@@ -1,6 +1,6 @@
 import { Readable } from 'stream';
 
-import { MastraVoice } from '@actus-ag/mastra-core/voice';
+import { MastraVoice } from '@mastra/core/voice';
 import { Speechify } from '@speechify/api-sdk';
 import type { AudioStreamRequest, VoiceModelName } from '@speechify/api-sdk';
 

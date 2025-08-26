@@ -1,7 +1,7 @@
 import { ReadableStream } from 'node:stream/web';
-import type { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
-import type { LegacyWorkflowRuns } from '@actus-ag/mastra-core/storage';
-import type { LegacyWorkflow } from '@actus-ag/mastra-core/workflows/legacy';
+import type { RuntimeContext } from '@mastra/core/runtime-context';
+import type { LegacyWorkflowRuns } from '@mastra/core/storage';
+import type { LegacyWorkflow } from '@mastra/core/workflows/legacy';
 import { stringify } from 'superjson';
 import zodToJsonSchema from 'zod-to-json-schema';
 import { HTTPException } from '../http-exception';
@@ -13,9 +13,9 @@ interface WorkflowContext extends Context {
   runId?: string;
 }
 
-export async function getLegacyWorkflowsHandler({ mastra }: WorkflowContext) {
+export async function getLegacyWorkflowsHandler({ @mastra }: WorkflowContext) {
   try {
-    const workflows = mastra.legacy_getWorkflows({ serialized: false });
+    const workflows = @mastra.legacy_getWorkflows({ serialized: false });
     const _workflows = Object.entries(workflows).reduce<any>((acc, [key, workflow]) => {
       if (workflow.isNested) return acc;
       acc[key] = {
@@ -45,13 +45,13 @@ export async function getLegacyWorkflowsHandler({ mastra }: WorkflowContext) {
   }
 }
 
-export async function getLegacyWorkflowByIdHandler({ mastra, workflowId }: WorkflowContext) {
+export async function getLegacyWorkflowByIdHandler({ @mastra, workflowId }: WorkflowContext) {
   try {
     if (!workflowId) {
       throw new HTTPException(400, { message: 'Workflow ID is required' });
     }
 
-    const workflow = mastra.legacy_getWorkflow(workflowId);
+    const workflow = @mastra.legacy_getWorkflow(workflowId);
 
     if (!workflow) {
       throw new HTTPException(404, { message: 'Workflow not found' });
@@ -82,12 +82,12 @@ export async function getLegacyWorkflowByIdHandler({ mastra, workflowId }: Workf
 }
 
 export async function startAsyncLegacyWorkflowHandler({
-  mastra,
+  @mastra,
   runtimeContext,
   workflowId,
   runId,
   triggerData,
-}: Pick<WorkflowContext, 'mastra' | 'workflowId' | 'runId'> & {
+}: Pick<WorkflowContext, '@actus-ag/@mastra' | 'workflowId' | 'runId'> & {
   triggerData?: unknown;
   runtimeContext: RuntimeContext;
 }) {
@@ -96,7 +96,7 @@ export async function startAsyncLegacyWorkflowHandler({
       throw new HTTPException(400, { message: 'Workflow ID is required' });
     }
 
-    const workflow = mastra.legacy_getWorkflow(workflowId);
+    const workflow = @mastra.legacy_getWorkflow(workflowId);
 
     if (!workflow) {
       throw new HTTPException(404, { message: 'Workflow not found' });
@@ -130,10 +130,10 @@ export async function startAsyncLegacyWorkflowHandler({
 }
 
 export async function getLegacyWorkflowRunHandler({
-  mastra,
+  @mastra,
   workflowId,
   runId,
-}: Pick<WorkflowContext, 'mastra' | 'workflowId' | 'runId'>): Promise<ReturnType<LegacyWorkflow['getRun']>> {
+}: Pick<WorkflowContext, '@actus-ag/@mastra' | 'workflowId' | 'runId'>): Promise<ReturnType<LegacyWorkflow['getRun']>> {
   try {
     if (!workflowId) {
       throw new HTTPException(400, { message: 'Workflow ID is required' });
@@ -143,7 +143,7 @@ export async function getLegacyWorkflowRunHandler({
       throw new HTTPException(400, { message: 'Run ID is required' });
     }
 
-    const workflow = mastra.legacy_getWorkflow(workflowId);
+    const workflow = @mastra.legacy_getWorkflow(workflowId);
 
     if (!workflow) {
       throw new HTTPException(404, { message: 'Workflow not found' });
@@ -162,16 +162,16 @@ export async function getLegacyWorkflowRunHandler({
 }
 
 export async function createLegacyWorkflowRunHandler({
-  mastra,
+  @mastra,
   workflowId,
   runId: prevRunId,
-}: Pick<WorkflowContext, 'mastra' | 'workflowId' | 'runId'>) {
+}: Pick<WorkflowContext, '@actus-ag/@mastra' | 'workflowId' | 'runId'>) {
   try {
     if (!workflowId) {
       throw new HTTPException(400, { message: 'Workflow ID is required' });
     }
 
-    const workflow = mastra.legacy_getWorkflow(workflowId);
+    const workflow = @mastra.legacy_getWorkflow(workflowId);
 
     if (!workflow) {
       throw new HTTPException(404, { message: 'Workflow not found' });
@@ -186,12 +186,12 @@ export async function createLegacyWorkflowRunHandler({
 }
 
 export async function startLegacyWorkflowRunHandler({
-  mastra,
+  @mastra,
   runtimeContext,
   workflowId,
   runId,
   triggerData,
-}: Pick<WorkflowContext, 'mastra' | 'workflowId' | 'runId'> & {
+}: Pick<WorkflowContext, '@actus-ag/@mastra' | 'workflowId' | 'runId'> & {
   triggerData?: unknown;
   runtimeContext: RuntimeContext;
 }) {
@@ -204,7 +204,7 @@ export async function startLegacyWorkflowRunHandler({
       throw new HTTPException(400, { message: 'runId required to start run' });
     }
 
-    const workflow = mastra.legacy_getWorkflow(workflowId);
+    const workflow = @mastra.legacy_getWorkflow(workflowId);
     const run = workflow.getMemoryRun(runId);
 
     if (!run) {
@@ -223,10 +223,10 @@ export async function startLegacyWorkflowRunHandler({
 }
 
 export async function watchLegacyWorkflowHandler({
-  mastra,
+  @mastra,
   workflowId,
   runId,
-}: Pick<WorkflowContext, 'mastra' | 'workflowId' | 'runId'>): Promise<ReadableStream<string>> {
+}: Pick<WorkflowContext, '@actus-ag/@mastra' | 'workflowId' | 'runId'>): Promise<ReadableStream<string>> {
   try {
     if (!workflowId) {
       throw new HTTPException(400, { message: 'Workflow ID is required' });
@@ -236,7 +236,7 @@ export async function watchLegacyWorkflowHandler({
       throw new HTTPException(400, { message: 'runId required to watch workflow' });
     }
 
-    const workflow = mastra.legacy_getWorkflow(workflowId);
+    const workflow = @mastra.legacy_getWorkflow(workflowId);
     const run = workflow.getMemoryRun(runId);
 
     if (!run) {
@@ -278,7 +278,7 @@ export async function watchLegacyWorkflowHandler({
 }
 
 export async function resumeAsyncLegacyWorkflowHandler({
-  mastra,
+  @mastra,
   workflowId,
   runId,
   body,
@@ -293,7 +293,7 @@ export async function resumeAsyncLegacyWorkflowHandler({
       throw new HTTPException(400, { message: 'runId required to resume workflow' });
     }
 
-    const workflow = mastra.legacy_getWorkflow(workflowId);
+    const workflow = @mastra.legacy_getWorkflow(workflowId);
     const run = workflow.getMemoryRun(runId);
 
     if (!run) {
@@ -315,7 +315,7 @@ export async function resumeAsyncLegacyWorkflowHandler({
 }
 
 export async function resumeLegacyWorkflowHandler({
-  mastra,
+  @mastra,
   workflowId,
   runId,
   body,
@@ -330,7 +330,7 @@ export async function resumeLegacyWorkflowHandler({
       throw new HTTPException(400, { message: 'runId required to resume workflow' });
     }
 
-    const workflow = mastra.legacy_getWorkflow(workflowId);
+    const workflow = @mastra.legacy_getWorkflow(workflowId);
     const run = workflow.getMemoryRun(runId);
 
     if (!run) {
@@ -350,7 +350,7 @@ export async function resumeLegacyWorkflowHandler({
 }
 
 export async function getLegacyWorkflowRunsHandler({
-  mastra,
+  @mastra,
   workflowId,
   fromDate,
   toDate,
@@ -369,7 +369,7 @@ export async function getLegacyWorkflowRunsHandler({
       throw new HTTPException(400, { message: 'Workflow ID is required' });
     }
 
-    const workflow = mastra.legacy_getWorkflow(workflowId);
+    const workflow = @mastra.legacy_getWorkflow(workflowId);
     const workflowRuns = (await workflow.getWorkflowRuns({ fromDate, toDate, limit, offset, resourceId })) || {
       runs: [],
       total: 0,

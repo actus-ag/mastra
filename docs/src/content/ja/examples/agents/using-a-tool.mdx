@@ -10,9 +10,9 @@ import { GithubLink } from "@/components/github-link";
 AIエージェントを構築する際には、しばしば外部データソースや機能を統合して、その能力を強化する必要があります。この例では、特定の場所の正確な天気情報を提供するために専用の天気ツールを使用するAIエージェントを作成する方法を示します。
 
 ```ts showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core";
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { createTool } from "@actus-ag/mastra-core/tools";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { createTool } from "@mastra/cli/cli/cli/core/tools";
 import { openai } from "@ai-sdk/openai";
 import { z } from "zod";
 
@@ -122,12 +122,12 @@ weatherToolを使用して現在の天気データを取得してください。
   tools: { weatherTool },
 });
 
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   agents: { weatherAgent },
 });
 
 async function main() {
-  const agent = await mastra.getAgent("weatherAgent");
+  const agent = await @@mastra/cli/cli/cli.getAgent("weatherAgent");
   const result = await agent.generate("ロンドンの天気はどうですか？");
   console.log(result.text);
 }
@@ -143,6 +143,6 @@ main();
 
 <GithubLink
   link={
-    "https://github.com/mastra-ai/mastra/blob/main/examples/basics/agents/using-a-tool"
+    "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/agents/using-a-tool"
   }
 />

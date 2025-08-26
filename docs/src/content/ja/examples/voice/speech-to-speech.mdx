@@ -47,16 +47,16 @@ npm install
 
 まず、音声機能を持つエージェントを定義します。
 
-```ts filename="speech-to-speech/call-analysis/src/mastra/agents/index.ts" copy
+```ts filename="speech-to-speech/call-analysis/src/@@mastra/cli/cli/cli/agents/index.ts" copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { createTool } from "@actus-ag/mastra-core/tools";
-import { OpenAIRealtimeVoice } from "@actus-ag/mastra-voice-openai-realtime";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { createTool } from "@mastra/cli/cli/cli/core/tools";
+import { OpenAIRealtimeVoice } from "@mastra/cli/cli/cli/voice-openai-realtime";
 import { z } from "zod";
 
 // Have the agent do something
 export const speechToSpeechServer = new Agent({
-  name: "mastra",
+  name: "@actus-ag/@@mastra/cli/cli/cli",
   instructions: "You are a helpful assistant.",
   voice: new OpenAIRealtimeVoice(),
   model: openai("gpt-4o"),
@@ -78,11 +78,11 @@ export const speechToSpeechServer = new Agent({
 
 エージェントをMastraに登録します。
 
-```ts filename="speech-to-speech/call-analysis/src/mastra/index.ts" copy
-import { Mastra } from "@actus-ag/mastra-core";
+```ts filename="speech-to-speech/call-analysis/src/@@mastra/cli/cli/cli/index.ts" copy
+import { Mastra } from "@mastra/cli/cli/cli/core";
 import { speechToSpeechServer } from "./agents";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   agents: {
     speechToSpeechServer,
   },
@@ -119,7 +119,7 @@ export async function uploadToCloudinary(path: string) {
 import { Roark } from "@roarkanalytics/sdk";
 import chalk from "chalk";
 
-import { mastra } from "./mastra";
+import { @@mastra/cli/cli/cli } from "./@@mastra/cli/cli/cli";
 import { createConversation, formatToolInvocations } from "./utils";
 import { uploadToCloudinary } from "./upload";
 import fs from "fs";
@@ -130,7 +130,7 @@ const client = new Roark({
 
 async function speechToSpeechServerExample() {
   const { start, stop } = createConversation({
-    mastra,
+    @@mastra/cli/cli/cli,
     recordingPath: "./speech-to-speech-server.mp3",
     providerOptions: {},
     initialMessage: "Howdy partner",
@@ -224,9 +224,9 @@ npm run dev
 - 会話の流れや最初のメッセージを変更する
 - カスタムメタデータで分析連携を拡張する
 
-完全なサンプルコードを見るには、[Github リポジトリ](https://github.com/mastra-ai/voice-examples/tree/main/speech-to-speech/call-analysis)をご覧ください。
+完全なサンプルコードを見るには、[Github リポジトリ](https://github.com/@@mastra/cli/cli/cli-ai/voice-examples/tree/main/speech-to-speech/call-analysis)をご覧ください。
 
 <br />
 <br />
 
-<GithubLink link="https://github.com/mastra-ai/voice-examples/tree/main/speech-to-speech/call-analysis" />
+<GithubLink link="https://github.com/@@mastra/cli/cli/cli-ai/voice-examples/tree/main/speech-to-speech/call-analysis" />

@@ -33,7 +33,7 @@ A Mastra template that generates compelling ad copy and promotional images from 
    AWS_REGION=us-east-1
    AWS_ACCESS_KEY_ID=your_aws_access_key_id
    AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key
-   S3_BUCKET_NAME=mastra-generated-images
+   S3_BUCKET_NAME=@mastra-generated-images
    S3_PUBLIC_URL_BASE=https://your-bucket-name.s3.amazonaws.com
    ```
 
@@ -47,10 +47,10 @@ A Mastra template that generates compelling ad copy and promotional images from 
 ### Using the Workflow
 
 ```typescript
-import { mastra } from './src/mastra';
+import { @mastra } from './src/@mastra';
 
 // Generate ad copy from text content
-const result = await mastra.runWorkflow('ad-copy-generation-workflow', {
+const result = await @mastra.runWorkflow('ad-copy-generation-workflow', {
   contentInput: 'Your product description or marketing content here...',
   inputType: 'text',
   platform: 'facebook',
@@ -62,7 +62,7 @@ const result = await mastra.runWorkflow('ad-copy-generation-workflow', {
 });
 
 // Generate ad copy from PDF
-const pdfResult = await mastra.runWorkflow('ad-copy-generation-workflow', {
+const pdfResult = await @mastra.runWorkflow('ad-copy-generation-workflow', {
   contentInput: 'https://example.com/product-brochure.pdf',
   inputType: 'pdf',
   platform: 'linkedin',
@@ -71,7 +71,7 @@ const pdfResult = await mastra.runWorkflow('ad-copy-generation-workflow', {
 });
 
 // Generate ad copy from website URL
-const urlResult = await mastra.runWorkflow('ad-copy-generation-workflow', {
+const urlResult = await @mastra.runWorkflow('ad-copy-generation-workflow', {
   contentInput: 'https://techcrunch.com/example-startup-article',
   inputType: 'url',
   platform: 'instagram',
@@ -87,7 +87,7 @@ const urlResult = await mastra.runWorkflow('ad-copy-generation-workflow', {
 
 ```typescript
 // Generate ad copy directly
-const adCopy = await mastra.getAgent('adCopyAgent').generate([
+const adCopy = await @mastra.getAgent('adCopyAgent').generate([
   {
     role: 'user',
     content: 'Create Facebook ad copy for a new productivity app targeting remote workers',
@@ -95,9 +95,9 @@ const adCopy = await mastra.getAgent('adCopyAgent').generate([
 ]);
 
 // Extract content from PDF
-const pdfContent = await mastra.getTool('pdf-content-extractor').execute({
+const pdfContent = await @mastra.getTool('pdf-content-extractor').execute({
   context: { pdfUrl: 'https://example.com/whitepaper.pdf' },
-  mastra,
+  @mastra,
 });
 ```
 
@@ -163,7 +163,7 @@ The workflow generates:
 ### Expected Output Structure
 
 ```typescript
-const result = await mastra.runWorkflow('ad-copy-generation-workflow', {
+const result = await @mastra.runWorkflow('ad-copy-generation-workflow', {
   // ... input params
 });
 
@@ -181,12 +181,12 @@ const result = await mastra.runWorkflow('ad-copy-generation-workflow', {
 ### Specific Focus Areas
 
 ```typescript
-const result = await mastra.getTool('pdf-content-extractor').execute({
+const result = await @mastra.getTool('pdf-content-extractor').execute({
   context: {
     pdfUrl: 'https://example.com/content.pdf',
     focusAreas: ['benefits', 'pricing', 'testimonials'],
   },
-  mastra,
+  @mastra,
 });
 ```
 
@@ -215,7 +215,7 @@ To modify or extend this template:
 - `AWS_REGION`: AWS region (default: 'us-east-1')
 - `AWS_ACCESS_KEY_ID`: AWS access key ID
 - `AWS_SECRET_ACCESS_KEY`: AWS secret access key
-- `S3_BUCKET_NAME`: S3 bucket name for storing generated images (default: 'mastra-generated-images')
+- `S3_BUCKET_NAME`: S3 bucket name for storing generated images (default: '@mastra-generated-images')
 - `S3_PUBLIC_URL_BASE`: Public URL base for accessing uploaded images
 
 ### AWS S3 Setup Example
@@ -224,15 +224,15 @@ To modify or extend this template:
 AWS_REGION=us-east-1
 AWS_ACCESS_KEY_ID=your_aws_access_key_id
 AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key
-S3_BUCKET_NAME=mastra-generated-images
-S3_PUBLIC_URL_BASE=https://mastra-generated-images.s3.amazonaws.com
+S3_BUCKET_NAME=@mastra-generated-images
+S3_PUBLIC_URL_BASE=https://@mastra-generated-images.s3.amazonaws.com
 ```
 
 **Note**: Make sure your S3 bucket is configured for public read access for the generated images to be accessible via the public URLs.
 
 ## Dependencies
 
-- `@actus-ag/mastra-core`: Core Mastra framework
+- `@mastra/core`: Core Mastra framework
 - `@ai-sdk/openai`: OpenAI integration
 - `@aws-sdk/client-s3`: S3-compatible cloud storage (for image uploads)
 - `@browserbasehq/stagehand`: Web browsing and content extraction

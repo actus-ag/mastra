@@ -49,10 +49,10 @@ export function Chat({ threadId, resourceId }) {
 }
 
 // app/api/chat/route.ts (Next.js Example)
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { Memory } from "@actus-ag/mastra-memory";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { Memory } from "@mastra/cli/cli/cli/memory";
 import { openai } from "@ai-sdk/openai";
-import { CoreMessage } from "@actus-ag/mastra-core"; // Import CoreMessage
+import { CoreMessage } from "@mastra/cli/cli/cli/core"; // Import CoreMessage
 
 const agent = new Agent({
   name: "ChatAgent",

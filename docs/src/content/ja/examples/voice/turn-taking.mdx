@@ -13,10 +13,10 @@ import { GithubLink } from "@/components/github-link";
 
 まず、異なる個性と音声機能を持つ2つのエージェントを作成します。
 
-```typescript filename="src/mastra/agents/index.ts"
+```typescript filename="src/@@mastra/cli/cli/cli/agents/index.ts"
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { OpenAIVoice } from "@mastra/cli/cli/cli/voice-openai";
 
 export const optimistAgent = new Agent({
   name: "Optimist",
@@ -43,12 +43,12 @@ export const skepticAgent = new Agent({
 
 次に、両方のエージェントをあなたの Mastra インスタンスに登録します。
 
-```typescript filename="src/mastra/index.ts"
-import { PinoLogger } from "@actus-ag/mastra-loggers";
-import { Mastra } from "@actus-ag/mastra-core/mastra";
+```typescript filename="src/@@mastra/cli/cli/cli/index.ts"
+import { PinoLogger } from "@mastra/cli/cli/cli/loggers";
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
 import { optimistAgent, skepticAgent } from "./agents";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   agents: {
     optimistAgent,
     skepticAgent,
@@ -65,8 +65,8 @@ export const mastra = new Mastra({
 この例では、エージェント同士のターンテイキングの流れを管理し、各エージェントが前のエージェントの発言に応答することを確実にする方法を示します。
 
 ```typescript filename="src/debate/turn-taking.ts"
-import { mastra } from "../../mastra";
-import { playAudio, Recorder } from "@actus-ag/mastra-node-audio";
+import { @@mastra/cli/cli/cli } from "../../@@mastra/cli/cli/cli";
+import { playAudio, Recorder } from "@mastra/cli/cli/cli/node-audio";
 import * as p from "@clack/prompts";
 
 // Helper function to format text with line wrapping
@@ -103,7 +103,7 @@ async function processTurn(
   topic: string,
   previousResponse: string = "",
 ) {
-  const agent = mastra.getAgent(agentName);
+  const agent = @@mastra/cli/cli/cli.getAgent(agentName);
   const spinner = p.spinner();
   spinner.start(`${agent.name} is thinking...`);
 
@@ -269,9 +269,9 @@ main().catch((error) => {
 "use client";
 
 import { useState, useRef } from "react";
-import { MastraClient } from "@actus-ag/mastra-client-js";
+import { MastraClient } from "@@mastra/cli/cli/cli-client-js";
 
-const mastraClient = new MastraClient({
+const @@mastra/cli/cli/cliClient = new MastraClient({
   baseUrl: process.env.NEXT_PUBLIC_MASTRA_URL || "http://localhost:4111",
 });
 
@@ -291,8 +291,8 @@ export default function DebateInterface() {
     setResponses([]);
 
     try {
-      const optimist = mastraClient.getAgent("optimistAgent");
-      const skeptic = mastraClient.getAgent("skepticAgent");
+      const optimist = @@mastra/cli/cli/cliClient.getAgent("optimistAgent");
+      const skeptic = @@mastra/cli/cli/cliClient.getAgent("skepticAgent");
 
       const newResponses = [];
       let optimistResponse = "";
@@ -349,7 +349,7 @@ export default function DebateInterface() {
 
     try {
       setIsPlaying(true);
-      const agentClient = mastraClient.getAgent(
+      const agentClient = @@mastra/cli/cli/cliClient.getAgent(
         agent === "Optimist" ? "optimistAgent" : "skepticAgent",
       );
 
@@ -467,6 +467,6 @@ AI Debate with Turn Taking の完全な実装は、私たちの GitHub リポジ
 <br />
 <GithubLink
   link={
-    "https://github.com/mastra-ai/voice-examples/tree/main/text-to-speech/turn-taking"
+    "https://github.com/@@mastra/cli/cli/cli-ai/voice-examples/tree/main/text-to-speech/turn-taking"
   }
 />

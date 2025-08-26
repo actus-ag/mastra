@@ -1,4 +1,4 @@
-import { createTool } from '@actus-ag/mastra-core/tools';
+import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
 import { extractTextFromPDF } from '../lib/pdf-utils';
 
@@ -21,7 +21,7 @@ export const pdfContentExtractorTool = createTool({
     pagesCount: z.number().describe('Number of pages in the PDF'),
     characterCount: z.number().describe('Number of characters extracted from the PDF'),
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     const { pdfUrl, focusAreas = [] } = context;
 
     console.log('📥 Downloading PDF from URL:', pdfUrl);
@@ -53,7 +53,7 @@ export const pdfContentExtractorTool = createTool({
 
       // Step 3: Create marketing-focused summary
       console.log('🎯 Creating marketing-focused summary...');
-      const contentSummarizerAgent = mastra?.getAgent('contentSummarizerAgent');
+      const contentSummarizerAgent = @mastra?.getAgent('contentSummarizerAgent');
       if (!contentSummarizerAgent) {
         throw new Error('Content summarizer agent not found');
       }

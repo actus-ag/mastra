@@ -11,7 +11,7 @@ import { GithubLink } from "@/components/github-link";
 
 ```tsx copy
 import { cohere } from "@ai-sdk/cohere";
-import { MDocument } from "@actus-ag/mastra-rag";
+import { MDocument } from "@mastra/cli/cli/cli/rag";
 import { embedMany } from "ai";
 
 const doc = MDocument.fromText("Your text content...");
@@ -31,6 +31,6 @@ const { embeddings } = await embedMany({
 <br />
 <GithubLink
   link={
-    "https://github.com/mastra-ai/mastra/blob/main/examples/basics/rag/embed-text-with-cohere"
+    "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/rag/embed-text-with-cohere"
   }
 />

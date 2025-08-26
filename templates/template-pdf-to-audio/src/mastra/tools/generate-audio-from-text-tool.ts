@@ -1,4 +1,4 @@
-import { createTool } from '@actus-ag/mastra-core/tools';
+import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
 
 const MAX_TEXT_LENGTH = 4000;
@@ -22,7 +22,7 @@ export const generateAudioFromTextTool = createTool({
     }),
     success: z.boolean().describe('Whether audio generation was successful'),
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     const { extractedText, speaker = 'nova', speed = 1.0 } = context;
 
     console.log('🎙️ Generating audio from extracted text...');
@@ -51,7 +51,7 @@ export const generateAudioFromTextTool = createTool({
     }
 
     try {
-      const agent = mastra?.getAgent('textToAudioAgent');
+      const agent = @mastra?.getAgent('textToAudioAgent');
       if (!agent) {
         throw new Error('Text-to-audio agent not found');
       }

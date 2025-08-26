@@ -13,7 +13,7 @@ const links = [
   },
   {
     text: "Book",
-    url: "https://mastra.ai/book",
+    url: "https://@@mastra/cli/cli/cli.ai/book",
   },
   {
     text: "llms.txt",
@@ -25,7 +25,7 @@ const links = [
   },
   {
     text: "MCP Registry Registry",
-    url: "https://mastra.ai/mcp-registry-registry",
+    url: "https://@@mastra/cli/cli/cli.ai/mcp-registry-registry",
   },
 ];
 
@@ -37,7 +37,7 @@ const socials: Array<{
   {
     text: "github",
 
-    url: "https://github.com/mastra-ai/mastra",
+    url: "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli",
   },
   {
     text: "discord",
@@ -47,12 +47,12 @@ const socials: Array<{
   {
     text: "X",
 
-    url: "https://x.com/mastra_ai",
+    url: "https://x.com/@@mastra/cli/cli/cli_ai",
   },
   {
     text: "youtube",
 
-    url: "https://www.youtube.com/@mastra-ai",
+    url: "https://www.youtube.com/@mastra/cli/cli/cli-ai",
   },
 ];
 

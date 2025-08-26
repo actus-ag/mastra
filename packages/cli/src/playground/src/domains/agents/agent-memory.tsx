@@ -1,4 +1,4 @@
-import { MemorySearch } from '@actus-ag/mastra-playground-ui';
+import { MemorySearch } from '@mastra/cli/cli/cli/playground-ui';
 import { useMemorySearch, useMemoryConfig } from '@/hooks/use-memory';
 import { AgentWorkingMemory } from './agent-working-memory';
 import { AgentMemoryConfig } from './agent-memory-config';
@@ -101,7 +101,7 @@ export function AgentMemory({ agentId, chatInputValue }: AgentMemoryProps) {
               Semantic recall is not enabled for this agent. Enable it to search through conversation history.
             </p>
             <a
-              href="https://mastra.ai/en/docs/memory/semantic-recall"
+              href="https://@@mastra/cli/cli/cli.ai/en/docs/memory/semantic-recall"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors"

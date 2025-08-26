@@ -1,11 +1,11 @@
 ---
-title: "`mastra dev` リファレンス | ローカル開発 | Mastra CLI"
-description: エージェント、ツール、ワークフローの開発サーバーを起動するmastra devコマンドのドキュメント。
+title: "`@actus-ag/@mastra/cli/cli dev` リファレンス | ローカル開発 | Mastra CLI"
+description: エージェント、ツール、ワークフローの開発サーバーを起動する@actus-ag/@mastra/cli/cli devコマンドのドキュメント。
 ---
 
-# `mastra dev` リファレンス
+# `@actus-ag/@mastra/cli/cli dev` リファレンス
 
-`mastra dev` コマンドは、エージェント、ツール、ワークフローのRESTルートを公開する開発サーバーを起動します。
+`@actus-ag/@mastra/cli/cli dev` コマンドは、エージェント、ツール、ワークフローのRESTルートを公開する開発サーバーを起動します。
 
 ## パラメータ
 
@@ -30,7 +30,7 @@ description: エージェント、ツール、ワークフローの開発サー�
 
 ## ルート
 
-`mastra dev`でサーバーを起動すると、デフォルトで一連のRESTルートが公開されます。
+`@actus-ag/@mastra/cli/cli dev`でサーバーを起動すると、デフォルトで一連のRESTルートが公開されます。
 
 ### システムルート
 
@@ -38,7 +38,7 @@ description: エージェント、ツール、ワークフローの開発サー�
 
 ### エージェントルート
 
-エージェントは`src/mastra/agents`からエクスポートされている必要があります。
+エージェントは`src/@@mastra/cli/cli/cli/agents`からエクスポートされている必要があります。
 
 - **GET `/api/agents`**: Mastraフォルダ内で登録されているエージェントの一覧を取得します。
 - **GET `/api/agents/:agentId`**: IDでエージェントを取得します。
@@ -55,7 +55,7 @@ description: エージェント、ツール、ワークフローの開発サー�
 
 ### ツールルート
 
-ツールは`src/mastra/tools`（または設定されたツールディレクトリ）からエクスポートされている必要があります。
+ツールは`src/@@mastra/cli/cli/cli/tools`（または設定されたツールディレクトリ）からエクスポートされている必要があります。
 
 - **GET `/api/tools`**: すべてのツールを取得します。
 - **GET `/api/tools/:toolId`**: IDでツールを取得します。
@@ -63,7 +63,7 @@ description: エージェント、ツール、ワークフローの開発サー�
 
 ### ワークフロールート
 
-ワークフローは`src/mastra/workflows`（または設定されたワークフローディレクトリ）からエクスポートされている必要があります。
+ワークフローは`src/@@mastra/cli/cli/cli/workflows`（または設定されたワークフローディレクトリ）からエクスポートされている必要があります。
 
 - **GET `/api/workflows`**: すべてのワークフローを取得します。
 - **GET `/api/workflows/:workflowId`**: IDでワークフローを取得します。
@@ -114,7 +114,7 @@ description: エージェント、ツール、ワークフローの開発サー�
 
 ## 追加の注意事項
 
-ポートのデフォルトは4111です。ポートとホスト名の両方はmastraサーバー設定で構成できます。設定の詳細については[開発サーバーの起動](/docs/local-dev/mastra-dev#launch-development-server)を参照してください。
+ポートのデフォルトは4111です。ポートとホスト名の両方は@@mastra/cli/cli/cliサーバー設定で構成できます。設定の詳細については[開発サーバーの起動](/docs/local-dev/@@mastra/cli/cli/cli-dev#launch-development-server)を参照してください。
 
 使用するプロバイダー（例：`OPENAI_API_KEY`、`ANTHROPIC_API_KEY`など）の環境変数が`.env.development`または`.env`ファイルに設定されていることを確認してください。
 
@@ -122,7 +122,7 @@ Mastraフォルダ内の`index.ts`ファイルが、開発サーバーが読み�
 
 ### リクエスト例
 
-`mastra dev`を実行した後にエージェントをテストするには：
+`@actus-ag/@mastra/cli/cli dev`を実行した後にエージェントをテストするには：
 
 ```bash
 curl -X POST http://localhost:4111/api/agents/myAgent/generate \
@@ -136,14 +136,14 @@ curl -X POST http://localhost:4111/api/agents/myAgent/generate \
 
 ## 高度な使用方法
 
-`mastra dev`サーバーは、開発中に便利ないくつかの追加環境変数に従います：
+`@actus-ag/@mastra/cli/cli dev`サーバーは、開発中に便利ないくつかの追加環境変数に従います：
 
 ### ビルドキャッシュの無効化
 
-`MASTRA_DEV_NO_CACHE=1`を設定すると、`.mastra/`以下のキャッシュされたアセットを使用する代わりに、完全な再ビルドを強制します：
+`MASTRA_DEV_NO_CACHE=1`を設定すると、`.@@mastra/cli/cli/cli/`以下のキャッシュされたアセットを使用する代わりに、完全な再ビルドを強制します：
 
 ```bash
-MASTRA_DEV_NO_CACHE=1 mastra dev
+MASTRA_DEV_NO_CACHE=1 @actus-ag/@mastra/cli/cli dev
 ```
 
 これは、バンドラープラグインをデバッグしている場合や、古い出力が疑われる場合に役立ちます。
@@ -153,7 +153,7 @@ MASTRA_DEV_NO_CACHE=1 mastra dev
 `MASTRA_CONCURRENCY`は、並列で実行される高負荷の操作（主にビルドと評価ステップ）の数を制限します。例えば：
 
 ```bash
-MASTRA_CONCURRENCY=4 mastra dev
+MASTRA_CONCURRENCY=4 @actus-ag/@mastra/cli/cli dev
 ```
 
 未設定のままにすると、CLIがマシンに適した既定値を選択します。
@@ -165,7 +165,7 @@ Vercel AI SDKでサポートされているプロバイダーを使用する場�
 ```bash
 OPENAI_API_KEY=sk-this_key \
 OPENAI_BASE_URL=https://openrouter.example/v1 \
-mastra dev
+@actus-ag/@mastra/cli/cli dev
 ```
 
 そしてAnthropicの場合：
@@ -173,7 +173,7 @@ mastra dev
 ```bash
 ANTHROPIC_API_KEY=sk-anthropic42 \
 ANTHROPIC_BASE_URL=https://anthropic.internal \
-mastra dev
+@actus-ag/@mastra/cli/cli dev
 ```
 
 これらはAI SDKによって転送され、`openai()`または`anthropic()`呼び出しで動作します。
@@ -183,5 +183,5 @@ mastra dev
 匿名のCLI分析をオプトアウトするには、`MASTRA_TELEMETRY_DISABLED=1`を設定します。これにより、ローカルプレイグラウンド内のトラッキングも防止されます。
 
 ```bash
-MASTRA_TELEMETRY_DISABLED=1 mastra dev
+MASTRA_TELEMETRY_DISABLED=1 @actus-ag/@mastra/cli/cli dev
 ```

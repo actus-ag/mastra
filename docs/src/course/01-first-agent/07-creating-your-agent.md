@@ -2,12 +2,12 @@
 
 Let's create a simple agent that will help users analyze financial transaction data. We'll create a new file called `agents/financial-agent.ts`.
 
-First, create the new agent file at src/mastra/agents/financial-agent.ts
+First, create the new agent file at src/@mastra/agents/financial-agent.ts
 
 Now add the necessary imports at the top of your file:
 
 ```typescript
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/core/agent";
 import { openai } from "@ai-sdk/openai";
 // We'll import our tool in a later step
 ```

@@ -11,7 +11,7 @@ import type {
   Hotel,
   HotelApiResponse,
 } from "@/lib/types";
-import type { StepResult } from "@actus-ag/mastra-core/workflows";
+import type { StepResult } from "@mastra/core/workflows";
 
 export class Booking {
   uri: string;

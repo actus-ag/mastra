@@ -3,7 +3,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { DevBundler } from './DevBundler';
 
 // Don't reference top-level variables in mock definitions
-vi.mock('@actus-ag/mastra-deployer/build', () => {
+vi.mock('@mastra/deployer/build', () => {
   return {
     createWatcher: vi.fn().mockResolvedValue({
       on: vi.fn().mockImplementation((event, cb) => {
@@ -43,7 +43,7 @@ describe('DevBundler', () => {
       // Arrange
       process.env.NODE_ENV = 'test-env';
       const devBundler = new DevBundler();
-      const { getWatcherInputOptions } = await import('@actus-ag/mastra-deployer/build');
+      const { getWatcherInputOptions } = await import('@mastra/deployer/build');
 
       const tmpDir = '.test-tmp';
       try {
@@ -68,7 +68,7 @@ describe('DevBundler', () => {
       // Arrange
       delete process.env.NODE_ENV;
       const devBundler = new DevBundler();
-      const { getWatcherInputOptions } = await import('@actus-ag/mastra-deployer/build');
+      const { getWatcherInputOptions } = await import('@mastra/deployer/build');
 
       // Act
       const tmpDir = '.test-tmp';

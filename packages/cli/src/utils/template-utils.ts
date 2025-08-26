@@ -11,7 +11,7 @@ export interface Template {
   workflows: string[];
 }
 
-const TEMPLATES_API_URL = process.env.MASTRA_TEMPLATES_API_URL || 'https://mastra.ai/api/templates.json';
+const TEMPLATES_API_URL = process.env.MASTRA_TEMPLATES_API_URL || 'https://@mastra.ai/api/templates.json';
 
 export async function loadTemplates(): Promise<Template[]> {
   try {

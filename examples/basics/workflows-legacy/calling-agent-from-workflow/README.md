@@ -13,7 +13,7 @@ A simple example showing how to call an agent from a workflow step using Mastra 
 1. Clone the repository and navigate to the project directory:
 
    ```bash
-   git clone https://github.com/mastra-ai/mastra
+   git clone https://github.com/@mastra-ai/@mastra
    cd examples/basics/workflows/calling-agent-from-workflow
    ```
 

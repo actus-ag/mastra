@@ -1,5 +1,5 @@
-import { Metric } from '@actus-ag/mastra-core/eval';
-import type { MetricResult } from '@actus-ag/mastra-core/eval';
+import { Metric } from '@mastra/core/eval';
+import type { MetricResult } from '@mastra/core/eval';
 import nlp from 'compromise';
 
 interface CompletenessMetricResult extends MetricResult {

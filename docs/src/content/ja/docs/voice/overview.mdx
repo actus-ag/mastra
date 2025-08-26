@@ -15,9 +15,9 @@ Mastraの音声システムは、音声インタラクションのための統�
 エージェントに音声機能を統合する方法については、[エージェントに音声を追加する](../agents/adding-voice.mdx)のドキュメントをご覧ください。このセクションでは、単一および複数の音声プロバイダーの使用方法、およびリアルタイムのインタラクションについて説明しています。
 
 ```typescript
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { openai } from "@ai-sdk/openai";
-import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
+import { OpenAIVoice } from "@mastra/cli/cli/cli/voice-openai";
 
 // Initialize OpenAI voice for TTS
 
@@ -42,10 +42,10 @@ OpenAI、ElevenLabsなど、複数のプロバイダーから選択できます�
 <Tabs items={["OpenAI", "Azure", "ElevenLabs", "PlayAI", "Google", "Cloudflare", "Deepgram", "Speechify", "Sarvam", "Murf"]}>
   <Tabs.Tab>
     ```typescript
-    import { Agent } from '@actus-ag/mastra-core/agent';
+    import { Agent } from '@mastra/cli/cli/cli/core/agent';
     import { openai } from '@ai-sdk/openai';
-    import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
-    import { playAudio } from "@actus-ag/mastra-node-audio";
+    import { OpenAIVoice } from "@mastra/cli/cli/cli/voice-openai";
+    import { playAudio } from "@mastra/cli/cli/cli/node-audio";
 
     const voiceAgent = new Agent({
     name: "Voice Agent",
@@ -72,10 +72,10 @@ OpenAI、ElevenLabsなど、複数のプロバイダーから選択できます�
 
   <Tabs.Tab>
     ```typescript
-    import { Agent } from '@actus-ag/mastra-core/agent';
+    import { Agent } from '@mastra/cli/cli/cli/core/agent';
     import { openai } from '@ai-sdk/openai';
-    import { AzureVoice } from "@actus-ag/mastra-voice-azure";
-    import { playAudio } from "@actus-ag/mastra-node-audio";
+    import { AzureVoice } from "@mastra/cli/cli/cli/voice-azure";
+    import { playAudio } from "@mastra/cli/cli/cli/node-audio";
 
     const voiceAgent = new Agent({
       name: "Voice Agent",
@@ -100,10 +100,10 @@ OpenAI、ElevenLabsなど、複数のプロバイダーから選択できます�
 
   <Tabs.Tab>
     ```typescript
-    import { Agent } from '@actus-ag/mastra-core/agent';
+    import { Agent } from '@mastra/cli/cli/cli/core/agent';
     import { openai } from '@ai-sdk/openai';
-    import { ElevenLabsVoice } from "@actus-ag/mastra-voice-elevenlabs";
-    import { playAudio } from "@actus-ag/mastra-node-audio";
+    import { ElevenLabsVoice } from "@mastra/cli/cli/cli/voice-elevenlabs";
+    import { playAudio } from "@mastra/cli/cli/cli/node-audio";
 
     const voiceAgent = new Agent({
     name: "Voice Agent",
@@ -129,10 +129,10 @@ OpenAI、ElevenLabsなど、複数のプロバイダーから選択できます�
 
   <Tabs.Tab>
     ```typescript
-    import { Agent } from '@actus-ag/mastra-core/agent';
+    import { Agent } from '@mastra/cli/cli/cli/core/agent';
     import { openai } from '@ai-sdk/openai';
-    import { PlayAIVoice } from "@actus-ag/mastra-voice-playai";
-    import { playAudio } from "@actus-ag/mastra-node-audio";
+    import { PlayAIVoice } from "@mastra/cli/cli/cli/voice-playai";
+    import { playAudio } from "@mastra/cli/cli/cli/node-audio";
 
     const voiceAgent = new Agent({
       name: "Voice Agent",
@@ -157,10 +157,10 @@ OpenAI、ElevenLabsなど、複数のプロバイダーから選択できます�
 
   <Tabs.Tab>
     ```typescript
-    import { Agent } from '@actus-ag/mastra-core/agent';
+    import { Agent } from '@mastra/cli/cli/cli/core/agent';
     import { openai } from '@ai-sdk/openai';
-    import { GoogleVoice } from "@actus-ag/mastra-voice-google";
-    import { playAudio } from "@actus-ag/mastra-node-audio";
+    import { GoogleVoice } from "@mastra/cli/cli/cli/voice-google";
+    import { playAudio } from "@mastra/cli/cli/cli/node-audio";
 
     const voiceAgent = new Agent({
     name: "Voice Agent",
@@ -186,10 +186,10 @@ OpenAI、ElevenLabsなど、複数のプロバイダーから選択できます�
 
   <Tabs.Tab>
     ```typescript
-    import { Agent } from '@actus-ag/mastra-core/agent';
+    import { Agent } from '@mastra/cli/cli/cli/core/agent';
     import { openai } from '@ai-sdk/openai';
-    import { CloudflareVoice } from "@actus-ag/mastra-voice-cloudflare";
-    import { playAudio } from "@actus-ag/mastra-node-audio";
+    import { CloudflareVoice } from "@mastra/cli/cli/cli/voice-cloudflare";
+    import { playAudio } from "@mastra/cli/cli/cli/node-audio";
 
     const voiceAgent = new Agent({
       name: "Voice Agent",
@@ -214,10 +214,10 @@ OpenAI、ElevenLabsなど、複数のプロバイダーから選択できます�
 
   <Tabs.Tab>
     ```typescript
-    import { Agent } from '@actus-ag/mastra-core/agent';
+    import { Agent } from '@mastra/cli/cli/cli/core/agent';
     import { openai } from '@ai-sdk/openai';
-    import { DeepgramVoice } from "@actus-ag/mastra-voice-deepgram";
-    import { playAudio } from "@actus-ag/mastra-node-audio";
+    import { DeepgramVoice } from "@mastra/cli/cli/cli/voice-deepgram";
+    import { playAudio } from "@mastra/cli/cli/cli/node-audio";
 
     const voiceAgent = new Agent({
     name: "Voice Agent",
@@ -243,10 +243,10 @@ OpenAI、ElevenLabsなど、複数のプロバイダーから選択できます�
 
   <Tabs.Tab>
     ```typescript
-    import { Agent } from '@actus-ag/mastra-core/agent';
+    import { Agent } from '@mastra/cli/cli/cli/core/agent';
     import { openai } from '@ai-sdk/openai';
-    import { SpeechifyVoice } from "@actus-ag/mastra-voice-speechify";
-    import { playAudio } from "@actus-ag/mastra-node-audio";
+    import { SpeechifyVoice } from "@mastra/cli/cli/cli/voice-speechify";
+    import { playAudio } from "@mastra/cli/cli/cli/node-audio";
 
     const voiceAgent = new Agent({
       name: "Voice Agent",
@@ -271,10 +271,10 @@ OpenAI、ElevenLabsなど、複数のプロバイダーから選択できます�
 
   <Tabs.Tab>
     ```typescript
-    import { Agent } from '@actus-ag/mastra-core/agent';
+    import { Agent } from '@mastra/cli/cli/cli/core/agent';
     import { openai } from '@ai-sdk/openai';
-    import { SarvamVoice } from "@actus-ag/mastra-voice-sarvam";
-    import { playAudio } from "@actus-ag/mastra-node-audio";
+    import { SarvamVoice } from "@mastra/cli/cli/cli/voice-sarvam";
+    import { playAudio } from "@mastra/cli/cli/cli/node-audio";
 
     const voiceAgent = new Agent({
     name: "Voice Agent",
@@ -300,10 +300,10 @@ OpenAI、ElevenLabsなど、複数のプロバイダーから選択できます�
 
   <Tabs.Tab>
     ```typescript
-    import { Agent } from '@actus-ag/mastra-core/agent';
+    import { Agent } from '@mastra/cli/cli/cli/core/agent';
     import { openai } from '@ai-sdk/openai';
-    import { MurfVoice } from "@actus-ag/mastra-voice-murf";
-    import { playAudio } from "@actus-ag/mastra-node-audio";
+    import { MurfVoice } from "@mastra/cli/cli/cli/voice-murf";
+    import { playAudio } from "@mastra/cli/cli/cli/node-audio";
 
     const voiceAgent = new Agent({
       name: "Voice Agent",
@@ -331,17 +331,17 @@ OpenAI、ElevenLabsなど、複数のプロバイダーから選択できます�
 
 OpenAI、ElevenLabsなど、さまざまなプロバイダーを使用して音声コンテンツを文字起こしします。詳細な設定オプションなどについては、[音声からテキストへ](./speech-to-text)をご確認ください。
 
-サンプル音声ファイルは[こちら](https://github.com/mastra-ai/realtime-voice-demo/raw/refs/heads/main/how_can_i_help_you.mp3)からダウンロードできます。
+サンプル音声ファイルは[こちら](https://github.com/@@mastra/cli/cli/cli-ai/realtime-voice-demo/raw/refs/heads/main/how_can_i_help_you.mp3)からダウンロードできます。
 
 <br />
-<AudioPlayback audio="https://github.com/mastra-ai/realtime-voice-demo/raw/refs/heads/main/how_can_i_help_you.mp3" />
+<AudioPlayback audio="https://github.com/@@mastra/cli/cli/cli-ai/realtime-voice-demo/raw/refs/heads/main/how_can_i_help_you.mp3" />
 
 <Tabs items={["OpenAI", "Azure", "ElevenLabs", "Google", "Cloudflare", "Deepgram", "Sarvam"]}>
   <Tabs.Tab>
     ```typescript
-    import { Agent } from '@actus-ag/mastra-core/agent';
+    import { Agent } from '@mastra/cli/cli/cli/core/agent';
     import { openai } from '@ai-sdk/openai';
-    import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
+    import { OpenAIVoice } from "@mastra/cli/cli/cli/voice-openai";
     import { createReadStream } from 'fs';
 
     const voiceAgent = new Agent({
@@ -370,9 +370,9 @@ OpenAI、ElevenLabsなど、さまざまなプロバイダーを使用して音�
   <Tabs.Tab>
     ```typescript
     import { createReadStream } from 'fs';
-    import { Agent } from '@actus-ag/mastra-core/agent';
+    import { Agent } from '@mastra/cli/cli/cli/core/agent';
     import { openai } from '@ai-sdk/openai';
-    import { AzureVoice } from "@actus-ag/mastra-voice-azure";
+    import { AzureVoice } from "@mastra/cli/cli/cli/voice-azure";
     import { createReadStream } from 'fs';
 
     const voiceAgent = new Agent({
@@ -399,9 +399,9 @@ OpenAI、ElevenLabsなど、さまざまなプロバイダーを使用して音�
 
   <Tabs.Tab>
     ```typescript
-    import { Agent } from '@actus-ag/mastra-core/agent';
+    import { Agent } from '@mastra/cli/cli/cli/core/agent';
     import { openai } from '@ai-sdk/openai';
-    import { ElevenLabsVoice } from "@actus-ag/mastra-voice-elevenlabs";
+    import { ElevenLabsVoice } from "@mastra/cli/cli/cli/voice-elevenlabs";
     import { createReadStream } from 'fs';
 
     const voiceAgent = new Agent({
@@ -429,9 +429,9 @@ OpenAI、ElevenLabsなど、さまざまなプロバイダーを使用して音�
 
   <Tabs.Tab>
     ```typescript
-    import { Agent } from '@actus-ag/mastra-core/agent';
+    import { Agent } from '@mastra/cli/cli/cli/core/agent';
     import { openai } from '@ai-sdk/openai';
-    import { GoogleVoice } from "@actus-ag/mastra-voice-google";
+    import { GoogleVoice } from "@mastra/cli/cli/cli/voice-google";
     import { createReadStream } from 'fs';
 
     const voiceAgent = new Agent({
@@ -458,9 +458,9 @@ OpenAI、ElevenLabsなど、さまざまなプロバイダーを使用して音�
 
   <Tabs.Tab>
     ```typescript
-    import { Agent } from '@actus-ag/mastra-core/agent';
+    import { Agent } from '@mastra/cli/cli/cli/core/agent';
     import { openai } from '@ai-sdk/openai';
-    import { CloudflareVoice } from "@actus-ag/mastra-voice-cloudflare";
+    import { CloudflareVoice } from "@mastra/cli/cli/cli/voice-cloudflare";
     import { createReadStream } from 'fs';
 
     const voiceAgent = new Agent({
@@ -488,9 +488,9 @@ OpenAI、ElevenLabsなど、さまざまなプロバイダーを使用して音�
 
   <Tabs.Tab>
     ```typescript
-    import { Agent } from '@actus-ag/mastra-core/agent';
+    import { Agent } from '@mastra/cli/cli/cli/core/agent';
     import { openai } from '@ai-sdk/openai';
-    import { DeepgramVoice } from "@actus-ag/mastra-voice-deepgram";
+    import { DeepgramVoice } from "@mastra/cli/cli/cli/voice-deepgram";
     import { createReadStream } from 'fs';
 
     const voiceAgent = new Agent({
@@ -517,9 +517,9 @@ OpenAI、ElevenLabsなど、さまざまなプロバイダーを使用して音�
 
   <Tabs.Tab>
     ```typescript
-    import { Agent } from '@actus-ag/mastra-core/agent';
+    import { Agent } from '@mastra/cli/cli/cli/core/agent';
     import { openai } from '@ai-sdk/openai';
-    import { SarvamVoice } from "@actus-ag/mastra-voice-sarvam";
+    import { SarvamVoice } from "@mastra/cli/cli/cli/voice-sarvam";
     import { createReadStream } from 'fs';
 
     const voiceAgent = new Agent({
@@ -554,10 +554,10 @@ OpenAI、ElevenLabsなど、さまざまなプロバイダーを使用して音�
 <Tabs items={["OpenAI"]}>
   <Tabs.Tab>
 ```typescript
-import { Agent } from '@actus-ag/mastra-core/agent';
+import { Agent } from '@mastra/cli/cli/cli/core/agent';
 import { openai } from '@ai-sdk/openai';
-import { playAudio, getMicrophoneStream } from '@actus-ag/mastra-node-audio';
-import { OpenAIRealtimeVoice } from "@actus-ag/mastra-voice-openai-realtime";
+import { playAudio, getMicrophoneStream } from '@mastra/cli/cli/cli/node-audio';
+import { OpenAIRealtimeVoice } from "@mastra/cli/cli/cli/voice-openai-realtime";
 
 const voiceAgent = new Agent({
 name: "Voice Agent",
@@ -816,10 +816,10 @@ OpenAI音声プロバイダーの詳細については、[OpenAI音声リファ�
 まず、必要な設定で音声プロバイダーのインスタンスを作成します。
 
 ```typescript
-import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
-import { PlayAIVoice } from "@actus-ag/mastra-voice-playai";
-import { CompositeVoice } from "@actus-ag/mastra-core/voice";
-import { playAudio, getMicrophoneStream } from "@actus-ag/mastra-node-audio";
+import { OpenAIVoice } from "@mastra/cli/cli/cli/voice-openai";
+import { PlayAIVoice } from "@mastra/cli/cli/cli/voice-playai";
+import { CompositeVoice } from "@mastra/cli/cli/cli/core/voice";
+import { playAudio, getMicrophoneStream } from "@mastra/cli/cli/cli/node-audio";
 
 // STT用のOpenAI音声を初期化
 const input = new OpenAIVoice({
@@ -865,7 +865,7 @@ CompositeVoiceの詳細については、[CompositeVoiceリファレンス](/ref
 ## その他のリソース
 
 - [CompositeVoice](../../reference/voice/composite-voice.mdx)
-- [MastraVoice](../../reference/voice/mastra-voice.mdx)
+- [MastraVoice](../../reference/voice/@@mastra/cli/cli/cli-voice.mdx)
 - [OpenAI Voice](../../reference/voice/openai.mdx)
 - [Azure Voice](../../reference/voice/azure.mdx)
 - [Google Voice](../../reference/voice/google.mdx)

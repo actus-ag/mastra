@@ -1,4 +1,4 @@
-import type { StorageThreadType } from '@actus-ag/mastra-core';
+import type { StorageThreadType } from '@mastra/core';
 
 import type {
   GetMemoryThreadMessagesResponse,

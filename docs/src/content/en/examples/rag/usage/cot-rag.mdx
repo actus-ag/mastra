@@ -38,16 +38,16 @@ Then, import the necessary dependencies:
 
 ```typescript copy showLineNumbers filename="index.ts"
 import { openai } from "@ai-sdk/openai";
-import { Mastra } from "@actus-ag/mastra-core";
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { PgVector } from "@actus-ag/mastra-pg";
-import { createVectorQueryTool, MDocument } from "@actus-ag/mastra-rag";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { PgVector } from "@mastra/cli/cli/cli/pg";
+import { createVectorQueryTool, MDocument } from "@mastra/cli/cli/cli/rag";
 import { embedMany } from "ai";
 ```
 
 ## Vector Query Tool Creation
 
-Using createVectorQueryTool imported from @actus-ag/mastra-rag, you can create a tool that can query the vector database.
+Using createVectorQueryTool imported from @mastra/cli/cli/cli/rag, you can create a tool that can query the vector database.
 
 ```typescript copy showLineNumbers{8} filename="index.ts"
 const vectorQueryTool = createVectorQueryTool({
@@ -100,11 +100,11 @@ const pgVector = new PgVector({
   connectionString: process.env.POSTGRES_CONNECTION_STRING!,
 });
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   agents: { ragAgent },
   vectors: { pgVector },
 });
-const agent = mastra.getAgent("ragAgent");
+const agent = @@mastra/cli/cli/cli.getAgent("ragAgent");
 ```
 
 ## Document Processing
@@ -134,7 +134,7 @@ const { embeddings } = await embedMany({
   model: openai.embedding("text-embedding-3-small"),
 });
 
-const vectorStore = mastra.getVector("pgVector");
+const vectorStore = @@mastra/cli/cli/cli.getVector("pgVector");
 await vectorStore.createIndex({
   indexName: "embeddings",
   dimension: 1536,
@@ -180,6 +180,6 @@ console.log("Response:", answerThree.text);
 <br />
 <GithubLink
   link={
-    "https://github.com/mastra-ai/mastra/blob/main/examples/basics/rag/cot-rag"
+    "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/rag/cot-rag"
   }
 />

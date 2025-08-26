@@ -1,4 +1,4 @@
-# @actus-ag/mastra-couchbase
+# @mastra/couchbase
 
 A Mastra vector store implementation for Couchbase, enabling powerful vector similarity search capabilities using the official Couchbase Node.js SDK (v4+). Leverages Couchbase Server's built-in Vector Search feature (available in version 7.6.4+).
 
@@ -11,7 +11,7 @@ A Mastra vector store implementation for Couchbase, enabling powerful vector sim
 - 🆔 Automatic UUID generation for documents if IDs are not provided during upsert.
 - ☁️ Compatible with both self-hosted Couchbase Server (7.6.4+) and Couchbase Capella.
 - ⚙️ Uses the official Couchbase Node.js SDK v4+.
-- 📈 Built-in telemetry support for tracing operations via `@actus-ag/mastra-core`.
+- 📈 Built-in telemetry support for tracing operations via `@mastra/core`.
 
 ## Prerequisites
 
@@ -26,23 +26,23 @@ A Mastra vector store implementation for Couchbase, enabling powerful vector sim
 ## Installation
 
 ```bash
-npm install @actus-ag/mastra-couchbase
+npm install @mastra/couchbase
 # or using pnpm
-pnpm add @actus-ag/mastra-couchbase
+pnpm add @mastra/couchbase
 # or using yarn
-yarn add @actus-ag/mastra-couchbase
+yarn add @mastra/couchbase
 ```
 
 ## Getting Started: A Quick Tutorial
 
-Let's set up `@actus-ag/mastra-couchbase` to store and search vectors in your Couchbase cluster.
+Let's set up `@mastra/couchbase` to store and search vectors in your Couchbase cluster.
 
 **Step 1: Connect to Your Cluster**
 
 Instantiate `CouchbaseVector` with your cluster details.
 
 ```typescript
-import { CouchbaseVector } from '@actus-ag/mastra-couchbase';
+import { CouchbaseVector } from '@mastra/couchbase';
 
 const connectionString = 'couchbases://your_cluster_host?ssl=no_verify'; // Use couchbases:// for Capella/TLS, couchbase:// for local/non-TLS
 const username = 'your_couchbase_user';
@@ -271,7 +271,7 @@ _Note_: Deleting Index does NOT delete the vectors in the associated Couchbase C
 We truly appreciate your interest in this project!
 This project is **community-maintained**, which means it's **not officially supported** by our support team.
 
-If you need help, have found a bug, or want to contribute improvements, the best place to do that is right here — by [opening a GitHub issue](https://github.com/mastra-ai/mastra/issues) (Update this link to your project's issue tracker!).
+If you need help, have found a bug, or want to contribute improvements, the best place to do that is right here — by [opening a GitHub issue](https://github.com/@mastra-ai/@mastra/issues) (Update this link to your project's issue tracker!).
 Our support portal is unable to assist with requests related to this project, so we kindly ask that all inquiries stay within GitHub.
 
 Your collaboration helps us all move forward together — thank you!

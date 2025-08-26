@@ -1,8 +1,8 @@
 import type { Client, InValue } from '@libsql/client';
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import type { ScoreRowData, ScoringSource } from '@actus-ag/mastra-core/scores';
-import { TABLE_SCORERS, ScoresStorage, safelyParseJSON } from '@actus-ag/mastra-core/storage';
-import type { PaginationInfo, StoragePagination } from '@actus-ag/mastra-core/storage';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import type { ScoreRowData, ScoringSource } from '@mastra/core/scores';
+import { TABLE_SCORERS, ScoresStorage, safelyParseJSON } from '@mastra/core/storage';
+import type { PaginationInfo, StoragePagination } from '@mastra/core/storage';
 import type { StoreOperationsLibSQL } from '../operations';
 
 export class ScoresLibSQL extends ScoresStorage {

@@ -12,7 +12,7 @@ The Memory API provides methods to manage conversation threads and message histo
 Retrieve all memory threads for a specific resource:
 
 ```typescript
-const threads = await mastraClient.getMemoryThreads({
+const threads = await @@mastra/cli/cli/cliClient.getMemoryThreads({
   resourceId: "resource-1",
   agentId: "agent-1",
 });
@@ -23,7 +23,7 @@ const threads = await mastraClient.getMemoryThreads({
 Create a new memory thread:
 
 ```typescript
-const thread = await mastraClient.createMemoryThread({
+const thread = await @@mastra/cli/cli/cliClient.createMemoryThread({
   title: "New Conversation",
   metadata: { category: "support" },
   resourceId: "resource-1",
@@ -36,7 +36,7 @@ const thread = await mastraClient.createMemoryThread({
 Get an instance of a specific memory thread:
 
 ```typescript
-const thread = mastraClient.getMemoryThread("thread-id", "agent-id");
+const thread = @@mastra/cli/cli/cliClient.getMemoryThread("thread-id", "agent-id");
 ```
 
 ## Thread Methods
@@ -76,7 +76,7 @@ await thread.delete();
 Save messages to memory:
 
 ```typescript
-const savedMessages = await mastraClient.saveMessageToMemory({
+const savedMessages = await @@mastra/cli/cli/cliClient.saveMessageToMemory({
   messages: [
     {
       role: "user",
@@ -126,5 +126,5 @@ const result = await thread.deleteMessages(["message-1", "message-2", "message-3
 Check the status of the memory system:
 
 ```typescript
-const status = await mastraClient.getMemoryStatus("agent-id");
+const status = await @@mastra/cli/cli/cliClient.getMemoryStatus("agent-id");
 ```

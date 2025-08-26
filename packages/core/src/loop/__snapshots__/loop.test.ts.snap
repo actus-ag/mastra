@@ -1221,8 +1221,8 @@ exports[`Loop Tests > AISDK v5 > options.stopWhen > 2 steps: initial, tool-resul
     "attributes": {
       "aisdk.model.id": "mock-model-id",
       "aisdk.model.provider": "mock-provider",
-      "mastra.operationId": "mastra.stream",
-      "operation.name": "mastra.stream",
+      "@mastra/cli/cli.operationId": "@mastra/cli/cli.stream",
+      "operation.name": "@mastra/cli/cli.stream",
       "stream.prompt.messages": "[{"role":"user","content":[{"type":"text","text":"test-input"}]}]",
       "stream.response.finishReason": "stop",
       "stream.response.text": "Hello, world!",
@@ -1235,14 +1235,14 @@ exports[`Loop Tests > AISDK v5 > options.stopWhen > 2 steps: initial, tool-resul
       "stream.usage.totalTokens": 23,
     },
     "events": [],
-    "name": "mastra.stream",
+    "name": "@mastra/cli/cli.stream",
   },
   {
     "attributes": {
       "aisdk.model.id": "mock-model-id",
       "aisdk.model.provider": "mock-provider",
-      "mastra.operationId": "mastra.stream.aisdk.doStream",
-      "operation.name": "mastra.stream.aisdk.doStream",
+      "@mastra/cli/cli.operationId": "@mastra/cli/cli.stream.aisdk.doStream",
+      "operation.name": "@mastra/cli/cli.stream.aisdk.doStream",
       "stream.prompt.messages": "[{"role":"user","content":[{"type":"text","text":"test-input"}]}]",
       "stream.prompt.toolChoice": "auto",
       "stream.prompt.tools": [
@@ -1274,19 +1274,19 @@ exports[`Loop Tests > AISDK v5 > options.stopWhen > 2 steps: initial, tool-resul
         "name": "ai.stream.finish",
       },
     ],
-    "name": "mastra.stream.aisdk.doStream",
+    "name": "@mastra/cli/cli.stream.aisdk.doStream",
   },
   {
     "attributes": {
-      "mastra.operationId": "mastra.stream.toolCall",
-      "operation.name": "mastra.stream.toolCall",
+      "@mastra/cli/cli.operationId": "@mastra/cli/cli.stream.toolCall",
+      "operation.name": "@mastra/cli/cli.stream.toolCall",
       "stream.toolCall.args": "{"value":"value"}",
       "stream.toolCall.result": ""result1"",
       "stream.toolCall.toolCallId": "call-1",
       "stream.toolCall.toolName": "tool1",
     },
     "events": [],
-    "name": "mastra.stream.toolCall",
+    "name": "@mastra/cli/cli.stream.toolCall",
   },
 ]
 `;
@@ -1856,8 +1856,8 @@ exports[`Loop Tests > AISDK v5 > telemetry > should not record telemetry inputs 
     "attributes": {
       "aisdk.model.id": "mock-model-id",
       "aisdk.model.provider": "mock-provider",
-      "mastra.operationId": "mastra.stream",
-      "operation.name": "mastra.stream",
+      "@mastra/cli/cli.operationId": "@mastra/cli/cli.stream",
+      "operation.name": "@mastra/cli/cli.stream",
       "stream.response.finishReason": "stop",
       "stream.settings.maxRetries": 2,
       "stream.usage.inputTokens": 3,
@@ -1865,14 +1865,14 @@ exports[`Loop Tests > AISDK v5 > telemetry > should not record telemetry inputs 
       "stream.usage.totalTokens": 13,
     },
     "events": [],
-    "name": "mastra.stream",
+    "name": "@mastra/cli/cli.stream",
   },
   {
     "attributes": {
       "aisdk.model.id": "mock-model-id",
       "aisdk.model.provider": "mock-provider",
-      "mastra.operationId": "mastra.stream.aisdk.doStream",
-      "operation.name": "mastra.stream.aisdk.doStream",
+      "@mastra/cli/cli.operationId": "@mastra/cli/cli.stream.aisdk.doStream",
+      "operation.name": "@mastra/cli/cli.stream.aisdk.doStream",
       "stream.response.avgOutputTokensPerSecond": 20,
       "stream.response.finishReason": "stop",
       "stream.response.id": "id-0",
@@ -1897,19 +1897,19 @@ exports[`Loop Tests > AISDK v5 > telemetry > should not record telemetry inputs 
         "name": "ai.stream.finish",
       },
     ],
-    "name": "mastra.stream.aisdk.doStream",
+    "name": "@mastra/cli/cli.stream.aisdk.doStream",
   },
   {
     "attributes": {
-      "mastra.operationId": "mastra.stream.toolCall",
-      "operation.name": "mastra.stream.toolCall",
+      "@mastra/cli/cli.operationId": "@mastra/cli/cli.stream.toolCall",
+      "operation.name": "@mastra/cli/cli.stream.toolCall",
       "stream.toolCall.args": "{"value":"value"}",
       "stream.toolCall.result": ""value-result"",
       "stream.toolCall.toolCallId": "call-1",
       "stream.toolCall.toolName": "tool1",
     },
     "events": [],
-    "name": "mastra.stream.toolCall",
+    "name": "@mastra/cli/cli.stream.toolCall",
   },
 ]
 `;
@@ -1920,8 +1920,8 @@ exports[`Loop Tests > AISDK v5 > telemetry > should record successful tool call 
     "attributes": {
       "aisdk.model.id": "mock-model-id",
       "aisdk.model.provider": "mock-provider",
-      "mastra.operationId": "mastra.stream",
-      "operation.name": "mastra.stream",
+      "@mastra/cli/cli.operationId": "@mastra/cli/cli.stream",
+      "operation.name": "@mastra/cli/cli.stream",
       "stream.prompt.messages": "[{"role":"user","content":[{"type":"text","text":"test-input"}]}]",
       "stream.response.finishReason": "stop",
       "stream.response.text": "",
@@ -1932,14 +1932,14 @@ exports[`Loop Tests > AISDK v5 > telemetry > should record successful tool call 
       "stream.usage.totalTokens": 13,
     },
     "events": [],
-    "name": "mastra.stream",
+    "name": "@mastra/cli/cli.stream",
   },
   {
     "attributes": {
       "aisdk.model.id": "mock-model-id",
       "aisdk.model.provider": "mock-provider",
-      "mastra.operationId": "mastra.stream.aisdk.doStream",
-      "operation.name": "mastra.stream.aisdk.doStream",
+      "@mastra/cli/cli.operationId": "@mastra/cli/cli.stream.aisdk.doStream",
+      "operation.name": "@mastra/cli/cli.stream.aisdk.doStream",
       "stream.prompt.messages": "[{"role":"user","content":[{"type":"text","text":"test-input"}]}]",
       "stream.prompt.toolChoice": "auto",
       "stream.prompt.tools": [
@@ -1971,19 +1971,19 @@ exports[`Loop Tests > AISDK v5 > telemetry > should record successful tool call 
         "name": "ai.stream.finish",
       },
     ],
-    "name": "mastra.stream.aisdk.doStream",
+    "name": "@mastra/cli/cli.stream.aisdk.doStream",
   },
   {
     "attributes": {
-      "mastra.operationId": "mastra.stream.toolCall",
-      "operation.name": "mastra.stream.toolCall",
+      "@mastra/cli/cli.operationId": "@mastra/cli/cli.stream.toolCall",
+      "operation.name": "@mastra/cli/cli.stream.toolCall",
       "stream.toolCall.args": "{"value":"value"}",
       "stream.toolCall.result": ""value-result"",
       "stream.toolCall.toolCallId": "call-1",
       "stream.toolCall.toolName": "tool1",
     },
     "events": [],
-    "name": "mastra.stream.toolCall",
+    "name": "@mastra/cli/cli.stream.toolCall",
   },
 ]
 `;
@@ -1994,8 +1994,8 @@ exports[`Loop Tests > AISDK v5 > telemetry > should record telemetry data when e
     "attributes": {
       "aisdk.model.id": "mock-model-id",
       "aisdk.model.provider": "mock-provider",
-      "mastra.operationId": "mastra.stream",
-      "operation.name": "mastra.stream test-function-id",
+      "@mastra/cli/cli.operationId": "@mastra/cli/cli.stream",
+      "operation.name": "@mastra/cli/cli.stream test-function-id",
       "resource.name": "test-function-id",
       "stream.prompt.messages": "[{"role":"user","content":[{"type":"text","text":"test-input"}]}]",
       "stream.request.headers.header1": "value1",
@@ -2020,14 +2020,14 @@ exports[`Loop Tests > AISDK v5 > telemetry > should record telemetry data when e
       "stream.usage.totalTokens": 13,
     },
     "events": [],
-    "name": "mastra.stream",
+    "name": "@mastra/cli/cli.stream",
   },
   {
     "attributes": {
       "aisdk.model.id": "mock-model-id",
       "aisdk.model.provider": "mock-provider",
-      "mastra.operationId": "mastra.stream.aisdk.doStream",
-      "operation.name": "mastra.stream.aisdk.doStream test-function-id",
+      "@mastra/cli/cli.operationId": "@mastra/cli/cli.stream.aisdk.doStream",
+      "operation.name": "@mastra/cli/cli.stream.aisdk.doStream test-function-id",
       "resource.name": "test-function-id",
       "stream.prompt.messages": "[{"role":"user","content":[{"type":"text","text":"test-input"}]}]",
       "stream.prompt.toolChoice": "auto",
@@ -2069,7 +2069,7 @@ exports[`Loop Tests > AISDK v5 > telemetry > should record telemetry data when e
         "name": "ai.stream.finish",
       },
     ],
-    "name": "mastra.stream.aisdk.doStream",
+    "name": "@mastra/cli/cli.stream.aisdk.doStream",
   },
 ]
 `;

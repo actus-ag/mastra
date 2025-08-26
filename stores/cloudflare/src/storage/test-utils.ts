@@ -1,5 +1,5 @@
 import { randomUUID } from 'crypto';
-import type { WorkflowRunState } from '@actus-ag/mastra-core';
+import type { WorkflowRunState } from '@mastra/core';
 
 export const createSampleTrace = (name: string, scope?: string, attributes?: Record<string, string>) => ({
   id: `trace-${randomUUID()}`,

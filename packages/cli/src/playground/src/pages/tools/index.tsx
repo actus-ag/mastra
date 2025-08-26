@@ -1,5 +1,5 @@
 import { useAgents } from '@/hooks/use-agents';
-import { MainContentLayout, Header, HeaderTitle, MainContentContent, ToolList } from '@actus-ag/mastra-playground-ui';
+import { MainContentLayout, Header, HeaderTitle, MainContentContent, ToolList } from '@mastra/cli/cli/cli/playground-ui';
 
 import { useTools } from '@/hooks/use-all-tools';
 

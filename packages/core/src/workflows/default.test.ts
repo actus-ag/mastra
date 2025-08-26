@@ -14,7 +14,7 @@ describe('DefaultExecutionEngine.executeConditional error handling', () => {
   let abortController: AbortController;
 
   beforeEach(() => {
-    engine = new DefaultExecutionEngine({ mastra: undefined });
+    engine = new DefaultExecutionEngine({ @mastra: undefined });
     emitter = {
       emit: async (_event: string, _data: any) => {},
       on: (_event: string, _callback: (data: any) => void) => {},

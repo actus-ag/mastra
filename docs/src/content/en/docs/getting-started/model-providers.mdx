@@ -9,9 +9,9 @@ import { Callout } from 'nextra/components'
 
 Model providers are used to interact with different language models. Mastra uses [Vercel's AI SDK](https://sdk.vercel.ai) as a model routing layer to provide a similar syntax for many models:
 
-```typescript showLineNumbers copy {1,7} filename="src/mastra/agents/weather-agent.ts"
+```typescript showLineNumbers copy {1,7} filename="src/@@mastra/cli/cli/cli/agents/weather-agent.ts"
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 const agent = new Agent({
   name: "WeatherAgent",
@@ -46,9 +46,9 @@ Here are some examples of how Mastra agents can be configured to use the differe
 Official model providers are maintained by the AI SDK team.
 Their packages are usually prefixed with `@ai-sdk/`, e.g. `@ai-sdk/anthropic`, `@ai-sdk/openai`, etc.
 
-```typescript showLineNumbers copy {1,7} filename="src/mastra/agents/weather-agent.ts"
+```typescript showLineNumbers copy {1,7} filename="src/@@mastra/cli/cli/cli/agents/weather-agent.ts"
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 const agent = new Agent({
   name: "WeatherAgent",
@@ -60,9 +60,9 @@ const agent = new Agent({
 Additional configuration may be done by importing a helper function from the AI SDK provider.
 Here's an example using the OpenAI provider:
 
-```typescript showLineNumbers copy filename="src/mastra/agents/weather-agent.ts" {1,4-8,13}
+```typescript showLineNumbers copy filename="src/@@mastra/cli/cli/cli/agents/weather-agent.ts" {1,4-8,13}
 import { createOpenAI } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent"
+import { Agent } from "@mastra/cli/cli/cli/core/agent"
 
 const openai = createOpenAI({
     baseUrl: "<your-custom-base-url>",
@@ -83,9 +83,9 @@ Some language model providers implement the OpenAI API. For these providers, you
 
 Here's the general setup and provider instance creation:
 
-```typescript showLineNumbers copy filename="src/mastra/agents/weather-agent.ts" {1,4-14,19}
+```typescript showLineNumbers copy filename="src/@@mastra/cli/cli/cli/agents/weather-agent.ts" {1,4-14,19}
 import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 const openaiCompatible = createOpenAICompatible({
     name: "<model-name>",
@@ -118,9 +118,9 @@ We will look at one such provider, the Ollama provider available in the [`ollama
 
 Here's an example:
 
-```typescript showLineNumbers copy filename="src/mastra/agents/weather-agent.ts" {1,7}
+```typescript showLineNumbers copy filename="src/@@mastra/cli/cli/cli/agents/weather-agent.ts" {1,7}
 import { ollama } from "ollama-ai-provider";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 const agent = new Agent({
     name: "WeatherAgent",
@@ -131,9 +131,9 @@ const agent = new Agent({
 
 You can also configure the Ollama provider like so:
 
-```typescript showLineNumbers copy filename="src/mastra/agents/weather-agent.ts" {1,4-7,12}
+```typescript showLineNumbers copy filename="src/@@mastra/cli/cli/cli/agents/weather-agent.ts" {1,4-7,12}
 import { createOllama } from "ollama-ai-provider";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 const ollama = createOllama({
     baseUrl: "<your-custom-base-url>",

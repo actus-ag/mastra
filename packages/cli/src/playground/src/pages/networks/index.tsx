@@ -4,7 +4,7 @@ import {
   MainContentLayout,
   NetworkTable,
   MainContentContent,
-} from '@actus-ag/mastra-playground-ui';
+} from '@mastra/cli/cli/cli/playground-ui';
 import { useNetworks, useVNextNetworks } from '@/hooks/use-networks';
 
 function Networks() {

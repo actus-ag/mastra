@@ -5,10 +5,10 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@mastra/core': link:../../packages/core
-  '@mastra/mcp': link:../../packages/mcp
-  '@mastra/memory': link:../../packages/memory
-  mastra: link:../../packages/cli
+  '@mastra/cli/cli/cli/core': link:../../packages/core
+  '@mastra/cli/cli/cli/mcp': link:../../packages/mcp
+  '@mastra/cli/cli/cli/memory': link:../../packages/memory
+  @@mastra/cli/cli/cli: link:../../packages/cli
 
 importers:
 
@@ -17,13 +17,13 @@ importers:
       '@ai-sdk/openai':
         specifier: latest
         version: 1.3.17(zod@3.25.67)
-      '@mastra/core':
+      '@mastra/cli/cli/cli/core':
         specifier: link:../../packages/core
         version: link:../../packages/core
-      '@mastra/mcp':
+      '@mastra/cli/cli/cli/mcp':
         specifier: link:../../packages/mcp
         version: link:../../packages/mcp
-      '@mastra/memory':
+      '@mastra/cli/cli/cli/memory':
         specifier: link:../../packages/memory
         version: link:../../packages/memory
       '@modelcontextprotocol/sdk':
@@ -45,7 +45,7 @@ importers:
       jest:
         specifier: ^29.7.0
         version: 29.7.0(@types/node@22.14.1)
-      mastra:
+      @@mastra/cli/cli/cli:
         specifier: link:../../packages/cli
         version: link:../../packages/cli
       ts-jest:

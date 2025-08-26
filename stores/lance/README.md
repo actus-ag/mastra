@@ -5,7 +5,7 @@ This guide explains how to use LanceDB as both a storage backend and vector data
 ## Installation
 
 ```bash
-pnpm add @actus-ag/mastra-lance @lancedb/lancedb apache-arrow
+pnpm add @mastra/lance @lancedb/lancedb apache-arrow
 ```
 
 ## Setup & Configuration
@@ -13,8 +13,8 @@ pnpm add @actus-ag/mastra-lance @lancedb/lancedb apache-arrow
 ### Basic Setup
 
 ```typescript
-import { LanceStorage } from '@actus-ag/mastra-lance';
-import { Mastra } from '@actus-ag/mastra-core/mastra';
+import { LanceStorage } from '@mastra/lance';
+import { Mastra } from '@mastra/core/@mastra';
 
 // Initialize LanceStorage
 const storage = await LanceStorage.create(
@@ -23,7 +23,7 @@ const storage = await LanceStorage.create(
 );
 
 // Configure Mastra with LanceStorage
-const mastra = new Mastra({
+const @mastra = new Mastra({
   storage: storage,
 });
 ```
@@ -48,8 +48,8 @@ const s3Store = await LanceStorage.create('myApp', 's3://bucket/db', { storageOp
 ### Creating Tables
 
 ```typescript
-import { TABLE_MESSAGES } from '@actus-ag/mastra-core/storage';
-import type { StorageColumn } from '@actus-ag/mastra-core/storage';
+import { TABLE_MESSAGES } from '@mastra/core/storage';
+import type { StorageColumn } from '@mastra/core/storage';
 
 // Define schema with appropriate types
 const schema: Record<string, StorageColumn> = {
@@ -124,7 +124,7 @@ const messages = await storage.getMessages({
 ### Creating Threads
 
 ```typescript
-import type { StorageThreadType } from '@actus-ag/mastra-core';
+import type { StorageThreadType } from '@mastra/core';
 
 // Create a new thread
 const thread: StorageThreadType = {
@@ -142,7 +142,7 @@ const savedThread = await storage.saveThread({ thread });
 ### Working with Messages
 
 ```typescript
-import type { MessageType } from '@actus-ag/mastra-core';
+import type { MessageType } from '@mastra/core';
 
 // Create messages
 const messages: MessageType[] = [
@@ -163,7 +163,7 @@ const messages: MessageType[] = [
     threadId: '123e4567-e89b-12d3-a456-426614174010',
     resourceId: 'resource-123',
     role: 'assistant',
-    content: 'You can use LanceDB with Mastra by installing @actus-ag/mastra-lance package.',
+    content: 'You can use LanceDB with Mastra by installing @mastra/lance package.',
     createdAt: new Date(),
     type: 'text',
     toolCallIds: [],
@@ -193,7 +193,7 @@ const retrievedMessages = await storage.getMessages({
 Mastra's workflow system uses LanceDB to persist workflow state for continuity across runs:
 
 ```typescript
-import type { WorkflowRunState } from '@actus-ag/mastra-core';
+import type { WorkflowRunState } from '@mastra/core';
 
 // Persist a workflow snapshot
 await storage.persistWorkflowSnapshot({

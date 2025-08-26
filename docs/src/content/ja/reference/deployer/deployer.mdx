@@ -10,7 +10,7 @@ Deployerは、Mastraアプリケーションのデプロイを担当し、コー
 ## 使用例
 
 ```typescript
-import { Deployer } from "@actus-ag/mastra-deployer";
+import { Deployer } from "@mastra/cli/cli/cli/deployer";
 
 // Create a custom deployer by extending the abstract Deployer class
 class CustomDeployer extends Deployer {
@@ -24,7 +24,7 @@ class CustomDeployer extends Deployer {
     await this.prepare(outputDirectory);
 
     // Bundle the application
-    await this._bundle("server.ts", "mastra.ts", outputDirectory);
+    await this._bundle("server.ts", "@@mastra/cli/cli/cli.ts", outputDirectory);
 
     // Custom deployment logic
     // ...
@@ -112,7 +112,7 @@ Deployer クラスは、Bundler クラスから以下の主要なメソッドを
     },
     {
       name: "_bundle",
-      type: "(serverFile: string, mastraEntryFile: string, outputDirectory: string, bundleLocation?: string) => Promise<void>",
+      type: "(serverFile: string, @@mastra/cli/cli/cliEntryFile: string, outputDirectory: string, bundleLocation?: string) => Promise<void>",
       description:
         "指定されたサーバーファイルと Mastra エントリーファイルを使用してアプリケーションをバンドルします。",
     },

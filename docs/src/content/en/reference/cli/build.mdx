@@ -1,16 +1,16 @@
 ---
-title: "mastra build | Production Bundle | Mastra CLI"
+title: "@actus-ag/@mastra/cli/cli build | Production Bundle | Mastra CLI"
 description: "Build your Mastra project for production deployment"
 ---
 
-# mastra build
+# @actus-ag/@mastra/cli/cli build
 
-The `mastra build` command bundles your Mastra project into a production-ready Hono server. Hono is a lightweight, type-safe web framework that makes it easy to deploy Mastra agents as HTTP endpoints with middleware support.
+The `@actus-ag/@mastra/cli/cli build` command bundles your Mastra project into a production-ready Hono server. Hono is a lightweight, type-safe web framework that makes it easy to deploy Mastra agents as HTTP endpoints with middleware support.
 
 ## Usage
 
 ```bash
-mastra build [options]
+@actus-ag/@mastra/cli/cli build [options]
 ```
 
 ## Options
@@ -58,7 +58,7 @@ For CI or when running in resource constrained environments you can cap
 how many expensive tasks run at once by setting `MASTRA_CONCURRENCY`.
 
 ```bash copy
-MASTRA_CONCURRENCY=2 mastra build
+MASTRA_CONCURRENCY=2 @actus-ag/@mastra/cli/cli build
 ```
 
 Unset it to allow the CLI to base concurrency on the host capabilities.
@@ -68,19 +68,19 @@ Unset it to allow the CLI to base concurrency on the host capabilities.
 To opt out of anonymous build analytics set:
 
 ```bash copy
-MASTRA_TELEMETRY_DISABLED=1 mastra build
+MASTRA_TELEMETRY_DISABLED=1 @actus-ag/@mastra/cli/cli build
 ```
 
 ### Custom provider endpoints
 
 Build time respects the same `OPENAI_BASE_URL` and `ANTHROPIC_BASE_URL`
-variables that `mastra dev` does. They are forwarded by the AI SDK to
+variables that `@actus-ag/@mastra/cli/cli dev` does. They are forwarded by the AI SDK to
 any workflows or tools that call the providers.
 
 ## What It Does
 
-1. Locates your Mastra entry file (either `src/mastra/index.ts` or `src/mastra/index.js`)
-2. Creates a `.mastra` output directory
+1. Locates your Mastra entry file (either `src/@@mastra/cli/cli/cli/index.ts` or `src/@@mastra/cli/cli/cli/index.js`)
+2. Creates a `.@@mastra/cli/cli/cli` output directory
 3. Bundles your code using Rollup with:
    - Tree shaking for optimal bundle size
    - Node.js environment targeting
@@ -91,15 +91,15 @@ any workflows or tools that call the providers.
 
 ```bash copy
 # Build from current directory
-mastra build
+@actus-ag/@mastra/cli/cli build
 
 # Build from specific directory
-mastra build --dir ./my-mastra-project
+@actus-ag/@mastra/cli/cli build --dir ./my-@@mastra/cli/cli/cli-project
 ```
 
 ## Output
 
-The command generates a production bundle in the `.mastra` directory, which includes:
+The command generates a production bundle in the `.@@mastra/cli/cli/cli` directory, which includes:
 
 - A Hono-based HTTP server with your Mastra agents exposed as endpoints
 - Bundled JavaScript files optimized for production

@@ -1,6 +1,6 @@
 {
-  "name": "@actus-ag/mastra-clickhouse",
-  "version": "0.13.1",
+  "name": "@mastrackhouse",
+  "version": "0.13.2",
   "description": "Clickhouse provider for Mastra - includes db storage capabilities",
   "type": "module",
   "main": "dist/index.js",
@@ -36,7 +36,7 @@
   "devDependencies": {
     "@internal/lint": "workspace:*",
     "@internal/storage-test-utils": "workspace:*",
-    "@actus-ag/mastra-core": "workspace:*",
+    "@mastra/core": "workspace:*",
     "@microsoft/api-extractor": "^7.52.8",
     "@types/node": "^20.19.0",
     "eslint": "^9.30.1",
@@ -46,6 +46,6 @@
     "@internal/types-builder": "workspace:*"
   },
   "peerDependencies": {
-    "@actus-ag/mastra-core": ">=0.13.0-0 <0.15.0-0"
+    "@mastra/core": ">=0.13.0-0 <0.15.0-0"
   }
 }

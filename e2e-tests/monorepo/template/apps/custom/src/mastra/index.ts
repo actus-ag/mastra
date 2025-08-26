@@ -1,9 +1,9 @@
-import { Mastra } from '@actus-ag/mastra-core/mastra';
+import { Mastra } from '@mastra/core/@mastra';
 import { innerAgent } from '@/agents';
 import { testRoute } from '@/api/route/test';
 import { allRoute } from '@/api/route/all';
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   agents: { innerAgent },
   server: {
     port: process.env.MASTRA_PORT ? parseInt(process.env.MASTRA_PORT) : 3000,

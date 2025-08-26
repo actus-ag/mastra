@@ -8,7 +8,7 @@ import {
   TABLE_THREADS,
   TABLE_TRACES,
   TABLE_WORKFLOW_SNAPSHOT,
-} from '@actus-ag/mastra-core/storage';
+} from '@mastra/core/storage';
 import dotenv from 'dotenv';
 import { Miniflare } from 'miniflare';
 import { vi } from 'vitest';
@@ -47,7 +47,7 @@ const mf = new Miniflare({
 
 const TEST_CONFIG: CloudflareWorkersConfig = {
   bindings: {} as Env, // Will be populated in beforeAll
-  keyPrefix: 'mastra-test', // Fixed prefix for test isolation
+  keyPrefix: '@mastra-test', // Fixed prefix for test isolation
 };
 
 // Get KV namespaces from Miniflare

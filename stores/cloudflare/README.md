@@ -1,11 +1,11 @@
-# @actus-ag/mastra-cloudflare
+# @mastra/cloudflare
 
 Cloudflare KV store for Mastra, providing scalable and serverless storage for threads, messages, workflow snapshots, and evaluations. Supports both Cloudflare Workers KV Bindings and the REST API for flexible deployment in serverless and Node.js environments.
 
 ## Installation
 
 ```bash
-npm install @actus-ag/mastra-cloudflare
+npm install @mastra/cloudflare
 ```
 
 ## Prerequisites
@@ -17,7 +17,7 @@ npm install @actus-ag/mastra-cloudflare
 ## Usage
 
 ```typescript
-import { CloudflareStore } from '@actus-ag/mastra-cloudflare';
+import { CloudflareStore } from '@mastra/cloudflare';
 
 // Using Workers Binding API
 const store = new CloudflareStore({

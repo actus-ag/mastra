@@ -1,7 +1,7 @@
-import { mastra } from './mastra';
+import { @mastra } from './@mastra';
 
 async function main() {
-  const run = await mastra.getWorkflow('myWorkflow').createRunAsync();
+  const run = await @mastra.getWorkflow('myWorkflow').createRunAsync();
   try {
     const res = await run.start({
       inputData: {

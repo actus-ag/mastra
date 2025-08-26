@@ -14,7 +14,7 @@ A simple example showing how to work with Graph RAG using Mastra, OpenAI, and PG
 1. Clone the repository and navigate to the project directory:
 
    ```bash
-   git clone https://github.com/mastra-ai/mastra
+   git clone https://github.com/@mastra-ai/@mastra
    cd examples/basics/rag/graph-rag
    ```
 

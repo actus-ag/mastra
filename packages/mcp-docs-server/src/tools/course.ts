@@ -42,7 +42,7 @@ Thank you for registering for the Mastra course! This interactive guide will hel
 ## Before We Begin
 
 If you enjoy Mastra, please consider starring the GitHub repository:
-https://github.com/mastra-ai/mastra
+https://github.com/@mastra-ai/@mastra
 
 This helps the project grow and reach more developers like you!
 
@@ -56,7 +56,7 @@ This helps the project grow and reach more developers like you!
 - Use the \`getMastraCourseStatus\` tool to check your progress. You can just ask "get my course progress".
 - Use the \`clearMastraCourseHistory\` tool to reset your progress and start over. You can just ask "clear my course progress".
 
-Type "start mastra course" and let's get started with your first lesson!
+Type "start @mastra course" and let's get started with your first lesson!
 `;
 
 // Define the prompt that wraps each lesson step
@@ -79,7 +79,7 @@ function wrapContentInPrompt(content: string, _isFirstStep: boolean = false): st
 
 // Get the path to the device ID file
 async function getDeviceIdPath(): Promise<string> {
-  const cacheDir = path.join(os.homedir(), '.cache', 'mastra');
+  const cacheDir = path.join(os.homedir(), '.cache', '@actus-ag/@mastra');
 
   // Create the directory if it doesn't exist
   if (!existsSync(cacheDir)) {
@@ -167,7 +167,7 @@ export function registerUserLocally(
 }
 
 async function registerUser(email: string): Promise<{ success: boolean; id: string; key: string; message: string }> {
-  const response = await fetch('https://mastra.ai/api/course/register', {
+  const response = await fetch('https://@mastra.ai/api/course/register', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -230,7 +230,7 @@ export function updateCourseStateOnServerLocally(deviceId: string, state: Course
         headers: {
           'Content-Type': 'application/json',
           'Content-Length': data.length,
-          'x-mastra-course-key': creds.key,
+          'x-@mastra-course-key': creds.key,
         },
       };
       const req = http.request(options, res => {
@@ -268,11 +268,11 @@ async function updateCourseStateOnServer(deviceId: string, state: CourseState): 
     throw new Error('Device credentials not found.');
   }
 
-  const response = await fetch('https://mastra.ai/api/course/update', {
+  const response = await fetch('https://@mastra.ai/api/course/update', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'x-mastra-course-key': creds.key,
+      'x-@mastra-course-key': creds.key,
     },
     body: JSON.stringify({
       id: creds.deviceId,
@@ -311,7 +311,7 @@ async function saveCourseState(state: CourseState, deviceId: string | null): Pro
 
 // Get the path to the course state file
 async function getCourseStatePath(): Promise<string> {
-  const stateDirPath = path.join(os.homedir(), '.cache', 'mastra', 'course');
+  const stateDirPath = path.join(os.homedir(), '.cache', '@actus-ag/@mastra', 'course');
 
   // Ensure the directory exists
   if (!existsSync(stateDirPath)) {
@@ -624,7 +624,7 @@ export const getMastraCourseStatus = {
       );
 
       statusReport += `## Overall Progress\n`;
-      statusReport += `- Course status Url: **https://mastra.ai/course/${deviceId}**\n`;
+      statusReport += `- Course status Url: **https://@mastra.ai/course/${deviceId}**\n`;
       statusReport += `- Current Lesson: **${mergedState.currentLesson}**\n`;
       statusReport += `- Lessons: ${completedLessons}/${totalLessons} completed (${Math.round((completedLessons / totalLessons) * 100)}%)\n`;
       statusReport += `- Steps: ${completedSteps}/${totalSteps} completed (${Math.round((completedSteps / totalSteps) * 100)}%)\n\n`;
@@ -663,7 +663,7 @@ export const getMastraCourseStatus = {
       statusReport += `- To start a specific lesson: \`startMastraCourseLesson\`\n`;
       statusReport += `- To reset progress: \`clearMastraCourseHistory\`\n`;
 
-      return `Course Status: ${statusReport}\n\nCourse status url: https://mastra.ai/course/${deviceId}`;
+      return `Course Status: ${statusReport}\n\nCourse status url: https://@mastra.ai/course/${deviceId}`;
     } catch (error) {
       return `Error getting course status: ${error instanceof Error ? error.message : String(error)}`;
     }

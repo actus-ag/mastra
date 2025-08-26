@@ -1,4 +1,4 @@
-# @actus-ag/mastra-voice-gladia
+# @mastra/voice-gladia
 
 ## 0.10.3
 
@@ -19,7 +19,7 @@
 - Updated dependencies [5d377e5]
 - Updated dependencies [1fb812e]
 - Updated dependencies [35c5798]
-  - @actus-ag/mastra-core@0.13.0
+  - @mastra/core@0.13.0
 
 ## 0.10.3-alpha.0
 
@@ -32,7 +32,7 @@
 - Updated dependencies [2871020]
 - Updated dependencies [4a406ec]
 - Updated dependencies [5d377e5]
-  - @actus-ag/mastra-core@0.13.0-alpha.2
+  - @mastra/core@0.13.0-alpha.2
 
 ## 0.10.2
 
@@ -57,7 +57,7 @@
 - Updated dependencies [8ba1b51]
 - Updated dependencies [4efcfa0]
 - Updated dependencies [0e17048]
-  - @actus-ag/mastra-core@0.10.7
+  - @mastra/core@0.10.7
 
 ## 0.10.2-alpha.0
 
@@ -69,7 +69,7 @@
 - Updated dependencies [07d6d88]
 - Updated dependencies [5d74aab]
 - Updated dependencies [144eb0b]
-  - @actus-ag/mastra-core@0.10.7-alpha.2
+  - @mastra/core@0.10.7-alpha.2
 
 ## 0.10.1
 
@@ -91,7 +91,7 @@
 - Updated dependencies [751c894]
 - Updated dependencies [577ce3a]
 - Updated dependencies [9260b3a]
-  - @actus-ag/mastra-core@0.10.6
+  - @mastra/core@0.10.6
 
 ## 0.10.1-alpha.0
 
@@ -99,4 +99,4 @@
 
 - f4007f8: Add gladia-api speech to text provider
 - Updated dependencies [4b0f8a6]
-  - @actus-ag/mastra-core@0.10.6-alpha.2
+  - @mastra/core@0.10.6-alpha.2

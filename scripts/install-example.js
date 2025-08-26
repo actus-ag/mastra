@@ -115,8 +115,8 @@ for (const dep of linkedDeps) {
   }
 }
 
-if (depsToInstall.has('@actus-ag/mastra-core')) {
-  depsToInstall.add('@actus-ag/mastra-schema-compat');
+if (depsToInstall.has('@mastra/core')) {
+  depsToInstall.add('@mastra/schema-compat');
 }
 
 if (depsToInstall.size > 0) {

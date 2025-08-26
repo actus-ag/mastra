@@ -1,16 +1,16 @@
-# @actus-ag/mastra-deployer
+# @mastra/deployer
 
 Core deployment infrastructure for Mastra applications, handling build, packaging, and deployment processes.
 
 ## Installation
 
 ```bash
-npm install @actus-ag/mastra-deployer
+npm install @mastra/deployer
 ```
 
 ## Overview
 
-The `@actus-ag/mastra-deployer` package provides the foundational deployment infrastructure for Mastra applications. It handles:
+The `@mastra/deployer` package provides the foundational deployment infrastructure for Mastra applications. It handles:
 
 - Project building and bundling
 - Dependency management
@@ -20,7 +20,7 @@ The `@actus-ag/mastra-deployer` package provides the foundational deployment inf
 ## Usage
 
 ```typescript
-import { Deployer } from '@actus-ag/mastra-deployer';
+import { Deployer } from '@mastra/deployer';
 
 // Create a deployer instance
 const deployer = new Deployer({
@@ -35,7 +35,7 @@ await deployer.install();
 await deployer.writePackageJson();
 
 // Get Mastra instance
-const { mastra } = await deployer.getMastra();
+const { @mastra } = await deployer.getMastra();
 ```
 
 ## Configuration
@@ -49,7 +49,7 @@ const { mastra } = await deployer.getMastra();
 
 ### Project Structure Management
 
-- Creates and manages `.mastra` directory
+- Creates and manages `.@mastra` directory
 - Handles package.json generation and updates
 - Manages project dependencies
 
@@ -85,9 +85,9 @@ The deployer creates and manages the following structure:
 
 ```
 your-project/
-├── .mastra/
+├── .@mastra/
 │   ├── package.json
-│   ├── mastra.mjs
+│   ├── @mastra.mjs
 │   └── index.mjs
 ├── .env
 ├── .env.development
@@ -97,7 +97,7 @@ your-project/
 
 ## Package.json Management
 
-The deployer automatically manages dependencies in the `.mastra/package.json`:
+The deployer automatically manages dependencies in the `.@mastra/package.json`:
 
 ```json
 {
@@ -105,7 +105,7 @@ The deployer automatically manages dependencies in the `.mastra/package.json`:
   "version": "1.0.0",
   "type": "module",
   "dependencies": {
-    "@actus-ag/mastra-loggers": "latest",
+    "@mastra/loggers": "latest",
     "hono": "4.6.17",
     "@hono/node-server": "^1.13.7",
     "superjson": "^2.2.2",
@@ -122,7 +122,7 @@ Installs and updates project dependencies.
 
 ### `writePackageJson()`
 
-Generates or updates the package.json in the .mastra directory.
+Generates or updates the package.json in the .@mastra directory.
 
 ### `getMastra()`
 
@@ -130,7 +130,7 @@ Returns the Mastra instance for the project.
 
 ### `getMastraPath()`
 
-Returns the path to the .mastra directory.
+Returns the path to the .@mastra directory.
 
 ## Error Handling
 
@@ -143,7 +143,7 @@ The deployer includes comprehensive error handling for:
 
 ## Logging
 
-Built-in logging support through @actus-ag/mastra-core:
+Built-in logging support through @mastra/core:
 
 - Debug information
 - Installation progress
@@ -152,8 +152,8 @@ Built-in logging support through @actus-ag/mastra-core:
 
 ## Related Packages
 
-- `@actus-ag/mastra-core`: Core Mastra functionality
-- `@actus-ag/mastra-loggers`: Logging infrastructure
+- `@mastra/core`: Core Mastra functionality
+- `@mastra/loggers`: Logging infrastructure
 - Deployer implementations:
-  - `@actus-ag/mastra-deployer-cloudflare`
+  - `@mastra/deployer-cloudflare`
   - Other platform-specific deployers

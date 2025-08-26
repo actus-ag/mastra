@@ -3,7 +3,7 @@ import { build } from '../build/build';
 
 export const buildProject = async (args: any) => {
   await analytics.trackCommandExecution({
-    command: 'mastra build',
+    command: '@actus-ag/@mastra/cli/cli build',
     args,
     execution: async () => {
       await build({

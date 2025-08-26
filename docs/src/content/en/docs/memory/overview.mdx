@@ -25,21 +25,21 @@ If you haven't already, create a new Mastra project following the main [Getting 
 ### Install the memory package
 
 ```bash npm2yarn copy
-npm install @actus-ag/mastra-memory@latest
+npm install @mastra/cli/cli/cli/memory@latest
 ```
 
 ### Create an agent and attach a `Memory` instance
 
-```typescript filename="src/mastra/agents/index.ts" {6-18}
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { Memory } from "@actus-ag/mastra-memory";
+```typescript filename="src/@@mastra/cli/cli/cli/agents/index.ts" {6-18}
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { Memory } from "@mastra/cli/cli/cli/memory";
 import { openai } from "@ai-sdk/openai";
-import { LibSQLStore } from "@actus-ag/mastra-libsql";
+import { LibSQLStore } from "@mastra/cli/cli/cli/libsql";
 
 // Initialize memory with LibSQLStore for persistence
 const memory = new Memory({
   storage: new LibSQLStore({
-    url: "file:../mastra.db", // Or your database URL
+    url: "file:../@@mastra/cli/cli/cli.db", // Or your database URL
   }),
 });
 
@@ -138,16 +138,16 @@ const memory = new Memory({
 ### Storage Configuration
 
 Conversation history relies on a [storage adapter](/reference/memory/Memory#parameters) to store messages.
-By default it uses the same storage provided to the [main Mastra instance](https://mastra.ai/reference/core/mastra-class#initialization)
+By default it uses the same storage provided to the [main Mastra instance](https://@@mastra/cli/cli/cli.ai/reference/core/@@mastra/cli/cli/cli-class#initialization)
 
 If neither the `Memory` instance nor the `Mastra` object specify a storage provider, Mastra will not persist memory data across application restarts or deployments. For any deployment beyond local testing you should provide your own storage configuration either on `Mastra` or directly within `new Memory()`.
 
 When `storage` **is** given on the `Mastra` instance it will automatically be used by every `Memory` attached to agents. In that case you do not need to pass `storage` to `new Memory()` unless you want a per-agent override.
 
 ```ts {7-9}
-import { Memory } from "@actus-ag/mastra-memory";
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { LibSQLStore } from "@actus-ag/mastra-libsql";
+import { Memory } from "@mastra/cli/cli/cli/memory";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { LibSQLStore } from "@mastra/cli/cli/cli/libsql";
 
 const agent = new Agent({
   memory: new Memory({

@@ -1,5 +1,5 @@
 {
-  "name": "@actus-ag/mastra-playground",
+  "name": "@mastra/playground",
   "private": true,
   "version": "0.0.4",
   "type": "module",
@@ -14,8 +14,8 @@
     "@codemirror/lang-json": "^6.0.2",
     "@hookform/resolvers": "^3.10.0",
     "@lezer/highlight": "^1.2.1",
-    "@actus-ag/mastra-client-js": "workspace:*",
-    "@actus-ag/mastra-playground-ui": "workspace:^",
+    "@mastra-client-js": "workspace:*",
+    "@mastra/playground-ui": "workspace:^",
     "@radix-ui/react-checkbox": "^1.3.2",
     "@radix-ui/react-collapsible": "^1.1.11",
     "@radix-ui/react-dialog": "^1.1.14",

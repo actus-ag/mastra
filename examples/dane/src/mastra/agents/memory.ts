@@ -1,5 +1,5 @@
-import { Memory } from '@actus-ag/mastra-memory';
-import { UpstashStore } from '@actus-ag/mastra-upstash';
+import { Memory } from '@mastra/memory';
+import { UpstashStore } from '@mastra/upstash';
 
 export const memory = new Memory({
   storage: new UpstashStore({

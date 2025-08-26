@@ -11,7 +11,7 @@ description: 人間の介入ポイントを含むワークフローを作成す�
 ## セットアップ
 
 ```sh copy
-npm install @ai-sdk/openai @actus-ag/mastra-core @inquirer/prompts
+npm install @ai-sdk/openai @mastra/cli/cli/cli/core @inquirer/prompts
 ```
 
 ## エージェントの定義
@@ -19,7 +19,7 @@ npm install @ai-sdk/openai @actus-ag/mastra-core @inquirer/prompts
 旅行エージェントを定義します。
 
 ```ts showLineNumbers copy filename="agents/travel-agents.ts"
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { openai } from "@ai-sdk/openai";
 
 const llm = openai("gpt-4o");
@@ -54,7 +54,7 @@ export const travelAgent = new Agent({
 一時停止ステップ（`humanInputStep`）を含むワークフローを定義します。
 
 ```ts showLineNumbers copy filename="workflows/human-in-the-loop-workflow.ts"
-import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows/vNext";
+import { createWorkflow, createStep } from "@mastra/cli/cli/cli/core/workflows/vNext";
 import { z } from "zod";
 
 // Step that generates multiple holiday options based on user's vacation description
@@ -68,13 +68,13 @@ const generateSuggestionsStep = createStep({
     suggestions: z.array(z.string()),
     vacationDescription: z.string(),
   }),
-  execute: async ({ inputData, mastra }) => {
-    if (!mastra) {
+  execute: async ({ inputData, @@mastra/cli/cli/cli }) => {
+    if (!@@mastra/cli/cli/cli) {
       throw new Error("Mastra is not initialized");
     }
 
     const { vacationDescription } = inputData;
-    const result = await mastra.getAgent("summaryTravelAgent").generate([
+    const result = await @@mastra/cli/cli/cli.getAgent("summaryTravelAgent").generate([
       {
         role: "user",
         content: vacationDescription,
@@ -131,8 +131,8 @@ const travelPlannerStep = createStep({
   outputSchema: z.object({
     travelPlan: z.string(),
   }),
-  execute: async ({ inputData, mastra }) => {
-    const travelAgent = mastra?.getAgent("travelAgent");
+  execute: async ({ inputData, @@mastra/cli/cli/cli }) => {
+    const travelAgent = @@mastra/cli/cli/cli?.getAgent("travelAgent");
     if (!travelAgent) {
       throw new Error("Travel agent is not initialized");
     }
@@ -171,12 +171,12 @@ export { travelAgentWorkflow, humanInputStep };
 
 ## Mastraクラスでエージェントとワークフローのインスタンスを登録する
 
-エージェントと天気ワークフローをmastraインスタンスに登録します。
+エージェントと天気ワークフローを@@mastra/cli/cli/cliインスタンスに登録します。
 これはワークフロー内でエージェントにアクセスできるようにするために重要です。
 
 ```ts showLineNumbers copy filename="index.ts"
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { PinoLogger } from "@actus-ag/mastra-loggers";
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { PinoLogger } from "@mastra/cli/cli/cli/loggers";
 import { travelAgentWorkflow } from "./workflows/human-in-the-loop-workflow";
 import { summaryTravelAgent, travelAgent } from "./agents/travel-agent";
 
@@ -184,7 +184,7 @@ import { summaryTravelAgent, travelAgent } from "./agents/travel-agent";
 // - The travel planning workflow
 // - Both travel agents (summary and detailed planning)
 // - Logging configuration
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   vnext_workflows: {
     travelAgentWorkflow,
   },
@@ -198,20 +198,20 @@ const mastra = new Mastra({
   }),
 });
 
-export { mastra };
+export { @@mastra/cli/cli/cli };
 ```
 
 ## 一時停止可能な天気ワークフローを実行する
 
-ここでは、mastraインスタンスから天気ワークフローを取得し、実行を作成して、必要な入力データで作成した実行を実行します。
+ここでは、@@mastra/cli/cli/cliインスタンスから天気ワークフローを取得し、実行を作成して、必要な入力データで作成した実行を実行します。
 さらに、readlineパッケージを使用してユーザー入力を収集した後、`humanInputStep`を再開します。
 
 ```ts showLineNumbers copy filename="exec.ts"
-import { mastra } from "./";
+import { @@mastra/cli/cli/cli } from "./";
 import { select } from "@inquirer/prompts";
 import { humanInputStep } from "./workflows/human-in-the-loop-workflow";
 
-const workflow = mastra.vnext_getWorkflow("travelAgentWorkflow");
+const workflow = @@mastra/cli/cli/cli.vnext_getWorkflow("travelAgentWorkflow");
 const run = workflow.createRun({});
 
 // Start the workflow with initial vacation description

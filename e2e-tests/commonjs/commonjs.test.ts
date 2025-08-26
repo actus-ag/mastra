@@ -14,7 +14,7 @@ describe('commonjs', () => {
 
     console.log('registry', registry);
     console.log('tag', tag);
-    fixturePath = await mkdtemp(join(tmpdir(), 'mastra-commonjs-test-'));
+    fixturePath = await mkdtemp(join(tmpdir(), '@mastra-commonjs-test-'));
 
     process.env.npm_config_registry = registry;
     await setupTestProject(fixturePath);

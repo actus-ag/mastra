@@ -13,8 +13,8 @@ Mastraはアプリケーションのトレーシングとモニタリングの�
 
 テレメトリを有効にする簡単な例を示します：
 
-```ts filename="mastra.config.ts" showLineNumbers copy
-export const mastra = new Mastra({
+```ts filename="@@mastra/cli/cli/cli.config.ts" showLineNumbers copy
+export const @@mastra/cli/cli/cli = new Mastra({
   // ... other config
   telemetry: {
     serviceName: "my-app",
@@ -73,8 +73,8 @@ OTEL_EXPORTER_OTLP_HEADERS=x-api-key=your-api-key
 
 そして設定では：
 
-```ts filename="mastra.config.ts" showLineNumbers copy
-export const mastra = new Mastra({
+```ts filename="@@mastra/cli/cli/cli.config.ts" showLineNumbers copy
+export const @@mastra/cli/cli/cli = new Mastra({
   // ... other config
   telemetry: {
     serviceName: "my-app",

@@ -1,7 +1,7 @@
 import type { Handler, MiddlewareHandler, HonoRequest, Context } from 'hono';
 import type { cors } from 'hono/cors';
 import type { DescribeRouteOptions } from 'hono-openapi';
-import type { Mastra } from '../mastra';
+import type { Mastra } from '../@mastra';
 import type { RuntimeContext } from '../runtime-context';
 import type { MastraAuthProvider } from './auth';
 
@@ -18,7 +18,7 @@ export type ApiRoute =
   | {
       path: string;
       method: Methods;
-      createHandler: ({ mastra }: { mastra: Mastra }) => Promise<Handler>;
+      createHandler: ({ @mastra }: { @mastra: Mastra }) => Promise<Handler>;
       middleware?: MiddlewareHandler | MiddlewareHandler[];
       openapi?: DescribeRouteOptions;
     };
@@ -27,7 +27,7 @@ export type Middleware = MiddlewareHandler | { path: string; handler: Middleware
 
 export type ContextWithMastra = Context<{
   Variables: {
-    mastra: Mastra;
+    @mastra: Mastra;
     runtimeContext: RuntimeContext;
   };
 }>;
@@ -101,7 +101,7 @@ export type ServerConfig = {
   middleware?: Middleware | Middleware[];
   /**
    * CORS configuration for the server
-   * @default { origin: '*', allowMethods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'], allowHeaders: ['Content-Type', 'Authorization', 'x-mastra-client-type'], exposeHeaders: ['Content-Length', 'X-Requested-With'], credentials: false }
+   * @default { origin: '*', allowMethods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'], allowHeaders: ['Content-Type', 'Authorization', 'x-@mastra-client-type'], exposeHeaders: ['Content-Length', 'X-Requested-With'], credentials: false }
    */
   cors?: Parameters<typeof cors>[0] | false;
   /**

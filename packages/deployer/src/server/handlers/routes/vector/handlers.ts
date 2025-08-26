@@ -1,5 +1,5 @@
-import type { Mastra } from '@actus-ag/mastra-core';
-import type { MastraVector, QueryResult } from '@actus-ag/mastra-core/vector';
+import type { Mastra } from '@mastra/core';
+import type { MastraVector, QueryResult } from '@mastra/core/vector';
 import {
   upsertVectors as getOriginalUpsertVectorsHandler,
   createIndex as getOriginalCreateIndexHandler,
@@ -7,7 +7,7 @@ import {
   listIndexes as getOriginalListIndexesHandler,
   describeIndex as getOriginalDescribeIndexHandler,
   deleteIndex as getOriginalDeleteIndexHandler,
-} from '@actus-ag/mastra-server/handlers/vector';
+} from '@mastra/server/handlers/vector';
 import type { Context } from 'hono';
 
 import { HTTPException } from 'hono/http-exception';
@@ -36,7 +36,7 @@ interface QueryRequest {
 }
 
 export const getVector = (c: Context, vectorName: string): MastraVector => {
-  const vector = c.get('mastra').getVector(vectorName);
+  const vector = c.get('@actus-ag/@mastra').getVector(vectorName);
   if (!vector) {
     throw new HTTPException(404, { message: `Vector store ${vectorName} not found` });
   }
@@ -46,12 +46,12 @@ export const getVector = (c: Context, vectorName: string): MastraVector => {
 // Upsert vectors
 export async function upsertVectors(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const vectorName = c.req.param('vectorName');
     const body = await c.req.json<UpsertRequest>();
 
     const result = await getOriginalUpsertVectorsHandler({
-      mastra,
+      @mastra,
       vectorName,
       index: body,
     });
@@ -65,12 +65,12 @@ export async function upsertVectors(c: Context) {
 // Create index
 export async function createIndex(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const vectorName = c.req.param('vectorName');
     const body = await c.req.json<CreateIndexRequest>();
 
     await getOriginalCreateIndexHandler({
-      mastra,
+      @mastra,
       vectorName,
       index: body,
     });
@@ -84,12 +84,12 @@ export async function createIndex(c: Context) {
 // Query vectors
 export async function queryVectors(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const vectorName = c.req.param('vectorName');
     const { indexName, queryVector, topK = 10, filter, includeVector = false } = await c.req.json<QueryRequest>();
 
     const results: QueryResult[] = await getOriginalQueryVectorsHandler({
-      mastra,
+      @mastra,
       vectorName,
       query: { indexName, queryVector, topK, filter, includeVector },
     });
@@ -103,11 +103,11 @@ export async function queryVectors(c: Context) {
 // List indexes
 export async function listIndexes(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const vectorName = c.req.param('vectorName');
 
     const indexes = await getOriginalListIndexesHandler({
-      mastra,
+      @mastra,
       vectorName,
     });
 
@@ -120,7 +120,7 @@ export async function listIndexes(c: Context) {
 // Describe index
 export async function describeIndex(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const vectorName = c.req.param('vectorName');
     const indexName = c.req.param('indexName');
 
@@ -129,7 +129,7 @@ export async function describeIndex(c: Context) {
     }
 
     const stats = await getOriginalDescribeIndexHandler({
-      mastra,
+      @mastra,
       vectorName,
       indexName,
     });
@@ -147,7 +147,7 @@ export async function describeIndex(c: Context) {
 // Delete index
 export async function deleteIndex(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const vectorName = c.req.param('vectorName');
     const indexName = c.req.param('indexName');
 
@@ -156,7 +156,7 @@ export async function deleteIndex(c: Context) {
     }
 
     await getOriginalDeleteIndexHandler({
-      mastra,
+      @mastra,
       vectorName,
       indexName,
     });

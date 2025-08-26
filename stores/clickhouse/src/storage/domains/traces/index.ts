@@ -1,8 +1,8 @@
 import type { ClickHouseClient } from '@clickhouse/client';
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import { safelyParseJSON, TABLE_SCHEMAS, TABLE_TRACES, TracesStorage } from '@actus-ag/mastra-core/storage';
-import type { PaginationInfo, StorageGetTracesPaginatedArg, StorageGetTracesArg } from '@actus-ag/mastra-core/storage';
-import type { Trace } from '@actus-ag/mastra-core/telemetry';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import { safelyParseJSON, TABLE_SCHEMAS, TABLE_TRACES, TracesStorage } from '@mastra/core/storage';
+import type { PaginationInfo, StorageGetTracesPaginatedArg, StorageGetTracesArg } from '@mastra/core/storage';
+import type { Trace } from '@mastra/core/telemetry';
 import type { StoreOperationsClickhouse } from '../operations';
 
 export class TracesStorageClickhouse extends TracesStorage {
@@ -40,7 +40,7 @@ export class TracesStorageClickhouse extends TracesStorage {
     }
     if (filters) {
       Object.entries(filters).forEach(([key, value]) => {
-        conditions.push(`${key} = {var_col_${key}:${TABLE_SCHEMAS.mastra_traces?.[key]?.type ?? 'text'}}`);
+        conditions.push(`${key} = {var_col_${key}:${TABLE_SCHEMAS.@mastra_traces?.[key]?.type ?? 'text'}}`);
         queryArgs[`var_col_${key}`] = value;
       });
     }
@@ -192,7 +192,7 @@ export class TracesStorageClickhouse extends TracesStorage {
 
     if (filters) {
       Object.entries(filters).forEach(([key, value]) => {
-        conditions.push(`${key} = {var_col_${key}:${TABLE_SCHEMAS.mastra_traces?.[key]?.type ?? 'text'}}`);
+        conditions.push(`${key} = {var_col_${key}:${TABLE_SCHEMAS.@mastra_traces?.[key]?.type ?? 'text'}}`);
         args[`var_col_${key}`] = value;
       });
     }

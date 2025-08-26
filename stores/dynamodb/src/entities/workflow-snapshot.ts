@@ -5,7 +5,7 @@ export const workflowSnapshotEntity = new Entity({
   model: {
     entity: 'workflow_snapshot',
     version: '1',
-    service: 'mastra',
+    service: '@actus-ag/@mastra',
   },
   attributes: {
     entity: {

@@ -1,16 +1,16 @@
-# @actus-ag/mastra-mcp
+# @mastra/mcp
 
 Model Context Protocol (MCP) client implementation for Mastra, providing seamless integration with MCP-compatible AI models and tools.
 
 ## Installation
 
 ```bash
-npm install @actus-ag/mastra-mcp@latest
+npm install @mastra/mcp@latest
 ```
 
 ## Overview
 
-The `@actus-ag/mastra-mcp` package provides a client implementation for the Model Context Protocol (MCP), enabling Mastra to communicate with MCP-compatible AI models and tools. It wraps the official `@modelcontextprotocol/sdk` and provides Mastra-specific functionality.
+The `@mastra/mcp` package provides a client implementation for the Model Context Protocol (MCP), enabling Mastra to communicate with MCP-compatible AI models and tools. It wraps the official `@modelcontextprotocol/sdk` and provides Mastra-specific functionality.
 
 The client automatically detects the transport type based on your server configuration:
 
@@ -20,7 +20,7 @@ The client automatically detects the transport type based on your server configu
 ## Usage
 
 ```typescript
-import { MCPClient } from '@actus-ag/mastra-mcp';
+import { MCPClient } from '@mastra/mcp';
 
 // Create a client with a Stdio server
 const stdioClient = new MCPClient({
@@ -93,7 +93,7 @@ await httpClient.disconnect();
 For applications that need to interact with multiple MCP servers, the `MCPClient` class provides a convenient way to manage multiple server connections and their tools. It also uses the automatic transport detection based on the `server` configuration:
 
 ```typescript
-import { MCPClient } from '@actus-ag/mastra-mcp';
+import { MCPClient } from '@mastra/mcp';
 
 const mcp = new MCPClient({
   servers: {
@@ -128,7 +128,7 @@ const toolsets = await mcp.getToolsets();
 The MCP client provides per-server logging capabilities, allowing you to monitor interactions with each MCP server separately:
 
 ```typescript
-import { MCPClient, LogMessage, LoggingLevel } from '@actus-ag/mastra-mcp';
+import { MCPClient, LogMessage, LoggingLevel } from '@mastra/mcp';
 
 // Define a custom log handler
 const weatherLogger = (logMessage: LogMessage) => {
@@ -231,7 +231,7 @@ Use this when:
 - You want to initialize an Agent with a fixed set of tools
 
 ```typescript
-import { Agent } from '@actus-ag/mastra-core/agent';
+import { Agent } from '@mastra/core/agent';
 import { openai } from '@ai-sdk/openai';
 
 const agent = new Agent({
@@ -252,8 +252,8 @@ Use this when:
 - Tool configuration needs to change dynamically
 
 ```typescript
-import { MCPClient } from '@actus-ag/mastra-mcp';
-import { Agent } from '@actus-ag/mastra-core/agent';
+import { MCPClient } from '@mastra/mcp';
+import { Agent } from '@mastra/core/agent';
 import { openai } from '@ai-sdk/openai';
 
 // Configure MCP servers with user-specific settings before getting toolsets
@@ -306,7 +306,7 @@ The `MCPClient` class automatically:
 MCP servers can expose resources - data or content that can be retrieved and used in your application. The `MCPClient` class provides methods to access these resources across multiple servers:
 
 ```typescript
-import { MCPClient } from '@actus-ag/mastra-mcp';
+import { MCPClient } from '@mastra/mcp';
 
 const mcp = new MCPClient({
   servers: {

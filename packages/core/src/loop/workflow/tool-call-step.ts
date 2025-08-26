@@ -46,9 +46,9 @@ export function createToolCallStep<Tools extends ToolSet = ToolSet>({
         tracer: telemetry_settings?.tracer,
       });
 
-      const span = tracer.startSpan('mastra.stream.toolCall').setAttributes({
+      const span = tracer.startSpan('@mastra.stream.toolCall').setAttributes({
         ...assembleOperationName({
-          operationId: 'mastra.stream.toolCall',
+          operationId: '@mastra.stream.toolCall',
           telemetry: telemetry_settings,
         }),
         'stream.toolCall.toolName': inputData.toolName,

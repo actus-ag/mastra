@@ -9,7 +9,7 @@ When deploying your Mastra application to production, it runs as an HTTP server 
 
 ## Server Architecture
 
-Mastra uses [Hono](https://hono.dev) as its underlying HTTP server framework. When you build a Mastra application using `mastra build`, it generates a Hono-based HTTP server in the `.mastra` directory.
+Mastra uses [Hono](https://hono.dev) as its underlying HTTP server framework. When you build a Mastra application using `@actus-ag/@mastra/cli/cli build`, it generates a Hono-based HTTP server in the `.@@mastra/cli/cli/cli` directory.
 
 The server provides:
 
@@ -29,10 +29,10 @@ adding additional server behaviour.
 
 You can configure server `port` and `timeout` in the Mastra instance.
 
-```typescript filename="src/mastra/index.ts" copy showLineNumbers
-import { Mastra } from "@actus-ag/mastra-core/mastra";
+```typescript filename="src/@@mastra/cli/cli/cli/index.ts" copy showLineNumbers
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // ...
   server: {
     port: 3000, // Defaults to 4111
@@ -49,10 +49,10 @@ invoked for any HTTP method that matches the path.
 
 Mastra allows you to configure CORS (Cross-Origin Resource Sharing) settings for your server.
 
-```typescript filename="src/mastra/index.ts" copy showLineNumbers
-import { Mastra } from "@actus-ag/mastra-core/mastra";
+```typescript filename="src/@@mastra/cli/cli/cli/index.ts" copy showLineNumbers
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // ...
   server: {
     cors: {

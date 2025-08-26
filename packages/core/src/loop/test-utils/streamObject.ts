@@ -409,7 +409,7 @@ export function streamObjectTests({ loopFn, runId }: { loopFn: typeof loop; runI
             '!"',
             ' }',
           ]);
-          // mastra
+          // @mastra
           assert.deepStrictEqual(await convertAsyncIterableToArray(result.textStream), [
             '{ ',
             '"content": ',
@@ -1138,7 +1138,7 @@ export function streamObjectTests({ loopFn, runId }: { loopFn: typeof loop; runI
             headers: { 'custom-request-header': 'request-header-value' },
           });
 
-          // mastra
+          // @mastra
           expect(await convertAsyncIterableToArray(result.objectStream)).toStrictEqual([{ content: 'headers test' }]);
 
           // aisdk
@@ -1185,7 +1185,7 @@ export function streamObjectTests({ loopFn, runId }: { loopFn: typeof loop; runI
             },
           });
 
-          // mastra
+          // @mastra
           expect(await convertAsyncIterableToArray(result.objectStream)).toStrictEqual([
             { content: 'provider metadata test' },
           ]);
@@ -1252,7 +1252,7 @@ export function streamObjectTests({ loopFn, runId }: { loopFn: typeof loop; runI
         });
       });
 
-      // TODO: throw mastra error instead
+      // TODO: throw @mastra error instead
       describe.todo('error handling', () => {
         it('should throw NoObjectGeneratedError when schema validation fails', async () => {
           const result = loopFn({

@@ -1,6 +1,6 @@
-import type { WorkflowRun, WorkflowRuns, WorkflowRunState } from '@actus-ag/mastra-core';
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import { TABLE_WORKFLOW_SNAPSHOT, WorkflowsStorage } from '@actus-ag/mastra-core/storage';
+import type { WorkflowRun, WorkflowRuns, WorkflowRunState } from '@mastra/core';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import { TABLE_WORKFLOW_SNAPSHOT, WorkflowsStorage } from '@mastra/core/storage';
 import type { Redis } from '@upstash/redis';
 import type { StoreOperationsUpstash } from '../operations';
 import { ensureDate, getKey } from '../utils';

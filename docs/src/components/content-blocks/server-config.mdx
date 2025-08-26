@@ -30,10 +30,10 @@ This command checks if the `include /etc/nginx/sites-enabled/*;` directive exist
 
 ##### Remove nginx files if they exist
 
-Let's start by setting up an environment variable for the site name. In our example, we will use `mastra` as the site name.
+Let's start by setting up an environment variable for the site name. In our example, we will use `@actus-ag/@@mastra/cli/cli/cli` as the site name.
 
 ```bash copy
-export SITE_NAME="mastra"
+export SITE_NAME="@actus-ag/@@mastra/cli/cli/cli"
 ```
 
 Then we can remove the nginx files if they exist.
@@ -218,7 +218,7 @@ npm run build
 ##### Run the application
 
 ```bash copy
-node --import=./.mastra/output/instrumentation.mjs --env-file=".env" .mastra/output/index.mjs
+node --import=./.@@mastra/cli/cli/cli/output/instrumentation.mjs --env-file=".env" .@@mastra/cli/cli/cli/output/index.mjs
 ```
 
 </Steps>

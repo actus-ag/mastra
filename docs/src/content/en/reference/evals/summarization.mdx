@@ -15,7 +15,7 @@ The `SummarizationMetric` evaluates how well an LLM's summary captures the origi
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { SummarizationMetric } from "@actus-ag/mastra-evals/llm";
+import { SummarizationMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");
@@ -179,7 +179,7 @@ Final score: `min(alignment_score, coverage_score) * scale`
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { SummarizationMetric } from "@actus-ag/mastra-evals/llm";
+import { SummarizationMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");

@@ -1,11 +1,11 @@
-# @actus-ag/mastra-loggers
+# @mastra/loggers
 
-A collection of logging transport implementations for Mastra, extending the `LoggerTransport` class from `@actus-ag/mastra-core`.
+A collection of logging transport implementations for Mastra, extending the `LoggerTransport` class from `@mastra/core`.
 
 ## Installation
 
 ```bash
-npm install @actus-ag/mastra-loggers
+npm install @mastra/loggers
 ```
 
 ## Available Transports
@@ -15,7 +15,7 @@ npm install @actus-ag/mastra-loggers
 A transport that writes logs to a local file system.
 
 ```typescript
-import { FileTransport } from '@actus-ag/mastra-loggers';
+import { FileTransport } from '@mastra/loggers';
 
 const fileLogger = new FileTransport({
   path: '/path/to/logs/app.log',
@@ -39,7 +39,7 @@ const fileLogger = new FileTransport({
 A transport that sends logs to Upstash Redis with batching and auto-trimming capabilities.
 
 ```typescript
-import { UpstashTransport } from '@actus-ag/mastra-loggers';
+import { UpstashTransport } from '@mastra/loggers';
 
 const upstashLogger = new UpstashTransport({
   upstashUrl: 'https://your-instance.upstash.io',
@@ -78,11 +78,11 @@ Optional:
 
 ## Usage with Mastra Core
 
-Both transports implement the `LoggerTransport` interface from `@actus-ag/mastra-core`:
+Both transports implement the `LoggerTransport` interface from `@mastra/core`:
 
 ```typescript
-import { Logger } from '@actus-ag/mastra-core/logger';
-import { FileTransport, UpstashTransport } from '@actus-ag/mastra-loggers';
+import { Logger } from '@mastra/core/logger';
+import { FileTransport, UpstashTransport } from '@mastra/loggers';
 
 // Create transports
 const fileTransport = new FileTransport({

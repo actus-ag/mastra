@@ -1,22 +1,22 @@
-# @actus-ag/mastra-auth-supabase
+# @mastra/auth-supabase
 
 A Supabase authentication integration for Mastra, providing seamless authentication and authorization capabilities using Supabase's authentication system.
 
 ## Installation
 
 ```bash
-npm install @actus-ag/mastra-auth-supabase
+npm install @mastra/auth-supabase
 # or
-yarn add @actus-ag/mastra-auth-supabase
+yarn add @mastra/auth-supabase
 # or
-pnpm add @actus-ag/mastra-auth-supabase
+pnpm add @mastra/auth-supabase
 ```
 
 ## Usage
 
 ```typescript
-import { Mastra } from '@actus-ag/mastra-core';
-import { MastraAuthSupabase } from '@actus-ag/mastra-auth-supabase';
+import { Mastra } from '@mastra/core';
+import { MastraAuthSupabase } from '@mastra/auth-supabase';
 
 // Initialize with environment variables
 const auth = new MastraAuthSupabase();
@@ -28,7 +28,7 @@ const auth = new MastraAuthSupabase({
 });
 
 // Enable auth in Mastra
-const mastra = new Mastra({
+const @mastra = new Mastra({
   ...
   server: {
     experimental_auth: auth,

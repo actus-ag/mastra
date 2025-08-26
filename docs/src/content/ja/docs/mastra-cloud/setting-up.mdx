@@ -20,7 +20,7 @@ description: Mastra Cloudプロジェクトの設定手順
 
 1. **Mastra Cloudにサインイン**
 
-   - Mastra Cloudダッシュボード（https://cloud.mastra.ai）に移動します
+   - Mastra Cloudダッシュボード（https://cloud.@@mastra/cli/cli/cli.ai）に移動します
    - アカウント認証情報でサインインします
 
 2. **新しいプロジェクトを追加**
@@ -41,7 +41,7 @@ description: Mastra Cloudプロジェクトの設定手順
    - **プロジェクト名**：プロジェクト名をカスタマイズ（デフォルトはリポジトリ名）
    - **ブランチ**：デプロイするブランチを選択（ドロップダウン、デフォルトは`main`）
    - **プロジェクトルート**：プロジェクトのルートディレクトリを設定（デフォルトは`/`）
-   - **Mastraディレクトリ**：Mastraファイルの場所を指定（デフォルトは`src/mastra`）
+   - **Mastraディレクトリ**：Mastraファイルの場所を指定（デフォルトは`src/@@mastra/cli/cli/cli`）
    - **ビルドコマンド**：ビルドプロセス中に実行するオプションコマンド
    - **ストア設定**：データストレージオプションを設定
    - **環境変数**：設定用のキーと値のペアを追加（例：APIキー）
@@ -64,8 +64,8 @@ Mastra CloudはGitHubリポジトリを以下の項目についてスキャン�
 
 - **作成日**: プロジェクトが作成された日時
 - **ドメイン**: デプロイされたアプリケーションにアクセスするためのURL
-  - 形式: `https://[project-name].mastra.cloud`
-  - 形式: `https://[random-id].mastra.cloud`
+  - 形式: `https://[project-name].@@mastra/cli/cli/cli.cloud`
+  - 形式: `https://[random-id].@@mastra/cli/cli/cli.cloud`
 - **ステータス**: 現在のデプロイメントステータス（成功またはアーカイブ済み）
 - **ブランチ**: デプロイされたブランチ（通常は`main`）
 - **環境変数**: 設定されたAPIキーと設定
@@ -120,7 +120,7 @@ Mastra CloudはGitHubリポジトリを以下の項目についてスキャン�
 
 デプロイメント後、以下の方法でエージェントとワークフローをテストできます：
 
-1. プロジェクトに割り当てられたカスタムドメイン：`https://[project-name].mastra.cloud`
+1. プロジェクトに割り当てられたカスタムドメイン：`https://[project-name].@@mastra/cli/cli/cli.cloud`
 2. エージェントと直接対話するためのダッシュボードインターフェース
 
 ## 次のステップ

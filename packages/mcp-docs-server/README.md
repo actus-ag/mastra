@@ -1,4 +1,4 @@
-# @actus-ag/mastra-mcp-docs-server
+# @mastra/mcp-docs-server
 
 A Model Context Protocol (MCP) server that provides AI assistants with direct access to Mastra.ai's complete knowledge base. This includes comprehensive documentation with MDX support, a collection of production-ready code examples, technical blog posts, and detailed package changelogs. The server integrates with popular AI development environments like Cursor and Windsurf, as well as Mastra agents, making it easy to build documentation-aware AI assistants that can provide accurate, up-to-date information about Mastra.ai's ecosystem.
 
@@ -13,9 +13,9 @@ MacOS/Linux
 ```json
 {
   "mcpServers": {
-    "mastra": {
+    "@actus-ag/@mastra": {
       "command": "npx",
-      "args": ["-y", "@actus-ag/mastra-mcp-docs-server"]
+      "args": ["-y", "@mastra/mcp-docs-server"]
     }
   }
 }
@@ -26,9 +26,9 @@ Windows
 ```json
 {
   "mcpServers": {
-    "mastra": {
+    "@actus-ag/@mastra": {
       "command": "cmd",
-      "args": ["/c", "npx", "-y", "@actus-ag/mastra-mcp-docs-server"]
+      "args": ["/c", "npx", "-y", "@mastra/mcp-docs-server"]
     }
   }
 }
@@ -46,9 +46,9 @@ MacOS/Linux
 ```json
 {
   "mcpServers": {
-    "mastra": {
+    "@actus-ag/@mastra": {
       "command": "npx",
-      "args": ["-y", "@actus-ag/mastra-mcp-docs-server"]
+      "args": ["-y", "@mastra/mcp-docs-server"]
     }
   }
 }
@@ -59,9 +59,9 @@ Windows
 ```json
 {
   "mcpServers": {
-    "mastra": {
+    "@actus-ag/@mastra": {
       "command": "cmd",
-      "args": ["/c", "npx", "-y", "@actus-ag/mastra-mcp-docs-server"]
+      "args": ["/c", "npx", "-y", "@mastra/mcp-docs-server"]
     }
   }
 }
@@ -74,16 +74,16 @@ If a tool call fails you will need to go into Windsurf MCP settings and re-start
 ### In a Mastra Agent
 
 ```typescript
-import { MCPClient } from '@actus-ag/mastra-mcp';
-import { Agent } from '@actus-ag/mastra-core/agent';
+import { MCPClient } from '@mastra/mcp';
+import { Agent } from '@mastra/core/agent';
 import { openai } from '@ai-sdk/openai';
 
 // Configure MCP with the docs server
 const mcp = new MCPClient({
   servers: {
-    mastra: {
+    @mastra: {
       command: 'npx',
-      args: ['-y', '@actus-ag/mastra-mcp-docs-server'],
+      args: ['-y', '@mastra/mcp-docs-server'],
     },
   },
 });
@@ -104,25 +104,25 @@ const response = await agent.stream('Show me the quick start example', {
 
 ## Tools
 
-### Documentation Tool (`mastraDocs`)
+### Documentation Tool (`@mastraDocs`)
 
 - Get Mastra.ai documentation by requesting specific paths
 - Explore both general guides and API reference documentation
 - Automatically lists available paths when a requested path isn't found
 
-### Examples Tool (`mastraExamples`)
+### Examples Tool (`@mastraExamples`)
 
 - Access code examples showing Mastra.ai implementation patterns
 - List all available examples
 - Get detailed source code for specific examples
 
-### Blog Tool (`mastraBlog`)
+### Blog Tool (`@mastraBlog`)
 
 - Access technical blog posts and articles
 - Posts are properly formatted with code block handling
 - Supports various date formats in blog metadata
 
-### Changes Tool (`mastraChanges`)
+### Changes Tool (`@mastraChanges`)
 
 - Access package changelogs
 - List all available package changelogs

@@ -1,4 +1,4 @@
-import { MastraStorage, TABLE_TRACES } from '@actus-ag/mastra-core/storage';
+import { MastraStorage, TABLE_TRACES } from '@mastra/core/storage';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { createSampleTraceForDB } from './data';
 

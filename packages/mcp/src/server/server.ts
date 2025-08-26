@@ -1,10 +1,10 @@
 import { randomUUID } from 'node:crypto';
 import type * as http from 'node:http';
-import type { InternalCoreTool } from '@actus-ag/mastra-core';
-import { createTool, makeCoreTool } from '@actus-ag/mastra-core';
-import type { ToolsInput, Agent } from '@actus-ag/mastra-core/agent';
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import { MCPServerBase } from '@actus-ag/mastra-core/mcp';
+import type { InternalCoreTool } from '@mastra/core';
+import { createTool, makeCoreTool } from '@mastra/core';
+import type { ToolsInput, Agent } from '@mastra/core/agent';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import { MCPServerBase } from '@mastra/core/mcp';
 import type {
   MCPServerConfig,
   ServerInfo,
@@ -13,9 +13,9 @@ import type {
   MCPServerHonoSSEOptions,
   MCPServerSSEOptions,
   MCPToolType,
-} from '@actus-ag/mastra-core/mcp';
-import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
-import type { Workflow } from '@actus-ag/mastra-core/workflows';
+} from '@mastra/core/mcp';
+import { RuntimeContext } from '@mastra/core/runtime-context';
+import type { Workflow } from '@mastra/core/workflows';
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { SSEServerTransport } from '@modelcontextprotocol/sdk/server/sse.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
@@ -625,7 +625,7 @@ export class MCPServer extends MCPServerBase {
       const options = {
         name: agentToolName,
         logger: this.logger,
-        mastra: this.mastra,
+        @mastra: this.@mastra,
         runtimeContext: new RuntimeContext(),
         description: agentToolDefinition.description,
       };
@@ -704,7 +704,7 @@ export class MCPServer extends MCPServerBase {
       const options = {
         name: workflowToolName,
         logger: this.logger,
-        mastra: this.mastra,
+        @mastra: this.@mastra,
         runtimeContext: new RuntimeContext(),
         description: workflowToolDefinition.description,
       };
@@ -754,7 +754,7 @@ export class MCPServer extends MCPServerBase {
       const options = {
         name: toolName,
         runtimeContext: new RuntimeContext(),
-        mastra: this.mastra,
+        @mastra: this.@mastra,
         logger: this.logger,
         description: toolInstance?.description,
       };

@@ -16,7 +16,7 @@ import {
   SidebarRail,
   useSidebar,
 } from '@/components/ui/sidebar';
-import { AgentIcon, GithubIcon, Icon, McpServerIcon, ToolsIcon, WorkflowIcon } from '@actus-ag/mastra-playground-ui';
+import { AgentIcon, GithubIcon, Icon, McpServerIcon, ToolsIcon, WorkflowIcon } from '@mastra/cli/cli/cli/playground-ui';
 
 import { Tooltip, TooltipContent, TooltipTrigger } from './tooltip';
 import clsx from 'clsx';
@@ -246,7 +246,7 @@ export function AppSidebar() {
                 <SidebarMenuButton tooltip="Documentation" asChild>
                   <a
                     className={`group/icon text-[#939393]`}
-                    href="https://mastra.ai/docs"
+                    href="https://@@mastra/cli/cli/cli.ai/docs"
                     target="_blank"
                     rel="noopener"
                   >
@@ -262,7 +262,7 @@ export function AppSidebar() {
                 <SidebarMenuButton tooltip="Github" asChild>
                   <a
                     className={`group/icon text-[#939393]`}
-                    href="https://github.com/mastra-ai/mastra"
+                    href="https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli"
                     target="_blank"
                     rel="noopener"
                   >
@@ -278,7 +278,7 @@ export function AppSidebar() {
                 <SidebarMenuButton tooltip="Deploy to Mastra Cloud" asChild>
                   <a
                     className={`group/icon bg-accent1 text-black hover:bg-accent1/80 hover:text-black active:bg-accent1/90 active:text-black`}
-                    href="https://mastra.ai/cloud"
+                    href="https://@@mastra/cli/cli/cli.ai/cloud"
                     target="_blank"
                     rel="noopener"
                   >

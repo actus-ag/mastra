@@ -5,19 +5,19 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@mastra/core': link:../../packages/core
-  '@mastra/libsql': link:../../stores/libsql
-  '@mastra/loggers': link:../../packages/loggers
-  '@mastra/memory': link:../../packages/memory
-  mastra: link:../../packages/cli
+  '@mastra/cli/cli/cli/core': link:../../packages/core
+  '@mastra/cli/cli/cli/libsql': link:../../stores/libsql
+  '@mastra/cli/cli/cli/loggers': link:../../packages/loggers
+  '@mastra/cli/cli/cli/memory': link:../../packages/memory
+  @@mastra/cli/cli/cli: link:../../packages/cli
 
 importers:
 
   .:
     dependencies:
-      '@ag-ui/mastra':
+      '@ag-ui/@@mastra/cli/cli/cli':
         specifier: latest
-        version: 0.0.4(@copilotkit/runtime@1.8.11(@browserbasehq/sdk@2.5.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.52.0)(deepmerge@4.3.1)(dotenv@16.5.0)(openai@4.98.0(ws@8.18.2)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.6.5)(axios@1.9.0(debug@4.4.0))(google-auth-library@8.9.0)(ibm-cloud-sdk-core@5.3.2)(ignore@5.3.2)(jsonwebtoken@9.0.2)(playwright@1.52.0)(react@19.1.1)(ws@8.18.2))(@mastra/core@..+packages+core)(zod@3.25.67)
+        version: 0.0.4(@copilotkit/runtime@1.8.11(@browserbasehq/sdk@2.5.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.52.0)(deepmerge@4.3.1)(dotenv@16.5.0)(openai@4.98.0(ws@8.18.2)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.6.5)(axios@1.9.0(debug@4.4.0))(google-auth-library@8.9.0)(ibm-cloud-sdk-core@5.3.2)(ignore@5.3.2)(jsonwebtoken@9.0.2)(playwright@1.52.0)(react@19.1.1)(ws@8.18.2))(@mastra/cli/cli/cli/core@..+packages+core)(zod@3.25.67)
       '@ai-sdk/openai':
         specifier: ^1.3.22
         version: 1.3.22(zod@3.25.67)
@@ -30,19 +30,19 @@ importers:
       '@copilotkit/runtime':
         specifier: ^1.8.10
         version: 1.8.11(@browserbasehq/sdk@2.5.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.52.0)(deepmerge@4.3.1)(dotenv@16.5.0)(openai@4.98.0(ws@8.18.2)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.6.5)(axios@1.9.0(debug@4.4.0))(google-auth-library@8.9.0)(ibm-cloud-sdk-core@5.3.2)(ignore@5.3.2)(jsonwebtoken@9.0.2)(playwright@1.52.0)(react@19.1.1)(ws@8.18.2)
-      '@mastra/core':
+      '@mastra/cli/cli/cli/core':
         specifier: link:../../packages/core
         version: link:../../packages/core
-      '@mastra/libsql':
+      '@mastra/cli/cli/cli/libsql':
         specifier: link:../../stores/libsql
         version: link:../../stores/libsql
-      '@mastra/loggers':
+      '@mastra/cli/cli/cli/loggers':
         specifier: link:../../packages/loggers
         version: link:../../packages/loggers
-      '@mastra/memory':
+      '@mastra/cli/cli/cli/memory':
         specifier: link:../../packages/memory
         version: link:../../packages/memory
-      mastra:
+      @@mastra/cli/cli/cli:
         specifier: link:../../packages/cli
         version: link:../../packages/cli
       react:
@@ -120,11 +120,11 @@ packages:
   '@ag-ui/encoder@0.0.35':
     resolution: {integrity: sha512-Ym0h0ZKIiD1Ld3+e3v/WQSogY62xs72ysoEBW1kt+dDs79QazBsW5ZlcBBj2DelEs9NrczQLxTVEvrkcvhrHqA==}
 
-  '@ag-ui/mastra@0.0.4':
+  '@ag-ui/@actus-ag/@mastra/cli/cli@0.0.4':
     resolution: {integrity: sha512-PVfOVZzxxtalHrj9ZGpk7e1N9FTqCr7DQHdxGG9pWL43bTOxpAwW9BPnUbqVFcsuSb71ArQ1lpPoPzfb+oLrag==}
     peerDependencies:
       '@copilotkit/runtime': ^1.8.13
-      '@mastra/core': ^0.10.10
+      '@mastra/cli/cli/cli/core': ^0.10.10
       zod: ^3.25.67
 
   '@ag-ui/proto@0.0.27':
@@ -1044,7 +1044,7 @@ packages:
     resolution: {integrity: sha512-qC72D4+CDdjGqJvkFMMEAtancHUQ7/d/tAiHf64z8MopFDmcrtbcJuerDtFceuAfQJ2pDSfCKCtbqoGBNnwg0w==}
     engines: {node: '>=8'}
 
-  '@mastra/client-js@0.10.14':
+  '@@mastra/cli/cli/cli-client-js@0.10.14':
     resolution: {integrity: sha512-CEDCYjEJg7irX96Zr0hhGDt1NBdlumnr21zFByknZEkc+Udbt9KihMQjVcCuO5KWDc9rsdb1Dd1/WylcsW1DXQ==}
     peerDependencies:
       zod: ^3.0.0
@@ -3286,13 +3286,13 @@ snapshots:
       '@ag-ui/core': 0.0.35
       '@ag-ui/proto': 0.0.35
 
-  '@ag-ui/mastra@0.0.4(@copilotkit/runtime@1.8.11(@browserbasehq/sdk@2.5.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.52.0)(deepmerge@4.3.1)(dotenv@16.5.0)(openai@4.98.0(ws@8.18.2)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.6.5)(axios@1.9.0(debug@4.4.0))(google-auth-library@8.9.0)(ibm-cloud-sdk-core@5.3.2)(ignore@5.3.2)(jsonwebtoken@9.0.2)(playwright@1.52.0)(react@19.1.1)(ws@8.18.2))(@mastra/core@..+packages+core)(zod@3.25.67)':
+  '@ag-ui/@actus-ag/@mastra/cli/cli@0.0.4(@copilotkit/runtime@1.8.11(@browserbasehq/sdk@2.5.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.52.0)(deepmerge@4.3.1)(dotenv@16.5.0)(openai@4.98.0(ws@8.18.2)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.6.5)(axios@1.9.0(debug@4.4.0))(google-auth-library@8.9.0)(ibm-cloud-sdk-core@5.3.2)(ignore@5.3.2)(jsonwebtoken@9.0.2)(playwright@1.52.0)(react@19.1.1)(ws@8.18.2))(@mastra/cli/cli/cli/core@..+packages+core)(zod@3.25.67)':
     dependencies:
       '@ag-ui/client': 0.0.35
       '@ai-sdk/ui-utils': 1.2.11(zod@3.25.67)
       '@copilotkit/runtime': 1.8.11(@browserbasehq/sdk@2.5.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.52.0)(deepmerge@4.3.1)(dotenv@16.5.0)(openai@4.98.0(ws@8.18.2)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.6.5)(axios@1.9.0(debug@4.4.0))(google-auth-library@8.9.0)(ibm-cloud-sdk-core@5.3.2)(ignore@5.3.2)(jsonwebtoken@9.0.2)(playwright@1.52.0)(react@19.1.1)(ws@8.18.2)
-      '@mastra/client-js': 0.10.14(zod@3.25.67)
-      '@mastra/core': link:../../packages/core
+      '@@mastra/cli/cli/cli-client-js': 0.10.14(zod@3.25.67)
+      '@mastra/cli/cli/cli/core': link:../../packages/core
       rxjs: 7.8.1
       zod: 3.25.67
 
@@ -4107,12 +4107,12 @@ snapshots:
     dependencies:
       '@lukeed/csprng': 1.1.0
 
-  '@mastra/client-js@0.10.14(zod@3.25.67)':
+  '@@mastra/cli/cli/cli-client-js@0.10.14(zod@3.25.67)':
     dependencies:
       '@ag-ui/client': 0.0.27
       '@ai-sdk/ui-utils': 1.2.11(zod@3.25.67)
       '@lukeed/uuid': 2.0.1
-      '@mastra/core': link:../../packages/core
+      '@mastra/cli/cli/cli/core': link:../../packages/core
       json-schema: 0.4.0
       rxjs: 7.8.1
       zod: 3.25.67

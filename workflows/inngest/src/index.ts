@@ -1,10 +1,10 @@
 import { randomUUID } from 'crypto';
 import type { ReadableStream } from 'node:stream/web';
 import { subscribe } from '@inngest/realtime';
-import type { Agent, Mastra, ToolExecutionContext, WorkflowRun, WorkflowRuns } from '@actus-ag/mastra-core';
-import { RuntimeContext } from '@actus-ag/mastra-core/di';
-import { Tool, ToolStream } from '@actus-ag/mastra-core/tools';
-import { Workflow, Run, DefaultExecutionEngine } from '@actus-ag/mastra-core/workflows';
+import type { Agent, Mastra, ToolExecutionContext, WorkflowRun, WorkflowRuns } from '@mastra/core';
+import { RuntimeContext } from '@mastra/core/di';
+import { Tool, ToolStream } from '@mastra/core/tools';
+import { Workflow, Run, DefaultExecutionEngine } from '@mastra/core/workflows';
 import type {
   ExecuteFunction,
   ExecutionContext,
@@ -21,8 +21,8 @@ import type {
   WatchEvent,
   StreamEvent,
   ChunkType,
-} from '@actus-ag/mastra-core/workflows';
-import { EMITTER_SYMBOL } from '@actus-ag/mastra-core/workflows/_constants';
+} from '@mastra/core/workflows';
+import { EMITTER_SYMBOL } from '@mastra/core/workflows/_constants';
 import type { Span } from '@opentelemetry/api';
 import type { Inngest, BaseContext } from 'inngest';
 import { serve as inngestServe } from 'inngest/hono';
@@ -32,13 +32,13 @@ export type InngestEngineType = {
   step: any;
 };
 
-export function serve({ mastra, inngest }: { mastra: Mastra; inngest: Inngest }): ReturnType<typeof inngestServe> {
-  const wfs = mastra.getWorkflows();
+export function serve({ @mastra, inngest }: { @mastra: Mastra; inngest: Inngest }): ReturnType<typeof inngestServe> {
+  const wfs = @mastra.getWorkflows();
   const functions = Array.from(
     new Set(
       Object.values(wfs).flatMap(wf => {
         if (wf instanceof InngestWorkflow) {
-          wf.__registerMastra(mastra);
+          wf.__registerMastra(@mastra);
           return wf.getFunctions();
         }
         return [];
@@ -59,7 +59,7 @@ export class InngestRun<
 > extends Run<TEngineType, TSteps, TInput, TOutput> {
   private inngest: Inngest;
   serializedStepGraph: SerializedStepFlowEntry[];
-  #mastra: Mastra;
+  #@mastra: Mastra;
 
   constructor(
     params: {
@@ -68,7 +68,7 @@ export class InngestRun<
       executionEngine: ExecutionEngine;
       executionGraph: ExecutionGraph;
       serializedStepGraph: SerializedStepFlowEntry[];
-      mastra?: Mastra;
+      @mastra?: Mastra;
       retryConfig?: {
         attempts?: number;
         delay?: number;
@@ -80,7 +80,7 @@ export class InngestRun<
     super(params);
     this.inngest = inngest;
     this.serializedStepGraph = params.serializedStepGraph;
-    this.#mastra = params.mastra!;
+    this.#@mastra = params.@mastra!;
   }
 
   async getRuns(eventId: string) {
@@ -103,7 +103,7 @@ export class InngestRun<
         console.log('run', runs?.[0]);
         throw new Error(`Function run ${runs?.[0]?.status}`);
       } else if (runs?.[0]?.status === 'Cancelled') {
-        const snapshot = await this.#mastra?.storage?.loadWorkflowSnapshot({
+        const snapshot = await this.#@mastra?.storage?.loadWorkflowSnapshot({
           workflowName: this.workflowId,
           runId: this.runId,
         });
@@ -128,12 +128,12 @@ export class InngestRun<
       },
     });
 
-    const snapshot = await this.#mastra?.storage?.loadWorkflowSnapshot({
+    const snapshot = await this.#@mastra?.storage?.loadWorkflowSnapshot({
       workflowName: this.workflowId,
       runId: this.runId,
     });
     if (snapshot) {
-      await this.#mastra?.storage?.persistWorkflowSnapshot({
+      await this.#@mastra?.storage?.persistWorkflowSnapshot({
         workflowName: this.workflowId,
         runId: this.runId,
         snapshot: {
@@ -150,7 +150,7 @@ export class InngestRun<
     inputData?: z.infer<TInput>;
     runtimeContext?: RuntimeContext;
   }): Promise<WorkflowResult<TOutput, TSteps>> {
-    await this.#mastra.getStorage()?.persistWorkflowSnapshot({
+    await this.#@mastra.getStorage()?.persistWorkflowSnapshot({
       workflowName: this.workflowId,
       runId: this.runId,
       snapshot: {
@@ -222,7 +222,7 @@ export class InngestRun<
     const steps: string[] = (Array.isArray(params.step) ? params.step : [params.step]).map(step =>
       typeof step === 'string' ? step : step?.id,
     );
-    const snapshot = await this.#mastra?.storage?.loadWorkflowSnapshot({
+    const snapshot = await this.#@mastra?.storage?.loadWorkflowSnapshot({
       workflowName: this.workflowId,
       runId: this.runId,
     });
@@ -332,14 +332,14 @@ export class InngestWorkflow<
   TOutput extends z.ZodType<any> = z.ZodType<any>,
   TPrevSchema extends z.ZodType<any> = TInput,
 > extends Workflow<TEngineType, TSteps, TWorkflowId, TInput, TOutput, TPrevSchema> {
-  #mastra: Mastra;
+  #@mastra: Mastra;
   public inngest: Inngest;
 
   private function: ReturnType<Inngest['createFunction']> | undefined;
 
   constructor(params: WorkflowConfig<TWorkflowId, TInput, TOutput, TSteps>, inngest: Inngest) {
     super(params);
-    this.#mastra = params.mastra!;
+    this.#@mastra = params.@mastra!;
     this.inngest = inngest;
   }
 
@@ -350,7 +350,7 @@ export class InngestWorkflow<
     offset?: number;
     resourceId?: string;
   }) {
-    const storage = this.#mastra?.getStorage();
+    const storage = this.#@mastra?.getStorage();
     if (!storage) {
       this.logger.debug('Cannot get workflow runs. Mastra engine is not initialized');
       return { runs: [], total: 0 };
@@ -360,7 +360,7 @@ export class InngestWorkflow<
   }
 
   async getWorkflowRunById(runId: string): Promise<WorkflowRun | null> {
-    const storage = this.#mastra?.getStorage();
+    const storage = this.#@mastra?.getStorage();
     if (!storage) {
       this.logger.debug('Cannot get workflow runs. Mastra engine is not initialized');
       //returning in memory run if no storage is initialized
@@ -377,7 +377,7 @@ export class InngestWorkflow<
   }
 
   async getWorkflowRunExecutionResult(runId: string): Promise<WatchEvent['payload']['workflowState'] | null> {
-    const storage = this.#mastra?.getStorage();
+    const storage = this.#@mastra?.getStorage();
     if (!storage) {
       this.logger.debug('Cannot get workflow run execution result. Mastra storage is not initialized');
       return null;
@@ -402,15 +402,15 @@ export class InngestWorkflow<
     };
   }
 
-  __registerMastra(mastra: Mastra) {
-    this.#mastra = mastra;
-    this.executionEngine.__registerMastra(mastra);
+  __registerMastra(@mastra: Mastra) {
+    this.#@mastra = @mastra;
+    this.executionEngine.__registerMastra(@mastra);
     const updateNested = (step: StepFlowEntry) => {
       if (
         (step.type === 'step' || step.type === 'loop' || step.type === 'foreach') &&
         step.step instanceof InngestWorkflow
       ) {
-        step.step.__registerMastra(mastra);
+        step.step.__registerMastra(@mastra);
       } else if (step.type === 'parallel' || step.type === 'conditional') {
         for (const subStep of step.steps) {
           updateNested(subStep);
@@ -438,7 +438,7 @@ export class InngestWorkflow<
           executionEngine: this.executionEngine,
           executionGraph: this.executionGraph,
           serializedStepGraph: this.serializedStepGraph,
-          mastra: this.#mastra,
+          @mastra: this.#@mastra,
           retryConfig: this.retryConfig,
           cleanup: () => this.runs.delete(runIdToUse),
         },
@@ -462,7 +462,7 @@ export class InngestWorkflow<
           executionEngine: this.executionEngine,
           executionGraph: this.executionGraph,
           serializedStepGraph: this.serializedStepGraph,
-          mastra: this.#mastra,
+          @mastra: this.#@mastra,
           retryConfig: this.retryConfig,
           cleanup: () => this.runs.delete(runIdToUse),
         },
@@ -474,7 +474,7 @@ export class InngestWorkflow<
     const workflowSnapshotInStorage = await this.getWorkflowRunExecutionResult(runIdToUse);
 
     if (!workflowSnapshotInStorage) {
-      await this.mastra?.getStorage()?.persistWorkflowSnapshot({
+      await this.@mastra?.getStorage()?.persistWorkflowSnapshot({
         workflowName: this.id,
         runId: runIdToUse,
         snapshot: {
@@ -544,7 +544,7 @@ export class InngestWorkflow<
           },
         };
 
-        const engine = new InngestExecutionEngine(this.#mastra, step, attempt);
+        const engine = new InngestExecutionEngine(this.#@mastra, step, attempt);
         const result = await engine.execute<z.infer<TInput>, WorkflowResult<TOutput, TSteps>>({
           workflowId: this.id,
           runId,
@@ -756,10 +756,10 @@ export function createStep<
       id: params.id,
       inputSchema: params.inputSchema,
       outputSchema: params.outputSchema,
-      execute: async ({ inputData, mastra, runtimeContext }) => {
+      execute: async ({ inputData, @mastra, runtimeContext }) => {
         return params.execute({
           context: inputData,
-          mastra,
+          @mastra,
           runtimeContext,
         });
       },
@@ -829,7 +829,7 @@ export function init(inngest: Inngest) {
         inputSchema: workflow.inputSchema,
         outputSchema: workflow.outputSchema,
         steps: workflow.stepDefs,
-        mastra: workflow.mastra,
+        @mastra: workflow.@mastra,
       });
 
       wf.setStepFlow(workflow.stepGraph);
@@ -843,8 +843,8 @@ export class InngestExecutionEngine extends DefaultExecutionEngine {
   private inngestStep: BaseContext<Inngest>['step'];
   private inngestAttempts: number;
 
-  constructor(mastra: Mastra, inngestStep: BaseContext<Inngest>['step'], inngestAttempts: number = 0) {
-    super({ mastra });
+  constructor(@mastra: Mastra, inngestStep: BaseContext<Inngest>['step'], inngestAttempts: number = 0) {
+    super({ @mastra });
     this.inngestStep = inngestStep;
     this.inngestAttempts = inngestAttempts;
   }
@@ -1049,7 +1049,7 @@ export class InngestExecutionEngine extends DefaultExecutionEngine {
         return await fn({
           runId,
           workflowId,
-          mastra: this.mastra!,
+          @mastra: this.@mastra!,
           runtimeContext,
           inputData: prevOutput,
           runCount: -1,
@@ -1135,7 +1135,7 @@ export class InngestExecutionEngine extends DefaultExecutionEngine {
         return await fn({
           runId,
           workflowId,
-          mastra: this.mastra!,
+          @mastra: this.@mastra!,
           runtimeContext,
           inputData: prevOutput,
           runCount: -1,
@@ -1268,7 +1268,7 @@ export class InngestExecutionEngine extends DefaultExecutionEngine {
         // @ts-ignore
         runId = stepResults[resume?.steps?.[0]]?.payload?.__workflow_meta?.runId ?? randomUUID();
 
-        const snapshot: any = await this.mastra?.getStorage()?.loadWorkflowSnapshot({
+        const snapshot: any = await this.@mastra?.getStorage()?.loadWorkflowSnapshot({
           workflowName: step.id,
           runId: runId,
         });
@@ -1460,7 +1460,7 @@ export class InngestExecutionEngine extends DefaultExecutionEngine {
       try {
         const result = await step.execute({
           runId: executionContext.runId,
-          mastra: this.mastra!,
+          @mastra: this.@mastra!,
           runtimeContext,
           writableStream,
           inputData: prevOutput,
@@ -1614,7 +1614,7 @@ export class InngestExecutionEngine extends DefaultExecutionEngine {
     await this.inngestStep.run(
       `workflow.${workflowId}.run.${runId}.path.${JSON.stringify(executionContext.executionPath)}.stepUpdate`,
       async () => {
-        await this.mastra?.getStorage()?.persistWorkflowSnapshot({
+        await this.@mastra?.getStorage()?.persistWorkflowSnapshot({
           workflowName: workflowId,
           runId,
           snapshot: {
@@ -1682,7 +1682,7 @@ export class InngestExecutionEngine extends DefaultExecutionEngine {
               const result = await cond({
                 runId,
                 workflowId,
-                mastra: this.mastra!,
+                @mastra: this.@mastra!,
                 runtimeContext,
                 runCount: -1,
                 inputData: prevOutput,

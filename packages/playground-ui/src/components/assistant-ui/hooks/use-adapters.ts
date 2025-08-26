@@ -1,5 +1,5 @@
-import { Agent } from '@actus-ag/mastra-core';
-import { useMastraClient } from '@/contexts/mastra-client-context';
+import { Agent } from '@mastra/core';
+import { useMastraClient } from '@/contexts/@mastra-client-context';
 import { useEffect, useState } from 'react';
 import { VoiceAttachmentAdapter } from '../attachments/voice-adapter';
 import {

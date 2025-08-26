@@ -9,7 +9,7 @@ import { Icon } from '@/ds/icons/Icon';
 import { ToolCoinIcon } from '@/ds/icons/ToolCoinIcon';
 import { ToolsIcon } from '@/ds/icons/ToolsIcon';
 import { useLinkComponent } from '@/lib/framework';
-import { GetAgentResponse, GetToolResponse } from '@actus-ag/mastra-client-js';
+import { GetAgentResponse, GetToolResponse } from '@@mastra/cli/cli/cli-client-js';
 import { SearchIcon } from 'lucide-react';
 import { startTransition, useMemo, useRef, useState } from 'react';
 
@@ -182,7 +182,7 @@ export const ToolListEmpty = () => {
           className="w-full"
           variant="light"
           as="a"
-          href="https://mastra.ai/en/docs/agents/using-tools-and-mcp"
+          href="https://@@mastra/cli/cli/cli.ai/en/docs/agents/using-tools-and-mcp"
           target="_blank"
         >
           <Icon>

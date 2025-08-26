@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { createStep, createWorkflow } from '@actus-ag/mastra-core/workflows';
+import { createStep, createWorkflow } from '@mastra/core/workflows';
 
 const forecastSchema = z.object({
   date: z.string(),
@@ -68,8 +68,8 @@ const planActivities = createStep({
   outputSchema: z.object({
     activities: z.string(),
   }),
-  execute: async ({ inputData, mastra }) => {
-    console.log('mastra', mastra);
+  execute: async ({ inputData, @mastra }) => {
+    console.log('@actus-ag/@mastra', @mastra);
     console.log('planActivities', inputData);
     const forecast = inputData;
 
@@ -81,7 +81,7 @@ const planActivities = createStep({
       ${JSON.stringify(forecast, null, 2)}
       `;
 
-    const agent = mastra?.getAgent('planningAgent');
+    const agent = @mastra?.getAgent('planningAgent');
     if (!agent) {
       throw new Error('Planning agent not found');
     }
@@ -137,7 +137,7 @@ const planIndoorActivities = createStep({
   outputSchema: z.object({
     activities: z.string(),
   }),
-  execute: async ({ inputData, mastra }) => {
+  execute: async ({ inputData, @mastra }) => {
     console.log('planIndoorActivities', inputData);
     const forecast = inputData;
 
@@ -147,7 +147,7 @@ const planIndoorActivities = createStep({
 
     const prompt = `In case it rains, plan indoor activities for ${forecast.location} on ${forecast.date}`;
 
-    const agent = mastra?.getAgent('planningAgent');
+    const agent = @mastra?.getAgent('planningAgent');
     if (!agent) {
       throw new Error('Planning agent not found');
     }
@@ -186,7 +186,7 @@ const sythesizeStep = createStep({
   outputSchema: z.object({
     activities: z.string(),
   }),
-  execute: async ({ inputData, mastra, abortSignal, abort }) => {
+  execute: async ({ inputData, @mastra, abortSignal, abort }) => {
     console.log('sythesizeStep', inputData);
     const indoorActivities = inputData?.['plan-indoor-activities-workflow'];
     const outdoorActivities = inputData?.['plan-activities'];
@@ -199,7 +199,7 @@ const sythesizeStep = createStep({
       
       There is a chance of rain so be prepared to do indoor activities if needed.`;
 
-    const agent = mastra?.getAgent('synthesizeAgent');
+    const agent = @mastra?.getAgent('synthesizeAgent');
     if (!agent) {
       throw new Error('Planning agent not found');
     }

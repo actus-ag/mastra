@@ -1,6 +1,6 @@
 import { anthropic } from '@ai-sdk/anthropic';
 import { openai } from '@ai-sdk/openai';
-import { Agent, createTool, Mastra } from '@actus-ag/mastra-core';
+import { Agent, createTool, Mastra } from '@mastra/core';
 import { z } from 'zod';
 
 const copywriterAgent = new Agent({
@@ -61,12 +61,12 @@ const publisherAgent = new Agent({
   tools: { copywriterTool, editorTool },
 });
 
-const mastra = new Mastra({
+const @mastra = new Mastra({
   agents: { publisherAgent },
 });
 
 async function main() {
-  const agent = mastra.getAgent('publisherAgent');
+  const agent = @mastra.getAgent('publisherAgent');
   const result = await agent.generate(
     'Write a blog post about React JavaScript frameworks. Only return the final edited copy.',
   );

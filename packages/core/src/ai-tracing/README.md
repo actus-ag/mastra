@@ -21,7 +21,7 @@ The AI Tracing system enables detailed observability for AI-driven applications 
 ### Manual Tracing
 
 ```typescript
-import { DefaultAITracing, AISpanType } from '@actus-ag/mastra-core';
+import { DefaultAITracing, AISpanType } from '@mastra/core';
 
 // Create tracing instance
 const tracing = new DefaultAITracing({
@@ -63,14 +63,14 @@ agentSpan.end();
 The AI tracing system automatically creates span hierarchies for workflow executions:
 
 ```typescript
-import { createStep } from '@actus-ag/mastra-core';
+import { createStep } from '@mastra/core';
 
 // Workflow step with automatic tracing
 const step = createStep({
   id: 'customer-response',
-  execute: async ({ inputData, mastra, aiTracingContext }) => {
+  execute: async ({ inputData, @mastra, aiTracingContext }) => {
     // aiTracingContext is automatically provided by the workflow engine
-    const agent = mastra.getAgent('support-agent');
+    const agent = @mastra.getAgent('support-agent');
 
     // Agent calls automatically create child spans under the step span
     const response = await agent.generate(inputData.query, {
@@ -107,7 +107,7 @@ Workflow Run
 Register AI tracing with your Mastra instance:
 
 ```typescript
-import { registerAITracing, DefaultAITracing } from '@actus-ag/mastra-core';
+import { registerAITracing, DefaultAITracing } from '@mastra/core';
 
 // Register a tracing instance
 const tracing = new DefaultAITracing({

@@ -48,7 +48,7 @@ export class Machine<
   TResultSchema extends z.ZodObject<any> = any,
 > extends EventEmitter {
   logger: IMastraLogger;
-  #mastra?: Mastra;
+  #@mastra?: Mastra;
   #runtimeContext: RuntimeContext;
   #workflowInstance: WorkflowInstance;
   #executionSpan?: Span | undefined;
@@ -65,7 +65,7 @@ export class Machine<
 
   constructor({
     logger,
-    mastra,
+    @mastra,
     runtimeContext,
     workflowInstance,
     executionSpan,
@@ -77,7 +77,7 @@ export class Machine<
     startStepId,
   }: {
     logger: IMastraLogger;
-    mastra?: Mastra;
+    @mastra?: Mastra;
     runtimeContext: RuntimeContext;
     workflowInstance: WorkflowInstance;
     executionSpan?: Span;
@@ -90,7 +90,7 @@ export class Machine<
   }) {
     super();
 
-    this.#mastra = mastra;
+    this.#@mastra = @mastra;
     this.#workflowInstance = workflowInstance;
     this.#runtimeContext = runtimeContext;
     this.#executionSpan = executionSpan;
@@ -363,10 +363,10 @@ export class Machine<
         });
 
         const logger = this.logger;
-        let mastraProxy = undefined;
+        let @mastraProxy = undefined;
 
-        if (this.#mastra) {
-          mastraProxy = createMastraProxy({ mastra: this.#mastra, logger });
+        if (this.#@mastra) {
+          @mastraProxy = createMastraProxy({ @mastra: this.#@mastra, logger });
         }
 
         let result = undefined;
@@ -414,7 +414,7 @@ export class Machine<
               }
             },
             runId: this.#runId,
-            mastra: mastraProxy as MastraUnion | undefined,
+            @mastra: @mastraProxy as MastraUnion | undefined,
             runtimeContext: this.#runtimeContext,
           });
         } catch (error) {
@@ -489,7 +489,7 @@ export class Machine<
                 return undefined;
               }) satisfies WorkflowContext<TTriggerSchema>['getStepResult'],
             },
-            mastra: this.#mastra,
+            @mastra: this.#@mastra,
           });
 
           if (conditionMet === WhenConditionReturnValue.ABORT) {

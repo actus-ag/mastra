@@ -1,6 +1,6 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { LegacyStep, LegacyWorkflow } from '@actus-ag/mastra-core/workflows/legacy';
+import { Agent } from '@mastra/core/agent';
+import { LegacyStep, LegacyWorkflow } from '@mastra/core/workflows/legacy';
 import { z } from 'zod';
 
 const agent = new Agent({
@@ -97,7 +97,7 @@ const planActivities = new LegacyStep({
   id: 'plan-activities',
   description: 'Suggests activities based on weather conditions',
   inputSchema: forecastSchema,
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     const forecast = context?.getStepResult<z.infer<typeof forecastSchema>>('fetch-weather');
 
     if (!forecast) {

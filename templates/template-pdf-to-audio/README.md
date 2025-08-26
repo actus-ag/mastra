@@ -105,9 +105,9 @@ const audio = await agent.voice.speak(summary, { speaker: 'nova', speed: 1.0 });
 ### Using the Workflow
 
 ```typescript
-import { mastra } from './src/mastra/index';
+import { @mastra } from './src/@mastra/index';
 
-const run = await mastra.getWorkflow('pdfToAudioWorkflow').createRunAsync();
+const run = await @mastra.getWorkflow('pdfToAudioWorkflow').createRunAsync();
 
 // Generate audio from PDF with custom voice settings
 const result = await run.start({
@@ -124,9 +124,9 @@ console.log(result.result.audioInfo);
 ### Using the PDF to Audio Agent
 
 ```typescript
-import { mastra } from './src/mastra/index';
+import { @mastra } from './src/@mastra/index';
 
-const agent = mastra.getAgent('pdfToAudioAgent');
+const agent = @mastra.getAgent('pdfToAudioAgent');
 
 // The agent can handle the full process with natural language
 const response = await agent.stream([
@@ -148,14 +148,14 @@ const audioStream = await agent.voice.speak('This is a test of the voice capabil
 ### Using Individual Tools
 
 ```typescript
-import { mastra } from './src/mastra/index';
-import { pdfFetcherTool } from './src/mastra/tools/download-pdf-tool';
-import { generateAudioFromTextTool } from './src/mastra/tools/generate-audio-from-text-tool';
+import { @mastra } from './src/@mastra/index';
+import { pdfFetcherTool } from './src/@mastra/tools/download-pdf-tool';
+import { generateAudioFromTextTool } from './src/@mastra/tools/generate-audio-from-text-tool';
 
 // Step 1: Download PDF and generate summary
 const pdfResult = await pdfFetcherTool.execute({
   context: { pdfUrl: 'https://example.com/document.pdf' },
-  mastra,
+  @mastra,
   runtimeContext: new RuntimeContext(),
 });
 
@@ -169,7 +169,7 @@ const audioResult = await generateAudioFromTextTool.execute({
     speaker: 'nova',
     speed: 1.0,
   },
-  mastra,
+  @mastra,
   runtimeContext: new RuntimeContext(),
 });
 
@@ -295,7 +295,7 @@ export const textToAudioAgent = new Agent({
 ### Project Structure
 
 ```text
-src/mastra/
+src/@mastra/
 ├── agents/
 │   ├── pdf-to-audio-agent.ts         # PDF processing and audio generation agent
 │   ├── text-to-audio-agent.ts        # Text to audio conversion agent

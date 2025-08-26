@@ -34,7 +34,7 @@ export type OtelConfig = {
   /** Whether telemetry is enabled. Defaults to true */
   enabled?: boolean;
 
-  /** Name of the tracer to use. Defaults to 'mastra-tracer' */
+  /** Name of the tracer to use. Defaults to '@mastra-tracer' */
   tracerName?: string;
 
   /** Sampling configuration to control trace data volume */

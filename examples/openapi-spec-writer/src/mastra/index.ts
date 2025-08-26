@@ -1,10 +1,10 @@
-import { PinoLogger } from "@actus-ag/mastra-loggers";
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { UpstashTransport } from "@actus-ag/mastra-loggers/upstash";
+import { PinoLogger } from "@mastra/loggers";
+import { Mastra } from "@mastra/core/@mastra";
+import { UpstashTransport } from "@mastra/loggers/upstash";
 import { agentOne } from "./agents";
 import { makePRToMastraWorkflow, openApiSpecGenWorkflow } from "./workflows";
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   logger: new PinoLogger({
     name: "OPENAPI_SPEC_WRITER",
     level: "debug",
@@ -17,7 +17,7 @@ export const mastra = new Mastra({
   }),
   agents: { "openapi-spec-gen-agent": agentOne },
   telemetry: {
-    serviceName: "mastra-vnext",
+    serviceName: "@mastra-vnext",
     sampling: {
       type: "always_on",
     },

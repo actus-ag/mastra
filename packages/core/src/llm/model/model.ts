@@ -7,7 +7,7 @@ import {
   MetaSchemaCompatLayer,
   OpenAIReasoningSchemaCompatLayer,
   OpenAISchemaCompatLayer,
-} from '@actus-ag/mastra-schema-compat';
+} from '@mastra/schema-compat';
 import type { CoreMessage, LanguageModel, Schema, StreamObjectOnFinishCallback, StreamTextOnFinishCallback } from 'ai';
 import { generateObject, generateText, jsonSchema, Output, streamObject, streamText } from 'ai';
 import type { JSONSchema7 } from 'json-schema';
@@ -19,7 +19,7 @@ import { AISpanType } from '../../ai-tracing';
 import type { AISpan, AnyAISpan } from '../../ai-tracing';
 import { MastraBase } from '../../base';
 import { MastraError, ErrorDomain, ErrorCategory } from '../../error';
-import type { Mastra } from '../../mastra';
+import type { Mastra } from '../../@mastra';
 import { delay } from '../../utils';
 
 import type {
@@ -43,17 +43,17 @@ import type { inferOutput } from './shared.types';
 
 export class MastraLLMV1 extends MastraBase {
   #model: LanguageModel;
-  #mastra?: Mastra;
+  #@mastra?: Mastra;
 
-  constructor({ model, mastra }: { model: LanguageModel; mastra?: Mastra }) {
+  constructor({ model, @mastra }: { model: LanguageModel; @mastra?: Mastra }) {
     super({ name: 'aisdk' });
 
     this.#model = model;
 
-    if (mastra) {
-      this.#mastra = mastra;
-      if (mastra.getLogger()) {
-        this.__setLogger(this.#mastra.getLogger());
+    if (@mastra) {
+      this.#@mastra = @mastra;
+      if (@mastra.getLogger()) {
+        this.__setLogger(this.#@mastra.getLogger());
       }
     }
   }
@@ -69,7 +69,7 @@ export class MastraLLMV1 extends MastraBase {
   }
 
   __registerMastra(p: Mastra) {
-    this.#mastra = p;
+    this.#@mastra = p;
   }
 
   getProvider() {

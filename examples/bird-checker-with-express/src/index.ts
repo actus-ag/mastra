@@ -3,7 +3,7 @@ import express, { Request, Response } from 'express';
 import { z } from 'zod';
 
 import { getRandomImage, ImageQuery } from './lib/utils';
-import { mastra } from './mastra/index';
+import { @mastra } from './@mastra/index';
 
 config();
 
@@ -44,7 +44,7 @@ app.post('/api/image-metadata', async (req: Request, res: Response) => {
       return;
     }
 
-    const birdCheckerAgent = mastra.getAgent('birdCheckerAgent');
+    const birdCheckerAgent = @mastra.getAgent('birdCheckerAgent');
 
     if (!birdCheckerAgent) {
       res.sendStatus(404);

@@ -10,7 +10,7 @@ import { processDataStream } from '@ai-sdk/ui-utils';
 import { useState, ReactNode, useEffect } from 'react';
 
 import { ChatProps, ModelSettings } from '@/types';
-import { useMastraClient } from '@/contexts/mastra-client-context';
+import { useMastraClient } from '@/contexts/@@mastra/cli/cli/cli-client-context';
 const convertMessage = (message: ThreadMessageLike): ThreadMessageLike => {
   return message;
 };
@@ -44,9 +44,9 @@ export function MastraNetworkRuntimeProvider({
     }
   }, [initialMessages, threadId, memory, messages]);
 
-  const mastra = useMastraClient();
+  const @@mastra/cli/cli/cli = useMastraClient();
 
-  const network = mastra.getNetwork(agentId);
+  const network = @@mastra/cli/cli/cli.getNetwork(agentId);
 
   const onNew = async (message: AppendMessage) => {
     if (message.content[0]?.type !== 'text') throw new Error('Only text messages are supported');

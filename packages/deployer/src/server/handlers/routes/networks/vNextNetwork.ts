@@ -1,5 +1,5 @@
-import type { Mastra } from '@actus-ag/mastra-core';
-import type { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
+import type { Mastra } from '@mastra/core';
+import type { RuntimeContext } from '@mastra/core/runtime-context';
 import {
   getVNextNetworksHandler as getOriginalVNextNetworksHandler,
   getVNextNetworkByIdHandler as getOriginalVNextNetworkByIdHandler,
@@ -7,7 +7,7 @@ import {
   streamGenerateVNextNetworkHandler as getOriginalStreamGenerateVNextNetworkHandler,
   loopVNextNetworkHandler as getOriginalLoopVNextNetworkHandler,
   loopStreamVNextNetworkHandler as getOriginalLoopStreamVNextNetworkHandler,
-} from '@actus-ag/mastra-server/handlers/vNextNetwork';
+} from '@mastra/server/handlers/vNextNetwork';
 import type { Context } from 'hono';
 import { stream } from 'hono/streaming';
 
@@ -15,11 +15,11 @@ import { handleError } from '../../error';
 
 export async function getVNextNetworksHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const runtimeContext: RuntimeContext = c.get('runtimeContext');
 
     const networks = await getOriginalVNextNetworksHandler({
-      mastra,
+      @mastra,
       runtimeContext,
     });
 
@@ -31,12 +31,12 @@ export async function getVNextNetworksHandler(c: Context) {
 
 export async function getVNextNetworkByIdHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const networkId = c.req.param('networkId');
     const runtimeContext: RuntimeContext = c.get('runtimeContext');
 
     const network = await getOriginalVNextNetworkByIdHandler({
-      mastra,
+      @mastra,
       networkId,
       runtimeContext,
     });
@@ -49,13 +49,13 @@ export async function getVNextNetworkByIdHandler(c: Context) {
 
 export async function generateVNextNetworkHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const runtimeContext: RuntimeContext = c.get('runtimeContext');
     const networkId = c.req.param('networkId');
     const body = await c.req.json();
 
     const result = await getOriginalGenerateVNextNetworkHandler({
-      mastra,
+      @mastra,
       runtimeContext,
       networkId,
       body,
@@ -69,9 +69,9 @@ export async function generateVNextNetworkHandler(c: Context) {
 
 export async function streamGenerateVNextNetworkHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const runtimeContext: RuntimeContext = c.get('runtimeContext');
-    const logger = mastra.getLogger();
+    const logger = @mastra.getLogger();
     const networkId = c.req.param('networkId');
     const body = await c.req.json();
 
@@ -82,7 +82,7 @@ export async function streamGenerateVNextNetworkHandler(c: Context) {
       async stream => {
         try {
           const result = await getOriginalStreamGenerateVNextNetworkHandler({
-            mastra,
+            @mastra,
             runtimeContext,
             networkId,
             body,
@@ -99,7 +99,7 @@ export async function streamGenerateVNextNetworkHandler(c: Context) {
             await stream.write(JSON.stringify(chunkResult.value) + '\x1E');
           }
         } catch (err) {
-          mastra.getLogger().error('Error in network stream: ' + ((err as Error)?.message ?? 'Unknown error'));
+          @mastra.getLogger().error('Error in network stream: ' + ((err as Error)?.message ?? 'Unknown error'));
         }
       },
       async err => {
@@ -113,13 +113,13 @@ export async function streamGenerateVNextNetworkHandler(c: Context) {
 
 export async function loopVNextNetworkHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const runtimeContext: RuntimeContext = c.get('runtimeContext');
     const networkId = c.req.param('networkId');
     const body = await c.req.json();
 
     const result = await getOriginalLoopVNextNetworkHandler({
-      mastra,
+      @mastra,
       runtimeContext,
       networkId,
       body,
@@ -133,9 +133,9 @@ export async function loopVNextNetworkHandler(c: Context) {
 
 export async function loopStreamVNextNetworkHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const runtimeContext: RuntimeContext = c.get('runtimeContext');
-    const logger = mastra.getLogger();
+    const logger = @mastra.getLogger();
     const networkId = c.req.param('networkId');
     const body = await c.req.json();
 
@@ -146,7 +146,7 @@ export async function loopStreamVNextNetworkHandler(c: Context) {
       async stream => {
         try {
           const result = await getOriginalLoopStreamVNextNetworkHandler({
-            mastra,
+            @mastra,
             runtimeContext,
             networkId,
             body,
@@ -163,7 +163,7 @@ export async function loopStreamVNextNetworkHandler(c: Context) {
             await stream.write(JSON.stringify(chunkResult.value) + '\x1E');
           }
         } catch (err) {
-          mastra.getLogger().error('Error in network loop stream: ' + ((err as Error)?.message ?? 'Unknown error'));
+          @mastra.getLogger().error('Error in network loop stream: ' + ((err as Error)?.message ?? 'Unknown error'));
         }
       },
       async err => {

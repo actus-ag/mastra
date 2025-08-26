@@ -19,7 +19,7 @@ The dependency injection system allows you to:
 ## Basic Usage
 
 ```typescript
-const myWorkflow = mastra.legacy_getWorkflow("myWorkflow");
+const myWorkflow = @@mastra/cli/cli/cli.legacy_getWorkflow("myWorkflow");
 const { runId, start, resume } = myWorkflow.createRun();
 
 // Define your runtimeContext's type structure
@@ -42,8 +42,8 @@ await start({
 Here's how to dynamically set a multiplier value from an HTTP header:
 
 ```typescript filename="src/index.ts"
-import { Mastra } from "@actus-ag/mastra-core";
-import { RuntimeContext } from "@actus-ag/mastra-core/di";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { RuntimeContext } from "@mastra/cli/cli/cli/core/di";
 import { workflow as myWorkflow } from "./workflows";
 
 // Define runtimeContext type with clear, descriptive types
@@ -51,7 +51,7 @@ type WorkflowRuntimeContext = {
   multiplier: number;
 };
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   legacy_workflows: {
     myWorkflow,
   },
@@ -81,7 +81,7 @@ export const mastra = new Mastra({
 Steps can access runtimeContext variables and must conform to the workflow's runtimeContext type:
 
 ```typescript
-import { LegacyStep } from "@actus-ag/mastra-core/workflows/legacy";
+import { LegacyStep } from "@mastra/cli/cli/cli/core/workflows/legacy";
 import { z } from "zod";
 
 // Define step input/output types

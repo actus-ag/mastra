@@ -398,7 +398,7 @@ export class DefaultConsoleExporter implements AITracingExporter {
 // ============================================================================
 
 export const aiTracingDefaultConfig: AITracingInstanceConfig = {
-  serviceName: 'mastra-ai-service',
+  serviceName: '@mastra-ai-service',
   instanceName: 'default',
   sampling: { type: SamplingStrategyType.ALWAYS },
   exporters: [new DefaultConsoleExporter()], // Uses its own fallback logger

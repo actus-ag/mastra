@@ -14,7 +14,7 @@ This project provides a Mastra workflow system for database introspection and na
 
 ```
 src/
-├── mastra/
+├── @mastra/
 │   ├── agents/
 │   │   └── sql-agent.ts                    # SQL agent for query generation
 │   ├── tools/
@@ -88,7 +88,7 @@ The SQL Agent (`sqlAgent`) now has the same capabilities as the workflow, provid
 #### **🔗 Database Connection & Analysis**
 
 ```typescript
-const sqlAgent = mastra.getAgent('sqlAgent');
+const sqlAgent = @mastra.getAgent('sqlAgent');
 
 const result = await sqlAgent.generate(
   [
@@ -177,7 +177,7 @@ The main workflow (`databaseQueryWorkflow`) is a multi-step interactive workflow
 **Usage**:
 
 ```typescript
-const workflow = mastra.getWorkflow('databaseQueryWorkflow');
+const workflow = @mastra.getWorkflow('databaseQueryWorkflow');
 const run = await workflow.createRunAsync();
 
 // Start workflow (will suspend for connection string)
@@ -283,7 +283,7 @@ The enhanced dataset supports queries about:
 
 Key dependencies:
 
-- `@actus-ag/mastra-core`: Workflow orchestration
+- `@mastra/core`: Workflow orchestration
 - `@ai-sdk/openai`: AI integration
 - `ai`: AI SDK for structured generation
 - `pg`: PostgreSQL client

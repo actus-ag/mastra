@@ -1,6 +1,6 @@
 import { DEFAULT_MODEL_NAME, models } from '@/ai/models';
 import { auth } from '@/app/(auth)/auth';
-import { createMastra } from '@/mastra';
+import { createMastra } from '@/@mastra';
 import { cookies } from 'next/headers';
 
 export async function GET() {
@@ -18,12 +18,12 @@ export async function GET() {
 
   const selectedModelId = selectedModel?.id || DEFAULT_MODEL_NAME;
 
-  const mastra = createMastra({
+  const @mastra = createMastra({
     modelName: selectedModelId!,
     modelProvider: selectedModel?.provider || `OPEN_AI`,
   });
 
-  const chats = await mastra.memory?.getThreadsByResourceId({
+  const chats = await @mastra.memory?.getThreadsByResourceId({
     resourceId: session.user.id!,
   });
 

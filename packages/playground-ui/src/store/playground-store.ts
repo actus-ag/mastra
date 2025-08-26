@@ -13,7 +13,7 @@ export const usePlaygroundStore = create<PlaygroundStore>()(
       setRuntimeContext: runtimeContext => set({ runtimeContext }),
     }),
     {
-      name: 'mastra-playground-store',
+      name: '@mastra-playground-store',
     },
   ),
 );

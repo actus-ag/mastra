@@ -1,7 +1,7 @@
 import type { Connection, FieldLike, SchemaLike } from '@lancedb/lancedb';
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import { TABLE_EVALS, TABLE_WORKFLOW_SNAPSHOT } from '@actus-ag/mastra-core/storage';
-import type { TABLE_NAMES } from '@actus-ag/mastra-core/storage';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import { TABLE_EVALS, TABLE_WORKFLOW_SNAPSHOT } from '@mastra/core/storage';
+import type { TABLE_NAMES } from '@mastra/core/storage';
 
 export function getPrimaryKeys(tableName: TABLE_NAMES): string[] {
   let primaryId: string[] = ['id'];

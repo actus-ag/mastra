@@ -22,8 +22,8 @@ In Mastra workflows, variables serve as a way to:
 
 You can map data between steps using the `variables` property when adding a step to your workflow:
 
-```typescript showLineNumbers filename="src/mastra/workflows/index.ts" copy
-import { LegacyStep, LegacyWorkflow } from "@actus-ag/mastra-core/workflows/legacy";
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/workflows/index.ts" copy
+import { LegacyStep, LegacyWorkflow } from "@mastra/cli/cli/cli/core/workflows/legacy";
 
 const workflow = new LegacyWorkflow({
   name: "data-mapping-workflow",
@@ -48,7 +48,7 @@ workflow
   .commit();
 
 // Register the workflow with Mastra
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   legacy_workflows: { workflow },
 });
 ```
@@ -57,7 +57,7 @@ export const mastra = new Mastra({
 
 You can access nested properties using dot notation in the `path` field:
 
-```typescript showLineNumbers filename="src/mastra/workflows/index.ts" copy
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/workflows/index.ts" copy
 workflow
   .step(step1)
   .then(step2, {
@@ -73,7 +73,7 @@ workflow
 
 You can map an entire object by using `.` as the path:
 
-```typescript showLineNumbers filename="src/mastra/workflows/index.ts" copy
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/workflows/index.ts" copy
 workflow
   .step(step1, {
     variables: {
@@ -88,7 +88,7 @@ workflow
 
 Variables can also be passed to `while` and `until` loops. This is useful for passing data between iterations or from outside steps:
 
-```typescript showLineNumbers filename="src/mastra/workflows/loop-variables.ts" copy
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/workflows/loop-variables.ts" copy
 // Step that increments a counter
 const incrementStep = new LegacyStep({
   id: "increment",
@@ -142,9 +142,9 @@ When a workflow executes, Mastra resolves variables at runtime by:
 
 This example shows how to map data from the workflow trigger to a step:
 
-```typescript showLineNumbers filename="src/mastra/workflows/trigger-mapping.ts" copy
-import { Mastra } from "@actus-ag/mastra-core";
-import { LegacyStep, LegacyWorkflow } from "@actus-ag/mastra-core/workflows/legacy";
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/workflows/trigger-mapping.ts" copy
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { LegacyStep, LegacyWorkflow } from "@mastra/cli/cli/cli/core/workflows/legacy";
 import { z } from "zod";
 
 // Define a step that needs user input
@@ -178,7 +178,7 @@ workflow
   .commit();
 
 // Register the workflow with Mastra
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   legacy_workflows: { workflow },
 });
 ```
@@ -187,9 +187,9 @@ export const mastra = new Mastra({
 
 This example demonstrates mapping data from one step to another:
 
-```typescript showLineNumbers filename="src/mastra/workflows/step-mapping.ts" copy
-import { Mastra } from "@actus-ag/mastra-core";
-import { LegacyStep, LegacyWorkflow } from "@actus-ag/mastra-core/workflows/legacy";
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/workflows/step-mapping.ts" copy
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { LegacyStep, LegacyWorkflow } from "@mastra/cli/cli/cli/core/workflows/legacy";
 import { z } from "zod";
 
 // Step 1: Generate data
@@ -242,7 +242,7 @@ workflow
   .commit();
 
 // Register the workflow with Mastra
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   legacy_workflows: { workflow },
 });
 ```
@@ -251,9 +251,9 @@ export const mastra = new Mastra({
 
 Mastra provides type safety for variable mappings when using TypeScript:
 
-```typescript showLineNumbers filename="src/mastra/workflows/type-safe.ts" copy
-import { Mastra } from "@actus-ag/mastra-core";
-import { LegacyStep, LegacyWorkflow } from "@actus-ag/mastra-core/workflows/legacy";
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/workflows/type-safe.ts" copy
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { LegacyStep, LegacyWorkflow } from "@mastra/cli/cli/cli/core/workflows/legacy";
 import { z } from "zod";
 
 // Define schemas for better type safety
@@ -292,7 +292,7 @@ const workflow = new LegacyWorkflow({
 workflow.step(step1).commit();
 
 // Register the workflow with Mastra
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   legacy_workflows: { workflow },
 });
 ```

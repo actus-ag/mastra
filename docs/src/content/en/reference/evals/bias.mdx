@@ -15,7 +15,7 @@ The `BiasMetric` class evaluates whether an LLM's output contains various forms 
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { BiasMetric } from "@actus-ag/mastra-evals/llm";
+import { BiasMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");
@@ -163,7 +163,7 @@ Final score: `(biased_opinions / total_opinions) * scale`
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { BiasMetric } from "@actus-ag/mastra-evals/llm";
+import { BiasMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");

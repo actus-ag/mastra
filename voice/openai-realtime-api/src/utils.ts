@@ -1,5 +1,5 @@
 import { Readable } from 'stream';
-import type { ToolsInput } from '@actus-ag/mastra-core/agent';
+import type { ToolsInput } from '@mastra/core/agent';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 
 export type OpenAIExecuteFunction = (args: any) => Promise<any>;

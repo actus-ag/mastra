@@ -107,7 +107,7 @@ describe('RunCommand', () => {
     await writeFile(
       join(q1Dir, 'db.json'),
       JSON.stringify({
-        mastra_messages: [
+        @mastra_messages: [
           [
             'msg-1',
             {
@@ -133,7 +133,7 @@ describe('RunCommand', () => {
             },
           ],
         ],
-        mastra_threads: [
+        @mastra_threads: [
           [
             'session-1',
             {
@@ -146,10 +146,10 @@ describe('RunCommand', () => {
             },
           ],
         ],
-        mastra_resources: [],
-        mastra_workflow_snapshot: [],
-        mastra_evals: [],
-        mastra_traces: [],
+        @mastra_resources: [],
+        @mastra_workflow_snapshot: [],
+        @mastra_evals: [],
+        @mastra_traces: [],
       }),
     );
 
@@ -173,7 +173,7 @@ describe('RunCommand', () => {
     await writeFile(
       join(q2Dir, 'db.json'),
       JSON.stringify({
-        mastra_messages: [
+        @mastra_messages: [
           [
             'msg-1',
             {
@@ -199,7 +199,7 @@ describe('RunCommand', () => {
             },
           ],
         ],
-        mastra_threads: [
+        @mastra_threads: [
           [
             'session-2',
             {
@@ -223,10 +223,10 @@ describe('RunCommand', () => {
             },
           ],
         ],
-        mastra_resources: [],
-        mastra_workflow_snapshot: [],
-        mastra_evals: [],
-        mastra_traces: [],
+        @mastra_resources: [],
+        @mastra_workflow_snapshot: [],
+        @mastra_evals: [],
+        @mastra_traces: [],
       }),
     );
   }
@@ -293,7 +293,7 @@ describe('RunCommand', () => {
       await writeFile(
         join(q1Dir, 'db.json'),
         JSON.stringify({
-          mastra_messages: [
+          @mastra_messages: [
             [
               'msg-1',
               {
@@ -307,7 +307,7 @@ describe('RunCommand', () => {
               },
             ],
           ],
-          mastra_threads: [
+          @mastra_threads: [
             [
               'session-1',
               {
@@ -320,10 +320,10 @@ describe('RunCommand', () => {
               },
             ],
           ],
-          mastra_resources: [],
-          mastra_workflow_snapshot: [],
-          mastra_evals: [],
-          mastra_traces: [],
+          @mastra_resources: [],
+          @mastra_workflow_snapshot: [],
+          @mastra_evals: [],
+          @mastra_traces: [],
         }),
       );
 

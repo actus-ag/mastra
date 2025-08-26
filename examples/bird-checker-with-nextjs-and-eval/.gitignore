@@ -41,5 +41,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# mastra
-.mastra/
+# @mastra/cli/cli
+.@mastra/cli/cli/

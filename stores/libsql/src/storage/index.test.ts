@@ -1,5 +1,5 @@
 import { createTestSuite } from '@internal/storage-test-utils';
-import { Mastra } from '@actus-ag/mastra-core/mastra';
+import { Mastra } from '@mastra/core/@mastra';
 
 import { LibSQLStore } from './index';
 
@@ -9,8 +9,8 @@ const libsql = new LibSQLStore({
   url: TEST_DB_URL,
 });
 
-const mastra = new Mastra({
+const @mastra = new Mastra({
   storage: libsql,
 });
 
-createTestSuite(mastra.getStorage()!);
+createTestSuite(@mastra.getStorage()!);

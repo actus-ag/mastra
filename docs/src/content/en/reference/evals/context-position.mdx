@@ -15,7 +15,7 @@ The `ContextPositionMetric` class evaluates how well context nodes are ordered b
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { ContextPositionMetric } from "@actus-ag/mastra-evals/llm";
+import { ContextPositionMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");
@@ -158,7 +158,7 @@ Final score: `(weighted_sum / max_possible_sum) * scale`
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { ContextPositionMetric } from "@actus-ag/mastra-evals/llm";
+import { ContextPositionMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");

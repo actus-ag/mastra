@@ -1824,7 +1824,7 @@ describe('LegacyWorkflow', async () => {
 
       expect(action1).toHaveBeenCalledWith(
         expect.objectContaining({
-          mastra: undefined,
+          @mastra: undefined,
           context: expect.objectContaining(baseContext),
           suspend: expect.any(Function),
           runId: expect.any(String),
@@ -1832,7 +1832,7 @@ describe('LegacyWorkflow', async () => {
       );
       expect(action2).toHaveBeenCalledWith(
         expect.objectContaining({
-          mastra: undefined,
+          @mastra: undefined,
           context: {
             ...baseContext,
             steps: {
@@ -1849,7 +1849,7 @@ describe('LegacyWorkflow', async () => {
       );
       expect(action3).toHaveBeenCalledWith(
         expect.objectContaining({
-          mastra: undefined,
+          @mastra: undefined,
           context: expect.objectContaining({
             ...baseContext,
             steps: {
@@ -1865,7 +1865,7 @@ describe('LegacyWorkflow', async () => {
       );
       expect(action5).toHaveBeenCalledWith(
         expect.objectContaining({
-          mastra: undefined,
+          @mastra: undefined,
           context: expect.objectContaining({
             ...baseContext,
             steps: {
@@ -1907,7 +1907,7 @@ describe('LegacyWorkflow', async () => {
       const step1 = new Step({ id: 'step1', execute: vi.fn<any>().mockResolvedValue({ result: 'success' }) });
       const step2 = new Step({ id: 'step2', execute: vi.fn<any>().mockRejectedValue(new Error('Step failed')) });
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         logger: createLogger({
           name: 'LegacyWorkflow',
         }),
@@ -1916,7 +1916,7 @@ describe('LegacyWorkflow', async () => {
 
       const workflow = new LegacyWorkflow({
         name: 'test-workflow',
-        mastra,
+        @mastra,
       });
 
       workflow.step(step1).then(step2).commit();
@@ -1934,7 +1934,7 @@ describe('LegacyWorkflow', async () => {
       const step1 = new Step({ id: 'step1', execute: vi.fn<any>().mockResolvedValue({ result: 'success' }) });
       const step2 = new Step({ id: 'step2', execute: vi.fn<any>().mockRejectedValue(new Error('Step failed')) });
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         logger: createLogger({
           name: 'LegacyWorkflow',
         }),
@@ -1943,7 +1943,7 @@ describe('LegacyWorkflow', async () => {
 
       const workflow = new LegacyWorkflow({
         name: 'test-workflow',
-        mastra,
+        @mastra,
         retryConfig: { attempts: 5, delay: 200 },
       });
 
@@ -2456,7 +2456,7 @@ describe('LegacyWorkflow', async () => {
 
   describe('Suspend and Resume', () => {
     afterAll(async () => {
-      const pathToDb = path.join(process.cwd(), 'mastra.db');
+      const pathToDb = path.join(process.cwd(), '@mastra.db');
 
       if (fs.existsSync(pathToDb)) {
         fs.rmSync(pathToDb);
@@ -2538,13 +2538,13 @@ describe('LegacyWorkflow', async () => {
       // Create a new storage instance for initial run
       const initialStorage = new MockStore();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         logger,
         storage: initialStorage,
         legacy_workflows: { 'test-workflow': promptEvalWorkflow },
       });
 
-      const wf = mastra.legacy_getWorkflow('test-workflow');
+      const wf = @mastra.legacy_getWorkflow('test-workflow');
       const run = wf.createRun();
 
       // Create a promise to track when the workflow is ready to resume
@@ -2664,13 +2664,13 @@ describe('LegacyWorkflow', async () => {
         })
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         logger,
         legacy_workflows: { 'test-workflow': workflow },
         storage,
       });
 
-      const wf = mastra.legacy_getWorkflow('test-workflow');
+      const wf = @mastra.legacy_getWorkflow('test-workflow');
       const run = wf.createRun();
 
       const started = run.start({ triggerData: { input: 'test' } });
@@ -2817,13 +2817,13 @@ describe('LegacyWorkflow', async () => {
         })
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         logger,
         legacy_workflows: { 'test-workflow': workflow },
         storage,
       });
 
-      const wf = mastra.legacy_getWorkflow('test-workflow');
+      const wf = @mastra.legacy_getWorkflow('test-workflow');
       const run = wf.createRun();
       const started = run.start({ triggerData: { input: 'test' } });
       let improvedResponseResultPromise: Promise<WorkflowResumeResult<any> | undefined>;
@@ -2970,13 +2970,13 @@ describe('LegacyWorkflow', async () => {
         .then(evaluateImproved)
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         logger,
         legacy_workflows: { 'test-workflow': promptEvalWorkflow },
         storage,
       });
 
-      const wf = mastra.legacy_getWorkflow('test-workflow');
+      const wf = @mastra.legacy_getWorkflow('test-workflow');
       const run = wf.createRun();
 
       const initialResult = await run.start({ triggerData: { input: 'test' } });
@@ -3071,13 +3071,13 @@ describe('LegacyWorkflow', async () => {
 
       promptEvalWorkflow.step(getUserInput).afterEvent('testev').step(promptAgent).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         logger,
         legacy_workflows: { 'test-workflow': promptEvalWorkflow },
         storage,
       });
 
-      const wf = mastra.legacy_getWorkflow('test-workflow');
+      const wf = @mastra.legacy_getWorkflow('test-workflow');
       const run = wf.createRun({
         events: {
           testev: {
@@ -3126,7 +3126,7 @@ describe('LegacyWorkflow', async () => {
       await storage.clearTable({ tableName: TABLE_WORKFLOW_SNAPSHOT });
     });
 
-    it('should return empty result when mastra is not initialized', async () => {
+    it('should return empty result when @mastra is not initialized', async () => {
       const workflow = new LegacyWorkflow({ name: 'test' });
       const result = await workflow.getWorkflowRuns();
       expect(result).toEqual({ runs: [], total: 0 });
@@ -3142,7 +3142,7 @@ describe('LegacyWorkflow', async () => {
       const workflow = new LegacyWorkflow({ name: 'test-workflow' });
       workflow.step(step1).then(step2).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         logger,
         storage,
         legacy_workflows: {
@@ -3150,7 +3150,7 @@ describe('LegacyWorkflow', async () => {
         },
       });
 
-      const testWorkflow = mastra.legacy_getWorkflow('test-workflow');
+      const testWorkflow = @mastra.legacy_getWorkflow('test-workflow');
 
       // Create a few runs
       const run1 = await testWorkflow.createRun();
@@ -3170,27 +3170,27 @@ describe('LegacyWorkflow', async () => {
   });
 
   describe('Accessing Mastra', () => {
-    it('should be able to access the deprecated mastra primitives', async () => {
+    it('should be able to access the deprecated @mastra primitives', async () => {
       let telemetry: Telemetry | undefined;
       const step1 = new Step({
         id: 'step1',
-        execute: async ({ mastra }) => {
-          telemetry = mastra?.telemetry;
+        execute: async ({ @mastra }) => {
+          telemetry = @mastra?.telemetry;
         },
       });
 
       const workflow = new LegacyWorkflow({ name: 'test-workflow' });
       workflow.step(step1).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         logger,
         legacy_workflows: { 'test-workflow': workflow },
         storage,
       });
 
-      const wf = mastra.legacy_getWorkflow('test-workflow');
+      const wf = @mastra.legacy_getWorkflow('test-workflow');
 
-      expect(mastra?.getLogger()).toBe(logger);
+      expect(@mastra?.getLogger()).toBe(logger);
 
       // Access new instance properties directly - should work without warning
       const run = wf.createRun();
@@ -3204,23 +3204,23 @@ describe('LegacyWorkflow', async () => {
       let telemetry: Telemetry | undefined;
       const step1 = new Step({
         id: 'step1',
-        execute: async ({ mastra }) => {
-          telemetry = mastra?.getTelemetry();
+        execute: async ({ @mastra }) => {
+          telemetry = @mastra?.getTelemetry();
         },
       });
 
       const workflow = new LegacyWorkflow({ name: 'test-workflow' });
       workflow.step(step1).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         logger,
         legacy_workflows: { 'test-workflow': workflow },
         storage,
       });
 
-      const wf = mastra.legacy_getWorkflow('test-workflow');
+      const wf = @mastra.legacy_getWorkflow('test-workflow');
 
-      expect(mastra?.getLogger()).toBe(logger);
+      expect(@mastra?.getLogger()).toBe(logger);
 
       // Access new instance properties directly - should work without warning
       const run = wf.createRun();
@@ -4921,7 +4921,7 @@ describe('LegacyWorkflow', async () => {
       const testValue = 'test-dependency';
       runtimeContext.set('testKey', testValue);
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         logger: false,
         storage,
       });
@@ -4936,7 +4936,7 @@ describe('LegacyWorkflow', async () => {
       });
 
       const step = new Step({ id: 'step1', execute });
-      const workflow = new LegacyWorkflow({ name: 'test-workflow', mastra });
+      const workflow = new LegacyWorkflow({ name: 'test-workflow', @mastra });
       workflow.step(step).commit();
 
       const run = workflow.createRun();

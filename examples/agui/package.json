@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "mastra:dev": "mastra dev",
+    "@mastra/cli/cli:dev": "@mastra/cli/cli dev",
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
@@ -12,27 +12,27 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^1.3.22",
+    "@ai-sdk/openai": "^1.3.24",
     "@copilotkit/react-core": "^1.8.10",
     "@copilotkit/react-ui": "^1.8.10",
     "@copilotkit/runtime": "^1.8.10",
-    "@ag-ui/mastra": "latest",
-    "@actus-ag/mastra-core": "latest",
-    "@actus-ag/mastra-libsql": "latest",
-    "@actus-ag/mastra-loggers": "latest",
-    "@actus-ag/mastra-memory": "latest",
-    "mastra": "latest",
+    "@ag-ui/@mastra/cli/cli": "latest",
+    "@mastra/core": "latest",
+    "@mastra/libsql": "latest",
+    "@mastra/loggers": "latest",
+    "@mastra/memory": "latest",
+    "@mastra/cli/cli": "latest",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "zod": "^3.25.67"
   },
   "pnpm": {
     "overrides": {
-      "@actus-ag/mastra-core": "link:../../packages/core",
-      "@actus-ag/mastra-libsql": "link:../../stores/libsql",
-      "@actus-ag/mastra-loggers": "link:../../packages/loggers",
-      "@actus-ag/mastra-memory": "link:../../packages/memory",
-      "mastra": "link:../../packages/cli"
+      "@mastra/core": "link:../../packages/core",
+      "@mastra/libsql": "link:../../stores/libsql",
+      "@mastra/loggers": "link:../../packages/loggers",
+      "@mastra/memory": "link:../../packages/memory",
+      "@mastra/cli/cli": "link:../../packages/cli"
     }
   },
   "devDependencies": {

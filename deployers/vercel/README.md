@@ -1,4 +1,4 @@
-# @actus-ag/mastra-deployer-vercel
+# @mastra/deployer-vercel
 
 A Vercel deployer for Mastra applications.
 
@@ -13,7 +13,7 @@ A Vercel deployer for Mastra applications.
 ## Installation
 
 ```bash
-pnpm add @actus-ag/mastra-deployer-vercel
+pnpm add @mastra/deployer-vercel
 ```
 
 ## Usage
@@ -21,8 +21,8 @@ pnpm add @actus-ag/mastra-deployer-vercel
 The Vercel deployer is used as part of the Mastra framework:
 
 ```typescript
-import { Mastra } from '@actus-ag/mastra-core';
-import { VercelDeployer } from '@actus-ag/mastra-deployer-vercel';
+import { Mastra } from '@mastra/core';
+import { VercelDeployer } from '@mastra/deployer-vercel';
 
 const deployer = new VercelDeployer({
   teamSlug: 'your-team-slug',
@@ -30,7 +30,7 @@ const deployer = new VercelDeployer({
   token: 'your-vercel-token',
 });
 
-const mastra = new Mastra({
+const @mastra = new Mastra({
   deployer,
   // ... other Mastra configuration options
 });

@@ -44,7 +44,7 @@ RAGがどのように機能するか、そして各コンポーネントをど�
 ```
 research-assistant/
 ├── src/
-│   ├── mastra/
+│   ├── @@mastra/cli/cli/cli/
 │   │   ├── agents/
 │   │   │   └── researchAgent.ts
 │   │   └── index.ts
@@ -68,7 +68,7 @@ cd research-assistant
 
 ```bash copy
 npm init -y
-npm install @actus-ag/mastra-core@latest @actus-ag/mastra-rag@latest @actus-ag/mastra-pg@latest @ai-sdk/openai@latest ai@latest zod@latest
+npm install @mastra/cli/cli/cli/core@latest @mastra/cli/cli/cli/rag@latest @mastra/cli/cli/cli/pg@latest @ai-sdk/openai@latest ai@latest zod@latest
 ```
 
 APIアクセスやデータベース接続のための環境変数を設定します。
@@ -81,9 +81,9 @@ POSTGRES_CONNECTION_STRING=your_connection_string
 プロジェクトに必要なファイルを作成します。
 
 ```bash copy
-mkdir -p src/mastra/agents
-touch src/mastra/agents/researchAgent.ts
-touch src/mastra/index.ts src/store.ts src/index.ts
+mkdir -p src/@@mastra/cli/cli/cli/agents
+touch src/@@mastra/cli/cli/cli/agents/researchAgent.ts
+touch src/@@mastra/cli/cli/cli/index.ts src/store.ts src/index.ts
 ```
 
 ### Research Assistant エージェントの作成
@@ -94,10 +94,10 @@ touch src/mastra/index.ts src/store.ts src/index.ts
 - GPT-4o-mini を用いてクエリの理解と応答の生成を行います
 - 論文の分析方法、取得したコンテンツの効果的な活用方法、制限事項の認識についてエージェントを導くカスタムインストラクション
 
-```ts copy showLineNumbers filename="src/mastra/agents/researchAgent.ts"
-import { Agent } from "@actus-ag/mastra-core/agent";
+```ts copy showLineNumbers filename="src/@@mastra/cli/cli/cli/agents/researchAgent.ts"
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { openai } from "@ai-sdk/openai";
-import { createVectorQueryTool } from "@actus-ag/mastra-rag";
+import { createVectorQueryTool } from "@mastra/cli/cli/cli/rag";
 
 // Create a tool for semantic search over our paper embeddings
 const vectorQueryTool = createVectorQueryTool({
@@ -122,15 +122,15 @@ export const researchAgent = new Agent({
 
 ### Mastra インスタンスとベクトルストアのセットアップ
 
-```ts copy showLineNumbers filename="src/mastra/index.ts"
-import { Mastra } from "@actus-ag/mastra-core";
-import { PgVector } from "@actus-ag/mastra-pg";
+```ts copy showLineNumbers filename="src/@@mastra/cli/cli/cli/index.ts"
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { PgVector } from "@mastra/cli/cli/cli/pg";
 
 import { researchAgent } from "./agents/researchAgent";
 
 // Initialize Mastra instance
 const pgVector = new PgVector({ connectionString: process.env.POSTGRES_CONNECTION_STRING! });
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   agents: { researchAgent },
   vectors: { pgVector },
 });
@@ -146,9 +146,9 @@ export const mastra = new Mastra({
 
 ```ts copy showLineNumbers filename="src/store.ts"
 import { openai } from "@ai-sdk/openai";
-import { MDocument } from "@actus-ag/mastra-rag";
+import { MDocument } from "@mastra/cli/cli/cli/rag";
 import { embedMany } from "ai";
-import { mastra } from "./mastra";
+import { @@mastra/cli/cli/cli } from "./@@mastra/cli/cli/cli";
 
 // Load the paper
 const paperUrl = "https://arxiv.org/html/1706.03762";
@@ -188,7 +188,7 @@ const { embeddings } = await embedMany({
 });
 
 // Get the vector store instance from Mastra
-const vectorStore = mastra.getVector("pgVector");
+const vectorStore = @@mastra/cli/cli/cli.getVector("pgVector");
 
 // Create an index for our paper chunks
 await vectorStore.createIndex({
@@ -225,8 +225,8 @@ npx bun src/store.ts
 リサーチアシスタントをさまざまなクエリでテストしてみましょう：
 
 ```ts filename="src/index.ts" showLineNumbers copy
-import { mastra } from "./mastra";
-const agent = mastra.getAgent("researchAgent");
+import { @@mastra/cli/cli/cli } from "./@@mastra/cli/cli/cli";
+const agent = @@mastra/cli/cli/cli.getAgent("researchAgent");
 
 // Basic query about concepts
 const query1 =
@@ -277,7 +277,7 @@ task, while also reducing training costs.
 Mastraサーバーを起動して、リサーチアシスタントをAPI経由で利用できるようにします：
 
 ```bash
-mastra dev
+@actus-ag/@mastra/cli/cli dev
 ```
 
 リサーチアシスタントは以下のURLで利用可能になります：

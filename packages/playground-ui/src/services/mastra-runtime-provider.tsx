@@ -7,17 +7,17 @@ import {
   AssistantRuntimeProvider,
 } from '@assistant-ui/react';
 import { useState, ReactNode, useEffect, useRef } from 'react';
-import { RuntimeContext } from '@actus-ag/mastra-core/di';
+import { RuntimeContext } from '@mastra/cli/cli/cli/core/di';
 
 import { ChatProps, Message } from '@/types';
 
-import { CoreUserMessage } from '@actus-ag/mastra-core';
+import { CoreUserMessage } from '@mastra/cli/cli/cli/core';
 import { fileToBase64 } from '@/lib/file';
-import { useMastraClient } from '@/contexts/mastra-client-context';
+import { useMastraClient } from '@/contexts/@@mastra/cli/cli/cli-client-context';
 import { useWorkingMemory } from '@/domains/agents/context/agent-working-memory-context';
-import { MastraClient } from '@actus-ag/mastra-client-js';
+import { MastraClient } from '@@mastra/cli/cli/cli-client-js';
 import { useAdapters } from '@/components/assistant-ui/hooks/use-adapters';
-import { MastraModelOutput } from '@actus-ag/mastra-core/stream';
+import { MastraModelOutput } from '@mastra/cli/cli/cli/core/stream';
 
 const convertMessage = (message: ThreadMessageLike): ThreadMessageLike => {
   return message;

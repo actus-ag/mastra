@@ -1,4 +1,4 @@
-import type { QueryResult } from '@actus-ag/mastra-core';
+import type { QueryResult } from '@mastra/core';
 import type { RankedNode } from '../graph-rag';
 import type { RerankResult } from '../rerank';
 

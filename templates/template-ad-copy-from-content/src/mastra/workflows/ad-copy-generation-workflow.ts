@@ -1,6 +1,6 @@
-import { createWorkflow, createStep, mapVariable } from '@actus-ag/mastra-core/workflows';
+import { createWorkflow, createStep, mapVariable } from '@mastra/core/workflows';
 import { z } from 'zod';
-import { RuntimeContext } from '@actus-ag/mastra-core/di';
+import { RuntimeContext } from '@mastra/core/di';
 import { pdfContentExtractorTool } from '../tools/pdf-content-extractor-tool';
 import { adCopyGeneratorTool } from '../tools/ad-copy-generator-tool';
 import { imageGeneratorTool } from '../tools/image-generator-tool';
@@ -61,7 +61,7 @@ const extractContentStep = createStep({
       })
       .optional(),
   }),
-  execute: async ({ inputData, runtimeContext, mastra }) => {
+  execute: async ({ inputData, runtimeContext, @mastra }) => {
     const { contentInput, inputType } = inputData;
 
     console.log(`📝 Processing ${inputType} content...`);
@@ -70,8 +70,8 @@ const extractContentStep = createStep({
       console.log('🌐 Extracting content from website URL...');
 
       try {
-        // Import mastra instance directly since runtime context access is complex in workflows
-        const webContentAgent = mastra.getAgent('webContentAgent');
+        // Import @mastra instance directly since runtime context access is complex in workflows
+        const webContentAgent = @mastra.getAgent('webContentAgent');
 
         // Use the agent to extract content
         const response = await webContentAgent.generate([
@@ -136,7 +136,7 @@ const extractContentStep = createStep({
       try {
         // Use the PDF content extractor tool
         const extractionResult = await pdfContentExtractorTool.execute({
-          mastra,
+          @mastra,
           context: {
             pdfUrl: contentInput,
             focusAreas: ['benefits', 'features', 'value-proposition'],
@@ -201,7 +201,7 @@ const generateAdCopyStep = createStep({
     body: z.string(),
     cta: z.string(),
   }),
-  execute: async ({ inputData, runtimeContext, mastra }) => {
+  execute: async ({ inputData, runtimeContext, @mastra }) => {
     const { processedContent, extractedData, platform, campaignType, targetAudience, tone, productType } = inputData;
 
     console.log('✍️ Generating ad copy...');
@@ -211,7 +211,7 @@ const generateAdCopyStep = createStep({
 
     try {
       const adCopyResults = await adCopyGeneratorTool.execute({
-        mastra,
+        @mastra,
         context: {
           content: processedContent,
           platform: platform as 'facebook' | 'google' | 'instagram' | 'linkedin' | 'twitter' | 'tiktok' | 'generic',
@@ -262,7 +262,7 @@ const generateImageStep = createStep({
   outputSchema: z.object({
     imageUrl: z.string().optional(),
   }),
-  execute: async ({ inputData, runtimeContext, mastra }) => {
+  execute: async ({ inputData, runtimeContext, @mastra }) => {
     const { generateImages, imageStyle = 'modern', platform, headline, body } = inputData;
 
     if (!generateImages) {
@@ -276,7 +276,7 @@ const generateImageStep = createStep({
       const imagePrompt = `Professional promotional image for advertisement: ${headline}. ${body.substring(0, 100)}...`;
 
       const imageResult = await imageGeneratorTool.execute({
-        mastra,
+        @mastra,
         context: {
           prompt: imagePrompt,
           style: imageStyle as 'photographic' | 'digital_art' | 'illustration' | 'minimalist' | 'vintage' | 'modern',

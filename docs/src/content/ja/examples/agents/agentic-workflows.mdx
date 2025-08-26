@@ -10,9 +10,9 @@ import { GithubLink } from "@/components/github-link";
 AI アプリケーションを構築する際、互いの出力に依存する複数のステップを調整する必要がよくあります。この例では、天気データを取得し、それを使用してアクティビティを提案する AI ワークフローを作成する方法を示しています。外部 API と LLM を活用した計画をどのように統合するかを実演しています。
 
 ```ts showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core";
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { Step, Workflow } from "@actus-ag/mastra-core/workflows";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { Step, Workflow } from "@mastra/cli/cli/cli/core/workflows";
 import { z } from "zod";
 import { openai } from "@ai-sdk/openai";
 
@@ -112,7 +112,7 @@ const planActivities = new Step({
   id: "plan-activities",
   description: "Suggests activities based on weather conditions",
   inputSchema: forecastSchema,
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @@mastra/cli/cli/cli }) => {
     const forecast =
       context?.getStepResult<z.infer<typeof forecastSchema>>("fetch-weather");
 
@@ -177,14 +177,14 @@ const weatherWorkflow = new Workflow({
 
 weatherWorkflow.commit();
 
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   workflows: {
     weatherWorkflow,
   },
 });
 
 async function main() {
-  const { start } = mastra.getWorkflow("weatherWorkflow").createRun();
+  const { start } = @@mastra/cli/cli/cli.getWorkflow("weatherWorkflow").createRun();
 
   const result = await start({
     triggerData: {
@@ -201,6 +201,6 @@ main();
 
 <GithubLink
   link={
-    "https://github.com/mastra-ai/mastra/blob/main/examples/basics/agents/agentic-workflows"
+    "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/agents/agentic-workflows"
   }
 />

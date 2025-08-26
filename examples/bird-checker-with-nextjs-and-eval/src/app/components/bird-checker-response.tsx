@@ -1,6 +1,6 @@
 "use client";
 
-import { promptClaude } from "@/lib/mastra/actions";
+import { promptClaude } from "@/lib/@@mastra/cli/cli/cli/actions";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { Status } from "./bird-checker";

@@ -6,7 +6,7 @@ import type {
   SendStreamingMessageResponse,
   Task,
   TaskQueryParams,
-} from '@actus-ag/mastra-core/a2a';
+} from '@mastra/core/a2a';
 import type { ClientOptions } from '../types';
 import { BaseResource } from './base';
 

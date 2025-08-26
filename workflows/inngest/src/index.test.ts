@@ -3,12 +3,12 @@ import path from 'path';
 import { openai } from '@ai-sdk/openai';
 import { serve } from '@hono/node-server';
 import { realtimeMiddleware } from '@inngest/realtime';
-import { createTool, Mastra, Telemetry } from '@actus-ag/mastra-core';
-import type { StreamEvent } from '@actus-ag/mastra-core';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
-import { createHonoServer } from '@actus-ag/mastra-deployer/server';
-import { DefaultStorage } from '@actus-ag/mastra-libsql';
+import { createTool, Mastra, Telemetry } from '@mastra/core';
+import type { StreamEvent } from '@mastra/core';
+import { Agent } from '@mastra/core/agent';
+import { RuntimeContext } from '@mastra/core/runtime-context';
+import { createHonoServer } from '@mastra/deployer/server';
+import { DefaultStorage } from '@mastra/libsql';
 import { MockLanguageModelV1, simulateReadableStream } from 'ai/test';
 import { $ } from 'execa';
 import { Inngest } from 'inngest';
@@ -44,7 +44,7 @@ describe('MastraInngestWorkflow', () => {
   describe.sequential('Basic Workflow Execution', () => {
     it('should be able to bail workflow execution', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
         middleware: [realtimeMiddleware()],
       });
@@ -83,7 +83,7 @@ describe('MastraInngestWorkflow', () => {
 
       workflow.then(step1).then(step2).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -95,13 +95,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -149,7 +149,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should execute a single step workflow successfully', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -172,7 +172,7 @@ describe('MastraInngestWorkflow', () => {
       });
       workflow.then(step1).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -184,13 +184,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -212,7 +212,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should execute multiple steps in parallel', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -247,7 +247,7 @@ describe('MastraInngestWorkflow', () => {
 
       workflow.parallel([step1, step2]).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -259,13 +259,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -289,7 +289,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should execute steps sequentially', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -328,7 +328,7 @@ describe('MastraInngestWorkflow', () => {
 
       workflow.then(step1).then(step2).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -340,13 +340,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -369,7 +369,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should execute a sleep step', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -402,7 +402,7 @@ describe('MastraInngestWorkflow', () => {
 
       workflow.then(step1).sleep(1000).then(step2).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -414,13 +414,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -457,7 +457,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should execute a sleep step with fn parameter', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -496,7 +496,7 @@ describe('MastraInngestWorkflow', () => {
         .then(step2)
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -508,13 +508,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -551,7 +551,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should execute a a sleep until step', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -588,7 +588,7 @@ describe('MastraInngestWorkflow', () => {
         .then(step2)
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -600,13 +600,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -643,7 +643,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should execute a sleep until step with fn parameter', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -682,7 +682,7 @@ describe('MastraInngestWorkflow', () => {
         .then(step2)
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -694,13 +694,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -737,7 +737,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should execute a a waitForEvent step', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -772,7 +772,7 @@ describe('MastraInngestWorkflow', () => {
 
       workflow.then(step1).waitForEvent('hello-event', step2).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -784,13 +784,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -831,7 +831,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should execute a a waitForEvent step after timeout', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -866,7 +866,7 @@ describe('MastraInngestWorkflow', () => {
 
       workflow.then(step1).waitForEvent('hello-event', step2, { timeout: 1000 }).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -878,13 +878,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -923,7 +923,7 @@ describe('MastraInngestWorkflow', () => {
   describe('abort', () => {
     it('should be able to abort workflow execution in between steps', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
         middleware: [realtimeMiddleware()],
       });
@@ -958,7 +958,7 @@ describe('MastraInngestWorkflow', () => {
 
       workflow.then(step1).sleep(2000).then(step2).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -970,13 +970,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -1009,7 +1009,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should be able to abort workflow execution during a step', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
         middleware: [realtimeMiddleware()],
       });
@@ -1060,7 +1060,7 @@ describe('MastraInngestWorkflow', () => {
 
       workflow.then(step1).then(step2).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -1072,13 +1072,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -1120,7 +1120,7 @@ describe('MastraInngestWorkflow', () => {
   describe('Variable Resolution', () => {
     it('should resolve trigger data', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -1149,7 +1149,7 @@ describe('MastraInngestWorkflow', () => {
 
       workflow.then(step1).then(step2).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -1161,13 +1161,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -1187,7 +1187,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should provide access to step results and trigger data via getStepResult helper', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -1238,7 +1238,7 @@ describe('MastraInngestWorkflow', () => {
 
       workflow.then(step1).then(step2).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -1250,13 +1250,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -1280,7 +1280,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should resolve trigger data from context', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -1306,7 +1306,7 @@ describe('MastraInngestWorkflow', () => {
 
       workflow.then(step1).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -1318,13 +1318,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -1346,7 +1346,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should resolve trigger data from getInitData', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -1382,7 +1382,7 @@ describe('MastraInngestWorkflow', () => {
 
       workflow.then(step1).then(step2).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -1394,13 +1394,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -1424,7 +1424,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should resolve variables from previous steps', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -1465,7 +1465,7 @@ describe('MastraInngestWorkflow', () => {
         .then(step2)
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -1477,13 +1477,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -1509,7 +1509,7 @@ describe('MastraInngestWorkflow', () => {
   describe('Simple Conditions', () => {
     it('should follow conditional chains', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -1569,7 +1569,7 @@ describe('MastraInngestWorkflow', () => {
         ])
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -1581,13 +1581,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -1611,7 +1611,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should handle failing dependencies', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -1646,7 +1646,7 @@ describe('MastraInngestWorkflow', () => {
 
       workflow.then(step1).then(step2).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -1658,13 +1658,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -1692,7 +1692,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should support simple string conditions', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -1752,7 +1752,7 @@ describe('MastraInngestWorkflow', () => {
         ])
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -1764,13 +1764,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -1794,7 +1794,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should support custom condition functions', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -1836,7 +1836,7 @@ describe('MastraInngestWorkflow', () => {
         ])
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -1848,13 +1848,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -1880,7 +1880,7 @@ describe('MastraInngestWorkflow', () => {
   describe('Error Handling', () => {
     it('should handle step execution errors', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -1904,7 +1904,7 @@ describe('MastraInngestWorkflow', () => {
 
       workflow.then(step1).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -1916,13 +1916,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -1946,7 +1946,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should handle step execution errors within branches', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -1988,7 +1988,7 @@ describe('MastraInngestWorkflow', () => {
 
       workflow.parallel([step1, step2]).then(step3).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -2000,13 +2000,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -2032,7 +2032,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should handle step execution errors within nested workflows', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -2082,7 +2082,7 @@ describe('MastraInngestWorkflow', () => {
         .then(workflow)
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -2094,13 +2094,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -2125,7 +2125,7 @@ describe('MastraInngestWorkflow', () => {
   describe('Complex Conditions', () => {
     it('should handle nested AND/OR conditions', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -2210,7 +2210,7 @@ describe('MastraInngestWorkflow', () => {
         })
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -2222,13 +2222,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -2250,7 +2250,7 @@ describe('MastraInngestWorkflow', () => {
   describe('Loops', () => {
     it('should run an until loop', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -2312,7 +2312,7 @@ describe('MastraInngestWorkflow', () => {
         .then(finalStep)
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -2324,13 +2324,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -2353,7 +2353,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should run a while loop', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -2415,7 +2415,7 @@ describe('MastraInngestWorkflow', () => {
         .then(finalStep)
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -2427,13 +2427,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -2458,7 +2458,7 @@ describe('MastraInngestWorkflow', () => {
   describe('foreach', () => {
     it('should run a single item concurrency (default) for loop', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -2504,7 +2504,7 @@ describe('MastraInngestWorkflow', () => {
 
       counterWorkflow.foreach(mapStep).then(finalStep).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -2516,13 +2516,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -2551,7 +2551,7 @@ describe('MastraInngestWorkflow', () => {
   describe('if-else branching', () => {
     it('should run the if-then branch', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -2657,7 +2657,7 @@ describe('MastraInngestWorkflow', () => {
         ])
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -2669,13 +2669,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -2699,7 +2699,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should run the else branch', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -2806,7 +2806,7 @@ describe('MastraInngestWorkflow', () => {
         ])
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -2818,13 +2818,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -2850,7 +2850,7 @@ describe('MastraInngestWorkflow', () => {
   describe('Schema Validation', () => {
     it.skip('should validate trigger data against schema', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -2911,7 +2911,7 @@ describe('MastraInngestWorkflow', () => {
   describe('multiple chains', () => {
     it('should run multiple chains in parallel', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -2978,7 +2978,7 @@ describe('MastraInngestWorkflow', () => {
         ])
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -2990,13 +2990,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -3017,7 +3017,7 @@ describe('MastraInngestWorkflow', () => {
   describe('Retry', () => {
     it('should retry a step default 0 times', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -3044,7 +3044,7 @@ describe('MastraInngestWorkflow', () => {
 
       workflow.then(step1).then(step2).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -3056,13 +3056,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -3084,7 +3084,7 @@ describe('MastraInngestWorkflow', () => {
     // Need to fix so we can throw for inngest to recognize retries
     it.skip('should retry a step with a custom retry config', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -3119,7 +3119,7 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
@@ -3140,7 +3140,7 @@ describe('MastraInngestWorkflow', () => {
   describe('Interoperability (Actions)', () => {
     it('should be able to use all action types in a workflow', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -3176,7 +3176,7 @@ describe('MastraInngestWorkflow', () => {
 
       workflow.then(step1).then(createStep(randomTool)).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -3188,13 +3188,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -3217,7 +3217,7 @@ describe('MastraInngestWorkflow', () => {
   describe('Watch', () => {
     it('should watch workflow state changes and call onTransition', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
         middleware: [realtimeMiddleware()],
       });
@@ -3248,7 +3248,7 @@ describe('MastraInngestWorkflow', () => {
       });
       workflow.then(step1).then(step2).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -3260,13 +3260,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -3403,7 +3403,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should unsubscribe from transitions when unwatch is called', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
         middleware: [realtimeMiddleware()],
       });
@@ -3434,7 +3434,7 @@ describe('MastraInngestWorkflow', () => {
       });
       workflow.then(step1).then(step2).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -3446,13 +3446,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -3497,7 +3497,7 @@ describe('MastraInngestWorkflow', () => {
 
   describe('Suspend and Resume', () => {
     afterAll(async () => {
-      const pathToDb = path.join(process.cwd(), 'mastra.db');
+      const pathToDb = path.join(process.cwd(), '@mastra.db');
 
       if (fs.existsSync(pathToDb)) {
         fs.rmSync(pathToDb);
@@ -3505,7 +3505,7 @@ describe('MastraInngestWorkflow', () => {
     });
     it('should return the correct runId', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -3527,7 +3527,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should handle basic suspend and resume flow', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
         middleware: [realtimeMiddleware()],
       });
@@ -3608,7 +3608,7 @@ describe('MastraInngestWorkflow', () => {
       const initialStorage = new DefaultStorage({
         url: 'file::memory:',
       });
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: initialStorage,
         workflows: {
           'test-workflow': promptEvalWorkflow,
@@ -3618,13 +3618,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -3680,7 +3680,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should handle parallel steps with conditional suspend', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
         middleware: [realtimeMiddleware()],
       });
@@ -3756,7 +3756,7 @@ describe('MastraInngestWorkflow', () => {
         ])
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -3768,13 +3768,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -3839,7 +3839,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should handle complex workflow with multiple suspends', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
         middleware: [realtimeMiddleware()],
       });
@@ -3958,7 +3958,7 @@ describe('MastraInngestWorkflow', () => {
         .parallel([humanIntervention, explainResponse])
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -3970,13 +3970,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -4067,7 +4067,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should handle basic suspend and resume flow with async await syntax', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -4153,7 +4153,7 @@ describe('MastraInngestWorkflow', () => {
         .then(evaluateImproved)
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -4165,13 +4165,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -4261,7 +4261,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should handle consecutive nested workflows with suspend/resume', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
         middleware: [realtimeMiddleware()],
       });
@@ -4323,7 +4323,7 @@ describe('MastraInngestWorkflow', () => {
         .then(subWorkflow2)
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         logger: false,
         storage: new DefaultStorage({
           url: ':memory:',
@@ -4334,13 +4334,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -4379,9 +4379,9 @@ describe('MastraInngestWorkflow', () => {
   });
 
   describe('Accessing Mastra', () => {
-    it('should be able to access the deprecated mastra primitives', async ctx => {
+    it('should be able to access the deprecated @mastra primitives', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -4391,8 +4391,8 @@ describe('MastraInngestWorkflow', () => {
         id: 'step1',
         inputSchema: z.object({}),
         outputSchema: z.object({}),
-        execute: async ({ mastra }) => {
-          telemetry = mastra?.getTelemetry();
+        execute: async ({ @mastra }) => {
+          telemetry = @mastra?.getTelemetry();
           return {};
         },
       });
@@ -4400,7 +4400,7 @@ describe('MastraInngestWorkflow', () => {
       const workflow = createWorkflow({ id: 'test-workflow', inputSchema: z.object({}), outputSchema: z.object({}) });
       workflow.then(step1).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -4412,13 +4412,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -4440,7 +4440,7 @@ describe('MastraInngestWorkflow', () => {
   describe('Agent as step', () => {
     it('should be able to use an agent as a step', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
         middleware: [realtimeMiddleware()],
       });
@@ -4504,7 +4504,7 @@ describe('MastraInngestWorkflow', () => {
         .then(agentStep2)
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -4516,13 +4516,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -4550,7 +4550,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should be able to use an agent in parallel', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
         middleware: [realtimeMiddleware()],
       });
@@ -4641,7 +4641,7 @@ describe('MastraInngestWorkflow', () => {
 
       workflow.parallel([nestedWorkflow1, nestedWorkflow2]).then(finalStep).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -4653,13 +4653,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -4695,7 +4695,7 @@ describe('MastraInngestWorkflow', () => {
   describe('Nested workflows', () => {
     it('should be able to nest workflows', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -4784,7 +4784,7 @@ describe('MastraInngestWorkflow', () => {
         )
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -4796,13 +4796,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -4837,7 +4837,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should be able to nest workflows with conditions', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -4936,7 +4936,7 @@ describe('MastraInngestWorkflow', () => {
         )
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -4948,13 +4948,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -4990,7 +4990,7 @@ describe('MastraInngestWorkflow', () => {
     describe('new if else branching syntax with nested workflows', () => {
       it('should execute if-branch', async ctx => {
         const inngest = new Inngest({
-          id: 'mastra',
+          id: '@actus-ag/@mastra',
           baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
         });
 
@@ -5093,7 +5093,7 @@ describe('MastraInngestWorkflow', () => {
           )
           .commit();
 
-        const mastra = new Mastra({
+        const @mastra = new Mastra({
           storage: new DefaultStorage({
             url: ':memory:',
           }),
@@ -5105,13 +5105,13 @@ describe('MastraInngestWorkflow', () => {
               {
                 path: '/inngest/api',
                 method: 'ALL',
-                createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+                createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
               },
             ],
           },
         });
 
-        const app = await createHonoServer(mastra);
+        const app = await createHonoServer(@mastra);
         app.use('*', async (ctx, next) => {
           await next();
         });
@@ -5150,7 +5150,7 @@ describe('MastraInngestWorkflow', () => {
 
       it('should execute else-branch', async ctx => {
         const inngest = new Inngest({
-          id: 'mastra',
+          id: '@actus-ag/@mastra',
           baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
         });
 
@@ -5253,7 +5253,7 @@ describe('MastraInngestWorkflow', () => {
           )
           .commit();
 
-        const mastra = new Mastra({
+        const @mastra = new Mastra({
           storage: new DefaultStorage({
             url: ':memory:',
           }),
@@ -5265,13 +5265,13 @@ describe('MastraInngestWorkflow', () => {
               {
                 path: '/inngest/api',
                 method: 'ALL',
-                createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+                createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
               },
             ],
           },
         });
 
-        const app = await createHonoServer(mastra);
+        const app = await createHonoServer(@mastra);
         app.use('*', async (ctx, next) => {
           await next();
         });
@@ -5311,7 +5311,7 @@ describe('MastraInngestWorkflow', () => {
 
       it('should execute nested else and if-branch', async ctx => {
         const inngest = new Inngest({
-          id: 'mastra',
+          id: '@actus-ag/@mastra',
           baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
         });
 
@@ -5451,7 +5451,7 @@ describe('MastraInngestWorkflow', () => {
           )
           .commit();
 
-        const mastra = new Mastra({
+        const @mastra = new Mastra({
           storage: new DefaultStorage({
             url: ':memory:',
           }),
@@ -5463,13 +5463,13 @@ describe('MastraInngestWorkflow', () => {
               {
                 path: '/inngest/api',
                 method: 'ALL',
-                createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+                createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
               },
             ],
           },
         });
 
-        const app = await createHonoServer(mastra);
+        const app = await createHonoServer(@mastra);
         app.use('*', async (ctx, next) => {
           await next();
         });
@@ -5511,7 +5511,7 @@ describe('MastraInngestWorkflow', () => {
     describe('suspending and resuming nested workflows', () => {
       it('should be able to suspend nested workflow step', async ctx => {
         const inngest = new Inngest({
-          id: 'mastra',
+          id: '@actus-ag/@mastra',
           baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
         });
 
@@ -5608,7 +5608,7 @@ describe('MastraInngestWorkflow', () => {
           )
           .commit();
 
-        const mastra = new Mastra({
+        const @mastra = new Mastra({
           storage: new DefaultStorage({
             url: ':memory:',
           }),
@@ -5620,13 +5620,13 @@ describe('MastraInngestWorkflow', () => {
               {
                 path: '/inngest/api',
                 method: 'ALL',
-                createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+                createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
               },
             ],
           },
         });
 
-        const app = await createHonoServer(mastra);
+        const app = await createHonoServer(@mastra);
 
         const srv = (globServer = serve({
           fetch: app.fetch,
@@ -5668,7 +5668,7 @@ describe('MastraInngestWorkflow', () => {
     describe('Workflow results', () => {
       it('should be able to spec out workflow result via variables', async ctx => {
         const inngest = new Inngest({
-          id: 'mastra',
+          id: '@actus-ag/@mastra',
           baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
         });
 
@@ -5756,7 +5756,7 @@ describe('MastraInngestWorkflow', () => {
           )
           .commit();
 
-        const mastra = new Mastra({
+        const @mastra = new Mastra({
           storage: new DefaultStorage({
             url: ':memory:',
           }),
@@ -5768,13 +5768,13 @@ describe('MastraInngestWorkflow', () => {
               {
                 path: '/inngest/api',
                 method: 'ALL',
-                createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+                createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
               },
             ],
           },
         });
 
-        const app = await createHonoServer(mastra);
+        const app = await createHonoServer(@mastra);
         app.use('*', async (ctx, next) => {
           await next();
         });
@@ -5813,7 +5813,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should be able to suspend nested workflow step in a nested workflow step', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -5941,7 +5941,7 @@ describe('MastraInngestWorkflow', () => {
         )
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -5953,13 +5953,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -6010,7 +6010,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should be able clone workflows as steps', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -6103,7 +6103,7 @@ describe('MastraInngestWorkflow', () => {
         )
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -6115,13 +6115,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -6156,9 +6156,9 @@ describe('MastraInngestWorkflow', () => {
   });
 
   describe('Accessing Mastra', () => {
-    it('should be able to access the deprecated mastra primitives', async ctx => {
+    it('should be able to access the deprecated @mastra primitives', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -6169,8 +6169,8 @@ describe('MastraInngestWorkflow', () => {
         id: 'step1',
         inputSchema: z.object({}),
         outputSchema: z.object({}),
-        execute: async ({ mastra }) => {
-          telemetry = mastra?.getTelemetry();
+        execute: async ({ @mastra }) => {
+          telemetry = @mastra?.getTelemetry();
           return {};
         },
       });
@@ -6178,7 +6178,7 @@ describe('MastraInngestWorkflow', () => {
       const workflow = createWorkflow({ id: 'test-workflow', inputSchema: z.object({}), outputSchema: z.object({}) });
       workflow.then(step1).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -6190,13 +6190,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -6219,7 +6219,7 @@ describe('MastraInngestWorkflow', () => {
   describe.skip('Dependency Injection', () => {
     it('should inject runtimeContext dependencies into steps during run', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -6241,7 +6241,7 @@ describe('MastraInngestWorkflow', () => {
       const workflow = createWorkflow({ id: 'test-workflow', inputSchema: z.object({}), outputSchema: z.object({}) });
       workflow.then(step).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -6253,13 +6253,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -6278,7 +6278,7 @@ describe('MastraInngestWorkflow', () => {
 
     it.skip('should inject runtimeContext dependencies into steps during resume', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -6292,7 +6292,7 @@ describe('MastraInngestWorkflow', () => {
       const testValue = 'test-dependency';
       runtimeContext.set('testKey', testValue);
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         logger: false,
         storage: initialStorage,
       });
@@ -6314,7 +6314,7 @@ describe('MastraInngestWorkflow', () => {
       });
       const workflow = createWorkflow({
         id: 'test-workflow',
-        mastra,
+        @mastra,
         inputSchema: z.object({}),
         outputSchema: z.object({}),
       });
@@ -6340,7 +6340,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should have access to runtimeContext from before suspension during workflow resume', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -6423,7 +6423,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should not show removed runtimeContext values in subsequent steps', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -6512,7 +6512,7 @@ describe('MastraInngestWorkflow', () => {
   describe('Access to inngest step primitives', () => {
     it('should inject inngest step primitives into steps during run', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
       });
 
@@ -6537,7 +6537,7 @@ describe('MastraInngestWorkflow', () => {
       });
       workflow.then(step).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -6549,13 +6549,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -6576,7 +6576,7 @@ describe('MastraInngestWorkflow', () => {
   describe('Streaming', () => {
     it('should generate a stream', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
         middleware: [realtimeMiddleware()],
       });
@@ -6607,7 +6607,7 @@ describe('MastraInngestWorkflow', () => {
       });
       workflow.then(step1).then(step2).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -6619,13 +6619,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -6748,7 +6748,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should handle basic sleep waiting flow', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
         middleware: [realtimeMiddleware()],
       });
@@ -6779,7 +6779,7 @@ describe('MastraInngestWorkflow', () => {
       });
       workflow.then(step1).sleep(1000).then(step2).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -6791,13 +6791,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -6951,7 +6951,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should handle basic sleep waiting flow with fn parameter', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
         middleware: [realtimeMiddleware()],
       });
@@ -6988,7 +6988,7 @@ describe('MastraInngestWorkflow', () => {
         .then(step2)
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -7000,13 +7000,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -7160,7 +7160,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should handle waitForEvent waiting flow', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
         middleware: [realtimeMiddleware()],
       });
@@ -7191,7 +7191,7 @@ describe('MastraInngestWorkflow', () => {
       });
       workflow.then(step1).waitForEvent('user-event-test', step2).commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -7203,13 +7203,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -7339,7 +7339,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should handle basic suspend and resume flow', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
         middleware: [realtimeMiddleware()],
       });
@@ -7417,7 +7417,7 @@ describe('MastraInngestWorkflow', () => {
         .then(evaluateImproved)
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -7429,13 +7429,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,
@@ -7512,7 +7512,7 @@ describe('MastraInngestWorkflow', () => {
 
     it('should be able to use an agent as a step', async ctx => {
       const inngest = new Inngest({
-        id: 'mastra',
+        id: '@actus-ag/@mastra',
         baseUrl: `http://localhost:${(ctx as any).inngestPort}`,
         middleware: [realtimeMiddleware()],
       });
@@ -7606,7 +7606,7 @@ describe('MastraInngestWorkflow', () => {
         .then(agentStep2)
         .commit();
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         storage: new DefaultStorage({
           url: ':memory:',
         }),
@@ -7618,13 +7618,13 @@ describe('MastraInngestWorkflow', () => {
             {
               path: '/inngest/api',
               method: 'ALL',
-              createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+              createHandler: async ({ @mastra }) => inngestServe({ @mastra, inngest }),
             },
           ],
         },
       });
 
-      const app = await createHonoServer(mastra);
+      const app = await createHonoServer(@mastra);
 
       const srv = (globServer = serve({
         fetch: app.fetch,

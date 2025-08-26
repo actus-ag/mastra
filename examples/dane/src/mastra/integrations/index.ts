@@ -1,4 +1,4 @@
-import { GithubIntegration } from "@actus-ag/mastra-github";
+import { GithubIntegration } from "@mastra/github";
 import { config } from "../../config/index.js";
 
 // Helper function to get key from config or env

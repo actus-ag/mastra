@@ -57,12 +57,12 @@ Let's define the agent's behavior, connect it to your Mastra project, and create
 After running the [installation guide](/docs/getting-started/installation) you'll need to install additional dependencies:
 
 ```bash copy
-npm install @actus-ag/mastra-rag@latest ai@^4.0.0
+npm install @mastra/cli/cli/cli/rag@latest ai@^4.0.0
 ```
 
 <Callout type="info">
   Mastra currently does not support v5 of the AI SDK (see [support
-  thread](https://github.com/mastra-ai/mastra/issues/5470)). For this guide
+  thread](https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/issues/5470)). For this guide
   you'll need to use v4.
 </Callout>
 
@@ -74,12 +74,12 @@ Now you'll create your RAG-enabled research assistant. The agent uses:
 - GPT-4o-mini for understanding queries and generating responses
 - Custom instructions that guide the agent on how to analyze papers, use retrieved content effectively, and acknowledge limitations
 
-Create a new file `src/mastra/agents/researchAgent.ts` and define your agent:
+Create a new file `src/@@mastra/cli/cli/cli/agents/researchAgent.ts` and define your agent:
 
-```ts copy filename="src/mastra/agents/researchAgent.ts"
-import { Agent } from "@actus-ag/mastra-core/agent";
+```ts copy filename="src/@@mastra/cli/cli/cli/agents/researchAgent.ts"
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { openai } from "@ai-sdk/openai";
-import { createVectorQueryTool } from "@actus-ag/mastra-rag";
+import { createVectorQueryTool } from "@mastra/cli/cli/cli/rag";
 
 // Create a tool for semantic search over the paper embeddings
 const vectorQueryTool = createVectorQueryTool({
@@ -111,17 +111,17 @@ In the root of your project, grab the absolute path with the `pwd` command. The 
 /Users/your-name/guides/research-assistant
 ```
 
-In your `src/mastra/index.ts` file, add the following to your existing file and configuration:
+In your `src/@@mastra/cli/cli/cli/index.ts` file, add the following to your existing file and configuration:
 
-```ts copy filename="src/mastra/index.ts" {2, 4-6, 9}
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { LibSQLVector } from "@actus-ag/mastra-libsql";
+```ts copy filename="src/@@mastra/cli/cli/cli/index.ts" {2, 4-6, 9}
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { LibSQLVector } from "@mastra/cli/cli/cli/libsql";
 
 const libSqlVector = new LibSQLVector({
   connectionUrl: "file:/Users/your-name/guides/research-assistant/vector.db",
 });
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   vectors: { libSqlVector },
 });
 ```
@@ -136,18 +136,18 @@ For the `connectionUrl` use the absolute path you got from the `pwd` command. Th
 
 ### Register the Agent with Mastra
 
-In the `src/mastra/index.ts` file, add the agent to Mastra:
+In the `src/@@mastra/cli/cli/cli/index.ts` file, add the agent to Mastra:
 
-```ts copy filename="src/mastra/index.ts" {3, 10}
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { LibSQLVector } from "@actus-ag/mastra-libsql";
+```ts copy filename="src/@@mastra/cli/cli/cli/index.ts" {3, 10}
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { LibSQLVector } from "@mastra/cli/cli/cli/libsql";
 import { researchAgent } from "./agents/researchAgent";
 
 const libSqlVector = new LibSQLVector({
   connectionUrl: "file:/Users/your-name/guides/research-assistant/vector.db",
 });
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   agents: { researchAgent },
   vectors: { libSqlVector },
 });
@@ -168,7 +168,7 @@ In this step the research paper is retrieved by providing an URL, then converted
 Create a new file `src/store.ts` and add the following:
 
 ```ts copy filename="src/store.ts"
-import { MDocument } from "@actus-ag/mastra-rag";
+import { MDocument } from "@mastra/cli/cli/cli/rag";
 
 // Load the paper
 const paperUrl = "https://arxiv.org/html/1706.03762";
@@ -217,10 +217,10 @@ This allows the agent to efficiently search and retrieve relevant information.
 Open the `src/store.ts` file and add the following:
 
 ```ts copy filename="src/store.ts" {2-4, 20-99}
-import { MDocument } from "@actus-ag/mastra-rag";
+import { MDocument } from "@mastra/cli/cli/cli/rag";
 import { openai } from "@ai-sdk/openai";
 import { embedMany } from "ai";
-import { mastra } from "./mastra";
+import { @@mastra/cli/cli/cli } from "./@@mastra/cli/cli/cli";
 
 // Load the paper
 const paperUrl = "https://arxiv.org/html/1706.03762";
@@ -243,7 +243,7 @@ const { embeddings } = await embedMany({
 });
 
 // Get the vector store instance from Mastra
-const vectorStore = mastra.getVector("libSqlVector");
+const vectorStore = @@mastra/cli/cli/cli.getVector("libSqlVector");
 
 // Create an index for paper chunks
 await vectorStore.createIndex({
@@ -279,8 +279,8 @@ Now that the vector database has all embeddings, you can test the research assis
 Create a new file `src/ask-agent.ts` and add different types of queries:
 
 ```ts filename="src/ask-agent.ts" copy
-import { mastra } from "./mastra";
-const agent = mastra.getAgent("researchAgent");
+import { @@mastra/cli/cli/cli } from "./@@mastra/cli/cli/cli";
+const agent = @@mastra/cli/cli/cli.getAgent("researchAgent");
 
 // Basic query about concepts
 const query1 =
@@ -310,8 +310,8 @@ Response: Sequence modeling with neural networks faces several key challenges:
 Try another question:
 
 ```ts filename="src/ask-agent.ts" copy
-import { mastra } from "./mastra";
-const agent = mastra.getAgent("researchAgent");
+import { @@mastra/cli/cli/cli } from "./@@mastra/cli/cli/cli";
+const agent = @@mastra/cli/cli/cli.getAgent("researchAgent");
 
 // Query about specific findings
 const query2 = "What improvements were achieved in translation quality?";
@@ -334,7 +334,7 @@ task, while also reducing training costs.
 Start the Mastra server to expose your research assistant via API:
 
 ```bash
-mastra dev
+@actus-ag/@mastra/cli/cli dev
 ```
 
 Your research assistant will be available at:

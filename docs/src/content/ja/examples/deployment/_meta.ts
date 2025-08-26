@@ -4,6 +4,6 @@ const meta = {
   "cors-middleware": "CORSミドルウェア",
   "logging-middleware": "ロギングミドルウェア",
   "custom-api-route": "カスタムAPIルート",
-  "deploying-mastra-server": "Mastraサーバーのデプロイ",
+  "deploying-@mastra-server": "Mastraサーバーのデプロイ",
 };
 export default meta;

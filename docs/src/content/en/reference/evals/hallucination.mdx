@@ -15,7 +15,7 @@ The `HallucinationMetric` evaluates whether an LLM generates factually correct i
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { HallucinationMetric } from "@actus-ag/mastra-evals/llm";
+import { HallucinationMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");
@@ -188,7 +188,7 @@ Final score: `(hallucinated_statements / total_statements) * scale`
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { HallucinationMetric } from "@actus-ag/mastra-evals/llm";
+import { HallucinationMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 // Configure the model for evaluation
 const model = openai("gpt-4o-mini");

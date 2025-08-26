@@ -1,7 +1,7 @@
 import { Tabs as CodeTabs } from "nextra/components";
 
 /**
- * @param children content of the tabs e.g <Tab>npm i mastra</Tab>
+ * @param children content of the tabs e.g <Tab>npm i @actus-ag/@@mastra/cli/cli/cli</Tab>
  * @param items items to display in the tabs, default is npm, pnpm, yarn, bun
  * @returns a tabs component
  */

@@ -7,13 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "mastra:init": "pnpm dlx mastra init",
-    "mastra:dev": "pnpm dlx mastra dev",
+    "@mastra/cli/cli:init": "pnpm dlx @mastra/cli/cli init",
+    "@mastra/cli/cli:dev": "pnpm dlx @mastra/cli/cli dev",
     "braintrust:eval": "npx braintrust eval src/lib/evals"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "latest",
-    "@actus-ag/mastra-core": "latest",
+    "@mastra/core": "latest",
     "braintrust": "^0.0.168",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -30,7 +30,7 @@
   },
   "pnpm": {
     "overrides": {
-      "@actus-ag/mastra-core": "link:../../packages/core"
+      "@mastra/core": "link:../../packages/core"
     }
   },
   "devDependencies": {

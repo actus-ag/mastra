@@ -1,10 +1,10 @@
 import type { ClickHouseClient } from '@clickhouse/client';
 import { createClient } from '@clickhouse/client';
-import type { MastraMessageContentV2 } from '@actus-ag/mastra-core/agent';
-import { MastraError, ErrorDomain, ErrorCategory } from '@actus-ag/mastra-core/error';
-import type { MastraMessageV1, MastraMessageV2, StorageThreadType } from '@actus-ag/mastra-core/memory';
-import type { ScoreRowData, ScoringSource } from '@actus-ag/mastra-core/scores';
-import { MastraStorage } from '@actus-ag/mastra-core/storage';
+import type { MastraMessageContentV2 } from '@mastra/core/agent';
+import { MastraError, ErrorDomain, ErrorCategory } from '@mastra/core/error';
+import type { MastraMessageV1, MastraMessageV2, StorageThreadType } from '@mastra/core/memory';
+import type { ScoreRowData, ScoringSource } from '@mastra/core/scores';
+import { MastraStorage } from '@mastra/core/storage';
 import type {
   TABLE_SCHEMAS,
   EvalRow,
@@ -20,9 +20,9 @@ import type {
   StorageDomains,
   PaginationArgs,
   StorageResourceType,
-} from '@actus-ag/mastra-core/storage';
-import type { Trace } from '@actus-ag/mastra-core/telemetry';
-import type { WorkflowRunState } from '@actus-ag/mastra-core/workflows';
+} from '@mastra/core/storage';
+import type { Trace } from '@mastra/core/telemetry';
+import type { WorkflowRunState } from '@mastra/core/workflows';
 import { LegacyEvalsStorageClickhouse } from './domains/legacy-evals';
 import { MemoryStorageClickhouse } from './domains/memory';
 import { StoreOperationsClickhouse } from './domains/operations';

@@ -11,9 +11,9 @@ This example demonstrates how to create a legacy workflow that calls an AI agent
 
 ```ts showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Mastra } from "@actus-ag/mastra-core";
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { LegacyStep, LegacyWorkflow } from "@actus-ag/mastra-core/workflows/legacy";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { LegacyStep, LegacyWorkflow } from "@mastra/cli/cli/cli/core/workflows/legacy";
 import { z } from "zod";
 
 const penguin = new Agent({
@@ -34,8 +34,8 @@ const replyAsSkipper = new LegacyStep({
   outputSchema: z.object({
     reply: z.string(),
   }),
-  execute: async ({ context, mastra }) => {
-    const skipper = mastra?.getAgent("penguin");
+  execute: async ({ context, @@mastra/cli/cli/cli }) => {
+    const skipper = @@mastra/cli/cli/cli?.getAgent("penguin");
 
     const res = await skipper?.generate(context?.triggerData?.message);
     return { reply: res?.text || "" };
@@ -45,12 +45,12 @@ const replyAsSkipper = new LegacyStep({
 newWorkflow.step(replyAsSkipper);
 newWorkflow.commit();
 
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   agents: { penguin },
   legacy_workflows: { newWorkflow },
 });
 
-const { runId, start } = await mastra
+const { runId, start } = await @@mastra/cli/cli/cli
   .legacy_getWorkflow("newWorkflow")
   .createRun();
 
@@ -68,7 +68,7 @@ console.log(runResult.results);
 <br />
 <GithubLink
   link={
-    "https://github.com/mastra-ai/mastra/blob/main/examples/basics/workflows-legacy/calling-agent-from-workflow"
+    "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/workflows-legacy/calling-agent-from-workflow"
   }
 />
 

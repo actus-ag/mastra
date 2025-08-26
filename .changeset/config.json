@@ -2,10 +2,10 @@
   "$schema": "https://unpkg.com/@changesets/config@3.0.4/schema.json",
   "changelog": [
     "@changesets/changelog-github",
-    { "repo": "mastra-ai/mastra" }
+    { "repo": "@mastra-ai/@mastra" }
   ],
   "commit": false,
-  "fixed": [["@actus-ag/mastra-core", "@actus-ag/mastra-server", "@actus-ag/mastra-deployer"], ["@actus-ag/create-mastra"]],
+  "fixed": [["@mastra/core", "@mastra/server", "@mastra/deployer"], ["@actus-ag/@actus-ag/create-@mastra"]],
   "linked": [],
   "access": "public",
   "baseBranch": "main",
@@ -13,12 +13,12 @@
   "bumpVersionsWithWorkspaceProtocolOnly": true,
   "ignore": [
     "*",
-    "!mastra",
-    "!@actus-ag/create-mastra",
+    "!@actus-ag/@mastra",
+    "!@actus-ag/@actus-ag/create-@mastra",
     "!@mastra/*",
     "!docs",
     "@internal/*",
-    "@actus-ag/mastra-memory-integration-tests",
-    "@actus-ag/mastra-playground"
+    "@mastra/memory-integration-tests",
+    "@mastra/playground"
   ]
 }

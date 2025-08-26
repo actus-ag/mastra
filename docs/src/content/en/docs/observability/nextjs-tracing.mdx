@@ -27,10 +27,10 @@ export default nextConfig;
 
 Configure your Mastra instance:
 
-```typescript filename="mastra.config.ts" copy
-import { Mastra } from "@actus-ag/mastra-core";
+```typescript filename="@@mastra/cli/cli/cli.config.ts" copy
+import { Mastra } from "@mastra/cli/cli/cli/core";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // ... other config
   telemetry: {
     serviceName: "your-project-name",
@@ -60,7 +60,7 @@ import {
   NodeSDK,
   ATTR_SERVICE_NAME,
   resourceFromAttributes,
-} from "@actus-ag/mastra-core/telemetry/otel-vendor";
+} from "@mastra/cli/cli/cli/core/telemetry/otel-vendor";
 import { LangfuseExporter } from "langfuse-vercel";
 
 export function register() {

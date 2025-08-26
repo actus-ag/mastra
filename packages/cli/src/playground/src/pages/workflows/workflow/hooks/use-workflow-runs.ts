@@ -1,4 +1,4 @@
-import { MastraClient } from '@actus-ag/mastra-client-js';
+import { MastraClient } from '@mastra-client-js';
 import { useQuery } from '@tanstack/react-query';
 
 export interface UseWorkflowRunsProps {
@@ -12,7 +12,7 @@ export const useWorkflowRuns = ({ workflowId }: UseWorkflowRunsProps) => {
       const client = new MastraClient({
         baseUrl: '',
         // only add the header if the baseUrl is not provided i.e it's a local dev environment
-        headers: { 'x-mastra-dev-playground': 'true' },
+        headers: { 'x-@mastra-dev-playground': 'true' },
       });
       return client.getWorkflow(workflowId).runs({
         limit: 50,

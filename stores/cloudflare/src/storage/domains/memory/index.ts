@@ -5,10 +5,10 @@ import type {
   StorageGetMessagesArg,
   StorageResourceType,
   StorageThreadType,
-} from '@actus-ag/mastra-core';
-import { MessageList } from '@actus-ag/mastra-core/agent';
-import type { MastraMessageContentV2 } from '@actus-ag/mastra-core/agent';
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
+} from '@mastra/core';
+import { MessageList } from '@mastra/core/agent';
+import type { MastraMessageContentV2 } from '@mastra/core/agent';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
 import {
   ensureDate,
   MemoryStorage,
@@ -17,7 +17,7 @@ import {
   TABLE_MESSAGES,
   TABLE_RESOURCES,
   TABLE_THREADS,
-} from '@actus-ag/mastra-core/storage';
+} from '@mastra/core/storage';
 import type { StoreOperationsCloudflare } from '../operations';
 
 export class MemoryStorageCloudflare extends MemoryStorage {

@@ -1,4 +1,4 @@
-import { Step, Workflow } from '@actus-ag/mastra-core/workflows';
+import { Step, Workflow } from '@mastra/core/workflows';
 import { z } from 'zod';
 
 import { github } from '../integrations/index.js';
@@ -51,13 +51,13 @@ const labelIssue = new Step({
   outputSchema: z.object({
     labels: z.array(z.string()),
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     const parentStep = context?.steps?.getIssue;
     if (!parentStep || parentStep.status !== 'success') {
       return { labels: [] };
     }
 
-    const daneIssueLabeler = mastra?.getAgent('daneIssueLabeler');
+    const daneIssueLabeler = @mastra?.getAgent('daneIssueLabeler');
 
     const res = await daneIssueLabeler?.generate(
       `

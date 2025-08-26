@@ -1,31 +1,31 @@
 # Create Mastra
 
-The easiest way to get started with Mastra is by using `create-mastra`. This CLI tool enables you to quickly start building a new Mastra application, with everything set up for you.
+The easiest way to get started with Mastra is by using `@actus-ag/@actus-ag/create-@mastra`. This CLI tool enables you to quickly start building a new Mastra application, with everything set up for you.
 
 ## Usage
 
 Using npx:
 
 ```bash
-npx create-mastra@latest
+npx @actus-ag/@actus-ag/create-@actus-ag/@mastra/cli/cli@latest
 ```
 
 Using npm:
 
 ```bash
-npm create mastra@latest
+npm create @actus-ag/@mastra/cli/cli@latest
 ```
 
 Using yarn:
 
 ```bash
-yarn create mastra
+yarn create @mastra
 ```
 
 Using pnpm:
 
 ```bash
-pnpm create mastra
+pnpm create @mastra
 ```
 
 ## Options
@@ -38,11 +38,11 @@ pnpm create mastra
 ## Examples
 
 Create a new project with default settings
-npx create-mastra@latest --default
+npx @actus-ag/@actus-ag/create-@actus-ag/@mastra/cli/cli@latest --default
 Create a project with specific components and LLM provider
-npx create-mastra@latest -c agents,tools -l anthropic
+npx @actus-ag/@actus-ag/create-@actus-ag/@mastra/cli/cli@latest -c agents,tools -l anthropic
 Create a project with example code
-npx create-mastra@latest --example
+npx @actus-ag/@actus-ag/create-@actus-ag/@mastra/cli/cli@latest --example
 
 ## What's included?
 

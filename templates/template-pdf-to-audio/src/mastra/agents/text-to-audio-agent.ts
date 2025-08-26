@@ -1,6 +1,6 @@
-import { Agent } from '@actus-ag/mastra-core/agent';
+import { Agent } from '@mastra/core/agent';
 import { openai } from '@ai-sdk/openai';
-import { OpenAIVoice } from '@actus-ag/mastra-voice-openai';
+import { OpenAIVoice } from '@mastra/voice-openai';
 
 export const textToAudioAgent = new Agent({
   name: 'Generate audio from text agent',

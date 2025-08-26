@@ -1,6 +1,6 @@
-import { evaluate as coreEvaluate } from '@actus-ag/mastra-core';
-import type { Metric } from '@actus-ag/mastra-core';
-import type { Agent } from '@actus-ag/mastra-core/agent';
+import { evaluate as coreEvaluate } from '@mastra/core';
+import type { Metric } from '@mastra/core';
+import type { Agent } from '@mastra/core/agent';
 
 import { GLOBAL_RUN_ID_ENV_KEY } from './constants';
 
@@ -14,7 +14,7 @@ export async function evaluate<T extends Agent>(agent: T, input: Parameters<T['g
 
   if (!globalRunId) {
     globalRunId = process.env[GLOBAL_RUN_ID_ENV_KEY] = crypto.randomUUID();
-    console.warn('Global run id not set, you should run "globalSetup" from "@actus-ag/mastra-evals" before evaluating.');
+    console.warn('Global run id not set, you should run "globalSetup" from "@mastra/evals" before evaluating.');
   }
 
   const metricResult = await coreEvaluate({

@@ -1,6 +1,6 @@
 import { openai } from '@ai-sdk/openai';
-import { PgVector } from '@actus-ag/mastra-pg';
-import { MDocument, rerank } from '@actus-ag/mastra-rag';
+import { PgVector } from '@mastra/pg';
+import { MDocument, rerank } from '@mastra/rag';
 import { embedMany, embed } from 'ai';
 
 // Create a document and process it into chunks

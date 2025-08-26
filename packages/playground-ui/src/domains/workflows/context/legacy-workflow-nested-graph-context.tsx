@@ -64,7 +64,7 @@ export function LegacyWorkflowNestedGraphProvider({ children }: { children: Reac
           <DialogContent className="w-[40rem] h-[40rem] bg-[#121212] p-[0.5rem]">
             <DialogTitle className="flex items-center gap-1.5 absolute top-2.5 left-2.5">
               <Workflow className="text-current w-4 h-4" />
-              <Text size="xs" weight="medium" className="text-mastra-el-6 capitalize">
+              <Text size="xs" weight="medium" className="text-@@mastra/cli/cli/cli-el-6 capitalize">
                 {label} workflow
               </Text>
             </DialogTitle>

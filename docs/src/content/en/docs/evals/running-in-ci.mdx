@@ -15,10 +15,10 @@ Running evals in your CI pipeline helps bridge this gap by providing quantifiabl
 
 We support any testing framework that supports ESM modules. For example, you can use [Vitest](https://vitest.dev/), [Jest](https://jestjs.io/) or [Mocha](https://mochajs.org/) to run evals in your CI/CD pipeline.
 
-```typescript copy showLineNumbers filename="src/mastra/agents/index.test.ts"
+```typescript copy showLineNumbers filename="src/@@mastra/cli/cli/cli/agents/index.test.ts"
 import { describe, it, expect } from "vitest";
-import { evaluate } from "@actus-ag/mastra-evals";
-import { ToneConsistencyMetric } from "@actus-ag/mastra-evals/nlp";
+import { evaluate } from "@mastra/cli/cli/cli/evals";
+import { ToneConsistencyMetric } from "@mastra/cli/cli/cli/evals/nlp";
 import { myAgent } from "./index";
 
 describe("My Agent", () => {
@@ -31,7 +31,7 @@ describe("My Agent", () => {
 });
 ```
 
-You will need to configure a testSetup and globalSetup script for your testing framework to capture the eval results. It allows us to show these results in your mastra dashboard.
+You will need to configure a testSetup and globalSetup script for your testing framework to capture the eval results. It allows us to show these results in your @@mastra/cli/cli/cli dashboard.
 
 ## Framework Configuration
 
@@ -40,7 +40,7 @@ You will need to configure a testSetup and globalSetup script for your testing f
 Add these files to your project to run evals in your CI/CD pipeline:
 
 ```typescript copy showLineNumbers filename="globalSetup.ts"
-import { globalSetup } from "@actus-ag/mastra-evals";
+import { globalSetup } from "@mastra/cli/cli/cli/evals";
 
 export default function setup() {
   globalSetup();
@@ -49,7 +49,7 @@ export default function setup() {
 
 ```typescript copy showLineNumbers filename="testSetup.ts"
 import { beforeAll } from "vitest";
-import { attachListeners } from "@actus-ag/mastra-evals";
+import { attachListeners } from "@mastra/cli/cli/cli/evals";
 
 beforeAll(async () => {
   await attachListeners();
@@ -73,12 +73,12 @@ To store eval results in Mastra Storage and capture results in the Mastra dashbo
 
 ```typescript copy showLineNumbers filename="testSetup.ts"
 import { beforeAll } from "vitest";
-import { attachListeners } from "@actus-ag/mastra-evals";
-import { mastra } from "./your-mastra-setup";
+import { attachListeners } from "@mastra/cli/cli/cli/evals";
+import { @@mastra/cli/cli/cli } from "./your-@@mastra/cli/cli/cli-setup";
 
 beforeAll(async () => {
   // Store evals in Mastra Storage (requires storage to be enabled)
-  await attachListeners(mastra);
+  await attachListeners(@@mastra/cli/cli/cli);
 });
 ```
 

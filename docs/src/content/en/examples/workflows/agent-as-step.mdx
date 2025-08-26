@@ -11,9 +11,9 @@ Workflows can include agents as steps. This example shows how to define an agent
 
 Create a simple agent that returns facts about a city.
 
-```typescript filename="src/mastra/agents/example-city-agent.ts" showLineNumbers copy
+```typescript filename="src/@@mastra/cli/cli/cli/agents/example-city-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 export const cityAgent = new Agent({
   name: "city-agent",
@@ -44,8 +44,8 @@ To use an agent as a step, pass it directly to `createStep()`. Use the `.map()` 
 
 In this example, the workflow receives a `city` input, maps it to a `prompt`, then calls the agent. The agent returns a `text` string, which is passed directly to the workflow output. Although the output schema expects a `facts` field, no additional mapping is required.
 
-```typescript filename="src/mastra/workflows/example-agent-step.ts" showLineNumbers copy
-import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows";
+```typescript filename="src/@@mastra/cli/cli/cli/workflows/example-agent-step.ts" showLineNumbers copy
+import { createWorkflow, createStep } from "@mastra/cli/cli/cli/core/workflows";
 import { z } from "zod";
 
 import { cityAgent } from "../agents/example-city-agent";

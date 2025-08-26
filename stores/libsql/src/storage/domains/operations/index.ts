@@ -1,8 +1,8 @@
 import type { Client } from '@libsql/client';
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import { TABLE_WORKFLOW_SNAPSHOT, StoreOperations } from '@actus-ag/mastra-core/storage';
-import type { StorageColumn, TABLE_NAMES } from '@actus-ag/mastra-core/storage';
-import { parseSqlIdentifier } from '@actus-ag/mastra-core/utils';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import { TABLE_WORKFLOW_SNAPSHOT, StoreOperations } from '@mastra/core/storage';
+import type { StorageColumn, TABLE_NAMES } from '@mastra/core/storage';
+import { parseSqlIdentifier } from '@mastra/core/utils';
 import { createExecuteWriteOperationWithRetry, prepareStatement } from '../utils';
 
 export class StoreOperationsLibSQL extends StoreOperations {

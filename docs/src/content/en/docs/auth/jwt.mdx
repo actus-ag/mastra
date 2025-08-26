@@ -11,19 +11,19 @@ The `MastraJwtAuth` class provides a lightweight authentication mechanism for Ma
 
 ## Installation
 
-Before you can use the `MastraJwtAuth` class you have to install the `@actus-ag/mastra-auth` package.
+Before you can use the `MastraJwtAuth` class you have to install the `@mastra/cli/cli/cli/auth` package.
 
 ```bash copy
-npm install @actus-ag/mastra-auth@latest
+npm install @mastra/cli/cli/cli/auth@latest
 ```
 
 ## Usage example
 
-```typescript {2,7-9} filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { MastraJwtAuth } from '@actus-ag/mastra-auth';
+```typescript {2,7-9} filename="src/@@mastra/cli/cli/cli/index.ts" showLineNumbers copy
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { MastraJwtAuth } from '@mastra/cli/cli/cli/auth';
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // ..
   server: {
     experimental_auth: new MastraJwtAuth({
@@ -39,18 +39,18 @@ export const mastra = new Mastra({
 
 When `experimental_auth` is enabled, all requests made with `MastraClient` must include a valid JWT in the `Authorization` header:
 
-```typescript {6} filename="lib/mastra/mastra-client.ts" showLineNumbers copy
-import { MastraClient } from "@actus-ag/mastra-client-js";
+```typescript {6} filename="lib/@@mastra/cli/cli/cli/@@mastra/cli/cli/cli-client.ts" showLineNumbers copy
+import { MastraClient } from "@@mastra/cli/cli/cli-client-js";
 
-export const mastraClient = new MastraClient({
-  baseUrl: "https://<mastra-api-url>",
+export const @@mastra/cli/cli/cliClient = new MastraClient({
+  baseUrl: "https://<@@mastra/cli/cli/cli-api-url>",
   headers: {
     Authorization: `Bearer ${process.env.MASTRA_JWT_TOKEN}`
   }
 });
 ```
 
-> See [Mastra Client SDK](/docs/server-db/mastra-client.mdx) for more configuration options.
+> See [Mastra Client SDK](/docs/server-db/@@mastra/cli/cli/cli-client.mdx) for more configuration options.
 
 ### Making authenticated requests
 
@@ -59,11 +59,11 @@ Once `MastraClient` is configured, you can send authenticated requests from your
 <Tabs items={["MastraClient", "curl"]}>
   <Tab>
     ```tsx filename="src/components/test-agent.tsx" showLineNumbers copy
-    import { mastraClient } from "../../lib/mastra-client";
+    import { @@mastra/cli/cli/cliClient } from "../../lib/@@mastra/cli/cli/cli-client";
 
     export const TestAgent = () => {
       async function handleClick() {
-        const agent = mastraClient.getAgent("weatherAgent");
+        const agent = @@mastra/cli/cli/cliClient.getAgent("weatherAgent");
 
         const response = await agent.generate({
           messages: "Weather in London"

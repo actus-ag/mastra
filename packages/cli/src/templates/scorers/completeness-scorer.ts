@@ -1,6 +1,6 @@
 export const completenessScorer = `
 import { openai } from "@ai-sdk/openai";
-import { createCompletenessScorer } from "@actus-ag/mastra-evals/scorers/llm";
+import { createCompletenessScorer } from "@mastra/evals/scorers/llm";
  
 const scorer = createCompletenessScorer({ model: openai("gpt-4o-mini") });
  

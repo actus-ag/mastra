@@ -1,4 +1,4 @@
-# @actus-ag/mastra-core
+# @mastra/core
 
 Mastra is the Typescript framework for building AI agents and assistants. It’s used by some of the largest companies in the world to build internal AI automation tooling and customer-facing agents.
 
@@ -7,7 +7,7 @@ This is the `core` package, which includes the main functionality of Mastra, inc
 ## Installation
 
 ```bash
-npm install @actus-ag/mastra-core
+npm install @mastra/core
 ```
 
 ## Core Components
@@ -17,7 +17,7 @@ npm install @actus-ag/mastra-core
 Mastra agents are autonomous AI entities that can understand instructions, use tools, and complete tasks. They encapsulate LLM interactions and can maintain conversation history, use provided tools, and follow specific behavioral guidelines through instructions.
 
 ```typescript
-import { Agent } from '@actus-ag/mastra-core/agent';
+import { Agent } from '@mastra/core/agent';
 import { openai } from '@ai-sdk/openai';
 
 const agent = new Agent({
@@ -28,14 +28,14 @@ const agent = new Agent({
 });
 ```
 
-[Agent documentation →](https://mastra.ai/docs/agents/overview)
+[Agent documentation →](https://@mastra.ai/docs/agents/overview)
 
 ### Workflows (`/workflows`)
 
 Mastra workflows are a graph-based execution engine allowing you to chain, branch, and parallelize LLM calls. You can orchestrate complex AI tasks by combining multiple actions. Workflows handle state management, error recovery, and can include conditional logic.
 
 ```typescript
-import { createWorkflow } from '@actus-ag/mastra-core/workflows';
+import { createWorkflow } from '@mastra/core/workflows';
 import z from 'zod'
 
 const workflow = createWorkflow({
@@ -48,14 +48,14 @@ const workflow = createWorkflow({
 });
 ```
 
-[Workflow documentation →](https://mastra.ai/docs/workflows/overview)
+[Workflow documentation →](https://@mastra.ai/docs/workflows/overview)
 
 ### Tools (`/tools`)
 
 Tools are functions that agents can use to interact with external systems or perform specific tasks. Each tool has a clear description and schema, making it easy for AI to understand and use them effectively.
 
 ```typescript
-import { createTool } from '@actus-ag/mastra-core/tools';
+import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
 
 const weatherInfo = createTool({
@@ -70,17 +70,17 @@ const weatherInfo = createTool({
 });
 ```
 
-[Tools documentation →](https://mastra.ai/docs/agents/adding-tools)
+[Tools documentation →](https://@mastra.ai/docs/agents/adding-tools)
 
 ### Evals (`/eval`)
 
 The evaluation system enables quantitative assessment of AI outputs. Create custom metrics to measure specific aspects of AI performance, from response quality to task completion accuracy.
 
 ```typescript
-import { Agent } from '@actus-ag/mastra-core/agent';
+import { Agent } from '@mastra/core/agent';
 import { openai } from '@ai-sdk/openai';
-import { SummarizationMetric } from '@actus-ag/mastra-evals/llm';
-import { ContentSimilarityMetric, ToneConsistencyMetric } from '@actus-ag/mastra-evals/nlp';
+import { SummarizationMetric } from '@mastra/evals/llm';
+import { ContentSimilarityMetric, ToneConsistencyMetric } from '@mastra/evals/nlp';
 
 const model = openai('gpt-4o');
 
@@ -96,15 +96,15 @@ const agent = new Agent({
 });
 ```
 
-[More evals documentation →](https://mastra.ai/docs/evals/overview)
+[More evals documentation →](https://@mastra.ai/docs/evals/overview)
 
 ### Logger (`/logger`)
 
 The logging system provides structured, leveled logging with multiple transport options. It supports debug information, performance monitoring, and error tracking across your AI applications.
 
 ```typescript
-import { LogLevel } from '@actus-ag/mastra-core';
-import { PinoLogger } from '@actus-ag/mastra-loggers';
+import { LogLevel } from '@mastra/core';
+import { PinoLogger } from '@mastra/loggers';
 
 const logger = new PinoLogger({
   name: 'MyApp',
@@ -112,16 +112,16 @@ const logger = new PinoLogger({
 });
 ```
 
-[More logging documentation →](https://mastra.ai/reference/observability/logging)
+[More logging documentation →](https://@mastra.ai/reference/observability/logging)
 
 ### Telemetry (`/telemetry`)
 
 Telemetry provides OpenTelemetry (Otel) integration for comprehensive monitoring of your AI systems. Track latency, success rates, and system health with distributed tracing and metrics collection.
 
 ```typescript
-import { Mastra } from '@actus-ag/mastra-core';
+import { Mastra } from '@mastra/core';
 
-const mastra = new Mastra({
+const @mastra = new Mastra({
   telemetry: {
     serviceName: 'my-service',
     enabled: true,
@@ -137,11 +137,11 @@ const mastra = new Mastra({
 });
 ```
 
-[More Telemetry documentation →](https://mastra.ai/reference/observability/telemetry)
+[More Telemetry documentation →](https://@mastra.ai/reference/observability/telemetry)
 
 ## Additional Resources
 
-- [Getting Started Guide](https://mastra.ai/docs/getting-started/installation)
-- [API Reference](https://mastra.ai/reference)
-- [Examples](https://mastra.ai/docs/examples)
-- [Deployment Guide](https://mastra.ai/docs/deployment/overview)
+- [Getting Started Guide](https://@mastra.ai/docs/getting-started/installation)
+- [API Reference](https://@mastra.ai/reference)
+- [Examples](https://@mastra.ai/docs/examples)
+- [Deployment Guide](https://@mastra.ai/docs/deployment/overview)

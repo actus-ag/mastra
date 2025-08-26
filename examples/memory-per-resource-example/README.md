@@ -84,9 +84,9 @@ const memory = new Memory({
 
 The following storage adapters support per-resource working memory:
 
-- ✅ **LibSQL** (`@actus-ag/mastra-libsql`)
-- ✅ **PostgreSQL** (`@actus-ag/mastra-pg`)
-- ✅ **Upstash** (`@actus-ag/mastra-upstash`)
+- ✅ **LibSQL** (`@mastra/libsql`)
+- ✅ **PostgreSQL** (`@mastra/pg`)
+- ✅ **Upstash** (`@mastra/upstash`)
 - ❌ **MockStore** (in-memory only, for testing)
 
 ## 💡 Use Cases
@@ -137,7 +137,7 @@ The following storage adapters support per-resource working memory:
 ### Database Schema
 
 ```sql
-CREATE TABLE mastra_resources (
+CREATE TABLE @mastra_resources (
   id TEXT PRIMARY KEY,           -- resourceId (user identifier)
   workingMemory TEXT,           -- JSON working memory data
   metadata JSONB,               -- Additional metadata

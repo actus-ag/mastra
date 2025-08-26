@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { serve } from '@hono/node-server';
-import { MCPClient } from '@actus-ag/mastra-mcp';
+import { MCPClient } from '@mastra/mcp';
 import { Hono } from 'hono';
 import type { Context } from 'hono';
 
@@ -51,7 +51,7 @@ const port = (server.address() as { port: number }).port;
 export const mcp = new MCPClient({
   id: 'test-mcp',
   servers: {
-    mastra: {
+    @mastra: {
       command: 'node',
       args: [path.join(__dirname, '../../../dist/stdio.js')],
       env: {

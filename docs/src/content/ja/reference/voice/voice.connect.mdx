@@ -10,8 +10,8 @@ description: "リアルタイム音声プロバイダーで利用可能なconnec
 ## 使用例
 
 ```typescript
-import { OpenAIRealtimeVoice } from "@actus-ag/mastra-voice-openai-realtime";
-import Speaker from "@actus-ag/mastra-node-speaker";
+import { OpenAIRealtimeVoice } from "@mastra/cli/cli/cli/voice-openai-realtime";
+import Speaker from "@mastra/cli/cli/cli/node-speaker";
 
 const speaker = new Speaker({
   sampleRate: 24100, // Audio sample rate in Hz - standard for high-quality audio on MacBook Pro
@@ -96,8 +96,8 @@ await voice.connect({
 `CompositeVoice`を使用する場合、`connect()`メソッドは設定されたリアルタイムプロバイダーに委譲されます：
 
 ```typescript
-import { CompositeVoice } from "@actus-ag/mastra-core/voice";
-import { OpenAIRealtimeVoice } from "@actus-ag/mastra-voice-openai-realtime";
+import { CompositeVoice } from "@mastra/cli/cli/cli/core/voice";
+import { OpenAIRealtimeVoice } from "@mastra/cli/cli/cli/voice-openai-realtime";
 const realtimeVoice = new OpenAIRealtimeVoice();
 const voice = new CompositeVoice({
   realtimeProvider: realtimeVoice,

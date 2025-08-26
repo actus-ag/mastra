@@ -31,17 +31,17 @@ Mastraは異なるストレージプロバイダーを提供していますが�
 Mastraはデフォルトのストレージオプションで設定できます：
 
 ```typescript copy
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { LibSQLStore } from "@actus-ag/mastra-libsql";
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { LibSQLStore } from "@mastra/cli/cli/cli/libsql";
 
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   storage: new LibSQLStore({
-    url: "file:./mastra.db",
+    url: "file:./@@mastra/cli/cli/cli.db",
   }),
 });
 ```
 
-`storage`設定を指定しない場合、Mastraは自動的にローカルの`LibSQLStore`（`file:mastra.db`）にフォールバックします。この**デフォルトストレージ**は開発と簡単なプロトタイプに最適です。データはページの更新後も保持されますが、サーバープロセスが再起動したり、一時的な環境にデプロイしたりすると失われます。ほとんどの実際のアプリケーションでは、明示的なストレージインスタンスを提供する必要があります。エージェントに設定した`Memory`は、`Mastra`に提供するストレージを使用します。両方の場所で省略した場合は、上記で説明したデフォルトのストレージが使用されます。
+`storage`設定を指定しない場合、Mastraは自動的にローカルの`LibSQLStore`（`file:@@mastra/cli/cli/cli.db`）にフォールバックします。この**デフォルトストレージ**は開発と簡単なプロトタイプに最適です。データはページの更新後も保持されますが、サーバープロセスが再起動したり、一時的な環境にデプロイしたりすると失われます。ほとんどの実際のアプリケーションでは、明示的なストレージインスタンスを提供する必要があります。エージェントに設定した`Memory`は、`Mastra`に提供するストレージを使用します。両方の場所で省略した場合は、上記で説明したデフォルトのストレージが使用されます。
 
 ## データスキーマ
 
@@ -322,7 +322,7 @@ constraints: [{ type: "nullable", value: false }]
 {
 name: "scope",
 type: "text",
-description: "スパンを作成したライブラリ/パッケージ/サービス（例：`@actus-ag/mastra-core`、`express`、`pg`）",
+description: "スパンを作成したライブラリ/パッケージ/サービス（例：`@mastra/cli/cli/cli/core`、`express`、`pg`）",
 constraints: [{ type: "nullable", value: false }]
 },
 {

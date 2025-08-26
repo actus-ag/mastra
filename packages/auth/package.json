@@ -1,5 +1,5 @@
 {
-  "name": "@actus-ag/mastra-auth",
+  "name": "@mastra/auth",
   "version": "0.1.1",
   "description": "",
   "type": "module",
@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@internal/lint": "workspace:*",
-    "@actus-ag/mastra-core": "workspace:*",
+    "@mastra/core": "workspace:*",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^20.19.0",
     "eslint": "^9.30.1",

@@ -11,7 +11,7 @@ description: Mastraを使用して`branch`ステートメントによりワー�
 ## セットアップ
 
 ```sh copy
-npm install @ai-sdk/openai @actus-ag/mastra-core
+npm install @ai-sdk/openai @mastra/cli/cli/cli/core
 ```
 
 ## プランニングエージェントの定義
@@ -19,7 +19,7 @@ npm install @ai-sdk/openai @actus-ag/mastra-core
 場所と対応する天候条件に基づいて活動を計画するためにLLMコールを活用するプランニングエージェントを定義します。
 
 ```ts showLineNumbers copy filename="agents/planning-agent.ts"
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { openai } from "@ai-sdk/openai";
 
 const llm = openai("gpt-4o");
@@ -82,7 +82,7 @@ export { planningAgent };
 
 ```ts showLineNumbers copy filename="workflows/conditional-workflow.ts"
 import { z } from "zod";
-import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows/vNext";
+import { createWorkflow, createStep } from "@mastra/cli/cli/cli/core/workflows/vNext";
 
 // Helper function to convert weather codes to human-readable conditions
 function getWeatherCondition(code: number): string {
@@ -181,7 +181,7 @@ const planActivities = createStep({
   outputSchema: z.object({
     activities: z.string(),
   }),
-  execute: async ({ inputData, mastra }) => {
+  execute: async ({ inputData, @@mastra/cli/cli/cli }) => {
     const forecast = inputData;
 
     if (!forecast) {
@@ -192,7 +192,7 @@ const planActivities = createStep({
       ${JSON.stringify(forecast, null, 2)}
       `;
 
-    const agent = mastra?.getAgent("planningAgent");
+    const agent = @@mastra/cli/cli/cli?.getAgent("planningAgent");
     if (!agent) {
       throw new Error("Planning agent not found");
     }
@@ -226,7 +226,7 @@ const planIndoorActivities = createStep({
   outputSchema: z.object({
     activities: z.string(),
   }),
-  execute: async ({ inputData, mastra }) => {
+  execute: async ({ inputData, @@mastra/cli/cli/cli }) => {
     const forecast = inputData;
 
     if (!forecast) {
@@ -235,7 +235,7 @@ const planIndoorActivities = createStep({
 
     const prompt = `雨が降った場合、${forecast.location}の${forecast.date}における屋内活動を計画してください`;
 
-    const agent = mastra?.getAgent("planningAgent");
+    const agent = @@mastra/cli/cli/cli?.getAgent("planningAgent");
     if (!agent) {
       throw new Error("Planning agent not found");
     }
@@ -299,18 +299,18 @@ export { activityPlanningWorkflow };
 
 ## Mastraクラスでエージェントとワークフローのインスタンスを登録する
 
-エージェントとワークフローをmastraインスタンスに登録します。
+エージェントとワークフローを@@mastra/cli/cli/cliインスタンスに登録します。
 これはワークフロー内でエージェントへのアクセスを可能にするために重要です。
 
 ```ts showLineNumbers copy filename="index.ts"
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { PinoLogger } from "@actus-ag/mastra-loggers";
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { PinoLogger } from "@mastra/cli/cli/cli/loggers";
 import { activityPlanningWorkflow } from "./workflows/conditional-workflow";
 import { planningAgent } from "./agents/planning-agent";
 
 // Initialize Mastra with the activity planning workflow
 // This enables the workflow to be executed and access the planning agent
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   vnext_workflows: {
     activityPlanningWorkflow,
   },
@@ -323,17 +323,17 @@ const mastra = new Mastra({
   }),
 });
 
-export { mastra };
+export { @@mastra/cli/cli/cli };
 ```
 
 ## アクティビティプランニングワークフローを実行する
 
-ここでは、mastraインスタンスからアクティビティプランニングワークフローを取得し、実行を作成して、必要な入力データで作成した実行を実行します。
+ここでは、@@mastra/cli/cli/cliインスタンスからアクティビティプランニングワークフローを取得し、実行を作成して、必要な入力データで作成した実行を実行します。
 
 ```ts showLineNumbers copy filename="exec.ts"
-import { mastra } from "./";
+import { @@mastra/cli/cli/cli } from "./";
 
-const workflow = mastra.vnext_getWorkflow("activityPlanningWorkflow");
+const workflow = @@mastra/cli/cli/cli.vnext_getWorkflow("activityPlanningWorkflow");
 const run = workflow.createRun();
 
 // Start the workflow with a city

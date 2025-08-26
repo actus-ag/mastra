@@ -20,11 +20,11 @@ import { GithubLink } from "@/components/github-link";
 ```ts showLineNumbers copy
 // Import required dependencies
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { CompositeVoice } from "@actus-ag/mastra-core/voice";
-import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { CompositeVoice } from "@mastra/cli/cli/cli/core/voice";
+import { OpenAIVoice } from "@mastra/cli/cli/cli/voice-openai";
 import { createReadStream, createWriteStream } from "fs";
-import { PlayAIVoice } from "@actus-ag/mastra-voice-playai";
+import { PlayAIVoice } from "@mastra/cli/cli/cli/voice-playai";
 import path from "path";
 
 // Initialize Agent 1 with both listening and speaking capabilities
@@ -132,6 +132,6 @@ async function convertToText(
 
 <GithubLink
   link={
-    "https://github.com/mastra-ai/mastra/blob/main/examples/basics/agents/voice-capabilities"
+    "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/agents/voice-capabilities"
   }
 />

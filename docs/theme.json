@@ -1,7 +1,7 @@
 {
   "light": {
     "displayName": "Mastra Light",
-    "name": "mastra-light",
+    "name": "@mastra-light",
     "semanticHighlighting": true,
     "tokenColors": [
       {
@@ -95,7 +95,7 @@
   },
   "dark": {
     "displayName": "Mastra Dark",
-    "name": "mastra-dark",
+    "name": "@mastra-dark",
     "semanticHighlighting": true,
     "tokenColors": [
       {

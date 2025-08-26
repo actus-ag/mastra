@@ -1,4 +1,4 @@
-import { createTool } from '@actus-ag/mastra-core/tools';
+import { createTool } from '@mastra/core/tools';
 import { readFileSync, writeFileSync } from 'fs';
 import { z } from 'zod';
 

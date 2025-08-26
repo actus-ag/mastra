@@ -1,10 +1,10 @@
 import { openai } from '@ai-sdk/openai';
-import { createTool } from '@actus-ag/mastra-core';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import type { CoreMessage } from '@actus-ag/mastra-core';
-import { MemoryProcessor, MemoryProcessorOpts } from '@actus-ag/mastra-core/memory';
-import { Memory } from '@actus-ag/mastra-memory';
-import { TokenLimiter, ToolCallFilter } from '@actus-ag/mastra-memory/processors';
+import { createTool } from '@mastra/core';
+import { Agent } from '@mastra/core/agent';
+import type { CoreMessage } from '@mastra/core';
+import { MemoryProcessor, MemoryProcessorOpts } from '@mastra/core/memory';
+import { Memory } from '@mastra/memory';
+import { TokenLimiter, ToolCallFilter } from '@mastra/memory/processors';
 import { z } from 'zod';
 
 // Custom processor that makes the llm forget any messages that contain keywords

@@ -19,7 +19,7 @@
         "OTEL_EXPORTER_OTLP_ENDPOINT",
         "OTEL_EXPORTER_OTLP_HEADERS"
       ],
-      "outputs": [".next/**", "!.next/cache/**", ".mastra/**"]
+      "outputs": [".next/**", "!.next/cache/**", ".@mastra/**"]
     }
   },
   "globalDependencies": ["tsconfig.json", "../../tsconfig.node.json"]

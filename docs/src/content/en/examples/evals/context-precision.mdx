@@ -15,7 +15,7 @@ Use `ContextPrecisionMetric` to evaluate whether the response relies on the most
 ## Installation
 
 ```bash copy
-npm install @actus-ag/mastra-evals
+npm install @mastra/cli/cli/cli/evals
 ```
 
 ## High precision example
@@ -24,7 +24,7 @@ In this example, the response draws only from context that is directly relevant 
 
 ```typescript filename="src/example-high-precision.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { ContextPrecisionMetric } from "@actus-ag/mastra-evals/llm";
+import { ContextPrecisionMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 const metric = new ContextPrecisionMetric(openai("gpt-4o-mini"), {
   context: [
@@ -61,7 +61,7 @@ In this example, the response uses one or more relevant context items, but also 
 
 ```typescript filename="src/example-mixed-precision.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { ContextPrecisionMetric } from "@actus-ag/mastra-evals/llm";
+import { ContextPrecisionMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 const metric = new ContextPrecisionMetric(openai("gpt-4o-mini"), {
   context: [
@@ -99,7 +99,7 @@ In this example, the response uses only a small portion of the provided context.
 
 ```typescript filename="src/example-low-precision.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { ContextPrecisionMetric } from "@actus-ag/mastra-evals/llm";
+import { ContextPrecisionMetric } from "@mastra/cli/cli/cli/evals/llm";
 
 const metric = new ContextPrecisionMetric(openai("gpt-4o-mini"), {
   context: [
@@ -178,5 +178,5 @@ An explanation for the score, with details including:
 
 <GithubLink
   marginTop='mt-16'
-  link="https://github.com/mastra-ai/mastra/blob/main/examples/basics/evals/context-precision"
+  link="https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/evals/context-precision"
 />

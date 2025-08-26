@@ -1,4 +1,4 @@
-import { MastraClient } from '@actus-ag/mastra-client-js';
+import { MastraClient } from '@mastra-client-js';
 
 // Extend the window object to include our injected configuration
 declare global {
@@ -26,6 +26,6 @@ const getBaseUrl = () => {
 export const client = new MastraClient({
   baseUrl: getBaseUrl(),
   headers: {
-    'x-mastra-dev-playground': 'true',
+    'x-@mastra-dev-playground': 'true',
   },
 });

@@ -18,8 +18,8 @@ This example defines a two-step workflow:
 
 The workflow takes a `city` as input and outputs the `temperature`.
 
-```typescript filename="src/mastra/workflows/example-temperature-workflow.ts" showLineNumbers copy
-import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows";
+```typescript filename="src/@@mastra/cli/cli/cli/workflows/example-temperature-workflow.ts" showLineNumbers copy
+import { createWorkflow, createStep } from "@mastra/cli/cli/cli/core/workflows";
 import { z } from "zod";
 
 const getCityCoordinates = createStep({
@@ -88,8 +88,8 @@ export const temperatureWorkflow = createWorkflow({
 
 This tool wraps the workflow and exposes it through a standard tool interface. It takes a `city` as input, runs the underlying workflow, and returns the resulting `temperature`.
 
-```typescript filename="src/mastra/tools/temperature-tool.ts" showLineNumbers copy
-import { createTool } from "@actus-ag/mastra-core/tools";
+```typescript filename="src/@@mastra/cli/cli/cli/tools/temperature-tool.ts" showLineNumbers copy
+import { createTool } from "@mastra/cli/cli/cli/core/tools";
 import { z } from "zod";
 
 export const getTemperatureTool = createTool({
@@ -101,9 +101,9 @@ export const getTemperatureTool = createTool({
   outputSchema: z.object({
     temperature: z.string()
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @@mastra/cli/cli/cli }) => {
     const { city } = context;
-    const workflow = mastra!.getWorkflow("temperatureWorkflow");
+    const workflow = @@mastra/cli/cli/cli!.getWorkflow("temperatureWorkflow");
     const run = await workflow!.createRunAsync({});
 
     const runResult = await run!.start({
@@ -123,7 +123,7 @@ export const getTemperatureTool = createTool({
 
 <GithubLink
   marginTop='mt-16'
-  link="https://github.com/mastra-ai/mastra/blob/main/examples/basics/agents/workflow-as-tools"
+  link="https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/agents/workflow-as-tools"
 />
 
 ## Related

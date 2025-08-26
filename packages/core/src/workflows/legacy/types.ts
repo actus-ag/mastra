@@ -26,7 +26,7 @@ export interface WorkflowOptions<
   };
   events?: Record<string, { schema: z.ZodObject<any> }>;
   retryConfig?: RetryConfig;
-  mastra?: Mastra;
+  @mastra?: Mastra;
 }
 
 export interface StepExecutionContext<
@@ -37,7 +37,7 @@ export interface StepExecutionContext<
   suspend: (payload?: unknown, softSuspend?: any) => Promise<void>;
   runId: string;
   emit: (event: string, data: any) => void;
-  mastra?: MastraUnion;
+  @mastra?: MastraUnion;
   runtimeContext: RuntimeContext;
 }
 
@@ -47,7 +47,7 @@ export interface StepAction<
   TSchemaOut extends z.ZodSchema | undefined,
   TContext extends StepExecutionContext<TSchemaIn>,
 > extends IAction<TId, TSchemaIn, TSchemaOut, TContext> {
-  mastra?: Mastra;
+  @mastra?: Mastra;
   payload?: TSchemaIn extends z.ZodSchema ? Partial<z.infer<TSchemaIn>> : unknown;
   execute: (context: TContext) => Promise<TSchemaOut extends z.ZodSchema ? z.infer<TSchemaOut> : unknown>;
   retryConfig?: RetryConfig;
@@ -135,7 +135,7 @@ export type StepDef<
     id?: string;
     when?:
       | Condition<any, any>
-      | ((args: { context: WorkflowContext; mastra?: Mastra }) => Promise<boolean | WhenConditionReturnValue>);
+      | ((args: { context: WorkflowContext; @mastra?: Mastra }) => Promise<boolean | WhenConditionReturnValue>);
     serializedWhen?: Condition<any, any> | string;
     loopLabel?: string;
     loopType?: 'while' | 'until';
@@ -172,7 +172,7 @@ export interface StepConfig<
     | Condition<CondStep, TTriggerSchema>
     | ((args: {
         context: WorkflowContext<TTriggerSchema, TSteps>;
-        mastra?: Mastra;
+        @mastra?: Mastra;
       }) => Promise<boolean | WhenConditionReturnValue>);
   variables?: StepInputType<TStep, 'inputSchema'> extends never
     ? Record<string, VariableReference<VarStep, TTriggerSchema>>
@@ -184,7 +184,7 @@ export interface StepConfig<
       | Condition<CondStep, TTriggerSchema>
       | ((args: {
           context: WorkflowContext<TTriggerSchema, TSteps>;
-          mastra?: Mastra;
+          @mastra?: Mastra;
         }) => Promise<boolean | WhenConditionReturnValue>);
     loopLabel?: string;
     loopType?: 'while' | 'until' | undefined;
@@ -246,7 +246,7 @@ export interface WorkflowContext<
   TInputData extends Record<string, any> = Record<string, any>,
 > {
   isResume?: { runId: string; stepId: string };
-  mastra?: MastraUnion;
+  @mastra?: MastraUnion;
   steps: {
     [K in keyof StepsRecord<TSteps>]: StepsRecord<TSteps>[K]['outputSchema'] extends undefined
       ? StepResult<unknown>

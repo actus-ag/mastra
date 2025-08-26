@@ -3,7 +3,7 @@ import { readFile, writeFile } from "fs/promises"
 import { existsSync } from "fs"
 import { join } from "path"
 import { ServerDefinition } from "@mcp/registry"
-import { MastraMCPClient } from "@actus-ag/mastra-mcp"
+import { MastraMCPClient } from "@mastra/mcp"
 import { z } from "zod"
 
 // Basic configuration schema that applies regardless of server

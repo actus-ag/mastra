@@ -5,9 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@mastra/core': link:../../../../packages/core
-  '@mastra/rag': link:../../../../packages/rag
-  '@mastra/pg': link:../../../../stores/pg
+  '@mastra/cli/cli/cli/core': link:../../../../packages/core
+  '@mastra/cli/cli/cli/rag': link:../../../../packages/rag
+  '@mastra/cli/cli/cli/pg': link:../../../../stores/pg
 
 importers:
 
@@ -16,13 +16,13 @@ importers:
       '@ai-sdk/openai':
         specifier: latest
         version: 1.3.17(zod@3.24.3)
-      '@mastra/core':
+      '@mastra/cli/cli/cli/core':
         specifier: link:../../../../packages/core
         version: link:../../../../packages/core
-      '@mastra/pg':
+      '@mastra/cli/cli/cli/pg':
         specifier: link:../../../../stores/pg
         version: link:../../../../stores/pg
-      '@mastra/rag':
+      '@mastra/cli/cli/cli/rag':
         specifier: link:../../../../packages/rag
         version: link:../../../../packages/rag
       ai:

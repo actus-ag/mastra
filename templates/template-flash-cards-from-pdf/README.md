@@ -31,7 +31,7 @@ A Mastra template that generates educational flash cards with optional images fr
    AWS_REGION=us-east-1
    AWS_ACCESS_KEY_ID=your_aws_access_key_id
    AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key
-   S3_BUCKET_NAME=mastra-generated-images
+   S3_BUCKET_NAME=@mastra-generated-images
    S3_PUBLIC_URL_BASE=https://your-bucket-name.s3.amazonaws.com
    ```
 
@@ -45,10 +45,10 @@ A Mastra template that generates educational flash cards with optional images fr
 ### Using the Workflow
 
 ```typescript
-import { mastra } from './src/mastra';
+import { @mastra } from './src/@mastra';
 
 // Generate flash cards from a PDF URL
-const result = await mastra.runWorkflow('flash-cards-generation-workflow', {
+const result = await @mastra.runWorkflow('flash-cards-generation-workflow', {
   pdfUrl: 'https://example.com/biology-textbook-chapter.pdf',
   subjectArea: 'biology',
   numberOfCards: 15,
@@ -69,7 +69,7 @@ result.flashCards.forEach((card, index) => {
 });
 
 // Generate flash cards from an attached PDF file (playground usage)
-const attachedResult = await mastra.runWorkflow('flash-cards-generation-workflow', {
+const attachedResult = await @mastra.runWorkflow('flash-cards-generation-workflow', {
   pdfData:
     'data:application/pdf;base64,JVBERi0xLjQKJcfsj6IKNSAwIG9iago8PAovTGVuZ3RoIDYgMCBSCi9GaWx0ZXIgL0ZsYXRlRGVjb2RlCj4+CnN0cmVhbQ...',
   filename: 'chemistry-notes.pdf',
@@ -85,7 +85,7 @@ const attachedResult = await mastra.runWorkflow('flash-cards-generation-workflow
 
 ```typescript
 // Mathematics flash cards
-const mathCards = await mastra.runWorkflow('flash-cards-generation-workflow', {
+const mathCards = await @mastra.runWorkflow('flash-cards-generation-workflow', {
   pdfUrl: 'https://example.com/calculus-notes.pdf',
   subjectArea: 'mathematics',
   numberOfCards: 20,
@@ -96,7 +96,7 @@ const mathCards = await mastra.runWorkflow('flash-cards-generation-workflow', {
 });
 
 // History flash cards
-const historyCards = await mastra.runWorkflow('flash-cards-generation-workflow', {
+const historyCards = await @mastra.runWorkflow('flash-cards-generation-workflow', {
   pdfUrl: 'https://example.com/world-war-2-document.pdf',
   subjectArea: 'history',
   numberOfCards: 12,
@@ -131,7 +131,7 @@ The agent automatically detects the file attachment and processes it using the w
 
 ```typescript
 // Generate flash cards directly with the main agent
-const flashCards = await mastra.getAgent('flashCardsAgent').generate([
+const flashCards = await @mastra.getAgent('flashCardsAgent').generate([
   {
     role: 'user',
     content:
@@ -140,13 +140,13 @@ const flashCards = await mastra.getAgent('flashCardsAgent').generate([
 ]);
 
 // Extract content from PDF only
-const pdfContent = await mastra.getTool('pdf-content-extractor').execute({
+const pdfContent = await @mastra.getTool('pdf-content-extractor').execute({
   context: {
     pdfUrl: 'https://example.com/research-paper.pdf',
     subjectArea: 'computer science',
     focusAreas: ['algorithms', 'data structures'],
   },
-  mastra,
+  @mastra,
 });
 ```
 
@@ -295,8 +295,8 @@ When `generateImages` is enabled, the template generates educational visuals for
 AWS_REGION=us-east-1
 AWS_ACCESS_KEY_ID=your_aws_access_key_id
 AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key
-S3_BUCKET_NAME=mastra-flashcard-images
-S3_PUBLIC_URL_BASE=https://mastra-flashcard-images.s3.amazonaws.com
+S3_BUCKET_NAME=@mastra-flashcard-images
+S3_PUBLIC_URL_BASE=https://@mastra-flashcard-images.s3.amazonaws.com
 ```
 
 **Note**: Configure your S3 bucket for public read access so generated images are accessible via public URLs.
@@ -356,7 +356,7 @@ To modify or extend this template:
 
 ## Dependencies
 
-- `@actus-ag/mastra-core`: Core Mastra framework
+- `@mastra/core`: Core Mastra framework
 - `@ai-sdk/openai`: OpenAI integration for content analysis and generation
 - `@aws-sdk/client-s3`: S3 cloud storage for educational images
 - `ai`: AI SDK for DALL-E 3 image generation

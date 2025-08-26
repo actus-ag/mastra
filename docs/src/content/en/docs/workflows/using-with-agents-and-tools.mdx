@@ -21,9 +21,9 @@ To include an agent in a workflow, define it in the usual way, then either add i
 
 This agent uses OpenAI to generate a fact about a city, country, and timezone.
 
-```typescript filename="src/mastra/agents/test-agent.ts" showLineNumbers copy
+```typescript filename="src/@@mastra/cli/cli/cli/agents/test-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 export const testAgent = new Agent({
   name: "test-agent",
@@ -45,7 +45,7 @@ The step is composed into the workflow using `.then()`, allowing it to receive t
 ![Agent as step](/image/workflows/workflows-agent-tools-agent-step.jpg)
 
 
-```typescript {3} filename="src/mastra/workflows/test-workflow.ts" showLineNumbers copy
+```typescript {3} filename="src/@@mastra/cli/cli/cli/workflows/test-workflow.ts" showLineNumbers copy
 import { testAgent } from "../agents/test-agent";
 
 const step1 = createStep(testAgent);
@@ -76,7 +76,7 @@ In this example, the `step1` builds a prompt using the provided `input` and pass
 
 The step is added to the workflow using the sequential `.then()` method, allowing it to receive input from the workflow and return structured output. The workflow is finalized with `.commit()`.
 
-```typescript {1,18, 29} filename="src/mastra/workflows/test-workflow.ts" showLineNumbers copy
+```typescript {1,18, 29} filename="src/@@mastra/cli/cli/cli/workflows/test-workflow.ts" showLineNumbers copy
 import { testAgent } from "../agents/test-agent";
 
 const step1 = createStep({
@@ -117,8 +117,8 @@ To use a tool within a workflow, define it in the usual way, then either add it 
 
 The example below uses the Open Meteo API to retrieve geolocation details for a city, returning its name, country, and timezone.
 
-```typescript filename="src/mastra/tools/test-tool.ts" showLineNumbers copy
-import { createTool } from "@actus-ag/mastra-core";
+```typescript filename="src/@@mastra/cli/cli/cli/tools/test-tool.ts" showLineNumbers copy
+import { createTool } from "@mastra/cli/cli/cli/core";
 import { z } from "zod";
 
 export const testTool = createTool({
@@ -152,7 +152,7 @@ The step is added to the workflow using the sequential `.then()` method, allowin
 
 ![Tool as step](/image/workflows/workflows-agent-tools-tool-step.jpg)
 
-```typescript {1,3,6} filename="src/mastra/workflows/test-workflow.ts" showLineNumbers copy
+```typescript {1,3,6} filename="src/@@mastra/cli/cli/cli/workflows/test-workflow.ts" showLineNumbers copy
 import { testTool } from "../tools/test-tool";
 
 const step1 = createStep(testTool);
@@ -168,8 +168,8 @@ In this example, `step1` directly invokes `testTool` using its `.execute()` meth
 
 The result is returned as structured output from the step. The step is composed into the workflow using `.then()`, enabling it to process workflow input and produce typed output. The workflow is finalized with `.commit()`
 
-```typescript {3,20,32} filename="src/mastra/workflows/test-workflow.ts" showLineNumbers copy
-import { RuntimeContext } from "@actus-ag/mastra-core/di";
+```typescript {3,20,32} filename="src/@@mastra/cli/cli/cli/workflows/test-workflow.ts" showLineNumbers copy
+import { RuntimeContext } from "@mastra/cli/cli/cli/core/di";
 
 import { testTool } from "../tools/test-tool";
 
@@ -209,12 +209,12 @@ export const testWorkflow = createWorkflow({...})
 In this example the `cityStringWorkflow` workflow has been added to the main Mastra instance.
 
 
-```typescript {7} filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core/mastra";
+```typescript {7} filename="src/@@mastra/cli/cli/cli/index.ts" showLineNumbers copy
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
 
 import { testWorkflow, cityStringWorkflow } from "./workflows/test-workflow";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   ...
   workflows: { testWorkflow, cityStringWorkflow },
 });
@@ -222,7 +222,7 @@ export const mastra = new Mastra({
 
 Once a workflow has been registered it can be referenced using `getWorkflow` from withing a tool.
 
-```typescript {10,17-27} filename="src/mastra/tools/test-tool.ts" showLineNumbers copy
+```typescript {10,17-27} filename="src/@@mastra/cli/cli/cli/tools/test-tool.ts" showLineNumbers copy
 export const cityCoordinatesTool = createTool({
   id: "city-tool",
   description: "Convert city details",
@@ -232,14 +232,14 @@ export const cityCoordinatesTool = createTool({
   outputSchema: z.object({
     outcome: z.string()
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @@mastra/cli/cli/cli }) => {
     const { city } = context;
     const geocodingResponse = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${city}`);
     const geocodingData = await geocodingResponse.json();
 
     const { name, country, timezone } = geocodingData.results[0];
 
-    const workflow = mastra?.getWorkflow("cityStringWorkflow");
+    const workflow = @@mastra/cli/cli/cli?.getWorkflow("cityStringWorkflow");
 
     const run = await workflow?.createRunAsync();
 
@@ -264,7 +264,7 @@ You can also use Workflows in Agents. This agent is able to choose between using
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { testTool } from "../tools/test-tool";
 import { testWorkflow } from "../workflows/test-workflow";
 
@@ -294,11 +294,11 @@ When you provide workflows to the server, each workflow is automatically exposed
 - `run_testWorkflow`.
 
 ```typescript filename="src/test-mcp-server.ts" showLineNumbers copy
-import { MCPServer } from "@actus-ag/mastra-mcp";
+import { MCPServer } from "@mastra/cli/cli/cli/mcp";
 
-import { testAgent } from "./mastra/agents/test-agent";
-import { testTool } from "./mastra/tools/test-tool";
-import { testWorkflow } from "./mastra/workflows/test-workflow";
+import { testAgent } from "./@@mastra/cli/cli/cli/agents/test-agent";
+import { testTool } from "./@@mastra/cli/cli/cli/tools/test-tool";
+import { testWorkflow } from "./@@mastra/cli/cli/cli/workflows/test-workflow";
 
 async function startServer() {
   const server = new MCPServer({
@@ -319,7 +319,7 @@ startServer().catch(console.error);
 To verify that your workflow is available on the server, you can connect with an MCPClient.
 
 ```typescript filename="src/test-mcp-client.ts" showLineNumbers copy
-import { MCPClient } from "@actus-ag/mastra-mcp";
+import { MCPClient } from "@mastra/cli/cli/cli/mcp";
 
 async function main() {
   const mcp = new MCPClient({

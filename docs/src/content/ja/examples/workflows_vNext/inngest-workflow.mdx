@@ -10,7 +10,7 @@ description: Mastraを使用したinngestワークフローの構築例
 ## セットアップ
 
 ```sh copy
-npm install @actus-ag/mastra-inngest @actus-ag/mastra-core @actus-ag/mastra-deployer @hono/node-server @ai-sdk/openai
+npm install @mastra/cli/cli/cli/inngest @mastra/cli/cli/cli/core @mastra/cli/cli/cli/deployer @hono/node-server @ai-sdk/openai
 
 docker run --rm -p 8288:8288 \
   inngest/inngest \
@@ -24,7 +24,7 @@ docker run --rm -p 8288:8288 \
 場所と対応する天候条件に基づいてアクティビティを計画するためにLLMコールを活用するプランニングエージェントを定義します。
 
 ```ts showLineNumbers copy filename="agents/planning-agent.ts"
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { openai } from "@ai-sdk/openai";
 
 // Create a new planning agent that uses the OpenAI model
@@ -86,7 +86,7 @@ import { z } from "zod";
 
 const { createWorkflow, createStep } = init(
   new Inngest({
-    id: "mastra",
+    id: "@actus-ag/@@mastra/cli/cli/cli",
     baseUrl: `http://localhost:8288`,
   }),
 );
@@ -194,7 +194,7 @@ const planActivities = createStep({
   outputSchema: z.object({
     activities: z.string(),
   }),
-  execute: async ({ inputData, mastra }) => {
+  execute: async ({ inputData, @@mastra/cli/cli/cli }) => {
     const forecast = inputData;
 
     if (!forecast) {
@@ -205,7 +205,7 @@ const planActivities = createStep({
       ${JSON.stringify(forecast, null, 2)}
       `;
 
-    const agent = mastra?.getAgent("planningAgent");
+    const agent = @@mastra/cli/cli/cli?.getAgent("planningAgent");
     if (!agent) {
       throw new Error("Planning agent not found");
     }
@@ -241,7 +241,7 @@ const planIndoorActivities = createStep({
   outputSchema: z.object({
     activities: z.string(),
   }),
-  execute: async ({ inputData, mastra }) => {
+  execute: async ({ inputData, @@mastra/cli/cli/cli }) => {
     const forecast = inputData;
 
     if (!forecast) {
@@ -250,7 +250,7 @@ const planIndoorActivities = createStep({
 
     const prompt = `In case it rains, plan indoor activities for ${forecast.location} on ${forecast.date}`;
 
-    const agent = mastra?.getAgent("planningAgent");
+    const agent = @@mastra/cli/cli/cli?.getAgent("planningAgent");
     if (!agent) {
       throw new Error("Planning agent not found");
     }
@@ -313,12 +313,12 @@ export { activityPlanningWorkflow };
 
 ## Mastraクラスでエージェントとワークフローのインスタンスを登録する
 
-エージェントとワークフローをmastraインスタンスに登録します。これにより、ワークフロー内でエージェントにアクセスできるようになります。
+エージェントとワークフローを@@mastra/cli/cli/cliインスタンスに登録します。これにより、ワークフロー内でエージェントにアクセスできるようになります。
 
 ```ts showLineNumbers copy filename="index.ts"
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { serve as inngestServe } from "@actus-ag/mastra-inngest";
-import { PinoLogger } from "@actus-ag/mastra-loggers";
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { serve as inngestServe } from "@mastra/cli/cli/cli/inngest";
+import { PinoLogger } from "@mastra/cli/cli/cli/loggers";
 import { Inngest } from "inngest";
 import { activityPlanningWorkflow } from "./workflows/inngest-workflow";
 import { planningAgent } from "./agents/planning-agent";
@@ -326,14 +326,14 @@ import { realtimeMiddleware } from "@inngest/realtime";
 
 // Create an Inngest instance for workflow orchestration and event handling
 const inngest = new Inngest({
-  id: "mastra",
+  id: "@actus-ag/@@mastra/cli/cli/cli",
   baseUrl: `http://localhost:8288`, // URL of your local Inngest server
   isDev: true,
   middleware: [realtimeMiddleware()], // Enable real-time updates in the Inngest dashboard
 });
 
 // Create and configure the main Mastra instance
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   vnext_workflows: {
     activityPlanningWorkflow,
   },
@@ -346,7 +346,7 @@ export const mastra = new Mastra({
       {
         path: "/api/inngest", // API endpoint for Inngest to send events to
         method: "ALL",
-        createHandler: async ({ mastra }) => inngestServe({ mastra, inngest }),
+        createHandler: async ({ @@mastra/cli/cli/cli }) => inngestServe({ @@mastra/cli/cli/cli, inngest }),
       },
     ],
   },
@@ -359,18 +359,18 @@ export const mastra = new Mastra({
 
 ## アクティビティプランナーワークフローを実行する
 
-ここでは、mastraインスタンスからアクティビティプランナーワークフローを取得し、実行を作成して、必要な入力データで作成した実行を実行します。
+ここでは、@@mastra/cli/cli/cliインスタンスからアクティビティプランナーワークフローを取得し、実行を作成して、必要な入力データで作成した実行を実行します。
 
 ```ts showLineNumbers copy filename="exec.ts"
-import { mastra } from "./";
+import { @@mastra/cli/cli/cli } from "./";
 import { serve } from "@hono/node-server";
 import {
   createHonoServer,
   getToolExports,
-} from "@actus-ag/mastra-deployer/server";
+} from "@mastra/cli/cli/cli/deployer/server";
 import { tools } from "#tools";
 
-const app = await createHonoServer(mastra, {
+const app = await createHonoServer(@@mastra/cli/cli/cli, {
   tools: getToolExports(tools),
 });
 
@@ -380,7 +380,7 @@ const srv = serve({
   port: 3000,
 });
 
-const workflow = mastra.vnext_getWorkflow("activityPlanningWorkflow");
+const workflow = @@mastra/cli/cli/cli.vnext_getWorkflow("activityPlanningWorkflow");
 const run = workflow.createRun({});
 
 // Start the workflow with the required input data (city name)

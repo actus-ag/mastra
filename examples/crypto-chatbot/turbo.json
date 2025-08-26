@@ -23,7 +23,7 @@
         "POSTGRES_URL_NO_SSL",
         "POSTGRES_USER"
       ],
-      "outputs": [".next/**", "!.next/cache/**", ".mastra/**"]
+      "outputs": [".next/**", "!.next/cache/**", ".@mastra/**"]
     }
   },
   "globalDependencies": ["tsconfig.json", "../../tsconfig.node.json"]

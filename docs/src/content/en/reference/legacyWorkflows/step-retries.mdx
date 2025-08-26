@@ -90,7 +90,7 @@ During retry attempts, the workflow execution remains active but paused for the 
 ### Basic Retry Example
 
 ```typescript
-import { LegacyWorkflow, LegacyStep } from "@actus-ag/mastra-core/workflows/legacy";
+import { LegacyWorkflow, LegacyStep } from "@mastra/cli/cli/cli/core/workflows/legacy";
 
 // Define a step that might fail
 const unreliableApiStep = new LegacyStep({
@@ -120,7 +120,7 @@ workflow.step(unreliableApiStep).then(processResultStep).commit();
 ### Workflow-level Retries with Step Override
 
 ```typescript
-import { LegacyWorkflow, LegacyStep } from "@actus-ag/mastra-core/workflows/legacy";
+import { LegacyWorkflow, LegacyStep } from "@mastra/cli/cli/cli/core/workflows/legacy";
 
 // Create a workflow with default retry configuration
 const workflow = new LegacyWorkflow({

@@ -13,11 +13,11 @@ Mastraでは、ログは特定の関数がいつ実行されるか、どのよ�
 
 こちらは、`INFO` レベルで **コンソールロガー** を設定する最小限の例です。これにより、情報メッセージおよびそれ以上（つまり、`DEBUG`、`INFO`、`WARN`、`ERROR`）がコンソールに出力されます。
 
-```typescript filename="mastra.config.ts" showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core";
-import { PinoLogger } from "@actus-ag/mastra-loggers";
+```typescript filename="@@mastra/cli/cli/cli.config.ts" showLineNumbers copy
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { PinoLogger } from "@mastra/cli/cli/cli/loggers";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // Other Mastra configuration...
   logger: new PinoLogger({
     name: "Mastra",

@@ -5,17 +5,17 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@mastra/core': link:../../../../packages/core
-  '@mastra/evals': link:../../../../packages/evals
+  '@mastra/cli/cli/cli/core': link:../../../../packages/core
+  '@mastra/cli/cli/cli/evals': link:../../../../packages/evals
 
 importers:
 
   .:
     dependencies:
-      '@mastra/core':
+      '@mastra/cli/cli/cli/core':
         specifier: link:../../../../packages/core
         version: link:../../../../packages/core
-      '@mastra/evals':
+      '@mastra/cli/cli/cli/evals':
         specifier: link:../../../../packages/evals
         version: link:../../../../packages/evals
     devDependencies:

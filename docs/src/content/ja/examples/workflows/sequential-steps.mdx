@@ -26,7 +26,7 @@ import { GithubLink } from "@/components/github-link";
 まず、ステップを作成し、ワークフローを初期化しましょう。
 
 ```ts showLineNumbers copy
-import { Step, Workflow } from "@actus-ag/mastra-core/workflows";
+import { Step, Workflow } from "@mastra/cli/cli/cli/core/workflows";
 import { z } from "zod";
 
 const stepOne = new Step({
@@ -89,6 +89,6 @@ const res = await start({ triggerData: { inputValue: 90 } });
 <br />
 <GithubLink
   link={
-    "https://github.com/mastra-ai/mastra/blob/main/examples/basics/workflows/workflow-with-sequential-steps"
+    "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/workflows/workflow-with-sequential-steps"
   }
 />

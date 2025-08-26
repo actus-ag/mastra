@@ -2,18 +2,18 @@
 
 Now, let's create a simple agent with memory capabilities. We'll start with the basics and add more advanced features in the following steps.
 
-Create or update your `src/mastra/agents/index.ts` file:
+Create or update your `src/@mastra/agents/index.ts` file:
 
 ```typescript
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { Memory } from "@actus-ag/mastra-memory";
-import { LibSQLStore } from "@actus-ag/mastra-libsql";
+import { Agent } from "@mastra/core/agent";
+import { Memory } from "@mastra/memory";
+import { LibSQLStore } from "@mastra/libsql";
 import { openai } from "@ai-sdk/openai";
 
 // Create a basic memory instance
 const memory = new Memory({
   storage: new LibSQLStore({
-    url: "file:../../memory.db", // relative path from the `.mastra/output` directory
+    url: "file:../../memory.db", // relative path from the `.@mastra/output` directory
   }),
 });
 

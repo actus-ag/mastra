@@ -13,8 +13,8 @@ import YouTube from "@/components/youtube";
 以下は、ワーキングメモリを設定したエージェントの最小限の例です：
 
 ```typescript {12-15}
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { Memory } from "@actus-ag/mastra-memory";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { Memory } from "@mastra/cli/cli/cli/memory";
 import { openai } from "@ai-sdk/openai";
 
 // Create agent with working memory enabled

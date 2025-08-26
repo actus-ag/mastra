@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai';
-import { ContextPositionMetric } from '@actus-ag/mastra-evals/llm';
+import { ContextPositionMetric } from '@mastra/evals/llm';
 
 // Example 1: High position adherence (relevant info first)
 const context1 = [

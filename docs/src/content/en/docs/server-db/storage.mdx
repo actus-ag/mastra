@@ -31,12 +31,12 @@ Mastra provides different storage providers, but you can treat them as interchan
 Mastra can be configured with a default storage option:
 
 ```typescript copy
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { LibSQLStore } from "@actus-ag/mastra-libsql";
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { LibSQLStore } from "@mastra/cli/cli/cli/libsql";
 
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   storage: new LibSQLStore({
-    url: "file:./mastra.db",
+    url: "file:./@@mastra/cli/cli/cli.db",
   }),
 });
 ```
@@ -420,7 +420,7 @@ Captures OpenTelemetry traces for monitoring and debugging.
     {
       name: "scope",
       type: "text",
-      description: "Library/package/service that created the span (e.g. `@actus-ag/mastra-core`, `express`, `pg`)",
+      description: "Library/package/service that created the span (e.g. `@mastra/cli/cli/cli/core`, `express`, `pg`)",
       constraints: [{ type: "nullable", value: false }]
     },
     {
@@ -491,10 +491,10 @@ Messages are stored in a V2 format internally, which is roughly equivalent to th
 
 ```typescript copy
 // Get messages in the default V1 format (roughly equivalent to AI SDK's CoreMessage format)
-const messagesV1 = await mastra.getStorage().getMessages({ threadId: 'your-thread-id' });
+const messagesV1 = await @@mastra/cli/cli/cli.getStorage().getMessages({ threadId: 'your-thread-id' });
 
 // Get messages in the V2 format (roughly equivalent to AI SDK's UIMessage format)
-const messagesV2 = await mastra.getStorage().getMessages({ threadId: 'your-thread-id', format: 'v2' });
+const messagesV2 = await @@mastra/cli/cli/cli.getStorage().getMessages({ threadId: 'your-thread-id', format: 'v2' });
 ```
 
 ## Storage Providers

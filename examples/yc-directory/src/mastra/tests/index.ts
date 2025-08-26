@@ -1,6 +1,6 @@
 import { openai } from '@ai-sdk/openai';
-import { evaluate } from '@actus-ag/mastra-evals';
-import { AnswerRelevancyMetric } from '@actus-ag/mastra-evals/llm';
+import { evaluate } from '@mastra/evals';
+import { AnswerRelevancyMetric } from '@mastra/evals/llm';
 
 import { ycAgent } from '../agents';
 

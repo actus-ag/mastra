@@ -8,13 +8,13 @@ description: "既存のNode.jsアプリケーションにMastraを追加する"
 CLIを使用して既存のプロジェクトにMastraを追加できます：
 
 ```bash npm2yarn copy
-npm install -g mastra@latest
-mastra init
+npm install -g @actus-ag/@mastra/cli/cli@latest
+@actus-ag/@mastra/cli/cli init
 ```
 
 プロジェクトに加えられる変更：
 
-1. エントリーポイントを含む`src/mastra`ディレクトリを作成
+1. エントリーポイントを含む`src/@@mastra/cli/cli/cli`ディレクトリを作成
 2. 必要な依存関係を追加
 3. TypeScriptコンパイラオプションを設定
 
@@ -29,7 +29,7 @@ mastra init
 
 ## 非対話式セットアップ
 
-非対話モードでmastraを初期化するには、以下のコマンド引数を使用します：
+非対話モードで@@mastra/cli/cli/cliを初期化するには、以下のコマンド引数を使用します：
 
 ```bash
 Arguments:
@@ -40,4 +40,4 @@ Arguments:
   --dir            Directory for Mastra files (defaults to src/)
 ```
 
-詳細については、[mastra init CLIドキュメント](../../reference/cli/init)を参照してください。
+詳細については、[@actus-ag/@mastra/cli/cli init CLIドキュメント](../../reference/cli/init)を参照してください。

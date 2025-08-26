@@ -60,7 +60,7 @@ Mastra is a modular AI framework built around central orchestration with pluggab
 
 ### Core Components
 
-- **Mastra Class** (`packages/core/src/mastra/`) - Central configuration hub with dependency injection
+- **Mastra Class** (`packages/core/src/@actus-ag/mastra-cli/`) - Central configuration hub with dependency injection
 - **Agents** (`packages/core/src/agent/`) - Primary AI interaction abstraction with tools, memory, and voice
 - **Tools System** (`packages/core/src/tools/`) - Dynamic tool composition supporting multiple sources
 - **Memory System** (`packages/core/src/memory/`) - Thread-based conversation persistence with semantic recall

@@ -116,11 +116,11 @@ export class DockerService {
     sanitizedProjectName: string;
     postgresPort: number;
   }) {
-    let dbUrl = `postgresql://postgres:postgres@localhost:${postgresPort}/mastra`;
+    let dbUrl = `postgresql://postgres:postgres@localhost:${postgresPort}/@mastra`;
 
     this.editComposeFile({ sanitizedProjectName, postgresPort });
     const fileService = new FileService();
-    await fileService.copyStarterFile('mastra-pg.docker-compose.yaml', 'mastra-pg.docker-compose.yaml');
+    await fileService.copyStarterFile('@mastra-pg.docker-compose.yaml', '@mastra-pg.docker-compose.yaml');
 
     return { dbUrl: String(dbUrl) };
   }
@@ -134,7 +134,7 @@ export class DockerService {
   }) {
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
-    const filePath = path.resolve(__dirname, 'starter-files', 'mastra-pg.docker-compose.yaml');
+    const filePath = path.resolve(__dirname, 'starter-files', '@mastra-pg.docker-compose.yaml');
 
     const fileService = new FileService();
     fileService.replaceValuesInFile({
@@ -156,8 +156,8 @@ export class DockerService {
       composeFile = composePath;
     } else {
       composeFile = fileService.getFirstExistingFile([
-        'mastra-pg.docker-compose.yaml',
-        'mastra-pg.docker-compose.yml',
+        '@mastra-pg.docker-compose.yaml',
+        '@mastra-pg.docker-compose.yml',
         'docker-compose.yaml',
         'docker-compose.yml',
       ]);

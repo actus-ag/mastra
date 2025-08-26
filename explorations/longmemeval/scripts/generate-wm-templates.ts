@@ -1,4 +1,4 @@
-import { Agent } from '@actus-ag/mastra-core/agent';
+import { Agent } from '@mastra/core/agent';
 import { google } from '@ai-sdk/google';
 import chalk from 'chalk';
 import ora, { Ora } from 'ora';

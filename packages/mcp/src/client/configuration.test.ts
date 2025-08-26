@@ -1,8 +1,8 @@
 import { spawn } from 'child_process';
 import path from 'path';
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { RuntimeContext } from '@actus-ag/mastra-core/di';
+import { Agent } from '@mastra/core/agent';
+import { RuntimeContext } from '@mastra/core/di';
 import type { ResourceTemplate } from '@modelcontextprotocol/sdk/types.js';
 import { describe, it, expect, beforeEach, afterEach, afterAll, beforeAll, vi } from 'vitest';
 import { allTools, mcpServerName } from '../__fixtures__/fire-crawl-complex-schema';

@@ -1,4 +1,4 @@
-import { createWorkflow, createStep } from '@actus-ag/mastra-core/workflows';
+import { createWorkflow, createStep } from '@mastra/core/workflows';
 
 import { z } from 'zod';
 
@@ -11,13 +11,13 @@ const generateSuggestionsStep = createStep({
     suggestions: z.array(z.string()),
     vacationDescription: z.string(),
   }),
-  execute: async ({ inputData, mastra, abortSignal, abort }) => {
-    if (!mastra) {
+  execute: async ({ inputData, @mastra, abortSignal, abort }) => {
+    if (!@mastra) {
       throw new Error('Mastra is not initialized');
     }
 
     const { vacationDescription } = inputData;
-    const result = await mastra.getAgent('summaryTravelAgent').generate(
+    const result = await @mastra.getAgent('summaryTravelAgent').generate(
       [
         {
           role: 'user',
@@ -79,8 +79,8 @@ const travelPlannerStep = createStep({
   outputSchema: z.object({
     travelPlan: z.string(),
   }),
-  execute: async ({ inputData, mastra }) => {
-    const travelAgent = mastra?.getAgent('travelAgent');
+  execute: async ({ inputData, @mastra }) => {
+    const travelAgent = @mastra?.getAgent('travelAgent');
     if (!travelAgent) {
       throw new Error('Travel agent is not initialized');
     }

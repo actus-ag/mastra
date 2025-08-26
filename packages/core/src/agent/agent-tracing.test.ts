@@ -4,7 +4,7 @@ import { MockLanguageModelV1 } from 'ai/test';
 import { config } from 'dotenv';
 import { describe, expect, it } from 'vitest';
 
-import { Mastra } from '../mastra';
+import { Mastra } from '../@mastra';
 
 import { Agent } from './index';
 
@@ -31,7 +31,7 @@ describe('agent telemetry', () => {
     });
     tracerProvider.register();
 
-    const mastra = new Mastra({
+    const @mastra = new Mastra({
       agents: { electionAgent },
       logger: false,
       telemetry: {
@@ -43,7 +43,7 @@ describe('agent telemetry', () => {
         },
       },
     });
-    const agentOne = mastra.getAgent('electionAgent');
+    const agentOne = @mastra.getAgent('electionAgent');
 
     await agentOne.generate('Who won the 2016 US presidential election?', {
       telemetry: { functionId: 'test-function-id', metadata: { test: 'test' } },

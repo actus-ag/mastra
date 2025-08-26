@@ -3,7 +3,7 @@ import type { AssistantContent, UserContent, CoreMessage, EmbeddingModel } from 
 import { MessageList } from '../agent/message-list';
 import type { MastraMessageV2, UIMessageWithMetadata } from '../agent/message-list';
 import { MastraBase } from '../base';
-import type { Mastra } from '../mastra';
+import type { Mastra } from '../@mastra';
 import type { MastraStorage, PaginationInfo, StorageGetMessagesArg, ThreadSortOptions } from '../storage';
 import { augmentWithInit } from '../storage/storageWithInit';
 import type { ToolAction } from '../tools';
@@ -73,7 +73,7 @@ export abstract class MastraMemory extends MastraBase {
   embedder?: EmbeddingModel<string> | EmbeddingModelV2<string>;
   private processors: MemoryProcessor[] = [];
   protected threadConfig: MemoryConfig = { ...memoryDefaultOptions };
-  #mastra?: Mastra;
+  #@mastra?: Mastra;
 
   constructor(config: { name: string } & SharedMemoryConfig) {
     super({ component: 'MEMORY', name: config.name });
@@ -88,14 +88,14 @@ export abstract class MastraMemory extends MastraBase {
     if (this.threadConfig.semanticRecall) {
       if (!config.vector) {
         throw new Error(
-          `Semantic recall requires a vector store to be configured.\n\nhttps://mastra.ai/en/docs/memory/semantic-recall`,
+          `Semantic recall requires a vector store to be configured.\n\nhttps://@mastra.ai/en/docs/memory/semantic-recall`,
         );
       }
       this.vector = config.vector;
 
       if (!config.embedder) {
         throw new Error(
-          `Semantic recall requires an embedder to be configured.\n\nhttps://mastra.ai/en/docs/memory/semantic-recall`,
+          `Semantic recall requires an embedder to be configured.\n\nhttps://@mastra.ai/en/docs/memory/semantic-recall`,
         );
       }
       this.embedder = config.embedder;
@@ -104,11 +104,11 @@ export abstract class MastraMemory extends MastraBase {
 
   /**
    * Internal method used by Mastra to register itself with the memory.
-   * @param mastra The Mastra instance.
+   * @param @mastra The Mastra instance.
    * @internal
    */
-  __registerMastra(mastra: Mastra): void {
-    this.#mastra = mastra;
+  __registerMastra(@mastra: Mastra): void {
+    this.#@mastra = @mastra;
   }
 
   protected _hasOwnStorage = false;
@@ -119,7 +119,7 @@ export abstract class MastraMemory extends MastraBase {
   get storage() {
     if (!this._storage) {
       throw new Error(
-        `Memory requires a storage provider to function. Add a storage configuration to Memory or to your Mastra instance.\n\nhttps://mastra.ai/en/docs/memory/overview`,
+        `Memory requires a storage provider to function. Add a storage configuration to Memory or to your Mastra instance.\n\nhttps://@mastra.ai/en/docs/memory/overview`,
       );
     }
     return this._storage;
@@ -420,7 +420,7 @@ export abstract class MastraMemory extends MastraBase {
    * @returns A unique string ID
    */
   public generateId(): string {
-    return this.#mastra?.generateId() || crypto.randomUUID();
+    return this.#@mastra?.generateId() || crypto.randomUUID();
   }
 
   /**

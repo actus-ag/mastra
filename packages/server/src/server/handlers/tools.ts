@@ -1,6 +1,6 @@
-import type { RuntimeContext } from '@actus-ag/mastra-core/di';
-import type { ToolAction, VercelTool } from '@actus-ag/mastra-core/tools';
-import { isVercelTool } from '@actus-ag/mastra-core/tools';
+import type { RuntimeContext } from '@mastra/core/di';
+import type { ToolAction, VercelTool } from '@mastra/core/tools';
+import { isVercelTool } from '@mastra/core/tools';
 import { stringify } from 'superjson';
 import zodToJsonSchema from 'zod-to-json-schema';
 import { HTTPException } from '../http-exception';
@@ -63,12 +63,12 @@ export async function getToolByIdHandler({ tools, toolId }: Pick<ToolsContext, '
 
 export function executeToolHandler(tools: ToolsContext['tools']) {
   return async ({
-    mastra,
+    @mastra,
     runId,
     toolId,
     data,
     runtimeContext,
-  }: Pick<ToolsContext, 'mastra' | 'toolId' | 'runId'> & {
+  }: Pick<ToolsContext, '@actus-ag/@mastra' | 'toolId' | 'runId'> & {
     data?: unknown;
     runtimeContext: RuntimeContext;
   }) => {
@@ -96,7 +96,7 @@ export function executeToolHandler(tools: ToolsContext['tools']) {
 
       const result = await tool.execute({
         context: data!,
-        mastra,
+        @mastra,
         runId,
         runtimeContext,
       });
@@ -108,18 +108,18 @@ export function executeToolHandler(tools: ToolsContext['tools']) {
 }
 
 export async function executeAgentToolHandler({
-  mastra,
+  @mastra,
   agentId,
   toolId,
   data,
   runtimeContext,
-}: Pick<ToolsContext, 'mastra' | 'toolId'> & {
+}: Pick<ToolsContext, '@actus-ag/@mastra' | 'toolId'> & {
   agentId?: string;
   data: any;
   runtimeContext: RuntimeContext;
 }) {
   try {
-    const agent = agentId ? mastra.getAgent(agentId) : null;
+    const agent = agentId ? @mastra.getAgent(agentId) : null;
     if (!agent) {
       throw new HTTPException(404, { message: 'Tool not found' });
     }
@@ -144,7 +144,7 @@ export async function executeAgentToolHandler({
     const result = await tool.execute({
       context: data,
       runtimeContext,
-      mastra,
+      @mastra,
       runId: agentId,
     });
 

@@ -20,7 +20,7 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
     });
 
     posthog.register({
-      mastraSource: 'playground',
+      @@mastra/cli/cli/cliSource: 'playground',
     });
   }, []);
 

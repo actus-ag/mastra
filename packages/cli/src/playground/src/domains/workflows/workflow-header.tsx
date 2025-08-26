@@ -9,7 +9,7 @@ import {
   HeaderAction,
   Icon,
   ApiIcon,
-} from '@actus-ag/mastra-playground-ui';
+} from '@mastra/cli/cli/cli/playground-ui';
 
 export function WorkflowHeader({
   workflowName,

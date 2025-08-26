@@ -7,20 +7,20 @@ description: "Mastraサーバーから追加のHTTPエンドポイントを公�
 
 デフォルトでは、Mastraは登録されたエージェントとワークフローをサーバーを通じて自動的に公開します。追加の動作を実装するには、独自のHTTPルートを定義することができます。
 
-ルートは`@actus-ag/mastra-core/server`から提供される`registerApiRoute`ヘルパーを使用して設定します。ルートは`Mastra`インスタンスと同じファイルに配置することもできますが、分離することで設定をより簡潔に保つことができます。
+ルートは`@mastra/cli/cli/cli/core/server`から提供される`registerApiRoute`ヘルパーを使用して設定します。ルートは`Mastra`インスタンスと同じファイルに配置することもできますが、分離することで設定をより簡潔に保つことができます。
 
 ```typescript copy showLineNumbers
-import { Mastra } from "@actus-ag/mastra-core";
-import { registerApiRoute } from "@actus-ag/mastra-core/server";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { registerApiRoute } from "@mastra/cli/cli/cli/core/server";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   server: {
     apiRoutes: [
       registerApiRoute("/my-custom-route", {
         method: "GET",
         handler: async (c) => {
-          const mastra = c.get("mastra");
-          const agents = await mastra.getAgent("my-agent");
+          const @@mastra/cli/cli/cli = c.get("@actus-ag/@@mastra/cli/cli/cli");
+          const agents = await @@mastra/cli/cli/cli.getAgent("my-agent");
 
           return c.json({ message: "Hello, world!" });
         },

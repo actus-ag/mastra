@@ -61,24 +61,24 @@ Mastraクラスは、アプリケーションの中心的なエントリーポ�
         "ポート、ホスト、タイムアウト、APIルート、ミドルウェア、CORS設定、Swagger UIのビルドオプション、APIリクエストのロギング、OpenAPIドキュメントなどを含むサーバー設定。",
       isOptional: true,
       defaultValue:
-        "{ port: 4111, host: localhost,  cors: { origin: '*', allowMethods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'], allowHeaders: ['Content-Type', 'Authorization', 'x-mastra-client-type'], exposeHeaders: ['Content-Length', 'X-Requested-With'], credentials: false } }",
+        "{ port: 4111, host: localhost,  cors: { origin: '*', allowMethods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'], allowHeaders: ['Content-Type', 'Authorization', 'x-@@mastra/cli/cli/cli-client-type'], exposeHeaders: ['Content-Length', 'X-Requested-With'], credentials: false } }",
     },
   ]}
 />
 
 ## 初期化
 
-Mastra クラスは通常、`src/mastra/index.ts` ファイルで初期化されます。
+Mastra クラスは通常、`src/@@mastra/cli/cli/cli/index.ts` ファイルで初期化されます。
 
-```typescript copy filename=src/mastra/index.ts
-import { Mastra } from "@actus-ag/mastra-core";
-import { PinoLogger } from "@actus-ag/mastra-loggers";
+```typescript copy filename=src/@@mastra/cli/cli/cli/index.ts
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { PinoLogger } from "@mastra/cli/cli/cli/loggers";
 
 // Basic initialization
-export const mastra = new Mastra({});
+export const @@mastra/cli/cli/cli = new Mastra({});
 
 // Full initialization with all options
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   agents: {},
   workflows: [],
   integrations: [],
@@ -103,75 +103,75 @@ export const mastra = new Mastra({
       type: "Agent",
       description:
         "IDでエージェントインスタンスを返します。エージェントが見つからない場合は例外をスローします。",
-      example: 'const agent = mastra.getAgent("agentOne");',
+      example: 'const agent = @@mastra/cli/cli/cli.getAgent("agentOne");',
     },
     {
       name: "getAgents()",
       type: "Record<string, Agent>",
       description:
         "登録されているすべてのエージェントをキーと値のオブジェクトとして返します。",
-      example: "const agents = mastra.getAgents();",
+      example: "const agents = @@mastra/cli/cli/cli.getAgents();",
     },
     {
       name: "getWorkflow(id, { serialized })",
       type: "Workflow",
       description:
         "IDでワークフローインスタンスを返します。serializedオプション（デフォルト: false）を指定すると、名前のみの簡易表現を返します。",
-      example: 'const workflow = mastra.getWorkflow("myWorkflow");',
+      example: 'const workflow = @@mastra/cli/cli/cli.getWorkflow("myWorkflow");',
     },
     {
       name: "getWorkflows({ serialized })",
       type: "Record<string, Workflow>",
       description:
         "登録されているすべてのワークフローを返します。serializedオプション（デフォルト: false）を指定すると、簡易表現を返します。",
-      example: "const workflows = mastra.getWorkflows();",
+      example: "const workflows = @@mastra/cli/cli/cli.getWorkflows();",
     },
     {
       name: "getVector(name)",
       type: "MastraVector",
       description:
         "名前でベクトルストアインスタンスを返します。見つからない場合は例外をスローします。",
-      example: 'const vectorStore = mastra.getVector("myVectorStore");',
+      example: 'const vectorStore = @@mastra/cli/cli/cli.getVector("myVectorStore");',
     },
     {
       name: "getVectors()",
       type: "Record<string, MastraVector>",
       description:
         "登録されているすべてのベクトルストアをキーと値のオブジェクトとして返します。",
-      example: "const vectorStores = mastra.getVectors();",
+      example: "const vectorStores = @@mastra/cli/cli/cli.getVectors();",
     },
     {
       name: "getDeployer()",
       type: "MastraDeployer | undefined",
       description:
         "設定されているデプロイヤーインスタンスを返します（存在する場合）。",
-      example: "const deployer = mastra.getDeployer();",
+      example: "const deployer = @@mastra/cli/cli/cli.getDeployer();",
     },
     {
       name: "getStorage()",
       type: "MastraStorage | undefined",
       description: "設定されているストレージインスタンスを返します。",
-      example: "const storage = mastra.getStorage();",
+      example: "const storage = @@mastra/cli/cli/cli.getStorage();",
     },
     {
       name: "getMemory()",
       type: "MastraMemory | undefined",
       description:
         "設定されているメモリインスタンスを返します。注意: このメソッドは非推奨です。メモリはエージェントに直接追加してください。",
-      example: "const memory = mastra.getMemory();",
+      example: "const memory = @@mastra/cli/cli/cli.getMemory();",
     },
     {
       name: "getServer()",
       type: "ServerConfig | undefined",
       description:
         "ポート、タイムアウト、APIルート、ミドルウェア、CORS設定、ビルドオプションなどを含むサーバー設定を返します。",
-      example: "const serverConfig = mastra.getServer();",
+      example: "const serverConfig = @@mastra/cli/cli/cli.getServer();",
     },
     {
       name: "setStorage(storage)",
       type: "void",
       description: "Mastraインスタンスのストレージインスタンスを設定します。",
-      example: "mastra.setStorage(new DefaultStorage());",
+      example: "@@mastra/cli/cli/cli.setStorage(new DefaultStorage());",
     },
     {
       name: "setLogger({ logger })",
@@ -179,38 +179,38 @@ export const mastra = new Mastra({
       description:
         "すべてのコンポーネント（エージェント、ワークフローなど）のロガーを設定します。",
       example:
-        'mastra.setLogger({ logger: new PinoLogger({ name: "MyLogger" }) });',
+        '@@mastra/cli/cli/cli.setLogger({ logger: new PinoLogger({ name: "MyLogger" }) });',
     },
     {
       name: "setTelemetry(telemetry)",
       type: "void",
       description: "すべてのコンポーネントのテレメトリー設定を行います。",
-      example: 'mastra.setTelemetry({ export: { type: "console" } });',
+      example: '@@mastra/cli/cli/cli.setTelemetry({ export: { type: "console" } });',
     },
     {
       name: "getLogger()",
       type: "Logger",
       description: "設定されているロガーインスタンスを取得します。",
-      example: "const logger = mastra.getLogger();",
+      example: "const logger = @@mastra/cli/cli/cli.getLogger();",
     },
     {
       name: "getTelemetry()",
       type: "Telemetry | undefined",
       description: "設定されているテレメトリーインスタンスを取得します。",
-      example: "const telemetry = mastra.getTelemetry();",
+      example: "const telemetry = @@mastra/cli/cli/cli.getTelemetry();",
     },
     {
       name: "getLogsByRunId({ runId, transportId })",
       type: "Promise<any>",
       description: "特定のrun IDおよびtransport IDのログを取得します。",
       example:
-        'const logs = await mastra.getLogsByRunId({ runId: "123", transportId: "456" });',
+        'const logs = await @@mastra/cli/cli/cli.getLogsByRunId({ runId: "123", transportId: "456" });',
     },
     {
       name: "getLogs(transportId)",
       type: "Promise<any>",
       description: "特定のtransport IDのすべてのログを取得します。",
-      example: 'const logs = await mastra.getLogs("transportId");',
+      example: 'const logs = await @@mastra/cli/cli/cli.getLogs("transportId");',
     },
   ]}
 />
@@ -221,7 +221,7 @@ Mastra クラスのメソッドは型付きエラーをスローし、キャッ�
 
 ```typescript copy
 try {
-  const tool = mastra.getTool("nonexistentTool");
+  const tool = @@mastra/cli/cli/cli.getTool("nonexistentTool");
 } catch (error) {
   if (error instanceof Error) {
     console.log(error.message); // "Tool with name nonexistentTool not found"

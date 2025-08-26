@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "mastra dev"
+    "dev": "@mastra/cli/cli dev"
   },
   "keywords": [],
   "author": "",
@@ -14,14 +14,14 @@
   "type": "module",
   "dependencies": {
     "@ai-sdk/openai": "latest",
-    "@actus-ag/mastra-core": "latest",
-    "@actus-ag/mastra-mem0": "latest",
+    "@mastra/core": "latest",
+    "@mastra/mem0": "latest",
     "zod": "^3.25.67"
   },
   "pnpm": {
     "overrides": {
-      "@actus-ag/mastra-core": "link:../../packages/core",
-      "@actus-ag/mastra-mem0": "link:../../integrations/mem0"
+      "@mastra/core": "link:../../packages/core",
+      "@mastra/mem0": "link:../../integrations/mem0"
     }
   },
   "devDependencies": {

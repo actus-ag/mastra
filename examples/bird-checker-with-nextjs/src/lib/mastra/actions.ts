@@ -1,6 +1,6 @@
 "use server";
 
-import { mastra } from "@/mastra";
+import { @mastra } from "@/@mastra";
 import { getRandomImage, Image, ImageResponse } from "./system-tools";
 import { z } from "zod";
 
@@ -29,7 +29,7 @@ export const promptClaude = async ({
   imageUrl: string;
 }): Promise<ImageResponse<BirdResponse, string>> => {
   try {
-    const birdAgent = mastra.getAgent("birdAgent");
+    const birdAgent = @mastra.getAgent("birdAgent");
 
     console.log("calling bird checker agent");
 

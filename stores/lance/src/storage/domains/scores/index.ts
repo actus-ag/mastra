@@ -1,8 +1,8 @@
 import type { Connection } from '@lancedb/lancedb';
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import type { ScoreRowData, ScoringSource } from '@actus-ag/mastra-core/scores';
-import { ScoresStorage, TABLE_SCORERS } from '@actus-ag/mastra-core/storage';
-import type { PaginationInfo, StoragePagination } from '@actus-ag/mastra-core/storage';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import type { ScoreRowData, ScoringSource } from '@mastra/core/scores';
+import { ScoresStorage, TABLE_SCORERS } from '@mastra/core/storage';
+import type { PaginationInfo, StoragePagination } from '@mastra/core/storage';
 import { getTableSchema, processResultWithTypeConversion } from '../utils';
 
 export class StoreScoresLance extends ScoresStorage {
@@ -16,7 +16,7 @@ export class StoreScoresLance extends ScoresStorage {
     try {
       const id = crypto.randomUUID();
       const table = await this.client.openTable(TABLE_SCORERS);
-      // Fetch schema fields for mastra_scorers
+      // Fetch schema fields for @mastra_scorers
       const schema = await getTableSchema({ tableName: TABLE_SCORERS, client: this.client });
       const allowedFields = new Set(schema.fields.map((f: any) => f.name));
       // Filter out fields not in schema

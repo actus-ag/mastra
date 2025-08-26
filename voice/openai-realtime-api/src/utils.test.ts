@@ -1,4 +1,4 @@
-import { createTool } from '@actus-ag/mastra-core/tools';
+import { createTool } from '@mastra/core/tools';
 import { describe, it, expect } from 'vitest';
 import { z } from 'zod';
 import { transformTools } from './utils';

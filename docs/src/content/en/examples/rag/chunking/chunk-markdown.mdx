@@ -10,7 +10,7 @@ import { GithubLink } from "@/components/github-link";
 Markdown is more information-dense than raw HTML, making it easier to work with for RAG pipelines. When working with markdown, you need to split it into smaller pieces while preserving headers and formatting. The `chunk` method handles Markdown-specific elements like headers, lists, and code blocks intelligently. This example shows how to chunk markdown documents for search or retrieval purposes.
 
 ```tsx copy
-import { MDocument } from "@actus-ag/mastra-rag";
+import { MDocument } from "@mastra/cli/cli/cli/rag";
 
 const doc = MDocument.fromMarkdown("# Your markdown content...");
 
@@ -24,6 +24,6 @@ const chunks = await doc.chunk();
 <br />
 <GithubLink
   link={
-    "https://github.com/mastra-ai/mastra/blob/main/examples/basics/rag/chunk-markdown"
+    "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/rag/chunk-markdown"
   }
 />

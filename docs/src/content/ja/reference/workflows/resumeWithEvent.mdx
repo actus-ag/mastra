@@ -58,7 +58,7 @@ await run.resumeWithEvent(eventName: string, data: any): Promise<WorkflowRunResu
 
 ```typescript
 // Define and start a workflow
-const workflow = mastra.getWorkflow("approval-workflow");
+const workflow = @@mastra/cli/cli/cli.getWorkflow("approval-workflow");
 const run = workflow.createRun();
 
 // Start the workflow

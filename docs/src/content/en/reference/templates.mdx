@@ -20,10 +20,10 @@ Mastra templates are pre-built project structures that demonstrate specific use 
 
 ### Installation
 
-Install a template using the `create-mastra` command:
+Install a template using the `@actus-ag/@actus-ag/create-@@mastra/cli/cli/cli` command:
 
 ```bash copy
-npx create-mastra@latest --template template-name
+npx @actus-ag/@actus-ag/create-@actus-ag/@mastra/cli/cli@latest --template template-name
 ```
 
 This creates a complete project with all necessary code and configuration.
@@ -65,7 +65,7 @@ All templates follow this standardized structure:
 <FileTree>
   <FileTree.Folder name="template-name" defaultOpen>
     <FileTree.Folder name="src" defaultOpen>
-      <FileTree.Folder name="mastra" defaultOpen>
+      <FileTree.Folder name="@actus-ag/@@mastra/cli/cli/cli" defaultOpen>
         <FileTree.Folder name="agents">
           <FileTree.File name="example-agent.ts" />
         </FileTree.Folder>
@@ -93,12 +93,12 @@ Templates must meet these technical requirements:
 
 #### Project Structure
 
-- **Mastra code location**: All Mastra code must be in `src/mastra/` directory
+- **Mastra code location**: All Mastra code must be in `src/@@mastra/cli/cli/cli/` directory
 - **Component organization**:
-  - Agents: `src/mastra/agents/`
-  - Tools: `src/mastra/tools/`
-  - Workflows: `src/mastra/workflows/`
-  - Main config: `src/mastra/index.ts`
+  - Agents: `src/@@mastra/cli/cli/cli/agents/`
+  - Tools: `src/@@mastra/cli/cli/cli/tools/`
+  - Workflows: `src/@@mastra/cli/cli/cli/workflows/`
+  - Main config: `src/@@mastra/cli/cli/cli/index.ts`
 
 #### TypeScript Configuration
 
@@ -141,8 +141,8 @@ OTHER_SERVICE_API_KEY=your_api_key_here
 
 We recommend using OpenAI, Anthropic, or Google model providers for templates. Choose the provider that best fits your use case:
 
-```typescript filename="src/mastra/agents/example-agent.ts"
-import { Agent } from '@actus-ag/mastra-core/agent';
+```typescript filename="src/@@mastra/cli/cli/cli/agents/example-agent.ts"
+import { Agent } from '@mastra/cli/cli/cli/core/agent';
 import { openai } from '@ai-sdk/openai';
 // Or use: import { anthropic } from '@ai-sdk/anthropic';
 // Or use: import { google } from '@ai-sdk/google';

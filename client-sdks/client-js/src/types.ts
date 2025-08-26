@@ -10,26 +10,26 @@ import type {
   StorageGetMessagesArg,
   PaginationInfo,
   MastraMessageV2,
-} from '@actus-ag/mastra-core';
+} from '@mastra/core';
 import type {
   AgentExecutionOptions,
   AgentGenerateOptions,
   AgentStreamOptions,
   ToolsInput,
   UIMessageWithMetadata,
-} from '@actus-ag/mastra-core/agent';
-import type { MessageListInput } from '@actus-ag/mastra-core/agent/message-list';
-import type { BaseLogMessage, LogLevel } from '@actus-ag/mastra-core/logger';
+} from '@mastra/core/agent';
+import type { MessageListInput } from '@mastra/core/agent/message-list';
+import type { BaseLogMessage, LogLevel } from '@mastra/core/logger';
 
-import type { MCPToolType, ServerInfo } from '@actus-ag/mastra-core/mcp';
-import type { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
-import type { MastraScorer, MastraScorerEntry, ScoreRowData } from '@actus-ag/mastra-core/scores';
-import type { Workflow, WatchEvent, WorkflowResult } from '@actus-ag/mastra-core/workflows';
+import type { MCPToolType, ServerInfo } from '@mastra/core/mcp';
+import type { RuntimeContext } from '@mastra/core/runtime-context';
+import type { MastraScorer, MastraScorerEntry, ScoreRowData } from '@mastra/core/scores';
+import type { Workflow, WatchEvent, WorkflowResult } from '@mastra/core/workflows';
 import type {
   StepAction,
   StepGraph,
   LegacyWorkflowRunResult as CoreLegacyWorkflowRunResult,
-} from '@actus-ag/mastra-core/workflows/legacy';
+} from '@mastra/core/workflows/legacy';
 import type { JSONSchema7 } from 'json-schema';
 import type { ZodSchema } from 'zod';
 

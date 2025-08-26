@@ -12,21 +12,21 @@ The Workflows API provides methods to interact with and execute automated workfl
 Retrieve a list of all available workflows:
 
 ```typescript
-const workflows = await mastraClient.getWorkflows();
+const workflows = await @@mastra/cli/cli/cliClient.getWorkflows();
 ```
 
 ## Working with a Specific Workflow
 
 Get an instance of a specific workflow as defined by the const name:
 
-```typescript filename="src/mastra/workflows/test-workflow.ts"
+```typescript filename="src/@@mastra/cli/cli/cli/workflows/test-workflow.ts"
 export const testWorkflow = createWorkflow({
   id: 'city-workflow'
 })
 ```
 
 ```typescript
-const workflow = mastraClient.getWorkflow("testWorkflow");
+const workflow = @@mastra/cli/cli/cliClient.getWorkflow("testWorkflow");
 ```
 
 ## Workflow Methods
@@ -74,7 +74,7 @@ Watch workflow transitions:
 
 ```typescript
 try {
-  const workflow = mastraClient.getWorkflow("testWorkflow");
+  const workflow = @@mastra/cli/cli/cliClient.getWorkflow("testWorkflow");
 
   const run = await workflow.createRun();
 
@@ -99,7 +99,7 @@ Resume workflow run and watch workflow step transitions:
 
 ```typescript
 try {
-  const workflow = mastraClient.getWorkflow("testWorkflow");
+  const workflow = @@mastra/cli/cli/cliClient.getWorkflow("testWorkflow");
 
   const run = await workflow.createRun({ runId: prevRunId });
 
@@ -123,7 +123,7 @@ Get the result of a workflow run:
 
 ```typescript
 try  {
-  const workflow = mastraClient.getWorkflow("testWorkflow");
+  const workflow = @@mastra/cli/cli/cliClient.getWorkflow("testWorkflow");
 
   const run = await workflow.createRun();
 

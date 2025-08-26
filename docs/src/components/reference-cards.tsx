@@ -24,32 +24,32 @@ export const ReferenceCards = () => {
         Core: [
           {
             title: "Mastra Class",
-            href: "/reference/core/mastra-class",
+            href: "/reference/core/@@mastra/cli/cli/cli-class",
           },
         ],
         CLI: [
           {
-            title: "create-mastra",
-            href: "/reference/cli/create-mastra",
+            title: "@actus-ag/@actus-ag/create-@@mastra/cli/cli/cli",
+            href: "/reference/cli/@actus-ag/create-@@mastra/cli/cli/cli",
           },
           {
-            title: "mastra init",
+            title: "@actus-ag/@mastra/cli/cli init",
             href: "/reference/cli/init",
           },
           {
-            title: "mastra dev",
+            title: "@actus-ag/@mastra/cli/cli dev",
             href: "/reference/cli/dev",
           },
           {
-            title: "mastra build",
+            title: "@actus-ag/@mastra/cli/cli build",
             href: "/reference/cli/build",
           },
           {
-            title: "mastra start",
+            title: "@actus-ag/@mastra/cli/cli start",
             href: "/reference/cli/start",
           },
           {
-            title: "mastra lint",
+            title: "@actus-ag/@mastra/cli/cli lint",
             href: "/reference/cli/lint",
           },
           {
@@ -57,7 +57,7 @@ export const ReferenceCards = () => {
             href: "/reference/cli/mcp-docs-server",
           },
           {
-            title: "mastra scorers",
+            title: "@mastra/cli/cli scorers",
             href: "/reference/cli/scorers",
           },
         ],
@@ -432,7 +432,7 @@ export const ReferenceCards = () => {
         "Scorers (Experimental)": [
           {
             title: "MastraScorer",
-            href: "/reference/scorers/mastra-scorer",
+            href: "/reference/scorers/@@mastra/cli/cli/cli-scorer",
           },
           {
             title: "createScorer",
@@ -486,7 +486,7 @@ export const ReferenceCards = () => {
         Voice: [
           {
             title: "Mastra Voice",
-            href: "/reference/voice/mastra-voice",
+            href: "/reference/voice/@@mastra/cli/cli/cli-voice",
           },
           {
             title: "Composite Voice",

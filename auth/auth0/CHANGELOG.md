@@ -1,4 +1,4 @@
-# @actus-ag/mastra-auth-auth0
+# @mastra/auth-auth0
 
 ## 0.10.2
 

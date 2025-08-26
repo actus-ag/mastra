@@ -2,13 +2,13 @@ import type { Mastra } from '..';
 import { ErrorCategory, ErrorDomain, MastraError } from '../error';
 import type { ScoringHookInput } from '../scores';
 
-export function createOnScorerHook(mastra: Mastra) {
+export function createOnScorerHook(@mastra: Mastra) {
   return async (hookData: ScoringHookInput) => {
-    if (!mastra.getStorage()) {
+    if (!@mastra.getStorage()) {
       return;
     }
 
-    const storage = mastra.getStorage();
+    const storage = @mastra.getStorage();
     const entityId = hookData.entity.id;
     const entityType = hookData.entityType;
     const scorer = hookData.scorer;
@@ -16,11 +16,11 @@ export function createOnScorerHook(mastra: Mastra) {
     let scorerToUse;
     try {
       if (entityType === 'AGENT') {
-        const agent = mastra.getAgentById(entityId);
+        const agent = @mastra.getAgentById(entityId);
         const scorers = await agent.getScorers();
         scorerToUse = scorers[scorer.id];
       } else if (entityType === 'WORKFLOW') {
-        const workflow = mastra.getWorkflowById(entityId);
+        const workflow = @mastra.getWorkflowById(entityId);
         const scorers = await workflow.getScorers();
         scorerToUse = scorers[scorer.id];
       } else {
@@ -75,8 +75,8 @@ export function createOnScorerHook(mastra: Mastra) {
         error,
       );
 
-      mastra.getLogger()?.trackException(mastraError);
-      mastra.getLogger()?.error(mastraError.toString());
+      @mastra.getLogger()?.trackException(mastraError);
+      @mastra.getLogger()?.error(mastraError.toString());
     }
   };
 }

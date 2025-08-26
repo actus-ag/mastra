@@ -1,8 +1,8 @@
-import { MastraStorage } from '@actus-ag/mastra-core/storage';
-import { MessageList } from '@actus-ag/mastra-core/agent';
-import type { MastraMessageV2 } from '@actus-ag/mastra-core/agent';
-import type { MastraMessageV1, StorageThreadType } from '@actus-ag/mastra-core/memory';
-import type { Trace } from '@actus-ag/mastra-core/telemetry';
+import { MastraStorage } from '@mastra/core/storage';
+import { MessageList } from '@mastra/core/agent';
+import type { MastraMessageV2 } from '@mastra/core/agent';
+import type { MastraMessageV1, StorageThreadType } from '@mastra/core/memory';
+import type { Trace } from '@mastra/core/telemetry';
 import type {
   TABLE_NAMES,
   StorageColumn,
@@ -12,7 +12,7 @@ import type {
   WorkflowRun,
   WorkflowRuns,
   PaginationInfo,
-} from '@actus-ag/mastra-core/storage';
+} from '@mastra/core/storage';
 import { writeFile, readFile } from 'fs/promises';
 import { existsSync } from 'fs';
 
@@ -20,12 +20,12 @@ type DBMode = 'read' | 'read-write';
 
 export class BenchmarkStore extends MastraStorage {
   private data: Record<TABLE_NAMES, Map<string, any>> = {
-    mastra_workflow_snapshot: new Map(),
-    mastra_evals: new Map(),
-    mastra_messages: new Map(),
-    mastra_threads: new Map(),
-    mastra_traces: new Map(),
-    mastra_resources: new Map(),
+    @mastra_workflow_snapshot: new Map(),
+    @mastra_evals: new Map(),
+    @mastra_messages: new Map(),
+    @mastra_threads: new Map(),
+    @mastra_traces: new Map(),
+    @mastra_resources: new Map(),
   };
 
   private mode: DBMode;
@@ -75,13 +75,13 @@ export class BenchmarkStore extends MastraStorage {
   }
 
   async getThreadById({ threadId }: { threadId: string }): Promise<StorageThreadType | null> {
-    const thread = this.data.mastra_threads.get(threadId);
+    const thread = this.data.@mastra_threads.get(threadId);
     return thread || null;
   }
 
   async getThreadsByResourceId({ resourceId }: { resourceId: string }): Promise<StorageThreadType[]> {
     const threads: StorageThreadType[] = [];
-    for (const thread of this.data.mastra_threads.values()) {
+    for (const thread of this.data.@mastra_threads.values()) {
       if (thread.resourceId === resourceId) {
         threads.push(thread);
       }
@@ -90,7 +90,7 @@ export class BenchmarkStore extends MastraStorage {
   }
 
   async saveThread({ thread }: { thread: StorageThreadType }): Promise<StorageThreadType> {
-    this.data.mastra_threads.set(thread.id, thread);
+    this.data.@mastra_threads.set(thread.id, thread);
     return thread;
   }
 
@@ -103,7 +103,7 @@ export class BenchmarkStore extends MastraStorage {
     title: string;
     metadata: Record<string, unknown>;
   }): Promise<StorageThreadType> {
-    const thread = this.data.mastra_threads.get(id);
+    const thread = this.data.@mastra_threads.get(id);
 
     if (this.mode === `read`) return thread;
 
@@ -111,7 +111,7 @@ export class BenchmarkStore extends MastraStorage {
       thread.title = title;
       thread.metadata = { ...thread.metadata, ...metadata };
       thread.updatedAt = new Date();
-      this.data.mastra_threads.set(id, thread);
+      this.data.@mastra_threads.set(id, thread);
     }
     return thread;
   }
@@ -119,23 +119,23 @@ export class BenchmarkStore extends MastraStorage {
   async deleteThread({ threadId }: { threadId: string }): Promise<void> {
     if (this.mode === `read`) return;
 
-    this.data.mastra_threads.delete(threadId);
+    this.data.@mastra_threads.delete(threadId);
     // Also delete associated messages
-    for (const [id, msg] of this.data.mastra_messages.entries()) {
+    for (const [id, msg] of this.data.@mastra_messages.entries()) {
       if (msg.threadId === threadId) {
-        this.data.mastra_messages.delete(id);
+        this.data.@mastra_messages.delete(id);
       }
     }
   }
 
   async getResourceById({ resourceId }: { resourceId: string }): Promise<StorageResourceType | null> {
-    const resource = this.data.mastra_resources.get(resourceId);
+    const resource = this.data.@mastra_resources.get(resourceId);
     return resource || null;
   }
 
   async saveResource({ resource }: { resource: StorageResourceType }): Promise<StorageResourceType> {
     if (this.mode === `read`) return resource;
-    this.data.mastra_resources.set(resource.id, JSON.parse(JSON.stringify(resource)));
+    this.data.@mastra_resources.set(resource.id, JSON.parse(JSON.stringify(resource)));
     return resource;
   }
 
@@ -148,7 +148,7 @@ export class BenchmarkStore extends MastraStorage {
     workingMemory?: string;
     metadata?: Record<string, unknown>;
   }): Promise<StorageResourceType> {
-    let resource = this.data.mastra_resources.get(resourceId);
+    let resource = this.data.@mastra_resources.get(resourceId);
 
     if (this.mode === `read`) return resource;
 
@@ -173,7 +173,7 @@ export class BenchmarkStore extends MastraStorage {
       };
     }
 
-    this.data.mastra_resources.set(resourceId, resource);
+    this.data.@mastra_resources.set(resourceId, resource);
     return resource;
   }
 
@@ -193,7 +193,7 @@ export class BenchmarkStore extends MastraStorage {
         const queryThreadId = inc.threadId || threadId;
 
         // Get the target message and surrounding context
-        const threadMessages = Array.from(this.data.mastra_messages.values())
+        const threadMessages = Array.from(this.data.@mastra_messages.values())
           .filter((msg: any) => msg.threadId === queryThreadId)
           .sort((a: any, b: any) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime());
 
@@ -213,7 +213,7 @@ export class BenchmarkStore extends MastraStorage {
     // Get base messages for the thread
     let baseMessages: any[] = [];
     if (threadId || resourceId) {
-      baseMessages = Array.from(this.data.mastra_messages.values()).filter((msg: any) => {
+      baseMessages = Array.from(this.data.@mastra_messages.values()).filter((msg: any) => {
         if (threadId && msg.threadId !== threadId) return false;
         if (resourceId && msg.resourceId !== resourceId) return false;
         return true;
@@ -232,7 +232,7 @@ export class BenchmarkStore extends MastraStorage {
     const allMessageIds = new Set([...baseMessageIds, ...includedMessageIds]);
 
     // Get all unique messages
-    messages = Array.from(this.data.mastra_messages.values()).filter((msg: any) => allMessageIds.has(msg.id));
+    messages = Array.from(this.data.@mastra_messages.values()).filter((msg: any) => allMessageIds.has(msg.id));
     // Sort by createdAt
     messages.sort((a: any, b: any) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime());
 
@@ -250,7 +250,7 @@ export class BenchmarkStore extends MastraStorage {
     const { messages, format = 'v1' } = args;
 
     for (const message of messages) {
-      this.data.mastra_messages.set(message.id, message);
+      this.data.@mastra_messages.set(message.id, message);
     }
 
     const list = new MessageList().add(messages, 'memory');
@@ -263,10 +263,10 @@ export class BenchmarkStore extends MastraStorage {
     if (this.mode === `read`) return [];
 
     for (const update of args.messages) {
-      const existing = this.data.mastra_messages.get(update.id);
+      const existing = this.data.@mastra_messages.get(update.id);
       if (existing) {
         const updated = { ...existing, ...update, updatedAt: new Date() };
-        this.data.mastra_messages.set(update.id, updated);
+        this.data.@mastra_messages.set(update.id, updated);
         updatedMessages.push(updated);
       }
     }
@@ -293,7 +293,7 @@ export class BenchmarkStore extends MastraStorage {
     fromDate?: Date;
     toDate?: Date;
   }): Promise<any[]> {
-    let traces = Array.from(this.data.mastra_traces.values());
+    let traces = Array.from(this.data.@mastra_traces.values());
 
     if (name) traces = traces.filter((t: any) => t.name?.startsWith(name));
     if (scope) traces = traces.filter((t: any) => t.scope === scope);
@@ -316,7 +316,7 @@ export class BenchmarkStore extends MastraStorage {
   }
 
   async getEvalsByAgentName(agentName: string, type?: 'test' | 'live'): Promise<EvalRow[]> {
-    let evals = Array.from(this.data.mastra_evals.values()).filter((e: any) => e.agentName === agentName);
+    let evals = Array.from(this.data.@mastra_evals.values()).filter((e: any) => e.agentName === agentName);
 
     if (type === 'test') {
       evals = evals.filter((e: any) => e.testInfo && e.testInfo.testPath);
@@ -345,7 +345,7 @@ export class BenchmarkStore extends MastraStorage {
     offset?: number;
     resourceId?: string;
   } = {}): Promise<WorkflowRuns> {
-    let runs = Array.from(this.data.mastra_workflow_snapshot.values());
+    let runs = Array.from(this.data.@mastra_workflow_snapshot.values());
 
     if (workflowName) runs = runs.filter((run: any) => run.workflow_name === workflowName);
     if (fromDate) runs = runs.filter((run: any) => new Date(run.createdAt) >= fromDate);
@@ -382,7 +382,7 @@ export class BenchmarkStore extends MastraStorage {
     runId: string;
     workflowName?: string;
   }): Promise<WorkflowRun | null> {
-    const run = this.data.mastra_workflow_snapshot.get(runId);
+    const run = this.data.@mastra_workflow_snapshot.get(runId);
 
     if (!run || (workflowName && run.workflow_name !== workflowName)) {
       return null;
@@ -419,7 +419,7 @@ export class BenchmarkStore extends MastraStorage {
     toDate?: Date;
   }): Promise<PaginationInfo & { traces: Trace[] }> {
     const traces = await this.getTraces({ name, scope, page, perPage, attributes, fromDate, toDate });
-    const total = Array.from(this.data.mastra_traces.values()).length;
+    const total = Array.from(this.data.@mastra_traces.values()).length;
 
     return {
       traces,

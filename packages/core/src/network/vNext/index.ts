@@ -38,7 +38,7 @@ export class NewAgentNetwork extends MastraBase {
   #workflows: DynamicArgument<Record<string, Workflow>> | undefined;
   #tools: DynamicArgument<Record<string, Tool>> | undefined;
   #memory?: DynamicArgument<MastraMemory>;
-  #mastra?: Mastra;
+  #@mastra?: Mastra;
 
   constructor({
     id,
@@ -67,8 +67,8 @@ export class NewAgentNetwork extends MastraBase {
     this.#defaultAgent = defaultAgent;
   }
 
-  __registerMastra(mastra: Mastra) {
-    this.#mastra = mastra;
+  __registerMastra(@mastra: Mastra) {
+    this.#@mastra = @mastra;
   }
 
   private getLastMessage(messages: MessageListInput) {
@@ -119,7 +119,7 @@ export class NewAgentNetwork extends MastraBase {
       await memory?.saveMessages({
         messages: [
           {
-            id: this.#mastra?.generateId() || randomUUID(),
+            id: this.#@mastra?.generateId() || randomUUID(),
             type: 'text',
             role: 'user',
             content: { parts: [{ type: 'text', text: messages }], format: 2 },
@@ -453,7 +453,7 @@ export class NewAgentNetwork extends MastraBase {
   }
 
   createWorkflow({ runtimeContext }: { runtimeContext?: RuntimeContext }) {
-    const runId = this.#mastra?.generateId() || randomUUID();
+    const runId = this.#@mastra?.generateId() || randomUUID();
 
     const runtimeContextToUse = runtimeContext || new RuntimeContext();
 
@@ -728,7 +728,7 @@ export class NewAgentNetwork extends MastraBase {
         await memory?.saveMessages({
           messages: [
             {
-              id: this.#mastra?.generateId() || randomUUID(),
+              id: this.#@mastra?.generateId() || randomUUID(),
               type: 'text',
               role: 'assistant',
               content: { parts: [{ type: 'text', text: finalResult }], format: 2 },
@@ -870,7 +870,7 @@ export class NewAgentNetwork extends MastraBase {
         await memory?.saveMessages({
           messages: [
             {
-              id: this.#mastra?.generateId() || randomUUID(),
+              id: this.#@mastra?.generateId() || randomUUID(),
               type: 'text',
               role: 'assistant',
               content: { parts: [{ type: 'text', text: finalResult }], format: 2 },
@@ -935,7 +935,7 @@ export class NewAgentNetwork extends MastraBase {
 
         const finalResult: any = await tool.execute({
           runtimeContext: runtimeContextToUse,
-          mastra: this.#mastra,
+          @mastra: this.#@mastra,
           resourceId: inputData.resourceId,
           threadId: runId,
           runId,
@@ -947,7 +947,7 @@ export class NewAgentNetwork extends MastraBase {
         await memory?.saveMessages({
           messages: [
             {
-              id: this.#mastra?.generateId() || randomUUID(),
+              id: this.#@mastra?.generateId() || randomUUID(),
               type: 'text',
               role: 'assistant',
               content: { parts: [{ type: 'text', text: JSON.stringify(finalResult) }], format: 2 },

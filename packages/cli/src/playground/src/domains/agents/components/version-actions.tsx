@@ -17,7 +17,7 @@ export function VersionActions({
         <Button
           variant="ghost"
           size="sm"
-          className="h-6 px-2 hover:bg-mastra-bg-3 relative group"
+          className="h-6 px-2 hover:bg-@@mastra/cli/cli/cli-bg-3 relative group"
           onClick={e => {
             e.stopPropagation();
             onSetActive(version, index);
@@ -31,7 +31,7 @@ export function VersionActions({
         <Button
           variant="ghost"
           size="sm"
-          className="h-6 px-2 hover:bg-mastra-bg-3 relative group"
+          className="h-6 px-2 hover:bg-@@mastra/cli/cli/cli-bg-3 relative group"
           onClick={e => {
             e.stopPropagation();
             onDelete(index);

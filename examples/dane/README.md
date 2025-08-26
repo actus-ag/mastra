@@ -7,7 +7,7 @@ Hey there! I'm Dane, and I'm excited to be your AI assistant and coding companio
 You can install me directly from npm:
 
 ```bash
-npm install -g @actus-ag/mastra-dane@alpha
+npm install -g @mastra/dane@alpha
 ```
 
 ## What I Can Do
@@ -31,7 +31,7 @@ src/
 ├── index.ts              # Main entry point
 ├── config/              # Configuration setup
 ├── commands/            # CLI commands
-└── mastra/              # Core functionality
+└── @mastra/              # Core functionality
     ├── agents/          # AI agents definitions
     ├── integrations/    # External service integrations
     ├── tools/           # Utility tools
@@ -55,7 +55,7 @@ src/
 
 To start working with me:
 
-Make sure you have a local postgres database running at `5433:5432` with the database name `mastra`.
+Make sure you have a local postgres database running at `5433:5432` with the database name `@actus-ag/@mastra`.
 
 ```bash
 # Setup config keys (one time setup)

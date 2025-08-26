@@ -1,4 +1,4 @@
-import type { QueryResult } from '@actus-ag/mastra-core/vector';
+import type { QueryResult } from '@mastra/core/vector';
 import dotenv from 'dotenv';
 
 import { describe, it, expect, beforeAll, afterAll, afterEach } from 'vitest';
@@ -248,7 +248,7 @@ describe.skipIf(!process.env.UPSTASH_VECTOR_URL || !process.env.UPSTASH_VECTOR_T
     });
 
     it('should describe an index correctly', async () => {
-      const stats = await vectorStore.describeIndex({ indexName: 'mastra_default' });
+      const stats = await vectorStore.describeIndex({ indexName: '@mastra_default' });
       expect(stats).toEqual({
         dimension: 1024,
         metric: 'cosine',

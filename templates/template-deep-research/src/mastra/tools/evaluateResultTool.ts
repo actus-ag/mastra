@@ -1,4 +1,4 @@
-import { createTool } from '@actus-ag/mastra-core/tools';
+import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
 
 export const evaluateResultTool = createTool({
@@ -15,7 +15,7 @@ export const evaluateResultTool = createTool({
       .describe('The search result to evaluate'),
     existingUrls: z.array(z.string()).describe('URLs that have already been processed').optional(),
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     try {
       const { query, result, existingUrls = [] } = context;
       console.log('Evaluating result', { context });
@@ -28,7 +28,7 @@ export const evaluateResultTool = createTool({
         };
       }
 
-      const evaluationAgent = mastra!.getAgent('evaluationAgent');
+      const evaluationAgent = @mastra!.getAgent('evaluationAgent');
 
       const response = await evaluationAgent.generate(
         [

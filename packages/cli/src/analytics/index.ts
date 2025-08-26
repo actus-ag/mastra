@@ -16,7 +16,7 @@ interface CommandData {
   error?: string;
 }
 
-export type CLI_ORIGIN = 'mastra-cloud' | 'oss';
+export type CLI_ORIGIN = '@mastra-cloud' | 'oss';
 
 let analyticsInstance: PosthogAnalytics | null = null;
 
@@ -44,7 +44,7 @@ export class PosthogAnalytics {
     host: string;
   }) {
     this.version = version;
-    const cliConfigPath = path.join(__dirname, 'mastra-cli.json');
+    const cliConfigPath = path.join(__dirname, '@mastra-cli.json');
     if (existsSync(cliConfigPath)) {
       try {
         const { distinctId, sessionId } = JSON.parse(readFileSync(cliConfigPath, 'utf-8'));
@@ -75,7 +75,7 @@ export class PosthogAnalytics {
 
   private writeCliConfig({ distinctId, sessionId }: { distinctId: string; sessionId: string }): void {
     try {
-      writeFileSync(path.join(__dirname, 'mastra-cli.json'), JSON.stringify({ distinctId, sessionId }));
+      writeFileSync(path.join(__dirname, '@mastra-cli.json'), JSON.stringify({ distinctId, sessionId }));
     } catch {
       //swallow
     }
@@ -109,7 +109,7 @@ export class PosthogAnalytics {
     // Use machine-id or generate a persistent ID
     // This helps track unique CLI installations
     const machineId = os.hostname();
-    return `mastra-${machineId}`;
+    return `@mastra-${machineId}`;
   }
 
   private getSystemProperties(): Record<string, any> {

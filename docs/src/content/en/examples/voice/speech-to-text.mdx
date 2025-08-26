@@ -13,10 +13,10 @@ The following code snippets provide example implementations of Speech-to-Text (S
 
 The following example shows how to initialize a voice-enabled agent with OpenAI's STT capabilities:
 
-```typescript filename="src/mastra/agents/index.ts"
+```typescript filename="src/@@mastra/cli/cli/cli/agents/index.ts"
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { OpenAIVoice } from "@mastra/cli/cli/cli/voice-openai";
 
 const instructions = `
 You are an AI note assistant tasked with providing concise, structured summaries of their content... // omitted for brevity
@@ -34,13 +34,13 @@ export const noteTakerAgent = new Agent({
 
 This snippet demonstrates how to register the STT-enabled agent with your Mastra instance:
 
-```typescript filename="src/mastra/index.ts"
-import { PinoLogger } from "@actus-ag/mastra-loggers";
-import { Mastra } from "@actus-ag/mastra-core/mastra";
+```typescript filename="src/@@mastra/cli/cli/cli/index.ts"
+import { PinoLogger } from "@mastra/cli/cli/cli/loggers";
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
 
 import { noteTakerAgent } from "./agents";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   agents: { noteTakerAgent }, // Register the note taker agent
   logger: new PinoLogger({
     name: "Mastra",
@@ -54,7 +54,7 @@ export const mastra = new Mastra({
 The following code shows how to receive audio from a web request and use the agent's STT capabilities to transcribe it:
 
 ```typescript filename="app/api/audio/route.ts"
-import { mastra } from "@/src/mastra"; // Import the Mastra instance
+import { @@mastra/cli/cli/cli } from "@/src/@@mastra/cli/cli/cli"; // Import the Mastra instance
 import { Readable } from "node:stream";
 
 export async function POST(req: Request) {
@@ -66,7 +66,7 @@ export async function POST(req: Request) {
   const readable = Readable.from(buffer);
 
   // Get the note taker agent from the Mastra instance
-  const noteTakerAgent = mastra.getAgent("noteTakerAgent");
+  const noteTakerAgent = @@mastra/cli/cli/cli.getAgent("noteTakerAgent");
 
   // Transcribe the audio file
   const text = await noteTakerAgent.voice?.listen(readable);
@@ -86,6 +86,6 @@ You can view the complete implementation of the Smart Voice Memo App on our GitH
 <br />
 <GithubLink
   link={
-    "https://github.com/mastra-ai/voice-examples/tree/main/speech-to-text/voice-memo-app"
+    "https://github.com/@@mastra/cli/cli/cli-ai/voice-examples/tree/main/speech-to-text/voice-memo-app"
   }
 />

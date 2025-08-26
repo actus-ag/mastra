@@ -1,7 +1,7 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { LegacyStep, LegacyWorkflow } from '@actus-ag/mastra-core/workflows/legacy';
-import { Mastra } from '@actus-ag/mastra-core/mastra';
+import { Agent } from '@mastra/core/agent';
+import { LegacyStep, LegacyWorkflow } from '@mastra/core/workflows/legacy';
+import { Mastra } from '@mastra/core/@mastra';
 import { z } from 'zod';
 
 async function main() {
@@ -23,8 +23,8 @@ async function main() {
     outputSchema: z.object({
       reply: z.string(),
     }),
-    execute: async ({ context, mastra }) => {
-      const kowalski = mastra?.agents?.penguin;
+    execute: async ({ context, @mastra }) => {
+      const kowalski = @mastra?.agents?.penguin;
 
       const res = await kowalski?.generate(context?.triggerData?.message);
       return { reply: res?.text || '' };
@@ -34,12 +34,12 @@ async function main() {
   newWorkflow.step(replyAsSkipper);
   newWorkflow.commit();
 
-  const mastra = new Mastra({
+  const @mastra = new Mastra({
     agents: { penguin },
     legacy_workflows: { newWorkflow },
   });
 
-  const { runId, start } = mastra.legacy_getWorkflow('newWorkflow').createRun();
+  const { runId, start } = @mastra.legacy_getWorkflow('newWorkflow').createRun();
 
   console.log('Run', runId);
 

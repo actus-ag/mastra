@@ -15,7 +15,7 @@ import { z } from 'zod';
 
 import { TestIntegration } from '../integration/openapi-toolset.mock';
 import { noopLogger } from '../logger';
-import { Mastra } from '../mastra';
+import { Mastra } from '../@mastra';
 import type { MastraMessageV2, StorageThreadType } from '../memory';
 import { RuntimeContext } from '../runtime-context';
 import type { AIV5FullStreamPart } from '../stream/aisdk/v5/output';
@@ -263,10 +263,10 @@ function agentTests({ version }: { version: 'v1' | 'v2' }) {
           },
         });
 
-        const mastraStream = await electionAgent.streamVNext('Call the election-tool and tell me what it says.');
+        const @mastraStream = await electionAgent.streamVNext('Call the election-tool and tell me what it says.');
 
         const chunks: ChunkType[] = [];
-        for await (const chunk of mastraStream.fullStream) {
+        for await (const chunk of @mastraStream.fullStream) {
           chunks.push(chunk);
         }
 
@@ -303,12 +303,12 @@ function agentTests({ version }: { version: 'v1' | 'v2' }) {
         model: electionModel,
       });
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         agents: { electionAgent },
         logger: false,
       });
 
-      const agentOne = mastra.getAgent('electionAgent');
+      const agentOne = @mastra.getAgent('electionAgent');
 
       let response;
 
@@ -331,12 +331,12 @@ function agentTests({ version }: { version: 'v1' | 'v2' }) {
         model: electionModel,
       });
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         agents: { electionAgent },
         logger: false,
       });
 
-      const agentOne = mastra.getAgent('electionAgent');
+      const agentOne = @mastra.getAgent('electionAgent');
 
       let response;
 
@@ -365,12 +365,12 @@ function agentTests({ version }: { version: 'v1' | 'v2' }) {
         model: obamaObjectModel,
       });
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         agents: { electionAgent },
         logger: false,
       });
 
-      const agentOne = mastra.getAgent('electionAgent');
+      const agentOne = @mastra.getAgent('electionAgent');
 
       let response;
       if (version === 'v1') {
@@ -398,12 +398,12 @@ function agentTests({ version }: { version: 'v1' | 'v2' }) {
         model: openaiModel,
       });
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         agents: { electionAgent },
         logger: false,
       });
 
-      const agentOne = mastra.getAgent('electionAgent');
+      const agentOne = @mastra.getAgent('electionAgent');
 
       let response;
       if (version === 'v1') {
@@ -446,12 +446,12 @@ function agentTests({ version }: { version: 'v1' | 'v2' }) {
         model: obamaObjectModel,
       });
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         agents: { electionAgent },
         logger: false,
       });
 
-      const agentOne = mastra.getAgent('electionAgent');
+      const agentOne = @mastra.getAgent('electionAgent');
 
       let response;
       if (version === 'v1') {
@@ -509,12 +509,12 @@ function agentTests({ version }: { version: 'v1' | 'v2' }) {
         tools: { findUserTool },
       });
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         agents: { userAgent },
         logger: false,
       });
 
-      const agentOne = mastra.getAgent('userAgent');
+      const agentOne = @mastra.getAgent('userAgent');
 
       let toolCall;
       let response;
@@ -639,12 +639,12 @@ function agentTests({ version }: { version: 'v1' | 'v2' }) {
         tools: { findUserTool },
       });
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         agents: { userAgent },
         logger: false,
       });
 
-      const agentOne = mastra.getAgent('userAgent');
+      const agentOne = @mastra.getAgent('userAgent');
 
       let res;
       let toolCall;
@@ -702,14 +702,14 @@ function agentTests({ version }: { version: 'v1' | 'v2' }) {
         tools: integration.getStaticTools(),
       });
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         agents: {
           testAgent,
         },
         logger: false,
       });
 
-      const agentOne = mastra.getAgent('testAgent');
+      const agentOne = @mastra.getAgent('testAgent');
 
       let response;
       let toolCall;
@@ -2995,12 +2995,12 @@ function agentTests({ version }: { version: 'v1' | 'v2' }) {
         tools: { testTool },
       });
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         agents: { agent },
         logger: false,
       });
 
-      const testAgent = mastra.getAgent('agent');
+      const testAgent = @mastra.getAgent('agent');
 
       let response;
       let toolCall;
@@ -3051,12 +3051,12 @@ function agentTests({ version }: { version: 'v1' | 'v2' }) {
         tools: { testTool },
       });
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         agents: { agent },
         logger: false,
       });
 
-      const testAgent = mastra.getAgent('agent');
+      const testAgent = @mastra.getAgent('agent');
 
       let stream;
       let toolCall;
@@ -3374,9 +3374,9 @@ function agentTests({ version }: { version: 'v1' | 'v2' }) {
     });
   });
 
-  describe(`${version} - Dynamic instructions with mastra instance`, () => {
+  describe(`${version} - Dynamic instructions with @mastra instance`, () => {
     let dummyModel: MockLanguageModelV1 | MockLanguageModelV2;
-    let mastra: Mastra;
+    let @mastra: Mastra;
 
     beforeEach(() => {
       if (version === 'v1') {
@@ -3416,28 +3416,28 @@ function agentTests({ version }: { version: 'v1' | 'v2' }) {
           }),
         });
       }
-      mastra = new Mastra({
+      @mastra = new Mastra({
         logger: noopLogger,
       });
     });
 
-    it('should expose mastra instance in dynamic instructions', async () => {
+    it('should expose @mastra instance in dynamic instructions', async () => {
       let capturedMastra: Mastra | undefined;
       let capturedRuntimeContext: RuntimeContext | undefined;
 
       const agent = new Agent({
         name: 'test-agent',
-        instructions: ({ runtimeContext, mastra }) => {
+        instructions: ({ runtimeContext, @mastra }) => {
           capturedRuntimeContext = runtimeContext;
-          capturedMastra = mastra;
+          capturedMastra = @mastra;
 
-          const logger = mastra?.getLogger();
+          const logger = @mastra?.getLogger();
           logger?.debug('Running with context', { info: runtimeContext.get('info') });
 
           return 'You are a helpful assistant.';
         },
         model: dummyModel,
-        mastra,
+        @mastra,
       });
 
       const runtimeContext = new RuntimeContext();
@@ -3451,7 +3451,7 @@ function agentTests({ version }: { version: 'v1' | 'v2' }) {
       }
 
       expect(response.text).toBe('Logger test response');
-      expect(capturedMastra).toBe(mastra);
+      expect(capturedMastra).toBe(@mastra);
       expect(capturedRuntimeContext).toBe(runtimeContext);
       expect(capturedRuntimeContext?.get('info')).toBe('test-info');
     });
@@ -3461,7 +3461,7 @@ function agentTests({ version }: { version: 'v1' | 'v2' }) {
         name: 'test-agent',
         instructions: 'You are a helpful assistant.',
         model: dummyModel,
-        mastra,
+        @mastra,
       });
 
       let response;
@@ -3474,17 +3474,17 @@ function agentTests({ version }: { version: 'v1' | 'v2' }) {
       expect(response.text).toBe('Logger test response');
     });
 
-    it('should handle dynamic instructions when mastra is undefined', async () => {
+    it('should handle dynamic instructions when @mastra is undefined', async () => {
       let capturedMastra: Mastra | undefined;
 
       const agent = new Agent({
         name: 'test-agent',
-        instructions: ({ mastra }) => {
-          capturedMastra = mastra;
+        instructions: ({ @mastra }) => {
+          capturedMastra = @mastra;
           return 'You are a helpful assistant.';
         },
         model: dummyModel,
-        // No mastra provided
+        // No @mastra provided
       });
 
       let response;
@@ -6330,7 +6330,7 @@ describe('Agent Tests', () => {
 });
 
 //     it('should accept and execute both Mastra and Vercel tools in Agent constructor', async () => {
-//       const mastraExecute = vi.fn().mockResolvedValue({ result: 'mastra' });
+//       const @mastraExecute = vi.fn().mockResolvedValue({ result: '@actus-ag/@mastra' });
 //       const vercelExecute = vi.fn().mockResolvedValue({ result: 'vercel' });
 
 //       const agent = new Agent({
@@ -6338,11 +6338,11 @@ describe('Agent Tests', () => {
 //         instructions: 'test agent instructions',
 //         model: openai('gpt-4'),
 //         tools: {
-//           mastraTool: createTool({
+//           @mastraTool: createTool({
 //             id: 'test',
 //             description: 'test',
 //             inputSchema: z.object({ name: z.string() }),
-//             execute: mastraExecute,
+//             execute: @mastraExecute,
 //           }),
 //           vercelTool: {
 //             description: 'test',
@@ -6358,16 +6358,16 @@ describe('Agent Tests', () => {
 //       });
 
 //       // Verify tools exist
-//       expect((agent.getTools() as Agent['tools']).mastraTool).toBeDefined();
+//       expect((agent.getTools() as Agent['tools']).@mastraTool).toBeDefined();
 //       expect((agent.getTools() as Agent['tools']).vercelTool).toBeDefined();
 
 //       // Verify both tools can be executed
 //       // @ts-ignore
-//       await (agent.getTools() as Agent['tools']).mastraTool.execute!({ name: 'test' });
+//       await (agent.getTools() as Agent['tools']).@mastraTool.execute!({ name: 'test' });
 //       // @ts-ignore
 //       await (agent.getTools() as Agent['tools']).vercelTool.execute!({ name: 'test' });
 
-//       expect(mastraExecute).toHaveBeenCalled();
+//       expect(@mastraExecute).toHaveBeenCalled();
 //       expect(vercelExecute).toHaveBeenCalled();
 //     });
 

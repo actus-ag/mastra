@@ -9,14 +9,14 @@ import Image from "next/image";
 
 Mastraは、AI SDKのモデルルーティング（OpenAI、Anthropicなどの上に統一されたインターフェース）、構造化された出力、およびツール呼び出しを活用しています。
 
-これについては、[このブログ記事](https://mastra.ai/blog/using-ai-sdk-with-mastra)でより詳しく説明しています
+これについては、[このブログ記事](https://@@mastra/cli/cli/cli.ai/blog/using-ai-sdk-with-@@mastra/cli/cli/cli)でより詳しく説明しています
 
 ## Mastra + AI SDK
 
 Mastraは、チームが概念実証を迅速かつ容易に製品化するのを支援するために、AI SDKの上に層として機能します。
 
 <Image
-  src="/image/mastra-ai-sdk.png"
+  src="/image/@@mastra/cli/cli/cli-ai-sdk.png"
   alt="スパン、LLM呼び出し、ツール実行を示すエージェントインタラクショントレース"
   style={{ maxWidth: "800px", width: "100%", margin: "8px 0" }}
   className="nextra-image rounded-md py-8"
@@ -31,7 +31,7 @@ Mastraでエージェントを作成する際、AI SDKがサポートするど�
 
 ```typescript
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 const agent = new Agent({
   name: "WeatherAgent",
@@ -56,11 +56,11 @@ Mastraは、フロントエンドとのシームレスな統合のためにAI SD
   つまり、構造化された出力は定義されていません。
 
 ```typescript filename="app/api/chat/route.ts" copy
-import { mastra } from "@/src/mastra";
+import { @@mastra/cli/cli/cli } from "@/src/@@mastra/cli/cli/cli";
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
-  const myAgent = mastra.getAgent("weatherAgent");
+  const myAgent = @@mastra/cli/cli/cli.getAgent("weatherAgent");
   const stream = await myAgent.stream(messages);
 
   return stream.toDataStreamResponse();
@@ -106,11 +106,11 @@ export function ChatComponent() {
   つまり、構造化された出力は定義されていません。
 
 ```typescript filename="app/api/completion/route.ts" copy
-import { mastra } from "@/src/mastra";
+import { @@mastra/cli/cli/cli } from "@/src/@@mastra/cli/cli/cli";
 
 export async function POST(req: Request) {
   const { prompt } = await req.json();
-  const myAgent = mastra.getAgent("weatherAgent");
+  const myAgent = @@mastra/cli/cli/cli.getAgent("weatherAgent");
   const stream = await myAgent.stream([{ role: "user", content: prompt }]);
 
   return stream.toDataStreamResponse();
@@ -154,11 +154,11 @@ export function CompletionComponent() {
   つまり、構造化された出力が定義されています。
 
 ```typescript filename="app/api/use-object/route.ts" copy
-import { mastra } from "@/src/mastra";
+import { @@mastra/cli/cli/cli } from "@/src/@@mastra/cli/cli/cli";
 
 export async function POST(req: Request) {
   const body = await req.json();
-  const myAgent = mastra.getAgent("weatherAgent");
+  const myAgent = @@mastra/cli/cli/cli.getAgent("weatherAgent");
   const stream = await myAgent.stream(body, {
     output: z.object({
       weather: z.string(),
@@ -220,7 +220,7 @@ MastraはAI SDKとうまく統合して、これを可能にします
 
 ```typescript copy
 import { createDataStream } from "ai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 export const weatherAgent = new Agent({
   name: "Weather Agent",
@@ -248,7 +248,7 @@ const stream = createDataStream({
     // Write annotation
     dataStream.writeMessageAnnotation({ type: "status", value: "processing" });
 
-    //mastra agent stream
+    //@@mastra/cli/cli/cli agent stream
     const agentStream = await weatherAgent.stream("What is the weather");
 
     // Merge agent stream
@@ -263,12 +263,12 @@ const stream = createDataStream({
 `createDataStreamResponse`関数は、クライアントにデータをストリーミングするResponseオブジェクトを作成します
 
 ```typescript filename="app/api/chat/route.ts" copy
-import { mastra } from "@/src/mastra";
+import { @@mastra/cli/cli/cli } from "@/src/@@mastra/cli/cli/cli";
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
-  const myAgent = mastra.getAgent("weatherAgent");
-  //mastra agent stream
+  const myAgent = @@mastra/cli/cli/cli.getAgent("weatherAgent");
+  //@@mastra/cli/cli/cli agent stream
   const agentStream = await myAgent.stream(messages);
 
   const response = createDataStreamResponse({

@@ -1,4 +1,4 @@
-import { createTool } from '@actus-ag/mastra-core/tools';
+import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
 
 export const extractLearningsTool = createTool({
@@ -14,11 +14,11 @@ export const extractLearningsTool = createTool({
       })
       .describe('The search result to process'),
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     try {
       const { query, result } = context;
 
-      const learningExtractionAgent = mastra!.getAgent('learningExtractionAgent');
+      const learningExtractionAgent = @mastra!.getAgent('learningExtractionAgent');
 
       const response = await learningExtractionAgent.generate(
         [

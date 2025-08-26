@@ -80,7 +80,7 @@
     },
     {
       "groupName": "Mastra",
-      "matchSourceUrls": ["https://github.com/mastra-ai/mastra"],
+      "matchSourceUrls": ["https://github.com/@actus-ag/mastra-cli-ai/@actus-ag/mastra-cli"],
       "matchUpdateTypes": ["major", "minor", "patch"],
       "minimumReleaseAge": "0",
       "automerge": true

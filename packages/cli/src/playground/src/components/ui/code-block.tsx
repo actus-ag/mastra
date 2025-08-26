@@ -17,7 +17,7 @@ function CodeBlockDemo({
           <div className="flex items-center">
             <CodeBlock.LineNumber className="table-cell pr-4 text-sm text-right select-none text-gray-500/50" />
             <CodeBlock.LineContent className="flex">
-              <CodeBlock.Token className="font-mono text-sm mastra-token" />
+              <CodeBlock.Token className="font-mono text-sm @@mastra/cli/cli/cli-token" />
             </CodeBlock.LineContent>
           </div>
         </div>

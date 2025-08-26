@@ -1,8 +1,8 @@
 import { openai } from '@ai-sdk/openai';
-import { Mastra } from '@actus-ag/mastra-core';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { PgVector } from '@actus-ag/mastra-pg';
-import { createVectorQueryTool } from '@actus-ag/mastra-rag';
+import { Mastra } from '@mastra/core';
+import { Agent } from '@mastra/core/agent';
+import { PgVector } from '@mastra/pg';
+import { createVectorQueryTool } from '@mastra/rag';
 
 const vectorQueryTool = createVectorQueryTool({
   vectorStoreName: 'pgVector',
@@ -22,12 +22,12 @@ export const ragAgent = new Agent({
 
 const pgVector = new PgVector({ connectionString: process.env.POSTGRES_CONNECTION_STRING! });
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   agents: { ragAgent },
   vectors: { pgVector },
 });
 
-const agent = mastra.getAgent('ragAgent');
+const agent = @mastra.getAgent('ragAgent');
 
 // Add in your documents, chunking and vector embedding here
 

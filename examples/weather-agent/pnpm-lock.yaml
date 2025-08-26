@@ -5,8 +5,8 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@mastra/core': link:../../packages/core
-  '@mastra/libsql': link:../../stores/libsql
+  '@mastra/cli/cli/cli/core': link:../../packages/core
+  '@mastra/cli/cli/cli/libsql': link:../../stores/libsql
 
 importers:
 
@@ -15,10 +15,10 @@ importers:
       '@ai-sdk/openai':
         specifier: ^1.3.22
         version: 1.3.22(zod@3.25.67)
-      '@mastra/core':
+      '@mastra/cli/cli/cli/core':
         specifier: link:../../packages/core
         version: link:../../packages/core
-      '@mastra/libsql':
+      '@mastra/cli/cli/cli/libsql':
         specifier: link:../../stores/libsql
         version: link:../../stores/libsql
       zod:

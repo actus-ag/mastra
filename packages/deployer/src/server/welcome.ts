@@ -85,7 +85,7 @@ export const html = `
         From the team that brought you Gatsby: prototype and productionize AI features with a modern JS/TS stack.
       </p>
 
-      <a href="https://mastra.ai/docs" class="docs-link">
+      <a href="https://@mastra.ai/docs" class="docs-link">
         Browse the docs
         <svg
           class="arrow-icon"

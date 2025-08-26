@@ -44,14 +44,14 @@ POSTGRES_CONNECTION_STRING=your_connection_string_here
 
 ```typescript copy showLineNumbers filename="index.ts"
 import { openai } from "@ai-sdk/openai";
-import { Mastra } from "@actus-ag/mastra-core";
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { PgVector } from "@actus-ag/mastra-pg";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { PgVector } from "@mastra/cli/cli/cli/pg";
 import {
   MDocument,
   createVectorQueryTool,
   createDocumentChunkerTool,
-} from "@actus-ag/mastra-rag";
+} from "@mastra/cli/cli/cli/rag";
 import { embedMany } from "ai";
 ```
 
@@ -59,7 +59,7 @@ import { embedMany } from "ai";
 
 ### ベクタークエリツール
 
-@actus-ag/mastra-rag からインポートした createVectorQueryTool を使用すると、ベクターデータベースにクエリを実行するツールを作成できます。
+@mastra/cli/cli/cli/rag からインポートした createVectorQueryTool を使用すると、ベクターデータベースにクエリを実行するツールを作成できます。
 
 ```typescript copy showLineNumbers{8} filename="index.ts"
 const vectorQueryTool = createVectorQueryTool({
@@ -71,7 +71,7 @@ const vectorQueryTool = createVectorQueryTool({
 
 ### ドキュメントチャンク化ツール
 
-@actus-ag/mastra-rag からインポートした createDocumentChunkerTool を使用すると、ドキュメントをチャンク化し、そのチャンクをエージェントに送信するツールを作成できます。
+@mastra/cli/cli/cli/rag からインポートした createDocumentChunkerTool を使用すると、ドキュメントをチャンク化し、そのチャンクをエージェントに送信するツールを作成できます。
 
 ```typescript copy showLineNumbers{14} filename="index.ts"
 const doc = MDocument.fromText(yourText);
@@ -115,11 +115,11 @@ const ragAgent = new Agent({
 ```typescript copy showLineNumbers{41} filename="index.ts"
 const pgVector = new PgVector({ connectionString: process.env.POSTGRES_CONNECTION_STRING! });
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   agents: { ragAgent },
   vectors: { pgVector },
 });
-const agent = mastra.getAgent("ragAgent");
+const agent = @@mastra/cli/cli/cli.getAgent("ragAgent");
 ```
 
 ## ドキュメント処理
@@ -139,7 +139,7 @@ const { embeddings } = await embedMany({
   values: chunks.map((chunk) => chunk.text),
 });
 
-const vectorStore = mastra.getVector("pgVector");
+const vectorStore = @@mastra/cli/cli/cli.getVector("pgVector");
 await vectorStore.createIndex({
   indexName: "embeddings",
   dimension: 1536,
@@ -218,6 +218,6 @@ console.log("Response:", cleanedResponse.text);
 <br />
 <GithubLink
   link={
-    "https://github.com/mastra-ai/mastra/blob/main/examples/basics/rag/cleanup-rag"
+    "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/rag/cleanup-rag"
   }
 />

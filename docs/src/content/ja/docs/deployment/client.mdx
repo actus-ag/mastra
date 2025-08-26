@@ -21,9 +21,9 @@ Mastra Client SDKは、クライアント環境から[Mastraサーバー](/docs/
 import { Tabs } from "nextra/components";
 
 <Tabs items={["npm", "yarn", "pnpm"]}>
-  <Tabs.Tab>```bash copy npm install @actus-ag/mastra-client-js@latest ```</Tabs.Tab>
-  <Tabs.Tab>```bash copy yarn add @actus-ag/mastra-client-js@latest ```</Tabs.Tab>
-  <Tabs.Tab>```bash copy pnpm add @actus-ag/mastra-client-js@latest ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy npm install @actus-ag/@@mastra/cli/cli/client-js@latest ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy yarn add @actus-ag/@@mastra/cli/cli/client-js@latest ```</Tabs.Tab>
+  <Tabs.Tab>```bash copy pnpm add @actus-ag/@@mastra/cli/cli/client-js@latest ```</Tabs.Tab>
 </Tabs>
 
 ## Mastra Clientの初期化
@@ -31,7 +31,7 @@ import { Tabs } from "nextra/components";
 始めるには、必要なパラメータでMastraClientを初期化する必要があります：
 
 ```typescript
-import { MastraClient } from "@actus-ag/mastra-client-js";
+import { MastraClient } from "@@mastra/cli/cli/cli-client-js";
 
 const client = new MastraClient({
   baseUrl: "http://localhost:4111", // デフォルトのMastra開発サーバーポート

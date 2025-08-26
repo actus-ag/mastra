@@ -42,7 +42,7 @@ export function loop<Tools extends ToolSet = ToolSet>({
   let startTimestamp = internalToUse.now?.();
 
   const { rootSpan } = getRootSpan({
-    operationId: mode === 'stream' ? `mastra.stream` : `mastra.generate`,
+    operationId: mode === 'stream' ? `@mastra.stream` : `@mastra.generate`,
     model: {
       modelId: model.modelId,
       provider: model.provider,
@@ -61,7 +61,7 @@ export function loop<Tools extends ToolSet = ToolSet>({
   });
 
   const { rootSpan: modelStreamSpan } = getRootSpan({
-    operationId: `mastra.${mode}.aisdk.doStream`,
+    operationId: `@mastra.${mode}.aisdk.doStream`,
     model: {
       modelId: model.modelId,
       provider: model.provider,

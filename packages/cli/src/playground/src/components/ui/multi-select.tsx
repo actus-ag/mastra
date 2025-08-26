@@ -286,7 +286,7 @@ function SelectBody<T extends MultiSelectShape>({
           groupKey ? (
             Object.keys(groupedData).map(key => {
               return (
-                <div key={key} className="border-b border-mastra-border-1 p-1">
+                <div key={key} className="border-b border-@@mastra/cli/cli/cli-border-1 p-1">
                   <p className="text-white px-3 py-1 text-xs capitalize bg-[#5f5fc5] rounded w-fit my-1 ml-1">
                     {capitalizeFirstLetter(key)}
                   </p>
@@ -365,7 +365,7 @@ function SelectBody<T extends MultiSelectShape>({
             </CommandGroup>
           )
         ) : (
-          <p className="text-mastra-el-4 py-6 text-center text-sm">
+          <p className="text-@@mastra/cli/cli/cli-el-4 py-6 text-center text-sm">
             {isSearching ? 'Searching...' : 'No results found'}
           </p>
         )}

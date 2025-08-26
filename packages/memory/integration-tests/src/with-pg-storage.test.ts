@@ -1,6 +1,6 @@
-import { fastembed } from '@actus-ag/mastra-fastembed';
-import { Memory } from '@actus-ag/mastra-memory';
-import { PostgresStore, PgVector } from '@actus-ag/mastra-pg';
+import { fastembed } from '@mastra/fastembed';
+import { Memory } from '@mastra/memory';
+import { PostgresStore, PgVector } from '@mastra/pg';
 import dotenv from 'dotenv';
 import { describe } from 'vitest';
 
@@ -13,7 +13,7 @@ if (!process.env.DB_URL) {
   console.warn('DB_URL not set, using default local PostgreSQL connection');
 }
 
-const connectionString = process.env.DB_URL || 'postgres://postgres:password@localhost:5434/mastra';
+const connectionString = process.env.DB_URL || 'postgres://postgres:password@localhost:5434/@mastra';
 
 const parseConnectionString = (url: string) => {
   const parsedUrl = new URL(url);

@@ -1,5 +1,5 @@
 const meta = {
-  "mastra-scorer": "MastraScorer Class",
+  "@mastra-scorer": "MastraScorer Class",
   "create-scorer": "createScorer",
   "answer-relevancy": "AnswerRelevancy",
   bias: "Bias",

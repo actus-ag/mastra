@@ -1,5 +1,5 @@
-import { createTool } from '@actus-ag/mastra-core/tools';
-import { MCPServer, MCPServerResources } from '@actus-ag/mastra-mcp';
+import { createTool } from '@mastra/core/tools';
+import { MCPServer, MCPServerResources } from '@mastra/mcp';
 import { z } from 'zod';
 import { chefAgent } from '../agents';
 import { myWorkflow } from '../workflows';

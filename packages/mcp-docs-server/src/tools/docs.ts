@@ -172,7 +172,7 @@ export const docsInputSchema = z.object({
 export type DocsInput = z.infer<typeof docsInputSchema>;
 
 export const docsTool = {
-  name: 'mastraDocs',
+  name: '@mastraDocs',
   description: `Get Mastra.ai documentation. 
     Request paths to explore the docs. References contain API docs. 
     Other paths contain guides. The user doesn\'t know about files and directories. 
@@ -190,7 +190,7 @@ export const docsTool = {
     When displaying results, always mention which file path contains the information (e.g., 'Found in "path/to/file.mdx"') so users know where this documentation lives.`,
   parameters: docsInputSchema,
   execute: async (args: DocsInput) => {
-    void logger.debug('Executing mastraDocs tool', { args });
+    void logger.debug('Executing @mastraDocs tool', { args });
     try {
       const queryKeywords = args.queryKeywords ?? [];
       const results = await Promise.all(
@@ -234,7 +234,7 @@ export const docsTool = {
 
       return output;
     } catch (error) {
-      void logger.error('Failed to execute mastraDocs tool', error);
+      void logger.error('Failed to execute @mastraDocs tool', error);
       throw error;
     }
   },

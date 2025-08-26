@@ -1,5 +1,5 @@
 import { input } from '@inquirer/prompts';
-import { Step, Workflow } from '@actus-ag/mastra-core/workflows';
+import { Step, Workflow } from '@mastra/core/workflows';
 import chalk from 'chalk';
 import { z } from 'zod';
 
@@ -34,7 +34,7 @@ const messageOutputStep = new Step({
     message: z.string(),
   }),
   // SHOULD BE ABLE TO ACCESS ALL MASTRA PRIMS FROM EXECTUE
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     // WISH THIS WAS TYPED
     const threadId = context?.triggerData?.threadId;
     const resourceId = context?.triggerData?.resourceId;
@@ -50,7 +50,7 @@ const messageOutputStep = new Step({
 
     try {
       // TODO: why was this unused?
-      // let messages = await mastra?.memory?.getContextWindow({
+      // let messages = await @mastra?.memory?.getContextWindow({
       //   threadId,
       //   format: 'core_message',
       // });
@@ -59,7 +59,7 @@ const messageOutputStep = new Step({
       //   messages = [];
       // }
 
-      const res = await mastra?.getAgent('dane')?.stream(message, {
+      const res = await @mastra?.getAgent('dane')?.stream(message, {
         maxSteps: 5,
         resourceId,
         threadId,

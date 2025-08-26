@@ -3,7 +3,7 @@ import slugify from '@sindresorhus/slugify';
 import type { ToolsInput } from '../agent';
 import { MastraBase } from '../base';
 import { RegisteredLogger } from '../logger';
-import type { Mastra } from '../mastra';
+import type { Mastra } from '../@mastra';
 import type {
   ConvertedTool,
   MCPServerConfig,
@@ -50,7 +50,7 @@ export abstract class MCPServerBase extends MastraBase {
   /** The tools registered with and converted by this MCP server. */
   public readonly convertedTools: Record<string, ConvertedTool>;
   /** Reference to the Mastra instance if this server is registered with one. */
-  public mastra: Mastra | undefined;
+  public @mastra: Mastra | undefined;
   /** Agents to be exposed as tools. */
   protected readonly agents?: MCPServerConfig['agents'];
   /** Workflows to be exposed as tools. */
@@ -103,11 +103,11 @@ export abstract class MCPServerBase extends MastraBase {
 
   /**
    * Internal method used by Mastra to register itself with the server.
-   * @param mastra The Mastra instance.
+   * @param @mastra The Mastra instance.
    * @internal
    */
-  __registerMastra(mastra: Mastra): void {
-    this.mastra = mastra;
+  __registerMastra(@mastra: Mastra): void {
+    this.@mastra = @mastra;
   }
 
   /**
@@ -125,7 +125,7 @@ export abstract class MCPServerBase extends MastraBase {
       this._id = slugify(config.id);
       this.idWasSet = true;
     } else {
-      this._id = this.mastra?.generateId() || randomUUID();
+      this._id = this.@mastra?.generateId() || randomUUID();
     }
 
     this.description = config.description;

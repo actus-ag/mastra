@@ -1,20 +1,20 @@
-import type { Mastra } from '@actus-ag/mastra-core';
+import type { Mastra } from '@mastra/core';
 import {
   getTelemetryHandler as getOriginalTelemetryHandler,
   storeTelemetryHandler as getOriginalStoreTelemetryHandler,
-} from '@actus-ag/mastra-server/handlers/telemetry';
+} from '@mastra/server/handlers/telemetry';
 import type { Context } from 'hono';
 
 import { handleError } from '../../error';
 
 export async function getTelemetryHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const { name, scope, page, perPage, fromDate, toDate } = c.req.query();
     const attribute = c.req.queries('attribute');
 
     const traces = await getOriginalTelemetryHandler({
-      mastra,
+      @mastra,
       body: {
         name,
         scope,
@@ -37,8 +37,8 @@ export async function storeTelemetryHandler(c: Context) {
     // Parse the incoming body as JSON
     const body = await c.req.json();
 
-    const mastra: Mastra = c.get('mastra');
-    const result = await getOriginalStoreTelemetryHandler({ mastra, body });
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
+    const result = await getOriginalStoreTelemetryHandler({ @mastra, body });
 
     if (result.status === 'error') {
       return c.json(result, 500);

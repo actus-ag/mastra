@@ -4,7 +4,7 @@ import fs from "fs";
 
 import { stringify } from "csv-stringify/sync";
 
-import { getHotels, getAttractionList } from "../mastra/tools/attraction-tools";
+import { getHotels, getAttractionList } from "../@mastra/tools/attraction-tools";
 
 async function updateCityData() {
   const filePath = "src/data/city-data.csv";

@@ -1,9 +1,9 @@
-import type { MastraAuthConfig } from '@actus-ag/mastra-core/server';
+import type { MastraAuthConfig } from '@mastra/core/server';
 import type { HonoRequest } from 'hono';
 import { defaultAuthConfig } from './defaults';
 
 export const isDevPlaygroundRequest = (req: HonoRequest): boolean => {
-  return req.header('x-mastra-dev-playground') === 'true' && process.env.MASTRA_DEV === 'true';
+  return req.header('x-@mastra-dev-playground') === 'true' && process.env.MASTRA_DEV === 'true';
 };
 
 export const isProtectedPath = (path: string, method: string, authConfig: MastraAuthConfig): boolean => {

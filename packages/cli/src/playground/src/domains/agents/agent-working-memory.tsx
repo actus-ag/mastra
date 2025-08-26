@@ -1,4 +1,4 @@
-import { useWorkingMemory } from '@actus-ag/mastra-playground-ui';
+import { useWorkingMemory } from '@mastra/cli/cli/cli/playground-ui';
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -173,7 +173,7 @@ export const AgentWorkingMemory = ({ agentId }: AgentWorkingMemoryProps) => {
             Working memory is not enabled for this agent. Enable it to maintain context across conversations.
           </p>
           <a
-            href="https://mastra.ai/en/docs/memory/working-memory"
+            href="https://@@mastra/cli/cli/cli.ai/en/docs/memory/working-memory"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors"

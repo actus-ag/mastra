@@ -1,5 +1,5 @@
 import fs from 'node:fs/promises';
-import { MCPServer } from '@actus-ag/mastra-mcp';
+import { MCPServer } from '@mastra/mcp';
 
 import { logger, createLogger } from './logger';
 import { prepare } from './prepare-docs/prepare';
@@ -32,10 +32,10 @@ server = new MCPServer({
   name: 'Mastra Documentation Server',
   version: JSON.parse(await fs.readFile(fromPackageRoot(`package.json`), 'utf8')).version,
   tools: {
-    mastraBlog: blogTool,
-    mastraDocs: docsTool,
-    mastraExamples: examplesTool,
-    mastraChanges: changesTool,
+    @mastraBlog: blogTool,
+    @mastraDocs: docsTool,
+    @mastraExamples: examplesTool,
+    @mastraChanges: changesTool,
     startMastraCourse,
     getMastraCourseStatus,
     startMastraCourseLesson,

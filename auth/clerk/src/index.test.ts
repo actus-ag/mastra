@@ -1,5 +1,5 @@
 import { createClerkClient } from '@clerk/backend';
-import { verifyJwks } from '@actus-ag/mastra-auth';
+import { verifyJwks } from '@mastra/auth';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { MastraAuthClerk } from './index';
 
@@ -8,7 +8,7 @@ vi.mock('@clerk/backend', () => ({
   createClerkClient: vi.fn(),
 }));
 
-vi.mock('@actus-ag/mastra-auth', () => ({
+vi.mock('@mastra/auth', () => ({
   verifyJwks: vi.fn(),
 }));
 

@@ -13,11 +13,11 @@ Let's break down how to create an agent with working memory capabilities. We'll 
 
 ### 1. Setting up Memory
 
-First, we'll configure the memory system with a short context window since we'll be using working memory to maintain state. Note that `new Memory()` without a configured storage provider will not persist data across application restarts. For persistence, you can configure a storage provider like `@actus-ag/mastra-libsql`:
+First, we'll configure the memory system with a short context window since we'll be using working memory to maintain state. Note that `new Memory()` without a configured storage provider will not persist data across application restarts. For persistence, you can configure a storage provider like `@mastra/cli/cli/cli/libsql`:
 
 ```typescript
-import { Memory } from "@actus-ag/mastra-memory";
-import { LibSQLStore } from "@actus-ag/mastra-libsql";
+import { Memory } from "@mastra/cli/cli/cli/memory";
+import { LibSQLStore } from "@mastra/cli/cli/cli/libsql";
 
 const memory = new Memory({
   options: {
@@ -27,7 +27,7 @@ const memory = new Memory({
     },
   },
   storage: new LibSQLStore({
-    url: "file:../mastra.db",
+    url: "file:../@@mastra/cli/cli/cli.db",
   }),
 });
 ```
@@ -54,7 +54,7 @@ const memory = new Memory({
     },
   },
   storage: new LibSQLStore({
-    url: "file:../mastra.db",
+    url: "file:../@@mastra/cli/cli/cli.db",
   }),
 });
 ```
@@ -87,7 +87,7 @@ For simple cases, you can use `maskStreamTags` to hide the working memory update
 
 ```typescript
 import { randomUUID } from "crypto";
-import { maskStreamTags } from "@actus-ag/mastra-core/utils";
+import { maskStreamTags } from "@mastra/cli/cli/cli/core/utils";
 
 // Start a conversation
 const threadId = randomUUID();

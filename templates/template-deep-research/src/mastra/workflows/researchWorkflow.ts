@@ -1,4 +1,4 @@
-import { createWorkflow, createStep } from '@actus-ag/mastra-core/workflows';
+import { createWorkflow, createStep } from '@mastra/core/workflows';
 import { z } from 'zod';
 
 // Step 1: Get user query
@@ -46,11 +46,11 @@ const researchStep = createStep({
     researchData: z.any(),
     summary: z.string(),
   }),
-  execute: async ({ inputData, mastra }) => {
+  execute: async ({ inputData, @mastra }) => {
     const { query } = inputData;
 
     try {
-      const agent = mastra.getAgent('researchAgent');
+      const agent = @mastra.getAgent('researchAgent');
       const researchPrompt = `Research the following topic thoroughly using the two-phase process: "${query}".
 
       Phase 1: Search for 2-3 initial queries about this topic

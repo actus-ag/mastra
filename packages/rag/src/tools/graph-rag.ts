@@ -1,4 +1,4 @@
-import { createTool } from '@actus-ag/mastra-core/tools';
+import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
 
 import { GraphRAG } from '../graph-rag';
@@ -28,7 +28,7 @@ export const createGraphRAGTool = (options: GraphRagToolOptions) => {
     inputSchema,
     outputSchema,
     description: toolDescription,
-    execute: async ({ context, mastra, runtimeContext }) => {
+    execute: async ({ context, @mastra, runtimeContext }) => {
       const indexName: string = runtimeContext.get('indexName') ?? options.indexName;
       const vectorStoreName: string = runtimeContext.get('vectorStoreName') ?? options.vectorStoreName;
       if (!indexName) throw new Error(`indexName is required, got: ${indexName}`);
@@ -42,7 +42,7 @@ export const createGraphRAGTool = (options: GraphRagToolOptions) => {
 
       const enableFilter = !!runtimeContext.get('filter') || (options.enableFilter ?? false);
 
-      const logger = mastra?.getLogger();
+      const logger = @mastra?.getLogger();
       if (!logger) {
         console.warn(
           '[GraphRAGTool] Logger not initialized: no debug or error logs will be recorded for this tool execution.',
@@ -58,7 +58,7 @@ export const createGraphRAGTool = (options: GraphRagToolOptions) => {
             : typeof topK === 'string' && !isNaN(Number(topK))
               ? Number(topK)
               : 10;
-        const vectorStore = mastra?.getVector(vectorStoreName);
+        const vectorStore = @mastra?.getVector(vectorStoreName);
 
         if (!vectorStore) {
           if (logger) {

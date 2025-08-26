@@ -11,8 +11,8 @@ export function FormattedDate({ date }: { date: string }) {
   return (
     <TooltipProvider>
       <Tooltip>
-        <TooltipTrigger className="text-left text-sm text-mastra-el-4">{formattedDate.relativeTime}</TooltipTrigger>
-        <TooltipContent className="bg-mastra-bg-1 text-mastra-el-1">
+        <TooltipTrigger className="text-left text-sm text-@@mastra/cli/cli/cli-el-4">{formattedDate.relativeTime}</TooltipTrigger>
+        <TooltipContent className="bg-@@mastra/cli/cli/cli-bg-1 text-@@mastra/cli/cli/cli-el-1">
           <p className="text-sm">{formattedDate.fullDate}</p>
         </TooltipContent>
       </Tooltip>

@@ -13,7 +13,7 @@ A simple example showing how to embed chunk array using Mastra and OpenAI.
 1. Clone the repository and navigate to the project directory:
 
    ```bash
-   git clone https://github.com/mastra-ai/mastra
+   git clone https://github.com/@mastra-ai/@mastra
    cd examples/basics/rag/embed-chunk-array
    ```
 

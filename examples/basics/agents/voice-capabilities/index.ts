@@ -1,10 +1,10 @@
 // Import required dependencies
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { CompositeVoice } from '@actus-ag/mastra-core/voice';
-import { OpenAIVoice } from '@actus-ag/mastra-voice-openai';
+import { Agent } from '@mastra/core/agent';
+import { CompositeVoice } from '@mastra/core/voice';
+import { OpenAIVoice } from '@mastra/voice-openai';
 import { createReadStream, createWriteStream } from 'fs';
-import { PlayAIVoice } from '@actus-ag/mastra-voice-playai';
+import { PlayAIVoice } from '@mastra/voice-playai';
 import path from 'path';
 
 // Initialize Agent 1 with both listening and speaking capabilities

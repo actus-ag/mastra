@@ -1,8 +1,8 @@
 import { openai } from '@ai-sdk/openai';
-import { Mastra } from '@actus-ag/mastra-core';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { PgVector } from '@actus-ag/mastra-pg';
-import { MDocument, createGraphRAGTool } from '@actus-ag/mastra-rag';
+import { Mastra } from '@mastra/core';
+import { Agent } from '@mastra/core/agent';
+import { PgVector } from '@mastra/pg';
+import { MDocument, createGraphRAGTool } from '@mastra/rag';
 import { embedMany } from 'ai';
 
 const graphRagTool = createGraphRAGTool({
@@ -35,7 +35,7 @@ If the context doesn't contain enough information to fully answer the question, 
 
 const pgVector = new PgVector({ connectionString: process.env.POSTGRES_CONNECTION_STRING! });
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   agents: { ragAgent },
   vectors: { pgVector },
 });
@@ -86,7 +86,7 @@ const { embeddings } = await embedMany({
   values: chunks.map(chunk => chunk.text),
 });
 
-const vectorStore = mastra.getVector('pgVector');
+const vectorStore = @mastra.getVector('pgVector');
 await vectorStore.createIndex({
   indexName: 'embeddings',
   dimension: 1536,

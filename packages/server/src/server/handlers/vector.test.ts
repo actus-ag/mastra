@@ -1,12 +1,12 @@
-import { Mastra } from '@actus-ag/mastra-core';
-import { MastraVector } from '@actus-ag/mastra-core/vector';
-import type { QueryResult, IndexStats } from '@actus-ag/mastra-core/vector';
+import { Mastra } from '@mastra/core';
+import { MastraVector } from '@mastra/core/vector';
+import type { QueryResult, IndexStats } from '@mastra/core/vector';
 import type { Mock } from 'vitest';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { HTTPException } from '../http-exception';
 import { upsertVectors, createIndex, queryVectors, listIndexes, describeIndex, deleteIndex } from './vector';
 
-vi.mock('@actus-ag/mastra-core/vector');
+vi.mock('@mastra/core/vector');
 
 type MockMastraVector = {
   upsert: Mock<MastraVector['upsert']>;
@@ -34,7 +34,7 @@ describe('Vector Handlers', () => {
     it('should throw error when vectorName is not provided', async () => {
       await expect(
         upsertVectors({
-          mastra: new Mastra(),
+          @mastra: new Mastra(),
           index: {
             indexName: 'test-index',
             vectors: [[1, 2, 3]],
@@ -46,7 +46,7 @@ describe('Vector Handlers', () => {
     it('should throw error when vector store is not found', async () => {
       await expect(
         upsertVectors({
-          mastra: new Mastra(),
+          @mastra: new Mastra(),
           vectorName: 'test-vector',
           index: {
             indexName: 'test-index',
@@ -59,7 +59,7 @@ describe('Vector Handlers', () => {
     it('should throw error when request body is invalid', async () => {
       await expect(
         upsertVectors({
-          mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
+          @mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
           vectorName: 'test-vector',
           // @ts-expect-error
           index: {
@@ -74,7 +74,7 @@ describe('Vector Handlers', () => {
       mockVector.upsert.mockResolvedValue(mockIds);
 
       const result = await upsertVectors({
-        mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
+        @mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
         vectorName: 'test-vector',
         index: {
           indexName: 'test-index',
@@ -104,7 +104,7 @@ describe('Vector Handlers', () => {
     it('should throw error when vectorName is not provided', async () => {
       await expect(
         createIndex({
-          mastra: new Mastra(),
+          @mastra: new Mastra(),
           index: {
             indexName: 'test-index',
             dimension: 3,
@@ -116,7 +116,7 @@ describe('Vector Handlers', () => {
     it('should throw error when request body is invalid', async () => {
       await expect(
         createIndex({
-          mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
+          @mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
           vectorName: 'test-vector',
           index: {
             indexName: 'test-index',
@@ -133,7 +133,7 @@ describe('Vector Handlers', () => {
     it('should throw error when metric is invalid', async () => {
       await expect(
         createIndex({
-          mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
+          @mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
           vectorName: 'test-vector',
           index: {
             indexName: 'test-index',
@@ -148,7 +148,7 @@ describe('Vector Handlers', () => {
       mockVector.createIndex.mockResolvedValue(undefined);
 
       const result = await createIndex({
-        mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
+        @mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
         vectorName: 'test-vector',
         index: {
           indexName: 'test-index',
@@ -170,7 +170,7 @@ describe('Vector Handlers', () => {
     it('should throw error when vectorName is not provided', async () => {
       await expect(
         queryVectors({
-          mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
+          @mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
           query: {
             indexName: 'test-index',
             queryVector: [1, 2, 3],
@@ -183,7 +183,7 @@ describe('Vector Handlers', () => {
       mockVector.query.mockResolvedValue([]);
       await expect(
         queryVectors({
-          mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
+          @mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
           vectorName: 'test-vector',
           // @ts-expect-error
           query: {
@@ -201,7 +201,7 @@ describe('Vector Handlers', () => {
       mockVector.query.mockResolvedValue(mockResults);
 
       const result = await queryVectors({
-        mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
+        @mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
         vectorName: 'test-vector',
         query: {
           indexName: 'test-index',
@@ -227,7 +227,7 @@ describe('Vector Handlers', () => {
     it('should throw error when vectorName is not provided', async () => {
       await expect(
         listIndexes({
-          mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
+          @mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
         }),
       ).rejects.toThrow('Vector name is required');
     });
@@ -237,7 +237,7 @@ describe('Vector Handlers', () => {
       mockVector.listIndexes.mockResolvedValue(mockIndexes);
 
       const result = await listIndexes({
-        mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
+        @mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
         vectorName: 'test-vector',
       });
 
@@ -250,7 +250,7 @@ describe('Vector Handlers', () => {
     it('should throw error when vectorName is not provided', async () => {
       await expect(
         describeIndex({
-          mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
+          @mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
           indexName: 'test-index',
         }),
       ).rejects.toThrow('Vector name is required');
@@ -259,7 +259,7 @@ describe('Vector Handlers', () => {
     it('should throw error when indexName is not provided', async () => {
       await expect(
         describeIndex({
-          mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
+          @mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
           vectorName: 'test-vector',
         }),
       ).rejects.toThrow('Index name is required');
@@ -274,7 +274,7 @@ describe('Vector Handlers', () => {
       mockVector.describeIndex.mockResolvedValue(mockStats);
 
       const result = await describeIndex({
-        mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
+        @mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
         vectorName: 'test-vector',
         indexName: 'test-index',
       });
@@ -292,7 +292,7 @@ describe('Vector Handlers', () => {
     it('should throw error when vectorName is not provided', async () => {
       await expect(
         deleteIndex({
-          mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
+          @mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
           indexName: 'test-index',
         }),
       ).rejects.toThrow('Vector name is required');
@@ -301,7 +301,7 @@ describe('Vector Handlers', () => {
     it('should throw error when indexName is not provided', async () => {
       await expect(
         deleteIndex({
-          mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
+          @mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
           vectorName: 'test-vector',
         }),
       ).rejects.toThrow('Index name is required');
@@ -311,7 +311,7 @@ describe('Vector Handlers', () => {
       mockVector.deleteIndex.mockResolvedValue(undefined);
 
       const result = await deleteIndex({
-        mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
+        @mastra: new Mastra({ logger: false, vectors: { 'test-vector': mockVector as unknown as MastraVector } }),
         vectorName: 'test-vector',
         indexName: 'test-index',
       });

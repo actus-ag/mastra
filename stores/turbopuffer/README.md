@@ -1,17 +1,17 @@
-# @actus-ag/mastra-turbopuffer
+# @mastra/turbopuffer
 
 Vector store implementation for Turbopuffer, using the official @turbopuffer/turbopuffer SDK with added telemetry support.
 
 ## Installation
 
 ```bash
-pnpm add @actus-ag/mastra-turbopuffer
+pnpm add @mastra/turbopuffer
 ```
 
 ## Usage
 
 ```typescript
-import { TurbopufferVector } from '@actus-ag/mastra-turbopuffer';
+import { TurbopufferVector } from '@mastra/turbopuffer';
 
 const vectorStore = new TurbopufferVector({
   apiKey: 'your-api-key',

@@ -190,7 +190,7 @@ export function useAlgoliaSearch(
           return;
         }
 
-        const indexName = searchOptions?.indexName || "crawler_mastra crawler"; // Default index name
+        const indexName = searchOptions?.indexName || "crawler_@mastra crawler"; // Default index name
 
         const searchRequest = {
           indexName: indexName,

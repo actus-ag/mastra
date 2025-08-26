@@ -12,7 +12,7 @@ The Agents API provides methods to interact with Mastra AI agents, including gen
 Retrieve a list of all available agents:
 
 ```typescript
-const agents = await mastraClient.getAgents();
+const agents = await @@mastra/cli/cli/cliClient.getAgents();
 ```
 
 ## Working with a Specific Agent
@@ -20,7 +20,7 @@ const agents = await mastraClient.getAgents();
 Get an instance of a specific agent:
 
 ```typescript
-const agent = mastraClient.getAgent("agent-id");
+const agent = @@mastra/cli/cli/cliClient.getAgent("agent-id");
 ```
 
 ## Agent Methods
@@ -105,7 +105,7 @@ Client-side tools allow you to execute custom functions on the client side when 
 #### Basic Usage
 
 ```typescript
-import { createTool } from '@actus-ag/mastra-core/tools';
+import { createTool } from '@mastra/cli/cli/cli/core/tools';
 import { z } from 'zod';
 
 const colorChangeTool = createTool({

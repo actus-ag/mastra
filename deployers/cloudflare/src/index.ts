@@ -1,9 +1,9 @@
 import { writeFile } from 'fs/promises';
 import { join } from 'path';
-import { Deployer } from '@actus-ag/mastra-deployer';
-import type { analyzeBundle } from '@actus-ag/mastra-deployer/analyze';
+import { Deployer } from '@mastra/deployer';
+import type { analyzeBundle } from '@mastra/deployer/analyze';
 import virtual from '@rollup/plugin-virtual';
-import { mastraInstanceWrapper } from './plugins/mastra-instance-wrapper';
+import { @mastraInstanceWrapper } from './plugins/@mastra-instance-wrapper';
 import { postgresStoreInstanceChecker } from './plugins/postgres-store-instance-checker';
 
 interface CFRoute {
@@ -34,7 +34,7 @@ export class CloudflareDeployer extends Deployer {
 
   constructor({
     env,
-    projectName = 'mastra',
+    projectName = '@actus-ag/@mastra',
     routes,
     workerNamespace,
     d1Databases,
@@ -96,17 +96,17 @@ export class CloudflareDeployer extends Deployer {
   private getEntry(): string {
     return `
     import '#polyfills';
-    import { mastra } from '#mastra';
+    import { @mastra } from '#@mastra';
     import { createHonoServer, getToolExports } from '#server';
     import { tools } from '#tools';
-    import { evaluate } from '@actus-ag/mastra-core/eval';
-    import { AvailableHooks, registerHook } from '@actus-ag/mastra-core/hooks';
-    import { TABLE_EVALS } from '@actus-ag/mastra-core/storage';
-    import { checkEvalStorageFields } from '@actus-ag/mastra-core/utils';
+    import { evaluate } from '@mastra/core/eval';
+    import { AvailableHooks, registerHook } from '@mastra/core/hooks';
+    import { TABLE_EVALS } from '@mastra/core/storage';
+    import { checkEvalStorageFields } from '@mastra/core/utils';
 
     export default {
       fetch: async (request, env, context) => {
-        const _mastra = mastra();
+        const _@mastra = @mastra();
 
         registerHook(AvailableHooks.ON_GENERATION, ({ input, output, metric, runId, agentName, instructions }) => {
           evaluate({
@@ -121,10 +121,10 @@ export class CloudflareDeployer extends Deployer {
         });
 
         registerHook(AvailableHooks.ON_EVALUATION, async traceObject => {
-          const storage = _mastra.getStorage();
+          const storage = _@mastra.getStorage();
           if (storage) {
             // Check for required fields
-            const logger = _mastra?.getLogger();
+            const logger = _@mastra?.getLogger();
             const areFieldsValid = checkEvalStorageFields(traceObject, logger);
             if (!areFieldsValid) return;
 
@@ -146,7 +146,7 @@ export class CloudflareDeployer extends Deployer {
           }
         });
       
-        const app = await createHonoServer(_mastra, { tools: getToolExports(tools) });
+        const app = await createHonoServer(_@mastra, { tools: getToolExports(tools) });
         return app.fetch(request, env, context);
       }
     }
@@ -159,11 +159,11 @@ export class CloudflareDeployer extends Deployer {
 
   async getBundlerOptions(
     serverFile: string,
-    mastraEntryFile: string,
+    @mastraEntryFile: string,
     analyzedBundleInfo: Awaited<ReturnType<typeof analyzeBundle>>,
     toolsPaths: (string | string[])[],
   ) {
-    const inputOptions = await super.getBundlerOptions(serverFile, mastraEntryFile, analyzedBundleInfo, toolsPaths);
+    const inputOptions = await super.getBundlerOptions(serverFile, @mastraEntryFile, analyzedBundleInfo, toolsPaths);
 
     if (Array.isArray(inputOptions.plugins)) {
       inputOptions.plugins = [
@@ -175,7 +175,7 @@ process.versions.node = '${process.versions.node}';
         }),
         ...inputOptions.plugins,
         postgresStoreInstanceChecker(),
-        mastraInstanceWrapper(mastraEntryFile),
+        @mastraInstanceWrapper(@mastraEntryFile),
       ];
     }
 
@@ -197,11 +197,11 @@ process.versions.node = '${process.versions.node}';
   async lint(entryFile: string, outputDirectory: string, toolsPaths: (string | string[])[]): Promise<void> {
     await super.lint(entryFile, outputDirectory, toolsPaths);
 
-    const hasLibsql = (await this.deps.checkDependencies(['@actus-ag/mastra-libsql'])) === `ok`;
+    const hasLibsql = (await this.deps.checkDependencies(['@mastra/libsql'])) === `ok`;
 
     if (hasLibsql) {
       this.logger.error(
-        'Cloudflare Deployer does not support @libsql/client(which may have been installed by @actus-ag/mastra-libsql) as a dependency. Please use Cloudflare D1 instead @actus-ag/mastra-cloudflare-d1',
+        'Cloudflare Deployer does not support @libsql/client(which may have been installed by @mastra/libsql) as a dependency. Please use Cloudflare D1 instead @mastra/cloudflare-d1',
       );
       process.exit(1);
     }

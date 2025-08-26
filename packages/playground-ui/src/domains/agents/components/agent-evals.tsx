@@ -20,14 +20,14 @@ const scrollableContentClass = cn(
   '[&::-webkit-scrollbar]:w-1',
   '[&::-webkit-scrollbar-track]:bg-transparent',
   '[&::-webkit-scrollbar-thumb]:rounded-full',
-  '[&::-webkit-scrollbar-thumb]:bg-mastra-border/20',
+  '[&::-webkit-scrollbar-thumb]:bg-@@mastra/cli/cli/cli-border/20',
   '[&>*]:visible',
 );
 
 const tabIndicatorClass = cn(
   'px-4 py-2 text-sm transition-all border-b-2 border-transparent',
   'data-[state=active]:border-white data-[state=active]:text-white font-medium',
-  'data-[state=inactive]:text-mastra-el-4 hover:data-[state=inactive]:text-mastra-el-2',
+  'data-[state=inactive]:text-@@mastra/cli/cli/cli-el-4 hover:data-[state=inactive]:text-@@mastra/cli/cli/cli-el-2',
   'focus-visible:outline-none',
 );
 
@@ -82,7 +82,7 @@ function EvalTable({ evals, isCIMode = false, onRefresh }: EvalTableProps) {
     <div className="min-h-0 grid grid-rows-[auto_1fr]">
       <div className="flex items-center gap-4 p-4 rounded-lg">
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-mastra-el-3" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-@@mastra/cli/cli/cli-el-3" />
           <Input
             id="search-input"
             placeholder="Search metrics, inputs, or outputs..."
@@ -101,20 +101,20 @@ function EvalTable({ evals, isCIMode = false, onRefresh }: EvalTableProps) {
 
       <div className="overflow-auto">
         <Table className="w-full">
-          <TableHeader className="bg-mastra-bg-2 h-[var(--table-header-height)] sticky top-0 z-10">
+          <TableHeader className="bg-@@mastra/cli/cli/cli-bg-2 h-[var(--table-header-height)] sticky top-0 z-10">
             <TableRow className="border-gray-6 border-b-[0.1px] text-[0.8125rem]">
               <TableHead className="w-12 h-12"></TableHead>
               <TableHead
-                className="min-w-[200px] max-w-[30%] text-mastra-el-3 cursor-pointer"
+                className="min-w-[200px] max-w-[30%] text-@@mastra/cli/cli/cli-el-3 cursor-pointer"
                 onClick={() => toggleSort('metricName')}
               >
                 <div className="flex items-center">Metric {getSortIcon('metricName')}</div>
               </TableHead>
-              <TableHead className="flex-1 text-mastra-el-3" />
-              <TableHead className="w-48 text-mastra-el-3 cursor-pointer" onClick={() => toggleSort('averageScore')}>
+              <TableHead className="flex-1 text-@@mastra/cli/cli/cli-el-3" />
+              <TableHead className="w-48 text-@@mastra/cli/cli/cli-el-3 cursor-pointer" onClick={() => toggleSort('averageScore')}>
                 <div className="flex items-center">Average Score {getSortIcon('averageScore')}</div>
               </TableHead>
-              <TableHead className="w-48 text-mastra-el-3">Evaluations</TableHead>
+              <TableHead className="w-48 text-@@mastra/cli/cli/cli-el-3">Evaluations</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody className="border-b border-gray-6 relative">
@@ -122,7 +122,7 @@ function EvalTable({ evals, isCIMode = false, onRefresh }: EvalTableProps) {
               {groupEvals(evals).length === 0 ? (
                 <TableRow>
                   <TableCell className="h-12 w-16"></TableCell>
-                  <TableCell colSpan={4} className="h-32 px-4 text-center text-mastra-el-3">
+                  <TableCell colSpan={4} className="h-32 px-4 text-center text-@@mastra/cli/cli/cli-el-3">
                     <div className="flex flex-col items-center gap-2">
                       <Search className="size-5" />
                       <p>No evaluations found</p>
@@ -134,7 +134,7 @@ function EvalTable({ evals, isCIMode = false, onRefresh }: EvalTableProps) {
                 groupEvals(evals).map(group => (
                   <React.Fragment key={group.metricName}>
                     <TableRow
-                      className="border-b-gray-6 border-b-[0.1px] text-[0.8125rem] cursor-pointer hover:bg-mastra-bg-3"
+                      className="border-b-gray-6 border-b-[0.1px] text-[0.8125rem] cursor-pointer hover:bg-@@mastra/cli/cli/cli-bg-3"
                       onClick={() => toggleMetric(group.metricName)}
                     >
                       <TableCell className="w-12">
@@ -145,18 +145,18 @@ function EvalTable({ evals, isCIMode = false, onRefresh }: EvalTableProps) {
                               expandedMetrics.has(group.metricName) ? 'rotate-90' : '',
                             )}
                           >
-                            <ChevronRight className="h-4 w-4 text-mastra-el-5" />
+                            <ChevronRight className="h-4 w-4 text-@@mastra/cli/cli/cli-el-5" />
                           </div>
                         </div>
                       </TableCell>
-                      <TableCell className="min-w-[200px] max-w-[30%] font-medium text-mastra-el-5">
+                      <TableCell className="min-w-[200px] max-w-[30%] font-medium text-@@mastra/cli/cli/cli-el-5">
                         {group.metricName}
                       </TableCell>
-                      <TableCell className="flex-1 text-mastra-el-5" />
-                      <TableCell className="w-48 text-mastra-el-5">
+                      <TableCell className="flex-1 text-@@mastra/cli/cli/cli-el-5" />
+                      <TableCell className="w-48 text-@@mastra/cli/cli/cli-el-5">
                         <ScoreIndicator score={group.averageScore} />
                       </TableCell>
-                      <TableCell className="w-48 text-mastra-el-5">
+                      <TableCell className="w-48 text-@@mastra/cli/cli/cli-el-5">
                         <Badge variant="secondary">{group.evals.length}</Badge>
                       </TableCell>
                     </TableRow>
@@ -167,11 +167,11 @@ function EvalTable({ evals, isCIMode = false, onRefresh }: EvalTableProps) {
                           colSpan={5 + (getHasReasons(group.evals) ? 1 : 0) + (isCIMode ? 1 : 0)}
                           className="p-0"
                         >
-                          <div className="bg-mastra-bg-3 rounded-lg m-2">
+                          <div className="bg-@@mastra/cli/cli/cli-bg-3 rounded-lg m-2">
                             <div className="w-full">
                               <Table className="w-full">
                                 <TableHeader>
-                                  <TableRow className="text-[0.7rem] text-mastra-el-3 hover:bg-transparent">
+                                  <TableRow className="text-[0.7rem] text-@@mastra/cli/cli/cli-el-3 hover:bg-transparent">
                                     <TableHead className="pl-12 w-[120px]">Timestamp</TableHead>
                                     <TableHead className="w-[300px]">Instructions</TableHead>
                                     <TableHead className="w-[300px]">Input</TableHead>
@@ -185,12 +185,12 @@ function EvalTable({ evals, isCIMode = false, onRefresh }: EvalTableProps) {
                                   {group.evals.map((evaluation, index) => (
                                     <TableRow
                                       key={`${group.metricName}-${index}`}
-                                      className="text-[0.8125rem] hover:bg-mastra-bg-2/50"
+                                      className="text-[0.8125rem] hover:bg-@@mastra/cli/cli/cli-bg-2/50"
                                     >
-                                      <TableCell className="pl-12 text-mastra-el-4 align-top py-4">
+                                      <TableCell className="pl-12 text-@@mastra/cli/cli/cli-el-4 align-top py-4">
                                         <FormattedDate date={evaluation.createdAt} />
                                       </TableCell>
-                                      <TableCell className="text-mastra-el-4 align-top py-4">
+                                      <TableCell className="text-@@mastra/cli/cli/cli-el-4 align-top py-4">
                                         <div className={cn('max-w-[300px] max-h-[200px]', scrollableContentClass)}>
                                           <CopyableContent
                                             content={evaluation.instructions}
@@ -199,21 +199,21 @@ function EvalTable({ evals, isCIMode = false, onRefresh }: EvalTableProps) {
                                           />
                                         </div>
                                       </TableCell>
-                                      <TableCell className="text-mastra-el-4 align-top py-4">
+                                      <TableCell className="text-@@mastra/cli/cli/cli-el-4 align-top py-4">
                                         <div className={cn('max-w-[300px] max-h-[200px]', scrollableContentClass)}>
                                           <CopyableContent content={evaluation.input} label="input" multiline />
                                         </div>
                                       </TableCell>
-                                      <TableCell className="text-mastra-el-4 align-top py-4">
+                                      <TableCell className="text-@@mastra/cli/cli/cli-el-4 align-top py-4">
                                         <div className={cn('max-w-[300px] max-h-[200px]', scrollableContentClass)}>
                                           <CopyableContent content={evaluation.output} label="output" multiline />
                                         </div>
                                       </TableCell>
-                                      <TableCell className="text-mastra-el-4 align-top py-4">
+                                      <TableCell className="text-@@mastra/cli/cli/cli-el-4 align-top py-4">
                                         <ScoreIndicator score={evaluation.result.score} />
                                       </TableCell>
                                       {getHasReasons(group.evals) && (
-                                        <TableCell className="text-mastra-el-4 align-top py-4">
+                                        <TableCell className="text-@@mastra/cli/cli/cli-el-4 align-top py-4">
                                           <div className={cn('max-w-[300px] max-h-[200px]', scrollableContentClass)}>
                                             <CopyableContent
                                               content={evaluation.result.info?.reason || ''}
@@ -224,7 +224,7 @@ function EvalTable({ evals, isCIMode = false, onRefresh }: EvalTableProps) {
                                         </TableCell>
                                       )}
                                       {isCIMode && (
-                                        <TableCell className="text-mastra-el-4 align-top py-4">
+                                        <TableCell className="text-@@mastra/cli/cli/cli-el-4 align-top py-4">
                                           {evaluation.testInfo?.testName && (
                                             <Badge variant="secondary" className="text-xs">
                                               {evaluation.testInfo.testName}

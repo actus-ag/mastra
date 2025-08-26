@@ -12,18 +12,18 @@ description: 呼び出されたメッセージをフィルタリングおよび�
 まず、メモリパッケージをインストールします：
 
 ```bash copy
-npm install @actus-ag/mastra-memory@latest
+npm install @mastra/cli/cli/cli/memory@latest
 # or
-pnpm add @actus-ag/mastra-memory@latest
+pnpm add @mastra/cli/cli/cli/memory@latest
 # or
-yarn add @actus-ag/mastra-memory@latest
+yarn add @mastra/cli/cli/cli/memory@latest
 ```
 
 ## プロセッサを使用した基本的なメモリ設定
 
 ```typescript
-import { Memory } from "@actus-ag/mastra-memory";
-import { TokenLimiter, ToolCallFilter } from "@actus-ag/mastra-memory/processors";
+import { Memory } from "@mastra/cli/cli/cli/memory";
+import { TokenLimiter, ToolCallFilter } from "@mastra/cli/cli/cli/memory/processors";
 
 // Create memory with processors
 const memory = new Memory({
@@ -36,8 +36,8 @@ const memory = new Memory({
 `TokenLimiter` は、モデルのコンテキストウィンドウ内に収まるように支援します:
 
 ```typescript
-import { Memory } from "@actus-ag/mastra-memory";
-import { TokenLimiter } from "@actus-ag/mastra-memory/processors";
+import { Memory } from "@mastra/cli/cli/cli/memory";
+import { TokenLimiter } from "@mastra/cli/cli/cli/memory/processors";
 
 // トークン制限を設定してメモリをセットアップ
 const memory = new Memory({
@@ -51,8 +51,8 @@ const memory = new Memory({
 必要に応じて異なるエンコーディングを指定することもできます:
 
 ```typescript
-import { Memory } from "@actus-ag/mastra-memory";
-import { TokenLimiter } from "@actus-ag/mastra-memory/processors";
+import { Memory } from "@mastra/cli/cli/cli/memory";
+import { TokenLimiter } from "@mastra/cli/cli/cli/memory/processors";
 import cl100k_base from "js-tiktoken/ranks/cl100k_base";
 
 const memory = new Memory({
@@ -70,8 +70,8 @@ const memory = new Memory({
 `ToolCallFilter` プロセッサは、メモリからツール呼び出しとその結果を削除します:
 
 ```typescript
-import { Memory } from "@actus-ag/mastra-memory";
-import { ToolCallFilter } from "@actus-ag/mastra-memory/processors";
+import { Memory } from "@mastra/cli/cli/cli/memory";
+import { ToolCallFilter } from "@mastra/cli/cli/cli/memory/processors";
 
 // すべてのツール呼び出しをフィルタリング
 const memoryNoTools = new Memory({
@@ -93,8 +93,8 @@ const memorySelectiveFilter = new Memory({
 プロセッサは定義された順に実行されます：
 
 ```typescript
-import { Memory } from "@actus-ag/mastra-memory";
-import { TokenLimiter, ToolCallFilter } from "@actus-ag/mastra-memory/processors";
+import { Memory } from "@mastra/cli/cli/cli/memory";
+import { TokenLimiter, ToolCallFilter } from "@mastra/cli/cli/cli/memory/processors";
 
 const memory = new Memory({
   processors: [
@@ -111,9 +111,9 @@ const memory = new Memory({
 `MemoryProcessor` クラスを拡張することで、独自のプロセッサを作成できます：
 
 ```typescript
-import type { CoreMessage } from "@actus-ag/mastra-core";
-import { MemoryProcessor } from "@actus-ag/mastra-core/memory";
-import { Memory } from "@actus-ag/mastra-memory";
+import type { CoreMessage } from "@mastra/cli/cli/cli/core";
+import { MemoryProcessor } from "@mastra/cli/cli/cli/core/memory";
+import { Memory } from "@mastra/cli/cli/cli/memory";
 
 // 最新のメッセージのみを保持するシンプルなプロセッサ
 class RecentMessagesProcessor extends MemoryProcessor {
@@ -146,8 +146,8 @@ const memory = new Memory({
 エージェントでプロセッサを使用してメモリを使用する方法は次のとおりです:
 
 ```typescript
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { Memory, TokenLimiter, ToolCallFilter } from "@actus-ag/mastra-memory";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { Memory, TokenLimiter, ToolCallFilter } from "@mastra/cli/cli/cli/memory";
 import { openai } from "@ai-sdk/openai";
 
 // Set up memory with processors

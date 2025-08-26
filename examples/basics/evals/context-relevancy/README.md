@@ -13,7 +13,7 @@ This example demonstrates how to use Mastra's Context Relevancy metric to evalua
 1. Clone the repository and navigate to the project directory:
 
    ```bash
-   git clone https://github.com/mastra-ai/mastra
+   git clone https://github.com/@mastra-ai/@mastra
    cd examples/basics/evals/context-relevancy
    ```
 

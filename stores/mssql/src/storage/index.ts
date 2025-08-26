@@ -1,9 +1,9 @@
-import type { MastraMessageContentV2, MastraMessageV2 } from '@actus-ag/mastra-core/agent';
+import type { MastraMessageContentV2, MastraMessageV2 } from '@mastra/core/agent';
 export type MastraMessageV2WithTypedContent = Omit<MastraMessageV2, 'content'> & { content: MastraMessageContentV2 };
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import type { MastraMessageV1, StorageThreadType } from '@actus-ag/mastra-core/memory';
-import type { ScoreRowData } from '@actus-ag/mastra-core/scores';
-import { MastraStorage } from '@actus-ag/mastra-core/storage';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import type { MastraMessageV1, StorageThreadType } from '@mastra/core/memory';
+import type { ScoreRowData } from '@mastra/core/scores';
+import { MastraStorage } from '@mastra/core/storage';
 import type {
   EvalRow,
   PaginationInfo,
@@ -19,9 +19,9 @@ import type {
   StorageDomains,
   StorageGetTracesArg,
   StorageGetTracesPaginatedArg,
-} from '@actus-ag/mastra-core/storage';
-import type { Trace } from '@actus-ag/mastra-core/telemetry';
-import type { WorkflowRunState } from '@actus-ag/mastra-core/workflows';
+} from '@mastra/core/storage';
+import type { Trace } from '@mastra/core/telemetry';
+import type { WorkflowRunState } from '@mastra/core/workflows';
 import sql from 'mssql';
 import { LegacyEvalsMSSQL } from './domains/legacy-evals';
 import { MemoryMSSQL } from './domains/memory';

@@ -1,13 +1,13 @@
 import { z } from 'zod';
 
-import { mastra } from './mastra';
+import { @mastra } from './@mastra';
 
 const specieSchema = z.object({
   species: z.string(),
 });
 
 const main = async () => {
-  const agentCat = mastra.getAgent('catOne');
+  const agentCat = @mastra.getAgent('catOne');
 
   try {
     const result = await agentCat.generate('What is the most popular cat species?', {
@@ -18,7 +18,7 @@ const main = async () => {
 
     console.log(res.species);
 
-    const { start } = mastra.getWorkflow('logCatWorkflow').createRun();
+    const { start } = @mastra.getWorkflow('logCatWorkflow').createRun();
 
     await start({ triggerData: { name: res.species } });
   } catch (err) {

@@ -1,6 +1,6 @@
 import { openai } from '@ai-sdk/openai';
 import { anthropic } from '@ai-sdk/anthropic';
-import { Agent } from '@actus-ag/mastra-core/agent';
+import { Agent } from '@mastra/core/agent';
 import { weatherTool } from '../tools';
 
 export const weatherAgent = new Agent({

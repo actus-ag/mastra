@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import type { MastraMessageV2 } from '../../message-list';
-import { convertToV1Messages } from './convert-to-mastra-v1';
+import { convertToV1Messages } from './convert-to-@mastra-v1';
 
 describe('convertToV1Messages - reasoning and file support', () => {
   it('should handle file parts in messages', () => {

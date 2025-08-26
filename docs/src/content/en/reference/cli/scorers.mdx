@@ -1,26 +1,26 @@
 ---
-title: "mastra scorers | Evaluation Management | Mastra CLI"
+title: "@mastra/cli/cli scorers | Evaluation Management | Mastra CLI"
 description: "Manage scorers for evaluating AI outputs with the Mastra CLI"
 ---
 
-# mastra scorers
+# @mastra/cli/cli scorers
 
-The `mastra scorers` command provides management capabilities for evaluation scorers that measure the quality, accuracy, and performance of AI-generated outputs.
+The `@mastra/cli/cli scorers` command provides management capabilities for evaluation scorers that measure the quality, accuracy, and performance of AI-generated outputs.
 
 ## Usage
 
 ```bash
-mastra scorers <command> [options]
+@mastra/cli/cli scorers <command> [options]
 ```
 
 ## Commands
 
-### mastra scorers add
+### @mastra/cli/cli scorers add
 
 Add a new scorer template to your project.
 
 ```bash
-mastra scorers add [scorer-name] [options]
+@mastra/cli/cli scorers add [scorer-name] [options]
 ```
 
 #### Options
@@ -47,27 +47,27 @@ mastra scorers add [scorer-name] [options]
 Add a specific scorer by name:
 
 ```bash copy
-mastra scorers add answer-relevancy
+@mastra/cli/cli scorers add answer-relevancy
 ```
 
 Interactive scorer selection (when no name provided):
 
 ```bash copy
-mastra scorers add
+@mastra/cli/cli scorers add
 ```
 
 Add scorer to custom directory:
 
 ```bash copy  
-mastra scorers add toxicity-detection --dir ./custom/scorers
+@mastra/cli/cli scorers add toxicity-detection --dir ./custom/scorers
 ```
 
-### mastra scorers list
+### @mastra/cli/cli scorers list
 
 List all available scorer templates.
 
 ```bash
-mastra scorers list
+@mastra/cli/cli scorers list
 ```
 
 This command displays built-in scorer templates organized by category:
@@ -77,7 +77,7 @@ This command displays built-in scorer templates organized by category:
 
 ## Available Scorers
 
-When running `mastra scorers add` without specifying a scorer name, you can select from these built-in templates:
+When running `@mastra/cli/cli scorers add` without specifying a scorer name, you can select from these built-in templates:
 
 ### Accuracy and Reliability
 
@@ -97,10 +97,10 @@ When running `mastra scorers add` without specifying a scorer name, you can sele
 
 ## What It Does
 
-1. **Dependency Management**: Automatically installs `@actus-ag/mastra-evals` package if needed
+1. **Dependency Management**: Automatically installs `@mastra/cli/cli/cli/evals` package if needed
 2. **Template Selection**: Provides interactive selection when no scorer specified  
 3. **File Generation**: Creates scorer files from built-in templates
-4. **Directory Structure**: Places scorers in `src/mastra/scorers/` or custom directory
+4. **Directory Structure**: Places scorers in `src/@@mastra/cli/cli/cli/scorers/` or custom directory
 5. **Duplicate Detection**: Prevents overwriting existing scorer files
 
 ## Integration
@@ -109,8 +109,8 @@ After adding scorers, integrate them with your agents or workflows:
 
 ### With Agents
 
-```typescript filename="src/mastra/agents/evaluated-agent.ts"
-import { Agent } from "@actus-ag/mastra-core/agent";
+```typescript filename="src/@@mastra/cli/cli/cli/agents/evaluated-agent.ts"
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { openai } from "@ai-sdk/openai";
 import { createAnswerRelevancyScorer } from "../scorers/answer-relevancy-scorer";
 
@@ -127,8 +127,8 @@ export const evaluatedAgent = new Agent({
 
 ### With Workflow Steps
 
-```typescript filename="src/mastra/workflows/content-generation.ts"
-import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows";
+```typescript filename="src/@@mastra/cli/cli/cli/workflows/content-generation.ts"
+import { createWorkflow, createStep } from "@mastra/cli/cli/cli/core/workflows";
 import { customStepScorer } from "../scorers/custom-step-scorer";
 
 const contentStep = createStep({
@@ -147,7 +147,7 @@ const contentStep = createStep({
 Use the [Local Dev Playground](/docs/server-db/local-dev-playground) to test your scorers:
 
 ```bash copy
-mastra dev
+@actus-ag/@mastra/cli/cli dev
 ```
 
 Navigate to [http://localhost:4111/](http://localhost:4111/) and access the scorers section to run individual scorers against test inputs and view detailed results.

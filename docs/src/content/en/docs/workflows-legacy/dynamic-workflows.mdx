@@ -18,12 +18,12 @@ The key to creating dynamic workflows is accessing the Mastra instance from with
 ### Basic Example
 
 ```typescript
-import { Mastra } from "@actus-ag/mastra-core";
-import { LegacyStep, LegacyWorkflow } from "@actus-ag/mastra-core/workflows/legacy";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { LegacyStep, LegacyWorkflow } from "@mastra/cli/cli/cli/core/workflows/legacy";
 import { z } from "zod";
 
-const isMastra = (mastra: any): mastra is Mastra => {
-  return mastra && typeof mastra === "object" && mastra instanceof Mastra;
+const isMastra = (@@mastra/cli/cli/cli: any): @@mastra/cli/cli/cli is Mastra => {
+  return @@mastra/cli/cli/cli && typeof @@mastra/cli/cli/cli === "object" && @@mastra/cli/cli/cli instanceof Mastra;
 };
 
 // Step that creates and runs a dynamic workflow
@@ -32,12 +32,12 @@ const createDynamicWorkflow = new LegacyStep({
   outputSchema: z.object({
     dynamicWorkflowResult: z.any(),
   }),
-  execute: async ({ context, mastra }) => {
-    if (!mastra) {
+  execute: async ({ context, @@mastra/cli/cli/cli }) => {
+    if (!@@mastra/cli/cli/cli) {
       throw new Error("Mastra instance not available");
     }
 
-    if (!isMastra(mastra)) {
+    if (!isMastra(@@mastra/cli/cli/cli)) {
       throw new Error("Invalid Mastra instance");
     }
 
@@ -46,7 +46,7 @@ const createDynamicWorkflow = new LegacyStep({
     // Create a new dynamic workflow
     const dynamicWorkflow = new LegacyWorkflow({
       name: "dynamic-workflow",
-      mastra, // Pass the mastra instance to the new workflow
+      @@mastra/cli/cli/cli, // Pass the @@mastra/cli/cli/cli instance to the new workflow
       triggerSchema: z.object({
         dynamicInput: z.string(),
       }),
@@ -96,13 +96,13 @@ const mainWorkflow = new LegacyWorkflow({
   triggerSchema: z.object({
     inputData: z.string(),
   }),
-  mastra: new Mastra(),
+  @@mastra/cli/cli/cli: new Mastra(),
 });
 
 mainWorkflow.step(createDynamicWorkflow).commit();
 
 // Register the workflow with Mastra
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   legacy_workflows: { mainWorkflow },
 });
 
@@ -119,8 +119,8 @@ const result = await run.start({
 You can create a workflow factory that generates different workflows based on input parameters:
 
 ```typescript
-const isMastra = (mastra: any): mastra is Mastra => {
-  return mastra && typeof mastra === "object" && mastra instanceof Mastra;
+const isMastra = (@@mastra/cli/cli/cli: any): @@mastra/cli/cli/cli is Mastra => {
+  return @@mastra/cli/cli/cli && typeof @@mastra/cli/cli/cli === "object" && @@mastra/cli/cli/cli instanceof Mastra;
 };
 
 const workflowFactory = new LegacyStep({
@@ -132,19 +132,19 @@ const workflowFactory = new LegacyStep({
   outputSchema: z.object({
     result: z.any(),
   }),
-  execute: async ({ context, mastra }) => {
-    if (!mastra) {
+  execute: async ({ context, @@mastra/cli/cli/cli }) => {
+    if (!@@mastra/cli/cli/cli) {
       throw new Error("Mastra instance not available");
     }
 
-    if (!isMastra(mastra)) {
+    if (!isMastra(@@mastra/cli/cli/cli)) {
       throw new Error("Invalid Mastra instance");
     }
 
     // Create a new dynamic workflow based on the type
     const dynamicWorkflow = new LegacyWorkflow({
       name: `dynamic-${context.workflowType}-workflow`,
-      mastra,
+      @@mastra/cli/cli/cli,
       triggerSchema: z.object({
         input: z.string(),
       }),
@@ -215,7 +215,7 @@ const workflowFactory = new LegacyStep({
 
 ## Important Considerations
 
-1. **Mastra Instance**: The `mastra` parameter in the `execute` function provides access to the Mastra instance, which is essential for creating dynamic workflows.
+1. **Mastra Instance**: The `@actus-ag/@@mastra/cli/cli/cli` parameter in the `execute` function provides access to the Mastra instance, which is essential for creating dynamic workflows.
 
 2. **Error Handling**: Always check if the Mastra instance is available before attempting to create a dynamic workflow.
 

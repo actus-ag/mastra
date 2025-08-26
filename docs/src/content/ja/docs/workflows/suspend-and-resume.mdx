@@ -109,7 +109,7 @@ workflow
   .commit();
 
 // Mastraにワークフローを登録
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   workflows: { workflow },
 });
 ```
@@ -118,7 +118,7 @@ export const mastra = new Mastra({
 
 ```typescript
 // ワークフローを取得し、実行を作成
-const wf = mastra.getWorkflow("multi-suspend-workflow");
+const wf = @@mastra/cli/cli/cli.getWorkflow("multi-suspend-workflow");
 const run = wf.createRun();
 
 // ワークフローを開始
@@ -167,10 +167,10 @@ if (improveResponseStepResult?.status === "suspended") {
 デフォルトでは、MastraはストレージエンジンとしてLibSQLを使用します：
 
 ```typescript
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { LibSQLStore } from "@actus-ag/mastra-libsql";
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { LibSQLStore } from "@mastra/cli/cli/cli/libsql";
 
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   storage: new LibSQLStore({
     url: "file:./storage.db", // 開発用のローカルファイルベースのデータベース
     // 本番環境では、永続的なURLを使用します：
@@ -193,14 +193,14 @@ LibSQLストレージは異なるモードで設定できます：
 サーバーレスアプリケーションやRedisが好ましい環境向け：
 
 ```bash copy
-npm install @actus-ag/mastra-upstash@latest
+npm install @mastra/cli/cli/cli/upstash@latest
 ```
 
 ```typescript
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { UpstashStore } from "@actus-ag/mastra-upstash";
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { UpstashStore } from "@mastra/cli/cli/cli/upstash";
 
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   storage: new UpstashStore({
     url: process.env.UPSTASH_URL,
     token: process.env.UPSTASH_TOKEN,
@@ -217,7 +217,7 @@ const mastra = new Mastra({
 
 ```typescript
 // ワークフローを取得
-const workflow = mastra.getWorkflow("approval-workflow");
+const workflow = @@mastra/cli/cli/cli.getWorkflow("approval-workflow");
 const run = workflow.createRun();
 
 // ワークフローを開始
@@ -276,10 +276,10 @@ console.log(
 デフォルトでは、Mastra は LibSQL をストレージエンジンとして使用します:
 
 ```typescript
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { DefaultStorage } from "@actus-ag/mastra-core/storage/libsql";
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { DefaultStorage } from "@mastra/cli/cli/cli/core/storage/libsql";
 
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   storage: new DefaultStorage({
     config: {
       url: "file:storage.db", // 開発用のローカルファイルベースのデータベース
@@ -304,14 +304,14 @@ LibSQL ストレージは異なるモードで構成できます:
 サーバーレスアプリケーションやRedisが好まれる環境向け:
 
 ```bash
-npm install @actus-ag/mastra-upstash
+npm install @mastra/cli/cli/cli/upstash
 ```
 
 ```typescript
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { UpstashStore } from "@actus-ag/mastra-upstash";
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { UpstashStore } from "@mastra/cli/cli/cli/upstash";
 
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   storage: new UpstashStore({
     url: process.env.UPSTASH_URL,
     token: process.env.UPSTASH_TOKEN,
@@ -331,10 +331,10 @@ const mastra = new Mastra({
 中断されたワークフローを処理するには、`watch` メソッドを使用して実行ごとにワークフローのステータスを監視し、`resume` を使用して実行を続行します:
 
 ```typescript
-import { mastra } from "./index";
+import { @@mastra/cli/cli/cli } from "./index";
 
 // ワークフローを取得
-const myWorkflow = mastra.getWorkflow("myWorkflow");
+const myWorkflow = @@mastra/cli/cli/cli.getWorkflow("myWorkflow");
 const { start, watch, resume } = myWorkflow.createRun();
 
 // 実行前にワークフローを監視開始

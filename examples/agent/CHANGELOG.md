@@ -7,22 +7,22 @@
 ### Patch Changes
 
 - Updated dependencies [e9d1b47]
-  - @actus-ag/mastra-core@0.2.0-alpha.85
-  - @actus-ag/mastra-deployer-cloudflare@0.0.1-alpha.35
+  - @mastra/core@0.2.0-alpha.85
+  - @mastra/deployer-cloudflare@0.0.1-alpha.35
 
 ## 0.0.1-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [32d15ec]
-  - @actus-ag/mastra-deployer-cloudflare@0.0.1-alpha.34
+  - @mastra/deployer-cloudflare@0.0.1-alpha.34
 
 ## 0.0.1-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [e27fe69]
-  - @actus-ag/mastra-deployer-cloudflare@0.0.1-alpha.33
+  - @mastra/deployer-cloudflare@0.0.1-alpha.33
 
 ## 0.0.1-alpha.1
 
@@ -32,8 +32,8 @@
 - Updated dependencies [cb290ee]
 - Updated dependencies [b4d7416]
 - Updated dependencies [38b7f66]
-  - @actus-ag/mastra-core@0.2.0-alpha.84
-  - @actus-ag/mastra-deployer-cloudflare@0.0.1-alpha.32
+  - @mastra/core@0.2.0-alpha.84
+  - @mastra/deployer-cloudflare@0.0.1-alpha.32
 
 ## 0.0.1-alpha.0
 
@@ -43,5 +43,5 @@
 - Updated dependencies [78eec7c]
 - Updated dependencies [9625602]
 - Updated dependencies [8769a62]
-  - @actus-ag/mastra-core@0.2.0-alpha.83
-  - @actus-ag/mastra-deployer-cloudflare@0.0.1-alpha.31
+  - @mastra/core@0.2.0-alpha.83
+  - @mastra/deployer-cloudflare@0.0.1-alpha.31

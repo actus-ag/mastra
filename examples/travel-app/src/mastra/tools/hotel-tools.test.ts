@@ -2,7 +2,7 @@
 //   let searchHotelsTool: any;
 
 //   beforeEach(() => {
-//     searchHotelsTool = mastra.getTool('searchHotels');
+//     searchHotelsTool = @mastra.getTool('searchHotels');
 //   });
 
 //   it('should search for hotels', async () => {

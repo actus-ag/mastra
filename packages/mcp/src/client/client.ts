@@ -1,9 +1,9 @@
 import $RefParser from '@apidevtools/json-schema-ref-parser';
-import { MastraBase } from '@actus-ag/mastra-core/base';
-import type { RuntimeContext } from '@actus-ag/mastra-core/di';
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import { createTool } from '@actus-ag/mastra-core/tools';
-import { isZodType } from '@actus-ag/mastra-core/utils';
+import { MastraBase } from '@mastra/core/base';
+import type { RuntimeContext } from '@mastra/core/di';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import { createTool } from '@mastra/core/tools';
+import { isZodType } from '@mastra/core/utils';
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { SSEClientTransport } from '@modelcontextprotocol/sdk/client/sse.js';
 import type { SSEClientTransportOptions } from '@modelcontextprotocol/sdk/client/sse.js';
@@ -550,7 +550,7 @@ export class InternalMastraMCPClient extends MastraBase {
     for (const tool of tools) {
       this.log('debug', `Processing tool: ${tool.name}`);
       try {
-        const mastraTool = createTool({
+        const @mastraTool = createTool({
           id: `${this.name}_${tool.name}`,
           description: tool.description || '',
           inputSchema: await this.convertInputSchema(tool.inputSchema),
@@ -586,7 +586,7 @@ export class InternalMastraMCPClient extends MastraBase {
         });
 
         if (tool.name) {
-          toolsRes[tool.name] = mastraTool;
+          toolsRes[tool.name] = @mastraTool;
         }
       } catch (toolCreationError: unknown) {
         // Catch errors during tool creation itself (e.g., if createTool has issues)

@@ -9,18 +9,18 @@ As an example, we have an AgentNetwork with 3 primitives at its disposal:
 We use the `loop` method to create a task that requires multiple primitives. The AgentNetwork will, using memory, figure out which primitives to call and in which order, as well as when the task is complete.
 
 ```typescript
-import { NewAgentNetwork } from '@actus-ag/mastra-core/network/vNext';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { createStep, createWorkflow } from '@actus-ag/mastra-core/workflows';
-import { Memory } from '@actus-ag/mastra-memory';
+import { NewAgentNetwork } from '@mastra/cli/cli/cli/core/network/vNext';
+import { Agent } from '@mastra/cli/cli/cli/core/agent';
+import { createStep, createWorkflow } from '@mastra/cli/cli/cli/core/workflows';
+import { Memory } from '@mastra/cli/cli/cli/memory';
 import { openai } from '@ai-sdk/openai';
-import { LibSQLStore } from '@actus-ag/mastra-libsql';
+import { LibSQLStore } from '@mastra/cli/cli/cli/libsql';
 import { z } from 'zod';
-import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
+import { RuntimeContext } from '@mastra/cli/cli/cli/core/runtime-context';
 
 const memory = new Memory({
   storage: new LibSQLStore({
-    url: 'file:../mastra.db', // Or your database URL
+    url: 'file:../@@mastra/cli/cli/cli.db', // Or your database URL
   }),
 });
 

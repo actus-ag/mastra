@@ -167,7 +167,7 @@ export function Chat({ agentId, initialMessages = [], agentName, threadId, memor
           )}
         </ChatForm>
         {!memory && (
-          <div className="flex items-center gap-1 text-sm text-mastra-el-5">
+          <div className="flex items-center gap-1 text-sm text-@@mastra/cli/cli/cli-el-5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="14"
@@ -187,7 +187,7 @@ export function Chat({ agentId, initialMessages = [], agentName, threadId, memor
             <span className="text-xs text-gray-300/60">
               Agent will not remember previous messages. To enable memory for agent see{' '}
               <a
-                href="https://mastra.ai/docs/agents/agent-memory"
+                href="https://@@mastra/cli/cli/cli.ai/docs/agents/agent-memory"
                 target="_blank"
                 rel="noopener"
                 className="text-gray-300/60 hover:text-gray-100 underline"

@@ -1,11 +1,11 @@
-import { DynamicForm, MainContentContent } from '@actus-ag/mastra-playground-ui';
+import { DynamicForm, MainContentContent } from '@mastra/cli/cli/cli/playground-ui';
 import { CopyButton } from '@/components/ui/copy-button';
 import { ZodType } from 'zod';
 import { ToolInformation } from '@/domains/tools/ToolInformation';
 import { jsonLanguage } from '@codemirror/lang-json';
 import { useCodemirrorTheme } from '@/components/syntax-highlighter';
 import CodeMirror from '@uiw/react-codemirror';
-import { MCPToolType } from '@actus-ag/mastra-core/mcp';
+import { MCPToolType } from '@mastra/cli/cli/cli/core/mcp';
 
 export interface ToolExecutorProps {
   isExecutingTool: boolean;

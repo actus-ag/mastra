@@ -1,20 +1,20 @@
 import { spawn } from 'node:child_process';
-import { MCPClient } from '@actus-ag/mastra-mcp';
+import { MCPClient } from '@mastra/mcp';
 import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
-import { ServerInfo } from '@actus-ag/mastra-core/mcp';
+import { ServerInfo } from '@mastra/core/mcp';
 import path from 'node:path';
 
 vi.setConfig({ testTimeout: 20000, hookTimeout: 20000 });
 
 describe('MCPServer through Mastra HTTP Integration (Subprocess)', () => {
-  let mastraServer: ReturnType<typeof spawn>;
+  let @mastraServer: ReturnType<typeof spawn>;
   const port: number = 4114;
   const mcpServerId = 'myMcpServer';
   const testToolId = 'calculator';
   let client: MCPClient;
 
   beforeAll(async () => {
-    mastraServer = spawn(
+    @mastraServer = spawn(
       'pnpm',
       [
         path.resolve(import.meta.dirname, `..`, `..`, `..`, `cli`, `dist`, `index.js`),
@@ -31,14 +31,14 @@ describe('MCPServer through Mastra HTTP Integration (Subprocess)', () => {
     // Wait for server to be ready
     await new Promise<void>((resolve, reject) => {
       let output = '';
-      mastraServer.stdout?.on('data', data => {
+      @mastraServer.stdout?.on('data', data => {
         output += data.toString();
         console.log(output);
         if (output.includes('http://localhost:')) {
           resolve();
         }
       });
-      mastraServer.stderr?.on('data', data => {
+      @mastraServer.stderr?.on('data', data => {
         console.error('Mastra server error:', data.toString());
       });
 
@@ -56,9 +56,9 @@ describe('MCPServer through Mastra HTTP Integration (Subprocess)', () => {
 
   afterAll(() => {
     // Kill the server and its process group
-    if (mastraServer?.pid) {
+    if (@mastraServer?.pid) {
       try {
-        process.kill(-mastraServer.pid, 'SIGTERM');
+        process.kill(-@mastraServer.pid, 'SIGTERM');
       } catch (e) {
         console.error('Failed to kill Mastra server:', e);
       }
@@ -152,7 +152,7 @@ describe('MCPServer through Mastra HTTP Integration (Subprocess)', () => {
       expect(defaultServerInfo).toBeDefined();
       expect(defaultServerInfo).toHaveProperty('name');
       expect(defaultServerInfo).toHaveProperty('version_detail');
-      // Based on default mastra dev setup, if myMcpServer is the key, its id becomes 'myMcpServer'
+      // Based on default @actus-ag/@mastra/cli/cli dev setup, if myMcpServer is the key, its id becomes 'myMcpServer'
       // And its name might be something like 'my-mcp-server' if not explicitly set in MCPServerConfig for it.
       // For this test, we assume the `id` is the key used in Mastra config.
       expect(defaultServerInfo.id).toBe(defaultMcpServerLogicalId);

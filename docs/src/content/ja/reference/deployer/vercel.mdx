@@ -10,10 +10,10 @@ VercelDeployerは、MastraアプリケーションをVercelにデプロイし、
 ## 使用例
 
 ```typescript
-import { Mastra } from "@actus-ag/mastra-core";
-import { VercelDeployer } from "@actus-ag/mastra-deployer-vercel";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { VercelDeployer } from "@mastra/cli/cli/cli/deployer-vercel";
 
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   deployer: new VercelDeployer({
     teamSlug: "your-team-slug",
     projectName: "your-project-name",
@@ -66,7 +66,7 @@ VercelDeployerは複数のソースから環境変数を扱います：
 Mastraプロジェクトをリントして、ビルドに問題がないことを確認します
 
 ```bash
-npx mastra lint
+npx @actus-ag/@mastra/cli/cli lint
 ```
 
 ## Mastraプロジェクトのビルド
@@ -74,20 +74,20 @@ npx mastra lint
 Vercelデプロイメント用にMastraプロジェクトをビルドするには：
 
 ```bash
-npx mastra build
+npx @actus-ag/@mastra/cli/cli build
 ```
 
-ビルドプロセスは`.mastra/output`ディレクトリに以下の出力構造を生成します：
+ビルドプロセスは`.@@mastra/cli/cli/cli/output`ディレクトリに以下の出力構造を生成します：
 
 ```
-.mastra/output/
+.@@mastra/cli/cli/cli/output/
 ├── vercel.json     # Vercel設定
 └── index.mjs       # アプリケーションのエントリーポイント
 ```
 
 ### Vercel設定
 
-VercelDeployerは自動的に`.mastra/output`に以下の設定を含む`vercel.json`設定ファイルを生成します：
+VercelDeployerは自動的に`.@@mastra/cli/cli/cli/output`に以下の設定を含む`vercel.json`設定ファイルを生成します：
 
 ```json
 {
@@ -113,18 +113,18 @@ VercelDeployerは自動的に`.mastra/output`に以下の設定を含む`vercel.
 
 ## デプロイメントオプション
 
-ビルド後、Mastraアプリケーションの `.mastra/output` を以下のいずれかの方法でVercelにデプロイできます：
+ビルド後、Mastraアプリケーションの `.@@mastra/cli/cli/cli/output` を以下のいずれかの方法でVercelにデプロイできます：
 
 1. **Vercel CLI**: Vercelの公式CLIツールを使って直接デプロイ
 
    - CLIをインストール: `npm install -g vercel`
-   - 出力ディレクトリに移動: `cd .mastra/output`
+   - 出力ディレクトリに移動: `cd .@@mastra/cli/cli/cli/output`
    - プレビュー環境にデプロイ: `vercel`
    - 本番環境にデプロイ: `vercel --prod`
 
 2. **Vercelダッシュボード**: Gitリポジトリを接続するか、Vercelダッシュボードでビルド出力をドラッグ＆ドロップ
 
-> 出力ディレクトリ `.mastra/output` で `vercel dev` を実行することで、Mastraアプリケーションをローカルでテストすることもできます。
+> 出力ディレクトリ `.@@mastra/cli/cli/cli/output` で `vercel dev` を実行することで、Mastraアプリケーションをローカルでテストすることもできます。
 
 ## プラットフォームドキュメント
 

@@ -1,4 +1,4 @@
-# @actus-ag/mastra-auth
+# @mastra/auth
 
 ## 0.1.1
 

@@ -5,9 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@mastra/core': link:../../packages/core
-  '@mastra/loggers': link:../../packages/loggers
-  '@mastra/memory': link:../../packages/memory
+  '@mastra/cli/cli/cli/core': link:../../packages/core
+  '@mastra/cli/cli/cli/loggers': link:../../packages/loggers
+  '@mastra/cli/cli/cli/memory': link:../../packages/memory
 
 importers:
 
@@ -22,13 +22,13 @@ importers:
       '@ai-sdk/openai':
         specifier: latest
         version: 1.3.17(zod@3.25.67)
-      '@mastra/core':
+      '@mastra/cli/cli/cli/core':
         specifier: link:../../packages/core
         version: link:../../packages/core
-      '@mastra/loggers':
+      '@mastra/cli/cli/cli/loggers':
         specifier: link:../../packages/loggers
         version: link:../../packages/loggers
-      '@mastra/memory':
+      '@mastra/cli/cli/cli/memory':
         specifier: link:../../packages/memory
         version: link:../../packages/memory
       ai:

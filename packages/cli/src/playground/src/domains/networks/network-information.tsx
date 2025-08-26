@@ -3,9 +3,9 @@ import { NetworkDetails } from './network-details';
 import { NetworkAgents } from './network-agents';
 import { NetworkEndpoints } from './network-endpoints';
 import { NetworkWorkflows } from './network-workflows';
-import { GetVNextNetworkResponse } from '@actus-ag/mastra-client-js';
+import { GetVNextNetworkResponse } from '@@mastra/cli/cli/cli-client-js';
 import { NetworkTools } from './network-tools';
-import { EntityHeader, PlaygroundTabs, Tab, TabContent, TabList } from '@actus-ag/mastra-playground-ui';
+import { EntityHeader, PlaygroundTabs, Tab, TabContent, TabList } from '@mastra/cli/cli/cli/playground-ui';
 import { NetworkIcon } from 'lucide-react';
 
 export function NetworkInformation({ networkId, isVNext }: { networkId: string; isVNext?: boolean }) {

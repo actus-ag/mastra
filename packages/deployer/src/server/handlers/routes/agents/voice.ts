@@ -1,10 +1,10 @@
-import type { Mastra } from '@actus-ag/mastra-core';
+import type { Mastra } from '@mastra/core';
 import {
   getSpeakersHandler as getOriginalSpeakersHandler,
   generateSpeechHandler as getOriginalSpeakHandler,
   getListenerHandler as getOriginalListenerHandler,
   transcribeSpeechHandler as getOriginalListenHandler,
-} from '@actus-ag/mastra-server/handlers/voice';
+} from '@mastra/server/handlers/voice';
 import type { Context } from 'hono';
 import { HTTPException } from 'hono/http-exception';
 
@@ -15,11 +15,11 @@ import { handleError } from '../../error.js';
  */
 export async function getSpeakersHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.param('agentId');
 
     const speakers = await getOriginalSpeakersHandler({
-      mastra,
+      @mastra,
       agentId,
     });
 
@@ -34,12 +34,12 @@ export async function getSpeakersHandler(c: Context) {
  */
 export async function speakHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.param('agentId');
     const { input, options } = await c.req.json();
 
     const audioStream = await getOriginalSpeakHandler({
-      mastra,
+      @mastra,
       agentId,
       body: { text: input, speakerId: options?.speakerId },
     });
@@ -58,11 +58,11 @@ export async function speakHandler(c: Context) {
  */
 export async function getListenerHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.param('agentId');
 
     const listeners = await getOriginalListenerHandler({
-      mastra,
+      @mastra,
       agentId,
     });
 
@@ -77,7 +77,7 @@ export async function getListenerHandler(c: Context) {
  */
 export async function listenHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const agentId = c.req.param('agentId');
 
     const formData = await c.req.formData();
@@ -98,7 +98,7 @@ export async function listenHandler(c: Context) {
     }
 
     const transcription = await getOriginalListenHandler({
-      mastra,
+      @mastra,
       agentId,
       body: {
         audioData: Buffer.from(audioData),

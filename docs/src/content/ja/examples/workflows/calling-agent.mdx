@@ -11,9 +11,9 @@ import { GithubLink } from "@/components/github-link";
 
 ```ts showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Mastra } from "@actus-ag/mastra-core";
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { Step, Workflow } from "@actus-ag/mastra-core/workflows";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { Step, Workflow } from "@mastra/cli/cli/cli/core/workflows";
 import { z } from "zod";
 
 const penguin = new Agent({
@@ -34,8 +34,8 @@ const replyAsSkipper = new Step({
   outputSchema: z.object({
     reply: z.string(),
   }),
-  execute: async ({ context, mastra }) => {
-    const skipper = mastra?.getAgent("penguin");
+  execute: async ({ context, @@mastra/cli/cli/cli }) => {
+    const skipper = @@mastra/cli/cli/cli?.getAgent("penguin");
 
     const res = await skipper?.generate(context?.triggerData?.message);
     return { reply: res?.text || "" };
@@ -45,12 +45,12 @@ const replyAsSkipper = new Step({
 newWorkflow.step(replyAsSkipper);
 newWorkflow.commit();
 
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   agents: { penguin },
   workflows: { newWorkflow },
 });
 
-const { runId, start } = await mastra.getWorkflow("newWorkflow").createRun();
+const { runId, start } = await @@mastra/cli/cli/cli.getWorkflow("newWorkflow").createRun();
 
 const runResult = await start({
   triggerData: { message: "Give me a run down of the mission to save private" },
@@ -66,6 +66,6 @@ console.log(runResult.results);
 <br />
 <GithubLink
   link={
-    "https://github.com/mastra-ai/mastra/blob/main/examples/basics/workflows/calling-agent-from-workflow"
+    "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/workflows/calling-agent-from-workflow"
   }
 />

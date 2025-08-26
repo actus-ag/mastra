@@ -4731,7 +4731,7 @@ describe('Workflow', () => {
 
   describe('Suspend and Resume', () => {
     afterAll(async () => {
-      const pathToDb = path.join(process.cwd(), 'mastra.db');
+      const pathToDb = path.join(process.cwd(), '@mastra.db');
 
       if (fs.existsSync(pathToDb)) {
         fs.rmSync(pathToDb);
@@ -5740,7 +5740,7 @@ describe('Workflow', () => {
         inputSchema: z.object({ value: z.number() }),
         outputSchema: z.object({ value: z.number() }),
         execute: async ({ inputData, runtimeContext, getInitData }) => {
-          const shouldNotExist = runtimeContext?.get('__mastraWorflowInputData');
+          const shouldNotExist = runtimeContext?.get('__@mastraWorflowInputData');
           expect(shouldNotExist).toBeUndefined();
           const initData = getInitData();
 
@@ -5765,7 +5765,7 @@ describe('Workflow', () => {
           optionsToIncrementBy: z.array(z.number()),
         }),
         execute: async ({ inputData, resumeData, suspend, runtimeContext }) => {
-          const shouldNotExist = runtimeContext?.get('__mastraWorflowInputData');
+          const shouldNotExist = runtimeContext?.get('__@mastraWorflowInputData');
           expect(shouldNotExist).toBeUndefined();
           if (!resumeData?.amountToIncrementBy) {
             return suspend({ optionsToIncrementBy: [1, 2, 3] });
@@ -6004,7 +6004,7 @@ describe('Workflow', () => {
         id: 'auto-resume-test-workflow',
         inputSchema: z.object({ value: z.number() }),
         outputSchema: z.object({ final: z.string() }),
-        mastra: new Mastra({ logger: false, storage: testStorage }),
+        @mastra: new Mastra({ logger: false, storage: testStorage }),
       })
         .then(suspendStep)
         .then(completeStep)
@@ -6172,7 +6172,7 @@ describe('Workflow', () => {
       id: 'simple-auto-resume-workflow',
       inputSchema: z.object({ value: z.number() }),
       outputSchema: z.object({ result: z.number() }),
-      mastra: new Mastra({ logger: false, storage: testStorage }),
+      @mastra: new Mastra({ logger: false, storage: testStorage }),
     })
       .then(simpleStep)
       .commit();
@@ -6250,7 +6250,7 @@ describe('Workflow', () => {
       id: 'multi-suspend-workflow',
       inputSchema: z.object({ value: z.number() }),
       outputSchema: z.object({}),
-      mastra: new Mastra({ logger: false, storage: testStorage }),
+      @mastra: new Mastra({ logger: false, storage: testStorage }),
     })
       .branch([
         [() => Promise.resolve(true), branchStep1], // This will always execute and suspend
@@ -6311,7 +6311,7 @@ describe('Workflow', () => {
       testStorage = new MockStore();
     });
 
-    it('should return empty result when mastra is not initialized', async () => {
+    it('should return empty result when @mastra is not initialized', async () => {
       const workflow = createWorkflow({ id: 'test', inputSchema: z.object({}), outputSchema: z.object({}) });
       const result = await workflow.getWorkflowRuns();
       expect(result).toEqual({ runs: [], total: 0 });
@@ -6408,14 +6408,14 @@ describe('Workflow', () => {
   });
 
   describe('Accessing Mastra', () => {
-    it('should be able to access the deprecated mastra primitives', async () => {
+    it('should be able to access the deprecated @mastra primitives', async () => {
       let telemetry: Telemetry | undefined;
       const step1 = createStep({
         id: 'step1',
         inputSchema: z.object({}),
         outputSchema: z.object({}),
-        execute: async ({ mastra }) => {
-          telemetry = mastra?.getTelemetry();
+        execute: async ({ @mastra }) => {
+          telemetry = @mastra?.getTelemetry();
           return {};
         },
       });
@@ -6725,7 +6725,7 @@ describe('Workflow', () => {
       });
     });
 
-    it('should be able to use an agent as a step via mastra instance', async () => {
+    it('should be able to use an agent as a step via @mastra instance', async () => {
       const workflow = createWorkflow({
         id: 'test-workflow',
         inputSchema: z.object({
@@ -6795,8 +6795,8 @@ describe('Workflow', () => {
             id: 'agent-step-1',
             inputSchema: z.object({ prompt: z.string() }),
             outputSchema: z.object({ text: z.string() }),
-            execute: async ({ inputData, mastra }) => {
-              const agent = mastra.getAgent('test-agent-1');
+            execute: async ({ inputData, @mastra }) => {
+              const agent = @mastra.getAgent('test-agent-1');
               const result = await agent.generate([{ role: 'user', content: inputData.prompt }]);
               return { text: result.text };
             },
@@ -6813,8 +6813,8 @@ describe('Workflow', () => {
             id: 'agent-step-2',
             inputSchema: z.object({ prompt: z.string() }),
             outputSchema: z.object({ text: z.string() }),
-            execute: async ({ inputData, mastra }) => {
-              const agent = mastra.getAgent('test-agent-2');
+            execute: async ({ inputData, @mastra }) => {
+              const agent = @mastra.getAgent('test-agent-2');
               const result = await agent.generate([{ role: 'user', content: inputData.prompt }]);
               return { text: result.text };
             },
@@ -6849,7 +6849,7 @@ describe('Workflow', () => {
       });
     });
 
-    it('should be able to use an agent as a step in nested workflow via mastra instance', async () => {
+    it('should be able to use an agent as a step in nested workflow via @mastra instance', async () => {
       const workflow = createWorkflow({
         id: 'test-workflow',
         inputSchema: z.object({
@@ -6894,8 +6894,8 @@ describe('Workflow', () => {
         id: 'agent-step',
         inputSchema: z.object({ agentName: z.string(), prompt: z.string() }),
         outputSchema: z.object({ text: z.string() }),
-        execute: async ({ inputData, mastra }) => {
-          const agent = mastra.getAgent(inputData.agentName);
+        execute: async ({ inputData, @mastra }) => {
+          const agent = @mastra.getAgent(inputData.agentName);
           const result = await agent.generate([{ role: 'user', content: inputData.prompt }]);
           return { text: result.text };
         },
@@ -8059,13 +8059,13 @@ describe('Workflow', () => {
             success: z.boolean(),
             hasTestData: z.boolean(),
           }),
-          execute: async ({ runtimeContext, mastra, getInitData, inputData }) => {
+          execute: async ({ runtimeContext, @mastra, getInitData, inputData }) => {
             // Verify all context is available in nested workflow after suspend/resume
             const testData = runtimeContext.get('test-key');
             const initData = getInitData();
 
             expect(testData).toBe('test-context-value');
-            expect(mastra).toBeDefined();
+            expect(@mastra).toBeDefined();
             expect(runtimeContext).toBeDefined();
             expect(inputData).toEqual({ resumed: true });
             expect(initData).toEqual({ resumed: true });
@@ -8628,7 +8628,7 @@ describe('Workflow', () => {
           'branch-step-1': z.object({ result: z.number() }),
           'branch-step-2': z.object({ result: z.number() }),
         }),
-        mastra: new Mastra({ logger: false, storage: testStorage }),
+        @mastra: new Mastra({ logger: false, storage: testStorage }),
       })
         .branch([
           [async () => true, branchStep1], // First branch will execute and suspend
@@ -8712,7 +8712,7 @@ describe('Workflow', () => {
       const testValue = 'test-dependency';
       runtimeContext.set('testKey', testValue);
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         logger: false,
         storage: initialStorage,
       });
@@ -8734,7 +8734,7 @@ describe('Workflow', () => {
       });
       const workflow = createWorkflow({
         id: 'test-workflow',
-        mastra,
+        @mastra,
         inputSchema: z.object({}),
         outputSchema: z.object({}),
       });
@@ -9210,7 +9210,7 @@ describe('Workflow', () => {
           'parallel-step-1': z.object({ result: z.number() }),
           'parallel-step-2': z.object({ result: z.number() }),
         }),
-        mastra: new Mastra({ logger: false, storage: testStorage }),
+        @mastra: new Mastra({ logger: false, storage: testStorage }),
       })
         .parallel([parallelStep1, parallelStep2])
         .commit();
@@ -9275,7 +9275,7 @@ describe('Workflow', () => {
           'normal-step-1': z.object({ result: z.number() }),
           'normal-step-2': z.object({ result: z.number() }),
         }),
-        mastra: new Mastra({ logger: false, storage: testStorage }),
+        @mastra: new Mastra({ logger: false, storage: testStorage }),
       })
         .parallel([normalStep1, normalStep2])
         .commit();
@@ -9338,7 +9338,7 @@ describe('Workflow', () => {
           'multi-resume-step-1': z.object({ result: z.number() }),
           'multi-resume-step-2': z.object({ result: z.number() }),
         }),
-        mastra: new Mastra({ logger: false, storage: testStorage }),
+        @mastra: new Mastra({ logger: false, storage: testStorage }),
       })
         .parallel([multiResumeStep1, multiResumeStep2])
         .commit();

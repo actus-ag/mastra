@@ -25,12 +25,12 @@ Before you can create an MCP server you first need to install additional depende
 
 <Steps>
 
-### Install `@actus-ag/mastra-mcp`
+### Install `@mastra/cli/cli/cli/mcp`
 
-Add `@actus-ag/mastra-mcp` to your project:
+Add `@mastra/cli/cli/cli/mcp` to your project:
 
 ```bash copy
-npm install @actus-ag/mastra-mcp
+npm install @mastra/cli/cli/cli/mcp
 ```
 
 ### Clean up the default project
@@ -38,19 +38,19 @@ npm install @actus-ag/mastra-mcp
 After following the default [installation guide](/docs/getting-started/installation) your project will include files that are not relevant for this guide. You can safely remove them:
 
 ```bash copy
-rm -rf src/mastra/agents src/mastra/workflows src/mastra/tools/weather-tool.ts
+rm -rf src/@@mastra/cli/cli/cli/agents src/@@mastra/cli/cli/cli/workflows src/@@mastra/cli/cli/cli/tools/weather-tool.ts
 ```
 
-You should also change the `src/mastra/index.ts` file like so:
+You should also change the `src/@@mastra/cli/cli/cli/index.ts` file like so:
 
-```ts copy filename="src/mastra/index.ts"
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { PinoLogger } from "@actus-ag/mastra-loggers";
-import { LibSQLStore } from "@actus-ag/mastra-libsql";
+```ts copy filename="src/@@mastra/cli/cli/cli/index.ts"
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { PinoLogger } from "@mastra/cli/cli/cli/loggers";
+import { LibSQLStore } from "@mastra/cli/cli/cli/libsql";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   storage: new LibSQLStore({
-    // stores telemetry, evals, ... into memory storage, if it needs to persist, change to file:../mastra.db
+    // stores telemetry, evals, ... into memory storage, if it needs to persist, change to file:../@@mastra/cli/cli/cli.db
     url: ":memory:",
   }),
   logger: new PinoLogger({
@@ -65,13 +65,13 @@ export const mastra = new Mastra({
 Create a dedicated directory for your MCP server's logic and a `notes` directory for your notes:
 
 ```bash copy
-mkdir notes src/mastra/mcp
+mkdir notes src/@@mastra/cli/cli/cli/mcp
 ```
 
 Create the following files:
 
 ```bash copy
-touch src/mastra/mcp/{server,resources,prompts}.ts
+touch src/@@mastra/cli/cli/cli/mcp/{server,resources,prompts}.ts
 ```
 
 - `server.ts`: Will contain the main MCP server configuration
@@ -84,7 +84,7 @@ The resulting directory structure should look like this:
   <FileTree.Folder name="<your-project-name>" defaultOpen>
     <FileTree.Folder name="notes" defaultOpen />
     <FileTree.Folder name="src" defaultOpen>
-      <FileTree.Folder name="mastra" defaultOpen>
+      <FileTree.Folder name="@actus-ag/@@mastra/cli/cli/cli" defaultOpen>
         <FileTree.File name="index.ts" />
         <FileTree.Folder name="mcp" defaultOpen>
           <FileTree.File name="server.ts" />
@@ -107,10 +107,10 @@ Let's add the MCP server!
 
 ### Create and Register the MCP Server
 
-In `src/mastra/mcp/server.ts`, define the MCP server instance:
+In `src/@@mastra/cli/cli/cli/mcp/server.ts`, define the MCP server instance:
 
-```typescript copy filename="src/mastra/mcp/server.ts"
-import { MCPServer } from "@actus-ag/mastra-mcp";
+```typescript copy filename="src/@@mastra/cli/cli/cli/mcp/server.ts"
+import { MCPServer } from "@mastra/cli/cli/cli/mcp";
 
 export const notes = new MCPServer({
   name: "notes",
@@ -119,17 +119,17 @@ export const notes = new MCPServer({
 });
 ```
 
-Register this MCP server in your Mastra instance at `src/mastra/index.ts`. The key `notes` is the public identifier for your MCP server:
+Register this MCP server in your Mastra instance at `src/@@mastra/cli/cli/cli/index.ts`. The key `notes` is the public identifier for your MCP server:
 
-```typescript copy filename="src/mastra/index.ts" {4, 15-17}
-import { Mastra } from "@actus-ag/mastra-core";
-import { PinoLogger } from "@actus-ag/mastra-loggers";
-import { LibSQLStore } from "@actus-ag/mastra-libsql";
+```typescript copy filename="src/@@mastra/cli/cli/cli/index.ts" {4, 15-17}
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { PinoLogger } from "@mastra/cli/cli/cli/loggers";
+import { LibSQLStore } from "@mastra/cli/cli/cli/libsql";
 import { notes } from "./mcp/server";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   storage: new LibSQLStore({
-    // stores telemetry, evals, ... into memory storage, if it needs to persist, change to file:../mastra.db
+    // stores telemetry, evals, ... into memory storage, if it needs to persist, change to file:../@@mastra/cli/cli/cli.db
     url: ":memory:",
   }),
   logger: new PinoLogger({
@@ -144,13 +144,13 @@ export const mastra = new Mastra({
 
 ### Implement and Register Resource Handlers
 
-Resource handlers allow clients to discover and read the content your server manages. Implement handlers to work with markdown files in the `notes` directory. Add to the `src/mastra/mcp/resources.ts` file:
+Resource handlers allow clients to discover and read the content your server manages. Implement handlers to work with markdown files in the `notes` directory. Add to the `src/@@mastra/cli/cli/cli/mcp/resources.ts` file:
 
-```typescript copy filename="src/mastra/mcp/resources.ts"
+```typescript copy filename="src/@@mastra/cli/cli/cli/mcp/resources.ts"
 import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
-import type { MCPServerResources, Resource } from "@actus-ag/mastra-mcp";
+import type { MCPServerResources, Resource } from "@mastra/cli/cli/cli/mcp";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -200,10 +200,10 @@ export const resourceHandlers: MCPServerResources = {
 };
 ```
 
-Register these resource handlers in `src/mastra/mcp/server.ts`:
+Register these resource handlers in `src/@@mastra/cli/cli/cli/mcp/server.ts`:
 
-```typescript copy filename="src/mastra/mcp/server.ts" {2, 8}
-import { MCPServer } from "@actus-ag/mastra-mcp";
+```typescript copy filename="src/@@mastra/cli/cli/cli/mcp/server.ts" {2, 8}
+import { MCPServer } from "@mastra/cli/cli/cli/mcp";
 import { resourceHandlers } from "./resources";
 
 export const notes = new MCPServer({
@@ -217,10 +217,10 @@ export const notes = new MCPServer({
 ### Implement and Register a Tool
 
 Tools are the actions your server can perform. Let's create a `write` tool.
-First, define the tool in `src/mastra/tools/write-note.ts`:
+First, define the tool in `src/@@mastra/cli/cli/cli/tools/write-note.ts`:
 
-```typescript copy filename="src/mastra/tools/write-note.ts"
-import { createTool } from "@actus-ag/mastra-core/tools";
+```typescript copy filename="src/@@mastra/cli/cli/cli/tools/write-note.ts"
+import { createTool } from "@mastra/cli/cli/cli/core/tools";
 import { z } from "zod";
 import { fileURLToPath } from "url";
 import path from "node:path";
@@ -258,10 +258,10 @@ export const writeNoteTool = createTool({
 });
 ```
 
-Register this tool in `src/mastra/mcp/server.ts`:
+Register this tool in `src/@@mastra/cli/cli/cli/mcp/server.ts`:
 
-```typescript copy filename="src/mastra/mcp/server.ts"
-import { MCPServer } from "@actus-ag/mastra-mcp";
+```typescript copy filename="src/@@mastra/cli/cli/cli/mcp/server.ts"
+import { MCPServer } from "@mastra/cli/cli/cli/mcp";
 import { resourceHandlers } from "./resources";
 import { writeNoteTool } from "../tools/write-note";
 
@@ -289,10 +289,10 @@ This requires a few markdown-parsing libraries you need to install:
 npm install unified remark-parse gray-matter @types/unist
 ```
 
-Implement the prompts in `src/mastra/mcp/prompts.ts`:
+Implement the prompts in `src/@@mastra/cli/cli/cli/mcp/prompts.ts`:
 
-```typescript copy filename="src/mastra/mcp/prompts.ts"
-import type { MCPServerPrompts } from "@actus-ag/mastra-mcp";
+```typescript copy filename="src/@@mastra/cli/cli/cli/mcp/prompts.ts"
+import type { MCPServerPrompts } from "@mastra/cli/cli/cli/mcp";
 import { unified } from "unified";
 import remarkParse from "remark-parse";
 import matter from "gray-matter";
@@ -397,10 +397,10 @@ export const promptHandlers: MCPServerPrompts = {
 };
 ```
 
-Register these prompt handlers in `src/mastra/mcp/server.ts`:
+Register these prompt handlers in `src/@@mastra/cli/cli/cli/mcp/server.ts`:
 
-```typescript copy filename="src/mastra/mcp/server.ts"
-import { MCPServer } from "@actus-ag/mastra-mcp";
+```typescript copy filename="src/@@mastra/cli/cli/cli/mcp/server.ts"
+import { MCPServer } from "@mastra/cli/cli/cli/mcp";
 import { resourceHandlers } from "./resources";
 import { writeNoteTool } from "../tools/write-note";
 import { promptHandlers } from "./prompts";

@@ -19,7 +19,7 @@ A default project created with the CLI looks like this:
 
 <FileTree>
   <FileTree.Folder name="src" defaultOpen>
-    <FileTree.Folder name="mastra" defaultOpen>
+    <FileTree.Folder name="@actus-ag/@@mastra/cli/cli/cli" defaultOpen>
       <FileTree.Folder name="agents" defaultOpen>
         <FileTree.File name="agent-name.ts" />
       </FileTree.Folder>
@@ -40,7 +40,7 @@ A default project created with the CLI looks like this:
 ```
 root/
 ├── src/
-│   └── mastra/
+│   └── @@mastra/cli/cli/cli/
 │       ├── agents/
 │       │   └── index.ts
 │       ├── tools/
@@ -57,16 +57,16 @@ root/
 
 | Folder                 | Description                          |
 | ---------------------- | ------------------------------------ |
-| `src/mastra`           | Core application folder              |
-| `src/mastra/agents`    | Agent configurations and definitions |
-| `src/mastra/tools`     | Custom tool definitions              |
-| `src/mastra/workflows` | Workflow definitions                 |
+| `src/@@mastra/cli/cli/cli`           | Core application folder              |
+| `src/@@mastra/cli/cli/cli/agents`    | Agent configurations and definitions |
+| `src/@@mastra/cli/cli/cli/tools`     | Custom tool definitions              |
+| `src/@@mastra/cli/cli/cli/workflows` | Workflow definitions                 |
 
 ### Top-level Files
 
 | File                  | Description                                         |
 | --------------------- | --------------------------------------------------- |
-| `src/mastra/index.ts` | Main configuration file for Mastra                  |
+| `src/@@mastra/cli/cli/cli/index.ts` | Main configuration file for Mastra                  |
 | `.env`                | Environment variables                               |
 | `package.json`        | Node.js project metadata, scripts, and dependencies |
 | `tsconfig.json`       | TypeScript compiler configuration                   |

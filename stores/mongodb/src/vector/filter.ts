@@ -1,4 +1,4 @@
-import { BaseFilterTranslator } from '@actus-ag/mastra-core/vector/filter';
+import { BaseFilterTranslator } from '@mastra/core/vector/filter';
 import type {
   VectorFilter,
   OperatorSupport,
@@ -7,7 +7,7 @@ import type {
   LogicalOperatorValueMap,
   BlacklistedRootOperators,
   VectorFieldValue,
-} from '@actus-ag/mastra-core/vector/filter';
+} from '@mastra/core/vector/filter';
 
 type MongoDBOperatorValueMap = Omit<OperatorValueMap, '$options'> & {
   $size: number;

@@ -1,8 +1,8 @@
 #! /usr/bin/env node
 import { Command } from 'commander';
 
-import { PosthogAnalytics } from 'mastra/dist/analytics/index.js';
-import { create } from 'mastra/dist/commands/create/create.js';
+import { PosthogAnalytics } from '@mastra/dist/analytics/index.js';
+import { create } from '@mastra/dist/commands/create/create.js';
 
 import { getPackageVersion, getCreateVersionTag } from './utils.js';
 
@@ -19,20 +19,20 @@ const program = new Command();
 
 program
   .version(`${version}`, '-v, --version')
-  .description(`create-mastra ${version}`)
+  .description(`@actus-ag/create-@mastra ${version}`)
   .action(async () => {
     try {
       analytics.trackCommand({
         command: 'version',
       });
-      console.log(`create-mastra ${version}`);
+      console.log(`@actus-ag/create-@mastra ${version}`);
     } catch {
       // ignore
     }
   });
 
 program
-  .name('create-mastra')
+  .name('@actus-ag/@actus-ag/create-@mastra')
   .description('Create a new Mastra project')
   .argument('[project-name]', 'Directory name of the project')
   .option(

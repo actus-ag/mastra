@@ -17,20 +17,20 @@ OPENAI_API_KEY=<your-api-key>
 
 ## Creating an agent
 
-Create an agent that returns technical support for mastra cloud using dynamic values provided via `runtimeContext`.
+Create an agent that returns technical support for @@mastra/cli/cli/cli cloud using dynamic values provided via `runtimeContext`.
 
-```typescript filename="src/mastra/agents/example-support-agent.ts" showLineNumbers copy
+```typescript filename="src/@@mastra/cli/cli/cli/agents/example-support-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 export const supportAgent = new Agent({
   name: "support-agent",
-  description: "Returns technical support for mastra cloud based on runtime context",
+  description: "Returns technical support for @@mastra/cli/cli/cli cloud based on runtime context",
   instructions: async ({ runtimeContext }) => {
     const userTier = runtimeContext.get("user-tier");
     const language = runtimeContext.get("language");
 
-    return `You are a customer support agent for [Mastra Cloud](https://mastra.ai/en/docs/mastra-cloud/overview).
+    return `You are a customer support agent for [Mastra Cloud](https://@@mastra/cli/cli/cli.ai/en/docs/@@mastra/cli/cli/cli-cloud/overview).
     The current user is on the ${userTier} tier.
 
     Support guidance:
@@ -50,12 +50,12 @@ export const supportAgent = new Agent({
 
 To use an agent, register it in your main Mastra instance.
 
-```typescript filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core/mastra";
+```typescript filename="src/@@mastra/cli/cli/cli/index.ts" showLineNumbers copy
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
 
 import { supportAgent } from "./agents/example-support-agent";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // ...
   agents: { supportAgent }
 });
@@ -68,8 +68,8 @@ Set `RuntimeContext` using `set()`, then use `getAgent()` to retrieve a referenc
 ```typescript filename="src/test-support-agent.ts" showLineNumbers copy
 import "dotenv/config";
 
-import { mastra } from "./mastra";
-import { RuntimeContext } from "@actus-ag/mastra-core/runtime-context";
+import { @@mastra/cli/cli/cli } from "./@@mastra/cli/cli/cli";
+import { RuntimeContext } from "@mastra/cli/cli/cli/core/runtime-context";
 
 type SupportRuntimeContext = {
   "user-tier": "free" | "pro" | "enterprise";
@@ -80,7 +80,7 @@ const runtimeContext = new RuntimeContext<SupportRuntimeContext>();
 runtimeContext.set("user-tier", "free");
 runtimeContext.set("language", "ja");
 
-const agent = mastra.getAgent("supportAgent");
+const agent = @@mastra/cli/cli/cli.getAgent("supportAgent");
 
 const response = await agent.generate("Can Mastra Cloud handle long-running requests?", {
   runtimeContext

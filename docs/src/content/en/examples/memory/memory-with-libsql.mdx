@@ -7,15 +7,15 @@ This example demonstrates how to use Mastra's memory system with LibSQL, which i
 To use LibSQL with Memory, you need to explicitly configure `Memory` with `LibSQLStore`:
 
 ```typescript copy showLineNumbers
-import { Memory } from "@actus-ag/mastra-memory";
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { LibSQLStore } from "@actus-ag/mastra-libsql";
+import { Memory } from "@mastra/cli/cli/cli/memory";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { LibSQLStore } from "@mastra/cli/cli/cli/libsql";
 import { openai } from "@ai-sdk/openai";
 
 // Initialize memory with LibSQLStore
 const memory = new Memory({
   storage: new LibSQLStore({
-    url: "file:../mastra.db", // Or your database URL
+    url: "file:../@@mastra/cli/cli/cli.db", // Or your database URL
   }),
   options: {
     threads: {
@@ -40,15 +40,15 @@ If you need more control, you can explicitly configure the storage, vector datab
 To use FastEmbed (a local embedding model) as the embedder, first install the package:
 
 ```bash npm2yarn copy
-npm install @actus-ag/mastra-fastembed
+npm install @mastra/cli/cli/cli/fastembed
 ```
 
 Then configure it in your memory setup:
 
 ```typescript {3,12}
 import { openai } from "@ai-sdk/openai";
-import { LibSQLStore, LibSQLVector } from "@actus-ag/mastra-libsql";
-import { fastembed } from "@actus-ag/mastra-fastembed";
+import { LibSQLStore, LibSQLVector } from "@mastra/cli/cli/cli/libsql";
+import { fastembed } from "@mastra/cli/cli/cli/fastembed";
 
 const customMemory = new Memory({
   storage: new LibSQLStore({

@@ -10,7 +10,7 @@ import { GithubLink } from "@/components/github-link";
 Markdownは生のHTMLよりも情報密度が高く、RAGパイプラインでの作業が容易です。Markdownを扱う際には、ヘッダーやフォーマットを保持しながら小さな部分に分割する必要があります。`chunk`メソッドは、ヘッダー、リスト、コードブロックのようなMarkdown特有の要素を賢く処理します。この例は、検索や取得の目的でMarkdownドキュメントをチャンクする方法を示しています。
 
 ```tsx copy
-import { MDocument } from "@actus-ag/mastra-rag";
+import { MDocument } from "@mastra/cli/cli/cli/rag";
 
 const doc = MDocument.fromMarkdown("# Your markdown content...");
 
@@ -24,6 +24,6 @@ const chunks = await doc.chunk();
 <br />
 <GithubLink
   link={
-    "https://github.com/mastra-ai/mastra/blob/main/examples/basics/rag/chunk-markdown"
+    "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/rag/chunk-markdown"
   }
 />

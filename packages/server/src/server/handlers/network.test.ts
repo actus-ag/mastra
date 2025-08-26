@@ -1,8 +1,8 @@
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { Mastra } from '@actus-ag/mastra-core/mastra';
-import { AgentNetwork } from '@actus-ag/mastra-core/network';
-import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
-import { createMockModel } from '@actus-ag/mastra-core/test-utils/llm-mock';
+import { Agent } from '@mastra/core/agent';
+import { Mastra } from '@mastra/core/@mastra';
+import { AgentNetwork } from '@mastra/core/network';
+import { RuntimeContext } from '@mastra/core/runtime-context';
+import { createMockModel } from '@mastra/core/test-utils/llm-mock';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { HTTPException } from '../http-exception';
 import { getNetworksHandler, getNetworkByIdHandler, generateHandler, streamGenerateHandler } from './network';
@@ -45,7 +45,7 @@ describe('Network Handlers', () => {
 
   describe('getNetworksHandler', () => {
     it('should get all networks successfully', async () => {
-      const result = await getNetworksHandler({ mastra: mockMastra, runtimeContext });
+      const result = await getNetworksHandler({ @mastra: mockMastra, runtimeContext });
 
       expect(result).toEqual([
         {
@@ -64,18 +64,18 @@ describe('Network Handlers', () => {
 
   describe('getNetworkByIdHandler', () => {
     it('should throw error when networkId is not provided', async () => {
-      await expect(getNetworkByIdHandler({ mastra: mockMastra, runtimeContext })).rejects.toThrow('Network not found');
+      await expect(getNetworkByIdHandler({ @mastra: mockMastra, runtimeContext })).rejects.toThrow('Network not found');
     });
 
     it('should throw error when network is not found', async () => {
       await expect(
-        getNetworkByIdHandler({ mastra: mockMastra, runtimeContext, networkId: 'non-existent' }),
+        getNetworkByIdHandler({ @mastra: mockMastra, runtimeContext, networkId: 'non-existent' }),
       ).rejects.toThrow('Network not found');
     });
 
     it('should get network by ID successfully', async () => {
       const result = await getNetworkByIdHandler({
-        mastra: mockMastra,
+        @mastra: mockMastra,
         runtimeContext,
         networkId: 'test-network',
       });
@@ -97,7 +97,7 @@ describe('Network Handlers', () => {
     it('should throw error when networkId is not provided', async () => {
       await expect(
         generateHandler({
-          mastra: mockMastra,
+          @mastra: mockMastra,
           body: {
             messages: ['test message'],
             resourceId: 'test-resource',
@@ -112,7 +112,7 @@ describe('Network Handlers', () => {
     it('should throw error when network is not found', async () => {
       await expect(
         generateHandler({
-          mastra: mockMastra,
+          @mastra: mockMastra,
           networkId: 'non-existent',
           body: {
             messages: ['test message'],
@@ -128,7 +128,7 @@ describe('Network Handlers', () => {
     it('should throw error when messages are not provided', async () => {
       await expect(
         generateHandler({
-          mastra: mockMastra,
+          @mastra: mockMastra,
           networkId: 'test-network',
           body: {
             resourceId: 'test-resource',
@@ -146,7 +146,7 @@ describe('Network Handlers', () => {
       vi.spyOn(mockNetwork, 'generate').mockResolvedValue(mockResult);
 
       const result = await generateHandler({
-        mastra: mockMastra,
+        @mastra: mockMastra,
         networkId: 'test-network',
         body: {
           messages: mockMessages,
@@ -165,7 +165,7 @@ describe('Network Handlers', () => {
     it('should throw error when networkId is not provided', async () => {
       await expect(
         streamGenerateHandler({
-          mastra: mockMastra,
+          @mastra: mockMastra,
           body: {
             messages: ['test message'],
             resourceId: 'test-resource',
@@ -180,7 +180,7 @@ describe('Network Handlers', () => {
     it('should throw error when network is not found', async () => {
       await expect(
         streamGenerateHandler({
-          mastra: mockMastra,
+          @mastra: mockMastra,
           networkId: 'non-existent',
           body: {
             messages: ['test message'],
@@ -196,7 +196,7 @@ describe('Network Handlers', () => {
     it('should throw error when messages are not provided', async () => {
       await expect(
         streamGenerateHandler({
-          mastra: mockMastra,
+          @mastra: mockMastra,
           networkId: 'test-network',
           body: {
             resourceId: 'test-resource',
@@ -222,7 +222,7 @@ describe('Network Handlers', () => {
       vi.spyOn(mockNetwork, 'stream').mockResolvedValue(mockStream as any);
 
       const result = await streamGenerateHandler({
-        mastra: mockMastra,
+        @mastra: mockMastra,
         networkId: 'test-network',
         body: {
           messages: mockMessages,

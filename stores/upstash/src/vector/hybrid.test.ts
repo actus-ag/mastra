@@ -1,4 +1,4 @@
-import type { QueryResult } from '@actus-ag/mastra-core/vector';
+import type { QueryResult } from '@mastra/core/vector';
 import dotenv from 'dotenv';
 
 import { describe, it, expect, beforeAll, afterAll, afterEach } from 'vitest';
@@ -285,7 +285,7 @@ describe.skipIf(!process.env.UPSTASH_VECTOR_URL || !process.env.UPSTASH_VECTOR_T
     });
 
     it('should describe an index correctly', async () => {
-      const stats = await vectorStore.describeIndex({ indexName: 'mastra_default' });
+      const stats = await vectorStore.describeIndex({ indexName: '@mastra_default' });
       expect(stats).toEqual({
         dimension: 1024,
         metric: 'cosine',
@@ -1241,7 +1241,7 @@ describe.skipIf(!process.env.UPSTASH_VECTOR_URL || !process.env.UPSTASH_VECTOR_T
     });
 
     describe('Hybrid Vector Operations (Sparse + Dense)', () => {
-      const hybridIndexName = `mastra-hybrid-${Date.now()}-${Math.random().toString(36).substring(2)}`;
+      const hybridIndexName = `@mastra-hybrid-${Date.now()}-${Math.random().toString(36).substring(2)}`;
 
       // Helper function to create a normalized vector
       const createVector = (primaryDimension: number, value: number = 1.0): number[] => {

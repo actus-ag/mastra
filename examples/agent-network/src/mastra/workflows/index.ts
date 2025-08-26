@@ -1,4 +1,4 @@
-import { Workflow } from '@actus-ag/mastra-core/workflows';
+import { Workflow } from '@mastra/core/workflows';
 import { z } from 'zod';
 import { webSearchAgent } from '../agents';
 

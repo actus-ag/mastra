@@ -5,14 +5,14 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@mastra/core': link:../../packages/core
-  mastra: link:../../packages/cli
-  '@mastra/auth': link:../../packages/auth
-  '@mastra/auth-supabase': link:../../auth/supabase
-  '@mastra/auth-firebase': link:../../auth/firebase
-  '@mastra/auth-auth0': link:../../auth/auth0
-  '@mastra/auth-workos': link:../../auth/workos
-  '@mastra/auth-clerk': link:../../auth/clerk
+  '@mastra/cli/cli/cli/core': link:../../packages/core
+  @@mastra/cli/cli/cli: link:../../packages/cli
+  '@mastra/cli/cli/cli/auth': link:../../packages/auth
+  '@mastra/cli/cli/cli/auth-supabase': link:../../auth/supabase
+  '@mastra/cli/cli/cli/auth-firebase': link:../../auth/firebase
+  '@mastra/cli/cli/cli/auth-auth0': link:../../auth/auth0
+  '@mastra/cli/cli/cli/auth-workos': link:../../auth/workos
+  '@mastra/cli/cli/cli/auth-clerk': link:../../auth/clerk
 
 importers:
 
@@ -21,31 +21,31 @@ importers:
       '@ai-sdk/openai':
         specifier: ^1.3.22
         version: 1.3.22(zod@3.25.67)
-      '@mastra/auth':
+      '@mastra/cli/cli/cli/auth':
         specifier: link:../../packages/auth
         version: link:../../packages/auth
-      '@mastra/auth-auth0':
+      '@mastra/cli/cli/cli/auth-auth0':
         specifier: link:../../auth/auth0
         version: link:../../auth/auth0
-      '@mastra/auth-clerk':
+      '@mastra/cli/cli/cli/auth-clerk':
         specifier: link:../../auth/clerk
         version: link:../../auth/clerk
-      '@mastra/auth-firebase':
+      '@mastra/cli/cli/cli/auth-firebase':
         specifier: link:../../auth/firebase
         version: link:../../auth/firebase
-      '@mastra/auth-supabase':
+      '@mastra/cli/cli/cli/auth-supabase':
         specifier: link:../../auth/supabase
         version: link:../../auth/supabase
-      '@mastra/auth-workos':
+      '@mastra/cli/cli/cli/auth-workos':
         specifier: link:../../auth/workos
         version: link:../../auth/workos
-      '@mastra/core':
+      '@mastra/cli/cli/cli/core':
         specifier: link:../../packages/core
         version: link:../../packages/core
       '@supabase/supabase-js':
         specifier: ^2.49.4
         version: 2.49.6
-      mastra:
+      @@mastra/cli/cli/cli:
         specifier: link:../../packages/cli
         version: link:../../packages/cli
       zod:

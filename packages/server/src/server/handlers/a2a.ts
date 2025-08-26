@@ -1,4 +1,4 @@
-import { MastraA2AError } from '@actus-ag/mastra-core/a2a';
+import { MastraA2AError } from '@mastra/core/a2a';
 import type {
   MessageSendParams,
   TaskQueryParams,
@@ -6,10 +6,10 @@ import type {
   AgentCard,
   TaskStatus,
   TaskState,
-} from '@actus-ag/mastra-core/a2a';
-import type { Agent } from '@actus-ag/mastra-core/agent';
-import type { IMastraLogger } from '@actus-ag/mastra-core/logger';
-import type { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
+} from '@mastra/core/a2a';
+import type { Agent } from '@mastra/core/agent';
+import type { IMastraLogger } from '@mastra/core/logger';
+import type { RuntimeContext } from '@mastra/core/runtime-context';
 import { z } from 'zod';
 import { convertToCoreMessage, normalizeError, createSuccessResponse, createErrorResponse } from '../a2a/protocol';
 import type { InMemoryTaskStore } from '../a2a/store';
@@ -36,18 +36,18 @@ const messageSendParamsSchema = z.object({
 });
 
 export async function getAgentCardByIdHandler({
-  mastra,
+  @mastra,
   agentId,
   executionUrl = `/a2a/${agentId}`,
   provider = {
     organization: 'Mastra',
-    url: 'https://mastra.ai',
+    url: 'https://@mastra.ai',
   },
   version = '1.0',
   runtimeContext,
 }: Context & {
   runtimeContext: RuntimeContext;
-  agentId: keyof ReturnType<typeof mastra.getAgents>;
+  agentId: keyof ReturnType<typeof @mastra.getAgents>;
   executionUrl?: string;
   version?: string;
   provider?: {
@@ -55,7 +55,7 @@ export async function getAgentCardByIdHandler({
     url: string;
   };
 }): Promise<AgentCard> {
-  const agent = mastra.getAgent(agentId);
+  const agent = @mastra.getAgent(agentId);
 
   if (!agent) {
     throw new Error(`Agent with ID ${agentId} not found`);
@@ -329,7 +329,7 @@ export async function handleTaskCancel({
 
 export async function getAgentExecutionHandler({
   requestId,
-  mastra,
+  @mastra,
   agentId,
   runtimeContext,
   method,
@@ -345,7 +345,7 @@ export async function getAgentExecutionHandler({
   taskStore: InMemoryTaskStore;
   logger?: IMastraLogger;
 }): Promise<any> {
-  const agent = mastra.getAgent(agentId);
+  const agent = @mastra.getAgent(agentId);
 
   let taskId: string | undefined; // For error context
 

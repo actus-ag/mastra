@@ -1,7 +1,7 @@
-import { mastra } from './mastra';
+import { @mastra } from './@mastra';
 
 async function main() {
-  const wflow = mastra.getWorkflow('agentWorkflow');
+  const wflow = @mastra.getWorkflow('agentWorkflow');
 
   const { runId, start } = wflow.createRun();
 

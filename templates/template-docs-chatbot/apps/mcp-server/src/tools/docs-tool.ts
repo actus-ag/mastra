@@ -1,4 +1,4 @@
-import { createTool } from '@actus-ag/mastra-core';
+import { createTool } from '@mastra/core';
 import { z } from 'zod';
 import functionsData from '../data/functions.json';
 

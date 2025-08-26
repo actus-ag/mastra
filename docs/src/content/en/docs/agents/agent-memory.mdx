@@ -12,13 +12,13 @@ Agents in Mastra can leverage a powerful memory system to store conversation his
 To enable memory, simply instantiate the `Memory` class and pass it to your agent's configuration. You also need to install the memory package and a storage adapter:
 
 ```bash npm2yarn copy
-npm install @actus-ag/mastra-memory@latest @actus-ag/mastra-libsql@latest
+npm install @mastra/cli/cli/cli/memory@latest @mastra/cli/cli/cli/libsql@latest
 ```
 
 ```typescript
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { Memory } from "@actus-ag/mastra-memory";
-import { LibSQLStore } from "@actus-ag/mastra-libsql";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { Memory } from "@mastra/cli/cli/cli/memory";
+import { LibSQLStore } from "@mastra/cli/cli/cli/libsql";
 import { openai } from "@ai-sdk/openai";
 
 const memory = new Memory({
@@ -49,10 +49,10 @@ Similar to how you can configure dynamic [instructions, models, and tools](./dyn
 ### Example: User Tier-Based Memory
 
 ```typescript
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { Memory } from "@actus-ag/mastra-memory";
-import { LibSQLStore } from "@actus-ag/mastra-libsql";
-import { PostgresStore } from "@actus-ag/mastra-pg";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { Memory } from "@mastra/cli/cli/cli/memory";
+import { LibSQLStore } from "@mastra/cli/cli/cli/libsql";
+import { PostgresStore } from "@mastra/cli/cli/cli/pg";
 import { openai } from "@ai-sdk/openai";
 
 // Create different memory instances for different user tiers
@@ -146,7 +146,7 @@ const agent = new Agent({
 When using dynamic memory, pass the runtime context to your agent calls:
 
 ```typescript
-import { RuntimeContext } from "@actus-ag/mastra-core/runtime-context";
+import { RuntimeContext } from "@mastra/cli/cli/cli/core/runtime-context";
 
 // Create runtime context with user information
 const runtimeContext = new RuntimeContext();

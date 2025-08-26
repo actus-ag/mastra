@@ -1,5 +1,5 @@
-import { OpenAPIToolset } from '@actus-ag/mastra-core/integration';
-import type { ToolAction } from '@actus-ag/mastra-core/tools';
+import { OpenAPIToolset } from '@mastra/core/integration';
+import type { ToolAction } from '@mastra/core/tools';
 
 // @ts-ignore
 // import GithubLogo from './assets/github.png';

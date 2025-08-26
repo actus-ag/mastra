@@ -12,21 +12,21 @@ Integrate OpenRouter with Mastra to leverage the numerous models available on Op
 <Steps>
 ## Initialize a Mastra Project
 
-The simplest way to get started with Mastra is to use the `mastra` CLI to initialize a new project:
+The simplest way to get started with Mastra is to use the `@actus-ag/@@mastra/cli/cli/cli` CLI to initialize a new project:
 
 ```bash copy
-npx create-mastra@latest
+npx @actus-ag/@actus-ag/create-@actus-ag/@mastra/cli/cli@latest
 ```
 
 You'll be guided through prompts to set up your project. For this example, select:
-- Name your project: my-mastra-openrouter-app
+- Name your project: my-@@mastra/cli/cli/cli-openrouter-app
 - Components: Agents (recommended)
 - For default provider, select OpenAI (recommended) - we'll configure OpenRouter manually later
 - Optionally include example code
 
 ## Configure OpenRouter
 
-After creating your project with `create-mastra`, you'll find a `.env` file in your project root.
+After creating your project with `@actus-ag/@actus-ag/create-@@mastra/cli/cli/cli`, you'll find a `.env` file in your project root.
 Since we selected OpenAI during setup, we'll configure OpenRouter manually: 
 
 ```bash filename=".env" copy
@@ -49,8 +49,8 @@ npm install @openrouter/ai-sdk-provider
 
 We will now configure our agent to use OpenRouter.
 
-```typescript filename="src/mastra/agents/assistant.ts" copy showLineNumbers {4-6,11}
-import { Agent } from "@actus-ag/mastra-core/agent";
+```typescript filename="src/@@mastra/cli/cli/cli/agents/assistant.ts" copy showLineNumbers {4-6,11}
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { createOpenRouter } from "@openrouter/ai-sdk-provider";
 
 const openrouter = createOpenRouter({
@@ -66,10 +66,10 @@ export const assistant = new Agent({
 
 Make sure to register your agent to the Mastra instance:
 
-```typescript filename="src/mastra/index.ts" copy showLineNumbers {4}
+```typescript filename="src/@@mastra/cli/cli/cli/index.ts" copy showLineNumbers {4}
 import { assistant } from "./agents/assistant";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
     agents: { assistant }
 })
 ```
@@ -94,8 +94,8 @@ For more control over your OpenRouter requests, you can pass additional configur
 
 You can pass provider-wide options to the OpenRouter provider:
 
-```typescript filename="src/mastra/agents/assistant.ts" {6-10} copy showLineNumbers
-import { Agent } from "@actus-ag/mastra-core/agent";
+```typescript filename="src/@@mastra/cli/cli/cli/agents/assistant.ts" {6-10} copy showLineNumbers
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { createOpenRouter } from "@openrouter/ai-sdk-provider";
 
 const openrouter = createOpenRouter({
@@ -118,8 +118,8 @@ export const assistant = new Agent({
 
 You can pass model-specific options to the OpenRouter provider:
 
-```typescript filename="src/mastra/agents/assistant.ts" {11-17} copy showLineNumbers
-import { Agent } from "@actus-ag/mastra-core/agent";
+```typescript filename="src/@@mastra/cli/cli/cli/agents/assistant.ts" {11-17} copy showLineNumbers
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { createOpenRouter } from "@openrouter/ai-sdk-provider";
 
 const openrouter = createOpenRouter({

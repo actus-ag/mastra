@@ -1,14 +1,14 @@
-import { MessageList } from '@actus-ag/mastra-core/agent';
-import type { MastraMessageContentV2 } from '@actus-ag/mastra-core/agent';
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import type { StorageThreadType, MastraMessageV1, MastraMessageV2 } from '@actus-ag/mastra-core/memory';
-import { MemoryStorage, resolveMessageLimit } from '@actus-ag/mastra-core/storage';
+import { MessageList } from '@mastra/core/agent';
+import type { MastraMessageContentV2 } from '@mastra/core/agent';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import type { StorageThreadType, MastraMessageV1, MastraMessageV2 } from '@mastra/core/memory';
+import { MemoryStorage, resolveMessageLimit } from '@mastra/core/storage';
 import type {
   PaginationInfo,
   StorageGetMessagesArg,
   StorageResourceType,
   ThreadSortOptions,
-} from '@actus-ag/mastra-core/storage';
+} from '@mastra/core/storage';
 import type { Service } from 'electrodb';
 
 export class MemoryStorageDynamoDB extends MemoryStorage {

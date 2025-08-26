@@ -3,12 +3,12 @@ import { fileURLToPath } from 'node:url';
 import { rollup } from 'rollup';
 import esbuild from 'rollup-plugin-esbuild';
 import { describe, it, expect } from 'vitest';
-import { mastraInstanceWrapper } from '../plugins/mastra-instance-wrapper';
+import { @mastraInstanceWrapper } from '../plugins/@mastra-instance-wrapper';
 
 describe('Wrap Mastra instance', () => {
   const _dirname = dirname(fileURLToPath(import.meta.url));
 
-  it.for([['./__fixtures__/empty-mastra.js'], ['./__fixtures__/basic.js']])(
+  it.for([['./__fixtures__/empty-@mastra.js'], ['./__fixtures__/basic.js']])(
     'should wrap Mastra instance in %s',
     async ([fileName]) => {
       const file = join(_dirname, fileName as string);
@@ -33,7 +33,7 @@ describe('Wrap Mastra instance', () => {
             platform: 'browser',
             minify: false,
           }),
-          mastraInstanceWrapper(file),
+          @mastraInstanceWrapper(file),
         ],
       });
 

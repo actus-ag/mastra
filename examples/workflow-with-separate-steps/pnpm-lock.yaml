@@ -5,23 +5,23 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@mastra/core': link:../../packages/core
-  mastra: link:../../packages/mastra
+  '@mastra/cli/cli/cli/core': link:../../packages/core
+  @@mastra/cli/cli/cli: link:../../packages/@@mastra/cli/cli/cli
 
 importers:
 
   .:
     dependencies:
-      '@mastra/core':
+      '@mastra/cli/cli/cli/core':
         specifier: link:../../packages/core
         version: link:../../packages/core
     devDependencies:
       '@types/node':
         specifier: ^20.17.57
         version: 20.19.0
-      mastra:
-        specifier: link:../../packages/mastra
-        version: link:../../packages/mastra
+      @@mastra/cli/cli/cli:
+        specifier: link:../../packages/@@mastra/cli/cli/cli
+        version: link:../../packages/@@mastra/cli/cli/cli
       tsx:
         specifier: ^4.19.3
         version: 4.19.3

@@ -1,6 +1,6 @@
-import { mastra } from './src/mastra';
+import { @mastra } from './src/@mastra';
 
-const chefAgent = mastra.getAgent('chefAgent');
+const chefAgent = @mastra.getAgent('chefAgent');
 
 const metric = chefAgent.evals.glutenChecker;
 

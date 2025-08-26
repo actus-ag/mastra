@@ -2,7 +2,7 @@
 
 Let's check that your project has the correct structure. You should have:
 
-1. A `src/mastra` directory that contains:
+1. A `src/@mastra` directory that contains:
    - `index.ts` - The main entry point for your Mastra project
    - `agents/` - Directory containing individual agent files
    - `tools/` - Directory containing individual tool files

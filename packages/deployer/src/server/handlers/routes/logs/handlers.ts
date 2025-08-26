@@ -1,22 +1,22 @@
-import type { Mastra } from '@actus-ag/mastra-core';
-import type { LogLevel } from '@actus-ag/mastra-core/logger';
+import type { Mastra } from '@mastra/core';
+import type { LogLevel } from '@mastra/core/logger';
 import {
   getLogsHandler as getOriginalLogsHandler,
   getLogsByRunIdHandler as getOriginalLogsByRunIdHandler,
   getLogTransports as getOriginalLogTransportsHandler,
-} from '@actus-ag/mastra-server/handlers/logs';
+} from '@mastra/server/handlers/logs';
 import type { Context } from 'hono';
 
 import { handleError } from '../../error';
 
 export async function getLogsHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const { transportId, fromDate, toDate, logLevel, page, perPage } = c.req.query();
     const filters = c.req.queries('filters');
 
     const logs = await getOriginalLogsHandler({
-      mastra,
+      @mastra,
       transportId,
       params: {
         fromDate: fromDate ? new Date(fromDate) : undefined,
@@ -36,13 +36,13 @@ export async function getLogsHandler(c: Context) {
 
 export async function getLogsByRunIdHandler(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
     const runId = c.req.param('runId');
     const { transportId, fromDate, toDate, logLevel, page, perPage } = c.req.query();
     const filters = c.req.queries('filters');
 
     const logs = await getOriginalLogsByRunIdHandler({
-      mastra,
+      @mastra,
       runId,
       transportId,
       params: {
@@ -63,10 +63,10 @@ export async function getLogsByRunIdHandler(c: Context) {
 
 export async function getLogTransports(c: Context) {
   try {
-    const mastra: Mastra = c.get('mastra');
+    const @mastra: Mastra = c.get('@actus-ag/@mastra');
 
     const result = await getOriginalLogTransportsHandler({
-      mastra,
+      @mastra,
     });
 
     return c.json(result);

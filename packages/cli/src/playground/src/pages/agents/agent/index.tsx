@@ -3,7 +3,7 @@ import {
   MainContentContent,
   AgentSettingsProvider,
   WorkingMemoryProvider,
-} from '@actus-ag/mastra-playground-ui';
+} from '@mastra/cli/cli/cli/playground-ui';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router';
 import { v4 as uuid } from '@lukeed/uuid';

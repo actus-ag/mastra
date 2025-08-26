@@ -10,14 +10,14 @@ import {
   BorderWidth,
   Spacings,
   Sizes,
-} from '@actus-ag/mastra-playground-ui/tokens';
+} from '@mastra/playground-ui/tokens';
 export default {
   darkMode: ['class'],
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/**/*.{js,ts,jsx,tsx,html}',
-    './node_modules/@actus-ag/mastra-playground-ui/src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@mastra/playground-ui/src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     container: {
@@ -116,7 +116,7 @@ export default {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
         },
-        mastra: {
+        @mastra: {
           'bg-1': '#121212', // used for main background
           'bg-2': '#171717', // used for view-windowed background
           'bg-3': '#1a1a1a', // sed for areas in view window that need separation

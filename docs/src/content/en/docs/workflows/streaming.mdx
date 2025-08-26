@@ -41,8 +41,8 @@ We have a couple of utility functions on the stream to help you with the streami
 
 Each tool gets a `writer` argument, which is a writable stream with a custom write function. This write function is used to write the tool's response to the stream.
 
-```typescript filename="src/mastra/workflows/weather.ts" showLineNumbers copy
-import { createStep } from "@actus-ag/mastra-core/workflows";
+```typescript filename="src/@@mastra/cli/cli/cli/workflows/weather.ts" showLineNumbers copy
+import { createStep } from "@mastra/cli/cli/cli/core/workflows";
 import { z } from "zod";
 
 export const weatherInfo = createStep({
@@ -85,8 +85,8 @@ export const weatherInfo = createStep({
 
 If you want to use the stream in an agent, you can use the `streamVNext` method on the agent and pipe it to the agent's input stream.
 
-```typescript filename="src/mastra/workflows/weather.ts" showLineNumbers copy
-import { createStep } from "@actus-ag/mastra-core/workflows";
+```typescript filename="src/@@mastra/cli/cli/cli/workflows/weather.ts" showLineNumbers copy
+import { createStep } from "@mastra/cli/cli/cli/core/workflows";
 import { z } from "zod";
 
 export const weatherInfo = createStep({
@@ -98,8 +98,8 @@ export const weatherInfo = createStep({
     text: z.string(),
   }),
   description: `Fetches the current weather information for a given city`,
-  execute: async ({ inputData: { city }, writer, mastra }) => {
-    const agent = mastra.getAgent('weatherAgent')
+  execute: async ({ inputData: { city }, writer, @@mastra/cli/cli/cli }) => {
+    const agent = @@mastra/cli/cli/cli.getAgent('weatherAgent')
     const stream = await agent.streamVNext(`What is the weather in ${city}?`);
 
     await stream.pipeTo(writer);

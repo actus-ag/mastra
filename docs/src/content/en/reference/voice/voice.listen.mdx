@@ -10,8 +10,8 @@ The `listen()` method is a core function available in all Mastra voice providers
 ## Usage Example
 
 ```typescript
-import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
-import { getMicrophoneStream } from "@actus-ag/mastra-node-audio";
+import { OpenAIVoice } from "@mastra/cli/cli/cli/voice-openai";
+import { getMicrophoneStream } from "@mastra/cli/cli/cli/node-audio";
 import { createReadStream } from "fs";
 import path from "path";
 
@@ -151,8 +151,8 @@ When using realtime voice providers like `OpenAIRealtimeVoice`, the `listen()` m
 - You need to register an event listener to receive the transcription
 
 ```typescript
-import { OpenAIRealtimeVoice } from "@actus-ag/mastra-voice-openai-realtime";
-import { getMicrophoneStream } from "@actus-ag/mastra-node-audio";
+import { OpenAIRealtimeVoice } from "@mastra/cli/cli/cli/voice-openai-realtime";
+import { getMicrophoneStream } from "@mastra/cli/cli/cli/node-audio";
 
 const voice = new OpenAIRealtimeVoice();
 await voice.connect();
@@ -172,9 +172,9 @@ await voice.listen(microphoneStream);
 When using `CompositeVoice`, the `listen()` method delegates to the configured listening provider:
 
 ```typescript
-import { CompositeVoice } from "@actus-ag/mastra-core/voice";
-import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
-import { PlayAIVoice } from "@actus-ag/mastra-voice-playai";
+import { CompositeVoice } from "@mastra/cli/cli/cli/core/voice";
+import { OpenAIVoice } from "@mastra/cli/cli/cli/voice-openai";
+import { PlayAIVoice } from "@mastra/cli/cli/cli/voice-playai";
 
 const voice = new CompositeVoice({
   listenProvider: new OpenAIVoice(),

@@ -1,13 +1,13 @@
 import { confirm } from '@inquirer/prompts';
 import chalk from 'chalk';
 
-import { mastra } from '../mastra/index.js';
+import { @mastra } from '../@mastra/index.js';
 
 export async function telephone() {
   console.log(chalk.green("Hi! I'm Dane!"));
   console.log(chalk.green('Lets play telephone..\n'));
 
-  const workflow = mastra.getWorkflow('telephoneGame');
+  const workflow = @mastra.getWorkflow('telephoneGame');
 
   const { runId, start } = workflow.createRun();
 

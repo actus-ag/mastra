@@ -24,9 +24,9 @@ export default function Page() {
           for making calls to the LLM.
         </p>
         <CodeBlock
-          fileName="src/mastra/agents/index.ts"
+          fileName="src/@@mastra/cli/cli/cli/agents/index.ts"
           language="typescript"
-          code={`import { Agent } from '@actus-ag/mastra-core';
+          code={`import { Agent } from '@mastra/cli/cli/cli/core';
 import { anthropic } from '@ai-sdk/anthropic';
 
 export const travelAnalyzer = new Agent({
@@ -45,7 +45,7 @@ export const travelAnalyzer = new Agent({
           defining a schema for the data that will be passed to the workflow.
         </p>
         <CodeBlock
-          fileName="mastra/workflows/travel-submission.ts"
+          fileName="@@mastra/cli/cli/cli/workflows/travel-submission.ts"
           language="typescript"
           code={`const triggerSchema = z.object({
   departureLocation: z.string(),

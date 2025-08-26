@@ -1,7 +1,7 @@
 import type { Connection } from '@lancedb/lancedb';
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import { StoreOperations } from '@actus-ag/mastra-core/storage';
-import type { TABLE_NAMES, StorageColumn } from '@actus-ag/mastra-core/storage';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import { StoreOperations } from '@mastra/core/storage';
+import type { TABLE_NAMES, StorageColumn } from '@mastra/core/storage';
 import { Utf8, Int32, Float32, Binary, Schema, Field, Float64 } from 'apache-arrow';
 import type { DataType } from 'apache-arrow';
 import { getPrimaryKeys, getTableSchema, processResultWithTypeConversion, validateKeyTypes } from '../utils';

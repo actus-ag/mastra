@@ -1,9 +1,9 @@
-import { PinoLogger } from '@actus-ag/mastra-loggers';
-import { Mastra } from '@actus-ag/mastra-core';
+import { PinoLogger } from '@mastra/loggers';
+import { Mastra } from '@mastra/core';
 
 import { birdCheckerAgent } from './agents/agent';
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   agents: { birdCheckerAgent },
   logger: new PinoLogger({
     name: 'CONSOLE',

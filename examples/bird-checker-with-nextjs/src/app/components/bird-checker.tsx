@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { getImage, ImageQuery } from "@/lib/mastra/actions";
+import { getImage, ImageQuery } from "@/lib/@@mastra/cli/cli/cli/actions";
 import { cn } from "@/lib/utils";
 import { Bird, Camera, Feather, Plane } from "lucide-react";
 import Image from "next/image";
@@ -165,7 +165,7 @@ export const BirdChecker = () => {
             <div className="flex gap-2">
               <a
                 rel="noopener"
-                href="https://github.com/mastra-ai/mastra/tree/main/examples/bird-checker-with-nextjs"
+                href="https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/tree/main/examples/bird-checker-with-nextjs"
                 target="_blank"
                 className="uppercase inline-flex items-center h-4 rounded-full text-black px-1.5 leading-tight tracking-widest text-[9px] bg-gray-50 font-semibold"
               >
@@ -174,7 +174,7 @@ export const BirdChecker = () => {
               <span className="text-xs text-black font-semibold">
                 Built with{" "}
                 <a
-                  href="https://mastra.ai/"
+                  href="https://@@mastra/cli/cli/cli.ai/"
                   rel="noopener"
                   className="underline"
                   target="_blank"
@@ -201,7 +201,7 @@ export const BirdChecker = () => {
         <div className="flex gap-2">
           <a
             rel="noopener"
-            href="https://github.com/mastra-ai/mastra/tree/main/examples/bird-checker-with-nextjs"
+            href="https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/tree/main/examples/bird-checker-with-nextjs"
             target="_blank"
             className="uppercase inline-flex items-center h-4 rounded-full text-black px-1.5 leading-tight tracking-widest text-[9px] bg-gray-50 font-semibold"
           >
@@ -211,7 +211,7 @@ export const BirdChecker = () => {
             Built with{" "}
             <a
               rel="noopener"
-              href="https://mastra.ai/"
+              href="https://@@mastra/cli/cli/cli.ai/"
               className="underline"
               target="_blank"
             >

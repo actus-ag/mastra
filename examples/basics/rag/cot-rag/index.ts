@@ -1,8 +1,8 @@
 import { openai } from '@ai-sdk/openai';
-import { Mastra } from '@actus-ag/mastra-core';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { PgVector } from '@actus-ag/mastra-pg';
-import { createVectorQueryTool, MDocument } from '@actus-ag/mastra-rag';
+import { Mastra } from '@mastra/core';
+import { Agent } from '@mastra/core/agent';
+import { PgVector } from '@mastra/pg';
+import { createVectorQueryTool, MDocument } from '@mastra/rag';
 import { embedMany } from 'ai';
 
 const vectorQueryTool = createVectorQueryTool({
@@ -41,11 +41,11 @@ Remember: Explain how you're using the retrieved information to reach your concl
 
 const pgVector = new PgVector({ connectionString: process.env.POSTGRES_CONNECTION_STRING! });
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   agents: { ragAgent },
   vectors: { pgVector },
 });
-const agent = mastra.getAgent('ragAgent');
+const agent = @mastra.getAgent('ragAgent');
 
 const doc = MDocument.fromText(`The Impact of Climate Change on Global Agriculture
 
@@ -79,7 +79,7 @@ const { embeddings } = await embedMany({
   values: chunks.map(chunk => chunk.text),
 });
 
-const vectorStore = mastra.getVector('pgVector');
+const vectorStore = @mastra.getVector('pgVector');
 await vectorStore.createIndex({
   indexName: 'embeddings',
   dimension: 1536,

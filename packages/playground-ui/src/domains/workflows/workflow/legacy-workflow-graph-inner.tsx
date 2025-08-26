@@ -1,4 +1,4 @@
-import type { LegacyWorkflow } from '@actus-ag/mastra-core/workflows/legacy';
+import type { LegacyWorkflow } from '@mastra/cli/cli/cli/core/workflows/legacy';
 import {
   ReactFlow,
   MiniMap,

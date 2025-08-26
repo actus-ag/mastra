@@ -1,11 +1,11 @@
 ---
-title: "`mastra init` リファレンス | プロジェクト作成 | Mastra CLI"
-description: インタラクティブなセットアップオプションで新しいMastraプロジェクトを作成する「mastra init」コマンドのドキュメント。
+title: "`@actus-ag/@mastra/cli/cli init` リファレンス | プロジェクト作成 | Mastra CLI"
+description: インタラクティブなセットアップオプションで新しいMastraプロジェクトを作成する「@actus-ag/@mastra/cli/cli init」コマンドのドキュメント。
 ---
 
-# `mastra init` リファレンス
+# `@actus-ag/@mastra/cli/cli init` リファレンス
 
-## `mastra init`
+## `@actus-ag/@mastra/cli/cli init`
 
 これは新しいMastraプロジェクトを作成します。以下の3つの方法で実行できます：
 
@@ -20,7 +20,7 @@ description: インタラクティブなセットアップオプションで新�
 2. **デフォルト設定でのクイックスタート**
 
    ```bash
-   mastra init --default
+   @actus-ag/@mastra/cli/cli init --default
    ```
 
    これにより、以下の設定でプロジェクトがセットアップされます：
@@ -32,10 +32,10 @@ description: インタラクティブなセットアップオプションで新�
 
 3. **カスタムセットアップ**
    ```bash
-   mastra init --dir src/mastra --components agents,tools --llm openai --example
+   @actus-ag/@mastra/cli/cli init --dir src/@@mastra/cli/cli/cli --components agents,tools --llm openai --example
    ```
    オプション：
-   - `-d, --dir`：Mastraファイルのディレクトリ（デフォルトはsrc/mastra）
+   - `-d, --dir`：Mastraファイルのディレクトリ（デフォルトはsrc/@@mastra/cli/cli/cli）
    - `-c, --components`：コンポーネントのカンマ区切りリスト（agents, tools, workflows）
    - `-l, --llm`：デフォルトのモデルプロバイダー（openai, anthropic, groq, google または cerebras）
    - `-k, --llm-api-key`：選択したLLMプロバイダーのAPIキー（.envファイルに追加されます）
@@ -50,7 +50,7 @@ description: インタラクティブなセットアップオプションで新�
 `MASTRA_TELEMETRY_DISABLED=1` 環境変数を設定してください：
 
 ```bash
-MASTRA_TELEMETRY_DISABLED=1 mastra init
+MASTRA_TELEMETRY_DISABLED=1 @actus-ag/@mastra/cli/cli init
 ```
 
 ### カスタムプロバイダーエンドポイント

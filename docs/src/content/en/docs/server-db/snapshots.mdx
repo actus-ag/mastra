@@ -113,10 +113,10 @@ This means that storage is shared across all workflows registered with the same 
 The default storage option is LibSQL, a SQLite-compatible database:
 
 ```typescript
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { DefaultStorage } from "@actus-ag/mastra-core/storage/libsql";
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { DefaultStorage } from "@mastra/cli/cli/cli/core/storage/libsql";
 
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   storage: new DefaultStorage({
     config: {
       url: "file:storage.db", // Local file-based database
@@ -137,10 +137,10 @@ const mastra = new Mastra({
 For serverless environments:
 
 ```typescript
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { UpstashStore } from "@actus-ag/mastra-upstash";
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { UpstashStore } from "@mastra/cli/cli/cli/upstash";
 
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   storage: new UpstashStore({
     url: process.env.UPSTASH_URL,
     token: process.env.UPSTASH_TOKEN,

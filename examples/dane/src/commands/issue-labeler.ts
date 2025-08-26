@@ -1,12 +1,12 @@
 import chalk from 'chalk';
 
-import { mastra } from '../mastra/index.js';
+import { @mastra } from '../@mastra/index.js';
 
 export async function issueLabelerCommand() {
   console.log(chalk.green("Hi! I'm Dane!"));
   console.log(chalk.green('Let me label this for you..\n'));
 
-  const { start } = mastra.getWorkflow('githubIssueLabeler').createRun();
+  const { start } = @mastra.getWorkflow('githubIssueLabeler').createRun();
 
   const issueNumber = parseInt(process.env.ISSUE_NUMBER!, 10);
   const result = await start({

@@ -8,6 +8,6 @@ export abstract class MastraStorage extends BaseMastraStorage {
       name,
     });
 
-    this.logger.warn('Please import "MastraStorage" from "@actus-ag/mastra-core/storage" instead of "@actus-ag/mastra-core"');
+    this.logger.warn('Please import "MastraStorage" from "@mastra/core/storage" instead of "@mastra/core"');
   }
 }

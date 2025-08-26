@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
-import { GetNetworkResponse, GetVNextNetworkResponse } from '@actus-ag/mastra-client-js';
+import { GetNetworkResponse, GetVNextNetworkResponse } from '@mastra-client-js';
 import { client } from '@/lib/client';
 
 export const useNetworks = () => {

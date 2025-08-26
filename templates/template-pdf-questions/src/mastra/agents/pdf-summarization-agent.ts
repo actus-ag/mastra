@@ -1,12 +1,12 @@
 import { openai } from '@ai-sdk/openai';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { LibSQLStore } from '@actus-ag/mastra-libsql';
-import { Memory } from '@actus-ag/mastra-memory';
+import { Agent } from '@mastra/core/agent';
+import { LibSQLStore } from '@mastra/libsql';
+import { Memory } from '@mastra/memory';
 
 // Initialize memory with LibSQLStore for persistence
 const memory = new Memory({
   storage: new LibSQLStore({
-    url: process.env.MASTRA_DB_URL || 'file:../mastra.db',
+    url: process.env.MASTRA_DB_URL || 'file:../@mastra.db',
   }),
 });
 

@@ -10,7 +10,7 @@ The LanceDB storage implementation provides a high-performance storage solution 
 ## Installation
 
 ```bash
-npm install @actus-ag/mastra-lance
+npm install @mastra/cli/cli/cli/lance
 ```
 
 ## Usage
@@ -18,7 +18,7 @@ npm install @actus-ag/mastra-lance
 ### Basic Storage Usage
 
 ```typescript copy showLineNumbers
-import { LanceStorage } from "@actus-ag/mastra-lance";
+import { LanceStorage } from "@mastra/cli/cli/cli/lance";
 
 // Connect to a local database
 const storage = await LanceStorage.create("my-storage", "/path/to/db");

@@ -9,8 +9,8 @@ The `Workflow` class enables you to create state machines for complex sequences 
 
 ## Usage example
 
-```typescript filename="src/mastra/workflows/test-workflow.ts" showLineNumbers copy
-import { createWorkflow } from "@actus-ag/mastra-core/workflows";
+```typescript filename="src/@@mastra/cli/cli/cli/workflows/test-workflow.ts" showLineNumbers copy
+import { createWorkflow } from "@mastra/cli/cli/cli/core/workflows";
 import { z } from "zod";
 
 export const workflow = createWorkflow({
@@ -76,9 +76,9 @@ A workflow's `status` indicates its current execution state. The possible values
 ## Extended usage example
 
 ```typescript filename="src/test-run.ts" showLineNumbers copy
-import { mastra } from "./mastra";
+import { @@mastra/cli/cli/cli } from "./@@mastra/cli/cli/cli";
 
-const run = await mastra.getWorkflow("workflow").createRunAsync();
+const run = await @@mastra/cli/cli/cli.getWorkflow("workflow").createRunAsync();
 
 const result = await run.start({...});
 

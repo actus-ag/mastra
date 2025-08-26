@@ -1,7 +1,7 @@
 import { openai } from '@ai-sdk/openai';
-import { Mastra } from '@actus-ag/mastra-core';
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { Step, Workflow } from '@actus-ag/mastra-core/workflows';
+import { Mastra } from '@mastra/core';
+import { Agent } from '@mastra/core/agent';
+import { Step, Workflow } from '@mastra/core/workflows';
 import { z } from 'zod';
 
 const recruiter = new Agent({
@@ -21,7 +21,7 @@ const gatherCandidateInfo = new Step({
     specialty: z.string(),
     resumeText: z.string(),
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     const resumeText = context?.getStepResult<{ resumeText: string }>('trigger')?.resumeText;
 
     const prompt = `
@@ -53,7 +53,7 @@ const askAboutSpecialty = new Step({
   outputSchema: z.object({
     question: z.string(),
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     const candidateInfo = context?.getStepResult<CandidateInfo>('gatherCandidateInfo');
 
     const prompt = `
@@ -71,7 +71,7 @@ const askAboutRole = new Step({
   outputSchema: z.object({
     question: z.string(),
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     const candidateInfo = context?.getStepResult<CandidateInfo>('gatherCandidateInfo');
 
     const prompt = `
@@ -103,14 +103,14 @@ candidateWorkflow
 
 candidateWorkflow.commit();
 
-const mastra = new Mastra({
+const @mastra = new Mastra({
   workflows: {
     candidateWorkflow,
   },
 });
 
 (async () => {
-  const { runId, start } = mastra.getWorkflow('candidateWorkflow').createRun();
+  const { runId, start } = @mastra.getWorkflow('candidateWorkflow').createRun();
 
   console.log('Run', runId);
 

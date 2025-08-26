@@ -1,5 +1,5 @@
 import { anthropic } from '@ai-sdk/anthropic';
-import { Agent } from '@actus-ag/mastra-core/agent';
+import { Agent } from '@mastra/core/agent';
 
 export const birdCheckerAgent = new Agent({
   name: 'Bird checker',

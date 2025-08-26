@@ -5,12 +5,12 @@ description: ワークフロー実行のステータスを監視する `.watch()
 
 # run.watch()
 
-`.watch()` 関数は mastra run の状態変化を購読し、実行の進行状況を監視したり、状態の更新に反応したりすることができます。
+`.watch()` 関数は @@mastra/cli/cli/cli run の状態変化を購読し、実行の進行状況を監視したり、状態の更新に反応したりすることができます。
 
 ## 使用例
 
 ```typescript
-import { Workflow } from "@actus-ag/mastra-core/workflows";
+import { Workflow } from "@mastra/cli/cli/cli/core/workflows";
 
 const workflow = new Workflow({
   name: "document-processor",

@@ -1,5 +1,5 @@
-import { delay } from '@actus-ag/mastra-core';
-import { Step, Workflow } from '@actus-ag/mastra-core/workflows';
+import { delay } from '@mastra/core';
+import { Step, Workflow } from '@mastra/core/workflows';
 import chalk from 'chalk';
 import { execa } from 'execa';
 import { existsSync, readFileSync, writeFileSync } from 'fs';
@@ -20,7 +20,7 @@ const stepA1 = new Step({
   outputSchema: z.object({
     message: z.string(),
   }),
-  execute: async ({ mastra }) => {
+  execute: async ({ @mastra }) => {
     // For today
     try {
       // @ts-ignore
@@ -52,7 +52,7 @@ const stepA1 = new Step({
     const modulePaths = [
       'packages/core',
       'packages/cli',
-      'packages/create-mastra',
+      'packages/@actus-ag/create-@mastra',
       'packages/deployer',
       'packages/evals',
       'packages/rag',
@@ -148,7 +148,7 @@ const stepA1 = new Step({
             - Performance optimizations
           `;
 
-          const agent = mastra?.getAgent('daneChangeLog');
+          const agent = @mastra?.getAgent('daneChangeLog');
 
           if (!agent) {
             throw new Error('LLM not found');
@@ -199,12 +199,12 @@ const stepA2 = new Step({
   outputSchema: z.object({
     message: z.string(),
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     if (context?.steps.stepA1?.status !== 'success') {
       throw new Error('Message not found');
     }
 
-    const agent = mastra?.getAgent('daneChangeLog');
+    const agent = @mastra?.getAgent('daneChangeLog');
 
     if (!agent) {
       throw new Error('LLM not found');

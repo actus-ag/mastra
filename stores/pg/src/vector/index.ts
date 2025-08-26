@@ -1,6 +1,6 @@
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
-import { parseSqlIdentifier } from '@actus-ag/mastra-core/utils';
-import { MastraVector } from '@actus-ag/mastra-core/vector';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
+import { parseSqlIdentifier } from '@mastra/core/utils';
+import { MastraVector } from '@mastra/core/vector';
 import type {
   IndexStats,
   QueryResult,
@@ -11,7 +11,7 @@ import type {
   DeleteIndexParams,
   DeleteVectorParams,
   UpdateVectorParams,
-} from '@actus-ag/mastra-core/vector';
+} from '@mastra/core/vector';
 import { Mutex } from 'async-mutex';
 import pg from 'pg';
 import xxhash from 'xxhash-wasm';

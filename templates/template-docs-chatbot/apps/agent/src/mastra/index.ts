@@ -1,9 +1,9 @@
-import { Mastra } from '@actus-ag/mastra-core/mastra';
-import { registerApiRoute } from '@actus-ag/mastra-core/server';
-import { PinoLogger } from '@actus-ag/mastra-loggers';
+import { Mastra } from '@mastra/core/@mastra';
+import { registerApiRoute } from '@mastra/core/server';
+import { PinoLogger } from '@mastra/loggers';
 import { docsAgent } from './agents/docs-agent';
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   agents: {
     docsAgent,
   },

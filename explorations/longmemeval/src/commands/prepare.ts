@@ -1,5 +1,5 @@
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { Memory } from '@actus-ag/mastra-memory';
+import { Agent } from '@mastra/core/agent';
+import { Memory } from '@mastra/memory';
 import { MockLanguageModelV1 } from '../test-utils/mock-model';
 import { openai } from '@ai-sdk/openai';
 import { cachedOpenAI } from '../embeddings/cached-openai-provider';
@@ -751,8 +751,8 @@ export class PrepareCommand {
 
       // Get messages for this session
       const sessionMessages: Array<[string, any]> = [];
-      if (data.mastra_messages) {
-        for (const [key, message] of data.mastra_messages) {
+      if (data.@mastra_messages) {
+        for (const [key, message] of data.@mastra_messages) {
           if (message.threadId === sessionId) {
             sessionMessages.push([key, message]);
           }
@@ -771,8 +771,8 @@ export class PrepareCommand {
       });
 
       // Update thread dates
-      if (data.mastra_threads) {
-        for (const [threadId, thread] of data.mastra_threads) {
+      if (data.@mastra_threads) {
+        for (const [threadId, thread] of data.@mastra_threads) {
           if (threadId === sessionId) {
             thread.createdAt = sessionDate.toISOString();
             thread.updatedAt = sessionDate.toISOString();

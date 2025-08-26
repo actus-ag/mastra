@@ -1,5 +1,5 @@
-import { Agent } from '@actus-ag/mastra-core/agent';
-import { Memory } from '@actus-ag/mastra-memory';
+import { Agent } from '@mastra/core/agent';
+import { Memory } from '@mastra/memory';
 import { openai } from '@ai-sdk/openai';
 import { cachedOpenAI } from '../embeddings/cached-openai-provider';
 import chalk from 'chalk';

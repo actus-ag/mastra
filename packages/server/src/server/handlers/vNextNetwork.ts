@@ -1,4 +1,4 @@
-import type { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
+import type { RuntimeContext } from '@mastra/core/runtime-context';
 import { stringify } from 'superjson';
 import zodToJsonSchema from 'zod-to-json-schema';
 import { HTTPException } from '../http-exception';
@@ -12,11 +12,11 @@ interface NetworkContext extends Context {
 }
 
 export async function getVNextNetworksHandler({
-  mastra,
+  @mastra,
   runtimeContext,
-}: Pick<NetworkContext, 'mastra' | 'runtimeContext'>) {
+}: Pick<NetworkContext, '@actus-ag/@mastra' | 'runtimeContext'>) {
   try {
-    const networks = mastra.vnext_getNetworks();
+    const networks = @mastra.vnext_getNetworks();
 
     const serializedNetworks = await Promise.all(
       networks.map(async network => {
@@ -73,12 +73,12 @@ export async function getVNextNetworksHandler({
 }
 
 export async function getVNextNetworkByIdHandler({
-  mastra,
+  @mastra,
   networkId,
   runtimeContext,
-}: Pick<NetworkContext, 'mastra' | 'networkId' | 'runtimeContext'>) {
+}: Pick<NetworkContext, '@actus-ag/@mastra' | 'networkId' | 'runtimeContext'>) {
   try {
-    const network = mastra.vnext_getNetwork(networkId!);
+    const network = @mastra.vnext_getNetwork(networkId!);
 
     if (!network) {
       throw new HTTPException(404, { message: 'Network not found' });
@@ -135,7 +135,7 @@ export async function getVNextNetworkByIdHandler({
 }
 
 export async function generateVNextNetworkHandler({
-  mastra,
+  @mastra,
   runtimeContext,
   networkId,
   body,
@@ -144,7 +144,7 @@ export async function generateVNextNetworkHandler({
   body: { message: string; threadId?: string; resourceId?: string };
 }) {
   try {
-    const network = mastra.vnext_getNetwork(networkId!);
+    const network = @mastra.vnext_getNetwork(networkId!);
 
     if (!network) {
       throw new HTTPException(404, { message: 'Network not found' });
@@ -162,7 +162,7 @@ export async function generateVNextNetworkHandler({
 }
 
 export async function streamGenerateVNextNetworkHandler({
-  mastra,
+  @mastra,
   networkId,
   body,
   runtimeContext,
@@ -171,7 +171,7 @@ export async function streamGenerateVNextNetworkHandler({
   body: { message: string; threadId?: string; resourceId?: string };
 }) {
   try {
-    const network = mastra.vnext_getNetwork(networkId!);
+    const network = @mastra.vnext_getNetwork(networkId!);
 
     if (!network) {
       throw new HTTPException(404, { message: 'Network not found' });
@@ -193,7 +193,7 @@ export async function streamGenerateVNextNetworkHandler({
 }
 
 export async function loopVNextNetworkHandler({
-  mastra,
+  @mastra,
   networkId,
   body,
   runtimeContext,
@@ -202,7 +202,7 @@ export async function loopVNextNetworkHandler({
   body: { message: string };
 }) {
   try {
-    const network = mastra.vnext_getNetwork(networkId!);
+    const network = @mastra.vnext_getNetwork(networkId!);
 
     if (!network) {
       throw new HTTPException(404, { message: 'Network not found' });
@@ -222,7 +222,7 @@ export async function loopVNextNetworkHandler({
 }
 
 export async function loopStreamVNextNetworkHandler({
-  mastra,
+  @mastra,
   networkId,
   body,
   runtimeContext,
@@ -231,7 +231,7 @@ export async function loopStreamVNextNetworkHandler({
   body: { message: string; threadId?: string; resourceId?: string; maxIterations?: number };
 }) {
   try {
-    const network = mastra.vnext_getNetwork(networkId!);
+    const network = @mastra.vnext_getNetwork(networkId!);
 
     if (!network) {
       throw new HTTPException(404, { message: 'Network not found' });

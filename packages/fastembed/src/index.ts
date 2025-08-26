@@ -5,7 +5,7 @@ import { experimental_customProvider } from 'ai';
 import { FlagEmbedding, EmbeddingModel } from 'fastembed';
 
 async function getModelCachePath() {
-  const cachePath = path.join(os.homedir(), '.cache', 'mastra', 'fastembed-models');
+  const cachePath = path.join(os.homedir(), '.cache', '@actus-ag/@mastra', 'fastembed-models');
   await fsp.mkdir(cachePath, { recursive: true });
   return cachePath;
 }

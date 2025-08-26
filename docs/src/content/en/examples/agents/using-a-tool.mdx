@@ -21,8 +21,8 @@ OPENAI_API_KEY=<your-api-key>
 
 This tool provides historical weather data for London, returning arrays of daily temperature, precipitation, wind speed, snowfall, and weather conditions from January 1st of the current year up to today. This structure makes it easy for agents to access and reason about recent weather trends.
 
-```typescript filename="src/mastra/tools/example-london-weather-tool.ts" showLineNumbers copy
-import { createTool } from "@actus-ag/mastra-core/tools";
+```typescript filename="src/@@mastra/cli/cli/cli/tools/example-london-weather-tool.ts" showLineNumbers copy
+import { createTool } from "@mastra/cli/cli/cli/core/tools";
 import { z } from "zod";
 
 export const londonWeatherTool = createTool({
@@ -62,9 +62,9 @@ export const londonWeatherTool = createTool({
 
 This agent uses the `londonWeatherTool` to answer questions about historical weather in London. It has clear instructions that guide it to use the tool for every query and limit its responses to data available for the current calendar year.
 
-```typescript filename="src/mastra/agents/example-london-weather-agent.ts" showLineNumbers copy
+```typescript filename="src/@@mastra/cli/cli/cli/agents/example-london-weather-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 
 import { londonWeatherTool } from "../tools/example-london-weather-tool";
 
@@ -89,9 +89,9 @@ Use `getAgent()` to retrieve a reference to the agent, then call `generate()` wi
 ```typescript filename="src/test-london-weather-agent.ts" showLineNumbers copy
 import "dotenv/config";
 
-import { mastra } from "./mastra";
+import { @@mastra/cli/cli/cli } from "./@@mastra/cli/cli/cli";
 
-const agent = mastra.getAgent("londonWeatherAgent");
+const agent = @@mastra/cli/cli/cli.getAgent("londonWeatherAgent");
 
 const response = await agent.generate("How many times has it rained this year?");
 
@@ -101,7 +101,7 @@ console.log(response.text);
 
 <GithubLink
   marginTop='mt-16'
-  link="https://github.com/mastra-ai/mastra/blob/main/examples/basics/agents/using-a-tool"
+  link="https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/agents/using-a-tool"
 />
 
 ## Related

@@ -11,8 +11,8 @@ Use human-in-the-loop workflows to pause execution at specific steps for human i
 
 In this example, the workflow pauses until user input is received. Execution is suspended at a specific step and only resumes once the required confirmation is provided.
 
-```typescript filename="src/mastra/workflows/example-human-in-loop.ts" showLineNumbers copy
-import { createWorkflow, createStep } from "@actus-ag/mastra-core/workflows";
+```typescript filename="src/@@mastra/cli/cli/cli/workflows/example-human-in-loop.ts" showLineNumbers copy
+import { createWorkflow, createStep } from "@mastra/cli/cli/cli/core/workflows";
 import { z } from "zod";
 
 const step1 = createStep({

@@ -1,4 +1,4 @@
-import { Step, Workflow } from '@actus-ag/mastra-core/workflows';
+import { Step, Workflow } from '@mastra/core/workflows';
 import chalk from 'chalk';
 import child_process from 'node:child_process';
 import util from 'node:util';
@@ -59,7 +59,7 @@ const reportBrokenLinks = new Step({
   outputSchema: z.object({
     message: z.string(),
   }),
-  execute: async ({ context, mastra }) => {
+  execute: async ({ context, @mastra }) => {
     const brokenLinks = context?.getStepResult<{ brokenLinks: z.infer<typeof linkSchema>[] }>('get-broken-links');
 
     if (!brokenLinks) {
@@ -89,7 +89,7 @@ const reportBrokenLinks = new Step({
       };
     }
 
-    const agent = mastra?.getAgent('daneLinkChecker');
+    const agent = @mastra?.getAgent('daneLinkChecker');
 
     if (!agent) {
       return {

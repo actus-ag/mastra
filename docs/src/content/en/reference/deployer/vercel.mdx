@@ -9,11 +9,11 @@ The `VercelDeployer` class handles deployment of standalone Mastra applications 
 
 ## Usage example
 
-```typescript filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core/mastra";
-import { VercelDeployer } from "@actus-ag/mastra-deployer-vercel";
+```typescript filename="src/@@mastra/cli/cli/cli/index.ts" showLineNumbers copy
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+import { VercelDeployer } from "@mastra/cli/cli/cli/deployer-vercel";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // ...
   deployer: new VercelDeployer()
 });

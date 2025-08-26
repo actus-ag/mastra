@@ -27,9 +27,9 @@ export function LegacyWorkflowNestedNode({ data }: NodeProps<LegacyWorkflowNeste
     <div className={cn('bg-[rgba(29,29,29,0.5)] rounded-md h-full overflow-scroll w-[274px]')}>
       {!withoutTopHandle && <Handle type="target" position={Position.Top} style={{ visibility: 'hidden' }} />}
       <div className="p-2 cursor-pointer" onClick={() => showNestedGraph({ label, stepGraph, stepSubscriberGraph })}>
-        <div className="text-sm bg-mastra-bg-9 flex items-center gap-1.5 rounded-sm p-2 cursor-pointer">
+        <div className="text-sm bg-@@mastra/cli/cli/cli-bg-9 flex items-center gap-1.5 rounded-sm p-2 cursor-pointer">
           <Workflow className="text-current w-4 h-4" />
-          <Text size="xs" weight="medium" className="text-mastra-el-6 capitalize">
+          <Text size="xs" weight="medium" className="text-@@mastra/cli/cli/cli-el-6 capitalize">
             {label}
           </Text>
         </div>

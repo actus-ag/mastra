@@ -18,7 +18,7 @@ import { MastraError, ErrorDomain, ErrorCategory } from '../error';
 
 import type { GenerateReturn } from '../llm/model/base.types';
 import { RegisteredLogger } from '../logger';
-import type { Mastra } from '../mastra';
+import type { Mastra } from '../@mastra';
 import type { RuntimeContext } from '../runtime-context';
 import { createTool } from '../tools';
 import type { ToolAction } from '../tools';

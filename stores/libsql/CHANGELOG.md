@@ -1,4 +1,4 @@
-# @actus-ag/mastra-libsql
+# @mastra/libsql
 
 ## 0.13.3
 
@@ -23,14 +23,14 @@
 - Updated dependencies [c30bca8]
 - Updated dependencies [3b5fec7]
 - Updated dependencies [a8f129d]
-  - @actus-ag/mastra-core@0.14.0
+  - @mastra/core@0.14.0
 
 ## 0.13.3-alpha.1
 
 ### Patch Changes
 
 - 03997ae: Update peerdeps
-  - @actus-ag/mastra-core@0.14.0-alpha.7
+  - @mastra/core@0.14.0-alpha.7
 
 ## 0.13.3-alpha.0
 
@@ -43,7 +43,7 @@
 - Updated dependencies [cf4f357]
 - Updated dependencies [a722c0b]
 - Updated dependencies [3b5fec7]
-  - @actus-ag/mastra-core@0.14.0-alpha.1
+  - @mastra/core@0.14.0-alpha.1
 
 ## 0.13.2
 
@@ -63,7 +63,7 @@
 - Updated dependencies [63449d0]
 - Updated dependencies [121a3f8]
 - Updated dependencies [ec510e7]
-  - @actus-ag/mastra-core@0.13.2
+  - @mastra/core@0.13.2
 
 ## 0.13.2-alpha.1
 
@@ -71,7 +71,7 @@
 
 - b5cf2a3: make system message always available during agent calls
 - Updated dependencies [b5cf2a3]
-  - @actus-ag/mastra-core@0.13.2-alpha.3
+  - @mastra/core@0.13.2-alpha.3
 
 ## 0.13.2-alpha.0
 
@@ -83,7 +83,7 @@
 - Updated dependencies [b32c50d]
 - Updated dependencies [121a3f8]
 - Updated dependencies [ec510e7]
-  - @actus-ag/mastra-core@0.13.2-alpha.2
+  - @mastra/core@0.13.2-alpha.2
 
 ## 0.13.1
 
@@ -91,7 +91,7 @@
 
 - 8888b57: Fix LibSQL vector metadata filtering for Memory system - corrected JSON path syntax for simple fields and changed default minScore to -1 to include all similarity results
 - Updated dependencies [cd0042e]
-  - @actus-ag/mastra-core@0.13.1
+  - @mastra/core@0.13.1
 
 ## 0.13.1-alpha.0
 
@@ -99,7 +99,7 @@
 
 - 8888b57: Fix LibSQL vector metadata filtering for Memory system - corrected JSON path syntax for simple fields and changed default minScore to -1 to include all similarity results
 - Updated dependencies [cd0042e]
-  - @actus-ag/mastra-core@0.13.1-alpha.0
+  - @mastra/core@0.13.1-alpha.0
 
 ## 0.13.0
 
@@ -125,7 +125,7 @@
 - Updated dependencies [5d377e5]
 - Updated dependencies [1fb812e]
 - Updated dependencies [35c5798]
-  - @actus-ag/mastra-core@0.13.0
+  - @mastra/core@0.13.0
 
 ## 0.13.0-alpha.1
 
@@ -139,7 +139,7 @@
 - Updated dependencies [2871020]
 - Updated dependencies [4a406ec]
 - Updated dependencies [5d377e5]
-  - @actus-ag/mastra-core@0.13.0-alpha.2
+  - @mastra/core@0.13.0-alpha.2
 
 ## 0.13.0-alpha.0
 
@@ -153,7 +153,7 @@
 - Updated dependencies [b0e43c1]
 - Updated dependencies [1fb812e]
 - Updated dependencies [35c5798]
-  - @actus-ag/mastra-core@0.13.0-alpha.1
+  - @mastra/core@0.13.0-alpha.1
 
 ## 0.12.0
 
@@ -202,7 +202,7 @@
 - Updated dependencies [b8efbb9]
 - Updated dependencies [71466e7]
 - Updated dependencies [0c99fbe]
-  - @actus-ag/mastra-core@0.12.0
+  - @mastra/core@0.12.0
 
 ## 0.12.0-alpha.2
 
@@ -212,7 +212,7 @@
 
 ### Patch Changes
 
-- @actus-ag/mastra-core@0.12.0-alpha.5
+- @mastra/core@0.12.0-alpha.5
 
 ## 0.11.3-alpha.1
 
@@ -240,7 +240,7 @@
 - Updated dependencies [b8efbb9]
 - Updated dependencies [71466e7]
 - Updated dependencies [0c99fbe]
-  - @actus-ag/mastra-core@0.12.0-alpha.2
+  - @mastra/core@0.12.0-alpha.2
 
 ## 0.11.3-alpha.0
 
@@ -259,21 +259,21 @@
 - Updated dependencies [fc92d80]
 - Updated dependencies [23a6a7c]
 - Updated dependencies [09bca64]
-  - @actus-ag/mastra-core@0.12.0-alpha.0
+  - @mastra/core@0.12.0-alpha.0
 
 ## 0.11.2
 
 ### Patch Changes
 
-- 3cc50c7: Update mastra core peer dep version
+- 3cc50c7: Update @mastra core peer dep version
 - ce088f5: Update all peerdeps to latest core
-  - @actus-ag/mastra-core@0.11.1
+  - @mastra/core@0.11.1
 
 ## 0.11.1
 
 ### Patch Changes
 
-- 7ba91fa: Throw mastra errors methods not implemented yet
+- 7ba91fa: Throw @mastra errors methods not implemented yet
 - da168a4: increase the peer deps range
 - Updated dependencies [f248d53]
 - Updated dependencies [2affc57]
@@ -296,13 +296,13 @@
 - Updated dependencies [dcd4802]
 - Updated dependencies [cbddd18]
 - Updated dependencies [7ba91fa]
-  - @actus-ag/mastra-core@0.11.0
+  - @mastra/core@0.11.0
 
 ## 0.11.1-alpha.0
 
 ### Patch Changes
 
-- 7ba91fa: Throw mastra errors methods not implemented yet
+- 7ba91fa: Throw @mastra errors methods not implemented yet
 - da168a4: increase the peer deps range
 - Updated dependencies [f248d53]
 - Updated dependencies [2affc57]
@@ -322,7 +322,7 @@
 - Updated dependencies [bea9dd1]
 - Updated dependencies [dcd4802]
 - Updated dependencies [7ba91fa]
-  - @actus-ag/mastra-core@0.11.0-alpha.2
+  - @mastra/core@0.11.0-alpha.2
 
 ## 0.11.0
 
@@ -338,7 +338,7 @@
 - 2097952: [MASTRA-4021] Fix PG getMessages and update messageLimit for all storage adapters
 - 144eb0b: [MASTRA-3669] Metadata Filter Types
 - f0150c4: Fix LibSQLStore and PgStore getMessagesPaginated implementation
-- 0e17048: Throw mastra errors in storage packages
+- 0e17048: Throw @mastra errors in storage packages
 - Updated dependencies [15e9d26]
 - Updated dependencies [d1baedb]
 - Updated dependencies [d8f2d19]
@@ -356,7 +356,7 @@
 - Updated dependencies [8ba1b51]
 - Updated dependencies [4efcfa0]
 - Updated dependencies [0e17048]
-  - @actus-ag/mastra-core@0.10.7
+  - @mastra/core@0.10.7
 
 ## 0.11.0-alpha.3
 
@@ -369,7 +369,7 @@
 - Updated dependencies [792c4c0]
 - Updated dependencies [502fe05]
 - Updated dependencies [4efcfa0]
-  - @actus-ag/mastra-core@0.10.7-alpha.3
+  - @mastra/core@0.10.7-alpha.3
 
 ## 0.10.4-alpha.2
 
@@ -383,21 +383,21 @@
 - Updated dependencies [07d6d88]
 - Updated dependencies [5d74aab]
 - Updated dependencies [144eb0b]
-  - @actus-ag/mastra-core@0.10.7-alpha.2
+  - @mastra/core@0.10.7-alpha.2
 
 ## 0.10.4-alpha.1
 
 ### Patch Changes
 
 - 2097952: [MASTRA-4021] Fix PG getMessages and update messageLimit for all storage adapters
-- 0e17048: Throw mastra errors in storage packages
+- 0e17048: Throw @mastra errors in storage packages
 - Updated dependencies [d1baedb]
 - Updated dependencies [4d21bf2]
 - Updated dependencies [2097952]
 - Updated dependencies [4fb0cc2]
 - Updated dependencies [d2a7a31]
 - Updated dependencies [0e17048]
-  - @actus-ag/mastra-core@0.10.7-alpha.1
+  - @mastra/core@0.10.7-alpha.1
 
 ## 0.10.4-alpha.0
 
@@ -407,7 +407,7 @@
 - Updated dependencies [d8f2d19]
 - Updated dependencies [9d52b17]
 - Updated dependencies [8ba1b51]
-  - @actus-ag/mastra-core@0.10.7-alpha.0
+  - @mastra/core@0.10.7-alpha.0
 
 ## 0.10.3
 
@@ -430,7 +430,7 @@
 - Updated dependencies [751c894]
 - Updated dependencies [577ce3a]
 - Updated dependencies [9260b3a]
-  - @actus-ag/mastra-core@0.10.6
+  - @mastra/core@0.10.6
 
 ## 0.10.3-alpha.0
 
@@ -442,7 +442,7 @@
 - Updated dependencies [36f1c36]
 - Updated dependencies [10d352e]
 - Updated dependencies [53d3c37]
-  - @actus-ag/mastra-core@0.10.6-alpha.0
+  - @mastra/core@0.10.6-alpha.0
 
 ## 0.10.2
 
@@ -468,7 +468,7 @@
 - Updated dependencies [14a2566]
 - Updated dependencies [f7f8293]
 - Updated dependencies [48eddb9]
-  - @actus-ag/mastra-core@0.10.4
+  - @mastra/core@0.10.4
 
 ## 0.10.2-alpha.4
 
@@ -482,7 +482,7 @@
 
 - e0f9201: change how dedupe works for libsql and pg
 - Updated dependencies [925ab94]
-  - @actus-ag/mastra-core@0.10.4-alpha.3
+  - @mastra/core@0.10.4-alpha.3
 
 ## 0.10.2-alpha.2
 
@@ -490,7 +490,7 @@
 
 - 48eddb9: update filter logic in Memory class to support semantic recall search scope
 - Updated dependencies [48eddb9]
-  - @actus-ag/mastra-core@0.10.4-alpha.2
+  - @mastra/core@0.10.4-alpha.2
 
 ## 0.10.2-alpha.1
 
@@ -501,7 +501,7 @@
 - Updated dependencies [dffb67b]
 - Updated dependencies [f1309d3]
 - Updated dependencies [f7f8293]
-  - @actus-ag/mastra-core@0.10.4-alpha.1
+  - @mastra/core@0.10.4-alpha.1
 
 ## 0.10.2-alpha.0
 
@@ -517,7 +517,7 @@
 - Updated dependencies [1b443fd]
 - Updated dependencies [ce97900]
 - Updated dependencies [14a2566]
-  - @actus-ag/mastra-core@0.10.4-alpha.0
+  - @mastra/core@0.10.4-alpha.0
 
 ## 0.10.1
 
@@ -545,7 +545,7 @@
 - Updated dependencies [79d5145]
 - Updated dependencies [12b7002]
 - Updated dependencies [2901125]
-  - @actus-ag/mastra-core@0.10.2
+  - @mastra/core@0.10.2
 
 ## 0.10.1-alpha.3
 
@@ -560,7 +560,7 @@
 - c5bf1ce: Add backwards compat code for new MessageList in storage
 - Updated dependencies [c5bf1ce]
 - Updated dependencies [12b7002]
-  - @actus-ag/mastra-core@0.10.2-alpha.4
+  - @mastra/core@0.10.2-alpha.4
 
 ## 0.10.1-alpha.1
 
@@ -568,7 +568,7 @@
 
 - f0d559f: Fix peerdeps for alpha channel
 - Updated dependencies [1e8bb40]
-  - @actus-ag/mastra-core@0.10.2-alpha.2
+  - @mastra/core@0.10.2-alpha.2
 
 ## 0.10.1-alpha.0
 
@@ -578,19 +578,19 @@
 - 9e37877: Fixes SQLITE_BUSY error often seen when working locally on the playground
 - Updated dependencies [592a2db]
 - Updated dependencies [e5dc18d]
-  - @actus-ag/mastra-core@0.10.2-alpha.0
+  - @mastra/core@0.10.2-alpha.0
 
 ## 0.10.0
 
 ### Minor Changes
 
-- 83da932: Move @actus-ag/mastra-core to peerdeps
+- 83da932: Move @mastra/core to peerdeps
 
 ### Patch Changes
 
 - eabdcd9: [MASTRA-3451] SQL Injection Protection
 - d0ee3c6: Change all public functions and constructors in vector stores to use named args and prepare to phase out positional args
-- a7292b0: BREAKING(@actus-ag/mastra-core, all vector stores): Vector store breaking changes (remove deprecated functions and positional arguments)
+- a7292b0: BREAKING(@mastra/core, all vector stores): Vector store breaking changes (remove deprecated functions and positional arguments)
 - Updated dependencies [b3a3d63]
 - Updated dependencies [344f453]
 - Updated dependencies [0a3ae6d]
@@ -608,17 +608,17 @@
 - Updated dependencies [a7292b0]
 - Updated dependencies [0dcb9f0]
 - Updated dependencies [2672a05]
-  - @actus-ag/mastra-core@0.10.0
+  - @mastra/core@0.10.0
 
 ## 0.1.0-alpha.1
 
 ### Minor Changes
 
-- 83da932: Move @actus-ag/mastra-core to peerdeps
+- 83da932: Move @mastra/core to peerdeps
 
 ### Patch Changes
 
-- a7292b0: BREAKING(@actus-ag/mastra-core, all vector stores): Vector store breaking changes (remove deprecated functions and positional arguments)
+- a7292b0: BREAKING(@mastra/core, all vector stores): Vector store breaking changes (remove deprecated functions and positional arguments)
 - Updated dependencies [b3a3d63]
 - Updated dependencies [344f453]
 - Updated dependencies [0a3ae6d]
@@ -629,7 +629,7 @@
 - Updated dependencies [b2ae5aa]
 - Updated dependencies [a7292b0]
 - Updated dependencies [0dcb9f0]
-  - @actus-ag/mastra-core@0.10.0-alpha.1
+  - @mastra/core@0.10.0-alpha.1
 
 ## 0.0.5-alpha.0
 
@@ -644,7 +644,7 @@
 - Updated dependencies [d0ee3c6]
 - Updated dependencies [23f258c]
 - Updated dependencies [2672a05]
-  - @actus-ag/mastra-core@0.9.5-alpha.0
+  - @mastra/core@0.9.5-alpha.0
 
 ## 0.0.4
 
@@ -665,14 +665,14 @@
 - Updated dependencies [6fa1ad1]
 - Updated dependencies [c28d7a0]
 - Updated dependencies [edf1e88]
-  - @actus-ag/mastra-core@0.9.4
+  - @mastra/core@0.9.4
 
 ## 0.0.4-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [3e9c131]
-  - @actus-ag/mastra-core@0.9.4-alpha.4
+  - @mastra/core@0.9.4-alpha.4
 
 ## 0.0.4-alpha.3
 
@@ -683,7 +683,7 @@
 - Updated dependencies [c3bd795]
 - Updated dependencies [da082f8]
 - Updated dependencies [a5810ce]
-  - @actus-ag/mastra-core@0.9.4-alpha.3
+  - @mastra/core@0.9.4-alpha.3
 
 ## 0.0.4-alpha.2
 
@@ -692,7 +692,7 @@
 - Updated dependencies [3171b5b]
 - Updated dependencies [973e5ac]
 - Updated dependencies [9e1eff5]
-  - @actus-ag/mastra-core@0.9.4-alpha.2
+  - @mastra/core@0.9.4-alpha.2
 
 ## 0.0.4-alpha.1
 
@@ -702,7 +702,7 @@
 - Updated dependencies [6fa1ad1]
 - Updated dependencies [c28d7a0]
 - Updated dependencies [edf1e88]
-  - @actus-ag/mastra-core@0.9.4-alpha.1
+  - @mastra/core@0.9.4-alpha.1
 
 ## 0.0.4-alpha.0
 
@@ -710,7 +710,7 @@
 
 - Updated dependencies [daf942f]
 - Updated dependencies [0b8b868]
-  - @actus-ag/mastra-core@0.9.4-alpha.0
+  - @mastra/core@0.9.4-alpha.0
 
 ## 0.0.3
 
@@ -725,7 +725,7 @@
 - Updated dependencies [b5d2de0]
 - Updated dependencies [644f8ad]
 - Updated dependencies [70dbf51]
-  - @actus-ag/mastra-core@0.9.3
+  - @mastra/core@0.9.3
 
 ## 0.0.3-alpha.1
 
@@ -736,7 +736,7 @@
 - Updated dependencies [ca0dc88]
 - Updated dependencies [9cd1a46]
 - Updated dependencies [70dbf51]
-  - @actus-ag/mastra-core@0.9.3-alpha.1
+  - @mastra/core@0.9.3-alpha.1
 
 ## 0.0.3-alpha.0
 
@@ -745,7 +745,7 @@
 - Updated dependencies [526c570]
 - Updated dependencies [b5d2de0]
 - Updated dependencies [644f8ad]
-  - @actus-ag/mastra-core@0.9.3-alpha.0
+  - @mastra/core@0.9.3-alpha.0
 
 ## 0.0.2
 
@@ -770,7 +770,7 @@
 - Updated dependencies [3a5f1e1]
 - Updated dependencies [51e6923]
 - Updated dependencies [8398d89]
-  - @actus-ag/mastra-core@0.9.2
+  - @mastra/core@0.9.2
 
 ## 0.0.2-alpha.6
 
@@ -780,7 +780,7 @@
 - Updated dependencies [7d8b7c7]
 - Updated dependencies [3a5f1e1]
 - Updated dependencies [8398d89]
-  - @actus-ag/mastra-core@0.9.2-alpha.6
+  - @mastra/core@0.9.2-alpha.6
 
 ## 0.0.2-alpha.5
 
@@ -791,7 +791,7 @@
 - Updated dependencies [8607972]
 - Updated dependencies [7eeb2bc]
 - Updated dependencies [fba031f]
-  - @actus-ag/mastra-core@0.9.2-alpha.5
+  - @mastra/core@0.9.2-alpha.5
 
 ## 0.0.2-alpha.4
 
@@ -799,7 +799,7 @@
 
 - Updated dependencies [ccef9f9]
 - Updated dependencies [51e6923]
-  - @actus-ag/mastra-core@0.9.2-alpha.4
+  - @mastra/core@0.9.2-alpha.4
 
 ## 0.0.2-alpha.3
 
@@ -810,36 +810,36 @@
 - Updated dependencies [967b41c]
 - Updated dependencies [4155f47]
 - Updated dependencies [17826a9]
-  - @actus-ag/mastra-core@0.9.2-alpha.3
+  - @mastra/core@0.9.2-alpha.3
 
 ## 0.0.2-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [26738f4]
-  - @actus-ag/mastra-core@0.9.2-alpha.2
+  - @mastra/core@0.9.2-alpha.2
 
 ## 0.0.2-alpha.1
 
 ### Patch Changes
 
 - Updated dependencies [b804723]
-  - @actus-ag/mastra-core@0.9.2-alpha.1
+  - @mastra/core@0.9.2-alpha.1
 
 ## 0.0.2-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [0097d50]
-  - @actus-ag/mastra-core@0.9.2-alpha.0
+  - @mastra/core@0.9.2-alpha.0
 
 ## 0.0.1
 
 ### Patch Changes
 
 - 479f490: [MASTRA-3131] Add getWorkflowRunByID and add resourceId as filter for getWorkflowRuns
-- 5f826d9: Moved vector store specific prompts from @actus-ag/mastra-rag to be exported from the store that the prompt belongs to, ie @actus-ag/mastra-pg
-- 2d4001d: Add new @msstra/libsql package and use it in create-mastra
+- 5f826d9: Moved vector store specific prompts from @mastra/rag to be exported from the store that the prompt belongs to, ie @mastra/pg
+- 2d4001d: Add new @msstra/libsql package and use it in @actus-ag/create-@mastra
 - Updated dependencies [405b63d]
 - Updated dependencies [81fb7f6]
 - Updated dependencies [20275d4]
@@ -858,36 +858,36 @@
 - Updated dependencies [2d4001d]
 - Updated dependencies [c71013a]
 - Updated dependencies [1d3b1cd]
-  - @actus-ag/mastra-core@0.9.1
+  - @mastra/core@0.9.1
 
 ## 0.0.1-alpha.8
 
 ### Patch Changes
 
 - Updated dependencies [2d17c73]
-  - @actus-ag/mastra-core@0.9.1-alpha.8
+  - @mastra/core@0.9.1-alpha.8
 
 ## 0.0.1-alpha.7
 
 ### Patch Changes
 
 - Updated dependencies [1d3b1cd]
-  - @actus-ag/mastra-core@0.9.1-alpha.7
+  - @mastra/core@0.9.1-alpha.7
 
 ## 0.0.1-alpha.6
 
 ### Patch Changes
 
 - Updated dependencies [c23a81c]
-  - @actus-ag/mastra-core@0.9.1-alpha.6
+  - @mastra/core@0.9.1-alpha.6
 
 ## 0.0.1-alpha.5
 
 ### Patch Changes
 
-- 5f826d9: Moved vector store specific prompts from @actus-ag/mastra-rag to be exported from the store that the prompt belongs to, ie @actus-ag/mastra-pg
+- 5f826d9: Moved vector store specific prompts from @mastra/rag to be exported from the store that the prompt belongs to, ie @mastra/pg
 - Updated dependencies [3e7b69d]
-  - @actus-ag/mastra-core@0.9.1-alpha.5
+  - @mastra/core@0.9.1-alpha.5
 
 ## 0.0.1-alpha.4
 
@@ -896,14 +896,14 @@
 - 479f490: [MASTRA-3131] Add getWorkflowRunByID and add resourceId as filter for getWorkflowRuns
 - Updated dependencies [e4943b8]
 - Updated dependencies [479f490]
-  - @actus-ag/mastra-core@0.9.1-alpha.4
+  - @mastra/core@0.9.1-alpha.4
 
 ## 0.0.1-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [6262bd5]
-  - @actus-ag/mastra-core@0.9.1-alpha.3
+  - @mastra/core@0.9.1-alpha.3
 
 ## 0.0.1-alpha.2
 
@@ -912,13 +912,13 @@
 - Updated dependencies [405b63d]
 - Updated dependencies [61e92f5]
 - Updated dependencies [c71013a]
-  - @actus-ag/mastra-core@0.9.1-alpha.2
+  - @mastra/core@0.9.1-alpha.2
 
 ## 0.0.1-alpha.1
 
 ### Patch Changes
 
-- 2d4001d: Add new @msstra/libsql package and use it in create-mastra
+- 2d4001d: Add new @msstra/libsql package and use it in @actus-ag/create-@mastra
 - Updated dependencies [20275d4]
 - Updated dependencies [7d1892c]
 - Updated dependencies [a90a082]
@@ -926,4 +926,4 @@
 - Updated dependencies [c1409ef]
 - Updated dependencies [11d4485]
 - Updated dependencies [2d4001d]
-  - @actus-ag/mastra-core@0.9.1-alpha.1
+  - @mastra/core@0.9.1-alpha.1

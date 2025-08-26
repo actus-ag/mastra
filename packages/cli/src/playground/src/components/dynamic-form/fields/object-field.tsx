@@ -62,7 +62,7 @@ export function ObjectField({
     <div>
       <Label className="flex gap-0.5 capitalize mb-2" htmlFor={parentField} aria-required={!fieldConfig.isOptional}>
         {!fieldConfig?.isOptional && <span className="text-red-500">*</span>}
-        <Text variant="secondary" className="text-mastra-el-3" size="xs">
+        <Text variant="secondary" className="text-@@mastra/cli/cli/cli-el-3" size="xs">
           {toTitleCase(parentField)}
         </Text>
       </Label>

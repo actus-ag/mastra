@@ -2,7 +2,7 @@
 
 import { PLACES } from "@/lib/types";
 
-import { mastra } from "@/mastra";
+import { @mastra } from "@/@mastra";
 
 import { z } from "zod";
 import { travelSchema } from "./utils";
@@ -59,8 +59,8 @@ function processFormData(formData: FormData) {
 export async function runAgent(formData: FormData) {
   const formObject = processFormData(formData);
 
-  const travelAgent = mastra.getAgent("travelAgent");
-  const travelAnalyzer = mastra.getAgent("travelAnalyzer");
+  const travelAgent = @mastra.getAgent("travelAgent");
+  const travelAnalyzer = @mastra.getAgent("travelAnalyzer");
 
   const message = `
     You are a travel agent and have been given the following information about a customer's trip requirements.

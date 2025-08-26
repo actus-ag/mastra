@@ -1,6 +1,6 @@
-import type { WorkflowRunState, StepResult } from '@actus-ag/mastra-core/workflows';
+import type { WorkflowRunState, StepResult } from '@mastra/core/workflows';
 
-import { WorkflowWatchResult } from '@actus-ag/mastra-client-js';
+import { WorkflowWatchResult } from '@mastra-client-js';
 
 export function convertWorkflowRunStateToWatchResult(runState: WorkflowRunState): WorkflowWatchResult {
   const runId = runState.runId;

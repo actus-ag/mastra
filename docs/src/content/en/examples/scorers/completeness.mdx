@@ -12,7 +12,7 @@ Use `createCompletenessScorer` to evaluate whether the response thoroughly addre
 ## Installation
 
 ```bash copy
-npm install @actus-ag/mastra-evals
+npm install @mastra/cli/cli/cli/evals
 ```
 
 > For complete API documentation and configuration options, see [`createCompletenessScorer`](/reference/scorers/completeness).
@@ -23,7 +23,7 @@ In this example, the response comprehensively addresses all aspects of the query
 
 ```typescript filename="src/example-high-completeness.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { createCompletenessScorer } from "@actus-ag/mastra-evals/scorers/llm";
+import { createCompletenessScorer } from "@mastra/cli/cli/cli/evals/scorers/llm";
 
 const scorer = createCompletenessScorer({ model: openai("gpt-4o-mini") });
 
@@ -56,7 +56,7 @@ In this example, the response addresses some key points but misses important asp
 
 ```typescript filename="src/example-partial-completeness.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { createCompletenessScorer } from "@actus-ag/mastra-evals/scorers/llm";
+import { createCompletenessScorer } from "@mastra/cli/cli/cli/evals/scorers/llm";
 
 const scorer = createCompletenessScorer({ model: openai("gpt-4o-mini") });
 
@@ -89,7 +89,7 @@ In this example, the response only partially addresses the query and misses seve
 
 ```typescript filename="src/example-low-completeness.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { createCompletenessScorer } from "@actus-ag/mastra-evals/scorers/llm";
+import { createCompletenessScorer } from "@mastra/cli/cli/cli/evals/scorers/llm";
 
 const scorer = createCompletenessScorer({ model: openai("gpt-4o-mini") });
 
@@ -166,5 +166,5 @@ Object with extracted elements and coverage details:
 
 <GithubLink
   marginTop='mt-16'
-  link="https://github.com/mastra-ai/mastra/blob/main/examples/basics/scorers/completeness"
+  link="https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/scorers/completeness"
 />

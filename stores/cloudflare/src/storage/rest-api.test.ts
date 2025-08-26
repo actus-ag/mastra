@@ -1,14 +1,14 @@
 import { createSampleMessageV1, createSampleThread, checkWorkflowSnapshot } from '@internal/storage-test-utils';
-import type { MastraMessageV1, StorageThreadType } from '@actus-ag/mastra-core/memory';
-import type { TABLE_NAMES } from '@actus-ag/mastra-core/storage';
+import type { MastraMessageV1, StorageThreadType } from '@mastra/core/memory';
+import type { TABLE_NAMES } from '@mastra/core/storage';
 import {
   TABLE_MESSAGES,
   TABLE_THREADS,
   TABLE_WORKFLOW_SNAPSHOT,
   TABLE_EVALS,
   TABLE_TRACES,
-} from '@actus-ag/mastra-core/storage';
-import type { WorkflowRunState } from '@actus-ag/mastra-core/workflows';
+} from '@mastra/core/storage';
+import type { WorkflowRunState } from '@mastra/core/workflows';
 import dotenv from 'dotenv';
 import { describe, it, expect, beforeAll, beforeEach, afterAll, vi, afterEach } from 'vitest';
 
@@ -24,7 +24,7 @@ vi.setConfig({ testTimeout: 80000, hookTimeout: 80000 });
 const TEST_CONFIG: CloudflareStoreConfig = {
   accountId: process.env.CLOUDFLARE_ACCOUNT_ID || '',
   apiToken: process.env.CLOUDFLARE_API_TOKEN || '',
-  namespacePrefix: 'mastra-test', // Fixed prefix for test isolation
+  namespacePrefix: '@mastra-test', // Fixed prefix for test isolation
 };
 
 // Skip until Cloudflare KV REST API credentials are set up

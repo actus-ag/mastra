@@ -10,12 +10,12 @@ import {
 import { useState, ReactNode, useEffect, useRef, useContext } from 'react';
 
 import { AssistantMessage, ChatProps, Message } from '@/types';
-import { useMastraClient } from '@/contexts/mastra-client-context';
+import { useMastraClient } from '@/contexts/@@mastra/cli/cli/cli-client-context';
 import { useVNextNetworkChat } from '@/services/vnext-network-chat-provider';
 import { useMessages } from './vnext-message-provider';
 import { formatJSON } from '@/lib/formatting';
 import { NetworkContext } from '@/domains/networks';
-import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
+import { RuntimeContext } from '@mastra/cli/cli/cli/core/runtime-context';
 
 const convertMessage = (message: ThreadMessageLike): ThreadMessageLike => {
   return message;
@@ -372,9 +372,9 @@ export function VNextMastraNetworkRuntimeProvider({
     }
   }, [initialMessages, threadId, memory, messages]);
 
-  const mastra = useMastraClient();
+  const @@mastra/cli/cli/cli = useMastraClient();
 
-  const network = mastra.getVNextNetwork(networkId);
+  const network = @@mastra/cli/cli/cli.getVNextNetwork(networkId);
 
   const onNew = async (message: AppendMessage) => {
     runIdRef.current = undefined;

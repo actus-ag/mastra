@@ -1,5 +1,5 @@
 import { createVectorTestSuite } from '@internal/storage-test-utils';
-import type { QueryResult } from '@actus-ag/mastra-core';
+import type { QueryResult } from '@mastra/core';
 import * as pg from 'pg';
 import { describe, it, expect, beforeAll, afterAll, beforeEach, afterEach, vi } from 'vitest';
 
@@ -9,7 +9,7 @@ describe('PgVector', () => {
   let vectorDB: PgVector;
   const testIndexName = 'test_vectors';
   const testIndexName2 = 'test_vectors1';
-  const connectionString = process.env.DB_URL || 'postgresql://postgres:postgres@localhost:5434/mastra';
+  const connectionString = process.env.DB_URL || 'postgresql://postgres:postgres@localhost:5434/@mastra';
 
   beforeAll(async () => {
     // Initialize PgVector
@@ -2170,7 +2170,7 @@ describe('PgVector', () => {
   });
 
   describe('Schema Support', () => {
-    const customSchema = 'mastraTest';
+    const customSchema = '@mastraTest';
     let vectorDB: PgVector;
     let customSchemaVectorDB: PgVector;
 
@@ -2394,8 +2394,8 @@ describe('PgVector', () => {
   });
 
   describe('Permission Handling', () => {
-    const schemaRestrictedUser = 'mastra_schema_restricted';
-    const vectorRestrictedUser = 'mastra_vector_restricted';
+    const schemaRestrictedUser = '@mastra_schema_restricted';
+    const vectorRestrictedUser = '@mastra_vector_restricted';
     const restrictedPassword = 'test123';
     const testSchema = 'test_schema';
 
@@ -2710,7 +2710,7 @@ describe('PgVector', () => {
 
 // Metadata filtering tests for Memory system
 describe('PgVector Metadata Filtering', () => {
-  const connectionString = process.env.DB_URL || 'postgresql://postgres:postgres@localhost:5434/mastra';
+  const connectionString = process.env.DB_URL || 'postgresql://postgres:postgres@localhost:5434/@mastra';
   const metadataVectorDB = new PgVector({ connectionString });
 
   createVectorTestSuite({

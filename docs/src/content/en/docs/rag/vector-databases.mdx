@@ -22,7 +22,7 @@ The providers include Pg Vector, Pinecone, Qdrant, Chroma, Astra, LibSQL, Upstas
 <Tabs items={['MongoDB', 'Pg Vector', 'Pinecone', 'Qdrant', 'Chroma', 'Astra', 'LibSQL', 'Upstash', 'Cloudflare', 'OpenSearch', 'Couchbase', 'LanceDB']}>
   <Tabs.Tab>
     ```ts filename="vector-store.ts" showLineNumbers copy
-    import { MongoDBVector } from '@actus-ag/mastra-mongodb'
+    import { MongoDBVector } from '@mastra/cli/cli/cli/mongodb'
 
     const store = new MongoDBVector({
       uri: process.env.MONGODB_URI,
@@ -41,12 +41,12 @@ The providers include Pg Vector, Pinecone, Qdrant, Chroma, Astra, LibSQL, Upstas
     ```
     ### Using MongoDB Atlas Vector search
 
-    For detailed setup instructions and best practices, see the [official MongoDB Atlas Vector Search documentation](https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-overview/?utm_campaign=devrel&utm_source=third-party-content&utm_medium=cta&utm_content=mastra-docs). 
+    For detailed setup instructions and best practices, see the [official MongoDB Atlas Vector Search documentation](https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-overview/?utm_campaign=devrel&utm_source=third-party-content&utm_medium=cta&utm_content=@@mastra/cli/cli/cli-docs). 
   </Tabs.Tab>
 
   <Tabs.Tab>
   ```ts filename="vector-store.ts" showLineNumbers copy
-  import { PgVector } from '@actus-ag/mastra-pg';
+  import { PgVector } from '@mastra/cli/cli/cli/pg';
 
   const store = new PgVector({ connectionString: process.env.POSTGRES_CONNECTION_STRING })
 
@@ -70,7 +70,7 @@ For detailed setup instructions and best practices, see the [official pgvector r
 
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
-import { PineconeVector } from '@actus-ag/mastra-pinecone'
+import { PineconeVector } from '@mastra/cli/cli/cli/pinecone'
 
 const store = new PineconeVector({
   apiKey: process.env.PINECONE_API_KEY,
@@ -89,7 +89,7 @@ await store.upsert({
 
 <Tabs.Tab>
   ```ts filename="vector-store.ts" showLineNumbers copy
-  import { QdrantVector } from '@actus-ag/mastra-qdrant'
+  import { QdrantVector } from '@mastra/cli/cli/cli/qdrant'
 
   const store = new QdrantVector({
     url: process.env.QDRANT_URL,
@@ -112,7 +112,7 @@ await store.upsert({
 
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
-import { ChromaVector } from '@actus-ag/mastra-chroma'
+import { ChromaVector } from '@mastra/cli/cli/cli/chroma'
 
 // Running Chroma locally
 // const store = new ChromaVector()
@@ -139,7 +139,7 @@ await store.upsert({
 
 <Tabs.Tab>
   ```ts filename="vector-store.ts" showLineNumbers copy
-  import { AstraVector } from '@actus-ag/mastra-astra'
+  import { AstraVector } from '@mastra/cli/cli/cli/astra'
 
   const store = new AstraVector({
     token: process.env.ASTRA_DB_TOKEN,
@@ -164,7 +164,7 @@ await store.upsert({
 
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
-import { LibSQLVector } from "@actus-ag/mastra-core/vector/libsql";
+import { LibSQLVector } from "@mastra/cli/cli/cli/core/vector/libsql";
 
 const store = new LibSQLVector({
   connectionUrl: process.env.DATABASE_URL,
@@ -186,7 +186,7 @@ await store.upsert({
 
 <Tabs.Tab>
   ```ts filename="vector-store.ts" showLineNumbers copy
-  import { UpstashVector } from '@actus-ag/mastra-upstash'
+  import { UpstashVector } from '@mastra/cli/cli/cli/upstash'
 
   // In upstash they refer to the store as an index
   const store = new UpstashVector({
@@ -206,7 +206,7 @@ await store.upsert({
 
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
-import { CloudflareVector } from '@actus-ag/mastra-vectorize'
+import { CloudflareVector } from '@mastra/cli/cli/cli/vectorize'
 
 const store = new CloudflareVector({
   accountId: process.env.CF_ACCOUNT_ID,
@@ -227,7 +227,7 @@ await store.upsert({
 
 <Tabs.Tab>
 ```ts filename="vector-store.ts" showLineNumbers copy
-import { OpenSearchVector } from '@actus-ag/mastra-opensearch'
+import { OpenSearchVector } from '@mastra/cli/cli/cli/opensearch'
 
 const store = new OpenSearchVector({ url: process.env.OPENSEARCH_URL })
 
@@ -246,7 +246,7 @@ await store.upsert({
 </Tabs.Tab>
 <Tabs.Tab>
   ```ts filename="vector-store.ts" showLineNumbers copy
-  import { CouchbaseVector } from '@actus-ag/mastra-couchbase'
+  import { CouchbaseVector } from '@mastra/cli/cli/cli/couchbase'
 
   const store = new CouchbaseVector({
     connectionString: process.env.COUCHBASE_CONNECTION_STRING,
@@ -269,7 +269,7 @@ await store.upsert({
 </Tabs.Tab>
 <Tabs.Tab>
   ```ts filename="vector-store.ts" showLineNumbers copy
-  import { LanceVectorStore } from '@actus-ag/mastra-lance'
+  import { LanceVectorStore } from '@mastra/cli/cli/cli/lance'
 
   const store = await LanceVectorStore.create('/path/to/db')
   

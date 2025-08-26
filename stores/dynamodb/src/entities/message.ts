@@ -5,7 +5,7 @@ export const messageEntity = new Entity({
   model: {
     entity: 'message',
     version: '1',
-    service: 'mastra',
+    service: '@actus-ag/@mastra',
   },
   attributes: {
     entity: {

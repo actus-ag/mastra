@@ -1,6 +1,6 @@
 import { Eval } from "braintrust";
 import { IMAGES } from "./data";
-import { BirdResponse, promptClaude } from "../mastra/actions";
+import { BirdResponse, promptClaude } from "../@mastra/actions";
 
 const containsScorer = ({
   output,

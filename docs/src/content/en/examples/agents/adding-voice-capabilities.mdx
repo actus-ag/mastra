@@ -25,17 +25,17 @@ OPENAI_API_KEY=<your-api-key>
 ## Installation
 
 ```bash
-npm install @actus-ag/mastra-voice-openai
+npm install @mastra/cli/cli/cli/voice-openai
 ```
 
 ## Hybrid voice agent
 
 This agent uses a composite voice setup that separates speech-to-text and text-to-speech functionality. The `CompositeVoice` allows you to configure different providers for listening (input) and speaking (output). However, in this example, both are handled by the same provider: `OpenAIVoice`.
 
-```typescript filename="src/mastra/agents/example-hybrid-voice-agent.ts" showLineNumbers copy
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { CompositeVoice } from "@actus-ag/mastra-core/voice";
-import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
+```typescript filename="src/@@mastra/cli/cli/cli/agents/example-hybrid-voice-agent.ts" showLineNumbers copy
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { CompositeVoice } from "@mastra/cli/cli/cli/core/voice";
+import { OpenAIVoice } from "@mastra/cli/cli/cli/voice-openai";
 import { openai } from "@ai-sdk/openai";
 
 export const hybridVoiceAgent = new Agent({
@@ -55,10 +55,10 @@ export const hybridVoiceAgent = new Agent({
 
 This agent uses a single voice provider for both speech-to-text and text-to-speech. If you plan to use the same provider for both listening and speaking, this is a simpler setup. In this example, the `OpenAIVoice` provider handles both functions.
 
-```typescript filename="src/mastra/agents/example-unified-voice-agent.ts" showLineNumbers copy
+```typescript filename="src/@@mastra/cli/cli/cli/agents/example-unified-voice-agent.ts" showLineNumbers copy
 import { openai } from "@ai-sdk/openai";
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { OpenAIVoice } from "@mastra/cli/cli/cli/voice-openai";
 
 export const unifiedVoiceAgent = new Agent({
   name: "unified-voice-agent",
@@ -74,13 +74,13 @@ export const unifiedVoiceAgent = new Agent({
 
 To use these agents, register them in your main Mastra instance.
 
-```typescript filename="src/mastra/index.ts" showLineNumbers copy
-import { Mastra } from "@actus-ag/mastra-core/mastra";
+```typescript filename="src/@@mastra/cli/cli/cli/index.ts" showLineNumbers copy
+import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
 
 import { hybridVoiceAgent } from "./agents/example-hybrid-voice-agent";
 import { unifiedVoiceAgent } from "./agents/example-unified-voice-agent";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   // ...
   agents: { hybridVoiceAgent, unifiedVoiceAgent }
 });
@@ -93,7 +93,7 @@ These helper functions handle audio file operations and text conversion for the 
 
 This function saves an audio stream to a file in the audio directory, creating the directory if it doesn't exist.
 
-```typescript filename="src/mastra/utils/save-audio-to-file.ts" showLineNumbers copy
+```typescript filename="src/@@mastra/cli/cli/cli/utils/save-audio-to-file.ts" showLineNumbers copy
 import fs, { createWriteStream } from "fs";
 import path from "path";
 
@@ -116,7 +116,7 @@ export const saveAudioToFile = async (audio: NodeJS.ReadableStream, filename: st
 
 This function converts either a string or a readable stream to text, handling both input types for voice processing.
 
-```typescript filename="src/mastra/utils/convert-to-text.ts" showLineNumbers copy
+```typescript filename="src/@@mastra/cli/cli/cli/utils/convert-to-text.ts" showLineNumbers copy
 export const convertToText = async (input: string | NodeJS.ReadableStream): Promise<string> => {
   if (typeof input === "string") {
     return input;
@@ -146,13 +146,13 @@ import "dotenv/config";
 
 import path from "path";
 import { createReadStream } from "fs";
-import { mastra } from "./mastra";
+import { @@mastra/cli/cli/cli } from "./@@mastra/cli/cli/cli";
 
-import { saveAudioToFile } from "./mastra/utils/save-audio-to-file";
-import { convertToText } from "./mastra/utils/convert-to-text";
+import { saveAudioToFile } from "./@@mastra/cli/cli/cli/utils/save-audio-to-file";
+import { convertToText } from "./@@mastra/cli/cli/cli/utils/convert-to-text";
 
-const hybridVoiceAgent = mastra.getAgent("hybridVoiceAgent");
-const unifiedVoiceAgent = mastra.getAgent("unifiedVoiceAgent");
+const hybridVoiceAgent = @@mastra/cli/cli/cli.getAgent("hybridVoiceAgent");
+const unifiedVoiceAgent = @@mastra/cli/cli/cli.getAgent("unifiedVoiceAgent");
 
 const question = "What is the meaning of life in one sentence?";
 
@@ -173,7 +173,7 @@ await saveAudioToFile(unifiedSpoken!, "unified-response.mp3");
 
 <GithubLink
   marginTop='mt-16'
-  link="https://github.com/mastra-ai/mastra/blob/main/examples/basics/agents/voice-capabilities"
+  link="https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/agents/voice-capabilities"
 />
 
 ## Related

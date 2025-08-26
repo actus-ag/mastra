@@ -45,7 +45,7 @@ Mastra supports several Speech-to-Text providers, each with their own capabiliti
 Each provider is implemented as a separate package that you can install as needed:
 
 ```bash
-pnpm add @actus-ag/mastra-voice-openai  # Example for OpenAI
+pnpm add @mastra/cli/cli/cli/voice-openai  # Example for OpenAI
 ```
 
 ## Using the Listen Method
@@ -53,10 +53,10 @@ pnpm add @actus-ag/mastra-voice-openai  # Example for OpenAI
 The primary method for STT is the `listen()` method, which converts spoken audio into text. Here's how to use it:
 
 ```typescript
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { openai } from "@ai-sdk/openai";
-import { OpenAIVoice } from "@actus-ag/mastra-voice-openai";
-import { getMicrophoneStream } from "@actus-ag/mastra-node-audio";
+import { OpenAIVoice } from "@mastra/cli/cli/cli/voice-openai";
+import { getMicrophoneStream } from "@mastra/cli/cli/cli/node-audio";
 
 const voice = new OpenAIVoice();
 

@@ -5,7 +5,7 @@ const meta = {
   "custom-api-routes": "Custom API Routes",
   storage: "Storage",
   snapshots: "Snapshots",
-  "mastra-client": "Mastra Client",
+  "@mastra-client": "Mastra Client",
 };
 
 export default meta;

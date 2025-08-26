@@ -44,16 +44,16 @@ POSTGRES_CONNECTION_STRING=your_connection_string_here
 
 ```typescript copy showLineNumbers filename="index.ts"
 import { openai } from "@ai-sdk/openai";
-import { Mastra } from "@actus-ag/mastra-core";
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { PgVector, PGVECTOR_PROMPT } from "@actus-ag/mastra-pg";
-import { createVectorQueryTool, MDocument } from "@actus-ag/mastra-rag";
+import { Mastra } from "@mastra/cli/cli/cli/core";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { PgVector, PGVECTOR_PROMPT } from "@mastra/cli/cli/cli/pg";
+import { createVectorQueryTool, MDocument } from "@mastra/cli/cli/cli/rag";
 import { embedMany } from "ai";
 ```
 
 ## ベクタークエリツールの作成
 
-@actus-ag/mastra-rag からインポートした createVectorQueryTool を使用すると、メタデータフィルタリングを可能にするツールを作成できます。各ベクターストアには、サポートされているフィルター演算子と構文を定義する独自のプロンプトがあります。
+@mastra/cli/cli/cli/rag からインポートした createVectorQueryTool を使用すると、メタデータフィルタリングを可能にするツールを作成できます。各ベクターストアには、サポートされているフィルター演算子と構文を定義する独自のプロンプトがあります。
 
 ```typescript copy showLineNumbers{9} filename="index.ts"
 const vectorQueryTool = createVectorQueryTool({
@@ -165,11 +165,11 @@ export const ragAgent = new Agent({
 ```typescript copy showLineNumbers{69} filename="index.ts"
 const pgVector = new PgVector({ connectionString: process.env.POSTGRES_CONNECTION_STRING! });
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   agents: { ragAgent },
   vectors: { pgVector },
 });
-const agent = mastra.getAgent("ragAgent");
+const agent = @@mastra/cli/cli/cli.getAgent("ragAgent");
 ```
 
 ## 埋め込みの作成と保存
@@ -182,7 +182,7 @@ const { embeddings } = await embedMany({
   values: chunks.map((chunk) => chunk.text),
 });
 
-const vectorStore = mastra.getVector("pgVector");
+const vectorStore = @@mastra/cli/cli/cli.getVector("pgVector");
 await vectorStore.createIndex({
   indexName: "embeddings",
   dimension: 1536,
@@ -228,6 +228,6 @@ console.log("Response:", answerThree.text);
 <br />
 <GithubLink
   link={
-    "https://github.com/mastra-ai/mastra/blob/main/examples/basics/rag/filter-rag"
+    "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/blob/main/examples/basics/rag/filter-rag"
   }
 />

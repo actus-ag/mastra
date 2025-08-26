@@ -11,10 +11,10 @@ import type {
   QueryVectorParams,
   UpdateVectorParams,
   UpsertVectorParams,
-} from '@actus-ag/mastra-core';
-import { ErrorCategory, ErrorDomain, MastraError } from '@actus-ag/mastra-core/error';
+} from '@mastra/core';
+import { ErrorCategory, ErrorDomain, MastraError } from '@mastra/core/error';
 
-import { MastraVector } from '@actus-ag/mastra-core/vector';
+import { MastraVector } from '@mastra/core/vector';
 import type { LanceVectorFilter } from './filter';
 import { LanceFilterTranslator } from './filter';
 import type { IndexConfig } from './types';

@@ -4,14 +4,14 @@ Let's create your first workflow step! We'll build a step that validates text co
 
 ## Setting Up
 
-First, create a new file for your workflow in the `src/mastra/workflows` directory. Let's name this file `content-workflow.ts`
+First, create a new file for your workflow in the `src/@mastra/workflows` directory. Let's name this file `content-workflow.ts`
 
 ## Creating a Validation Step
 
 Add this code to your workflow file:
 
 ```typescript
-import { createStep } from "@actus-ag/mastra-core/workflows";
+import { createStep } from "@mastra/core/workflows";
 import { z } from "zod";
 
 const validateContentStep = createStep({

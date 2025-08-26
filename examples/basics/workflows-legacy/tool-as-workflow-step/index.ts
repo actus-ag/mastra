@@ -1,5 +1,5 @@
-import { LegacyWorkflow } from '@actus-ag/mastra-core/workflows/legacy';
-import { createTool } from '@actus-ag/mastra-core/tools';
+import { LegacyWorkflow } from '@mastra/core/workflows/legacy';
+import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
 
 async function main() {

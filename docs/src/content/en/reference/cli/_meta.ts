@@ -1,11 +1,11 @@
 const meta = {
-  "create-mastra": "create-mastra",
-  init: "mastra init",
-  dev: "mastra dev",
-  build: "mastra build",
-  start: "mastra start",
-  lint: "mastra lint",
-  scorers: "mastra scorers",
+  "@actus-ag/@actus-ag/create-@mastra": "@actus-ag/@actus-ag/create-@mastra",
+  init: "@actus-ag/@mastra/cli/cli init",
+  dev: "@actus-ag/@mastra/cli/cli dev",
+  build: "@actus-ag/@mastra/cli/cli build",
+  start: "@actus-ag/@mastra/cli/cli start",
+  lint: "@actus-ag/@mastra/cli/cli lint",
+  scorers: "@mastra/cli/cli scorers",
   "mcp-docs-server": "mcp-docs-server",
 };
 

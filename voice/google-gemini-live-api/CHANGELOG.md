@@ -1,4 +1,4 @@
-# @actus-ag/mastra-voice-google-gemini-live
+# @mastra/voice-google-gemini-live
 
 ## 0.10.7
 
@@ -22,7 +22,7 @@
 - Updated dependencies [c30bca8]
 - Updated dependencies [3b5fec7]
 - Updated dependencies [a8f129d]
-  - @actus-ag/mastra-core@0.14.0
+  - @mastra/core@0.14.0
 
 ## 0.10.7-alpha.0
 
@@ -35,4 +35,4 @@
 - Updated dependencies [cf4f357]
 - Updated dependencies [a722c0b]
 - Updated dependencies [3b5fec7]
-  - @actus-ag/mastra-core@0.14.0-alpha.1
+  - @mastra/core@0.14.0-alpha.1

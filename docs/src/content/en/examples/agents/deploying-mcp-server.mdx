@@ -14,18 +14,18 @@ This example guides you through setting up a basic Mastra MCPServer using the st
 Install the necessary packages:
 
 ```bash
-pnpm add @actus-ag/mastra-mcp @actus-ag/mastra-core tsup
+pnpm add @mastra/cli/cli/cli/mcp @mastra/cli/cli/cli/core tsup
 ```
 
 ## Set up MCP Server
 
-1.  Create a file for your stdio server, for example, `/src/mastra/stdio.ts`.
+1.  Create a file for your stdio server, for example, `/src/@@mastra/cli/cli/cli/stdio.ts`.
 
 2.  Add the following code to the file. Remember to import your actual Mastra tools and name the server appropriately.
 
-    ```typescript filename="src/mastra/stdio.ts" copy
+    ```typescript filename="src/@@mastra/cli/cli/cli/stdio.ts" copy
     #!/usr/bin/env node
-    import { MCPServer } from "@actus-ag/mastra-mcp";
+    import { MCPServer } from "@mastra/cli/cli/cli/mcp";
     import { weatherTool } from "./tools";
 
     const server = new MCPServer({
@@ -46,7 +46,7 @@ pnpm add @actus-ag/mastra-mcp @actus-ag/mastra-core tsup
 {
   "bin": "dist/stdio.js",
   "scripts": {
-    "build:mcp": "tsup src/mastra/stdio.ts --format esm --no-splitting --dts && chmod +x dist/stdio.js"
+    "build:mcp": "tsup src/@@mastra/cli/cli/cli/stdio.ts --format esm --no-splitting --dts && chmod +x dist/stdio.js"
   }
 }
 ```
@@ -78,7 +78,7 @@ To make your MCP server available for others (or yourself) to use via `npx` or a
 Once published, your MCP server can be used by an `MCPClient` by specifying the command to run your package. You can also use any other MCP client like Claude desktop, Cursor, or Windsurf.
 
 ```typescript
-import { MCPClient } from "@actus-ag/mastra-mcp";
+import { MCPClient } from "@mastra/cli/cli/cli/mcp";
 
 const mcp = new MCPClient({
   servers: {

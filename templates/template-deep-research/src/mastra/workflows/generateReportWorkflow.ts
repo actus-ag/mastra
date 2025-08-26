@@ -1,4 +1,4 @@
-import { createStep, createWorkflow } from '@actus-ag/mastra-core/workflows';
+import { createStep, createWorkflow } from '@mastra/core/workflows';
 import { researchWorkflow } from './researchWorkflow';
 import { z } from 'zod';
 
@@ -13,7 +13,7 @@ const processResearchResultStep = createStep({
     report: z.string().optional(),
     completed: z.boolean(),
   }),
-  execute: async ({ inputData, mastra }) => {
+  execute: async ({ inputData, @mastra }) => {
     // First determine if research was approved/successful
     const approved = inputData.approved && !!inputData.researchData;
 
@@ -25,7 +25,7 @@ const processResearchResultStep = createStep({
     // If approved, generate report
     try {
       console.log('Generating report...');
-      const agent = mastra.getAgent('reportAgent');
+      const agent = @mastra.getAgent('reportAgent');
       const response = await agent.generate([
         {
           role: 'user',

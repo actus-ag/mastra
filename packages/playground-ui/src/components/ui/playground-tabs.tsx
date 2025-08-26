@@ -61,7 +61,7 @@ export const Tab = ({ children, value, onClick }: TabProps) => {
   return (
     <TabsTrigger
       value={value}
-      className="text-xs p-3 text-mastra-el-3 data-[state=active]:text-mastra-el-5 data-[state=active]:border-b-2 whitespace-nowrap flex-shrink-0"
+      className="text-xs p-3 text-@@mastra/cli/cli/cli-el-3 data-[state=active]:text-@@mastra/cli/cli/cli-el-5 data-[state=active]:border-b-2 whitespace-nowrap flex-shrink-0"
       onClick={onClick}
     >
       {children}

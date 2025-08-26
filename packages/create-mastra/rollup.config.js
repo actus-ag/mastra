@@ -12,7 +12,7 @@ import pkgJson from './package.json' with { type: 'json' };
 const external = ['commander', 'fs-extra', 'execa', 'prettier', 'posthog-node', 'pino', 'pino-pretty'];
 external.forEach(pkg => {
   if (!pkgJson.dependencies[pkg]) {
-    throw new Error(`${pkg} is not in the dependencies of create-mastra`);
+    throw new Error(`${pkg} is not in the dependencies of @actus-ag/create-@mastra`);
   }
 });
 
@@ -40,15 +40,15 @@ export default defineConfig({
       name: 'copy-starter-files',
       buildEnd: async () => {  
         
-        const mastraPath = path.dirname(fileURLToPath(import.meta.resolve('mastra/package.json')));
+        const @mastraPath = path.dirname(fileURLToPath(import.meta.resolve('@mastra/package.json')));
         
         // Copy to dist directory instead of root
         await fsExtra.copy(
-          path.join(mastraPath, 'dist', 'starter-files'), 
+          path.join(@mastraPath, 'dist', 'starter-files'), 
           './dist/starter-files'
         );
         await fsExtra.copy(
-          path.join(mastraPath, 'dist', 'templates'), 
+          path.join(@mastraPath, 'dist', 'templates'), 
           './dist/templates'
         );
       },

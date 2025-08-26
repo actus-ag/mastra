@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "mastra": {
+    "@actus-ag/@mastra": {
       "command": "pnpx",
       "args": ["tsx", "./packages/mcp-docs-server/src/stdio.ts"],
       "env": {

@@ -29,7 +29,7 @@ Mastraのワークフローシステムは以下を提供します：
 
 Mastraでワークフローを定義する方法は次のとおりです。`name`フィールドはワークフローのAPIエンドポイント（`/workflows/$NAME/`）を決定し、`triggerSchema`はワークフローのトリガーデータの構造を定義します：
 
-```ts filename="src/mastra/workflow/index.ts"
+```ts filename="src/@@mastra/cli/cli/cli/workflow/index.ts"
 const myWorkflow = new Workflow({
   name: "my-workflow",
   triggerSchema: z.object({
@@ -42,7 +42,7 @@ const myWorkflow = new Workflow({
 
 次に、ワークフローのステップを定義します。各ステップは独自の入力および出力スキーマを持つことができます。ここでは、`stepOne`が入力値を2倍にし、`stepTwo`が`stepOne`が成功した場合にその結果をインクリメントします。（簡単にするために、この例ではLLM呼び出しは行っていません）：
 
-```ts filename="src/mastra/workflow/index.ts"
+```ts filename="src/@@mastra/cli/cli/cli/workflow/index.ts"
 const stepOne = new Step({
   id: "stepOne",
   outputSchema: z.object({
@@ -72,7 +72,7 @@ const stepTwo = new Step({
 
 次に、制御フローを作成し、ワークフローを「コミット」（最終化）します。この場合、`stepOne`が最初に実行され、その後に`stepTwo`が続きます。
 
-```ts filename="src/mastra/workflow/index.ts"
+```ts filename="src/@@mastra/cli/cli/cli/workflow/index.ts"
 myWorkflow.step(stepOne).then(stepTwo).commit();
 ```
 
@@ -80,24 +80,24 @@ myWorkflow.step(stepOne).then(stepTwo).commit();
 
 Mastraにワークフローを登録して、ログとテレメトリを有効にします：
 
-```ts showLineNumbers filename="src/mastra/index.ts"
-import { Mastra } from "@actus-ag/mastra-core";
+```ts showLineNumbers filename="src/@@mastra/cli/cli/cli/index.ts"
+import { Mastra } from "@mastra/cli/cli/cli/core";
 
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   workflows: { myWorkflow },
 });
 ```
 
-動的なワークフローを作成する必要がある場合には、mastraインスタンスをコンテキストに注入することもできます：
+動的なワークフローを作成する必要がある場合には、@@mastra/cli/cli/cliインスタンスをコンテキストに注入することもできます：
 
-```ts filename="src/mastra/workflow/index.ts"
-import { Mastra } from "@actus-ag/mastra-core";
+```ts filename="src/@@mastra/cli/cli/cli/workflow/index.ts"
+import { Mastra } from "@mastra/cli/cli/cli/core";
 
-const mastra = new Mastra();
+const @@mastra/cli/cli/cli = new Mastra();
 
 const myWorkflow = new Workflow({
   name: "my-workflow",
-  mastra,
+  @@mastra/cli/cli/cli,
 });
 ```
 
@@ -105,18 +105,18 @@ const myWorkflow = new Workflow({
 
 プログラム的にまたはAPI経由でワークフローを実行します：
 
-```ts showLineNumbers filename="src/mastra/run-workflow.ts" copy
-import { mastra } from "./index";
+```ts showLineNumbers filename="src/@@mastra/cli/cli/cli/run-workflow.ts" copy
+import { @@mastra/cli/cli/cli } from "./index";
 
 // ワークフローを取得
-const myWorkflow = mastra.getWorkflow("myWorkflow");
+const myWorkflow = @@mastra/cli/cli/cli.getWorkflow("myWorkflow");
 const { runId, start } = myWorkflow.createRun();
 
 // ワークフローの実行を開始
 await start({ triggerData: { inputValue: 45 } });
 ```
 
-またはAPIを使用します（`mastra dev`を実行する必要があります）：
+またはAPIを使用します（`@actus-ag/@mastra/cli/cli dev`を実行する必要があります）：
 
 // ワークフロー実行の作成
 

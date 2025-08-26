@@ -51,7 +51,7 @@ constructor({
 ### MastraMCPServerDefinition
 
 `servers`マップ内の各サーバーは、stdioベースのサーバーまたはSSEベースのサーバーとして設定できます。
-利用可能な設定オプションの詳細については、MastraMCPClientドキュメントの[MastraMCPServerDefinition](./client#mastramcpserverdefinition)を参照してください。
+利用可能な設定オプションの詳細については、MastraMCPClientドキュメントの[MastraMCPServerDefinition](./client#@@mastra/cli/cli/climcpserverdefinition)を参照してください。
 
 ## メソッド
 
@@ -88,8 +88,8 @@ async disconnect(): Promise<void>
 ### 基本的な使用法
 
 ```typescript
-import { MCPClient } from "@actus-ag/mastra-mcp";
-import { Agent } from "@actus-ag/mastra-core/agent";
+import { MCPClient } from "@mastra/cli/cli/cli/mcp";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
 import { openai } from "@ai-sdk/openai";
 
 const mcp = new MCPClient({
@@ -123,8 +123,8 @@ const agent = new Agent({
 ### generate()またはstream()でのツールセットの使用
 
 ```typescript
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { MCPClient } from "@actus-ag/mastra-mcp";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { MCPClient } from "@mastra/cli/cli/cli/mcp";
 import { openai } from "@ai-sdk/openai";
 
 // まず、ツールなしでエージェントを作成

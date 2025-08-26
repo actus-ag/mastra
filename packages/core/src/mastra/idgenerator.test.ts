@@ -193,7 +193,7 @@ function createMastraWithMemory(idGenerator?: () => string) {
     memory,
   });
 
-  const mastra = new Mastra({
+  const @mastra = new Mastra({
     idGenerator,
     logger: false,
     agents: {
@@ -201,7 +201,7 @@ function createMastraWithMemory(idGenerator?: () => string) {
     },
   });
 
-  return { mastra, agent, memory };
+  return { @mastra, agent, memory };
 }
 
 describe('Mastra ID Generator', () => {
@@ -219,13 +219,13 @@ describe('Mastra ID Generator', () => {
 
   describe('Core ID Generator Functionality', () => {
     it('should use custom ID generator when provided', () => {
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         idGenerator: customIdGenerator,
         logger: false,
       });
 
-      const id1 = mastra.generateId();
-      const id2 = mastra.generateId();
+      const id1 = @mastra.generateId();
+      const id2 = @mastra.generateId();
 
       expect(customIdGenerator).toHaveBeenCalledTimes(2);
       expect(id1).toBe('custom-id-1');
@@ -233,12 +233,12 @@ describe('Mastra ID Generator', () => {
     });
 
     it('should fallback to crypto.randomUUID when no custom generator is provided', () => {
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         logger: false,
       });
 
-      const id1 = mastra.generateId();
-      const id2 = mastra.generateId();
+      const id1 = @mastra.generateId();
+      const id2 = @mastra.generateId();
 
       expect(customIdGenerator).not.toHaveBeenCalled();
       expect(id1).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);
@@ -247,31 +247,31 @@ describe('Mastra ID Generator', () => {
     });
 
     it('should return the custom ID generator function via getIdGenerator', () => {
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         idGenerator: customIdGenerator,
         logger: false,
       });
 
-      expect(mastra.getIdGenerator()).toBe(customIdGenerator);
+      expect(@mastra.getIdGenerator()).toBe(customIdGenerator);
     });
 
     it('should return undefined for getIdGenerator when no custom generator is provided', () => {
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         logger: false,
       });
 
-      expect(mastra.getIdGenerator()).toBeUndefined();
+      expect(@mastra.getIdGenerator()).toBeUndefined();
     });
 
     it('should maintain ID uniqueness across multiple generations', () => {
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         idGenerator: customIdGenerator,
         logger: false,
       });
 
       const ids = new Set<string>();
       for (let i = 0; i < 10; i++) {
-        ids.add(mastra.generateId());
+        ids.add(@mastra.generateId());
       }
 
       expect(ids.size).toBe(10);
@@ -279,12 +279,12 @@ describe('Mastra ID Generator', () => {
     });
 
     it('should handle concurrent ID generation', async () => {
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         idGenerator: customIdGenerator,
         logger: false,
       });
 
-      const promises = Array.from({ length: 10 }, () => Promise.resolve(mastra.generateId()));
+      const promises = Array.from({ length: 10 }, () => Promise.resolve(@mastra.generateId()));
       const ids = await Promise.all(promises);
 
       expect(customIdGenerator).toHaveBeenCalledTimes(10);
@@ -295,48 +295,48 @@ describe('Mastra ID Generator', () => {
 
   describe('Error Handling and Edge Cases', () => {
     it('should handle null ID generator gracefully', () => {
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         idGenerator: null as any,
         logger: false,
       });
 
-      const id = mastra.generateId();
+      const id = @mastra.generateId();
       expect(id).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);
     });
 
     it('should handle undefined ID generator gracefully', () => {
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         idGenerator: undefined as any,
         logger: false,
       });
 
-      const id = mastra.generateId();
+      const id = @mastra.generateId();
       expect(id).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);
     });
 
     it('should handle ID generator that returns empty string', () => {
       const emptyIdGenerator = vi.fn(() => '');
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         idGenerator: emptyIdGenerator,
         logger: false,
       });
 
-      expect(() => mastra.generateId()).toThrow(MastraError);
-      expect(() => mastra.generateId()).toThrow('ID generator returned an empty string, which is not allowed');
+      expect(() => @mastra.generateId()).toThrow(MastraError);
+      expect(() => @mastra.generateId()).toThrow('ID generator returned an empty string, which is not allowed');
       expect(emptyIdGenerator).toHaveBeenCalledTimes(2);
     });
 
     it('should handle ID generator that returns the same value', () => {
       const staticIdGenerator = vi.fn(() => 'static-id');
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         idGenerator: staticIdGenerator,
         logger: false,
       });
 
-      const id1 = mastra.generateId();
-      const id2 = mastra.generateId();
+      const id1 = @mastra.generateId();
+      const id2 = @mastra.generateId();
 
       expect(id1).toBe('static-id');
       expect(id2).toBe('static-id');
@@ -348,43 +348,43 @@ describe('Mastra ID Generator', () => {
         throw new Error('ID generation failed');
       });
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         idGenerator: errorIdGenerator,
         logger: false,
       });
 
-      expect(() => mastra.generateId()).toThrow('ID generation failed');
+      expect(() => @mastra.generateId()).toThrow('ID generation failed');
       expect(errorIdGenerator).toHaveBeenCalledTimes(1);
     });
 
     it('should handle ID generator that returns null', () => {
       const nullIdGenerator = vi.fn(() => null as any);
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         idGenerator: nullIdGenerator,
         logger: false,
       });
 
-      expect(() => mastra.generateId()).toThrow(MastraError);
-      expect(() => mastra.generateId()).toThrow('ID generator returned an empty string, which is not allowed');
+      expect(() => @mastra.generateId()).toThrow(MastraError);
+      expect(() => @mastra.generateId()).toThrow('ID generator returned an empty string, which is not allowed');
     });
 
     it('should handle ID generator that returns undefined', () => {
       const undefinedIdGenerator = vi.fn(() => undefined as any);
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         idGenerator: undefinedIdGenerator,
         logger: false,
       });
 
-      expect(() => mastra.generateId()).toThrow(MastraError);
-      expect(() => mastra.generateId()).toThrow('ID generator returned an empty string, which is not allowed');
+      expect(() => @mastra.generateId()).toThrow(MastraError);
+      expect(() => @mastra.generateId()).toThrow('ID generator returned an empty string, which is not allowed');
     });
   });
 
   describe('MessageList Integration', () => {
     it('should use custom ID generator for message creation', () => {
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         idGenerator: customIdGenerator,
         logger: false,
       });
@@ -392,7 +392,7 @@ describe('Mastra ID Generator', () => {
       const messageList = new MessageList({
         threadId: 'test-thread',
         resourceId: 'test-resource',
-        generateMessageId: mastra.generateId.bind(mastra),
+        generateMessageId: @mastra.generateId.bind(@mastra),
       });
 
       messageList.add('User message', 'user');
@@ -413,13 +413,13 @@ describe('Mastra ID Generator', () => {
     });
 
     it('should handle context binding issues properly', () => {
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         idGenerator: customIdGenerator,
         logger: false,
       });
 
       // Test unbound function (should fail)
-      const unboundGenerator = mastra.generateId;
+      const unboundGenerator = @mastra.generateId;
       const messageList1 = new MessageList({
         threadId: 'test-thread',
         resourceId: 'test-resource',
@@ -431,7 +431,7 @@ describe('Mastra ID Generator', () => {
       const messageList2 = new MessageList({
         threadId: 'test-thread',
         resourceId: 'test-resource',
-        generateMessageId: mastra.generateId.bind(mastra),
+        generateMessageId: @mastra.generateId.bind(@mastra),
       });
       messageList2.add('Test message', 'user');
       expect(customIdGenerator).toHaveBeenCalled();
@@ -440,14 +440,14 @@ describe('Mastra ID Generator', () => {
 
   describe('Agent Integration with Memory', () => {
     it('should use custom ID generator in agent operations', async () => {
-      const { mastra: _mastra, agent } = createMastraWithMemory(customIdGenerator);
+      const { @mastra: _@mastra, agent } = createMastraWithMemory(customIdGenerator);
 
       await agent.generate('Hello');
       expect(customIdGenerator).toHaveBeenCalled();
     });
 
     it('should use custom ID generator for agent memory operations', async () => {
-      const { mastra: _mastra, agent } = createMastraWithMemory(customIdGenerator);
+      const { @mastra: _@mastra, agent } = createMastraWithMemory(customIdGenerator);
 
       const agentMemory = await agent.getMemory();
       if (!agentMemory) throw new Error('Memory not found');
@@ -488,7 +488,7 @@ describe('Mastra ID Generator', () => {
         memory: memory2,
       });
 
-      const _mastra = new Mastra({
+      const _@mastra = new Mastra({
         idGenerator: customIdGenerator,
         logger: false,
         agents: { agent1, agent2 },
@@ -501,7 +501,7 @@ describe('Mastra ID Generator', () => {
     });
 
     it('should use custom ID generator in streaming operations', async () => {
-      const { mastra: _mastra, agent } = createMastraWithMemory(customIdGenerator);
+      const { @mastra: _@mastra, agent } = createMastraWithMemory(customIdGenerator);
 
       await agent.stream('Hello', {
         threadId: 'test-thread',
@@ -528,20 +528,20 @@ describe('Mastra ID Generator', () => {
             text: 'Test response',
           }),
         }),
-        memory: ({ runtimeContext, mastra: mastraInstance }) => {
-          receivedMastraInstance = mastraInstance;
+        memory: ({ runtimeContext, @mastra: @mastraInstance }) => {
+          receivedMastraInstance = @mastraInstance;
           receivedRuntimeContext = runtimeContext;
 
           // Verify the Mastra instance has the custom ID generator
-          if (mastraInstance) {
-            expect(mastraInstance.getIdGenerator()).toBe(customIdGenerator);
+          if (@mastraInstance) {
+            expect(@mastraInstance.getIdGenerator()).toBe(customIdGenerator);
           }
 
           return new MockMemory();
         },
       });
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         idGenerator: customIdGenerator,
         logger: false,
         agents: { testAgent: agent },
@@ -550,7 +550,7 @@ describe('Mastra ID Generator', () => {
       const agentMemory = await agent.getMemory();
       if (!agentMemory) throw new Error('Memory not found');
 
-      expect(receivedMastraInstance).toBe(mastra);
+      expect(receivedMastraInstance).toBe(@mastra);
       expect(receivedRuntimeContext).toBeDefined();
       expect(typeof receivedRuntimeContext?.get).toBe('function');
       expect(typeof receivedRuntimeContext?.set).toBe('function');
@@ -575,12 +575,12 @@ describe('Mastra ID Generator', () => {
             text: 'Context-aware response',
           }),
         }),
-        memory: ({ runtimeContext, mastra: mastraInstance }) => {
+        memory: ({ runtimeContext, @mastra: @mastraInstance }) => {
           contextUserId = runtimeContext.get('userId');
           contextSessionId = runtimeContext.get('sessionId');
 
           // Verify access to custom ID generator
-          expect(mastraInstance?.getIdGenerator()).toBe(customIdGenerator);
+          expect(@mastraInstance?.getIdGenerator()).toBe(customIdGenerator);
 
           const memory = new MockMemory();
           // Customize memory based on context
@@ -591,7 +591,7 @@ describe('Mastra ID Generator', () => {
         },
       });
 
-      const _mastra = new Mastra({
+      const _@mastra = new Mastra({
         idGenerator: customIdGenerator,
         logger: false,
         agents: { testAgent: agent },
@@ -628,9 +628,9 @@ describe('Mastra ID Generator', () => {
             text: 'Multi-context response',
           }),
         }),
-        memory: ({ runtimeContext, mastra: mastraInstance }) => {
+        memory: ({ runtimeContext, @mastra: @mastraInstance }) => {
           const userId = runtimeContext.get('userId');
-          expect(mastraInstance?.getIdGenerator()).toBe(customIdGenerator);
+          expect(@mastraInstance?.getIdGenerator()).toBe(customIdGenerator);
 
           const memory = new MockMemory();
           memory.name = `memory-${userId}`;
@@ -639,7 +639,7 @@ describe('Mastra ID Generator', () => {
         },
       });
 
-      const _mastra = new Mastra({
+      const _@mastra = new Mastra({
         idGenerator: customIdGenerator,
         logger: false,
         agents: { testAgent: agent },
@@ -680,9 +680,9 @@ describe('Mastra ID Generator', () => {
             text: 'Test response',
           }),
         }),
-        memory: ({ runtimeContext, mastra: mastraInstance }) => {
+        memory: ({ runtimeContext, @mastra: @mastraInstance }) => {
           // Verify the ID generator is available even when memory creation might fail
-          expect(mastraInstance?.getIdGenerator()).toBe(customIdGenerator);
+          expect(@mastraInstance?.getIdGenerator()).toBe(customIdGenerator);
 
           const shouldFail = runtimeContext.get('shouldFail');
           if (shouldFail) {
@@ -692,7 +692,7 @@ describe('Mastra ID Generator', () => {
         },
       });
 
-      const _mastra = new Mastra({
+      const _@mastra = new Mastra({
         idGenerator: customIdGenerator,
         logger: false,
         agents: { testAgent: agent },
@@ -713,48 +713,48 @@ describe('Mastra ID Generator', () => {
 
   describe('ID Generator Lifecycle and Consistency', () => {
     it('should maintain consistency across all components', async () => {
-      const { mastra, agent } = createMastraWithMemory(customIdGenerator);
+      const { @mastra, agent } = createMastraWithMemory(customIdGenerator);
 
       const agentMemory = await agent.getMemory();
       if (!agentMemory) throw new Error('Memory not found');
 
       // Test all components use the same generator
-      const mastraId = mastra.generateId();
+      const @mastraId = @mastra.generateId();
       const memoryId = agentMemory.generateId();
 
       const messageList = new MessageList({
         threadId: 'test-thread',
         resourceId: 'test-resource',
-        generateMessageId: mastra.generateId.bind(mastra),
+        generateMessageId: @mastra.generateId.bind(@mastra),
       });
       messageList.add('Test message', 'user');
 
       expect(customIdGenerator).toHaveBeenCalled();
-      expect(mastraId).toMatch(/^custom-id-\d+$/);
+      expect(@mastraId).toMatch(/^custom-id-\d+$/);
       expect(memoryId).toMatch(/^custom-id-\d+$/);
     });
 
     it('should allow changing ID generator after creation', () => {
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         idGenerator: customIdGenerator,
         logger: false,
       });
 
       const newIdGenerator = vi.fn(() => `new-id-${++idCounter}`);
-      mastra.setIdGenerator(newIdGenerator);
+      @mastra.setIdGenerator(newIdGenerator);
 
-      expect(mastra.getIdGenerator()).toBe(newIdGenerator);
-      expect(mastra.generateId()).toBe('new-id-1');
+      expect(@mastra.getIdGenerator()).toBe(newIdGenerator);
+      expect(@mastra.generateId()).toBe('new-id-1');
     });
 
     it('should propagate ID generator changes to components', async () => {
-      const { mastra, agent } = createMastraWithMemory(customIdGenerator);
+      const { @mastra, agent } = createMastraWithMemory(customIdGenerator);
 
       const agentMemory = await agent.getMemory();
       if (!agentMemory) throw new Error('Memory not found');
 
       const newIdGenerator = vi.fn(() => `new-id-${++idCounter}`);
-      mastra.setIdGenerator(newIdGenerator);
+      @mastra.setIdGenerator(newIdGenerator);
 
       const memoryId = agentMemory.generateId();
       expect(newIdGenerator).toHaveBeenCalled();
@@ -779,7 +779,7 @@ describe('Mastra ID Generator', () => {
         memory,
       });
 
-      const mastra = new Mastra({
+      const @mastra = new Mastra({
         idGenerator: customIdGenerator,
         logger: false,
         agents: { helpAgent: agent },
@@ -792,7 +792,7 @@ describe('Mastra ID Generator', () => {
       });
 
       expect(customIdGenerator).toHaveBeenCalled();
-      expect(mastra.getIdGenerator()).toBe(customIdGenerator);
+      expect(@mastra.getIdGenerator()).toBe(customIdGenerator);
     });
 
     it('should handle multi-user concurrent conversations', async () => {
@@ -811,7 +811,7 @@ describe('Mastra ID Generator', () => {
         memory,
       });
 
-      const _mastra = new Mastra({
+      const _@mastra = new Mastra({
         idGenerator: customIdGenerator,
         logger: false,
         agents: { multiUserAgent: agent },
@@ -853,7 +853,7 @@ describe('Mastra ID Generator', () => {
         memory,
       });
 
-      const _mastra = new Mastra({
+      const _@mastra = new Mastra({
         idGenerator: customIdGenerator,
         logger: false,
         agents: { workflowAgent: agent },
@@ -900,7 +900,7 @@ describe('Mastra ID Generator', () => {
         memory,
       });
 
-      const _mastra = new Mastra({
+      const _@mastra = new Mastra({
         idGenerator: customIdGenerator,
         logger: false,
         agents: { streamingAgent: agent },

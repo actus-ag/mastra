@@ -6,7 +6,7 @@ import { MongoDBStore } from './index';
 
 const TEST_CONFIG: MongoDBConfig = {
   url: process.env.MONGODB_URL || 'mongodb://localhost:27017',
-  dbName: process.env.MONGODB_DB_NAME || 'mastra-test-db',
+  dbName: process.env.MONGODB_DB_NAME || '@mastra-test-db',
 };
 
 describe('Validation', () => {

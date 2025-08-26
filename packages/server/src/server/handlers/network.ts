@@ -1,7 +1,7 @@
-import type { AgentStreamOptions } from '@actus-ag/mastra-core/agent';
-import type { GenerateReturn } from '@actus-ag/mastra-core/llm';
-import type { AgentNetwork } from '@actus-ag/mastra-core/network';
-import type { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
+import type { AgentStreamOptions } from '@mastra/core/agent';
+import type { GenerateReturn } from '@mastra/core/llm';
+import type { AgentNetwork } from '@mastra/core/network';
+import type { RuntimeContext } from '@mastra/core/runtime-context';
 import { HTTPException } from '../http-exception';
 import type { Context } from '../types';
 import { handleError } from './error';
@@ -13,11 +13,11 @@ interface NetworkContext extends Context {
 }
 
 export async function getNetworksHandler({
-  mastra,
+  @mastra,
   runtimeContext,
-}: Pick<NetworkContext, 'mastra' | 'runtimeContext'>) {
+}: Pick<NetworkContext, '@actus-ag/@mastra' | 'runtimeContext'>) {
   try {
-    const networks = mastra.getNetworks();
+    const networks = @mastra.getNetworks();
 
     const serializedNetworks = await Promise.all(
       networks.map(async network => {
@@ -53,12 +53,12 @@ export async function getNetworksHandler({
 }
 
 export async function getNetworkByIdHandler({
-  mastra,
+  @mastra,
   networkId,
   runtimeContext,
-}: Pick<NetworkContext, 'mastra' | 'networkId' | 'runtimeContext'>) {
+}: Pick<NetworkContext, '@actus-ag/@mastra' | 'networkId' | 'runtimeContext'>) {
   try {
-    const networks = mastra.getNetworks();
+    const networks = @mastra.getNetworks();
 
     const network = networks.find(network => {
       const routingAgent = network.getRoutingAgent();
@@ -100,7 +100,7 @@ export async function getNetworkByIdHandler({
 }
 
 export async function generateHandler({
-  mastra,
+  @mastra,
   runtimeContext,
   networkId,
   body,
@@ -109,7 +109,7 @@ export async function generateHandler({
   body: { messages?: Parameters<AgentNetwork['generate']>[0] } & Parameters<AgentNetwork['generate']>[1];
 }): Promise<GenerateReturn<any, any, any>> {
   try {
-    const network = mastra.getNetwork(networkId!);
+    const network = @mastra.getNetwork(networkId!);
 
     if (!network) {
       throw new HTTPException(404, { message: 'Network not found' });
@@ -127,7 +127,7 @@ export async function generateHandler({
 }
 
 export async function streamGenerateHandler({
-  mastra,
+  @mastra,
   networkId,
   body,
   runtimeContext,
@@ -136,7 +136,7 @@ export async function streamGenerateHandler({
   body: { messages?: Parameters<AgentNetwork['stream']>[0] } & Parameters<AgentNetwork['stream']>[1];
 }) {
   try {
-    const network = mastra.getNetwork(networkId!);
+    const network = @mastra.getNetwork(networkId!);
 
     if (!network) {
       throw new HTTPException(404, { message: 'Network not found' });

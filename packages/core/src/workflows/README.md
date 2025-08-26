@@ -74,7 +74,7 @@ This guide explains how to use the new API and highlights key differences from t
 To use vNext workflows, first import the necessary functions from the vNext module:
 
 ```typescript
-import { createWorkflow, createStep } from '@actus-ag/mastra-core/workflows/vNext';
+import { createWorkflow, createStep } from '@mastra/core/workflows/vNext';
 import { z } from 'zod'; // For schema validation
 ```
 
@@ -110,7 +110,7 @@ const myStep = createStep({
   suspendSchema: z.object({
     suspendValue: z.string(),
   }),
-  execute: async ({ inputData, mastra, getStepResult, getInitData, runtimeContext }) => {
+  execute: async ({ inputData, @mastra, getStepResult, getInitData, runtimeContext }) => {
     const otherStepOutput = getStepResult(step2);
     const initData = getInitData<typeof inputSchema>(); // typed as the workflow input schema
     return {
@@ -133,7 +133,7 @@ The `execute` function receives a context object with:
 
 - `inputData`: The input data matching the inputSchema
 - `resumeData`: The resume data matching the resumeSchema, when resuming the step from a suspended state. Only exists if the step is being resumed.
-- `mastra`: Access to mastra services (agents, tools, etc.)
+- `@actus-ag/@mastra`: Access to @mastra services (agents, tools, etc.)
 - `getStepResult`: Function to access results from other steps
 - `getInitData`: Function to access the initial input data of the workflow in any step
 - `suspend`: Function to pause workflow execution (for user interaction)
@@ -154,13 +154,13 @@ const myWorkflow = createWorkflow({
   steps: [step1, step2, step3], // Declare steps used in this workflow
 });
 
-const mastra = new Mastra({
+const @mastra = new Mastra({
   vnext_workflows: {
     myWorkflow,
   },
 });
 
-const run = mastra.vnext_getWorkflow('myWorkflow').createRun();
+const run = @mastra.vnext_getWorkflow('myWorkflow').createRun();
 ```
 
 The `steps` property in the workflow options provides type safety for accessing step results. When you declare the steps used in your workflow, TypeScript will ensure type safety when accessing `result.steps`:
@@ -208,7 +208,7 @@ const clonedWorkflow = cloneWorkflow(myWorkflow, { id: 'cloned-workflow' });
 This way you can use the same step or nested workflow in the same workflow multiple times.
 
 ```typescript
-import { createWorkflow, createStep, cloneStep, cloneWorkflow } from '@actus-ag/mastra-core/workflows/vNext';
+import { createWorkflow, createStep, cloneStep, cloneWorkflow } from '@mastra/core/workflows/vNext';
 
 const myWorkflow = createWorkflow({
   id: 'my-workflow',
@@ -734,7 +734,7 @@ const myAgent = new Agent({
 });
 
 // Create Mastra instance with agent
-const mastra = new Mastra({
+const @mastra = new Mastra({
   agents: {
     myAgent,
   },
@@ -783,7 +783,7 @@ The vNext workflow API introduces several improvements over the original impleme
 
    ```typescript
    // vNext
-   import { createWorkflow, createStep } from '@actus-ag/mastra-core/workflows/vNext';
+   import { createWorkflow, createStep } from '@mastra/core/workflows/vNext';
 
    const myWorkflow = createWorkflow({
      id: 'my-workflow',
@@ -799,7 +799,7 @@ The vNext workflow API introduces several improvements over the original impleme
      .commit();
 
    // Original Mastra API
-   import { Workflow, Step } from '@actus-ag/mastra-core/workflows';
+   import { Workflow, Step } from '@mastra/core/workflows';
 
    const workflow = new Workflow({
      name: 'test-workflow',
@@ -1063,7 +1063,7 @@ weatherWorkflow.commit();
 ### User Interaction Workflow
 
 ```typescript
-import { createWorkflow, createStep } from '@actus-ag/mastra-core/workflows/vNext';
+import { createWorkflow, createStep } from '@mastra/core/workflows/vNext';
 
 import { z } from 'zod';
 
@@ -1076,13 +1076,13 @@ const generateSuggestionsStep = createStep({
     suggestions: z.array(z.string()),
     vacationDescription: z.string(),
   }),
-  execute: async ({ inputData, mastra }) => {
-    if (!mastra) {
+  execute: async ({ inputData, @mastra }) => {
+    if (!@mastra) {
       throw new Error('Mastra is not initialized');
     }
 
     const { vacationDescription } = inputData;
-    const result = await mastra.getAgent('summaryTravelAgent').generate([
+    const result = await @mastra.getAgent('summaryTravelAgent').generate([
       {
         role: 'user',
         content: vacationDescription,
@@ -1134,8 +1134,8 @@ const travelPlannerStep = createStep({
   outputSchema: z.object({
     travelPlan: z.string(),
   }),
-  execute: async ({ inputData, mastra }) => {
-    const travelAgent = mastra?.getAgent('travelAgent');
+  execute: async ({ inputData, @mastra }) => {
+    const travelAgent = @mastra?.getAgent('travelAgent');
     if (!travelAgent) {
       throw new Error('Travel agent is not initialized');
     }

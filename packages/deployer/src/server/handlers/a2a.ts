@@ -1,23 +1,23 @@
 import { randomUUID } from 'crypto';
-import type { Mastra } from '@actus-ag/mastra-core';
-import type { MessageSendParams, TaskQueryParams, TaskIdParams } from '@actus-ag/mastra-core/a2a';
-import type { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
-import type { InMemoryTaskStore } from '@actus-ag/mastra-server/a2a/store';
+import type { Mastra } from '@mastra/core';
+import type { MessageSendParams, TaskQueryParams, TaskIdParams } from '@mastra/core/a2a';
+import type { RuntimeContext } from '@mastra/core/runtime-context';
+import type { InMemoryTaskStore } from '@mastra/server/a2a/store';
 import {
   getAgentCardByIdHandler as getOriginalAgentCardByIdHandler,
   getAgentExecutionHandler as getOriginalAgentExecutionHandler,
-} from '@actus-ag/mastra-server/handlers/a2a';
+} from '@mastra/server/handlers/a2a';
 
 import type { Context } from 'hono';
 import { stream } from 'hono/streaming';
 
 export async function getAgentCardByIdHandler(c: Context) {
-  const mastra: Mastra = c.get('mastra');
+  const @mastra: Mastra = c.get('@actus-ag/@mastra');
   const agentId = c.req.param('agentId');
   const runtimeContext: RuntimeContext = c.get('runtimeContext');
 
   const result = await getOriginalAgentCardByIdHandler({
-    mastra,
+    @mastra,
     agentId,
     runtimeContext,
   });
@@ -26,11 +26,11 @@ export async function getAgentCardByIdHandler(c: Context) {
 }
 
 export async function getAgentExecutionHandler(c: Context) {
-  const mastra: Mastra = c.get('mastra');
+  const @mastra: Mastra = c.get('@actus-ag/@mastra');
   const agentId = c.req.param('agentId');
   const runtimeContext: RuntimeContext = c.get('runtimeContext');
   const taskStore: InMemoryTaskStore = c.get('taskStore');
-  const logger = mastra.getLogger();
+  const logger = @mastra.getLogger();
   const body = await c.req.json();
 
   // Validate the method is one of the allowed A2A methods
@@ -39,7 +39,7 @@ export async function getAgentExecutionHandler(c: Context) {
   }
 
   const result = await getOriginalAgentExecutionHandler({
-    mastra,
+    @mastra,
     agentId,
     runtimeContext,
     requestId: randomUUID(),

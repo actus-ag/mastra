@@ -1,4 +1,4 @@
-# @actus-ag/mastra-server
+# @mastra/server
 
 ## 0.14.0
 
@@ -30,7 +30,7 @@
 - Updated dependencies [c30bca8]
 - Updated dependencies [3b5fec7]
 - Updated dependencies [a8f129d]
-  - @actus-ag/mastra-core@0.14.0
+  - @mastra/core@0.14.0
 
 ## 0.14.0-alpha.7
 
@@ -40,7 +40,7 @@
 
 ### Patch Changes
 
-- @actus-ag/mastra-core@0.14.0-alpha.7
+- @mastra/core@0.14.0-alpha.7
 
 ## 0.14.0-alpha.6
 
@@ -50,14 +50,14 @@
 - Updated dependencies [ad888a2]
 - Updated dependencies [481751d]
 - Updated dependencies [194e395]
-  - @actus-ag/mastra-core@0.14.0-alpha.6
+  - @mastra/core@0.14.0-alpha.6
 
 ## 0.14.0-alpha.5
 
 ### Patch Changes
 
 - 4908422: Fix agent scorers page by correctly passing in agent name
-  - @actus-ag/mastra-core@0.14.0-alpha.5
+  - @mastra/core@0.14.0-alpha.5
 
 ## 0.14.0-alpha.4
 
@@ -81,7 +81,7 @@
 - Updated dependencies [7cb3fc0]
 - Updated dependencies [195eabb]
 - Updated dependencies [b78b95b]
-  - @actus-ag/mastra-core@0.14.0-alpha.4
+  - @mastra/core@0.14.0-alpha.4
 
 ## 0.14.0-alpha.3
 
@@ -90,13 +90,13 @@
 - Updated dependencies [227c7e6]
 - Updated dependencies [fd3a3eb]
 - Updated dependencies [a8f129d]
-  - @actus-ag/mastra-core@0.14.0-alpha.3
+  - @mastra/core@0.14.0-alpha.3
 
 ## 0.14.0-alpha.2
 
 ### Patch Changes
 
-- @actus-ag/mastra-core@0.14.0-alpha.2
+- @mastra/core@0.14.0-alpha.2
 
 ## 0.14.0-alpha.1
 
@@ -110,14 +110,14 @@
 - Updated dependencies [cf4f357]
 - Updated dependencies [a722c0b]
 - Updated dependencies [3b5fec7]
-  - @actus-ag/mastra-core@0.14.0-alpha.1
+  - @mastra/core@0.14.0-alpha.1
 
 ## 0.13.3-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [c30bca8]
-  - @actus-ag/mastra-core@0.13.3-alpha.0
+  - @mastra/core@0.13.3-alpha.0
 
 ## 0.13.2
 
@@ -138,14 +138,14 @@
 - Updated dependencies [63449d0]
 - Updated dependencies [121a3f8]
 - Updated dependencies [ec510e7]
-  - @actus-ag/mastra-core@0.13.2
+  - @mastra/core@0.13.2
 
 ## 0.13.2-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [b5cf2a3]
-  - @actus-ag/mastra-core@0.13.2-alpha.3
+  - @mastra/core@0.13.2-alpha.3
 
 ## 0.13.2-alpha.2
 
@@ -159,7 +159,7 @@
 - Updated dependencies [b32c50d]
 - Updated dependencies [121a3f8]
 - Updated dependencies [ec510e7]
-  - @actus-ag/mastra-core@0.13.2-alpha.2
+  - @mastra/core@0.13.2-alpha.2
 
 ## 0.13.2-alpha.1
 
@@ -167,7 +167,7 @@
 
 - Updated dependencies [2e74797]
 - Updated dependencies [63449d0]
-  - @actus-ag/mastra-core@0.13.2-alpha.1
+  - @mastra/core@0.13.2-alpha.1
 
 ## 0.13.2-alpha.0
 
@@ -177,21 +177,21 @@
 - Updated dependencies [dd94a26]
 - Updated dependencies [3ba6772]
 - Updated dependencies [2fff911]
-  - @actus-ag/mastra-core@0.13.2-alpha.0
+  - @mastra/core@0.13.2-alpha.0
 
 ## 0.13.1
 
 ### Patch Changes
 
 - Updated dependencies [cd0042e]
-  - @actus-ag/mastra-core@0.13.1
+  - @mastra/core@0.13.1
 
 ## 0.13.1-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [cd0042e]
-  - @actus-ag/mastra-core@0.13.1-alpha.0
+  - @mastra/core@0.13.1-alpha.0
 
 ## 0.13.0
 
@@ -213,14 +213,14 @@
 - Updated dependencies [5d377e5]
 - Updated dependencies [1fb812e]
 - Updated dependencies [35c5798]
-  - @actus-ag/mastra-core@0.13.0
+  - @mastra/core@0.13.0
 
 ## 0.13.0-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [d0496e6]
-  - @actus-ag/mastra-core@0.13.0-alpha.3
+  - @mastra/core@0.13.0-alpha.3
 
 ## 0.13.0-alpha.2
 
@@ -233,7 +233,7 @@
 - Updated dependencies [2871020]
 - Updated dependencies [4a406ec]
 - Updated dependencies [5d377e5]
-  - @actus-ag/mastra-core@0.13.0-alpha.2
+  - @mastra/core@0.13.0-alpha.2
 
 ## 0.13.0-alpha.1
 
@@ -243,7 +243,7 @@
 - Updated dependencies [b0e43c1]
 - Updated dependencies [1fb812e]
 - Updated dependencies [35c5798]
-  - @actus-ag/mastra-core@0.13.0-alpha.1
+  - @mastra/core@0.13.0-alpha.1
 
 ## 0.12.2-alpha.0
 
@@ -253,7 +253,7 @@
 - Updated dependencies [94f4812]
 - Updated dependencies [e202b82]
 - Updated dependencies [e00f6a0]
-  - @actus-ag/mastra-core@0.12.2-alpha.0
+  - @mastra/core@0.12.2-alpha.0
 
 ## 0.12.1
 
@@ -264,14 +264,14 @@
 - Updated dependencies [d30b1a0]
 - Updated dependencies [bff87f7]
 - Updated dependencies [b4a8df0]
-  - @actus-ag/mastra-core@0.12.1
+  - @mastra/core@0.12.1
 
 ## 0.12.1-alpha.1
 
 ### Patch Changes
 
 - Updated dependencies [d0d9500]
-  - @actus-ag/mastra-core@0.12.1-alpha.1
+  - @mastra/core@0.12.1-alpha.1
 
 ## 0.12.1-alpha.0
 
@@ -281,7 +281,7 @@
 - Updated dependencies [d30b1a0]
 - Updated dependencies [bff87f7]
 - Updated dependencies [b4a8df0]
-  - @actus-ag/mastra-core@0.12.1-alpha.0
+  - @mastra/core@0.12.1-alpha.0
 
 ## 0.12.0
 
@@ -292,7 +292,7 @@
 ### Patch Changes
 
 - ff9c125: enhance thread retrieval with sorting options in libsql and pg
-- 9802f42: Added types and tests to ensure client-js and hono endpoints can save memory messages where the input is either a v1 or v2 mastra message
+- 9802f42: Added types and tests to ensure client-js and hono endpoints can save memory messages where the input is either a v1 or v2 @mastra message
 - b8efbb9: feat: add flexible deleteMessages method to memory API
   - Added `memory.deleteMessages(input)` method that accepts multiple input types:
     - Single message ID as string: `deleteMessages('msg-123')`
@@ -328,7 +328,7 @@
 - Updated dependencies [b8efbb9]
 - Updated dependencies [71466e7]
 - Updated dependencies [0c99fbe]
-  - @actus-ag/mastra-core@0.12.0
+  - @mastra/core@0.12.0
 
 ## 0.12.0-alpha.5
 
@@ -338,21 +338,21 @@
 
 ### Patch Changes
 
-- @actus-ag/mastra-core@0.12.0-alpha.5
+- @mastra/core@0.12.0-alpha.5
 
 ## 0.12.0-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [ad0a58b]
-  - @actus-ag/mastra-core@0.12.0-alpha.4
+  - @mastra/core@0.12.0-alpha.4
 
 ## 0.12.0-alpha.3
 
 ### Patch Changes
 
-- 9802f42: Added types and tests to ensure client-js and hono endpoints can save memory messages where the input is either a v1 or v2 mastra message
-  - @actus-ag/mastra-core@0.12.0-alpha.3
+- 9802f42: Added types and tests to ensure client-js and hono endpoints can save memory messages where the input is either a v1 or v2 @mastra message
+  - @mastra/core@0.12.0-alpha.3
 
 ## 0.12.0-alpha.2
 
@@ -380,7 +380,7 @@
 - Updated dependencies [b8efbb9]
 - Updated dependencies [71466e7]
 - Updated dependencies [0c99fbe]
-  - @actus-ag/mastra-core@0.12.0-alpha.2
+  - @mastra/core@0.12.0-alpha.2
 
 ## 0.12.0-alpha.1
 
@@ -389,7 +389,7 @@
 - Updated dependencies [e0f73c6]
 - Updated dependencies [cda801d]
 - Updated dependencies [a77c823]
-  - @actus-ag/mastra-core@0.12.0-alpha.1
+  - @mastra/core@0.12.0-alpha.1
 
 ## 0.12.0-alpha.0
 
@@ -405,7 +405,7 @@
 - Updated dependencies [fc92d80]
 - Updated dependencies [23a6a7c]
 - Updated dependencies [09bca64]
-  - @actus-ag/mastra-core@0.12.0-alpha.0
+  - @mastra/core@0.12.0-alpha.0
 
 ## 0.11.1
 
@@ -413,7 +413,7 @@
 
 - 417fd92: Revert breaking chnage
 - ce088f5: Update all peerdeps to latest core
-  - @actus-ag/mastra-core@0.11.1
+  - @mastra/core@0.11.1
 
 ## 0.11.0
 
@@ -426,12 +426,12 @@
   extracting common logic into prepareLLMOptions(), enhancing type definitions, and fixing test annotations.
 
   This changeset entry follows the established format in your project:
-  - Targets the @actus-ag/mastra-core package with a patch version bump
+  - Targets the @mastra/core package with a patch version bump
   - Provides a concise description of the refactoring and type safety improvements
   - Mentions the key changes without being too verbose
 
 - 62007b3: Fix upserting memory messages via hono endpoints
-- dcd4802: scores mastra server
+- dcd4802: scores @mastra server
 - Updated dependencies [f248d53]
 - Updated dependencies [2affc57]
 - Updated dependencies [66e13e3]
@@ -453,14 +453,14 @@
 - Updated dependencies [dcd4802]
 - Updated dependencies [cbddd18]
 - Updated dependencies [7ba91fa]
-  - @actus-ag/mastra-core@0.11.0
+  - @mastra/core@0.11.0
 
 ## 0.11.0-alpha.3
 
 ### Patch Changes
 
 - 62007b3: Fix upserting memory messages via hono endpoints
-  - @actus-ag/mastra-core@0.11.0-alpha.3
+  - @mastra/core@0.11.0-alpha.3
 
 ## 0.11.0-alpha.2
 
@@ -473,11 +473,11 @@
   extracting common logic into prepareLLMOptions(), enhancing type definitions, and fixing test annotations.
 
   This changeset entry follows the established format in your project:
-  - Targets the @actus-ag/mastra-core package with a patch version bump
+  - Targets the @mastra/core package with a patch version bump
   - Provides a concise description of the refactoring and type safety improvements
   - Mentions the key changes without being too verbose
 
-- dcd4802: scores mastra server
+- dcd4802: scores @mastra server
 - Updated dependencies [f248d53]
 - Updated dependencies [2affc57]
 - Updated dependencies [66e13e3]
@@ -496,13 +496,13 @@
 - Updated dependencies [bea9dd1]
 - Updated dependencies [dcd4802]
 - Updated dependencies [7ba91fa]
-  - @actus-ag/mastra-core@0.11.0-alpha.2
+  - @mastra/core@0.11.0-alpha.2
 
 ## 0.11.0-alpha.1
 
 ### Patch Changes
 
-- @actus-ag/mastra-core@0.11.0-alpha.1
+- @mastra/core@0.11.0-alpha.1
 
 ## 0.11.0-alpha.0
 
@@ -511,7 +511,7 @@
 - Updated dependencies [7827943]
 - Updated dependencies [bf1e7e7]
 - Updated dependencies [cbddd18]
-  - @actus-ag/mastra-core@0.11.0-alpha.0
+  - @mastra/core@0.11.0-alpha.0
 
 ## 0.10.15
 
@@ -532,7 +532,7 @@
 - Updated dependencies [c22a91f]
 - Updated dependencies [f7403ab]
 - Updated dependencies [6c89d7f]
-  - @actus-ag/mastra-core@0.10.15
+  - @mastra/core@0.10.15
 
 ## 0.10.15-alpha.1
 
@@ -543,7 +543,7 @@
 - Updated dependencies [c3a30de]
 - Updated dependencies [cf3a184]
 - Updated dependencies [d6bfd60]
-  - @actus-ag/mastra-core@0.10.15-alpha.1
+  - @mastra/core@0.10.15-alpha.1
 
 ## 0.10.15-alpha.0
 
@@ -559,13 +559,13 @@
 - Updated dependencies [c22a91f]
 - Updated dependencies [f7403ab]
 - Updated dependencies [6c89d7f]
-  - @actus-ag/mastra-core@0.10.15-alpha.0
+  - @mastra/core@0.10.15-alpha.0
 
 ## 0.10.14
 
 ### Patch Changes
 
-- @actus-ag/mastra-core@0.10.14
+- @mastra/core@0.10.14
 
 ## 0.10.12
 
@@ -573,21 +573,21 @@
 
 - Updated dependencies [b4a9811]
 - Updated dependencies [4d5583d]
-  - @actus-ag/mastra-core@0.10.12
+  - @mastra/core@0.10.12
 
 ## 0.10.12-alpha.1
 
 ### Patch Changes
 
 - Updated dependencies [4d5583d]
-  - @actus-ag/mastra-core@0.10.12-alpha.1
+  - @mastra/core@0.10.12-alpha.1
 
 ## 0.10.12-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [b4a9811]
-  - @actus-ag/mastra-core@0.10.12-alpha.0
+  - @mastra/core@0.10.12-alpha.0
 
 ## 0.10.11
 
@@ -607,13 +607,13 @@
 - Updated dependencies [cb16baf]
 - Updated dependencies [f36e4f1]
 - Updated dependencies [7f6e403]
-  - @actus-ag/mastra-core@0.10.11
+  - @mastra/core@0.10.11
 
 ## 0.10.11-alpha.4
 
 ### Patch Changes
 
-- @actus-ag/mastra-core@0.10.11-alpha.4
+- @mastra/core@0.10.11-alpha.4
 
 ## 0.10.11-alpha.3
 
@@ -624,7 +624,7 @@
 - Updated dependencies [132027f]
 - Updated dependencies [0c85311]
 - Updated dependencies [cb16baf]
-  - @actus-ag/mastra-core@0.10.11-alpha.3
+  - @mastra/core@0.10.11-alpha.3
 
 ## 0.10.11-alpha.2
 
@@ -633,14 +633,14 @@
 - Updated dependencies [2873c7f]
 - Updated dependencies [1c1c6a1]
 - Updated dependencies [565cc0c]
-  - @actus-ag/mastra-core@0.10.11-alpha.2
+  - @mastra/core@0.10.11-alpha.2
 
 ## 0.10.11-alpha.1
 
 ### Patch Changes
 
 - Updated dependencies [7f6e403]
-  - @actus-ag/mastra-core@0.10.11-alpha.1
+  - @mastra/core@0.10.11-alpha.1
 
 ## 0.10.11-alpha.0
 
@@ -651,31 +651,31 @@
 - Updated dependencies [b790fd1]
 - Updated dependencies [d7ed04d]
 - Updated dependencies [f36e4f1]
-  - @actus-ag/mastra-core@0.10.11-alpha.0
+  - @mastra/core@0.10.11-alpha.0
 
 ## 0.10.10
 
 ### Patch Changes
 
-- 6e13b80: Add error cause and stack trace to mastra server error handler
+- 6e13b80: Add error cause and stack trace to @mastra server error handler
 - 6997af1: add send event to server, deployer, client-js and playground-ui
 - Updated dependencies [4d3fbdf]
-  - @actus-ag/mastra-core@0.10.10
+  - @mastra/core@0.10.10
 
 ## 0.10.10-alpha.1
 
 ### Patch Changes
 
 - 6997af1: add send event to server, deployer, client-js and playground-ui
-  - @actus-ag/mastra-core@0.10.10-alpha.1
+  - @mastra/core@0.10.10-alpha.1
 
 ## 0.10.10-alpha.0
 
 ### Patch Changes
 
-- 6e13b80: Add error cause and stack trace to mastra server error handler
+- 6e13b80: Add error cause and stack trace to @mastra server error handler
 - Updated dependencies [4d3fbdf]
-  - @actus-ag/mastra-core@0.10.10-alpha.0
+  - @mastra/core@0.10.10-alpha.0
 
 ## 0.10.9
 
@@ -700,7 +700,7 @@
 - Updated dependencies [57929df]
 - Updated dependencies [b7852ed]
 - Updated dependencies [6320a61]
-  - @actus-ag/mastra-core@0.10.9
+  - @mastra/core@0.10.9
 
 ## 0.10.9-alpha.0
 
@@ -725,7 +725,7 @@
 - Updated dependencies [57929df]
 - Updated dependencies [b7852ed]
 - Updated dependencies [6320a61]
-  - @actus-ag/mastra-core@0.10.9-alpha.0
+  - @mastra/core@0.10.9-alpha.0
 
 ## 0.10.8
 
@@ -736,7 +736,7 @@
 - Updated dependencies [3e04487]
 - Updated dependencies [a344ac7]
 - Updated dependencies [dc4ca0a]
-  - @actus-ag/mastra-core@0.10.8
+  - @mastra/core@0.10.8
 
 ## 0.10.8-alpha.1
 
@@ -745,7 +745,7 @@
 - Updated dependencies [b8f16b2]
 - Updated dependencies [3e04487]
 - Updated dependencies [dc4ca0a]
-  - @actus-ag/mastra-core@0.10.8-alpha.1
+  - @mastra/core@0.10.8-alpha.1
 
 ## 0.10.8-alpha.0
 
@@ -753,13 +753,13 @@
 
 - a344ac7: Fix tool streaming in agent network
 - Updated dependencies [a344ac7]
-  - @actus-ag/mastra-core@0.10.8-alpha.0
+  - @mastra/core@0.10.8-alpha.0
 
 ## 0.10.7
 
 ### Patch Changes
 
-- 9bf1d55: Fix runtimeContext in mastra server, client SDK
+- 9bf1d55: Fix runtimeContext in @mastra server, client SDK
 - 5d74aab: vNext network in playground
 - 502fe05: createRun() -> createRunAsync()
 - 4afab04: fix: getAgentsHandler return type
@@ -781,20 +781,20 @@
 - Updated dependencies [8ba1b51]
 - Updated dependencies [4efcfa0]
 - Updated dependencies [0e17048]
-  - @actus-ag/mastra-core@0.10.7
+  - @mastra/core@0.10.7
 
 ## 0.10.7-alpha.5
 
 ### Patch Changes
 
-- @actus-ag/mastra-core@0.10.7-alpha.5
+- @mastra/core@0.10.7-alpha.5
 
 ## 0.10.7-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [a8b194f]
-  - @actus-ag/mastra-core@0.10.7-alpha.4
+  - @mastra/core@0.10.7-alpha.4
 
 ## 0.10.7-alpha.3
 
@@ -806,19 +806,19 @@
 - Updated dependencies [792c4c0]
 - Updated dependencies [502fe05]
 - Updated dependencies [4efcfa0]
-  - @actus-ag/mastra-core@0.10.7-alpha.3
+  - @mastra/core@0.10.7-alpha.3
 
 ## 0.10.7-alpha.2
 
 ### Patch Changes
 
-- 9bf1d55: Fix runtimeContext in mastra server, client SDK
+- 9bf1d55: Fix runtimeContext in @mastra server, client SDK
 - 5d74aab: vNext network in playground
 - Updated dependencies [15e9d26]
 - Updated dependencies [07d6d88]
 - Updated dependencies [5d74aab]
 - Updated dependencies [144eb0b]
-  - @actus-ag/mastra-core@0.10.7-alpha.2
+  - @mastra/core@0.10.7-alpha.2
 
 ## 0.10.7-alpha.1
 
@@ -830,7 +830,7 @@
 - Updated dependencies [4fb0cc2]
 - Updated dependencies [d2a7a31]
 - Updated dependencies [0e17048]
-  - @actus-ag/mastra-core@0.10.7-alpha.1
+  - @mastra/core@0.10.7-alpha.1
 
 ## 0.10.7-alpha.0
 
@@ -839,7 +839,7 @@
 - Updated dependencies [d8f2d19]
 - Updated dependencies [9d52b17]
 - Updated dependencies [8ba1b51]
-  - @actus-ag/mastra-core@0.10.7-alpha.0
+  - @mastra/core@0.10.7-alpha.0
 
 ## 0.10.6
 
@@ -866,7 +866,7 @@
 - Updated dependencies [751c894]
 - Updated dependencies [577ce3a]
 - Updated dependencies [9260b3a]
-  - @actus-ag/mastra-core@0.10.6
+  - @mastra/core@0.10.6
 
 ## 0.10.6-alpha.5
 
@@ -876,14 +876,14 @@
 - Updated dependencies [12a95fc]
 - Updated dependencies [51264a5]
 - Updated dependencies [8e6f677]
-  - @actus-ag/mastra-core@0.10.6-alpha.5
+  - @mastra/core@0.10.6-alpha.5
 
 ## 0.10.6-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [9589624]
-  - @actus-ag/mastra-core@0.10.6-alpha.4
+  - @mastra/core@0.10.6-alpha.4
 
 ## 0.10.6-alpha.3
 
@@ -892,7 +892,7 @@
 - 2002c59: fix(voice): compatibility with dynamic agent instructions
 - Updated dependencies [d70c420]
 - Updated dependencies [2a16996]
-  - @actus-ag/mastra-core@0.10.6-alpha.3
+  - @mastra/core@0.10.6-alpha.3
 
 ## 0.10.6-alpha.2
 
@@ -900,7 +900,7 @@
 
 - 5f67b6f: Transfer-Encoding chunked header for agent stream hono route
 - Updated dependencies [4b0f8a6]
-  - @actus-ag/mastra-core@0.10.6-alpha.2
+  - @mastra/core@0.10.6-alpha.2
 
 ## 0.10.6-alpha.1
 
@@ -912,7 +912,7 @@
 - Updated dependencies [751c894]
 - Updated dependencies [577ce3a]
 - Updated dependencies [9260b3a]
-  - @actus-ag/mastra-core@0.10.6-alpha.1
+  - @mastra/core@0.10.6-alpha.1
 
 ## 0.10.6-alpha.0
 
@@ -923,7 +923,7 @@
 - Updated dependencies [36f1c36]
 - Updated dependencies [10d352e]
 - Updated dependencies [53d3c37]
-  - @actus-ag/mastra-core@0.10.6-alpha.0
+  - @mastra/core@0.10.6-alpha.0
 
 ## 0.10.5
 
@@ -931,7 +931,7 @@
 
 - 1ba421d: fix the tools not showing on workflows attached to agents
 - Updated dependencies [13c97f9]
-  - @actus-ag/mastra-core@0.10.5
+  - @mastra/core@0.10.5
 
 ## 0.10.4
 
@@ -954,21 +954,21 @@
 - Updated dependencies [14a2566]
 - Updated dependencies [f7f8293]
 - Updated dependencies [48eddb9]
-  - @actus-ag/mastra-core@0.10.4
+  - @mastra/core@0.10.4
 
 ## 0.10.4-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [925ab94]
-  - @actus-ag/mastra-core@0.10.4-alpha.3
+  - @mastra/core@0.10.4-alpha.3
 
 ## 0.10.4-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [48eddb9]
-  - @actus-ag/mastra-core@0.10.4-alpha.2
+  - @mastra/core@0.10.4-alpha.2
 
 ## 0.10.4-alpha.1
 
@@ -980,7 +980,7 @@
 - Updated dependencies [dffb67b]
 - Updated dependencies [f1309d3]
 - Updated dependencies [f7f8293]
-  - @actus-ag/mastra-core@0.10.4-alpha.1
+  - @mastra/core@0.10.4-alpha.1
 
 ## 0.10.4-alpha.0
 
@@ -995,21 +995,21 @@
 - Updated dependencies [1b443fd]
 - Updated dependencies [ce97900]
 - Updated dependencies [14a2566]
-  - @actus-ag/mastra-core@0.10.4-alpha.0
+  - @mastra/core@0.10.4-alpha.0
 
 ## 0.10.3
 
 ### Patch Changes
 
 - Updated dependencies [2b0fc7e]
-  - @actus-ag/mastra-core@0.10.3
+  - @mastra/core@0.10.3
 
 ## 0.10.3-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [2b0fc7e]
-  - @actus-ag/mastra-core@0.10.3-alpha.0
+  - @mastra/core@0.10.3-alpha.0
 
 ## 0.10.2
 
@@ -1040,7 +1040,7 @@
 - Updated dependencies [79d5145]
 - Updated dependencies [12b7002]
 - Updated dependencies [2901125]
-  - @actus-ag/mastra-core@0.10.2
+  - @mastra/core@0.10.2
 
 ## 0.10.2-alpha.8
 
@@ -1048,14 +1048,14 @@
 
 - Updated dependencies [37643b8]
 - Updated dependencies [79d5145]
-  - @actus-ag/mastra-core@0.10.2-alpha.8
+  - @mastra/core@0.10.2-alpha.8
 
 ## 0.10.2-alpha.7
 
 ### Patch Changes
 
 - a399086: Bumping because we forgot to
-  - @actus-ag/mastra-core@0.10.2-alpha.7
+  - @mastra/core@0.10.2-alpha.7
 
 ## 0.10.2-alpha.6
 
@@ -1063,7 +1063,7 @@
 
 - Updated dependencies [99fd6cf]
 - Updated dependencies [8dc94d8]
-  - @actus-ag/mastra-core@0.10.2-alpha.6
+  - @mastra/core@0.10.2-alpha.6
 
 ## 0.10.2-alpha.5
 
@@ -1073,7 +1073,7 @@
 - Updated dependencies [1b5fc55]
 - Updated dependencies [add596e]
 - Updated dependencies [ecebbeb]
-  - @actus-ag/mastra-core@0.10.2-alpha.5
+  - @mastra/core@0.10.2-alpha.5
 
 ## 0.10.2-alpha.4
 
@@ -1082,7 +1082,7 @@
 - c5bf1ce: Add backwards compat code for new MessageList in storage
 - Updated dependencies [c5bf1ce]
 - Updated dependencies [12b7002]
-  - @actus-ag/mastra-core@0.10.2-alpha.4
+  - @mastra/core@0.10.2-alpha.4
 
 ## 0.10.2-alpha.3
 
@@ -1092,7 +1092,7 @@
 - Updated dependencies [ab5adbe]
 - Updated dependencies [195c428]
 - Updated dependencies [f73e11b]
-  - @actus-ag/mastra-core@0.10.2-alpha.3
+  - @mastra/core@0.10.2-alpha.3
 
 ## 0.10.2-alpha.2
 
@@ -1101,7 +1101,7 @@
 - f0d559f: Fix peerdeps for alpha channel
 - a0ebc3f: Do not throw on lack of storage
 - Updated dependencies [1e8bb40]
-  - @actus-ag/mastra-core@0.10.2-alpha.2
+  - @mastra/core@0.10.2-alpha.2
 
 ## 0.10.2-alpha.1
 
@@ -1109,7 +1109,7 @@
 
 - Updated dependencies [ee77e78]
 - Updated dependencies [2901125]
-  - @actus-ag/mastra-core@0.10.2-alpha.1
+  - @mastra/core@0.10.2-alpha.1
 
 ## 0.10.2-alpha.0
 
@@ -1119,7 +1119,7 @@
 - e2228f6: Remove stray server log
 - Updated dependencies [592a2db]
 - Updated dependencies [e5dc18d]
-  - @actus-ag/mastra-core@0.10.2-alpha.0
+  - @mastra/core@0.10.2-alpha.0
 
 ## 0.10.1
 
@@ -1137,14 +1137,14 @@
 - Updated dependencies [5c41100]
 - Updated dependencies [d6a759b]
 - Updated dependencies [6015bdf]
-  - @actus-ag/mastra-core@0.10.1
+  - @mastra/core@0.10.1
 
 ## 0.10.1-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [d70b807]
-  - @actus-ag/mastra-core@0.10.1-alpha.3
+  - @mastra/core@0.10.1-alpha.3
 
 ## 0.10.1-alpha.1
 
@@ -1152,7 +1152,7 @@
 
 - 6015bdf: Leverage defaultAgentStreamOption, defaultAgentGenerateOption in playground
 - Updated dependencies [6015bdf]
-  - @actus-ag/mastra-core@0.10.1-alpha.2
+  - @mastra/core@0.10.1-alpha.2
 
 ## 0.10.1-alpha.0
 
@@ -1165,14 +1165,14 @@
 - Updated dependencies [38aee50]
 - Updated dependencies [5c41100]
 - Updated dependencies [d6a759b]
-  - @actus-ag/mastra-core@0.10.1-alpha.1
+  - @mastra/core@0.10.1-alpha.1
 
 ## 0.10.0
 
 ### Minor Changes
 
-- 83da932: Move @actus-ag/mastra-core to peerdeps
-- 5eb5a99: Remove pino from @actus-ag/mastra-core into @actus-ag/mastra-loggers
+- 83da932: Move @mastra/core to peerdeps
+- 5eb5a99: Remove pino from @mastra/core into @mastra/loggers
 
 ### Patch Changes
 
@@ -1197,14 +1197,14 @@
 - Updated dependencies [a7292b0]
 - Updated dependencies [0dcb9f0]
 - Updated dependencies [2672a05]
-  - @actus-ag/mastra-core@0.10.0
+  - @mastra/core@0.10.0
 
 ## 2.1.0-alpha.1
 
 ### Minor Changes
 
-- 83da932: Move @actus-ag/mastra-core to peerdeps
-- 5eb5a99: Remove pino from @actus-ag/mastra-core into @actus-ag/mastra-loggers
+- 83da932: Move @mastra/core to peerdeps
+- 5eb5a99: Remove pino from @mastra/core into @mastra/loggers
 
 ### Patch Changes
 
@@ -1220,7 +1220,7 @@
 - Updated dependencies [b2ae5aa]
 - Updated dependencies [a7292b0]
 - Updated dependencies [0dcb9f0]
-  - @actus-ag/mastra-core@0.10.0-alpha.1
+  - @mastra/core@0.10.0-alpha.1
 
 ## 2.0.5-alpha.0
 
@@ -1235,7 +1235,7 @@
 - Updated dependencies [d0ee3c6]
 - Updated dependencies [23f258c]
 - Updated dependencies [2672a05]
-  - @actus-ag/mastra-core@0.9.5-alpha.0
+  - @mastra/core@0.9.5-alpha.0
 
 ## 2.0.4
 
@@ -1261,7 +1261,7 @@
 - Updated dependencies [6fa1ad1]
 - Updated dependencies [c28d7a0]
 - Updated dependencies [edf1e88]
-  - @actus-ag/mastra-core@0.9.4
+  - @mastra/core@0.9.4
 
 ## 2.0.4-alpha.4
 
@@ -1269,7 +1269,7 @@
 
 - 5c70b8a: [MASTRA-3234] added limit for client-js getMessages
 - Updated dependencies [3e9c131]
-  - @actus-ag/mastra-core@0.9.4-alpha.4
+  - @mastra/core@0.9.4-alpha.4
 
 ## 2.0.4-alpha.3
 
@@ -1280,7 +1280,7 @@
 - Updated dependencies [c3bd795]
 - Updated dependencies [da082f8]
 - Updated dependencies [a5810ce]
-  - @actus-ag/mastra-core@0.9.4-alpha.3
+  - @mastra/core@0.9.4-alpha.3
 
 ## 2.0.4-alpha.2
 
@@ -1289,7 +1289,7 @@
 - Updated dependencies [3171b5b]
 - Updated dependencies [973e5ac]
 - Updated dependencies [9e1eff5]
-  - @actus-ag/mastra-core@0.9.4-alpha.2
+  - @mastra/core@0.9.4-alpha.2
 
 ## 2.0.4-alpha.1
 
@@ -1301,7 +1301,7 @@
 - Updated dependencies [6fa1ad1]
 - Updated dependencies [c28d7a0]
 - Updated dependencies [edf1e88]
-  - @actus-ag/mastra-core@0.9.4-alpha.1
+  - @mastra/core@0.9.4-alpha.1
 
 ## 2.0.4-alpha.0
 
@@ -1311,7 +1311,7 @@
 - 0b8b868: Added A2A support + streaming
 - Updated dependencies [daf942f]
 - Updated dependencies [0b8b868]
-  - @actus-ag/mastra-core@0.9.4-alpha.0
+  - @mastra/core@0.9.4-alpha.0
 
 ## 2.0.3
 
@@ -1327,7 +1327,7 @@
 - Updated dependencies [b5d2de0]
 - Updated dependencies [644f8ad]
 - Updated dependencies [70dbf51]
-  - @actus-ag/mastra-core@0.9.3
+  - @mastra/core@0.9.3
 
 ## 2.0.3-alpha.1
 
@@ -1338,7 +1338,7 @@
 - Updated dependencies [ca0dc88]
 - Updated dependencies [9cd1a46]
 - Updated dependencies [70dbf51]
-  - @actus-ag/mastra-core@0.9.3-alpha.1
+  - @mastra/core@0.9.3-alpha.1
 
 ## 2.0.3-alpha.0
 
@@ -1348,7 +1348,7 @@
 - Updated dependencies [526c570]
 - Updated dependencies [b5d2de0]
 - Updated dependencies [644f8ad]
-  - @actus-ag/mastra-core@0.9.3-alpha.0
+  - @mastra/core@0.9.3-alpha.0
 
 ## 2.0.2
 
@@ -1377,7 +1377,7 @@
 - Updated dependencies [3a5f1e1]
 - Updated dependencies [51e6923]
 - Updated dependencies [8398d89]
-  - @actus-ag/mastra-core@0.9.2
+  - @mastra/core@0.9.2
 
 ## 2.0.2-alpha.6
 
@@ -1388,7 +1388,7 @@
 - Updated dependencies [7d8b7c7]
 - Updated dependencies [3a5f1e1]
 - Updated dependencies [8398d89]
-  - @actus-ag/mastra-core@0.9.2-alpha.6
+  - @mastra/core@0.9.2-alpha.6
 
 ## 2.0.2-alpha.5
 
@@ -1399,7 +1399,7 @@
 - Updated dependencies [8607972]
 - Updated dependencies [7eeb2bc]
 - Updated dependencies [fba031f]
-  - @actus-ag/mastra-core@0.9.2-alpha.5
+  - @mastra/core@0.9.2-alpha.5
 
 ## 2.0.2-alpha.4
 
@@ -1407,7 +1407,7 @@
 
 - Updated dependencies [ccef9f9]
 - Updated dependencies [51e6923]
-  - @actus-ag/mastra-core@0.9.2-alpha.4
+  - @mastra/core@0.9.2-alpha.4
 
 ## 2.0.2-alpha.3
 
@@ -1418,21 +1418,21 @@
 - Updated dependencies [967b41c]
 - Updated dependencies [4155f47]
 - Updated dependencies [17826a9]
-  - @actus-ag/mastra-core@0.9.2-alpha.3
+  - @mastra/core@0.9.2-alpha.3
 
 ## 2.0.2-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [26738f4]
-  - @actus-ag/mastra-core@0.9.2-alpha.2
+  - @mastra/core@0.9.2-alpha.2
 
 ## 2.0.2-alpha.1
 
 ### Patch Changes
 
 - Updated dependencies [b804723]
-  - @actus-ag/mastra-core@0.9.2-alpha.1
+  - @mastra/core@0.9.2-alpha.1
 
 ## 2.0.2-alpha.0
 
@@ -1442,7 +1442,7 @@
   Return serializedStepGraph from vNext workflow
   Use serializedStepGraph in vNext workflow graph
 - Updated dependencies [0097d50]
-  - @actus-ag/mastra-core@0.9.2-alpha.0
+  - @mastra/core@0.9.2-alpha.0
 
 ## 2.0.1
 
@@ -1476,14 +1476,14 @@
 - Updated dependencies [2d4001d]
 - Updated dependencies [c71013a]
 - Updated dependencies [1d3b1cd]
-  - @actus-ag/mastra-core@0.9.1
+  - @mastra/core@0.9.1
 
 ## 2.0.1-alpha.8
 
 ### Patch Changes
 
 - Updated dependencies [2d17c73]
-  - @actus-ag/mastra-core@0.9.1-alpha.8
+  - @mastra/core@0.9.1-alpha.8
 
 ## 2.0.1-alpha.7
 
@@ -1491,14 +1491,14 @@
 
 - 1d3b1cd: Rebump
 - Updated dependencies [1d3b1cd]
-  - @actus-ag/mastra-core@0.9.1-alpha.7
+  - @mastra/core@0.9.1-alpha.7
 
 ## 2.0.1-alpha.6
 
 ### Patch Changes
 
 - Updated dependencies [c23a81c]
-  - @actus-ag/mastra-core@0.9.1-alpha.6
+  - @mastra/core@0.9.1-alpha.6
 
 ## 2.0.1-alpha.5
 
@@ -1506,7 +1506,7 @@
 
 - 3e7b69d: Dynamic agent props
 - Updated dependencies [3e7b69d]
-  - @actus-ag/mastra-core@0.9.1-alpha.5
+  - @mastra/core@0.9.1-alpha.5
 
 ## 2.0.1-alpha.4
 
@@ -1514,7 +1514,7 @@
 
 - Updated dependencies [e4943b8]
 - Updated dependencies [479f490]
-  - @actus-ag/mastra-core@0.9.1-alpha.4
+  - @mastra/core@0.9.1-alpha.4
 
 ## 2.0.1-alpha.3
 
@@ -1522,7 +1522,7 @@
 
 - 34a76ca: Call workflow cleanup function when closing watch stream controller
 - Updated dependencies [6262bd5]
-  - @actus-ag/mastra-core@0.9.1-alpha.3
+  - @mastra/core@0.9.1-alpha.3
 
 ## 2.0.1-alpha.2
 
@@ -1532,7 +1532,7 @@
 - Updated dependencies [405b63d]
 - Updated dependencies [61e92f5]
 - Updated dependencies [c71013a]
-  - @actus-ag/mastra-core@0.9.1-alpha.2
+  - @mastra/core@0.9.1-alpha.2
 
 ## 2.0.1-alpha.1
 
@@ -1551,14 +1551,14 @@
 - Updated dependencies [c1409ef]
 - Updated dependencies [11d4485]
 - Updated dependencies [2d4001d]
-  - @actus-ag/mastra-core@0.9.1-alpha.1
+  - @mastra/core@0.9.1-alpha.1
 
 ## 2.0.1-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [81fb7f6]
-  - @actus-ag/mastra-core@0.9.1-alpha.0
+  - @mastra/core@0.9.1-alpha.0
 
 ## 2.0.0
 
@@ -1586,7 +1586,7 @@
 - Updated dependencies [0f4eae3]
 - Updated dependencies [16a8648]
 - Updated dependencies [6f92295]
-  - @actus-ag/mastra-core@0.9.0
+  - @mastra/core@0.9.0
 
 ## 2.0.0-alpha.8
 
@@ -1601,35 +1601,35 @@
 - Updated dependencies [9c26508]
 - Updated dependencies [0f4eae3]
 - Updated dependencies [16a8648]
-  - @actus-ag/mastra-core@0.9.0-alpha.8
+  - @mastra/core@0.9.0-alpha.8
 
 ## 2.0.0-alpha.7
 
 ### Patch Changes
 
 - Updated dependencies [71d9444]
-  - @actus-ag/mastra-core@0.9.0-alpha.7
+  - @mastra/core@0.9.0-alpha.7
 
 ## 2.0.0-alpha.6
 
 ### Patch Changes
 
 - Updated dependencies [157c741]
-  - @actus-ag/mastra-core@0.9.0-alpha.6
+  - @mastra/core@0.9.0-alpha.6
 
 ## 2.0.0-alpha.5
 
 ### Patch Changes
 
 - Updated dependencies [08bb78e]
-  - @actus-ag/mastra-core@0.9.0-alpha.5
+  - @mastra/core@0.9.0-alpha.5
 
 ## 2.0.0-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [7e92011]
-  - @actus-ag/mastra-core@0.9.0-alpha.4
+  - @mastra/core@0.9.0-alpha.4
 
 ## 2.0.0-alpha.3
 
@@ -1640,14 +1640,14 @@
 ### Patch Changes
 
 - Updated dependencies [fe3ae4d]
-  - @actus-ag/mastra-core@0.9.0-alpha.3
+  - @mastra/core@0.9.0-alpha.3
 
 ## 1.0.4-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [9ee4293]
-  - @actus-ag/mastra-core@0.8.4-alpha.2
+  - @mastra/core@0.8.4-alpha.2
 
 ## 1.0.4-alpha.1
 
@@ -1655,14 +1655,14 @@
 
 - Updated dependencies [8a8a73b]
 - Updated dependencies [6f92295]
-  - @actus-ag/mastra-core@0.8.4-alpha.1
+  - @mastra/core@0.8.4-alpha.1
 
 ## 1.0.4-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [03f3cd0]
-  - @actus-ag/mastra-core@0.8.4-alpha.0
+  - @mastra/core@0.8.4-alpha.0
 
 ## 1.0.3
 
@@ -1678,14 +1678,14 @@
 - Updated dependencies [32e7b71]
 - Updated dependencies [37bb612]
 - Updated dependencies [7f1b291]
-  - @actus-ag/mastra-core@0.8.3
+  - @mastra/core@0.8.3
 
 ## 1.0.3-alpha.6
 
 ### Patch Changes
 
 - Updated dependencies [d72318f]
-  - @actus-ag/mastra-core@0.8.3-alpha.5
+  - @mastra/core@0.8.3-alpha.5
 
 ## 1.0.3-alpha.5
 
@@ -1698,21 +1698,21 @@
 ### Patch Changes
 
 - Updated dependencies [7f1b291]
-  - @actus-ag/mastra-core@0.8.3-alpha.4
+  - @mastra/core@0.8.3-alpha.4
 
 ## 1.0.3-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [10a8caf]
-  - @actus-ag/mastra-core@0.8.3-alpha.3
+  - @mastra/core@0.8.3-alpha.3
 
 ## 1.0.3-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [0bcc862]
-  - @actus-ag/mastra-core@0.8.3-alpha.2
+  - @mastra/core@0.8.3-alpha.2
 
 ## 1.0.3-alpha.1
 
@@ -1722,28 +1722,28 @@
 - 37bb612: Add Elastic-2.0 licensing for packages
 - Updated dependencies [32e7b71]
 - Updated dependencies [37bb612]
-  - @actus-ag/mastra-core@0.8.3-alpha.1
+  - @mastra/core@0.8.3-alpha.1
 
 ## 1.0.3-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [359b089]
-  - @actus-ag/mastra-core@0.8.3-alpha.0
+  - @mastra/core@0.8.3-alpha.0
 
 ## 1.0.2
 
 ### Patch Changes
 
 - Updated dependencies [a06aadc]
-  - @actus-ag/mastra-core@0.8.2
+  - @mastra/core@0.8.2
 
 ## 1.0.2-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [a06aadc]
-  - @actus-ag/mastra-core@0.8.2-alpha.0
+  - @mastra/core@0.8.2-alpha.0
 
 ## 1.0.1
 
@@ -1751,7 +1751,7 @@
 
 - Updated dependencies [99e2998]
 - Updated dependencies [8fdb414]
-  - @actus-ag/mastra-core@0.8.1
+  - @mastra/core@0.8.1
 
 ## 1.0.1-alpha.0
 
@@ -1759,7 +1759,7 @@
 
 - Updated dependencies [99e2998]
 - Updated dependencies [8fdb414]
-  - @actus-ag/mastra-core@0.8.1-alpha.0
+  - @mastra/core@0.8.1-alpha.0
 
 ## 1.0.0
 
@@ -1800,14 +1800,14 @@
 - Updated dependencies [8076ecf]
 - Updated dependencies [8df4a77]
 - Updated dependencies [304397c]
-  - @actus-ag/mastra-core@0.8.0
+  - @mastra/core@0.8.0
 
 ## 0.0.1-alpha.6
 
 ### Patch Changes
 
 - Updated dependencies [8df4a77]
-  - @actus-ag/mastra-core@0.8.0-alpha.8
+  - @mastra/core@0.8.0-alpha.8
 
 ## 0.0.1-alpha.5
 
@@ -1815,7 +1815,7 @@
 
 - febc8a6: Added dual tracing and fixed local tracing recursion
 - Updated dependencies [febc8a6]
-  - @actus-ag/mastra-core@0.8.0-alpha.7
+  - @mastra/core@0.8.0-alpha.7
 
 ## 0.0.1-alpha.4
 
@@ -1823,21 +1823,21 @@
 
 - a3f0e90: Update storage initialization to ensure tables are present
 - Updated dependencies [a3f0e90]
-  - @actus-ag/mastra-core@0.8.0-alpha.6
+  - @mastra/core@0.8.0-alpha.6
 
 ## 0.0.1-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [93875ed]
-  - @actus-ag/mastra-core@0.8.0-alpha.5
+  - @mastra/core@0.8.0-alpha.5
 
 ## 0.0.1-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [d7e08e8]
-  - @actus-ag/mastra-core@0.8.0-alpha.4
+  - @mastra/core@0.8.0-alpha.4
 
 ## 0.0.1-alpha.1
 
@@ -1854,7 +1854,7 @@
 - Updated dependencies [6330967]
 - Updated dependencies [8393832]
 - Updated dependencies [6330967]
-  - @actus-ag/mastra-core@0.8.0-alpha.3
+  - @mastra/core@0.8.0-alpha.3
 
 ## 0.0.1-alpha.0
 
@@ -1865,30 +1865,30 @@
 - Updated dependencies [56c31b7]
 - Updated dependencies [dbbbf80]
 - Updated dependencies [99d43b9]
-  - @actus-ag/mastra-core@0.8.0-alpha.2
+  - @mastra/core@0.8.0-alpha.2
 
 ## 0.2.5-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [b4fbc59]
-  - @actus-ag/mastra-core@0.6.5-alpha.0
+  - @mastra/core@0.6.5-alpha.0
 
 ## 0.2.4
 
 ### Patch Changes
 
-- e764fd1: Fix telemetry when side-effects are added to the mastra file
+- e764fd1: Fix telemetry when side-effects are added to the @mastra file
 - 709aa2c: fix building externals
-- e764fd1: Fix deployer when side-effects are added to the mastra file
-- 05ef3e0: Support voice for mastra client
+- e764fd1: Fix deployer when side-effects are added to the @mastra file
+- 05ef3e0: Support voice for @mastra client
 - 95c5745: Fix symlink resolving and externals
 - 85a2461: Fix cloudflare deployer
 - Updated dependencies [6794797]
 - Updated dependencies [fb68a80]
 - Updated dependencies [b56a681]
 - Updated dependencies [248cb07]
-  - @actus-ag/mastra-core@0.6.4
+  - @mastra/core@0.6.4
 
 ## 0.2.4-alpha.1
 
@@ -1897,20 +1897,20 @@
 - 709aa2c: fix building externals
 - 85a2461: Fix cloudflare deployer
 - Updated dependencies [6794797]
-  - @actus-ag/mastra-core@0.6.4-alpha.1
+  - @mastra/core@0.6.4-alpha.1
 
 ## 0.2.4-alpha.0
 
 ### Patch Changes
 
-- e764fd1: Fix telemetry when side-effects are added to the mastra file
-- e764fd1: Fix deployer when side-effects are added to the mastra file
-- 05ef3e0: Support voice for mastra client
+- e764fd1: Fix telemetry when side-effects are added to the @mastra file
+- e764fd1: Fix deployer when side-effects are added to the @mastra file
+- 05ef3e0: Support voice for @mastra client
 - 95c5745: Fix symlink resolving and externals
 - Updated dependencies [fb68a80]
 - Updated dependencies [b56a681]
 - Updated dependencies [248cb07]
-  - @actus-ag/mastra-core@0.6.4-alpha.0
+  - @mastra/core@0.6.4-alpha.0
 
 ## 0.2.3
 
@@ -1919,14 +1919,14 @@
 - 404640e: AgentNetwork changeset
 - Updated dependencies [404640e]
 - Updated dependencies [3bce733]
-  - @actus-ag/mastra-core@0.6.3
+  - @mastra/core@0.6.3
 
 ## 0.2.3-alpha.1
 
 ### Patch Changes
 
 - Updated dependencies [3bce733]
-  - @actus-ag/mastra-core@0.6.3-alpha.1
+  - @mastra/core@0.6.3-alpha.1
 
 ## 0.2.3-alpha.0
 
@@ -1934,7 +1934,7 @@
 
 - 404640e: AgentNetwork changeset
 - Updated dependencies [404640e]
-  - @actus-ag/mastra-core@0.6.3-alpha.0
+  - @mastra/core@0.6.3-alpha.0
 
 ## 0.2.2
 
@@ -1943,7 +1943,7 @@
 - 4e6732b: Add support for tsconfig paths aliases
 - Updated dependencies [beaf1c2]
 - Updated dependencies [3084e13]
-  - @actus-ag/mastra-core@0.6.2
+  - @mastra/core@0.6.2
 
 ## 0.2.2-alpha.1
 
@@ -1951,7 +1951,7 @@
 
 - Updated dependencies [beaf1c2]
 - Updated dependencies [3084e13]
-  - @actus-ag/mastra-core@0.6.2-alpha.0
+  - @mastra/core@0.6.2-alpha.0
 
 ## 0.2.2-alpha.0
 
@@ -1978,7 +1978,7 @@
 - Updated dependencies [9116d70]
 - Updated dependencies [6e559a0]
 - Updated dependencies [5f43505]
-  - @actus-ag/mastra-core@0.6.1
+  - @mastra/core@0.6.1
 
 ## 0.2.1-alpha.2
 
@@ -1992,7 +1992,7 @@
 - Updated dependencies [dfbb131]
 - Updated dependencies [0850b4c]
 - Updated dependencies [9116d70]
-  - @actus-ag/mastra-core@0.6.1-alpha.2
+  - @mastra/core@0.6.1-alpha.2
 
 ## 0.2.1-alpha.1
 
@@ -2004,14 +2004,14 @@
 - Updated dependencies [44631b1]
 - Updated dependencies [6e559a0]
 - Updated dependencies [5f43505]
-  - @actus-ag/mastra-core@0.6.1-alpha.1
+  - @mastra/core@0.6.1-alpha.1
 
 ## 0.2.1-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [7bcfaee]
-  - @actus-ag/mastra-core@0.6.1-alpha.0
+  - @mastra/core@0.6.1-alpha.0
 
 ## 0.2.0
 
@@ -2026,7 +2026,7 @@
 - Updated dependencies [95b4144]
 - Updated dependencies [3729dbd]
 - Updated dependencies [c2144f4]
-  - @actus-ag/mastra-core@0.6.0
+  - @mastra/core@0.6.0
 
 ## 0.2.0-alpha.1
 
@@ -2040,14 +2040,14 @@
 - Updated dependencies [1c8cda4]
 - Updated dependencies [95b4144]
 - Updated dependencies [c2144f4]
-  - @actus-ag/mastra-core@0.6.0-alpha.1
+  - @mastra/core@0.6.0-alpha.1
 
 ## 0.1.9-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [3729dbd]
-  - @actus-ag/mastra-core@0.5.1-alpha.0
+  - @mastra/core@0.5.1-alpha.0
 
 ## 0.1.8
 
@@ -2057,12 +2057,12 @@
 - e9fbac5: Update Vercel tools to have id and update deployer
 - 8deb34c: Better workflow watch api + watch workflow by runId
 - c2dde91: Return full workflow details in api/workflows endpoint
-- 5d41958: Remove redundant mastra server agent stream, generate messages validation
+- 5d41958: Remove redundant @mastra server agent stream, generate messages validation
 - 144b3d5: Update traces table UI, agent Chat UI
   Fix get workflows breaking
 - 03236ec: Added GRPC Exporter for Laminar and updated dodcs for Observability Providers
 - 731dd8a: Removed useless logging that showed up when user selected log drains tab on the playground
-- 0461849: Fixed a bug where mastra.db file location was inconsistently created when running mastra dev vs running a file directly (tsx src/index.ts for ex)
+- 0461849: Fixed a bug where @mastra.db file location was inconsistently created when running @actus-ag/@mastra/cli/cli dev vs running a file directly (tsx src/index.ts for ex)
 - fd4a1d7: Update cjs bundling to make sure files are split
 - 960690d: return runId from server on workflow watch
 - Updated dependencies [a910463]
@@ -2102,14 +2102,14 @@
 - Updated dependencies [358f069]
 - Updated dependencies [fd4a1d7]
 - Updated dependencies [c139344]
-  - @actus-ag/mastra-core@0.5.0
+  - @mastra/core@0.5.0
 
 ## 0.1.8-alpha.12
 
 ### Patch Changes
 
 - Updated dependencies [a85ab24]
-  - @actus-ag/mastra-core@0.5.0-alpha.12
+  - @mastra/core@0.5.0-alpha.12
 
 ## 0.1.8-alpha.11
 
@@ -2117,21 +2117,21 @@
 
 - 7a7a547: Fix telemetry getter in hono server
 - 8deb34c: Better workflow watch api + watch workflow by runId
-- 5d41958: Remove redundant mastra server agent stream, generate messages validation
+- 5d41958: Remove redundant @mastra server agent stream, generate messages validation
 - fd4a1d7: Update cjs bundling to make sure files are split
 - Updated dependencies [7a7a547]
 - Updated dependencies [c93798b]
 - Updated dependencies [dbd9f2d]
 - Updated dependencies [a171b37]
 - Updated dependencies [fd4a1d7]
-  - @actus-ag/mastra-core@0.5.0-alpha.11
+  - @mastra/core@0.5.0-alpha.11
 
 ## 0.1.8-alpha.10
 
 ### Patch Changes
 
 - Updated dependencies [a910463]
-  - @actus-ag/mastra-core@0.5.0-alpha.10
+  - @mastra/core@0.5.0-alpha.10
 
 ## 0.1.8-alpha.9
 
@@ -2142,35 +2142,35 @@
 - Updated dependencies [1e8bcbc]
 - Updated dependencies [aeb5e36]
 - Updated dependencies [f2301de]
-  - @actus-ag/mastra-core@0.5.0-alpha.9
+  - @mastra/core@0.5.0-alpha.9
 
 ## 0.1.8-alpha.8
 
 ### Patch Changes
 
 - Updated dependencies [506f1d5]
-  - @actus-ag/mastra-core@0.5.0-alpha.8
+  - @mastra/core@0.5.0-alpha.8
 
 ## 0.1.8-alpha.7
 
 ### Patch Changes
 
 - Updated dependencies [ee667a2]
-  - @actus-ag/mastra-core@0.5.0-alpha.7
+  - @mastra/core@0.5.0-alpha.7
 
 ## 0.1.8-alpha.6
 
 ### Patch Changes
 
 - Updated dependencies [f6678e4]
-  - @actus-ag/mastra-core@0.5.0-alpha.6
+  - @mastra/core@0.5.0-alpha.6
 
 ## 0.1.8-alpha.5
 
 ### Patch Changes
 
 - 03236ec: Added GRPC Exporter for Laminar and updated dodcs for Observability Providers
-- 0461849: Fixed a bug where mastra.db file location was inconsistently created when running mastra dev vs running a file directly (tsx src/index.ts for ex)
+- 0461849: Fixed a bug where @mastra.db file location was inconsistently created when running @actus-ag/@mastra/cli/cli dev vs running a file directly (tsx src/index.ts for ex)
 - Updated dependencies [22643eb]
 - Updated dependencies [6feb23f]
 - Updated dependencies [f2d6727]
@@ -2186,7 +2186,7 @@
 - Updated dependencies [0461849]
 - Updated dependencies [2259379]
 - Updated dependencies [358f069]
-  - @actus-ag/mastra-core@0.5.0-alpha.5
+  - @mastra/core@0.5.0-alpha.5
 
 ## 0.1.8-alpha.4
 
@@ -2195,28 +2195,28 @@
 - 144b3d5: Update traces table UI, agent Chat UI
   Fix get workflows breaking
 - Updated dependencies [d79aedf]
-  - @actus-ag/mastra-core@0.5.0-alpha.4
+  - @mastra/core@0.5.0-alpha.4
 
 ## 0.1.8-alpha.3
 
 ### Patch Changes
 
 - Updated dependencies [3d0e290]
-  - @actus-ag/mastra-core@0.5.0-alpha.3
+  - @mastra/core@0.5.0-alpha.3
 
 ## 0.1.8-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [02ffb7b]
-  - @actus-ag/mastra-core@0.5.0-alpha.2
+  - @mastra/core@0.5.0-alpha.2
 
 ## 0.1.8-alpha.1
 
 ### Patch Changes
 
 - Updated dependencies [dab255b]
-  - @actus-ag/mastra-core@0.5.0-alpha.1
+  - @mastra/core@0.5.0-alpha.1
 
 ## 0.1.8-alpha.0
 
@@ -2229,25 +2229,25 @@
 - Updated dependencies [29f3a82]
 - Updated dependencies [59df7b6]
 - Updated dependencies [c139344]
-  - @actus-ag/mastra-core@0.5.0-alpha.0
+  - @mastra/core@0.5.0-alpha.0
 
 ## 0.1.7
 
 ### Patch Changes
 
-- 30a4c29: fix mastra build errors related to esbuild not removing types
-- e1e2705: Added --ignore-workspace when installing dependencies in mastra build with pnpm package manager
+- 30a4c29: fix @actus-ag/@mastra/cli/cli build errors related to esbuild not removing types
+- e1e2705: Added --ignore-workspace when installing dependencies in @actus-ag/@mastra/cli/cli build with pnpm package manager
 - Updated dependencies [1da20e7]
-  - @actus-ag/mastra-core@0.4.4
+  - @mastra/core@0.4.4
 
 ## 0.1.7-alpha.0
 
 ### Patch Changes
 
-- 30a4c29: fix mastra build errors related to esbuild not removing types
-- e1e2705: Added --ignore-workspace when installing dependencies in mastra build with pnpm package manager
+- 30a4c29: fix @actus-ag/@mastra/cli/cli build errors related to esbuild not removing types
+- e1e2705: Added --ignore-workspace when installing dependencies in @actus-ag/@mastra/cli/cli build with pnpm package manager
 - Updated dependencies [1da20e7]
-  - @actus-ag/mastra-core@0.4.4-alpha.0
+  - @mastra/core@0.4.4-alpha.0
 
 ## 0.1.6
 
@@ -2273,14 +2273,14 @@
 - Updated dependencies [108793c]
 - Updated dependencies [5f28f44]
 - Updated dependencies [dabecf4]
-  - @actus-ag/mastra-core@0.4.3
+  - @mastra/core@0.4.3
 
 ## 0.1.6-alpha.4
 
 ### Patch Changes
 
 - Updated dependencies [dabecf4]
-  - @actus-ag/mastra-core@0.4.3-alpha.4
+  - @mastra/core@0.4.3-alpha.4
 
 ## 0.1.6-alpha.3
 
@@ -2295,7 +2295,7 @@
 - Updated dependencies [3f369a2]
 - Updated dependencies [4d4e1e1]
 - Updated dependencies [bb4f447]
-  - @actus-ag/mastra-core@0.4.3-alpha.3
+  - @mastra/core@0.4.3-alpha.3
 
 ## 0.1.6-alpha.2
 
@@ -2303,7 +2303,7 @@
 
 - Updated dependencies [2512a93]
 - Updated dependencies [e62de74]
-  - @actus-ag/mastra-core@0.4.3-alpha.2
+  - @mastra/core@0.4.3-alpha.2
 
 ## 0.1.6-alpha.1
 
@@ -2316,21 +2316,21 @@
 - Updated dependencies [3ee4831]
 - Updated dependencies [108793c]
 - Updated dependencies [5f28f44]
-  - @actus-ag/mastra-core@0.4.3-alpha.1
+  - @mastra/core@0.4.3-alpha.1
 
 ## 0.1.6-alpha.0
 
 ### Patch Changes
 
 - Updated dependencies [06aa827]
-  - @actus-ag/mastra-core@0.4.3-alpha.0
+  - @mastra/core@0.4.3-alpha.0
 
 ## 0.1.5
 
 ### Patch Changes
 
 - e4ee56c: Enable \* imports in analyze bundle
-- 2d68431: Fix mastra server error processing
+- 2d68431: Fix @mastra server error processing
 - e752340: Move storage/vector libSQL to own files so they do not get imported when not using bundlers.
 - Updated dependencies [7fceae1]
 - Updated dependencies [8d94c3e]
@@ -2339,7 +2339,7 @@
 - Updated dependencies [f626fbb]
 - Updated dependencies [e752340]
 - Updated dependencies [eb91535]
-  - @actus-ag/mastra-core@0.4.2
+  - @mastra/core@0.4.2
 
 ## 0.1.5-alpha.3
 
@@ -2350,20 +2350,20 @@
 - Updated dependencies [99dcdb5]
 - Updated dependencies [e752340]
 - Updated dependencies [eb91535]
-  - @actus-ag/mastra-core@0.4.2-alpha.2
+  - @mastra/core@0.4.2-alpha.2
 
 ## 0.1.5-alpha.2
 
 ### Patch Changes
 
 - Updated dependencies [6cb63e0]
-  - @actus-ag/mastra-core@0.4.2-alpha.1
+  - @mastra/core@0.4.2-alpha.1
 
 ## 0.1.5-alpha.1
 
 ### Patch Changes
 
-- 2d68431: Fix mastra server error processing
+- 2d68431: Fix @mastra server error processing
 
 ## 0.1.5-alpha.0
 
@@ -2372,7 +2372,7 @@
 - e4ee56c: Enable \* imports in analyze bundle
 - Updated dependencies [7fceae1]
 - Updated dependencies [f626fbb]
-  - @actus-ag/mastra-core@0.4.2-alpha.0
+  - @mastra/core@0.4.2-alpha.0
 
 ## 0.1.4
 
@@ -2382,7 +2382,7 @@
 - Updated dependencies [ce44b9b]
 - Updated dependencies [967da43]
 - Updated dependencies [b405f08]
-  - @actus-ag/mastra-core@0.4.1
+  - @mastra/core@0.4.1
 
 ## 0.1.3
 
@@ -2391,14 +2391,14 @@
 - 5297264: Fix build errors by changing contracts
 - Updated dependencies [2fc618f]
 - Updated dependencies [fe0fd01]
-  - @actus-ag/mastra-core@0.4.0
+  - @mastra/core@0.4.0
 
 ## 0.1.3-alpha.1
 
 ### Patch Changes
 
 - Updated dependencies [fe0fd01]
-  - @actus-ag/mastra-core@0.4.0-alpha.1
+  - @mastra/core@0.4.0-alpha.1
 
 ## 0.1.3-alpha.0
 
@@ -2406,20 +2406,20 @@
 
 - 5297264: Fix build errors by changing contracts
 - Updated dependencies [2fc618f]
-  - @actus-ag/mastra-core@0.4.0-alpha.0
+  - @mastra/core@0.4.0-alpha.0
 
 ## 0.1.2
 
 ### Patch Changes
 
 - Updated dependencies [f205ede]
-  - @actus-ag/mastra-core@0.3.0
+  - @mastra/core@0.3.0
 
 ## 0.1.1
 
 ### Patch Changes
 
-- 936dc26: Add mastra server endpoints for watch/resume + plug watch and resume functionality to dev playground
+- 936dc26: Add @mastra server endpoints for watch/resume + plug watch and resume functionality to dev playground
 - 91ef439: Add eslint and ran autofix
 - aac1667: Improve treeshaking of core and output
 - Updated dependencies [d59f1a8]
@@ -2428,13 +2428,13 @@
 - Updated dependencies [bf2e88f]
 - Updated dependencies [2f0d707]
 - Updated dependencies [aac1667]
-  - @actus-ag/mastra-core@0.2.1
+  - @mastra/core@0.2.1
 
 ## 0.1.1-alpha.0
 
 ### Patch Changes
 
-- 936dc26: Add mastra server endpoints for watch/resume + plug watch and resume functionality to dev playground
+- 936dc26: Add @mastra server endpoints for watch/resume + plug watch and resume functionality to dev playground
 - 91ef439: Add eslint and ran autofix
 - aac1667: Improve treeshaking of core and output
 - Updated dependencies [d59f1a8]
@@ -2443,7 +2443,7 @@
 - Updated dependencies [bf2e88f]
 - Updated dependencies [2f0d707]
 - Updated dependencies [aac1667]
-  - @actus-ag/mastra-core@0.2.1-alpha.0
+  - @mastra/core@0.2.1-alpha.0
 
 ## 0.1.0
 
@@ -2457,14 +2457,14 @@
 
 - 2ab57d6: Fix: Workflows require a trigger schema otherwise it fails to run in dev
 - a1774e7: Improve bundling
-- 291fe57: mastra openapi, swagger ui, dynamic servers
+- 291fe57: @mastra openapi, swagger ui, dynamic servers
 - e4d4ede: Better setLogger()
 - 73d112c: Core and deployer fixes
 - 9d1796d: Fix storage and eval serialization on api
 - e27fe69: Add dir to deployer
 - 246f06c: Fix import \* from telemetry package
 - ac8c61a: Mastra server vector operations
-- 82a6d53: better create-mastra tsconfig, better error for mastra server agent stream
+- 82a6d53: better @actus-ag/create-@mastra tsconfig, better error for @mastra server agent stream
 - bdaf834: publish packages
 - 7d83b92: Create default storage and move evals towards it
 - 8fa48b9: Add an API to enhance agent instructions
@@ -2477,10 +2477,10 @@
 - a9b5ddf: Publish new versions
 - 9066f95: CF deployer fixes
 - 4139b43: Deployer utils
-- ab01c53: Fix mastra server agent streamObject
+- ab01c53: Fix @mastra server agent streamObject
 - 1944807: Unified logger and major step in better logs
-- 8aec8b7: Normalize imports to package name and dedupe while writing package.json after mastra build
-- 685108a: Removing mastra syncs
+- 8aec8b7: Normalize imports to package name and dedupe while writing package.json after @actus-ag/@mastra/cli/cli build
+- 685108a: Removing @mastra syncs
 - 382f4dc: move telemetry init to instrumentation.mjs file in build directory
 - 7892533: Updated test evals to use Mastra Storage
 - 9c10484: update all packages
@@ -2497,8 +2497,8 @@
 - 6780223: fix workflow runId not unique per execution in dev
 - a8a459a: Updated Evals table UI
 - 0b96376: fix pino of being null
-- cfb966f: Deprecate @actus-ag/mastra-tts for mastra speech providers
-- 9625602: Use mastra core splitted bundles in other packages
+- cfb966f: Deprecate @mastra/tts for @mastra speech providers
+- 9625602: Use @mastra core splitted bundles in other packages
 - 72d1990: Updated evals table schema
 - a291824: Deployer fixes
 - 8ea426a: Fix patch
@@ -2515,7 +2515,7 @@
 - 9ade36e: Changed measure for evals, added endpoints, attached metrics to agent, added ui for evals in playground, and updated docs
 - d9c8dd0: Logger changes for default transports
 - 9fb59d6: changeset
-- f1e3105: Now that memory can be added to an agent, the playground needs to look up memory on the agent, not on mastra. Now the playground looks up on the agent to properly access memory
+- f1e3105: Now that memory can be added to an agent, the playground needs to look up memory on the agent, not on @mastra. Now the playground looks up on the agent to properly access memory
 - ae7bf94: Changeset
 - 4f1d1a1: Enforce types ann cleanup package.json
 - Updated dependencies [f537e33]
@@ -2671,7 +2671,7 @@
 - Updated dependencies [ee4de15]
 - Updated dependencies [202d404]
 - Updated dependencies [a221426]
-  - @actus-ag/mastra-core@0.2.0
+  - @mastra/core@0.2.0
 
 ## 0.1.0-alpha.63
 
@@ -2693,7 +2693,7 @@
 - Updated dependencies [fd75f3c]
 - Updated dependencies [ccf115c]
 - Updated dependencies [a221426]
-  - @actus-ag/mastra-core@0.2.0-alpha.110
+  - @mastra/core@0.2.0-alpha.110
 
 ## 0.1.0-alpha.61
 
@@ -2706,7 +2706,7 @@
 ### Patch Changes
 
 - Updated dependencies [d5fccfb]
-  - @actus-ag/mastra-core@0.2.0-alpha.109
+  - @mastra/core@0.2.0-alpha.109
 
 ## 0.1.0-alpha.59
 
@@ -2714,7 +2714,7 @@
 
 - Updated dependencies [5ee67d3]
 - Updated dependencies [95a4697]
-  - @actus-ag/mastra-core@0.2.0-alpha.108
+  - @mastra/core@0.2.0-alpha.108
 
 ## 0.1.0-alpha.58
 
@@ -2722,7 +2722,7 @@
 
 - 8fa48b9: Add an API to enhance agent instructions
 - Updated dependencies [66a5392]
-  - @actus-ag/mastra-core@0.2.0-alpha.107
+  - @mastra/core@0.2.0-alpha.107
 
 ## 0.1.0-alpha.57
 
@@ -2732,7 +2732,7 @@
 - 4a328af: Set request limit to 4.5MB
 - Updated dependencies [6f2c0f5]
 - Updated dependencies [a8a459a]
-  - @actus-ag/mastra-core@0.2.0-alpha.106
+  - @mastra/core@0.2.0-alpha.106
 
 ## 0.1.0-alpha.56
 
@@ -2746,7 +2746,7 @@
 
 - Updated dependencies [1420ae2]
 - Updated dependencies [99f1847]
-  - @actus-ag/mastra-core@0.2.0-alpha.105
+  - @mastra/core@0.2.0-alpha.105
 
 ## 0.1.0-alpha.54
 
@@ -2761,21 +2761,21 @@
 - Updated dependencies [72d1990]
 - Updated dependencies [cf6d825]
 - Updated dependencies [10870bc]
-  - @actus-ag/mastra-core@0.2.0-alpha.104
+  - @mastra/core@0.2.0-alpha.104
 
 ## 0.1.0-alpha.53
 
 ### Patch Changes
 
 - Updated dependencies [4534e77]
-  - @actus-ag/mastra-core@0.2.0-alpha.103
+  - @mastra/core@0.2.0-alpha.103
 
 ## 0.1.0-alpha.52
 
 ### Patch Changes
 
 - Updated dependencies [a9345f9]
-  - @actus-ag/mastra-core@0.2.0-alpha.102
+  - @mastra/core@0.2.0-alpha.102
 
 ## 0.1.0-alpha.51
 
@@ -2784,7 +2784,7 @@
 - 4f1d1a1: Enforce types ann cleanup package.json
 - Updated dependencies [66a03ec]
 - Updated dependencies [4f1d1a1]
-  - @actus-ag/mastra-core@0.2.0-alpha.101
+  - @mastra/core@0.2.0-alpha.101
 
 ## 0.1.0-alpha.50
 
@@ -2792,7 +2792,7 @@
 
 - 9d1796d: Fix storage and eval serialization on api
 - Updated dependencies [9d1796d]
-  - @actus-ag/mastra-core@0.2.0-alpha.100
+  - @mastra/core@0.2.0-alpha.100
 
 ## 0.1.0-alpha.49
 
@@ -2800,13 +2800,13 @@
 
 - 7d83b92: Create default storage and move evals towards it
 - Updated dependencies [7d83b92]
-  - @actus-ag/mastra-core@0.2.0-alpha.99
+  - @mastra/core@0.2.0-alpha.99
 
 ## 0.1.0-alpha.48
 
 ### Patch Changes
 
-- 8aec8b7: Normalize imports to package name and dedupe while writing package.json after mastra build
+- 8aec8b7: Normalize imports to package name and dedupe while writing package.json after @actus-ag/@mastra/cli/cli build
 
 ## 0.1.0-alpha.47
 
@@ -2815,7 +2815,7 @@
 - 70dabd9: Fix broken publish
 - Updated dependencies [70dabd9]
 - Updated dependencies [202d404]
-  - @actus-ag/mastra-core@0.2.0-alpha.98
+  - @mastra/core@0.2.0-alpha.98
 
 ## 0.1.0-alpha.46
 
@@ -2825,21 +2825,21 @@
 - e6d8055: Added Mastra Storage to add and query live evals
 - a18e96c: Array schemas for dev tool playground
 - 5950de5: Added update instructions API
-- f1e3105: Now that memory can be added to an agent, the playground needs to look up memory on the agent, not on mastra. Now the playground looks up on the agent to properly access memory
+- f1e3105: Now that memory can be added to an agent, the playground needs to look up memory on the agent, not on @mastra. Now the playground looks up on the agent to properly access memory
 - Updated dependencies [07c069d]
 - Updated dependencies [7892533]
 - Updated dependencies [e6d8055]
 - Updated dependencies [5950de5]
 - Updated dependencies [df843d3]
 - Updated dependencies [a870123]
-  - @actus-ag/mastra-core@0.2.0-alpha.97
+  - @mastra/core@0.2.0-alpha.97
 
 ## 0.1.0-alpha.45
 
 ### Patch Changes
 
 - Updated dependencies [74b3078]
-  - @actus-ag/mastra-core@0.2.0-alpha.96
+  - @mastra/core@0.2.0-alpha.96
 
 ## 0.1.0-alpha.44
 
@@ -2847,7 +2847,7 @@
 
 - 9fb59d6: changeset
 - Updated dependencies [9fb59d6]
-  - @actus-ag/mastra-core@0.2.0-alpha.95
+  - @mastra/core@0.2.0-alpha.95
 
 ## 0.1.0-alpha.43
 
@@ -2860,7 +2860,7 @@
 - 9c10484: update all packages
 - Updated dependencies [9c10484]
 - Updated dependencies [8b416d9]
-  - @actus-ag/mastra-core@0.2.0-alpha.94
+  - @mastra/core@0.2.0-alpha.94
 
 ## 0.1.0-alpha.42
 
@@ -2868,7 +2868,7 @@
 
 - 42a2e69: Fix playground error parsing
 - Updated dependencies [5285356]
-  - @actus-ag/mastra-core@0.2.0-alpha.93
+  - @mastra/core@0.2.0-alpha.93
 
 ## 0.1.0-alpha.41
 
@@ -2903,7 +2903,7 @@
 ### Patch Changes
 
 - Updated dependencies [4d4f6b6]
-  - @actus-ag/mastra-core@0.2.0-alpha.92
+  - @mastra/core@0.2.0-alpha.92
 
 ## 0.1.0-alpha.37
 
@@ -2914,39 +2914,39 @@
 - Updated dependencies [2017553]
 - Updated dependencies [a10b7a3]
 - Updated dependencies [16e5b04]
-  - @actus-ag/mastra-core@0.2.0-alpha.91
+  - @mastra/core@0.2.0-alpha.91
 
 ## 0.1.0-alpha.36
 
 ### Patch Changes
 
-- 82a6d53: better create-mastra tsconfig, better error for mastra server agent stream
+- 82a6d53: better @actus-ag/create-@mastra tsconfig, better error for @mastra server agent stream
 - Updated dependencies [8151f44]
 - Updated dependencies [e897f1c]
 - Updated dependencies [3700be1]
-  - @actus-ag/mastra-core@0.2.0-alpha.90
+  - @mastra/core@0.2.0-alpha.90
 
 ## 0.1.0-alpha.35
 
 ### Patch Changes
 
 - Updated dependencies [27275c9]
-  - @actus-ag/mastra-core@0.2.0-alpha.89
+  - @mastra/core@0.2.0-alpha.89
 
 ## 0.1.0-alpha.34
 
 ### Patch Changes
 
-- ab01c53: Fix mastra server agent streamObject
+- ab01c53: Fix @mastra server agent streamObject
 - Updated dependencies [ccbc581]
-  - @actus-ag/mastra-core@0.2.0-alpha.88
+  - @mastra/core@0.2.0-alpha.88
 
 ## 0.1.0-alpha.33
 
 ### Patch Changes
 
 - Updated dependencies [7365b6c]
-  - @actus-ag/mastra-core@0.2.0-alpha.87
+  - @mastra/core@0.2.0-alpha.87
 
 ## 0.1.0-alpha.32
 
@@ -2961,7 +2961,7 @@
 - Updated dependencies [7f24c29]
 - Updated dependencies [67637ba]
 - Updated dependencies [04f3171]
-  - @actus-ag/mastra-core@0.2.0-alpha.86
+  - @mastra/core@0.2.0-alpha.86
 
 ## 0.0.1-alpha.31
 
@@ -2969,7 +2969,7 @@
 
 - c5f2d50: Split deployer package
 - Updated dependencies [e9d1b47]
-  - @actus-ag/mastra-core@0.2.0-alpha.85
+  - @mastra/core@0.2.0-alpha.85
 
 ## 0.0.1-alpha.30
 
@@ -2987,19 +2987,19 @@
 - Updated dependencies [cb290ee]
 - Updated dependencies [b4d7416]
 - Updated dependencies [38b7f66]
-  - @actus-ag/mastra-core@0.2.0-alpha.84
+  - @mastra/core@0.2.0-alpha.84
 
 ## 0.0.1-alpha.28
 
 ### Patch Changes
 
 - 2ab57d6: Fix: Workflows require a trigger schema otherwise it fails to run in dev
-- 9625602: Use mastra core splitted bundles in other packages
+- 9625602: Use @mastra core splitted bundles in other packages
 - Updated dependencies [30322ce]
 - Updated dependencies [78eec7c]
 - Updated dependencies [9625602]
 - Updated dependencies [8769a62]
-  - @actus-ag/mastra-core@0.2.0-alpha.83
+  - @mastra/core@0.2.0-alpha.83
 
 ## 0.0.1-alpha.27
 
@@ -3008,28 +3008,28 @@
 - 73d112c: Core and deployer fixes
 - ac8c61a: Mastra server vector operations
 - Updated dependencies [73d112c]
-  - @actus-ag/mastra-core@0.1.27-alpha.82
+  - @mastra/core@0.1.27-alpha.82
 
 ## 0.0.1-alpha.26
 
 ### Patch Changes
 
 - Updated dependencies [9fb3039]
-  - @actus-ag/mastra-core@0.1.27-alpha.81
+  - @mastra/core@0.1.27-alpha.81
 
 ## 0.0.1-alpha.25
 
 ### Patch Changes
 
 - Updated dependencies [327ece7]
-  - @actus-ag/mastra-core@0.1.27-alpha.80
+  - @mastra/core@0.1.27-alpha.80
 
 ## 0.0.1-alpha.24
 
 ### Patch Changes
 
 - Updated dependencies [21fe536]
-  - @actus-ag/mastra-core@0.1.27-alpha.79
+  - @mastra/core@0.1.27-alpha.79
 
 ## 0.0.1-alpha.23
 
@@ -3042,18 +3042,18 @@
 ### Patch Changes
 
 - 685108a: Remove syncs and excess rag
-- 685108a: Removing mastra syncs
+- 685108a: Removing @mastra syncs
 - Updated dependencies [685108a]
 - Updated dependencies [685108a]
-  - @actus-ag/mastra-core@0.1.27-alpha.78
+  - @mastra/core@0.1.27-alpha.78
 
 ## 0.0.1-alpha.21
 
 ### Patch Changes
 
-- cfb966f: Deprecate @actus-ag/mastra-tts for mastra speech providers
+- cfb966f: Deprecate @mastra/tts for @mastra speech providers
 - Updated dependencies [8105fae]
-  - @actus-ag/mastra-core@0.1.27-alpha.77
+  - @mastra/core@0.1.27-alpha.77
 
 ## 0.0.1-alpha.20
 
@@ -3063,7 +3063,7 @@
 - ae7bf94: Changeset
 - Updated dependencies [ae7bf94]
 - Updated dependencies [ae7bf94]
-  - @actus-ag/mastra-core@0.1.27-alpha.76
+  - @mastra/core@0.1.27-alpha.76
 
 ## 0.0.1-alpha.19
 
@@ -3071,21 +3071,21 @@
 
 - 7064554: deployer fixes
 - Updated dependencies [23dcb23]
-  - @actus-ag/mastra-core@0.1.27-alpha.75
+  - @mastra/core@0.1.27-alpha.75
 
 ## 0.0.1-alpha.18
 
 ### Patch Changes
 
 - Updated dependencies [7b87567]
-  - @actus-ag/mastra-core@0.1.27-alpha.74
+  - @mastra/core@0.1.27-alpha.74
 
 ## 0.0.1-alpha.17
 
 ### Patch Changes
 
 - Updated dependencies [3427b95]
-  - @actus-ag/mastra-core@0.1.27-alpha.73
+  - @mastra/core@0.1.27-alpha.73
 
 ## 0.0.1-alpha.16
 
@@ -3094,7 +3094,7 @@
 - e4d4ede: Better setLogger()
 - Updated dependencies [e4d4ede]
 - Updated dependencies [06b2c0a]
-  - @actus-ag/mastra-core@0.1.27-alpha.72
+  - @mastra/core@0.1.27-alpha.72
 
 ## 0.0.1-alpha.15
 
@@ -3102,7 +3102,7 @@
 
 - d9c8dd0: Logger changes for default transports
 - Updated dependencies [d9c8dd0]
-  - @actus-ag/mastra-core@0.1.27-alpha.71
+  - @mastra/core@0.1.27-alpha.71
 
 ## 0.0.1-alpha.14
 
@@ -3134,7 +3134,7 @@
 
 - Updated dependencies [dd6d87f]
 - Updated dependencies [04434b6]
-  - @actus-ag/mastra-core@0.1.27-alpha.70
+  - @mastra/core@0.1.27-alpha.70
 
 ## 0.0.1-alpha.9
 
@@ -3156,13 +3156,13 @@
 - 9ade36e: Changed measure for evals, added endpoints, attached metrics to agent, added ui for evals in playground, and updated docs
 - Updated dependencies [1944807]
 - Updated dependencies [9ade36e]
-  - @actus-ag/mastra-core@0.1.27-alpha.69
+  - @mastra/core@0.1.27-alpha.69
 
 ## 0.0.1-alpha.6
 
 ### Patch Changes
 
-- 291fe57: mastra openapi, swagger ui, dynamic servers
+- 291fe57: @mastra openapi, swagger ui, dynamic servers
 - 1a41fbf: Fix playground workflow triggerData on execution
 
 ## 0.0.1-alpha.5
@@ -3171,7 +3171,7 @@
 
 - Updated dependencies [0be7181]
 - Updated dependencies [0be7181]
-  - @actus-ag/mastra-core@0.1.27-alpha.68
+  - @mastra/core@0.1.27-alpha.68
 
 ## 0.0.1-alpha.4
 
@@ -3185,7 +3185,7 @@
 
 - a291824: Deployer fixes
 - Updated dependencies [c8ff2f5]
-  - @actus-ag/mastra-core@0.1.27-alpha.67
+  - @mastra/core@0.1.27-alpha.67
 
 ## 0.0.1-alpha.2
 

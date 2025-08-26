@@ -74,11 +74,11 @@ curl http://localhost:4112/health
 
 ## MCP Integration
 
-This agent connects to an MCP server to get tools dynamically. The MCP client is configured in `src/mastra/mcp/mcp-client.ts` and can connect to any MCP server that implements the required tools.
+This agent connects to an MCP server to get tools dynamically. The MCP client is configured in `src/@mastra/mcp/mcp-client.ts` and can connect to any MCP server that implements the required tools.
 
 ## Customization
 
-- Modify the agent instructions in `src/mastra/agents/docs-agent.ts`
-- Change the MCP server connection in `src/mastra/mcp/mcp-client.ts`
-- Add additional agents in the `src/mastra/agents/` directory
-- Configure additional API routes in `src/mastra/index.ts`
+- Modify the agent instructions in `src/@mastra/agents/docs-agent.ts`
+- Change the MCP server connection in `src/@mastra/mcp/mcp-client.ts`
+- Add additional agents in the `src/@mastra/agents/` directory
+- Configure additional API routes in `src/@mastra/index.ts`

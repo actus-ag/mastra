@@ -1,18 +1,18 @@
 /**
  * @deprecated These prompts have been moved to their respective vector store packages.
  * Import them directly from the vector store package instead:
- * - ASTRA_PROMPT: @actus-ag/mastra-astra/vector/prompt
- * - CHROMA_PROMPT: @actus-ag/mastra-chroma/vector/prompt
- * - LIBSQL_PROMPT: @actus-ag/mastra-libsql/vector/prompt
- * - PGVECTOR_PROMPT: @actus-ag/mastra-pg/vector/prompt
- * - PINECONE_PROMPT: @actus-ag/mastra-pinecone/vector/prompt
- * - QDRANT_PROMPT: @actus-ag/mastra-qdrant/vector/prompt
- * - UPSTASH_PROMPT: @actus-ag/mastra-upstash/vector/prompt
- * - VECTORIZE_PROMPT: @actus-ag/mastra-vectorize/vector/prompt
- * - MONGODB_PROMPT: @actus-ag/mastra-mongodb/vector/prompt
+ * - ASTRA_PROMPT: @mastra/astra/vector/prompt
+ * - CHROMA_PROMPT: @mastra/chroma/vector/prompt
+ * - LIBSQL_PROMPT: @mastra/libsql/vector/prompt
+ * - PGVECTOR_PROMPT: @mastra/pg/vector/prompt
+ * - PINECONE_PROMPT: @mastra/pinecone/vector/prompt
+ * - QDRANT_PROMPT: @mastra/qdrant/vector/prompt
+ * - UPSTASH_PROMPT: @mastra/upstash/vector/prompt
+ * - VECTORIZE_PROMPT: @mastra/vectorize/vector/prompt
+ * - MONGODB_PROMPT: @mastra/mongodb/vector/prompt
  */
 
-/** @deprecated Import from @actus-ag/mastra-astra instead */
+/** @deprecated Import from @mastra/astra instead */
 export const ASTRA_PROMPT = `When querying Astra, you can ONLY use the operators listed below. Any other operators will be rejected.
 Important: Don't explain how to construct the filter - use the specified operators and fields to search the content and return relevant results.
 If a user tries to give an explicit operator that is not supported, reject the filter entirely and let them know that the operator is not supported.
@@ -101,7 +101,7 @@ Example Complex Query:
   ]
 }`;
 
-/** @deprecated Import from @actus-ag/mastra-chroma instead */
+/** @deprecated Import from @mastra/chroma instead */
 export const CHROMA_PROMPT = `When querying Chroma, you can ONLY use the operators listed below. Any other operators will be rejected.
 Important: Don't explain how to construct the filter - use the specified operators and fields to search the content and return relevant results.
 If a user tries to give an explicit operator that is not supported, reject the filter entirely and let them know that the operator is not supported.
@@ -170,7 +170,7 @@ Example Complex Query:
   ]
 }`;
 
-/** @deprecated Import from @actus-ag/mastra-libsql instead */
+/** @deprecated Import from @mastra/libsql instead */
 export const LIBSQL_PROMPT = `When querying LibSQL Vector, you can ONLY use the operators listed below. Any other operators will be rejected.
 Important: Don't explain how to construct the filter - use the specified operators and fields to search the content and return relevant results.
 If a user tries to give an explicit operator that is not supported, reject the filter entirely and let them know that the operator is not supported.
@@ -269,7 +269,7 @@ Example Complex Query:
   ]
 }`;
 
-/** @deprecated Import from @actus-ag/mastra-pg instead */
+/** @deprecated Import from @mastra/pg instead */
 export const PGVECTOR_PROMPT = `When querying PG Vector, you can ONLY use the operators listed below. Any other operators will be rejected.
 Important: Don't explain how to construct the filter - use the specified operators and fields to search the content and return relevant results.
 If a user tries to give an explicit operator that is not supported, reject the filter entirely and let them know that the operator is not supported.
@@ -371,7 +371,7 @@ Example Complex Query:
   ]
 }`;
 
-/** @deprecated Import from @actus-ag/mastra-pinecone instead */
+/** @deprecated Import from @mastra/pinecone instead */
 export const PINECONE_PROMPT = `When querying Pinecone, you can ONLY use the operators listed below. Any other operators will be rejected.
 Important: Don't explain how to construct the filter - use the specified operators and fields to search the content and return relevant results.
 If a user tries to give an explicit operator that is not supported, reject the filter entirely and let them know that the operator is not supported.
@@ -449,7 +449,7 @@ Example Complex Query:
   ]
 }`;
 
-/** @deprecated Import from @actus-ag/mastra-qdrant instead */
+/** @deprecated Import from @mastra/qdrant instead */
 export const QDRANT_PROMPT = `When querying Qdrant, you can ONLY use the operators listed below. Any other operators will be rejected.
 Important: Don't explain how to construct the filter - use the specified operators and fields to search the content and return relevant results.
 If a user tries to give an explicit operator that is not supported, reject the filter entirely and let them know that the operator is not supported.
@@ -597,7 +597,7 @@ Example Complex Query:
   ]
 }`;
 
-/** @deprecated Import from @actus-ag/mastra-upstash instead */
+/** @deprecated Import from @mastra/upstash instead */
 export const UPSTASH_PROMPT = `When querying Upstash Vector, you can ONLY use the operators listed below. Any other operators will be rejected.
 Important: Don't explain how to construct the filter - use the specified operators and fields to search the content and return relevant results.
 If a user tries to give an explicit operator that is not supported, reject the filter entirely and let them know that the operator is not supported.
@@ -691,7 +691,7 @@ Example Complex Query:
   ]
 }`;
 
-/** @deprecated Import from @actus-ag/mastra-vectorize instead */
+/** @deprecated Import from @mastra/vectorize instead */
 export const VECTORIZE_PROMPT = `When querying Vectorize, you can ONLY use the operators listed below. Any other operators will be rejected.
 Important: Don't explain how to construct the filter - use the specified operators and fields to search the content and return relevant results.
 If a user tries to give an explicit operator that is not supported, reject the filter entirely and let them know that the operator is not supported.
@@ -745,7 +745,7 @@ Example Complex Query:
   "inStock": true
 }`;
 
-/** @deprecated Import from @actus-ag/mastra-mongodb instead */
+/** @deprecated Import from @mastra/mongodb instead */
 export const MONGODB_PROMPT = `When querying MongoDB, you can ONLY use the operators listed below. Any other operators will be rejected.
 Important: Don't explain how to construct the filter - use the specified operators and fields to search the content and return relevant results.
 If a user tries to give an explicit operator that is not supported, reject the filter entirely and let them know that the operator is not supported.

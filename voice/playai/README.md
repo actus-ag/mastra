@@ -1,11 +1,11 @@
-# @actus-ag/mastra-voice-playai
+# @mastra/voice-playai
 
 PlayAI Voice integration for Mastra, providing Text-to-Speech (TTS) capabilities using PlayAI's voice synthesis technology.
 
 ## Installation
 
 ```bash
-npm install @actus-ag/mastra-voice-playai
+npm install @mastra/voice-playai
 ```
 
 ## Configuration
@@ -20,7 +20,7 @@ PLAYAI_USER_ID=your_user_id
 ## Usage
 
 ```typescript
-import { PlayAIVoice } from '@actus-ag/mastra-voice-playai';
+import { PlayAIVoice } from '@mastra/voice-playai';
 
 // Initialize with configuration
 const voice = new PlayAIVoice({

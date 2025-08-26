@@ -254,7 +254,7 @@ export function agentToStep<
   TMetrics extends Record<string, Metric> = Record<string, Metric>,
 >(
   agent: Agent<TAgentId, TTools, TMetrics>,
-  { mastra }: { mastra?: Mastra } = {},
+  { @mastra }: { @mastra?: Mastra } = {},
 ): StepAction<TAgentId, z.ZodObject<{ prompt: z.ZodString }>, z.ZodObject<{ text: z.ZodString }>, any> {
   return {
     id: agent.name,
@@ -266,8 +266,8 @@ export function agentToStep<
     outputSchema: z.object({
       text: z.string(),
     }),
-    execute: async ({ context, runId, mastra: mastraFromExecute }) => {
-      const realMastra = mastraFromExecute ?? mastra;
+    execute: async ({ context, runId, @mastra: @mastraFromExecute }) => {
+      const realMastra = @mastraFromExecute ?? @mastra;
       if (!realMastra) {
         throw new Error('Mastra instance not found');
       }
@@ -298,7 +298,7 @@ export function workflowToStep<
   TResultSchema extends z.ZodObject<any> = any,
 >(
   workflow: LegacyWorkflow<TSteps, TStepId, TTriggerSchema, TResultSchema>,
-  { mastra }: { mastra?: Mastra },
+  { @mastra }: { @mastra?: Mastra },
 ): StepAction<TStepId, TTriggerSchema, z.ZodType<WorkflowRunResult<TTriggerSchema, TSteps, TResultSchema>>, any> {
   workflow.setNested(true);
 
@@ -306,8 +306,8 @@ export function workflowToStep<
     id: workflow.name,
     workflow,
     workflowId: toCamelCaseWithRandomSuffix(workflow.name),
-    execute: async ({ context, suspend, emit, mastra: mastraFromExecute, runtimeContext }) => {
-      const realMastra = mastraFromExecute ?? mastra;
+    execute: async ({ context, suspend, emit, @mastra: @mastraFromExecute, runtimeContext }) => {
+      const realMastra = @mastraFromExecute ?? @mastra;
       if (realMastra) {
         workflow.__registerMastra(realMastra);
         workflow.__registerPrimitives({

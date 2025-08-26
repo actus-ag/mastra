@@ -1,11 +1,11 @@
-# @actus-ag/mastra-voice-azure
+# @mastra/voice-azure
 
 Azure Voice integration for Mastra, providing both Text-to-Speech (TTS) and Speech-to-Text (STT) capabilities using Azure's Cognitive Services Speech SDK.
 
 ## Installation
 
 ```bash
-npm install @actus-ag/mastra-voice-azure
+npm install @mastra/voice-azure
 ```
 
 ## Configuration
@@ -20,7 +20,7 @@ AZURE_REGION=your_azure_region
 ## Usage
 
 ```typescript
-import { AzureVoice } from '@actus-ag/mastra-voice-azure';
+import { AzureVoice } from '@mastra/voice-azure';
 
 // Create voice with both speech and listening capabilities
 const voice = new AzureVoice({

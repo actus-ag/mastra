@@ -6,7 +6,7 @@ import * as AIV5 from 'ai-v5';
 
 import { MastraError, ErrorDomain, ErrorCategory } from '../../error';
 import { DefaultGeneratedFileWithType } from '../../stream/aisdk/v5/file';
-import { convertToV1Messages } from './prompt/convert-to-mastra-v1';
+import { convertToV1Messages } from './prompt/convert-to-@mastra-v1';
 import { convertDataContentToBase64String } from './prompt/data-content';
 import type { AIV4Type, AIV5Type } from './types';
 import { getToolName } from './utils/ai-v5/tool';
@@ -195,13 +195,13 @@ export class MessageList {
   }
 
   private all = {
-    v3: (): MastraMessageV3[] => this.cleanV3Metadata(this.messages.map(this.mastraMessageV2ToMastraMessageV3)),
+    v3: (): MastraMessageV3[] => this.cleanV3Metadata(this.messages.map(this.@mastraMessageV2ToMastraMessageV3)),
     v2: (): MastraMessageV2[] => this.messages,
     v1: (): MastraMessageV1[] => convertToV1Messages(this.all.v2()),
 
     aiV5: {
       model: (): AIV5Type.ModelMessage[] => this.aiV5UIMessagesToAIV5ModelMessages(this.all.aiV5.ui()),
-      ui: (): AIV5Type.UIMessage[] => this.all.v3().map(MessageList.mastraMessageV3ToAIV5UIMessage),
+      ui: (): AIV5Type.UIMessage[] => this.all.v3().map(MessageList.@mastraMessageV3ToAIV5UIMessage),
 
       // Used when calling AI SDK streamText/generateText
       prompt: (): AIV5Type.ModelMessage[] => {
@@ -251,11 +251,11 @@ export class MessageList {
     /* @deprecated use list.get.all.aiV4.prompt() instead */
     prompt: () => this.all.aiV4.prompt(),
     /* @deprecated use list.get.all.aiV4.ui() */
-    ui: (): UIMessageWithMetadata[] => this.all.v2().map(MessageList.mastraMessageV2ToAIV4UIMessage),
+    ui: (): UIMessageWithMetadata[] => this.all.v2().map(MessageList.@mastraMessageV2ToAIV4UIMessage),
     /* @deprecated use list.get.all.aiV4.core() */
     core: (): AIV4Type.CoreMessage[] => this.aiV4UIMessagesToAIV4CoreMessages(this.all.aiV4.ui()),
     aiV4: {
-      ui: (): UIMessageWithMetadata[] => this.all.v2().map(MessageList.mastraMessageV2ToAIV4UIMessage),
+      ui: (): UIMessageWithMetadata[] => this.all.v2().map(MessageList.@mastraMessageV2ToAIV4UIMessage),
       core: (): AIV4Type.CoreMessage[] => this.aiV4UIMessagesToAIV4CoreMessages(this.all.aiV4.ui()),
 
       // Used when calling AI SDK streamText/generateText
@@ -299,21 +299,21 @@ export class MessageList {
   };
 
   private remembered = {
-    v3: () => this.remembered.v2().map(this.mastraMessageV2ToMastraMessageV3),
+    v3: () => this.remembered.v2().map(this.@mastraMessageV2ToMastraMessageV3),
     v2: () => this.messages.filter(m => this.memoryMessages.has(m)),
     v1: () => convertToV1Messages(this.remembered.v2()),
 
     aiV5: {
       model: () => this.aiV5UIMessagesToAIV5ModelMessages(this.remembered.aiV5.ui()),
-      ui: (): AIV5Type.UIMessage[] => this.remembered.v3().map(MessageList.mastraMessageV3ToAIV5UIMessage),
+      ui: (): AIV5Type.UIMessage[] => this.remembered.v3().map(MessageList.@mastraMessageV3ToAIV5UIMessage),
     },
 
     /* @deprecated use list.get.remembered.aiV4.ui() */
-    ui: (): UIMessageWithMetadata[] => this.remembered.v2().map(MessageList.mastraMessageV2ToAIV4UIMessage),
+    ui: (): UIMessageWithMetadata[] => this.remembered.v2().map(MessageList.@mastraMessageV2ToAIV4UIMessage),
     /* @deprecated use list.get.remembered.aiV4.core() */
     core: (): AIV4Type.CoreMessage[] => this.aiV4UIMessagesToAIV4CoreMessages(this.all.aiV4.ui()),
     aiV4: {
-      ui: (): UIMessageWithMetadata[] => this.remembered.v2().map(MessageList.mastraMessageV2ToAIV4UIMessage),
+      ui: (): UIMessageWithMetadata[] => this.remembered.v2().map(MessageList.@mastraMessageV2ToAIV4UIMessage),
       core: (): AIV4Type.CoreMessage[] => this.aiV4UIMessagesToAIV4CoreMessages(this.all.aiV4.ui()),
     },
   };
@@ -321,29 +321,29 @@ export class MessageList {
   private rememberedPersisted = {
     v2: () => this.all.v2().filter(m => this.memoryMessagesPersisted.has(m)),
     v1: () => convertToV1Messages(this.rememberedPersisted.v2()),
-    ui: () => this.rememberedPersisted.v2().map(MessageList.mastraMessageV2ToAIV4UIMessage),
+    ui: () => this.rememberedPersisted.v2().map(MessageList.@mastraMessageV2ToAIV4UIMessage),
     core: () => this.aiV4UIMessagesToAIV4CoreMessages(this.rememberedPersisted.ui()),
   };
 
   private input = {
     v3: () =>
       this.cleanV3Metadata(
-        this.messages.filter(m => this.newUserMessages.has(m)).map(this.mastraMessageV2ToMastraMessageV3),
+        this.messages.filter(m => this.newUserMessages.has(m)).map(this.@mastraMessageV2ToMastraMessageV3),
       ),
     v2: () => this.messages.filter(m => this.newUserMessages.has(m)),
     v1: () => convertToV1Messages(this.input.v2()),
 
     aiV5: {
       model: () => this.aiV5UIMessagesToAIV5ModelMessages(this.input.aiV5.ui()),
-      ui: (): AIV5Type.UIMessage[] => this.input.v3().map(MessageList.mastraMessageV3ToAIV5UIMessage),
+      ui: (): AIV5Type.UIMessage[] => this.input.v3().map(MessageList.@mastraMessageV3ToAIV5UIMessage),
     },
 
     /* @deprecated use list.get.input.aiV4.ui() instead */
-    ui: () => this.input.v2().map(MessageList.mastraMessageV2ToAIV4UIMessage),
+    ui: () => this.input.v2().map(MessageList.@mastraMessageV2ToAIV4UIMessage),
     /* @deprecated use list.get.core.aiV4.ui() instead */
     core: () => this.aiV4UIMessagesToAIV4CoreMessages(this.input.ui()),
     aiV4: {
-      ui: (): UIMessageWithMetadata[] => this.input.v2().map(MessageList.mastraMessageV2ToAIV4UIMessage),
+      ui: (): UIMessageWithMetadata[] => this.input.v2().map(MessageList.@mastraMessageV2ToAIV4UIMessage),
       core: (): AIV4Type.CoreMessage[] => this.aiV4UIMessagesToAIV4CoreMessages(this.input.aiV4.ui()),
     },
   };
@@ -351,21 +351,21 @@ export class MessageList {
   private inputPersisted = {
     v3: (): MastraMessageV3[] =>
       this.cleanV3Metadata(
-        this.messages.filter(m => this.newUserMessagesPersisted.has(m)).map(this.mastraMessageV2ToMastraMessageV3),
+        this.messages.filter(m => this.newUserMessagesPersisted.has(m)).map(this.@mastraMessageV2ToMastraMessageV3),
       ),
     v2: (): MastraMessageV2[] => this.messages.filter(m => this.newUserMessagesPersisted.has(m)),
     v1: (): MastraMessageV1[] => convertToV1Messages(this.inputPersisted.v2()),
-    ui: (): UIMessageWithMetadata[] => this.inputPersisted.v2().map(MessageList.mastraMessageV2ToAIV4UIMessage),
+    ui: (): UIMessageWithMetadata[] => this.inputPersisted.v2().map(MessageList.@mastraMessageV2ToAIV4UIMessage),
     core: () => this.aiV4UIMessagesToAIV4CoreMessages(this.inputPersisted.ui()),
   };
 
   private response = {
-    v3: (): MastraMessageV3[] => this.response.v2().map(this.mastraMessageV2ToMastraMessageV3),
+    v3: (): MastraMessageV3[] => this.response.v2().map(this.@mastraMessageV2ToMastraMessageV3),
     v2: (): MastraMessageV2[] => this.messages.filter(m => this.newResponseMessages.has(m)),
-    v1: (): MastraMessageV1[] => convertToV1Messages(this.response.v3().map(MessageList.mastraMessageV3ToV2)),
+    v1: (): MastraMessageV1[] => convertToV1Messages(this.response.v3().map(MessageList.@mastraMessageV3ToV2)),
 
     aiV5: {
-      ui: (): AIV5Type.UIMessage[] => this.response.v3().map(MessageList.mastraMessageV3ToAIV5UIMessage),
+      ui: (): AIV5Type.UIMessage[] => this.response.v3().map(MessageList.@mastraMessageV3ToAIV5UIMessage),
       model: (): AIV5ResponseMessage[] =>
         this.aiV5UIMessagesToAIV5ModelMessages(this.response.aiV5.ui()).filter(
           m => m.role === `tool` || m.role === `assistant`,
@@ -421,7 +421,7 @@ export class MessageList {
     },
 
     aiV4: {
-      ui: (): UIMessageWithMetadata[] => this.response.v2().map(MessageList.mastraMessageV2ToAIV4UIMessage),
+      ui: (): UIMessageWithMetadata[] => this.response.v2().map(MessageList.@mastraMessageV2ToAIV4UIMessage),
       core: (): AIV4Type.CoreMessage[] => this.aiV4UIMessagesToAIV4CoreMessages(this.response.aiV4.ui()),
     },
   };
@@ -429,10 +429,10 @@ export class MessageList {
   private responsePersisted = {
     v3: (): MastraMessageV3[] =>
       this.cleanV3Metadata(
-        this.messages.filter(m => this.newResponseMessagesPersisted.has(m)).map(this.mastraMessageV2ToMastraMessageV3),
+        this.messages.filter(m => this.newResponseMessagesPersisted.has(m)).map(this.@mastraMessageV2ToMastraMessageV3),
       ),
     v2: (): MastraMessageV2[] => this.messages.filter(m => this.newResponseMessagesPersisted.has(m)),
-    ui: (): UIMessageWithMetadata[] => this.responsePersisted.v2().map(MessageList.mastraMessageV2ToAIV4UIMessage),
+    ui: (): UIMessageWithMetadata[] => this.responsePersisted.v2().map(MessageList.@mastraMessageV2ToAIV4UIMessage),
   };
 
   public drainUnsavedMessages(): MastraMessageV2[] {
@@ -545,7 +545,7 @@ export class MessageList {
     );
   }
 
-  private static mastraMessageV2ToAIV4UIMessage(m: MastraMessageV2): UIMessageWithMetadata {
+  private static @mastraMessageV2ToAIV4UIMessage(m: MastraMessageV2): UIMessageWithMetadata {
     const experimentalAttachments: UIMessageWithMetadata['experimental_attachments'] = m.content
       .experimental_attachments
       ? [...m.content.experimental_attachments]
@@ -1029,7 +1029,7 @@ export class MessageList {
     }
 
     if (MessageList.isMastraMessageV1(message)) {
-      return this.mastraMessageV1ToMastraMessageV2(message, messageSource);
+      return this.@mastraMessageV1ToMastraMessageV2(message, messageSource);
     }
     if (MessageList.isMastraMessageV2(message)) {
       return this.hydrateMastraMessageV2Fields(message);
@@ -1042,13 +1042,13 @@ export class MessageList {
     }
 
     if (MessageList.isAIV5CoreMessage(message)) {
-      return MessageList.mastraMessageV3ToV2(this.aiV5ModelMessageToMastraMessageV3(message, messageSource));
+      return MessageList.@mastraMessageV3ToV2(this.aiV5ModelMessageToMastraMessageV3(message, messageSource));
     }
     if (MessageList.isAIV5UIMessage(message)) {
-      return MessageList.mastraMessageV3ToV2(this.aiV5UIMessageToMastraMessageV3(message, messageSource));
+      return MessageList.@mastraMessageV3ToV2(this.aiV5UIMessageToMastraMessageV3(message, messageSource));
     }
     if (MessageList.isMastraMessageV3(message)) {
-      return MessageList.mastraMessageV3ToV2(this.hydrateMastraMessageV3Fields(message));
+      return MessageList.@mastraMessageV3ToV2(this.hydrateMastraMessageV3Fields(message));
     }
 
     throw new Error(`Found unhandled message ${JSON.stringify(message)}`);
@@ -1096,7 +1096,7 @@ export class MessageList {
     return randomUUID();
   }
 
-  private mastraMessageV1ToMastraMessageV2(message: MastraMessageV1, messageSource: MessageSource): MastraMessageV2 {
+  private @mastraMessageV1ToMastraMessageV2(message: MastraMessageV1, messageSource: MessageSource): MastraMessageV2 {
     const coreV2 = this.aiV4CoreMessageToMastraMessageV2(
       {
         content: message.content,
@@ -1827,7 +1827,7 @@ export class MessageList {
     );
   }
 
-  private static mastraMessageV3ToV2(v3Msg: MastraMessageV3): MastraMessageV2 {
+  private static @mastraMessageV3ToV2(v3Msg: MastraMessageV3): MastraMessageV2 {
     const toolInvocationParts = v3Msg.content.parts.filter(p => AIV5.isToolUIPart(p));
 
     // Check if the original V2 message had toolInvocations field
@@ -1993,7 +1993,7 @@ export class MessageList {
     return v2Msg;
   }
 
-  private mastraMessageV2ToMastraMessageV3(v2Msg: MastraMessageV2): MastraMessageV3 {
+  private @mastraMessageV2ToMastraMessageV3(v2Msg: MastraMessageV2): MastraMessageV3 {
     const parts: MastraMessageContentV3['parts'] = [];
     const v3Msg: MastraMessageV3 = {
       id: v2Msg.id,
@@ -2177,7 +2177,7 @@ export class MessageList {
     return msgs;
   }
 
-  private static mastraMessageV3ToAIV5UIMessage(m: MastraMessageV3): AIV5Type.UIMessage {
+  private static @mastraMessageV3ToAIV5UIMessage(m: MastraMessageV3): AIV5Type.UIMessage {
     const metadata: Record<string, any> = {
       ...(m.content.metadata || {}),
     };
@@ -2201,8 +2201,8 @@ export class MessageList {
     messageSource: MessageSource,
   ): AIV4Type.CoreMessage[] {
     const v3 = messages.map(msg => this.aiV5ModelMessageToMastraMessageV3(msg, messageSource));
-    const v2 = v3.map(MessageList.mastraMessageV3ToV2);
-    const ui = v2.map(MessageList.mastraMessageV2ToAIV4UIMessage);
+    const v2 = v3.map(MessageList.@mastraMessageV3ToV2);
+    const ui = v2.map(MessageList.@mastraMessageV2ToAIV4UIMessage);
     const core = this.aiV4UIMessagesToAIV4CoreMessages(ui);
     return core;
   }
@@ -2211,13 +2211,13 @@ export class MessageList {
     messages: AIV4Type.CoreMessage[],
     source: MessageSource,
   ): AIV5Type.ModelMessage[] {
-    // kinda janky but we can pipe from v5model->mastra3->mastra2->v4ui->v4core to convert our v5 messages to v4 messages
+    // kinda janky but we can pipe from v5model->@mastra3->@mastra2->v4ui->v4core to convert our v5 messages to v4 messages
     // TODO: probably a good idea to make a direct v4->v5 converter
     return this.aiV5UIMessagesToAIV5ModelMessages(
       messages
         .map(m => this.aiV4CoreMessageToMastraMessageV2(m, source))
-        .map(m => this.mastraMessageV2ToMastraMessageV3(m))
-        .map(m => MessageList.mastraMessageV3ToAIV5UIMessage(m)),
+        .map(m => this.@mastraMessageV2ToMastraMessageV3(m))
+        .map(m => MessageList.@mastraMessageV3ToAIV5UIMessage(m)),
     );
   }
 

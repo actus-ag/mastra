@@ -1,4 +1,4 @@
-import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
+import { RuntimeContext } from '@mastra/core/runtime-context';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { rerank } from '../rerank';
 import { vectorQuerySearch } from '../utils';
@@ -189,7 +189,7 @@ describe('createVectorQueryTool', () => {
           queryText: 'test query',
           topK: 5,
         },
-        mastra: mockMastra as any,
+        @mastra: mockMastra as any,
         runtimeContext,
       });
 
@@ -220,7 +220,7 @@ describe('createVectorQueryTool', () => {
           topK: 5,
           filter: filterJson,
         },
-        mastra: mockMastra as any,
+        @mastra: mockMastra as any,
         runtimeContext,
       });
 
@@ -251,7 +251,7 @@ describe('createVectorQueryTool', () => {
           topK: 5,
           filter: stringFilter,
         },
-        mastra: mockMastra as any,
+        @mastra: mockMastra as any,
         runtimeContext,
       });
 
@@ -281,7 +281,7 @@ describe('createVectorQueryTool', () => {
       expect(vectorQuerySearch).not.toHaveBeenCalled();
     });
 
-    it('works without a mastra server if a vector store is passed as an argument', async () => {
+    it('works without a @mastra server if a vector store is passed as an argument', async () => {
       const testStore = {
         testStore: {},
       };
@@ -330,7 +330,7 @@ describe('createVectorQueryTool', () => {
       const runtimeContext = new RuntimeContext();
       const result = await tool.execute({
         context: { queryText: 'foo', topK: 1 },
-        mastra: mockMastra as any,
+        @mastra: mockMastra as any,
         runtimeContext,
       });
 
@@ -368,7 +368,7 @@ describe('createVectorQueryTool', () => {
       runtimeContext.set('includeSources', false);
       const result = await tool.execute({
         context: { queryText: 'foo', topK: 6 },
-        mastra: mockMastra as any,
+        @mastra: mockMastra as any,
         runtimeContext,
       });
       expect(result.relevantContext.length).toBeGreaterThan(0);
@@ -409,7 +409,7 @@ describe('createVectorQueryTool', () => {
       ]);
       const result = await tool.execute({
         context: { queryText: 'foo', topK: 1 },
-        mastra: mockMastra as any,
+        @mastra: mockMastra as any,
         runtimeContext,
       });
       expect(result.relevantContext[0]).toEqual({ text: 'bar' });

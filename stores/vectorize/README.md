@@ -1,17 +1,17 @@
-# @actus-ag/mastra-vectorize
+# @mastra/vectorize
 
 Vector store implementation for Vectorize, a managed vector database service optimized for AI applications.
 
 ## Installation
 
 ```bash
-npm install @actus-ag/mastra-vectorize
+npm install @mastra/vectorize
 ```
 
 ## Usage
 
 ```typescript
-import { VectorizeStore } from '@actus-ag/mastra-vectorize';
+import { VectorizeStore } from '@mastra/vectorize';
 
 const vectorStore = new VectorizeStore({
   apiKey: process.env.VECTORIZE_API_KEY,

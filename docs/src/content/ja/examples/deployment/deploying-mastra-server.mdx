@@ -5,12 +5,12 @@ title: Mastra サーバーのデプロイ
 アプリケーションをビルドし、生成された HTTP サーバーを起動します:
 
 ```bash showLineNumbers
-mastra build
-node .mastra/output/index.mjs
+@actus-ag/@mastra/cli/cli build
+node .@@mastra/cli/cli/cli/output/index.mjs
 ```
 
 生成されたサーバーにテレメトリーを含めるには:
 
 ```bash showLineNumbers
-node --import=./.mastra/output/instrumentation.mjs .mastra/output/index.mjs
+node --import=./.@@mastra/cli/cli/cli/output/instrumentation.mjs .@@mastra/cli/cli/cli/output/index.mjs
 ```

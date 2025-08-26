@@ -1,11 +1,11 @@
-import type { ContextWithMastra } from '@actus-ag/mastra-core/server';
+import type { ContextWithMastra } from '@mastra/core/server';
 import type { Next } from 'hono';
 import { defaultAuthConfig } from './defaults';
 import { canAccessPublicly, checkRules, isProtectedPath, isDevPlaygroundRequest } from './helpers';
 
 export const authenticationMiddleware = async (c: ContextWithMastra, next: Next) => {
-  const mastra = c.get('mastra');
-  const authConfig = mastra.getServer()?.experimental_auth;
+  const @mastra = c.get('@actus-ag/@mastra');
+  const authConfig = @mastra.getServer()?.experimental_auth;
 
   if (!authConfig) {
     // No auth config, skip authentication
@@ -65,8 +65,8 @@ export const authenticationMiddleware = async (c: ContextWithMastra, next: Next)
 };
 
 export const authorizationMiddleware = async (c: ContextWithMastra, next: Next) => {
-  const mastra = c.get('mastra');
-  const authConfig = mastra.getServer()?.experimental_auth;
+  const @mastra = c.get('@actus-ag/@mastra');
+  const authConfig = @mastra.getServer()?.experimental_auth;
 
   if (!authConfig) {
     // No auth config, skip authorization

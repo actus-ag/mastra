@@ -22,7 +22,7 @@ Mastraワークフローでは、変数は以下のような役割を果たし�
 
 `variables`プロパティを使用して、ワークフローにステップを追加する際にステップ間でデータをマッピングできます：
 
-```typescript showLineNumbers filename="src/mastra/workflows/index.ts" copy
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/workflows/index.ts" copy
 const workflow = new Workflow({
   name: "data-mapping-workflow",
   triggerSchema: z.object({
@@ -46,7 +46,7 @@ workflow
   .commit();
 
 // ワークフローをMastraに登録
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   workflows: { workflow },
 });
 ```
@@ -55,7 +55,7 @@ export const mastra = new Mastra({
 
 `path`フィールドでドット表記を使用してネストされたプロパティにアクセスできます：
 
-```typescript showLineNumbers filename="src/mastra/workflows/index.ts" copy
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/workflows/index.ts" copy
 workflow
   .step(step1)
   .then(step2, {
@@ -71,7 +71,7 @@ workflow
 
 パスとして`.`を使用することで、オブジェクト全体をマッピングできます：
 
-```typescript showLineNumbers filename="src/mastra/workflows/index.ts" copy
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/workflows/index.ts" copy
 workflow
   .step(step1, {
     variables: {
@@ -86,7 +86,7 @@ workflow
 
 変数は`while`および`until`ループにも渡すことができます。これは反復間やステップ外からデータを渡す場合に便利です：
 
-```typescript showLineNumbers filename="src/mastra/workflows/loop-variables.ts" copy
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/workflows/loop-variables.ts" copy
 // カウンターをインクリメントするステップ
 const incrementStep = new Step({
   id: "increment",
@@ -140,8 +140,8 @@ workflow.step(incrementStep).while(
 
 この例では、ワークフローのトリガーからステップにデータをマッピングする方法を示しています：
 
-```typescript showLineNumbers filename="src/mastra/workflows/trigger-mapping.ts" copy
-import { Step, Workflow, Mastra } from "@actus-ag/mastra-core";
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/workflows/trigger-mapping.ts" copy
+import { Step, Workflow, Mastra } from "@mastra/cli/cli/cli/core";
 import { z } from "zod";
 
 // Define a step that needs user input
@@ -175,7 +175,7 @@ workflow
   .commit();
 
 // Register the workflow with Mastra
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   workflows: { workflow },
 });
 ```
@@ -184,8 +184,8 @@ export const mastra = new Mastra({
 
 この例では、あるステップから別のステップへのデータマッピングを示しています：
 
-```typescript showLineNumbers filename="src/mastra/workflows/step-mapping.ts" copy
-import { Step, Workflow, Mastra } from "@actus-ag/mastra-core";
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/workflows/step-mapping.ts" copy
+import { Step, Workflow, Mastra } from "@mastra/cli/cli/cli/core";
 import { z } from "zod";
 
 // Step 1: Generate data
@@ -238,7 +238,7 @@ workflow
   .commit();
 
 // Register the workflow with Mastra
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   workflows: { workflow },
 });
 ```
@@ -247,8 +247,8 @@ export const mastra = new Mastra({
 
 Mastraは、TypeScriptを使用する際に変数マッピングの型安全性を提供します：
 
-```typescript showLineNumbers filename="src/mastra/workflows/type-safe.ts" copy
-import { Step, Workflow, Mastra } from "@actus-ag/mastra-core";
+```typescript showLineNumbers filename="src/@@mastra/cli/cli/cli/workflows/type-safe.ts" copy
+import { Step, Workflow, Mastra } from "@mastra/cli/cli/cli/core";
 import { z } from "zod";
 
 // Define schemas for better type safety
@@ -287,7 +287,7 @@ const workflow = new Workflow({
 workflow.step(step1).commit();
 
 // Register the workflow with Mastra
-export const mastra = new Mastra({
+export const @@mastra/cli/cli/cli = new Mastra({
   workflows: { workflow },
 });
 ```

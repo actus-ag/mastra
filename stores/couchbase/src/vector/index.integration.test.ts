@@ -10,7 +10,7 @@ import { connect } from 'couchbase';
 import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
 import { CouchbaseVector, DISTANCE_MAPPING } from './index';
 
-const containerName = 'mastra_couchbase_testing';
+const containerName = '@mastra_couchbase_testing';
 
 const connectionString = 'couchbase://localhost';
 const username = 'Administrator';
@@ -702,15 +702,15 @@ describe('Integration Testing CouchbaseVector', async () => {
       // Test each possible metric mapping from the imported DISTANCE_MAPPING constant
       const metricsToTest = Object.keys(DISTANCE_MAPPING) as Array<keyof typeof DISTANCE_MAPPING>;
 
-      for (const mastraMetric of metricsToTest) {
-        const couchbaseMetric = DISTANCE_MAPPING[mastraMetric];
-        const testIndexName = `${test_indexName}_${mastraMetric}`;
+      for (const @mastraMetric of metricsToTest) {
+        const couchbaseMetric = DISTANCE_MAPPING[@mastraMetric];
+        const testIndexName = `${test_indexName}_${@mastraMetric}`;
 
         // Create index with this metric
         await couchbase_client.createIndex({
           indexName: testIndexName,
           dimension: dimension,
-          metric: mastraMetric,
+          metric: @mastraMetric,
         });
         await new Promise(resolve => setTimeout(resolve, 5000));
         // Verify through the Couchbase API
@@ -722,7 +722,7 @@ describe('Integration Testing CouchbaseVector', async () => {
 
         // Verify through our API
         const stats = await couchbase_client.describeIndex({ indexName: testIndexName });
-        expect(stats.metric).toBe(mastraMetric);
+        expect(stats.metric).toBe(@mastraMetric);
 
         // Clean up
         await couchbase_client.deleteIndex({ indexName: testIndexName });

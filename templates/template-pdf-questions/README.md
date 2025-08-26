@@ -102,9 +102,9 @@ const questions = await generateQuestions(summary); // Much better!
 ### Using the Workflow
 
 ```typescript
-import { mastra } from './src/mastra/index';
+import { @mastra } from './src/@mastra/index';
 
-const run = await mastra.getWorkflow('pdfToQuestionsWorkflow').createRunAsync();
+const run = await @mastra.getWorkflow('pdfToQuestionsWorkflow').createRunAsync();
 
 // Using a PDF URL
 const result = await run.start({
@@ -119,9 +119,9 @@ console.log(result.result.questions);
 ### Using the PDF Questions Agent
 
 ```typescript
-import { mastra } from './src/mastra/index';
+import { @mastra } from './src/@mastra/index';
 
-const agent = mastra.getAgent('pdfQuestionsAgent');
+const agent = @mastra.getAgent('pdfQuestionsAgent');
 
 // The agent can handle the full process with natural language
 const response = await agent.stream([
@@ -139,14 +139,14 @@ for await (const chunk of response.textStream) {
 ### Using Individual Tools
 
 ```typescript
-import { mastra } from './src/mastra/index';
-import { pdfFetcherTool } from './src/mastra/tools/download-pdf-tool';
-import { generateQuestionsFromTextTool } from './src/mastra/tools/generate-questions-from-text-tool';
+import { @mastra } from './src/@mastra/index';
+import { pdfFetcherTool } from './src/@mastra/tools/download-pdf-tool';
+import { generateQuestionsFromTextTool } from './src/@mastra/tools/generate-questions-from-text-tool';
 
 // Step 1: Download PDF and generate summary
 const pdfResult = await pdfFetcherTool.execute({
   context: { pdfUrl: 'https://example.com/document.pdf' },
-  mastra,
+  @mastra,
   runtimeContext: new RuntimeContext(),
 });
 
@@ -159,7 +159,7 @@ const questionsResult = await generateQuestionsFromTextTool.execute({
     extractedText: pdfResult.summary,
     maxQuestions: 10,
   },
-  mastra,
+  @mastra,
   runtimeContext: new RuntimeContext(),
 });
 
@@ -261,7 +261,7 @@ export const textQuestionAgent = new Agent({
 ### Project Structure
 
 ```text
-src/mastra/
+src/@mastra/
 ├── agents/
 │   ├── pdf-question-agent.ts       # PDF processing and question generation agent
 │   └── text-question-agent.ts      # Text to questions generation agent

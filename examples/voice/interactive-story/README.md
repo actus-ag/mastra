@@ -24,7 +24,7 @@ OPENAI_API_KEY=your_api_key_here
 1. Start the Mastra development server:
 
 ```bash
-pnpm mastra:dev
+pnpm @mastra:dev
 ```
 
 2. In a new terminal, start the Next.js development server:

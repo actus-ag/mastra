@@ -1,8 +1,8 @@
-import { Mastra } from '@actus-ag/mastra-core/mastra';
-import { PinoLogger } from '@actus-ag/mastra-loggers';
-import { LibSQLStore } from '@actus-ag/mastra-libsql';
-import { registerCopilotKit } from '@ag-ui/mastra';
-import { RuntimeContext } from '@actus-ag/mastra-core/runtime-context';
+import { Mastra } from '@mastra/core/@mastra';
+import { PinoLogger } from '@mastra/loggers';
+import { LibSQLStore } from '@mastra/libsql';
+import { registerCopilotKit } from '@ag-ui/@mastra';
+import { RuntimeContext } from '@mastra/core/runtime-context';
 import { weatherAgent } from './agents';
 import { myNetwork } from './network';
 
@@ -12,13 +12,13 @@ type WeatherRuntimeContext = {
   location: string;
 };
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   agents: { weatherAgent },
   networks: {
     myNetwork,
   },
   storage: new LibSQLStore({
-    // stores telemetry, evals, ... into memory storage, if it needs to persist, change to file:../mastra.db
+    // stores telemetry, evals, ... into memory storage, if it needs to persist, change to file:../@mastra.db
     url: ':memory:',
   }),
   logger: new PinoLogger({

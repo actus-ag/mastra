@@ -1,4 +1,4 @@
-import type { GetToolResponse } from '@actus-ag/mastra-client-js';
+import type { GetToolResponse } from '@mastra-client-js';
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import { client } from '@/lib/client';

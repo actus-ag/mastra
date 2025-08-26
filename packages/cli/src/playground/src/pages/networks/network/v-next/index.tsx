@@ -2,7 +2,7 @@ import { v4 as uuid } from '@lukeed/uuid';
 
 import { useNetworkMemory, useNetworkMessages, useNetworkThreads } from '@/hooks/use-network-memory';
 
-import { MainContentContent, Message, NetworkProvider, VNextNetworkChat } from '@actus-ag/mastra-playground-ui';
+import { MainContentContent, Message, NetworkProvider, VNextNetworkChat } from '@mastra/cli/cli/cli/playground-ui';
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { NetworkSidebar } from '@/domains/networks/network-sidebar';

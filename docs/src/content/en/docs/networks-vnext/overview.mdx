@@ -31,14 +31,14 @@ There are two main problem areas that this system is designed to solve:
 ## Registering the network in Mastra
 
 ```typescript
-const mastra = new Mastra({
+const @@mastra/cli/cli/cli = new Mastra({
   vnext_networks: {
     'test-network': network,
   },
 });
 
 // using the network
-const network = mastra.vnext_getNetwork('test-network');
+const network = @@mastra/cli/cli/cli.vnext_getNetwork('test-network');
 
 if (!network) {
   throw new Error('Network not found');
@@ -47,12 +47,12 @@ if (!network) {
 console.log(await network.generate('What are the biggest cities in France?', { runtimeContext }));
 ```
 
-## Using @actus-ag/mastra-client-js
+## Using @@mastra/cli/cli/cli-client-js
 
-You can use the `@actus-ag/mastra-client-js` package to run the network from the client side.
+You can use the `@@mastra/cli/cli/cli-client-js` package to run the network from the client side.
 
 ```typescript
-import { MastraClient } from '@actus-ag/mastra-client-js';
+import { MastraClient } from '@@mastra/cli/cli/cli-client-js';
 
 const client = new MastraClient();
 

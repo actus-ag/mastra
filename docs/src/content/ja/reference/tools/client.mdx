@@ -227,8 +227,8 @@ async tools(): Promise<Record<string, Tool>>
 #### Stdioサーバーを使った例
 
 ```typescript
-import { Agent } from "@actus-ag/mastra-core/agent";
-import { MastraMCPClient } from "@actus-ag/mastra-mcp";
+import { Agent } from "@mastra/cli/cli/cli/core/agent";
+import { MastraMCPClient } from "@mastra/cli/cli/cli/mcp";
 import { openai } from "@ai-sdk/openai";
 
 // Initialize the MCP client using mcp/fetch as an example https://hub.docker.com/r/mcp/fetch
@@ -266,7 +266,7 @@ try {
 
   // Use the agent with the MCP tools
   const response = await agent.generate(
-    "Tell me about mastra.ai/docs. Tell me generally what this page is and the content it includes.",
+    "Tell me about @@mastra/cli/cli/cli.ai/docs. Tell me generally what this page is and the content it includes.",
     {
       toolsets: {
         fetch: tools,

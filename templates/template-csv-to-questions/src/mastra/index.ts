@@ -1,12 +1,12 @@
-import { Mastra } from '@actus-ag/mastra-core/mastra';
-import { PinoLogger } from '@actus-ag/mastra-loggers';
-import { LibSQLStore } from '@actus-ag/mastra-libsql';
+import { Mastra } from '@mastra/core/@mastra';
+import { PinoLogger } from '@mastra/loggers';
+import { LibSQLStore } from '@mastra/libsql';
 import { csvToQuestionsWorkflow } from './workflows/csv-to-questions-workflow';
 import { textQuestionAgent } from './agents/text-question-agent';
 import { csvQuestionAgent } from './agents/csv-question-agent';
 import { csvSummarizationAgent } from './agents/csv-summarization-agent';
 
-export const mastra = new Mastra({
+export const @mastra = new Mastra({
   workflows: { csvToQuestionsWorkflow },
   agents: {
     textQuestionAgent,
@@ -14,7 +14,7 @@ export const mastra = new Mastra({
     csvSummarizationAgent,
   },
   storage: new LibSQLStore({
-    // stores telemetry, evals, ... into memory storage, if it needs to persist, change to file:../mastra.db
+    // stores telemetry, evals, ... into memory storage, if it needs to persist, change to file:../@mastra.db
     url: ':memory:',
   }),
   logger: new PinoLogger({

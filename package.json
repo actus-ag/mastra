@@ -15,7 +15,12 @@
     "vitest": "^3.2.4"
   },
   "scripts": {
-    "ci:publish": "pnpm publish -r",
+    "ci:publish": "node scripts/publish-all.js",
+    "ci:publish:dry-run": "node scripts/publish-all.js --dry-run",
+    "ci:unpublish": "node scripts/unpublish-all.js",
+    "ci:unpublish:dry-run": "node scripts/unpublish-all.js --dry-run",
+    "scope:apply": "node scripts/scope-transform.js apply",
+    "scope:rollback": "node scripts/scope-transform.js rollback",
     "build": "pnpm turbo build --filter \"!./examples/*\" --filter \"!./examples/**/*\" --filter \"!./docs/\"",
     "build:integrations": "pnpm turbo build --filter \"./integrations/*\"",
     "build:packages": "pnpm turbo build --filter \"./packages/*\"",

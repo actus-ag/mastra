@@ -42,6 +42,11 @@ const SCOPE_MAPPINGS = {
   "'@mastra/deployer'": "'@actus-ag/mastra-deployer'",
   '@mastra/deployer': '@actus-ag/mastra-deployer',
   
+  // Playground UI package
+  '"@mastra/playground-ui"': '"@actus-ag/mastra-playground-ui"',
+  "'@mastra/playground-ui'": "'@actus-ag/mastra-playground-ui'",
+  '@mastra/playground-ui': '@actus-ag/mastra-playground-ui',
+  
   // CLI package references (not the package name itself)
   '"@mastra/cli"': '"@actus-ag/mastra-cli"',
   "'@mastra/cli'": "'@actus-ag/mastra-cli'",
@@ -63,6 +68,7 @@ const SCOPE_MAPPINGS = {
   '`@mastra/server`': '`@actus-ag/mastra-server`',
   '`@mastra/mcp`': '`@actus-ag/mastra-mcp`',
   '`@mastra/deployer`': '`@actus-ag/mastra-deployer`',
+  '`@mastra/playground-ui`': '`@actus-ag/mastra-playground-ui`',
   '`@mastra/cli`': '`@actus-ag/mastra-cli`',
   
   // Generic documentation pattern
@@ -108,6 +114,11 @@ const REVERSE_SCOPE_MAPPINGS = {
   "'@actus-ag/mastra-deployer'": "'@mastra/deployer'",
   '@actus-ag/mastra-deployer': '@mastra/deployer',
   
+  // Playground UI package (reverse)
+  '"@actus-ag/mastra-playground-ui"': '"@mastra/playground-ui"',
+  "'@actus-ag/mastra-playground-ui'": "'@mastra/playground-ui'",
+  '@actus-ag/mastra-playground-ui': '@mastra/playground-ui',
+  
   // CLI package references (reverse)
   '"@actus-ag/mastra-cli"': '"@mastra/cli"',
   "'@actus-ag/mastra-cli'": "'@mastra/cli'",
@@ -129,6 +140,7 @@ const REVERSE_SCOPE_MAPPINGS = {
   '`@actus-ag/mastra-server`': '`@mastra/server`',
   '`@actus-ag/mastra-mcp`': '`@mastra/mcp`',
   '`@actus-ag/mastra-deployer`': '`@mastra/deployer`',
+  '`@actus-ag/mastra-playground-ui`': '`@mastra/playground-ui`',
   '`@actus-ag/mastra-cli`': '`@mastra/cli`',
   
   // Generic documentation pattern (reverse)

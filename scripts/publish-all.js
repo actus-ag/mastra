@@ -47,6 +47,11 @@ async function getPublishablePackages() {
         continue;
       }
 
+      // Skip create-mastra (not affected by scope transformation)
+      if (pkg.name === 'create-mastra') {
+        continue;
+      }
+
       // Only include packages with a name and version
       if (pkg.name && pkg.version) {
         packages.push({

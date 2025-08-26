@@ -15,10 +15,10 @@
     "vitest": "^3.2.4"
   },
   "scripts": {
-    "ci:publish": "node scripts/publish-all.js",
-    "ci:publish:dry-run": "node scripts/publish-all.js --dry-run",
-    "ci:unpublish": "node scripts/unpublish-all.js",
-    "ci:unpublish:dry-run": "node scripts/unpublish-all.js --dry-run",
+    "publish": "node scripts/publish-all.js",
+    "publish:dry-run": "node scripts/publish-all.js --dry-run",
+    "unpublish": "node scripts/unpublish-all.js",
+    "unpublish:dry-run": "node scripts/unpublish-all.js --dry-run",
     "scope:apply": "node scripts/scope-transform.js apply && node scripts/refresh-workspace-links.js",
     "scope:rollback": "node scripts/scope-transform.js rollback && node scripts/refresh-workspace-links.js",
     "build": "pnpm scope:apply && pnpm turbo build --filter \"!./examples/*\" --filter \"!./examples/**/*\" --filter \"!./docs/\" && pnpm scope:rollback",

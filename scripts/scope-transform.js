@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 // Clean bidirectional mappings: @mastra/ <-> @actus-ag/mastra-
 const SCOPE_MAPPINGS = {
   // Root package name transformation
-  '"name": "mastra-turbo"': '"name": "@actus-ag/mastra-cli-turbo"',
+  '"name": "mastra-turbo"': '"name": "@actus-ag/mastra-turbo"',
   
   // Core package scope transformations: @mastra/ -> @actus-ag/mastra-
   '"@mastra/core"': '"@actus-ag/mastra-core"',
@@ -42,7 +42,7 @@ const SCOPE_MAPPINGS = {
   "'@mastra/deployer'": "'@actus-ag/mastra-deployer'",
   '@mastra/deployer': '@actus-ag/mastra-deployer',
   
-  // CLI package special case (TODO: may need different handling)
+  // CLI package references (not the package name itself)
   '"@mastra/cli"': '"@actus-ag/mastra-cli"',
   "'@mastra/cli'": "'@actus-ag/mastra-cli'",
   '@mastra/cli': '@actus-ag/mastra-cli',
@@ -69,10 +69,15 @@ const SCOPE_MAPPINGS = {
   '`@mastra/': '`@actus-ag/mastra-',
 };
 
+// Special mappings for CLI package name only (applied to specific files)
+const CLI_PACKAGE_MAPPINGS = {
+  '"name": "mastra"': '"name": "@actus-ag/mastra-cli"',
+};
+
 // Create proper reverse mappings for rollback
 const REVERSE_SCOPE_MAPPINGS = {
   // Root package name transformation (reverse)
-  '"name": "@actus-ag/mastra-cli-turbo"': '"name": "mastra-turbo"',
+  '"name": "@actus-ag/mastra-turbo"': '"name": "mastra-turbo"',
   
   // Core package scope transformations: @actus-ag/mastra- -> @mastra/
   '"@actus-ag/mastra-core"': '"@mastra/core"',
@@ -103,7 +108,7 @@ const REVERSE_SCOPE_MAPPINGS = {
   "'@actus-ag/mastra-deployer'": "'@mastra/deployer'",
   '@actus-ag/mastra-deployer': '@mastra/deployer',
   
-  // CLI package special case (reverse)
+  // CLI package references (reverse)
   '"@actus-ag/mastra-cli"': '"@mastra/cli"',
   "'@actus-ag/mastra-cli'": "'@mastra/cli'",
   '@actus-ag/mastra-cli': '@mastra/cli',
@@ -128,6 +133,11 @@ const REVERSE_SCOPE_MAPPINGS = {
   
   // Generic documentation pattern (reverse)
   '`@actus-ag/mastra-': '`@mastra/',
+};
+
+// Special reverse mappings for CLI package name only
+const REVERSE_CLI_PACKAGE_MAPPINGS = {
+  '"name": "@actus-ag/mastra-cli"': '"name": "mastra"',
 };
 
 // Files and directories to process
@@ -244,12 +254,27 @@ function findFiles(dir, patterns, excludePatterns) {
   return files;
 }
 
-function transformFile(filePath, mappings) {
+function transformFile(filePath, mappings, cliMappings = null) {
   try {
     let content = fs.readFileSync(filePath, 'utf8');
     let changed = false;
     
-    // Sort mappings by length (longest first) to avoid partial replacements
+    // Check if this is the CLI package.json file
+    const isCliPackageJson = filePath.endsWith('packages/cli/package.json');
+    
+    // Apply CLI-specific mappings first if this is the CLI package.json
+    if (isCliPackageJson && cliMappings) {
+      const sortedCliMappings = Object.entries(cliMappings).sort(([a], [b]) => b.length - a.length);
+      for (const [from, to] of sortedCliMappings) {
+        const regex = new RegExp(escapeRegExp(from), 'g');
+        if (regex.test(content)) {
+          content = content.replace(regex, to);
+          changed = true;
+        }
+      }
+    }
+    
+    // Apply regular mappings
     const sortedMappings = Object.entries(mappings).sort(([a], [b]) => b.length - a.length);
     
     for (const [from, to] of sortedMappings) {
@@ -318,16 +343,18 @@ function main() {
   }
   
   const mappings = command === 'apply' ? SCOPE_MAPPINGS : REVERSE_SCOPE_MAPPINGS;
+  const cliMappings = command === 'apply' ? CLI_PACKAGE_MAPPINGS : REVERSE_CLI_PACKAGE_MAPPINGS;
   const rootDir = path.resolve(__dirname, '..');
   
   console.log(`${command === 'apply' ? 'Applying' : 'Rolling back'} scope transformations...`);
   console.log(`Target: ${command === 'apply' ? '@mastra/* → @actus-ag/mastra-*' : '@actus-ag/mastra-* → @mastra/*'}`);
+  console.log(`CLI package: ${command === 'apply' ? 'mastra → @actus-ag/mastra-cli' : '@actus-ag/mastra-cli → mastra'}`);
   
   const files = findFiles(rootDir, INCLUDE_PATTERNS, EXCLUDE_PATTERNS);
   let changedFiles = 0;
   
   for (const file of files) {
-    if (transformFile(file, mappings)) {
+    if (transformFile(file, mappings, cliMappings)) {
       changedFiles++;
       console.log(`  ✓ ${path.relative(rootDir, file)}`);
     }
@@ -354,4 +381,4 @@ function main() {
 
 main();
 
-export { SCOPE_MAPPINGS, REVERSE_SCOPE_MAPPINGS, transformFile, findFiles };
+export { SCOPE_MAPPINGS, REVERSE_SCOPE_MAPPINGS, CLI_PACKAGE_MAPPINGS, REVERSE_CLI_PACKAGE_MAPPINGS, transformFile, findFiles };

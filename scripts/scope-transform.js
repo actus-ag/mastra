@@ -188,7 +188,7 @@ function detectCurrentScope() {
     // Determine scope based on package names
     const cliIsActusAg = cliPackageJson.name === '@actus-ag/mastra-cli';
     const cliIsMastra = cliPackageJson.name === 'mastra';
-    const rootIsActusAg = rootPackageJson.name === '@actus-ag/mastra-cli-turbo';
+    const rootIsActusAg = rootPackageJson.name === '@actus-ag/mastra-turbo';
     const rootIsMastra = rootPackageJson.name === 'mastra-turbo';
     
     if (cliIsActusAg && rootIsActusAg) {

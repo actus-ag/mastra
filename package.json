@@ -16,6 +16,10 @@
   },
   "scripts": {
     "ci:publish": "pnpm publish -r",
+    "ci:publish-all": "node scripts/publish-all.js",
+    "ci:publish-all:dry-run": "node scripts/publish-all.js --dry-run",
+    "ci:unpublish": "node scripts/unpublish-all.js",
+    "ci:unpublish:dry-run": "node scripts/unpublish-all.js --dry-run",
     "scope:apply": "node scripts/scope-transform.js apply",
     "scope:rollback": "node scripts/scope-transform.js rollback",
     "build": "pnpm scope:apply && pnpm turbo build --filter \"!./examples/*\" --filter \"!./examples/**/*\" --filter \"!./docs/\" && pnpm scope:rollback",

@@ -87,38 +87,52 @@ async function unpublishPackage(packageName, version) {
 }
 
 async function main() {
-  console.log('🔍 Finding publishable packages...');
-  const packages = await getPublishablePackages();
-  
-  if (packages.length === 0) {
-    console.log('No publishable packages found.');
-    return;
-  }
-  
-  console.log(`Found ${packages.length} publishable packages:`);
-  packages.forEach(pkg => console.log(`  - ${pkg.name}@${pkg.version}`));
-  
-  if (isDryRun) {
-    console.log('\n🏃 Dry run mode - no packages will be actually unpublished');
-  } else {
-    console.log('\n⚠️  WARNING: This will unpublish all packages from the registry!');
-    console.log('Press Ctrl+C to cancel, or wait 5 seconds to continue...');
-    await new Promise(resolve => setTimeout(resolve, 5000));
-  }
-  
-  console.log('\n🚀 Starting unpublish process...');
-  
-  for (const pkg of packages) {
-    const isPublished = await checkIfPackageIsPublished(pkg.name, pkg.version);
+  try {
+    // Apply scope transformation
+    console.log('🔄 Applying scope transformation...');
+    execSync('node scripts/scope-transform.js apply && node scripts/refresh-workspace-links.js', { stdio: 'inherit' });
+
+    console.log('🔍 Finding publishable packages...');
+    const packages = await getPublishablePackages();
     
-    if (isPublished) {
-      await unpublishPackage(pkg.name, pkg.version);
+    if (packages.length === 0) {
+      console.log('No publishable packages found.');
+      return;
+    }
+    
+    console.log(`Found ${packages.length} publishable packages:`);
+    packages.forEach(pkg => console.log(`  - ${pkg.name}@${pkg.version}`));
+    
+    if (isDryRun) {
+      console.log('\n🏃 Dry run mode - no packages will be actually unpublished');
     } else {
-      console.log(`⏭️  Skipping ${pkg.name}@${pkg.version} (not published)`);
+      console.log('\n⚠️  WARNING: This will unpublish all packages from the registry!');
+      console.log('Press Ctrl+C to cancel, or wait 5 seconds to continue...');
+      await new Promise(resolve => setTimeout(resolve, 5000));
+    }
+    
+    console.log('\n🚀 Starting unpublish process...');
+    
+    for (const pkg of packages) {
+      const isPublished = await checkIfPackageIsPublished(pkg.name, pkg.version);
+      
+      if (isPublished) {
+        await unpublishPackage(pkg.name, pkg.version);
+      } else {
+        console.log(`⏭️  Skipping ${pkg.name}@${pkg.version} (not published)`);
+      }
+    }
+    
+    console.log('\n✨ Unpublish process completed!');
+  } finally {
+    // Always rollback scope transformation, even if unpublish fails
+    console.log('🔄 Rolling back scope transformation...');
+    try {
+      execSync('node scripts/scope-transform.js rollback && node scripts/refresh-workspace-links.js', { stdio: 'inherit' });
+    } catch (rollbackError) {
+      console.error('❌ Failed to rollback scope transformation:', rollbackError.message);
     }
   }
-  
-  console.log('\n✨ Unpublish process completed!');
 }
 
 main().catch(error => {

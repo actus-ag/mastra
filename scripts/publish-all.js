@@ -85,7 +85,7 @@ async function publishPackage(packageName, version, directory) {
     console.log(`Publishing ${packageSpec}...`);
     // Determine registry based on package scope
     const registry = packageName.startsWith('@actus-ag/') ? '--registry https://verdaccio.actus-tax.com/' : '';
-    execSync(`pnpm publish ${registry}`, { stdio: 'inherit', cwd: directory });
+    execSync(`pnpm publish ${registry} --no-git-checks`, { stdio: 'inherit', cwd: directory });
     console.log(`✅ Successfully published ${packageSpec}`);
   } catch (error) {
     console.error(`❌ Failed to publish ${packageSpec}:`, error.message);
@@ -93,38 +93,52 @@ async function publishPackage(packageName, version, directory) {
 }
 
 async function main() {
-  console.log('🔍 Finding publishable packages...');
-  const packages = await getPublishablePackages();
+  try {
+    // Apply scope transformation
+    console.log('🔄 Applying scope transformation...');
+    execSync('node scripts/scope-transform.js apply && node scripts/refresh-workspace-links.js', { stdio: 'inherit' });
 
-  if (packages.length === 0) {
-    console.log('No publishable packages found.');
-    return;
-  }
+    console.log('🔍 Finding publishable packages...');
+    const packages = await getPublishablePackages();
 
-  console.log(`Found ${packages.length} publishable packages:`);
-  packages.forEach(pkg => console.log(`  - ${pkg.name}@${pkg.version}`));
+    if (packages.length === 0) {
+      console.log('No publishable packages found.');
+      return;
+    }
 
-  if (isDryRun) {
-    console.log('\n🏃 Dry run mode - no packages will be actually published');
-  } else {
-    console.log('\n⚠️  WARNING: This will publish all packages to the registry!');
-    console.log('Press Ctrl+C to cancel, or wait 5 seconds to continue...');
-    await new Promise(resolve => setTimeout(resolve, 5000));
-  }
+    console.log(`Found ${packages.length} publishable packages:`);
+    packages.forEach(pkg => console.log(`  - ${pkg.name}@${pkg.version}`));
 
-  console.log('\n🚀 Starting publish process...');
-
-  for (const pkg of packages) {
-    const isAlreadyPublished = await checkIfPackageIsPublished(pkg.name, pkg.version);
-
-    if (isAlreadyPublished) {
-      console.log(`⏭️  Skipping ${pkg.name}@${pkg.version} (already published)`);
+    if (isDryRun) {
+      console.log('\n🏃 Dry run mode - no packages will be actually published');
     } else {
-      await publishPackage(pkg.name, pkg.version, pkg.directory);
+      console.log('\n⚠️  WARNING: This will publish all packages to the registry!');
+      console.log('Press Ctrl+C to cancel, or wait 5 seconds to continue...');
+      await new Promise(resolve => setTimeout(resolve, 5000));
+    }
+
+    console.log('\n🚀 Starting publish process...');
+
+    for (const pkg of packages) {
+      const isAlreadyPublished = await checkIfPackageIsPublished(pkg.name, pkg.version);
+
+      if (isAlreadyPublished) {
+        console.log(`⏭️  Skipping ${pkg.name}@${pkg.version} (already published)`);
+      } else {
+        await publishPackage(pkg.name, pkg.version, pkg.directory);
+      }
+    }
+
+    console.log('\n✨ Publish process completed!');
+  } finally {
+    // Always rollback scope transformation, even if publish fails
+    console.log('🔄 Rolling back scope transformation...');
+    try {
+      execSync('node scripts/scope-transform.js rollback && node scripts/refresh-workspace-links.js', { stdio: 'inherit' });
+    } catch (rollbackError) {
+      console.error('❌ Failed to rollback scope transformation:', rollbackError.message);
     }
   }
-
-  console.log('\n✨ Publish process completed!');
 }
 
 main().catch(error => {

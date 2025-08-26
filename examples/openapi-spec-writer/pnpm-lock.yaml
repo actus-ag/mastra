@@ -5,32 +5,32 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@mastra/cli/cli/cli/core': link:../../packages/core
-  '@mastra/cli/cli/cli/firecrawl': link:../../integrations/firecrawl
-  '@mastra/cli/cli/cli/github': link:../../integrations/github
-  '@mastra/cli/cli/cli/loggers': link:../../packages/loggers
-  '@mastra/cli/cli/cli/rag': link:../../packages/rag
+  '@mastra/core': link:../../packages/core
+  '@mastra/firecrawl': link:../../integrations/firecrawl
+  '@mastra/github': link:../../integrations/github
+  '@mastra/loggers': link:../../packages/loggers
+  '@mastra/rag': link:../../packages/rag
 
 importers:
 
   .:
     dependencies:
       '@ai-sdk/openai':
-        specifier: ^1.3.22
-        version: 1.3.22(zod@3.25.67)
-      '@mastra/cli/cli/cli/core':
+        specifier: ^1.3.24
+        version: 1.3.24(zod@3.25.67)
+      '@mastra/core':
         specifier: link:../../packages/core
         version: link:../../packages/core
-      '@mastra/cli/cli/cli/firecrawl':
+      '@mastra/firecrawl':
         specifier: link:../../integrations/firecrawl
         version: link:../../integrations/firecrawl
-      '@mastra/cli/cli/cli/github':
+      '@mastra/github':
         specifier: link:../../integrations/github
         version: link:../../integrations/github
-      '@mastra/cli/cli/cli/loggers':
+      '@mastra/loggers':
         specifier: link:../../packages/loggers
         version: link:../../packages/loggers
-      '@mastra/cli/cli/cli/rag':
+      '@mastra/rag':
         specifier: link:../../packages/rag
         version: link:../../packages/rag
       '@radix-ui/react-accordion':
@@ -118,8 +118,8 @@ importers:
 
 packages:
 
-  '@ai-sdk/openai@1.3.22':
-    resolution: {integrity: sha512-QwA+2EkG0QyjVR+7h6FE7iOu2ivNqAVMm9UJZkVxxTk5OIq5fFJDTEI/zICEMuHImTTXR2JjsL6EirJ28Jc4cw==}
+  '@ai-sdk/openai@1.3.24':
+    resolution: {integrity: sha512-GYXnGJTHRTZc4gJMSmFRgEQudjqd4PUN0ZjQhPwOAYH1yOAvQoG/Ikqs+HyISRbLPCrhbZnPKCNHuRU4OfpW0Q==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.0.0
@@ -2487,7 +2487,7 @@ packages:
 
 snapshots:
 
-  '@ai-sdk/openai@1.3.22(zod@3.25.67)':
+  '@ai-sdk/openai@1.3.24(zod@3.25.67)':
     dependencies:
       '@ai-sdk/provider': 1.1.3
       '@ai-sdk/provider-utils': 2.2.8(zod@3.25.67)

@@ -1,6 +1,6 @@
 import { ExtendedLegacyWorkflowRunResult, ExtendedWorkflowWatchResult } from '@/hooks/use-workflows';
-import { WorkflowRunState } from '@mastra/cli/cli/cli/core';
-import { WorkflowWatchResult } from '@@mastra/cli/cli/cli-client-js';
+import { WorkflowRunState } from '@mastra/core/workflows';
+import { WorkflowWatchResult } from '@mastra/client-js';
 import { createContext, useEffect, useState } from 'react';
 import { convertWorkflowRunStateToWatchResult } from '../utils';
 

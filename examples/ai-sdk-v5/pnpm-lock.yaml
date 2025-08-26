@@ -9,32 +9,32 @@ importers:
   .:
     dependencies:
       '@ai-sdk/openai':
-        specifier: 2.0.0-beta.1
-        version: 2.0.0-beta.1(zod@3.25.67)
+        specifier: 2.0.15
+        version: 2.0.15(zod@3.25.67)
       '@ai-sdk/react':
-        specifier: 2.0.0-beta.1
-        version: 2.0.0-beta.1(react@19.1.1)(zod@3.25.67)
-      '@mastra/cli/cli/cli/core':
+        specifier: 2.0.15
+        version: 2.0.15(react@19.1.1)(zod@3.25.67)
+      '@mastra/core':
         specifier: 0.0.0-ai-v5-20250625173645
         version: 0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67)
-      '@mastra/cli/cli/cli/libsql':
+      '@mastra/libsql':
         specifier: 0.0.0-ai-v5-20250625173645
-        version: 0.0.0-ai-v5-20250625173645(@mastra/cli/cli/cli/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))
-      '@mastra/cli/cli/cli/loggers':
+        version: 0.0.0-ai-v5-20250625173645(@mastra/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))
+      '@mastra/loggers':
         specifier: 0.0.0-ai-v5-20250625173645
-        version: 0.0.0-ai-v5-20250625173645(@mastra/cli/cli/cli/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))
-      '@mastra/cli/cli/cli/memory':
+        version: 0.0.0-ai-v5-20250625173645(@mastra/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))
+      '@mastra/memory':
         specifier: 0.0.0-ai-v5-20250625173645
-        version: 0.0.0-ai-v5-20250625173645(@mastra/cli/cli/cli/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))
-      '@mastra/cli/cli/cli/pg':
+        version: 0.0.0-ai-v5-20250625173645(@mastra/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))
+      '@mastra/pg':
         specifier: 0.0.0-ai-v5-20250625173645
-        version: 0.0.0-ai-v5-20250625173645(@mastra/cli/cli/cli/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(pg-query-stream@4.8.1(pg@8.14.1))
-      '@mastra/cli/cli/cli/rag':
+        version: 0.0.0-ai-v5-20250625173645(@mastra/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(pg-query-stream@4.8.1(pg@8.14.1))
+      '@mastra/rag':
         specifier: 0.0.0-ai-v5-20250625173645
-        version: 0.0.0-ai-v5-20250625173645(@mastra/cli/cli/cli/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(ai@5.0.0-beta.1(zod@3.25.67))
-      '@mastra/cli/cli/cli/server':
+        version: 0.0.0-ai-v5-20250625173645(@mastra/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(ai@5.0.0-beta.1(zod@3.25.67))
+      '@mastra/server':
         specifier: 0.0.0-ai-v5-20250625173645
-        version: 0.0.0-ai-v5-20250625173645(@mastra/cli/cli/cli/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(zod@3.25.67)
+        version: 0.0.0-ai-v5-20250625173645(@mastra/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(zod@3.25.67)
       next:
         specifier: 15.2.4
         version: 15.2.4(@babel/core@7.27.7)(@opentelemetry/api@1.9.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -69,9 +69,9 @@ importers:
       eslint-config-next:
         specifier: 15.1.7
         version: 15.1.7(eslint@9.29.0(jiti@1.21.7))(typescript@5.8.3)
-      @@mastra/cli/cli/cli:
+      mastra:
         specifier: 0.0.0-ai-v5-20250625173645
-        version: 0.0.0-ai-v5-20250625173645(@mastra/cli/cli/cli/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(@opentelemetry/api@1.9.0)(react@19.1.1)(typescript@5.8.3)
+        version: 0.0.0-ai-v5-20250625173645(@mastra/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(@opentelemetry/api@1.9.0)(react@19.1.1)(typescript@5.8.3)
       postcss:
         specifier: ^8
         version: 8.5.6
@@ -90,11 +90,17 @@ packages:
     peerDependencies:
       zod: ^3.25.49
 
-  '@ai-sdk/openai@2.0.0-beta.1':
-    resolution: {integrity: sha512-Shl2lDoncbylj56hjBQ8ykELNqtOhdUrySSA3y/+vUnFQRYVp8ukj+opaO93P9WIt3TG/rk4qdJlfNBFrfyVBg==}
+  '@ai-sdk/gateway@1.0.7':
+    resolution: {integrity: sha512-Athrq7OARuNc0iHZJP6InhSQ53tImCc990vMWyR1UHaZgPZJbXjKhIMiOj54F0I0Nlemx48V4fHYUTfLkJotnQ==}
     engines: {node: '>=18'}
     peerDependencies:
-      zod: ^3.25.49
+      zod: ^3.25.76 || ^4
+
+  '@ai-sdk/openai@2.0.15':
+    resolution: {integrity: sha512-/IUyQ9ck4uUTtGojvQamcUWpNWkwpL/P1F6LYRxpQGj07H00oJEBH/VUizrIq0ZvW/vkuK6c6X4UJS9PrdYyxA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.25.76 || ^4
 
   '@ai-sdk/provider-utils@2.2.8':
     resolution: {integrity: sha512-fqhG+4sCVv8x7nFzYnFo19ryhAa3w096Kmc3hWxMQfW/TubPOmt3A6tYZhl4mUfQWWQMsuSkLrtjlWuXBVSGQA==}
@@ -108,20 +114,30 @@ packages:
     peerDependencies:
       zod: ^3.25.49
 
+  '@ai-sdk/provider-utils@3.0.3':
+    resolution: {integrity: sha512-kAxIw1nYmFW1g5TvE54ZB3eNtgZna0RnLjPUp1ltz1+t9xkXJIuDT4atrwfau9IbS0BOef38wqrI8CjFfQrxhw==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.25.76 || ^4
+
   '@ai-sdk/provider@1.1.3':
     resolution: {integrity: sha512-qZMxYJ0qqX/RfnuIaab+zp8UAeJn/ygXXAffR5I4N0n1IrvA6qBsjc8hXLmBiMV2zoXlifkacF7sEFnYnjBcqg==}
+    engines: {node: '>=18'}
+
+  '@ai-sdk/provider@2.0.0':
+    resolution: {integrity: sha512-6o7Y2SeO9vFKB8lArHXehNuusnpddKPk7xqL7T2/b+OvXMRIXUO1rR4wcv1hAFUAT9avGZshty3Wlua/XA7TvA==}
     engines: {node: '>=18'}
 
   '@ai-sdk/provider@2.0.0-beta.1':
     resolution: {integrity: sha512-Z8SPncMtS3RsoXITmT7NVwrAq6M44dmw0DoUOYJqNNtCu8iMWuxB8Nxsoqpa0uEEy9R1V1ZThJAXTYgjTUxl3w==}
     engines: {node: '>=18'}
 
-  '@ai-sdk/react@2.0.0-beta.1':
-    resolution: {integrity: sha512-Q1PZNMFnre+ubROM38UZlKoCZw/rkCMB6gP7dnFFQMSsUhM4xiCyyhvE4zOWrEf7uV+HnjLLAbcdltrb/31zvw==}
+  '@ai-sdk/react@2.0.15':
+    resolution: {integrity: sha512-6saQ4495OhxfmUHrR+HIk0/9S3n4I/ZR/G0mYr29ua4vqi5wOj1DbLO5zIFWiYiSvd/Ie1yFtXG4G9Cuglm+VA==}
     engines: {node: '>=18'}
     peerDependencies:
       react: ^18 || ^19 || ^19.0.0-rc
-      zod: ^3.25.49
+      zod: ^3.25.76 || ^4
     peerDependenciesMeta:
       zod:
         optional: true
@@ -789,59 +805,59 @@ packages:
     resolution: {integrity: sha512-qC72D4+CDdjGqJvkFMMEAtancHUQ7/d/tAiHf64z8MopFDmcrtbcJuerDtFceuAfQJ2pDSfCKCtbqoGBNnwg0w==}
     engines: {node: '>=8'}
 
-  '@mastra/cli/cli/cli/core@0.0.0-ai-v5-20250625173645':
+  '@mastra/core@0.0.0-ai-v5-20250625173645':
     resolution: {integrity: sha512-bS+n32pq3VYjQkCb78nCfokyZvvLtrxrFHhK4A6t7g8e4HOdi4L0V7qcTOGLmecH6y6tRea8m8n3rZgEt7zApA==}
     engines: {node: '>=20'}
     peerDependencies:
       zod: ^3.25.0
 
-  '@mastra/cli/cli/cli/deployer@0.0.0-ai-v5-20250625173645':
+  '@mastra/deployer@0.0.0-ai-v5-20250625173645':
     resolution: {integrity: sha512-LUdqcheWjFUlE5J+ZKHp/fDCy9q6aDUXo9F9K7ZW+EhH7FLx7t1VjFg+5A7CNaAODmlbp9cloQIu80JuHgHJCQ==}
     peerDependencies:
-      '@mastra/cli/cli/cli/core': 0.0.0-ai-v5-20250625173645
+      '@mastra/core': 0.0.0-ai-v5-20250625173645
 
-  '@mastra/cli/cli/cli/libsql@0.0.0-ai-v5-20250625173645':
+  '@mastra/libsql@0.0.0-ai-v5-20250625173645':
     resolution: {integrity: sha512-WYE0N/WXTFL2BPMr5Qfhu20cPt0jDt/t7C8/6mj+16sa76gmEX7HmFlFfHFRZaULr3MCMLVlpbAoit+6kxkHVw==}
     peerDependencies:
-      '@mastra/cli/cli/cli/core': 0.0.0-ai-v5-20250625173645
+      '@mastra/core': 0.0.0-ai-v5-20250625173645
 
-  '@mastra/cli/cli/cli/loggers@0.0.0-ai-v5-20250625173645':
+  '@mastra/loggers@0.0.0-ai-v5-20250625173645':
     resolution: {integrity: sha512-WSmvA/ptc9aJ3zlWld+b6ZURdKdxivpOSXW24dIu9Ef53/tiH4AS188mwSrBkDsHnxylkfD5oXza2vtju9lXQw==}
     peerDependencies:
-      '@mastra/cli/cli/cli/core': 0.0.0-ai-v5-20250625173645
+      '@mastra/core': 0.0.0-ai-v5-20250625173645
 
-  '@mastra/cli/cli/cli/mcp@0.0.0-ai-v5-20250625173645':
+  '@mastra/mcp@0.0.0-ai-v5-20250625173645':
     resolution: {integrity: sha512-XyGm+RMGc9UF86JVE0//oqwSkNhGiDKe9YCOykxY06YbT6zEL2uLEpJmM76gtDXAzal7qdQxXgbB04hrtks1QA==}
     peerDependencies:
-      '@mastra/cli/cli/cli/core': 0.0.0-ai-v5-20250625173645
+      '@mastra/core': 0.0.0-ai-v5-20250625173645
       zod: ^3.0.0
 
-  '@mastra/cli/cli/cli/memory@0.0.0-ai-v5-20250625173645':
+  '@mastra/memory@0.0.0-ai-v5-20250625173645':
     resolution: {integrity: sha512-D5b4gutWAxMVR9P1uuilE2CXhcaBild+gtTD3z/r3rVThsB1rAIny0wKUYE5gnTEg04shIBQO0bjK4JXo3nHZA==}
     peerDependencies:
-      '@mastra/cli/cli/cli/core': 0.0.0-ai-v5-20250625173645
+      '@mastra/core': 0.0.0-ai-v5-20250625173645
 
-  '@mastra/cli/cli/cli/pg@0.0.0-ai-v5-20250625173645':
+  '@mastra/pg@0.0.0-ai-v5-20250625173645':
     resolution: {integrity: sha512-Pr0CZD3/hKvvOD1CVVstdzzYqS16Qhdk1l4/Gbx6bHzXW22iIajlnROY4tOJgPseFmwhnNQt1jdEsiSIsNwVZA==}
     peerDependencies:
-      '@mastra/cli/cli/cli/core': 0.0.0-ai-v5-20250625173645
+      '@mastra/core': 0.0.0-ai-v5-20250625173645
 
-  '@mastra/cli/cli/cli/rag@0.0.0-ai-v5-20250625173645':
+  '@mastra/rag@0.0.0-ai-v5-20250625173645':
     resolution: {integrity: sha512-YQazVIhvaDLn3YsCmFvPlJGe3oJf8lQXeF+FDthPP66d5RoP87WPpFkhHaHrBn3x896bd/PU1V7JtfnHkziZ4w==}
     peerDependencies:
-      '@mastra/cli/cli/cli/core': 0.0.0-ai-v5-20250625173645
+      '@mastra/core': 0.0.0-ai-v5-20250625173645
       ai: 5.0.0-beta.1
 
-  '@mastra/cli/cli/cli/schema-compat@0.0.0-ai-v5-20250625173645':
+  '@mastra/schema-compat@0.0.0-ai-v5-20250625173645':
     resolution: {integrity: sha512-pWeYqrFYb11k7s5eyAgI6Cwfj3FB9Dk7X0twrRmxYoXBiPdxCGOJVJ+L3R2i505A7kZXgAWQr+GMLghHFMIvnw==}
     peerDependencies:
       ai: 5.0.0-beta.1
       zod: ^3.0.0
 
-  '@mastra/cli/cli/cli/server@0.0.0-ai-v5-20250625173645':
+  '@mastra/server@0.0.0-ai-v5-20250625173645':
     resolution: {integrity: sha512-IJjeOHOCa8nFMGCqc2iD4lsjz9Gn8uX+xEhFj1AgBOFRYOb0C9HIJktz270JJCTIVUVIxzn+ylobfHXNM8wvtg==}
     peerDependencies:
-      '@mastra/cli/cli/cli/core': 0.0.0-ai-v5-20250625173645
+      '@mastra/core': 0.0.0-ai-v5-20250625173645
       zod: ^3.0.0
 
   '@modelcontextprotocol/sdk@1.13.2':
@@ -2155,6 +2171,12 @@ packages:
     peerDependencies:
       zod: ^3.25.49
 
+  ai@5.0.15:
+    resolution: {integrity: sha512-EX5hF+NVFm6R11mvdZRbg6eJEjyMlniI4/xOnyTh4VtDQ457lhIgi3kDGrHW3/qw9ELon9m2e7AK3g5z5sLwsQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.25.76 || ^4
+
   ajv@6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
 
@@ -2810,6 +2832,10 @@ packages:
   eventsource-parser@3.0.2:
     resolution: {integrity: sha512-6RxOBZ/cYgd8usLwsEl+EC09Au/9BcmCKYF2/xbml6DNczf7nv0MQb+7BA2F+li6//I+28VNlQR37XfQtcAJuA==}
     engines: {node: '>=18.0.0'}
+
+  eventsource-parser@3.0.5:
+    resolution: {integrity: sha512-bSRG85ZrMdmWtm7qkF9He9TNRzc/Bm99gEJMaQoHJ9E6Kv9QBbsldh2oMj7iXmYNEAVvNgvv5vPorG6W+XtBhQ==}
+    engines: {node: '>=20.0.0'}
 
   eventsource@3.0.7:
     resolution: {integrity: sha512-CRT1WTyuQoD771GW56XEZFQ/ZoSfWid1alKGDYMmkt2yl8UXrVR4pspqWNEcqKvVIzg6PAltWjxcSSPrboA4iA==}
@@ -3514,11 +3540,11 @@ packages:
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
 
-  @actus-ag/@mastra/cli/cli@0.0.0-ai-v5-20250625173645:
+  mastra@0.0.0-ai-v5-20250625173645:
     resolution: {integrity: sha512-sMrfwvmveQKCceA3YVZFExb8qwV0OIRDCs3Skx94ANb8D+jK8C/3lLrMvgTZ6FsVa+6YgetxBiqFGgZm3dmVQg==}
     hasBin: true
     peerDependencies:
-      '@mastra/cli/cli/cli/core': 0.0.0-ai-v5-20250625173645
+      '@mastra/core': 0.0.0-ai-v5-20250625173645
 
   math-intrinsics@1.1.0:
     resolution: {integrity: sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==}
@@ -4727,10 +4753,16 @@ snapshots:
       '@ai-sdk/provider-utils': 3.0.0-beta.1(zod@3.25.67)
       zod: 3.25.67
 
-  '@ai-sdk/openai@2.0.0-beta.1(zod@3.25.67)':
+  '@ai-sdk/gateway@1.0.7(zod@3.25.67)':
     dependencies:
-      '@ai-sdk/provider': 2.0.0-beta.1
-      '@ai-sdk/provider-utils': 3.0.0-beta.1(zod@3.25.67)
+      '@ai-sdk/provider': 2.0.0
+      '@ai-sdk/provider-utils': 3.0.3(zod@3.25.67)
+      zod: 3.25.67
+
+  '@ai-sdk/openai@2.0.15(zod@3.25.67)':
+    dependencies:
+      '@ai-sdk/provider': 2.0.0
+      '@ai-sdk/provider-utils': 3.0.3(zod@3.25.67)
       zod: 3.25.67
 
   '@ai-sdk/provider-utils@2.2.8(zod@3.25.67)':
@@ -4748,7 +4780,19 @@ snapshots:
       zod: 3.25.67
       zod-to-json-schema: 3.24.6(zod@3.25.67)
 
+  '@ai-sdk/provider-utils@3.0.3(zod@3.25.67)':
+    dependencies:
+      '@ai-sdk/provider': 2.0.0
+      '@standard-schema/spec': 1.0.0
+      eventsource-parser: 3.0.5
+      zod: 3.25.67
+      zod-to-json-schema: 3.24.6(zod@3.25.67)
+
   '@ai-sdk/provider@1.1.3':
+    dependencies:
+      json-schema: 0.4.0
+
+  '@ai-sdk/provider@2.0.0':
     dependencies:
       json-schema: 0.4.0
 
@@ -4756,10 +4800,10 @@ snapshots:
     dependencies:
       json-schema: 0.4.0
 
-  '@ai-sdk/react@2.0.0-beta.1(react@19.1.1)(zod@3.25.67)':
+  '@ai-sdk/react@2.0.15(react@19.1.1)(zod@3.25.67)':
     dependencies:
-      '@ai-sdk/provider-utils': 3.0.0-beta.1(zod@3.25.67)
-      ai: 5.0.0-beta.1(zod@3.25.67)
+      '@ai-sdk/provider-utils': 3.0.3(zod@3.25.67)
+      ai: 5.0.15(zod@3.25.67)
       react: 19.1.1
       swr: 2.3.3(react@19.1.1)
       throttleit: 2.1.0
@@ -5691,12 +5735,12 @@ snapshots:
     dependencies:
       '@lukeed/csprng': 1.1.0
 
-  '@mastra/cli/cli/cli/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67)':
+  '@mastra/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67)':
     dependencies:
       '@ai-sdk/provider': 2.0.0-beta.1
       '@ai-sdk/provider-utils': 3.0.0-beta.1(zod@3.25.67)
       '@ai-sdk/ui-utils': 1.2.11(zod@3.25.67)
-      '@mastra/cli/cli/cli/schema-compat': 0.0.0-ai-v5-20250625173645(ai@5.0.0-beta.1(zod@3.25.67))(zod@3.25.67)
+      '@mastra/schema-compat': 0.0.0-ai-v5-20250625173645(ai@5.0.0-beta.1(zod@3.25.67))(zod@3.25.67)
       '@opentelemetry/api': 1.9.0
       '@opentelemetry/auto-instrumentations-node': 0.59.0(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.0.1(@opentelemetry/api@1.9.0))
       '@opentelemetry/core': 2.0.1(@opentelemetry/api@1.9.0)
@@ -5742,12 +5786,12 @@ snapshots:
       - valibot
       - zod-openapi
 
-  '@mastra/cli/cli/cli/deployer@0.0.0-ai-v5-20250625173645(@mastra/cli/cli/cli/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(typescript@5.8.3)':
+  '@mastra/deployer@0.0.0-ai-v5-20250625173645(@mastra/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(typescript@5.8.3)':
     dependencies:
       '@babel/core': 7.27.7
       '@babel/helper-module-imports': 7.27.1
-      '@mastra/cli/cli/cli/core': 0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67)
-      '@mastra/cli/cli/cli/server': 0.0.0-ai-v5-20250625173645(@mastra/cli/cli/cli/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(zod@3.25.67)
+      '@mastra/core': 0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67)
+      '@mastra/server': 0.0.0-ai-v5-20250625173645(@mastra/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(zod@3.25.67)
       '@neon-rs/load': 0.1.82
       '@rollup/plugin-alias': 5.1.1(rollup@4.44.1)
       '@rollup/plugin-commonjs': 28.0.6(rollup@4.44.1)
@@ -5773,23 +5817,23 @@ snapshots:
       - supports-color
       - typescript
 
-  '@mastra/cli/cli/cli/libsql@0.0.0-ai-v5-20250625173645(@mastra/cli/cli/cli/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))':
+  '@mastra/libsql@0.0.0-ai-v5-20250625173645(@mastra/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))':
     dependencies:
       '@libsql/client': 0.15.9
-      '@mastra/cli/cli/cli/core': 0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67)
+      '@mastra/core': 0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67)
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
 
-  '@mastra/cli/cli/cli/loggers@0.0.0-ai-v5-20250625173645(@mastra/cli/cli/cli/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))':
+  '@mastra/loggers@0.0.0-ai-v5-20250625173645(@mastra/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))':
     dependencies:
-      '@mastra/cli/cli/cli/core': 0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67)
+      '@mastra/core': 0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67)
       pino: 9.7.0
       pino-pretty: 13.0.0
 
-  '@mastra/cli/cli/cli/mcp@0.0.0-ai-v5-20250625173645(@mastra/cli/cli/cli/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(zod@3.25.67)':
+  '@mastra/mcp@0.0.0-ai-v5-20250625173645(@mastra/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(zod@3.25.67)':
     dependencies:
-      '@mastra/cli/cli/cli/core': 0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67)
+      '@mastra/core': 0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67)
       '@modelcontextprotocol/sdk': 1.13.2
       date-fns: 4.1.0
       exit-hook: 4.0.0
@@ -5801,9 +5845,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@mastra/cli/cli/cli/memory@0.0.0-ai-v5-20250625173645(@mastra/cli/cli/cli/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))':
+  '@mastra/memory@0.0.0-ai-v5-20250625173645(@mastra/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))':
     dependencies:
-      '@mastra/cli/cli/cli/core': 0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67)
+      '@mastra/core': 0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67)
       '@upstash/redis': 1.35.0
       ai: 5.0.0-beta.1(zod@3.25.67)
       js-tiktoken: 1.0.20
@@ -5817,9 +5861,9 @@ snapshots:
     transitivePeerDependencies:
       - pg-native
 
-  '@mastra/cli/cli/cli/pg@0.0.0-ai-v5-20250625173645(@mastra/cli/cli/cli/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(pg-query-stream@4.8.1(pg@8.14.1))':
+  '@mastra/pg@0.0.0-ai-v5-20250625173645(@mastra/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(pg-query-stream@4.8.1(pg@8.14.1))':
     dependencies:
-      '@mastra/cli/cli/cli/core': 0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67)
+      '@mastra/core': 0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67)
       async-mutex: 0.5.0
       pg: 8.16.2
       pg-promise: 11.14.0(pg-query-stream@4.8.1(pg@8.14.1))
@@ -5828,9 +5872,9 @@ snapshots:
       - pg-native
       - pg-query-stream
 
-  '@mastra/cli/cli/cli/rag@0.0.0-ai-v5-20250625173645(@mastra/cli/cli/cli/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(ai@5.0.0-beta.1(zod@3.25.67))':
+  '@mastra/rag@0.0.0-ai-v5-20250625173645(@mastra/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(ai@5.0.0-beta.1(zod@3.25.67))':
     dependencies:
-      '@mastra/cli/cli/cli/core': 0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67)
+      '@mastra/core': 0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67)
       '@paralleldrive/cuid2': 2.2.2
       ai: 5.0.0-beta.1(zod@3.25.67)
       big.js: 7.0.1
@@ -5839,7 +5883,7 @@ snapshots:
       pathe: 2.0.3
       zod: 3.25.67
 
-  '@mastra/cli/cli/cli/schema-compat@0.0.0-ai-v5-20250625173645(ai@5.0.0-beta.1(zod@3.25.67))(zod@3.25.67)':
+  '@mastra/schema-compat@0.0.0-ai-v5-20250625173645(ai@5.0.0-beta.1(zod@3.25.67))(zod@3.25.67)':
     dependencies:
       ai: 5.0.0-beta.1(zod@3.25.67)
       json-schema: 0.4.0
@@ -5847,9 +5891,9 @@ snapshots:
       zod-from-json-schema: 0.0.5
       zod-to-json-schema: 3.24.6(zod@3.25.67)
 
-  '@mastra/cli/cli/cli/server@0.0.0-ai-v5-20250625173645(@mastra/cli/cli/cli/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(zod@3.25.67)':
+  '@mastra/server@0.0.0-ai-v5-20250625173645(@mastra/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(zod@3.25.67)':
     dependencies:
-      '@mastra/cli/cli/cli/core': 0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67)
+      '@mastra/core': 0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67)
       zod: 3.25.67
 
   '@modelcontextprotocol/sdk@1.13.2':
@@ -7441,6 +7485,14 @@ snapshots:
       '@opentelemetry/api': 1.9.0
       zod: 3.25.67
 
+  ai@5.0.15(zod@3.25.67):
+    dependencies:
+      '@ai-sdk/gateway': 1.0.7(zod@3.25.67)
+      '@ai-sdk/provider': 2.0.0
+      '@ai-sdk/provider-utils': 3.0.3(zod@3.25.67)
+      '@opentelemetry/api': 1.9.0
+      zod: 3.25.67
+
   ajv@6.12.6:
     dependencies:
       fast-deep-equal: 3.1.3
@@ -8253,6 +8305,8 @@ snapshots:
 
   eventsource-parser@3.0.2: {}
 
+  eventsource-parser@3.0.5: {}
+
   eventsource@3.0.7:
     dependencies:
       eventsource-parser: 3.0.2
@@ -8965,14 +9019,14 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  @actus-ag/@mastra/cli/cli@0.0.0-ai-v5-20250625173645(@mastra/cli/cli/cli/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(@opentelemetry/api@1.9.0)(react@19.1.1)(typescript@5.8.3):
+  mastra@0.0.0-ai-v5-20250625173645(@mastra/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(@opentelemetry/api@1.9.0)(react@19.1.1)(typescript@5.8.3):
     dependencies:
       '@clack/prompts': 0.11.0
       '@lukeed/uuid': 2.0.1
-      '@mastra/cli/cli/cli/core': 0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67)
-      '@mastra/cli/cli/cli/deployer': 0.0.0-ai-v5-20250625173645(@mastra/cli/cli/cli/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(typescript@5.8.3)
-      '@mastra/cli/cli/cli/loggers': 0.0.0-ai-v5-20250625173645(@mastra/cli/cli/cli/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))
-      '@mastra/cli/cli/cli/mcp': 0.0.0-ai-v5-20250625173645(@mastra/cli/cli/cli/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(zod@3.25.67)
+      '@mastra/core': 0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67)
+      '@mastra/deployer': 0.0.0-ai-v5-20250625173645(@mastra/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(typescript@5.8.3)
+      '@mastra/loggers': 0.0.0-ai-v5-20250625173645(@mastra/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))
+      '@mastra/mcp': 0.0.0-ai-v5-20250625173645(@mastra/core@0.0.0-ai-v5-20250625173645(openapi-types@12.1.3)(zod@3.25.67))(zod@3.25.67)
       '@opentelemetry/instrumentation': 0.202.0(@opentelemetry/api@1.9.0)
       '@webcontainer/env': 1.1.1
       commander: 12.1.0

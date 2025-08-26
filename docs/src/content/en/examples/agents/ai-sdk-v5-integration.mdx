@@ -3,11 +3,12 @@ title: "Example: AI SDK v5 Integration | Agents | Mastra Docs"
 description: Example of integrating Mastra agents with AI SDK v5 for streaming chat interfaces with memory and tool integration.
 ---
 
+import { Callout } from "nextra/components";
 import { GithubLink } from "@/components/github-link";
 
 # Example: AI SDK v5 Integration
 
-This example demonstrates how to integrate Mastra agents with [AI SDK v5](https://sdk.vercel.ai/) to build modern streaming chat interfaces. It showcases a complete Next.js application with real-time conversation capabilities, persistent memory, and tool integration.
+This example demonstrates how to integrate Mastra agents with [AI SDK v5](https://sdk.vercel.ai/) to build modern streaming chat interfaces. It showcases a complete Next.js application with real-time conversation capabilities, persistent memory, and tool integration using the experimental `streamVNext` method with AI SDK v5 format support.
 
 ## Key Features
 
@@ -21,28 +22,28 @@ This example demonstrates how to integrate Mastra agents with [AI SDK v5](https:
 
 First, set up your Mastra agent with memory and tools:
 
-```typescript showLineNumbers copy filename="src/@@mastra/cli/cli/cli/index.ts"
-import { ConsoleLogger } from "@mastra/cli/cli/cli/core/logger";
-import { Mastra } from "@mastra/cli/cli/cli/core/@@mastra/cli/cli/cli";
+```typescript showLineNumbers copy filename="src/mastra/index.ts"
+import { ConsoleLogger } from "@mastra/core/logger";
+import { Mastra } from "@mastra/core/mastra";
 import { weatherAgent } from "./agents";
 
-export const @@mastra/cli/cli/cli = new Mastra({
+export const mastra = new Mastra({
   agents: { weatherAgent },
   logger: new ConsoleLogger(),
   // aiSdkCompat: "v4", // Optional: for additional compatibility
 });
 ```
 
-```typescript showLineNumbers copy filename="src/@@mastra/cli/cli/cli/agents/index.ts"
-import { Agent } from "@mastra/cli/cli/cli/core/agent";
+```typescript showLineNumbers copy filename="src/mastra/agents/index.ts"
+import { Agent } from "@mastra/core/agent";
 import { openai } from "@ai-sdk/openai";
-import { Memory } from "@mastra/cli/cli/cli/memory";
-import { LibSQLStore } from "@mastra/cli/cli/cli/libsql";
+import { Memory } from "@mastra/memory";
+import { LibSQLStore } from "@mastra/libsql";
 import { weatherTool } from "../tools";
 
 export const memory = new Memory({
   storage: new LibSQLStore({
-    url: `file:./@@mastra/cli/cli/cli.db`,
+    url: `file:./mastra.db`,
   }),
   options: {
     semanticRecall: false,
@@ -77,8 +78,8 @@ export const weatherAgent = new Agent({
 
 Create a tool that fetches real-time weather data:
 
-```typescript showLineNumbers copy filename="src/@@mastra/cli/cli/cli/tools/index.ts"
-import { createTool } from '@mastra/cli/cli/cli/core/tools';
+```typescript showLineNumbers copy filename="src/mastra/tools/index.ts"
+import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
 
 export const weatherTool = createTool({
@@ -134,24 +135,27 @@ const getWeather = async (location: string) => {
 
 ### Streaming Chat Endpoint
 
-Create an API route that streams responses from your Mastra agent:
+Create an API route that streams responses from your Mastra agent using the experimental `streamVNext` with AI SDK v5 format:
 
 ```typescript showLineNumbers copy filename="app/api/chat/route.ts"
-import { @@mastra/cli/cli/cli } from "@/src/@@mastra/cli/cli/cli";
-import { createV4CompatibleResponse } from "@mastra/cli/cli/cli/core/agent";
+import { mastra } from "@/src/mastra";
 
-const myAgent = @@mastra/cli/cli/cli.getAgent("weatherAgent");
+const myAgent = mastra.getAgent("weatherAgent");
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
-  const stream = await myAgent.stream(messages, {
-    threadId: "user-session", // Use actual user/session ID
-    resourceId: "weather-chat",
+  // Use streamVNext with AI SDK v5 format (experimental)
+  const stream = await myAgent.streamVNext(messages, {
+    format: 'aisdk',  // Enable AI SDK v5 compatibility
+    memory: {
+      thread: "user-session", // Use actual user/session ID
+      resource: "weather-chat",
+    },
   });
 
-  // Convert Mastra stream to AI SDK v5 compatible format
-  return createV4CompatibleResponse(stream.toUIMessageStreamResponse().body!);
+  // Stream is already in AI SDK v5 format
+  return stream.toUIMessageStreamResponse();
 }
 ```
 
@@ -160,10 +164,10 @@ export async function POST(req: Request) {
 Load conversation history from Mastra Memory:
 
 ```typescript showLineNumbers copy filename="app/api/initial-chat/route.ts"
-import { @@mastra/cli/cli/cli } from "@/src/@@mastra/cli/cli/cli";
+import { mastra } from "@/src/mastra";
 import { NextResponse } from "next/server";
 
-const myAgent = @@mastra/cli/cli/cli.getAgent("weatherAgent");
+const myAgent = mastra.getAgent("weatherAgent");
 
 export async function GET() {
   const result = await myAgent.getMemory()?.query({
@@ -235,16 +239,16 @@ export default function Chat() {
 
 Install the required dependencies:
 
-NOTE: ai-sdk v5 is still in beta, while it is in beta you'll have to install the beta ai-sdk versions and the beta @@mastra/cli/cli/cli versions. See [here](https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/issues/5470) for more information
+NOTE: ai-sdk v5 is still in beta, while it is in beta you'll have to install the beta ai-sdk versions and the beta mastra versions. See [here](https://github.com/mastra-ai/mastra/issues/5470) for more information
 
 ```json showLineNumbers copy filename="package.json"
 {
   "dependencies": {
     "@ai-sdk/openai": "2.0.0-beta.1",
     "@ai-sdk/react": "2.0.0-beta.1",
-    "@mastra/cli/cli/cli/core": "0.0.0-ai-v5-20250625173645",
-    "@mastra/cli/cli/cli/libsql": "0.0.0-ai-v5-20250625173645",
-    "@mastra/cli/cli/cli/memory": "0.0.0-ai-v5-20250625173645",
+    "@mastra/core": "0.0.0-ai-v5-20250625173645",
+    "@mastra/libsql": "0.0.0-ai-v5-20250625173645",
+    "@mastra/memory": "0.0.0-ai-v5-20250625173645",
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -256,14 +260,23 @@ NOTE: ai-sdk v5 is still in beta, while it is in beta you'll have to install the
 
 ## Key Integration Points
 
-### Compatibility Layer
+### Experimental streamVNext Format Support
 
-The `createV4CompatibleResponse` function bridges Mastra's streaming format with AI SDK v5:
+The experimental `streamVNext` method with `format: 'aisdk'` provides native AI SDK v5 compatibility:
 
 ```typescript
-// Converts Mastra stream to AI SDK v5 compatible format
-return createV4CompatibleResponse(stream.toUIMessageStreamResponse().body!);
+// Use streamVNext with AI SDK v5 format
+const stream = await agent.streamVNext(messages, {
+  format: 'aisdk'  // Returns AISDKV5OutputStream
+});
+
+// Direct compatibility with AI SDK v5 interfaces
+return stream.toUIMessageStreamResponse();
 ```
+
+<Callout type="info">
+  **Note**: The `streamVNext` method with format support is experimental and may change as we refine the feature based on feedback. See the [Agent Streaming documentation](/docs/agents/streaming) for more details.
+</Callout>
 
 ### Memory Persistence
 
@@ -303,6 +316,6 @@ pnpm dev
 
 <GithubLink
   link={
-    "https://github.com/@@mastra/cli/cli/cli-ai/@@mastra/cli/cli/cli/tree/main/examples/ai-sdk-v5"
+    "https://github.com/mastra-ai/mastra/tree/main/examples/ai-sdk-v5"
   }
 />

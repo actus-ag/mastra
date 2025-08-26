@@ -1,5 +1,5 @@
 {
-  "name": "@mastrackhouse",
+  "name": "@mastra/clickhouse",
   "version": "0.13.2",
   "description": "Clickhouse provider for Mastra - includes db storage capabilities",
   "type": "module",

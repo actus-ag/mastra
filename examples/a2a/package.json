@@ -7,12 +7,12 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "tsx src/index.ts",
-    "@mastra/cli/cli:dev": "@mastra/cli/cli dev",
+    "mastra:dev": "mastra dev",
     "build": "tsc",
     "dev": "tsx watch src/index.ts"
   },
   "keywords": [
-    "@mastra/cli/cli",
+    "mastra",
     "a2a",
     "agent-to-agent",
     "example"
@@ -21,22 +21,22 @@
   "license": "MIT",
   "dependencies": {
     "@ai-sdk/openai": "^1.3.24",
-    "@mastraent-js": "latest",
+    "@mastra/client-js": "latest",
     "@mastra/core": "latest",
     "@mastra/loggers": "link:../../packages/loggers",
     "dotenv": "^16.3.1",
     "zod": "^3.25.67"
   },
   "devDependencies": {
-    "@mastra/cli/cli": "latest",
+    "mastra": "latest",
     "tsx": "^4.7.0",
     "typescript": "^5.8.3"
   },
   "pnpm": {
     "overrides": {
       "@mastra/core": "link:../../packages/core",
-      "@mastra/cli/cli": "link:../../packages/cli",
-      "@mastraent-js": "link:../../client-sdks/client-js",
+      "mastra": "link:../../packages/cli",
+      "@mastra/client-js": "link:../../client-sdks/client-js",
       "@mastra/loggers": "link:../../packages/loggers",
       "@mastra/server": "link:../../packages/server",
       "@mastra/deployer": "link:../../packages/deployer"

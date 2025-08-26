@@ -7,16 +7,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "@mastra/cli/cli:dev": "@mastra/cli/cli dev"
+    "mastra:dev": "mastra dev"
   },
   "dependencies": {
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "@mastra/core": "latest",
-    "@mastraent-js": "latest",
+    "@mastra/client-js": "latest",
     "@mastra/voice-openai": "latest",
     "@mastra/memory": "latest",
-    "@mastra/cli/cli": "latest",
+    "mastra": "latest",
     "@ai-sdk/openai": "1.3.24",
     "zod": "^3.25.67",
     "next": "15.2.4"
@@ -24,10 +24,10 @@
   "pnpm": {
     "overrides": {
       "@mastra/core": "link:../../../packages/core",
-      "@mastraent-js": "link:../../../client-sdks/client-js",
+      "@mastra/client-js": "link:../../../client-sdks/client-js",
       "@mastra/voice-openai": "link:../../../voice/openai",
       "@mastra/memory": "link:../../../packages/memory",
-      "@mastra/cli/cli": "link:../../../packages/cli"
+      "mastra": "link:../../../packages/cli"
     }
   },
   "devDependencies": {

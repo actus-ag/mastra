@@ -1,5 +1,6 @@
 import type { z } from 'zod';
-import type { Mastra } from '../@mastra';
+import type { TracingContext } from '../ai-tracing';
+import type { Mastra } from '../mastra';
 import type { RuntimeContext } from '../runtime-context';
 import type { MastraScorers } from '../scores';
 import type { ChunkType } from '../stream/types';
@@ -12,11 +13,12 @@ import type { Workflow } from './workflow';
 export type ExecuteFunctionParams<TStepInput, TResumeSchema, TSuspendSchema, EngineType> = {
   runId: string;
   workflowId: string;
-  @mastra: Mastra;
+  mastra: Mastra;
   runtimeContext: RuntimeContext;
   inputData: TStepInput;
   resumeData?: TResumeSchema;
   runCount: number;
+  tracingContext: TracingContext;
   getInitData<T extends z.ZodType<any>>(): z.infer<T>;
   getInitData<T extends Workflow<any, any, any, any, any>>(): T extends undefined
     ? unknown

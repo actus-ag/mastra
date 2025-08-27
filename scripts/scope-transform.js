@@ -2,154 +2,29 @@
 
 import fs from 'fs';
 import path from 'path';
-import { execSync } from 'child_process';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-// Clean bidirectional mappings: @mastra/ <-> @actus-ag/mastra-
-const SCOPE_MAPPINGS = {
-  // Root package name transformation
-  '"name": "mastra-turbo"': '"name": "@actus-ag/mastra-turbo"',
-  
-  // Core package scope transformations: @mastra/ -> @actus-ag/mastra-
-  '"@mastra/core"': '"@actus-ag/mastra-core"',
-  "'@mastra/core'": "'@actus-ag/mastra-core'",
-  '@mastra/core': '@actus-ag/mastra-core',
-  
-  '"@mastra/memory"': '"@actus-ag/mastra-memory"',
-  "'@mastra/memory'": "'@actus-ag/mastra-memory'",
-  '@mastra/memory': '@actus-ag/mastra-memory',
-  
-  '"@mastra/rag"': '"@actus-ag/mastra-rag"',
-  "'@mastra/rag'": "'@actus-ag/mastra-rag'",
-  '@mastra/rag': '@actus-ag/mastra-rag',
-  
-  '"@mastra/evals"': '"@actus-ag/mastra-evals"',
-  "'@mastra/evals'": "'@actus-ag/mastra-evals'",
-  '@mastra/evals': '@actus-ag/mastra-evals',
-  
-  '"@mastra/server"': '"@actus-ag/mastra-server"',
-  "'@mastra/server'": "'@actus-ag/mastra-server'",
-  '@mastra/server': '@actus-ag/mastra-server',
-  
-  '"@mastra/mcp"': '"@actus-ag/mastra-mcp"',
-  "'@mastra/mcp'": "'@actus-ag/mastra-mcp'",
-  '@mastra/mcp': '@actus-ag/mastra-mcp',
-  
-  '"@mastra/deployer"': '"@actus-ag/mastra-deployer"',
-  "'@mastra/deployer'": "'@actus-ag/mastra-deployer'",
-  '@mastra/deployer': '@actus-ag/mastra-deployer',
-  
-  // Playground UI package
-  '"@mastra/playground-ui"': '"@actus-ag/mastra-playground-ui"',
-  "'@mastra/playground-ui'": "'@actus-ag/mastra-playground-ui'",
-  '@mastra/playground-ui': '@actus-ag/mastra-playground-ui',
-  
-  // CLI package references (not the package name itself)
-  '"@mastra/cli"': '"@actus-ag/mastra-cli"',
-  "'@mastra/cli'": "'@actus-ag/mastra-cli'",
-  '@mastra/cli': '@actus-ag/mastra-cli',
-  
-  // Generic package scope patterns (catch remaining @mastra/ packages)
-  '"@mastra/': '"@actus-ag/mastra-',
-  "'@mastra/": "'@actus-ag/mastra-",
-  '@mastra/': '@actus-ag/mastra-',
-  
-  // Changeset configuration
-  '"!@mastra/': '"!@actus-ag/mastra-',
-  
-  // Documentation references in backticks
-  '`@mastra/core`': '`@actus-ag/mastra-core`',
-  '`@mastra/memory`': '`@actus-ag/mastra-memory`',
-  '`@mastra/rag`': '`@actus-ag/mastra-rag`',
-  '`@mastra/evals`': '`@actus-ag/mastra-evals`',
-  '`@mastra/server`': '`@actus-ag/mastra-server`',
-  '`@mastra/mcp`': '`@actus-ag/mastra-mcp`',
-  '`@mastra/deployer`': '`@actus-ag/mastra-deployer`',
-  '`@mastra/playground-ui`': '`@actus-ag/mastra-playground-ui`',
-  '`@mastra/cli`': '`@actus-ag/mastra-cli`',
-  
-  // Generic documentation pattern
-  '`@mastra/': '`@actus-ag/mastra-',
-};
 
 // Special mappings for CLI package name only (applied to specific files)
 const CLI_PACKAGE_MAPPINGS = {
   '"name": "mastra"': '"name": "@actus-ag/mastra-cli"',
 };
 
-// Create proper reverse mappings for rollback
-const REVERSE_SCOPE_MAPPINGS = {
-  // Root package name transformation (reverse)
-  '"name": "@actus-ag/mastra-turbo"': '"name": "mastra-turbo"',
-  
-  // Core package scope transformations: @actus-ag/mastra- -> @mastra/
-  '"@actus-ag/mastra-core"': '"@mastra/core"',
-  "'@actus-ag/mastra-core'": "'@mastra/core'",
-  '@actus-ag/mastra-core': '@mastra/core',
-  
-  '"@actus-ag/mastra-memory"': '"@mastra/memory"',
-  "'@actus-ag/mastra-memory'": "'@mastra/memory'",
-  '@actus-ag/mastra-memory': '@mastra/memory',
-  
-  '"@actus-ag/mastra-rag"': '"@mastra/rag"',
-  "'@actus-ag/mastra-rag'": "'@mastra/rag'",
-  '@actus-ag/mastra-rag': '@mastra/rag',
-  
-  '"@actus-ag/mastra-evals"': '"@mastra/evals"',
-  "'@actus-ag/mastra-evals'": "'@mastra/evals'",
-  '@actus-ag/mastra-evals': '@mastra/evals',
-  
-  '"@actus-ag/mastra-server"': '"@mastra/server"',
-  "'@actus-ag/mastra-server'": "'@mastra/server'",
-  '@actus-ag/mastra-server': '@mastra/server',
-  
-  '"@actus-ag/mastra-mcp"': '"@mastra/mcp"',
-  "'@actus-ag/mastra-mcp'": "'@mastra/mcp'",
-  '@actus-ag/mastra-mcp': '@mastra/mcp',
-  
-  '"@actus-ag/mastra-deployer"': '"@mastra/deployer"',
-  "'@actus-ag/mastra-deployer'": "'@mastra/deployer'",
-  '@actus-ag/mastra-deployer': '@mastra/deployer',
-  
-  // Playground UI package (reverse)
-  '"@actus-ag/mastra-playground-ui"': '"@mastra/playground-ui"',
-  "'@actus-ag/mastra-playground-ui'": "'@mastra/playground-ui'",
-  '@actus-ag/mastra-playground-ui': '@mastra/playground-ui',
-  
-  // CLI package references (reverse)
-  '"@actus-ag/mastra-cli"': '"@mastra/cli"',
-  "'@actus-ag/mastra-cli'": "'@mastra/cli'",
-  '@actus-ag/mastra-cli': '@mastra/cli',
-  
-  // Generic package scope patterns (reverse)
-  '"@actus-ag/mastra-': '"@mastra/',
-  "'@actus-ag/mastra-": "'@mastra/",
-  '@actus-ag/mastra-': '@mastra/',
-  
-  // Changeset configuration (reverse)
-  '"!@actus-ag/mastra-': '"!@mastra/',
-  
-  // Documentation references in backticks (reverse)
-  '`@actus-ag/mastra-core`': '`@mastra/core`',
-  '`@actus-ag/mastra-memory`': '`@mastra/memory`',
-  '`@actus-ag/mastra-rag`': '`@mastra/rag`',
-  '`@actus-ag/mastra-evals`': '`@mastra/evals`',
-  '`@actus-ag/mastra-server`': '`@mastra/server`',
-  '`@actus-ag/mastra-mcp`': '`@mastra/mcp`',
-  '`@actus-ag/mastra-deployer`': '`@mastra/deployer`',
-  '`@actus-ag/mastra-playground-ui`': '`@mastra/playground-ui`',
-  '`@actus-ag/mastra-cli`': '`@mastra/cli`',
-  
-  // Generic documentation pattern (reverse)
-  '`@actus-ag/mastra-': '`@mastra/',
-};
-
 // Special reverse mappings for CLI package name only
 const REVERSE_CLI_PACKAGE_MAPPINGS = {
   '"name": "@actus-ag/mastra-cli"': '"name": "mastra"',
+};
+
+// Special mappings for root package name
+const ROOT_PACKAGE_MAPPINGS = {
+  '"name": "mastra-turbo"': '"name": "@actus-ag/mastra-turbo"',
+};
+
+// Special reverse mappings for root package name
+const REVERSE_ROOT_PACKAGE_MAPPINGS = {
+  '"name": "@actus-ag/mastra-turbo"': '"name": "mastra-turbo"',
 };
 
 // Files and directories to process
@@ -171,7 +46,6 @@ const EXCLUDE_PATTERNS = [
   'node_modules',
   '.git',
   'dist',
-  'build',
   '.next',
   'coverage',
   '.turbo',
@@ -266,33 +140,60 @@ function findFiles(dir, patterns, excludePatterns) {
   return files;
 }
 
-function transformFile(filePath, mappings, cliMappings = null) {
+function transformFile(filePath, cliMappings = null, rootMappings = null, direction = 'apply') {
   try {
     let content = fs.readFileSync(filePath, 'utf8');
     let changed = false;
     
     // Check if this is the CLI package.json file
-    const isCliPackageJson = filePath.endsWith('packages/cli/package.json');
+    const relativePath = path.relative(path.resolve(__dirname, '..'), filePath);
+    const isCliPackageJson = relativePath === path.join('packages', 'cli', 'package.json');
+    const isRootPackageJson = relativePath === 'package.json';
     
-    // Apply CLI-specific mappings first if this is the CLI package.json
+    // Apply CLI-specific mappings if this is the CLI package.json
     if (isCliPackageJson && cliMappings) {
-      const sortedCliMappings = Object.entries(cliMappings).sort(([a], [b]) => b.length - a.length);
-      for (const [from, to] of sortedCliMappings) {
-        const regex = new RegExp(escapeRegExp(from), 'g');
-        if (regex.test(content)) {
-          content = content.replace(regex, to);
+      for (const [from, to] of Object.entries(cliMappings)) {
+        if (content.includes(from)) {
+          content = content.replace(new RegExp(escapeRegExp(from), 'g'), to);
           changed = true;
         }
       }
     }
     
-    // Apply regular mappings
-    const sortedMappings = Object.entries(mappings).sort(([a], [b]) => b.length - a.length);
+    // Apply root-specific mappings if this is the root package.json
+    if (isRootPackageJson && rootMappings) {
+      for (const [from, to] of Object.entries(rootMappings)) {
+        if (content.includes(from)) {
+          content = content.replace(new RegExp(escapeRegExp(from), 'g'), to);
+          changed = true;
+        }
+      }
+    }
     
-    for (const [from, to] of sortedMappings) {
-      const regex = new RegExp(escapeRegExp(from), 'g');
-      if (regex.test(content)) {
-        content = content.replace(regex, to);
+    // Use regex patterns to handle all @mastra/* transformations generically
+    if (direction === 'apply') {
+      // Transform @mastra/package or @mastra/package/subpath to @actus-ag/mastra-package or @actus-ag/mastra-package/subpath
+      // This regex handles all cases including those inside function calls like import.meta.resolve()
+      const subpathRegex = /@mastra\/([^\/\s]+)(\/[^\s)'"]*)?/g;
+      const newContent = content.replace(subpathRegex, (match, packageName, subpath) => {
+        const transformedPackage = `@actus-ag/mastra-${packageName}`;
+        return `${transformedPackage}${subpath || ''}`;
+      });
+      
+      if (newContent !== content) {
+        content = newContent;
+        changed = true;
+      }
+    } else if (direction === 'rollback') {
+      // Transform @actus-ag/mastra-package or @actus-ag/mastra-package/subpath back to @mastra/package or @mastra/package/subpath
+      const subpathRegex = /@actus-ag\/mastra-([^\/\s]+)(\/[^\s)'"]*)?/g;
+      const newContent = content.replace(subpathRegex, (match, packageName, subpath) => {
+        const transformedPackage = `@mastra/${packageName}`;
+        return `${transformedPackage}${subpath || ''}`;
+      });
+      
+      if (newContent !== content) {
+        content = newContent;
         changed = true;
       }
     }
@@ -354,8 +255,8 @@ function main() {
     console.log('⚠️  Unknown scope state. Proceeding with transformation...');
   }
   
-  const mappings = command === 'apply' ? SCOPE_MAPPINGS : REVERSE_SCOPE_MAPPINGS;
   const cliMappings = command === 'apply' ? CLI_PACKAGE_MAPPINGS : REVERSE_CLI_PACKAGE_MAPPINGS;
+  const rootMappings = command === 'apply' ? ROOT_PACKAGE_MAPPINGS : REVERSE_ROOT_PACKAGE_MAPPINGS;
   const rootDir = path.resolve(__dirname, '..');
   
   console.log(`${command === 'apply' ? 'Applying' : 'Rolling back'} scope transformations...`);
@@ -366,7 +267,7 @@ function main() {
   let changedFiles = 0;
   
   for (const file of files) {
-    if (transformFile(file, mappings, cliMappings)) {
+    if (transformFile(file, cliMappings, rootMappings, command)) {
       changedFiles++;
       console.log(`  ✓ ${path.relative(rootDir, file)}`);
     }
@@ -393,4 +294,4 @@ function main() {
 
 main();
 
-export { SCOPE_MAPPINGS, REVERSE_SCOPE_MAPPINGS, CLI_PACKAGE_MAPPINGS, REVERSE_CLI_PACKAGE_MAPPINGS, transformFile, findFiles };
+export { CLI_PACKAGE_MAPPINGS, REVERSE_CLI_PACKAGE_MAPPINGS, ROOT_PACKAGE_MAPPINGS, REVERSE_ROOT_PACKAGE_MAPPINGS, transformFile, findFiles };

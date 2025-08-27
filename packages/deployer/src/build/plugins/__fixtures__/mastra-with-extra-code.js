@@ -16,6 +16,7 @@ const vectorQueryTool = createVectorQueryTool({
   model: openai.embedding('text-embedding-3-small'),
 });
 
+/** @type {Agent} */
 export const ragAgent = new Agent({
   name: 'RAG Agent',
   instructions: `You are a helpful assistant`,
@@ -25,6 +26,7 @@ export const ragAgent = new Agent({
 
 const pgVector = new PgVector({ connectionString: process.env.POSTGRES_CONNECTION_STRING });
 
+/** @type {Mastra} */
 export const mastra = new Mastra({
   agents: { ragAgent },
   vectors: { pgVector },

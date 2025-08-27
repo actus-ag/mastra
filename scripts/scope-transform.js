@@ -42,7 +42,7 @@ const INCLUDE_PATTERNS = [
 ];
 
 // Directories to exclude
-const EXCLUDE_PATTERNS = ['node_modules', '.git', 'dist', '__fixtures__', '.next', 'coverage', '.turbo', '.mastra'];
+const EXCLUDE_PATTERNS = ['node_modules', '.git', 'dist', '.next', 'coverage', '.turbo', '.mastra'];
 
 // Files to exclude (don't transform the script itself!)
 const EXCLUDE_FILES = ['scripts/scope-transform.js'];
@@ -170,14 +170,14 @@ function transformFile(filePath, cliMappings = null, rootMappings = null, direct
         const transformedPackage = `@actus-ag/mastra-${packageName}`;
         return `${transformedPackage}${subpath || ''}`;
       });
-      
+
       // Handle bare 'mastra' package references specifically in import.meta.resolve() calls
       // This targets the CLI package name transformation for import.meta.resolve('mastra/...')
       const importMetaResolveRegex = /import\.meta\.resolve\(\s*(['"`])mastra(\/[^'"`]*)?(['"`])\s*\)/g;
       newContent = newContent.replace(importMetaResolveRegex, (match, openQuote, subpath, closeQuote) => {
         return `import.meta.resolve(${openQuote}@actus-ag/mastra-cli${subpath || ''}${closeQuote})`;
       });
-      
+
       if (newContent !== content) {
         content = newContent;
         changed = true;
@@ -189,13 +189,13 @@ function transformFile(filePath, cliMappings = null, rootMappings = null, direct
         const transformedPackage = `@mastra/${packageName}`;
         return `${transformedPackage}${subpath || ''}`;
       });
-      
+
       // Handle '@actus-ag/mastra-cli' package references back to 'mastra' in import.meta.resolve() calls
       const importMetaResolveRegex = /import\.meta\.resolve\(\s*(['"`])@actus-ag\/mastra-cli(\/[^'"`]*)?(['"`])\s*\)/g;
       newContent = newContent.replace(importMetaResolveRegex, (match, openQuote, subpath, closeQuote) => {
         return `import.meta.resolve(${openQuote}mastra${subpath || ''}${closeQuote})`;
       });
-      
+
       if (newContent !== content) {
         content = newContent;
         changed = true;

@@ -96,10 +96,28 @@ export default defineConfig({
     'node:constants',
     'node:inspector',
     'node:async_hooks',
-    // Problematic packages
+    // Problematic packages that use dynamic requires
     'rollup',
     'esbuild',
+    'debug',
+    'supports-color',
+    'ms',
+    'chalk',
+    'kleur',
+    'picocolors',
+    'ansi-styles',
+    'strip-ansi',
+    'wrap-ansi',
+    'string-width',
+    'emoji-regex',
+    'is-fullwidth-code-point',
+    'ansi-regex',
   ],
+  // Prevent bundler from trying to analyze dynamic imports
+  esbuildOptions(options) {
+    options.platform = 'node';
+    options.target = 'node18';
+  },
   onSuccess: async () => {
     const playgroundPath = dirname(fileURLToPath(import.meta.resolve('@internal/playground/package.json')));
 

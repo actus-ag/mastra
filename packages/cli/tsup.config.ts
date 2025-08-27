@@ -18,14 +18,6 @@ export default defineConfig({
   dts: false,
   clean: true,
   sourcemap: true,
-  // Don't bundle any dependencies - just transpile TypeScript
-  external: [/.*/],
-  // Prevent bundler from trying to analyze dynamic imports
-  esbuildOptions(options) {
-    options.platform = 'node';
-    options.target = 'node18';
-    options.packages = 'external';
-  },
   onSuccess: async () => {
     const playgroundPath = dirname(fileURLToPath(import.meta.resolve('@internal/playground/package.json')));
 

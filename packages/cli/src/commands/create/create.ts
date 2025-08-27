@@ -56,6 +56,7 @@ export const create = async (args: {
 
     await init({
       ...result,
+      llmProvider: result?.llmProvider as LLMProvider,
       llmApiKey: result?.llmApiKey as string,
       components: ['agents', 'tools', 'workflows'],
       addExample: true,

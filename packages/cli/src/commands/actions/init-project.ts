@@ -2,6 +2,7 @@ import { analytics } from '../..';
 import type { CLI_ORIGIN } from '../../analytics';
 import { init } from '../init/init';
 import { checkAndInstallCoreDeps, checkPkgJson, interactivePrompt } from '../init/utils';
+import type { LLMProvider } from '../init/utils';
 
 const origin = process.env.MASTRA_ANALYTICS_ORIGIN as CLI_ORIGIN;
 
@@ -17,6 +18,7 @@ export const initProject = async (args: any) => {
         const result = await interactivePrompt();
         await init({
           ...result,
+          llmProvider: result?.llmProvider as LLMProvider,
           llmApiKey: result?.llmApiKey as string,
           components: ['agents', 'tools', 'workflows'],
           addExample: true,
@@ -28,7 +30,7 @@ export const initProject = async (args: any) => {
         await init({
           directory: 'src/',
           components: ['agents', 'tools', 'workflows'],
-          llmProvider: 'openai',
+          llmProvider: 'openai' as LLMProvider,
           addExample: true,
           configureEditorWithDocsMCP: args.mcp,
         });
@@ -39,7 +41,7 @@ export const initProject = async (args: any) => {
       await init({
         directory: args.dir,
         components: componentsArr,
-        llmProvider: args.llm,
+        llmProvider: args.llm as LLMProvider,
         addExample: args.example,
         llmApiKey: args['llm-api-key'],
         configureEditorWithDocsMCP: args.mcp,

@@ -38,45 +38,35 @@ const INCLUDE_PATTERNS = [
   '**/*.ts',
   '**/*.tsx',
   '**/*.js',
-  '**/*.jsx'
+  '**/*.jsx',
 ];
 
 // Directories to exclude
-const EXCLUDE_PATTERNS = [
-  'node_modules',
-  '.git',
-  'dist',
-  '.next',
-  'coverage',
-  '.turbo',
-  '.mastra'
-];
+const EXCLUDE_PATTERNS = ['node_modules', '.git', 'dist', '__fixtures__', '.next', 'coverage', '.turbo', '.mastra'];
 
 // Files to exclude (don't transform the script itself!)
-const EXCLUDE_FILES = [
-  'scripts/scope-transform.js'
-];
+const EXCLUDE_FILES = ['scripts/scope-transform.js'];
 
 function detectCurrentScope() {
   // Check both CLI package.json and root package.json to determine current scope
   const cliPackagePath = path.resolve(__dirname, '..', 'packages', 'cli', 'package.json');
   const rootPackagePath = path.resolve(__dirname, '..', 'package.json');
-  
+
   try {
     // Check CLI package
     const cliContent = fs.readFileSync(cliPackagePath, 'utf8');
     const cliPackageJson = JSON.parse(cliContent);
-    
+
     // Check root package
     const rootContent = fs.readFileSync(rootPackagePath, 'utf8');
     const rootPackageJson = JSON.parse(rootContent);
-    
+
     // Determine scope based on package names
     const cliIsActusAg = cliPackageJson.name === '@actus-ag/mastra-cli';
     const cliIsMastra = cliPackageJson.name === 'mastra';
     const rootIsActusAg = rootPackageJson.name === '@actus-ag/mastra-turbo';
     const rootIsMastra = rootPackageJson.name === 'mastra-turbo';
-    
+
     if (cliIsActusAg && rootIsActusAg) {
       return 'actus-ag';
     } else if (cliIsMastra && rootIsMastra) {
@@ -97,21 +87,22 @@ function detectCurrentScope() {
 
 function findFiles(dir, patterns, excludePatterns) {
   const files = [];
-  
+
   function traverse(currentDir) {
     const entries = fs.readdirSync(currentDir, { withFileTypes: true });
-    
+
     for (const entry of entries) {
       const fullPath = path.join(currentDir, entry.name);
       const relativePath = path.relative(dir, fullPath);
-      
+
       // Skip excluded directories
-      if (entry.isDirectory() && excludePatterns.some(pattern => 
-        relativePath.includes(pattern) || entry.name === pattern
-      )) {
+      if (
+        entry.isDirectory() &&
+        excludePatterns.some(pattern => relativePath.includes(pattern) || entry.name === pattern)
+      ) {
         continue;
       }
-      
+
       if (entry.isDirectory()) {
         traverse(fullPath);
       } else if (entry.isFile()) {
@@ -119,7 +110,7 @@ function findFiles(dir, patterns, excludePatterns) {
         if (EXCLUDE_FILES.some(excludeFile => relativePath === excludeFile)) {
           continue;
         }
-        
+
         // Check if file matches any include pattern
         const shouldInclude = patterns.some(pattern => {
           if (pattern.includes('**')) {
@@ -128,14 +119,14 @@ function findFiles(dir, patterns, excludePatterns) {
           }
           return entry.name === pattern || relativePath.endsWith(pattern);
         });
-        
+
         if (shouldInclude) {
           files.push(fullPath);
         }
       }
     }
   }
-  
+
   traverse(dir);
   return files;
 }
@@ -144,12 +135,12 @@ function transformFile(filePath, cliMappings = null, rootMappings = null, direct
   try {
     let content = fs.readFileSync(filePath, 'utf8');
     let changed = false;
-    
+
     // Check if this is the CLI package.json file
     const relativePath = path.relative(path.resolve(__dirname, '..'), filePath);
     const isCliPackageJson = relativePath === path.join('packages', 'cli', 'package.json');
     const isRootPackageJson = relativePath === 'package.json';
-    
+
     // Apply CLI-specific mappings if this is the CLI package.json
     if (isCliPackageJson && cliMappings) {
       for (const [from, to] of Object.entries(cliMappings)) {
@@ -159,7 +150,7 @@ function transformFile(filePath, cliMappings = null, rootMappings = null, direct
         }
       }
     }
-    
+
     // Apply root-specific mappings if this is the root package.json
     if (isRootPackageJson && rootMappings) {
       for (const [from, to] of Object.entries(rootMappings)) {
@@ -169,7 +160,7 @@ function transformFile(filePath, cliMappings = null, rootMappings = null, direct
         }
       }
     }
-    
+
     // Use regex patterns to handle all @mastra/* transformations generically
     if (direction === 'apply') {
       // Transform @mastra/package or @mastra/package/subpath to @actus-ag/mastra-package or @actus-ag/mastra-package/subpath
@@ -210,7 +201,7 @@ function transformFile(filePath, cliMappings = null, rootMappings = null, direct
         changed = true;
       }
     }
-    
+
     if (changed) {
       fs.writeFileSync(filePath, content, 'utf8');
       return true;
@@ -230,7 +221,7 @@ function main() {
   const args = process.argv.slice(2);
   const command = args[0];
   const isForced = args.includes('--force');
-  
+
   if (!command || !['apply', 'rollback'].includes(command)) {
     console.log('Usage: node scope-transform.js <apply|rollback> [--force]');
     console.log('');
@@ -242,11 +233,11 @@ function main() {
     console.log('  --force  - Force transformation even if already in target scope');
     process.exit(1);
   }
-  
+
   // Detect current scope state
   const currentScope = detectCurrentScope();
   console.log(`Current scope detected: ${currentScope}`);
-  
+
   // Check if transformation is needed (idempotent check)
   if (!isForced) {
     if (command === 'apply' && currentScope === 'actus-ag') {
@@ -254,44 +245,46 @@ function main() {
       console.log('  Use --force to run anyway.');
       return;
     }
-    
+
     if (command === 'rollback' && currentScope === 'mastra') {
       console.log('✓ Already in @mastra scope. No transformation needed.');
       console.log('  Use --force to run anyway.');
       return;
     }
   }
-  
+
   if (isForced) {
     console.log('🔧 Force flag detected. Running transformation anyway...');
   } else if (currentScope === 'unknown') {
     console.log('⚠️  Unknown scope state. Proceeding with transformation...');
   }
-  
+
   const cliMappings = command === 'apply' ? CLI_PACKAGE_MAPPINGS : REVERSE_CLI_PACKAGE_MAPPINGS;
   const rootMappings = command === 'apply' ? ROOT_PACKAGE_MAPPINGS : REVERSE_ROOT_PACKAGE_MAPPINGS;
   const rootDir = path.resolve(__dirname, '..');
-  
+
   console.log(`${command === 'apply' ? 'Applying' : 'Rolling back'} scope transformations...`);
   console.log(`Target: ${command === 'apply' ? '@mastra/* → @actus-ag/mastra-*' : '@actus-ag/mastra-* → @mastra/*'}`);
-  console.log(`CLI package: ${command === 'apply' ? 'mastra → @actus-ag/mastra-cli' : '@actus-ag/mastra-cli → mastra'}`);
-  
+  console.log(
+    `CLI package: ${command === 'apply' ? 'mastra → @actus-ag/mastra-cli' : '@actus-ag/mastra-cli → mastra'}`,
+  );
+
   const files = findFiles(rootDir, INCLUDE_PATTERNS, EXCLUDE_PATTERNS);
   let changedFiles = 0;
-  
+
   for (const file of files) {
     if (transformFile(file, cliMappings, rootMappings, command)) {
       changedFiles++;
       console.log(`  ✓ ${path.relative(rootDir, file)}`);
     }
   }
-  
+
   console.log(`\nTransformation complete! ${changedFiles} files changed.`);
-  
+
   // Verify the transformation worked
   const newScope = detectCurrentScope();
   const expectedScope = command === 'apply' ? 'actus-ag' : 'mastra';
-  
+
   if (newScope === expectedScope) {
     console.log(`✅ Transformation successful! Now in ${newScope} scope.`);
   } else if (newScope.includes('mixed')) {
@@ -299,7 +292,7 @@ function main() {
   } else {
     console.log(`⚠️  Transformation may have failed. Expected ${expectedScope} scope, but detected ${newScope}.`);
   }
-  
+
   if (command === 'rollback') {
     console.log('\nNote: You may want to run "pnpm install" to update lockfiles after rollback.');
   }
@@ -307,4 +300,11 @@ function main() {
 
 main();
 
-export { CLI_PACKAGE_MAPPINGS, REVERSE_CLI_PACKAGE_MAPPINGS, ROOT_PACKAGE_MAPPINGS, REVERSE_ROOT_PACKAGE_MAPPINGS, transformFile, findFiles };
+export {
+  CLI_PACKAGE_MAPPINGS,
+  REVERSE_CLI_PACKAGE_MAPPINGS,
+  ROOT_PACKAGE_MAPPINGS,
+  REVERSE_ROOT_PACKAGE_MAPPINGS,
+  transformFile,
+  findFiles,
+};

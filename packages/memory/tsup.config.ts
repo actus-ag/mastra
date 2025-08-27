@@ -10,6 +10,10 @@ export default defineConfig({
   treeshake: {
     preset: 'smallest',
   },
+  external: [
+    '@mastra/core',
+    'zod',
+  ],
   sourcemap: true,
   onSuccess: async () => {
     await generateTypes(process.cwd());

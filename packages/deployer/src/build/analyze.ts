@@ -38,6 +38,8 @@ const globalExternals = [
   'sqlite3',
   'fastembed',
   'nodemailer',
+  '@mastra/core',
+  '@mastra/schema-compat',
   '#tools',
 ];
 

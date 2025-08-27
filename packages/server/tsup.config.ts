@@ -17,6 +17,11 @@ export default defineConfig({
     preset: 'smallest',
   },
   sourcemap: true,
+  external: [
+    '@mastra/core',
+    '@mastra/schema-compat',
+    'zod',
+  ],
   onSuccess: async () => {
     await generateTypes(process.cwd());
   },

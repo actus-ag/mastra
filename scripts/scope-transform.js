@@ -175,9 +175,16 @@ function transformFile(filePath, cliMappings = null, rootMappings = null, direct
       // Transform @mastra/package or @mastra/package/subpath to @actus-ag/mastra-package or @actus-ag/mastra-package/subpath
       // This regex handles all cases including those inside function calls like import.meta.resolve()
       const subpathRegex = /@mastra\/([^\/\s]+)(\/[^\s)'"]*)?/g;
-      const newContent = content.replace(subpathRegex, (match, packageName, subpath) => {
+      let newContent = content.replace(subpathRegex, (match, packageName, subpath) => {
         const transformedPackage = `@actus-ag/mastra-${packageName}`;
         return `${transformedPackage}${subpath || ''}`;
+      });
+      
+      // Handle bare 'mastra' package references specifically in import.meta.resolve() calls
+      // This targets the CLI package name transformation for import.meta.resolve('mastra/...')
+      const importMetaResolveRegex = /import\.meta\.resolve\(\s*(['"`])mastra(\/[^'"`]*)?(['"`])\s*\)/g;
+      newContent = newContent.replace(importMetaResolveRegex, (match, openQuote, subpath, closeQuote) => {
+        return `import.meta.resolve(${openQuote}@actus-ag/mastra-cli${subpath || ''}${closeQuote})`;
       });
       
       if (newContent !== content) {
@@ -187,9 +194,15 @@ function transformFile(filePath, cliMappings = null, rootMappings = null, direct
     } else if (direction === 'rollback') {
       // Transform @actus-ag/mastra-package or @actus-ag/mastra-package/subpath back to @mastra/package or @mastra/package/subpath
       const subpathRegex = /@actus-ag\/mastra-([^\/\s]+)(\/[^\s)'"]*)?/g;
-      const newContent = content.replace(subpathRegex, (match, packageName, subpath) => {
+      let newContent = content.replace(subpathRegex, (match, packageName, subpath) => {
         const transformedPackage = `@mastra/${packageName}`;
         return `${transformedPackage}${subpath || ''}`;
+      });
+      
+      // Handle '@actus-ag/mastra-cli' package references back to 'mastra' in import.meta.resolve() calls
+      const importMetaResolveRegex = /import\.meta\.resolve\(\s*(['"`])@actus-ag\/mastra-cli(\/[^'"`]*)?(['"`])\s*\)/g;
+      newContent = newContent.replace(importMetaResolveRegex, (match, openQuote, subpath, closeQuote) => {
+        return `import.meta.resolve(${openQuote}mastra${subpath || ''}${closeQuote})`;
       });
       
       if (newContent !== content) {

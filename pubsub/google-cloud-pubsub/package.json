@@ -38,6 +38,7 @@
     "@mastra/core": "workspace:*",
     "@mastra/deployer": "workspace:*",
     "@mastra/libsql": "workspace:*",
+    "@microsoft/api-extractor": "^7.52.8",
     "@types/node": "^20.19.0",
     "typescript": "^5.8.3",
     "eslint": "^9.30.1",

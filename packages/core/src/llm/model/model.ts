@@ -660,9 +660,8 @@ export class MastraLLMV1 extends MastraBase {
       const argsForExecute: OriginalStreamObjectOptions<T> = {
         ...rest,
         model: this._wrapModel(model, agentAISpan),
-        onFinish: async props => {
+        onFinish: async (props: any) => {
           try {
-            // @ts-expect-error - onFinish is not inferred correctly
             await onFinish?.({ ...props, runId: runId! });
           } catch (e: unknown) {
             const mastraError = new MastraError(
